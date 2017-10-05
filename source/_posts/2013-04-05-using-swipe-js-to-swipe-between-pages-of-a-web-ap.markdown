@@ -1,158 +1,21 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Using Swipe.js to swipe between pages of a web app - Nilenso Blog</title>
-  <meta name="author" content="Nilenso">
-
-  
-  <meta name="description" content="
-
-  
-  
-  
-    
-      Using Swipe.js to swipe between pages of a web app
-    
-  
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-        
-      
-    
-  
-
-
-I was wor...">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-
-  
-  <link rel="canonical" href="http://blog.nilenso.com/blog/2013/04/05/using-swipe-js-to-swipe-between-pages-of-a-web-app/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Nilenso Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-
-  <!-- Typekit fonts -->
-  <script type="text/javascript" src="//use.typekit.net/xgt4lgm.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-43704022-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-
-</head>
-
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner">
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  
-</ul>
-  
-<header class="nilenso-header">
-  <img class="header-logo-image left" src="/images/nilenso-200.png" />
-  <a class="header-link logo-name" href="http://nilenso.com">nilenso</a>
-  <a class="header-link right page-link rss-link" href="/atom.xml" title="subscribe via RSS"><img class="rss-link-image" src="/images/rss.png"></img></a>
-  <a class="header-link page-link" href="/blog/archives">Archive</a>
-  <a class="header-link page-link active" href="/">Blog</a>
-</header>
-<div class="clear"></div>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-  
-    
-      <h1 class="entry-title">Using Swipe.js to swipe between pages of a web app</h1>
-    
-  
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-
-<time datetime="2013-04-05T00:00:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>I was working with <a href="http://deobald.ca/">Steven</a> on <a href="http://github.com/deobald/jok">Jok</a> today.</p>
-
-
-
+---
+title: "Using Swipe.js to swipe between pages of a web app"
+kind: article
+created_at: 2013-04-05 16:15:00 UTC
+author: Timothy Andrew
+layout: post
+---
+<p>I was working with <a href="http://deobald.ca/">Steven</a> on <a href="http://github.com/deobald/jok">Jok</a> today.</p>
 
 <p>We were converting a two page (well 3, actually) page web application into a single page application that let you swipe between pages on mobile device but worked the same on a desktop browser.</p>
 
-
-
-
 <p>Here&#8217;s how that&#8217;s done.</p>
-
-
-
 
 <p>First, download the <a href="http://swipejs.com/">Swipe.js</a> plugin.</p>
 
-
-
-
 <p>You need the markup for all your pages in a single HTML file, wrapped with two <code>divs</code> that Swipe uses.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -172,12 +35,12 @@ I was wor...">
 </span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Next, we need to setup Swipe.js.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -185,12 +48,12 @@ I was wor...">
 </span><span class='line'>    <span class="kd">var</span> <span class="nx">mySwipe</span> <span class="o">=</span> <span class="nx">Swipe</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;slider&#39;</span><span class="p">));</span>
 </span><span class='line'>    <span class="nx">mySwipe</span><span class="p">.</span><span class="nx">setup</span><span class="p">();</span>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>We need some CSS styles too.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -230,23 +93,17 @@ I was wor...">
 </span><span class='line'>    <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
 </span><span class='line'>    <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>We&#8217;ve added styles to make each page have a <code>100%</code> height, so that our background-color spans the entire page.</p>
-
-
-
 
 <p>This should allow navigating between the pages by swiping on a mobile device.
 On a desktop, though, there&#8217;s no way to switch between pages.</p>
 
-
-
-
 <p>Swipe.js doesn&#8217;t detect swipe-like events from the mouse, so we need to add buttons to the page for navigation.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -266,17 +123,12 @@ On a desktop, though, there&#8217;s no way to switch between pages.</p>
 </span><span class='line'>     <span class="na">onclick=</span><span class="s">&quot;javascript:window.mySwipe.next();&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'><span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>This adds a button on each side of the page which allow navigating to the previous/next pages.</p>
 
-
-
-
 <p>Pretty straight-forward so far. There&#8217;s two problems with this approach, though.</p>
-
-
-
 
 <ul>
 <li>When a page is taller than the height of the viewport, a scrollbar shows up on all pages.
@@ -285,17 +137,11 @@ On a desktop, though, there&#8217;s no way to switch between pages.</p>
 </ul>
 
 
-
-
 <p>We solved this problem by caching the scroll position for each page, and then scrolling to that position when the page was changed.</p>
-
-
-
 
 <p>To hook into the page change event, we need to pass a function into the Swipe.js initializer.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -317,12 +163,12 @@ On a desktop, though, there&#8217;s no way to switch between pages.</p>
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">mySwipe</span> <span class="o">=</span> <span class="nx">Swipe</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;slider&#39;</span><span class="p">),</span> <span class="p">{</span> <span class="nx">callback</span><span class="o">:</span> <span class="nx">cb</span> <span class="p">});</span>
 </span><span class='line'><span class="nx">mySwipe</span><span class="p">.</span><span class="nx">setup</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>This works okay for a two page app. If you&#8217;ve got more pages, you&#8217;ll have to cache the scroll positions for each page.</p>
 
-
-<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -347,197 +193,8 @@ On a desktop, though, there&#8217;s no way to switch between pages.</p>
 </span><span class='line'><span class="kd">var</span> <span class="nx">mySwipe</span> <span class="o">=</span> <span class="nx">Swipe</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;slider&#39;</span><span class="p">),</span> <span class="p">{</span> <span class="nx">callback</span><span class="o">:</span> <span class="nx">cb</span> <span class="p">});</span>
 </span><span class='line'><span class="nx">mySwipe</span><span class="p">.</span><span class="nx">setup</span><span class="p">();</span>
 </span></code></pre></td></tr></table></div></figure><div class="author">
-  <img src="http://nilenso.com/people/timothy-200.jpg" style="width: 96px; height: 96;">
+  <img src="http://nilenso.com/images/people/tim-200.png" style="width: 96px; height: 96;">
   <span style="position: absolute; padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&rsquo;s Blog</a></i>
+    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&#39;s Blog</a></i>
   </span>
-</div></p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
-<span class="byline author vcard">Posted by <span class="fn">Timothy Andrew</span></span>
-
-      
-
-
-
-
-
-
-
-
-
-<time datetime="2013-04-05T00:00:00-04:00" pubdate data-updated="true"></time>
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.nilenso.com/blog/2013/04/05/using-swipe-js-to-swipe-between-pages-of-a-web-app/" data-via="nilenso" data-counturl="http://blog.nilenso.com/blog/2013/04/05/using-swipe-js-to-swipe-between-pages-of-a-web-app/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/04/05/using-swipe-js-to-swipe-between-pages-of-a-web-ap/" title="Previous Post: Using Swipe.js to swipe between pages of a web app">&laquo; Using Swipe.js to swipe between pages of a web app</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/04/07/use-lambdas-for-date-based-rails-scopes/" title="Next Post: Use Lambdas for Date-based Rails Scopes">Use Lambdas for Date-based Rails Scopes &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>About Me</h1>
-  <p>A little something about me.</p>
-</section>
-Included file 'custom/asides/subscribe.html' not found in _includes directory<section>
-  <h1>Popular Posts</h1>
-  <ul id="recent_posts">
-    
-  </ul>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2017/10/01/writing-a-simple-rest-web-service-in-purescript-p/">Writing a Simple REST Web Service in Purescript - Part 2</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/09/29/writing-a-simple-rest-web-service-in-purescript-p/">Writing a Simple REST Web Service in Purescript - Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/09/12/gunak-designing-with-the-indian-government/">Gunak — Designing with the Indian Government</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/05/05/designing-for-rural-india-part-1/">Designing for Rural India — Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/04/06/black-mirror-or-a-review-of-the-review-process-at/">Black Mirror*, or a review of the review process at a software co-operative</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/nilenso">@nilenso</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'nilenso',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section id="twitter">
-  <h1 class="tweets">Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("nilenso", , );
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <p>Follow <a href="http://twitter.com/nilenso">@nilenso</a></p>
-  
-</section>
-
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <div class="sidebar">
-    <p class="sidebar-content">
-      <a href="http://nilenso.com">nilenso</a> is an employee-owned software cooperative based out of Bangalore, India.
-    </p>
-    <p class="sidebar-content">
-      We practice test driven development and continuous delivery, and love working with Clojure and Ruby on Rails.
-    </p>
-    <p class="sidebar-content">
-      This blog is a showcase of our growth as a consultancy, a product company and generally curious beings.
-      Get in touch with us at <a href="mailto:hello@nilenso.com">hello@nilenso.com</a>.
-    </p>
-  </div>
-</body>
-<div class="footer">
-  <div class="section-content contact-info">
-    <p class="contact-phone-number">
-      <a class="contact-link email-link" href="mailto:hello@nilenso.com">hello@nilenso.com</a>
-      <a class="contact-link contact-social-link" href="http://twitter.com/nilenso">@nilenso</a>
-      <a class="contact-link contact-social-link" href="http://github.com/nilenso">github.com/nilenso</a>
-      <a class="contact-link" href="tel:+918040937123">+91 80 4093 7123</a>
-     </p>
-    <p class="contact-address">Nilenso Software LLP, #105, 10th Cross, Indiranagar Stage 1, Bangalore, India, 560038</p>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</html>
