@@ -6,15 +6,13 @@ author: Abhinav Sarkar
 post_url: "https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-2/"
 layout: post
 ---
-<div class="ert">
-A sixteen minute read
-</div>
 <p>In the <a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-1/">first part</a> of this series of posts, we wrote a simple <a href="https://en.wikipedia.org/wiki/Sudoku" target="_blank" rel="noopener">Sudoku</a> solver in <a href="https://www.haskell.org/" target="_blank" rel="noopener">Haskell</a>. It used a <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem" target="_blank" rel="noopener">constraint satisfaction</a> algorithm with <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank" rel="noopener">backtracking</a>. The solution worked well but was very slow. In this post, we are going to improve it and make it <strong>fast</strong>.</p>
 <!--more-->
 <p>This is the second post in a series of posts:</p>
 <ol type="1">
 <li><a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-1/">Fast Sudoku Solver in Haskell #1: A Simple Solution</a></li>
 <li><a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-2/">Fast Sudoku Solver in Haskell #2: A 200x Faster Solution</a></li>
+<li><a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-3/">Fast Sudoku Solver in Haskell #3: Picking the Right Data Structures</a></li>
 </ol>
 <p>Discuss this post on <a href="https://www.reddit.com/r/haskell/comments/8xyfad/fast_sudoku_solver_in_haskell_2_a_200x_faster/" target="_blank" rel="noopener">r/haskell</a>.</p>
 <nav id="toc" class="right-toc"><h3>Contents</h3><ol><li><a href="#quick-recap">Quick Recap</a></li><li><a href="#constraints-and-corollaries">Constraints and Corollaries</a></li><li><a href="#singles-twins-and-triplets">Singles, Twins and Triplets</a></li><li><a href="#a-little-forward-a-little-backward">A Little Forward, a Little Backward</a></li><li><a href="#pruning-the-cells-exclusively">Pruning the Cells, Exclusively</a></li><li><a href="#faster-than-a-speeding-bullet">Faster than a Speeding Bullet!</a><ol><li><a href="#update">Update</a></li></ol></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
@@ -393,11 +391,12 @@ $ head -n1000 sudoku17.txt | stack exec -- sudoku +RTS -p &gt; /dev/null</code><
 <li id="fn2"><p>At least 17 cells must be pre-filled in a Sudoku puzzle for it to have a unique solution. So 17-clue puzzles are the most difficult of all puzzles. <a href="https://arxiv.org/pdf/1201.0749v2.pdf" target="_blank" rel="noopener">This paper</a> by McGuire, Tugemann and Civario gives the proof of the same.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p>“Single” as in <a href="https://en.wikipedia.org/wiki/Single_child" target="_blank" rel="noopener">“Single child”</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
 <li id="fn4"><p>Reverse application operation is not used much in Haskell. But it is the preferred way of function chaining in some other functional programming languages like <a href="https://clojuredocs.org/clojure.core/-%3E" target="_blank" rel="noopener">Clojure</a>, <a href="https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/operators.%5b-h%5d-%5d%5b't1,'u%5d-function-%5bfsharp%5d" target="_blank" rel="noopener">FSharp</a>, and <a href="https://hexdocs.pm/elixir/Kernel.html#%7C%3E/2" target="_blank" rel="noopener">Elixir</a>.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>We use <a href="https://hackage.haskell.org/package/containers-0.5.10.2/docs/Data-Map-Strict.html" target="_blank" rel="noopener">Data.Map.Strict</a> as the map implementation.<a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>We need to run <code>pruneCellsByFixed</code> and <code>pruneCellsByExclusives</code> repeatedly using <code>fixM</code> because an unsettled row can lead to wrong solutions. Imagine a row which just got a <code>9</code> fixed because of <code>pruneCellsByFixed</code>. If we don’t run the function again, the row may be left with one non-fixed cell with a <code>9</code>. When we run this row through <code>pruneCellsByExclusives</code>, it’ll consider the <code>9</code> in the non-fixed cell as a Single and fix it. This will lead to two <code>9</code>s in the same row, causing the solution to fail.<a href="#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p>Speedup: 116.7 / 100 * 49151 / 282.98 = 202.7<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>We use <a href="https://hackage.haskell.org/package/containers-0.6.0.1/docs/Data-Map-Strict.html" target="_blank" rel="noopener">Data.Map.Strict</a> as the map implementation.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>We need to run <code>pruneCellsByFixed</code> and <code>pruneCellsByExclusives</code> repeatedly using <code>fixM</code> because an unsettled row can lead to wrong solutions.</p>
+<p>Imagine a row which just got a <code>9</code> fixed because of <code>pruneCellsByFixed</code>. If we don’t run the function again, the row may be left with one non-fixed cell with a <code>9</code>. When we run this row through <code>pruneCellsByExclusives</code>, it’ll consider the <code>9</code> in the non-fixed cell as a Single and fix it. This will lead to two <code>9</code>s in the same row, causing the solution to fail.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Speedup calculation: 116.7 / 100 * 49151 / 282.98 = 202.7<a href="#fnref7" class="footnote-back">↩</a></p></li>
 </ol>
-</section><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-2/#comment-container">leave a comment</a>.</p><div class="author">
+</section><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-2/#comment-container">leave a comment</a>.</p><img src="https://anna.abhinavsarkar.net/piwik.php?idsite=1&amp;rec=1" style="border:0; display: none;" /><div class="author">
   <img src="https://nilenso.com/images/people/abhinav-200.png" style="width: 96px; height: 96;">
   <span style="position: absolute; padding: 32px 15px;">
     <i>Original post by <a href="http://twitter.com/abhin4v">Abhinav Sarkar</a> - check out <a href="https://abhinavsarkar.net">All posts on abhinavsarkar.net</a></i>

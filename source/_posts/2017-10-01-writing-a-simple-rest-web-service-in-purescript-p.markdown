@@ -6,9 +6,6 @@ author: Abhinav Sarkar
 post_url: "https://abhinavsarkar.net/posts/ps-simple-rest-service-2/"
 layout: post
 ---
-<div class="ert">
-A twenty-one minute read
-</div>
 <p>To recap, in the <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service/">first</a> part of this two-part tutorial, we built a simple JSON <a href="https://en.wikipedia.org/wiki/REST" target="_blank" rel="noopener">REST</a> web service in <a href="http://purescript.org" target="_blank" rel="noopener">PureScript</a> to create, update, get, list and delete users, backed by a Postgres database. In this part we’ll work on the rest of the features. <!--more--> The requirements are:</p>
 <ol type="1">
 <li>validation of API requests.</li>
@@ -617,7 +614,7 @@ X-Powered-By: Express
 <a class="sourceLine" id="cb29-8" data-line-number="8">[<span class="ex">2017-09-30</span> 16:03:46.635] DEBUG Deleted user 3</a>
 <a class="sourceLine" id="cb29-9" data-line-number="9">[<span class="ex">2017-09-30</span> 16:05:03.805] DEBUG HTTP: GET /v1/users</a></code></pre></div>
 <h2 id="conclusion" data-track-content data-content-name="conclusion" data-content-piece="ps-simple-rest-service-2">Conclusion<a href="#conclusion" class="ref-link"></a><a href="#top" class="top-link" title="Back to top"></a></h2>
-<p>In this tutorial we learned how to create a simple JSON REST web service written in PureScript with persistence, validation, configuration and logging. The complete code for this tutorial can be found in <a href="https://github.com/abhin4v/ps-simple-rest-service" target="_blank" rel="noopener">github</a>. This post can be discussed on <a href="https://www.reddit.com/r/purescript/comments/73gc9g/writing_a_simple_rest_service_in_purescript_part/" target="_blank" rel="noopener">r/purescript</a>.</p><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service-2/#comment-container">leave a comment</a>.</p><div class="author">
+<p>In this tutorial we learned how to create a simple JSON REST web service written in PureScript with persistence, validation, configuration and logging. The complete code for this tutorial can be found in <a href="https://github.com/abhin4v/ps-simple-rest-service" target="_blank" rel="noopener">github</a>. This post can be discussed on <a href="https://www.reddit.com/r/purescript/comments/73gc9g/writing_a_simple_rest_service_in_purescript_part/" target="_blank" rel="noopener">r/purescript</a>.</p><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service-2/#comment-container">leave a comment</a>.</p><img src="https://anna.abhinavsarkar.net/piwik.php?idsite=1&amp;rec=1" style="border:0; display: none;" /><div class="author">
   <img src="https://nilenso.com/images/people/abhinav-200.png" style="width: 96px; height: 96;">
   <span style="position: absolute; padding: 32px 15px;">
     <i>Original post by <a href="http://twitter.com/abhin4v">Abhinav Sarkar</a> - check out <a href="https://abhinavsarkar.net">All posts on abhinavsarkar.net</a></i>
