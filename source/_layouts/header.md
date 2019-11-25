@@ -2,7 +2,8 @@
 title: "{{ post_title }}"
 kind: article
 created_at: {{ post_date }}
-author: {{ author }}
-post_url: "{{ post_url }}"
+author: "{{ author }}"
+categories: {{ blog_categories }}
+tags: {{ blog_tags }}
 layout: post
 ---
