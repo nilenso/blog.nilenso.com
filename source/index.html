@@ -6,7 +6,7 @@ layout: default
   {% assign index = true %}
   {% for post in paginator.posts %}
   {% assign content = post.content %}
-    <article class="mb-25">
+    <article>
       {% include article.html %}
     </article>
   {% endfor %}
