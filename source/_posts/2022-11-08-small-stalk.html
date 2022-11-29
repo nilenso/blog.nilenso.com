@@ -27,8 +27,8 @@ layout: post
     appealed to me, and it seemed like something I could implement. In addition to this,
     a preview build of <a href="https://openjdk.org/jeps/425">Project Loom</a> was made available, and I wanted an
     opportunity to try out virtual threads. Over two months, this germ of an idea sprouted into the
-    <a href="https://github.com/jysandy/small-stalk">2400 line sapling it is today</a>. I referred only to the
-    <a href="https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.txt">beanstalkd</a> protocol, and didn’t
+    <a href="https://github.com/jysandy/small-stalk">2400 line sapling</a> it is today. I referred only to the
+    <a href="https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.txt">beanstalkd protocol</a>, and didn’t
     read any of the beanstalkd code. Here’s how it works:
 </p>
 
@@ -42,11 +42,10 @@ layout: post
 </p>
 
 <p class="justify">
-    This is the beanstalkd job lifecycle. Note that small-stalk does not implement
-    put with delay, release with delay or buried jobs.
+    Here's how jobs are processed in a system using small-stalk:
 </p>
 <div class="image-div">
-    <img src="/images/blog/small-stalk/beanstalk-diagram.png">
+    <img src="/images/blog/small-stalk/sequence-diagram.png">
 </div>
 
 <p class="justify">
@@ -92,7 +91,8 @@ layout: post
     thread is spawned to process commands sent by that client. The cheapness of virtual threads makes it possible to
     spawn a thread per connection, even if there are thousands of clients. Each connection thread reads commands, parses
     them and hands them off to the Queue Service for execution. The Queue Service uses the Persistence Service to
-    persist the queue state to disk.
+    persist the queue state to disk. The compactor thread regularly tells the Persistence Service to clean up data files
+    on disk to save space.
 </p>
 
 <h2>Virtual Threads</h2>
@@ -106,7 +106,8 @@ layout: post
 <h2>Connection Registry</h2>
 <p class="justify">
     When a client connects to small-stalk, it is assigned an ID and its socket is stored in a registry. Identifying
-    clients is necessary for some commands like reserve and delete.
+    clients is necessary for some commands like reserve and delete, since if a job is reserved, only the client that
+    reserved a job is allowed to delete it.
 </p>
 
 <h2>Queue Service</h2>
@@ -120,8 +121,8 @@ layout: post
 </ul>
 
 <p class="justify">
-    I knew that I wanted to use some kind of write-ahead log for persistence. This led me to the idea of the mutation
-    queue.
+    I knew that I wanted to use some kind of append-only log for persistence, since I thought this would be easier to
+    implement than complex data structures on disk. This led me to the idea of serializing all data changes in a queue.
 </p>
 
 <p class="justify">
