@@ -103,11 +103,19 @@ layout: post
     yet, and I used a preview build of the JDK in order to try them out in small-stalk.
 </p>
 
-<h2>Connection Registry</h2>
+<h2>Connection Registry and Connection Threads</h2>
 <p class="justify">
     When a client connects to small-stalk, it is assigned an ID and its socket is stored in a registry. Identifying
     clients is necessary for some commands like reserve and delete, since if a job is reserved, only the client that
     reserved a job is allowed to delete it.
+</p>
+
+<p class="justify">
+    A virtual thread is spawned for every incoming connection. These connection threads take care of reading and writing
+    data from and to the connection socket. The connection threads parse commands from text and hand them over to the
+    queue service for execution. small-stalk does not support pipelining, which means that clients are expected to read
+    the response of the previous command before sending a new command. Connection threads block until the Queue Service
+    is done executing a command, because the Queue Service exposes a synchronous API.
 </p>
 
 <h2>Queue Service</h2>
@@ -148,26 +156,27 @@ layout: post
 
 <h2>Timers and Blocking</h2>
 <p class="justify">
-    Since connection threads will need to block until a command is executed, mutations are enqueued along with promises
-    to which the mutation thread can deliver return values. reserve, in particular, needs to block until a ready job is
-    available. To facilitate this, if a reserve mutation is processed and no job is available, the reserve mutation
-    along with its return promise is enqueued into a separate queue for waiting reserves. When a new job is added, the
-    mutation thread checks the waiting reserves queue and fulfils a waiting reserve, if any.
+    Since the Queue Service needs to expose a synchronous API, mutations are enqueued along with promises
+    to which the mutation thread can deliver return values. <span class="monospaced">reserve</span>, in particular,
+    needs to block until a ready job is available. To facilitate this, if a <span class="monospaced">reserve</span>
+    mutation is processed and no job is available, the <span class="monospaced">reserve</span> mutation along with its
+    return promise is enqueued into a separate queue for waiting reserves. When a new job is added, the mutation thread
+    checks the waiting reserves queue and fulfils a waiting reserve, if any.
 </p>
 
 <p class="justify">
     The <span class="monospaced">reserve-with-timeout</span> command offers a timeout on the reserve blocking. To
-    implement this, a separate timer
-    thread to cancel the reserve is launched. This thread does not mutate the state directly, but instead enqueues a
-    special mutation indicating that the client’s timeout has expired. All state modification, including cleaning up and
-    cancelling the reserve, is done by the mutation thread.
+    implement this, a separate timer thread to cancel the reserve is launched. This thread does not mutate the state
+    directly, but instead enqueues a special mutation indicating that the client’s timeout has expired. All state
+    modification, including cleaning up and cancelling the reserve, is done by the mutation thread.
 </p>
 
 <p class="justify">
-    The time-to-reserve timeout works in a similar way. When enqueueing a job, the client can specify how long a worker
-    should be allowed to keep a job reserved. After this timeout expires, small-stalk will automatically release the
-    job. Again, a separate timer thread is launched when a client reserves a job. This thread enqueues a
-    time-to-reserve-expired mutation, which is then handled by the mutation thread.
+    The <span class="monospaced">time-to-reserve</span> timeout works in a similar way. When enqueueing a job, the
+    client can specify how long a worker should be allowed to keep a job reserved. After this timeout expires,
+    small-stalk will automatically release the job. Again, a separate timer thread is launched when a client reserves a
+    job. This thread enqueues a <span class="monospaced">time-to-reserve-expired</span> mutation, which is then handled
+    by the mutation thread.
 </p>
 
 <h2>Persistence Service</h2>
@@ -181,12 +190,11 @@ layout: post
 <p class="justify">
     To prevent disk usage from getting out of hand, every so often, mutations in the AOF file are processed and replaced
     with a snapshot of the Queue Service’s state. This is done by the <em>compactor thread</em>. To facilitate this
-    process
-    (called <em>checkpointing</em>), mutations are actually split over multiple AOF files. One file can hold at most a
-    configurable number of mutations. Once this limit is reached, a new file is created and new mutations are appended
-    there. The compactor thread reads mutations from all but the newest file (to which mutations are currently being
-    written), replays the mutations to build a state snapshot, then persists that snapshot to disk. Once this is done,
-    the older AOF files are deleted.
+    process (called <em>checkpointing</em>), mutations are actually split over multiple AOF files. One file can hold at
+    most a configurable number of mutations. Once this limit is reached, a new file is created and new mutations are
+    appended there. The compactor thread reads mutations from all but the newest file (to which mutations are currently
+    being written), replays the mutations to build a state snapshot, then persists that snapshot to disk. Once this is
+    done, the older AOF files are deleted.
 </p>
 
 <p class="justify">
