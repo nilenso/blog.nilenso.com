@@ -4,19 +4,21 @@
     </div>
     <div class="flex">
         <div class="w-3/12 pr-8" style="font-family: Poppins">
-            {% assign blog_author =  site.data.members | find: "name", page.author %}
+            {% assign blog_author = site.data.members | find: "name", page.author %}
             {% if blog_author %}
             <div class="border-t border-b border-black flex flex-col">
                 <div class="p-4 self-center">
-                    <div class="w-36 h-36 rounded-full bg-indigo-500">
-                    </div>
+                    <img src="{{ blog_author.image_url }}" class="w-36 h-36 rounded-full">
                 </div>
                 <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
                 {% if blog_author.medium %}
-                <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a href="{{ blog_author.medium }}">Medium</a></p>
+                <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a
+                        href="{{ blog_author.medium }}">Medium</a></p>
                 {% elsif blog_author.website %}
-                <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a href="{{ blog_author.website }}">here</a></p>
+                <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a
+                        href="{{ blog_author.website }}">here</a></p>
                 {% endif %}
+
             </div>
             {% endif %}
         </div>
@@ -28,12 +30,14 @@
                 <h1 class="text-5xl my-3">
                     <a href="{{ post.external-url }}">{% if site.titlecase %}{{ post.title | titlecase }} {% else %}{{
                         post.title
-                        }}{% endif %}</a> {% if post.external-url %}<a href="{{ root_url }}{{ post.url }}">&#8734;</a> {%
+                        }}{% endif %}</a> {% if post.external-url %}<a href="{{ root_url }}{{ post.url }}">&#8734;</a>
+                    {%
                     endif %}
                 </h1>
                 {% else %}
                 <h1 class="text-5xl my-3">
-                    <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{
+                    <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else
+                        %}{{
                         post.title }}{% endif %}</a>
                 </h1>
                 {% endif %}
