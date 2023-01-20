@@ -14,6 +14,8 @@
                 <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
                 {% if blog_author.medium %}
                 <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a href="{{ blog_author.medium }}">Medium</a></p>
+                {% elsif blog_author.website %}
+                <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a href="{{ blog_author.website }}">here</a></p>
                 {% endif %}
             </div>
             {% endif %}
