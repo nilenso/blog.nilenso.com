@@ -272,12 +272,14 @@ h2, h3, h4 {
 
 /* CSS for article and its content */
 
-article h1 {
-    line-height: 4.5rem !important;
-}
+@media (min-width: 768px) {
+    article h1 {
+        line-height: 4.5rem !important;
+    }
 
-article h4 {
-    line-height: 2.25rem;
+    article h4 {
+        line-height: 2.25rem;
+    }
 }
 
 /*article p, article li {*/

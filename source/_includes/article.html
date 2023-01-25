@@ -2,8 +2,8 @@
     <div class="mb-8">
         <a class="text-3xl" href="/"><img src="/images/back-arrow.svg"></a>
     </div>
-    <div class="flex">
-        <div class="w-3/12 pr-8" style="font-family: Poppins">
+    <div class="flex flex-col-reverse md:flex-row">
+        <div class="md:w-3/12 md:pr-8" style="font-family: Poppins">
             {% assign blog_author = site.data.members | find: "name", page.author %}
             {% if blog_author %}
             <div class="border-t border-b border-black flex flex-col">
@@ -13,7 +13,7 @@
                 <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
                 {% if blog_author.medium %}
                 <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a
-                        href="{{ blog_author.medium }}">Medium</a></p>
+                        href="{{ blog_author.mzedium }}">Medium</a></p>
                 {% elsif blog_author.website %}
                 <p class="text-xs" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a
                         href="{{ blog_author.website }}">here</a></p>
@@ -22,12 +22,12 @@
             </div>
             {% endif %}
         </div>
-        <div class="w-9/12">
+        <div class="md:w-9/12">
             {% unless page.no_header %}
             <header>
                 {% if index %}
                 {% if post.external-url %}
-                <h1 class="text-5xl my-3">
+                <h1 class="text-3xl md:text-5xl my-3">
                     <a href="{{ post.external-url }}">{% if site.titlecase %}{{ post.title | titlecase }} {% else %}{{
                         post.title
                         }}{% endif %}</a> {% if post.external-url %}<a href="{{ root_url }}{{ post.url }}">&#8734;</a>
@@ -35,7 +35,7 @@
                     endif %}
                 </h1>
                 {% else %}
-                <h1 class="text-5xl my-3">
+                <h1 class="text-3xl md:text-5xl my-3">
                     <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else
                         %}{{
                         post.title }}{% endif %}</a>
@@ -43,25 +43,25 @@
                 {% endif %}
                 {% else %}
                 {% if page.external-url %}
-                <h1 class="text-5xl my-3">
+                <h1 class="text-3xl md:text-5xl my-3">
                     <a href="{{ page.external-url }}">{% if site.titlecase %}{{ page.title | titlecase }} {% else %}{{
                         page.title
                         }}{% endif %}</a> &#8734;
                 </h1>
                 {% else %}
-                <h1 class="text-5xl my-3">
+                <h1 class="text-3xl md:text-5xl my-3">
                     {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
                 </h1>
                 {% endif %}
                 {% endif %}
                 {% unless page.meta == false %}
-                <p class="meta">
+                <span class="meta">
                     {% include post/date.html %}{{ time }}
                     {% if site.disqus_short_name and page.comments != false and post.comments != false and
                     site.disqus_show_comment_count == true %}
                     | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
                     {% endif %}
-                </p>
+                </span>
                 {% endunless %}
             </header>
             {% endunless %}
