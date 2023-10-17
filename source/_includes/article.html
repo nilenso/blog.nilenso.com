@@ -3,10 +3,10 @@
         <a class="text-3xl" href="/"><img src="/images/back-arrow.svg"></a>
     </div>
     <div class="flex flex-col-reverse md:flex-row">
-        <div class="md:w-3/12 md:pr-20" style="font-family: Poppins">
+        <div class="md:w-3/12 md:pr-20" style="font-family: Poppins; margin-top: 16px">
             {% assign blog_author = site.data.members | find: "name", page.author %}
             {% if blog_author %}
-            <div class="border-t border-b border-black flex flex-col pb-4">
+            <div class="text-center border-t border-b border-black flex flex-col pb-4">
                 <div class="p-4 w-36 h-36 self-center">
                     <img src="{{ blog_author.image_url }}" class="rounded-full">
                 </div>
@@ -24,10 +24,10 @@
         </div>
         <div class="md:w-8/12">
             {% unless page.no_header %}
-            <header>
+            <header class="mb-3">
                 {% if index %}
                 {% if post.external-url %}
-                <h1 class="text-3xl md:text-5xl mb-3">
+                <h1 class="text-3xl md:text-5xl">
                     <a href="{{ post.external-url }}">{% if site.titlecase %}{{ post.title | titlecase }} {% else %}{{
                         post.title
                         }}{% endif %}</a> {% if post.external-url %}<a href="{{ root_url }}{{ post.url }}">&#8734;</a>
@@ -35,7 +35,7 @@
                     endif %}
                 </h1>
                 {% else %}
-                <h1 class="text-3xl md:text-5xl mb-3">
+                <h1 class="text-3xl md:text-5xl">
                     <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else
                         %}{{
                         post.title }}{% endif %}</a>
@@ -43,13 +43,13 @@
                 {% endif %}
                 {% else %}
                 {% if page.external-url %}
-                <h1 class="text-3xl md:text-5xl mb-3">
+                <h1 class="text-3xl md:text-5xl">
                     <a href="{{ page.external-url }}">{% if site.titlecase %}{{ page.title | titlecase }} {% else %}{{
                         page.title
                         }}{% endif %}</a> &#8734;
                 </h1>
                 {% else %}
-                <h1 class="text-3xl md:text-5xl mb-3">
+                <h1 class="text-3xl md:text-5xl">
                     {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
                 </h1>
                 {% endif %}
