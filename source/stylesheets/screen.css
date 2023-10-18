@@ -26,12 +26,13 @@ html {
     scroll-behavior: smooth;
     --nilenso-pink: #FF3D84;
     --nilenso-black: #000000;
-    --grey: #4B5563;
-    --nilenso-gray-2: #BDBDBD;
+    --grey: #828282;
+    --nilenso-gray-2: #0c0a0a;
 }
 
 p, p li, article {
-    font-family: Aleo, serif;
+    font-family: Crimson Pro, serif;
+    font-size: 22px;
 }
 
 blockquote {
@@ -530,5 +531,9 @@ article .pre-quote {
     .post-tile-large .post-author {
         line-height: 1.2;
     }
+}
 
+.meta {
+    color: var(--grey);
+    margin-bottom: 10px;
 }
