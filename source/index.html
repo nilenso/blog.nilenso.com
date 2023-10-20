@@ -7,9 +7,6 @@ layout: default
           the nilenso blog.
           <span class ="text-white font-light text-xl leading-snug md:text-4xl lg:lg:text-[2.8rem] lg:leading-snug md:leading-tight">
               ensonians write about work and life 
-              <a href="{{ site.subscribe_rss }}" title="subscribe via RSS">
-                <img style="display: inline;" src="/images/rss.png"></img>
-              </a>
           </span>
       </h2>
     </div>
@@ -32,6 +29,7 @@ layout: default
               {{ metadata.description }}
             </div>
           {% endif %}
+          </a>
           <div class="post-author border-t-2">
             <div class="flex flex-row">
                 {% assign blog_author = site.data.members | find: "name", post.author %}
@@ -42,30 +40,33 @@ layout: default
                   <div class="p-2 flex flex-col place-content-evenly">
                     <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
                     {% if blog_author.medium %}
-                      <p class="text-xs text-black font-light">Read more by {{ blog_author.short_name }} on <a class="text-pink-500" href="{{ blog_author.medium }}">Medium</a></p>
+                      <p class="text-xs text-black font-light" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a class="text-pink-500" href="{{ blog_author.medium }}">Medium</a></p>
                     {% elsif blog_author.website %}
-                      <p class="text-xs text-black font-light">Read more by {{ blog_author.short_name }} <a class="text-pink-500" href="{{ blog_author.website }}">here</a></p>
+                      <p class="text-xs text-black font-light" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a class="text-pink-500" href="{{ blog_author.website }}">here</a></p>
                     {% endif %}
                   </div>
                 {% else %}
-                  <div class="p-2">
-                    <img src="/images/favicon/favicon-32x32.png" class="w-12 h-12 rounded-full">
-                  </div>
                   <div class="p-2 flex flex-col place-content-evenly">
-                    <a href="{{ post.url }}">{{ post.author }}</a>
+                    <a class="text-sm" href="{{ post.url }}">{{ post.author }}</a>
                   </div>
                 {% endif %}
             </div>
           </div>
-        </a>
       </div>
   
 
   {% endfor %}
-</section>
-  <div class="flex pt-2 pb-2">
-    browse our blog archives<a class="underline ml-1" href="/blog/archives">here</a>
+  <div class="bg-black text-white font-medium flex flex-col">
+    <a class="archives-anchor" href="/blog/archives">
+      <h2 class="text-3xl">Browse the<br>archives →</h2>
+    </a>
+
+    <a class="archives-anchor" href="{{ site.subscribe_rss }}" title="subscribe via RSS">
+      <img class="archives-anchor-rss" src="/images/rss.svg"></img>
+      Follow us on RSS
+    </a>
   </div>
+</section>
 
 <!-- <aside class="sidebar">
   {% if site.blog_index_asides.size %}
