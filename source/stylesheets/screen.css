@@ -36,8 +36,15 @@ p, p li, article {
 }
 
 blockquote {
-    font-style: italic;
-    margin-left: 2em;
+    border-left: 4px solid #ddd;
+    padding: 0 1em;
+    margin-bottom: 1em;
+    color: #767676;
+    display: inline-block;
+}
+
+blockquote p {
+    margin-bottom: 0 !important;
 }
 
 .monospaced {
@@ -53,6 +60,11 @@ h1 {
 h2, h3, h4 {
     font-family: Poppins, sans-serif;
     font-weight: 500;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #menuToggle {

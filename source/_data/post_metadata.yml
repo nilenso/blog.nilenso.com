@@ -4,7 +4,7 @@
 
 - title: "Training, the Simple way"
   image: https://cdn-images-1.medium.com/max/1024/0*glZZfA4Axh6f9MeJ
-  description: "We experimented with several training methods: a short video combined with in-person support works best for us. One year ago (in October 2018), we piloted the Simple app in five public health facilities in Punjab, India. The original process of teaching healthcare workers to use Simple in pilot hospitals involved in-person trainings from members of our team. We flew from Bangalore to Bathinda, spent a week visiting one facility each day, and taught healthcare workers how to use the app. We’ve come a long way since then."
+  description: "One year ago (in October 2018), we piloted the Simple app in five public health facilities in Punjab, India. The original process of teaching healthcare workers to use Simple in pilot hospitals involved in-person trainings over a week from members of our team. We’ve come a long way since then."
 
 - title: "Offline-first apps are appropriate for many clinical environments"
   image: https://cdn-images-1.medium.com/max/1024/1*UiW-BI_lk5F-h9jpCs8y0w.jpeg
@@ -12,13 +12,13 @@
 
 - title: "India has a Three-Body Problem"
   image: https://cdn-images-1.medium.com/max/1024/1*rhPF6BaixRYWWK67q_4JYw.jpeg
-  description: When I moved to Bangalore six years ago, I had no interest in India’s garbage management problem. I moved here to build a software company, not to muck about with garbage bins. But every time I would fly between the subcontinent and the Americas, I would find relief on my home continent and exhaustion on my continent of immigration. Living in a giant garbage heap is mentally taxing. Every moment spent outdoors is either an angsty mental rundown of how I might help, complete with acute feelings of powerlessness, or searching for someone to blame (my brain’s lazy personal favourite is a generic and completely unhelpful “the middle class”).
+  description: When I moved to Bangalore six years ago, I had no interest in India’s garbage management problem. I moved here to build a software company, not to muck about with garbage bins. But every time I would fly between the subcontinent and the Americas, I would find relief on my home continent and exhaustion on my continent of immigration.
 
 - title: "A Software Analogy"
   description: A reflection on how software is a conceptual mapping built on a pit of analogies.
 
 - title: "small-stalk"
-  image: /images/blog/small-stalk/architecture.png
+  description: Implementing the beanstalkd protocol in Clojure. Virtual threads courtesy of Project Loom.
 
 - title: "Everyday Recipes for Cooking Noobs"
   image: /images/blog/everyday-recipes-for-cooking-noobs/french-toast.jpg
