@@ -475,7 +475,8 @@ article .pre-quote {
     font-size: 0.8em;
     color: var(--nilenso-pink);
     margin-top: auto;
-    max-height: 25%;
+    height: 66px;
+    display: inherit;
 }
 
 .post-tile-large .post-title {
@@ -484,20 +485,14 @@ article .pre-quote {
 }
 
 .post-tile .post-anchor {
-    max-height: 75%;
+    height: calc(100% - 70px);
     overflow: clip;
-}
-
-.post-tile-large .post-anchor {
-    max-height: 85%;
-    overflow: clip;
+    text-overflow: ellipsis;
 }
 
 .post-tile .post-description {
     font-size: 0.9em;
     font-weight: 400;
-    max-height: 65%;
-    overflow: clip;
 }
 
 .archives-anchor {
@@ -533,10 +528,6 @@ article .pre-quote {
     .post-tile-large .post-title {
         line-height: 1.2;
         font-size: 1em;
-    }
-
-    .post-tile-large .post-img {
-        max-height: 70%;
     }
 
     .post-tile-large .post-author {
