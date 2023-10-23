@@ -420,6 +420,16 @@ article .pre-quote {
 
 .pagination-url {
     color: var(--nilenso-pink);
+    max-width: 33%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4rem;
+}
+
+.pagination-url-left::before {
+    content: "«";
+    float: right;
 }
 
 .author {
@@ -537,4 +547,9 @@ article .pre-quote {
 .meta {
     color: var(--grey);
     margin-bottom: 10px;
+}
+
+.entry-content {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
 }
