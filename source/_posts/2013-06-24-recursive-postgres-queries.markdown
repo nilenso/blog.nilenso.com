@@ -3,7 +3,7 @@ title: "Recursive Postgres Queries"
 kind: article
 created_at: 2013-06-24 03:00:00 UTC
 author: Timothy Andrew
-post_url: "/blog/2013/0ostgres/queries/24/recursive-postgres-queries/"
+post_url: "/blog/2013/06/24/recursive-postgres-queries/"
 layout: post
 ---
 <h3>Introduction</h3>
