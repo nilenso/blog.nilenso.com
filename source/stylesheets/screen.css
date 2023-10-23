@@ -393,6 +393,12 @@ article p {
     margin-bottom: 1.5rem;
 }
 
+article .separator {
+  content: "\2022 ";
+  padding: 0;
+  display: inline-block;
+}
+
 article .pre-quote {
     background: #fdf6e3 url('/images/noise.png?1433967138') top left;
     -moz-border-radius: 0.4em;
