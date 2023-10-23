@@ -17,8 +17,8 @@
 - title: "A Software Analogy"
   description: A reflection on how software is a conceptual mapping built on a pit of analogies.
 
-- title: "small-stalk"
-  description: Implementing the beanstalkd protocol in Clojure. Virtual threads courtesy of Project Loom.
+- title: "small-stalk: Beanstalkd in Clojure"
+  description: When someone told me about beanstalkd, the seed of an idea was planted in my mind.
 
 - title: "Everyday Recipes for Cooking Noobs"
   image: /images/blog/everyday-recipes-for-cooking-noobs/french-toast.jpg
