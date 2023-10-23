@@ -1,7 +1,4 @@
 <div class="flex flex-col">
-    <div class="mb-8">
-        <a class="text-3xl" href="/"><img src="/images/back-arrow.svg"></a>
-    </div>
     <div class="flex flex-col-reverse md:flex-row">
         <div class="md:w-3/12 md:pr-20" style="font-family: Poppins; margin-top: 16px">
             {% assign blog_author = site.data.members | find: "name", page.author %}
@@ -12,19 +9,22 @@
                 </div>
                 <a class="text-sm font-medium" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
                 {% if blog_author.medium %}
-                <p class="text-xs m-0" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a
+                <p class="text-xs m-0 mt-1" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a
                         href="{{ blog_author.medium }}">Medium</a></p>
                 {% elsif blog_author.website %}
-                <p class="text-xs m-0" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a
+                <p class="text-xs m-0 mt-1" style="font-family: Poppins">Read more by {{ blog_author.short_name }} <a
                         href="{{ blog_author.website }}">here</a></p>
                 {% endif %}
-
+            </div>
+            {% else %}
+            <div class="text-center border-t border-b border-black flex flex-col p-4">
+                <span class="text-sm font-medium">{{ page.author }}</span>
             </div>
             {% endif %}
         </div>
-        <div class="md:w-8/12">
+        <div class="md:w-8/12 mb-6">
             {% unless page.no_header %}
-            <header class="mb-3">
+            <header class="mb-7">
                 {% if index %}
                 {% if post.external-url %}
                 <h1 class="text-3xl md:text-5xl">
