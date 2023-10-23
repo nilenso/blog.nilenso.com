@@ -10,10 +10,9 @@ layout: post
 
 <p>It works pretty well though. Here are a few screenshots:</p>
 
-<p><img src="https://sriharisriraman.in/images/tito-images/snap.jpg" alt="snap" />
-<img src="https://sriharisriraman.in/images/tito-images/apcan.jpg" alt="apply canvas" />
-<img src="https://sriharisriraman.in/images/tito-images/blur.jpg" alt="blur" />
-<img src="https://sriharisriraman.in/images/tito-images/desktop.jpg" alt="desktop" />
+<p><img src="/images/blog/gimp-tito/snap.jpg" alt="snap" />
+<img src="/images/blog/gimp-tito/apcan.jpg" alt="apply canvas" />
+<img src="/images/blog/gimp-tito/desktop.jpg" alt="desktop" />
 More screenshots <a href="https://github.com/ssrihari/gimp-tito/wiki/About-gimp-tito#v-screenshots">here</a>.</p>
 
 <h3>Currently implemented features</h3>
