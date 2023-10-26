@@ -1,6 +1,6 @@
 @media (min-width: 768px) {
-    .md\:max-w-\[1092px\] {
-        max-width: 1092px;
+    .md\:max-w-\[1366px\] {
+        max-width: 1366px;
     }
 }
 
@@ -10,15 +10,49 @@
     }
 }
 
-.text-pink-500 {
-    --tw-text-opacity: 1;
+.text-pink-500,
+.hover\:text-pink-500:hover,
+.hover\:text-pink-300:hover,
+.hover\:border-pink-500:hover {
     color: var(--nilenso-pink);
 }
 
+.bg-pink-500 {
+    background-color: var(--nilenso-pink);
+}
+
 html {
+    font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     --nilenso-pink: #FF3D84;
-    --grey: #4B5563;
+    --nilenso-black: #000000;
+    --grey: #828282;
+    --nilenso-gray-2: #0c0a0a;
+}
+
+p, p li, article {
+    font-family: Crimson Pro, serif;
+    font-size: 22px;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 2em;
+}
+
+.monospaced {
+    font-size: 0.9em;
+}
+
+h1 {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    color: var(--nilenso-black);
+}
+
+h2, h3, h4 {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
 }
 
 #menuToggle {
@@ -239,6 +273,22 @@ html {
 
 /* CSS for article and its content */
 
+@media (min-width: 768px) {
+    article h1 {
+        line-height: 4.5rem !important;
+    }
+
+    article h4 {
+        line-height: 2.25rem;
+    }
+}
+
+article {
+    font-size: 1.3125rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+}
+
 article figure, article iframe {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -316,19 +366,19 @@ p pre code,li pre code {
 }
 
 article h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--grey);
     margin-bottom: 1.2rem;
 }
 
 article h4 {
-    color: var(--nilenso-pink);
-    font-size: 1.25rem;
+    color: var(--nilenso-black);
+    font-size: 1.5rem;
     margin-bottom: 1.2rem;
 }
 
 article p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
 }
 
 article .pre-quote {
@@ -364,6 +414,7 @@ article .pre-quote {
 
 .blog-year {
     width: 7rem;
+    margin-bottom: 0px;
 }
 
 .pagination-url {
@@ -372,4 +423,117 @@ article .pre-quote {
 
 .author {
     display: flex;
+}
+
+/* CSS for index page */
+#index-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#index-page-grid > * {
+    grid-area: span 1 / span 1;
+}
+
+#index-page-grid .post-tile-large {
+    grid-area: span 2 / span 2;
+}
+
+.post-tile-normal {
+    justify-self: stretch;
+    max-height: 300px;
+    min-width: 270px;
+    overflow: hidden;
+}
+
+.post-tile .post-title {
+    margin-top: 10px;
+    font-size: 1em;
+    max-height: 35%;
+    line-height: 1.2;
+}
+
+.post-tile .post-img {
+    margin-right: 10px;
+    max-height: 50%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.post-tile:hover {
+    background-color: #d7d7d7;
+    box-shadow: 0 0 0 2px #d7d7d7;
+    cursor: pointer;
+}
+
+.post-tile .post-author {
+    font-size: 0.8em;
+    color: var(--nilenso-pink);
+    margin-top: auto;
+    max-height: 25%;
+}
+
+.post-tile-large .post-title {
+    margin-top: 10px;
+    font-size: 1.4em;
+}
+
+.post-tile .post-anchor {
+    max-height: 75%;
+    overflow: clip;
+}
+
+.post-tile-large .post-anchor {
+    max-height: 85%;
+    overflow: clip;
+}
+
+.post-tile .post-description {
+    font-size: 0.9em;
+    font-weight: 400;
+    max-height: 65%;
+    overflow: clip;
+}
+
+
+@media (max-width: 600px) {
+    #index-page-grid .post-tile-large {
+        grid-area: span 1 / span 1;
+    }
+
+    .post-tile-large .post-description {
+        display: none;
+    }
+
+    .post-title {
+        line-height: 1.2;
+        font-size: 1em;
+    }
+
+    .post-author {
+        line-height: 1.2;
+    }
+
+    .post-tile-large .post-title {
+        line-height: 1.2;
+        font-size: 1em;
+    }
+
+    .post-tile-large .post-img {
+        max-height: 70%;
+    }
+
+    .post-tile-large .post-author {
+        line-height: 1.2;
+    }
+}
+
+.meta {
+    color: var(--grey);
+    margin-bottom: 10px;
 }

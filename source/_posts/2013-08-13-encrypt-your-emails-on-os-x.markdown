@@ -3,19 +3,19 @@ title: "Encrypt Your Emails on OS X"
 kind: article
 created_at: 2013-08-13 17:44:00 UTC
 author: Timothy Andrew
-post_url: "http://blog.timothyandrew.net/blog/2013/08/13/encrypt-your-emails-on-os-x/"
+post_url: "https://blog.timothyandrew.net/blog/2013/08/13/encrypt-your-emails-on-os-x/"
 layout: post
 ---
 <h3>Introduction</h3>
 
-<p>Now that we know that the American government is <a href="http://en.wikipedia.org/wiki/PRISM_(surveillance_program)">probably reading all our email</a>, we should be encrypting all sensitive emails that we send.
+<p>Now that we know that the American government is <a href="https://en.wikipedia.org/wiki/PRISM_(surveillance_program)">probably reading all our email</a>, we should be encrypting all sensitive emails that we send.
 At the very least, we should be signing all the email that we send, so that it can&#8217;t be changed en route.</p>
 
-<p>This guide assumes that you&#8217;re using a <a href="http://en.wikipedia.org/wiki/Mail_(application)">Mail.app</a> on a Mac, although similar tools exist for Windows and Linux.</p>
+<p>This guide assumes that you&#8217;re using a <a href="https://en.wikipedia.org/wiki/Mail_(application)">Mail.app</a> on a Mac, although similar tools exist for Windows and Linux.</p>
 
 <p>First, for those who are unfamiliar with this, here&#8217;s an (oversimplified) explanation of how encryption works.</p>
 
-<p>A <a href="http://en.wikipedia.org/wiki/Cryptographic_key">key</a> is a randomly generated string of characters which is used to encrypt/decrypt your data.
+<p>A <a href="https://en.wikipedia.org/wiki/Cryptographic_key">key</a> is a randomly generated string of characters which is used to encrypt/decrypt your data.
 Every user has a pair of keys. His <em>public key</em> can be freely shared online. His <em>private key</em> is known only to him, and must be safely stored.</p>
 
 <p>Let&#8217;s consider the classic Alice and Bob example.</p>
@@ -58,7 +58,7 @@ I use <a href="www.haystacksoftware.com/arq/">Arq</a> to backup my private keys 
 <p>To do this, open <em>GPG Keychain Access</em>, and press <em>⌘F</em> to launch the Find dialog. Enter the email address of the person you want to email.
 Once the search completes, you can import the public key for the email you entered.</p>
 
-<p>You can also do this manually using a key server like http://pgp.mit.edu/</p>
+<p>You can also do this manually using a key server like https://pgp.mit.edu/</p>
 
 <h3>Sending an Encrypted Email</h3>
 
@@ -67,7 +67,7 @@ If you set up your keys right, you should see a green <code>OpenPGP</code> on th
 
 <p>Once you fill in the <em>To:</em> field with an email address you know the public key for, the little padlock icon on the right should become clickable. Click it.</p>
 
-<p><img src="http://blog.timothyandrew.net/images/encryption/2.png" alt="Padlock Icon" /></p>
+<p><img src="https://blog.timothyandrew.net/images/encryption/2.png" alt="Padlock Icon" /></p>
 
 <p>If the padlock is closed, that means that the email you&#8217;re about to send is encrypted.</p>
 
@@ -75,7 +75,7 @@ If you set up your keys right, you should see a green <code>OpenPGP</code> on th
 
 <p>If someone else were to try and view the email, this is what they would see:</p>
 
-<p><img src="http://blog.timothyandrew.net/images/encryption/3.png" alt="Un-Decrypted View" /></p>
+<p><img src="https://blog.timothyandrew.net/images/encryption/3.png" alt="Un-Decrypted View" /></p>
 
 <h3>Receiving an Encrypted Email</h3>
 
@@ -84,7 +84,7 @@ GPG Suite will automatically decrypt the email and show it to you. It&#8217;s se
 
 <p>In fact, here&#8217;s what the email from the previous screenshot would look like in Mail.app:</p>
 
-<p><img src="http://blog.timothyandrew.net/images/encryption/4.png" alt="Decrypted Email" /></p>
+<p><img src="https://blog.timothyandrew.net/images/encryption/4.png" alt="Decrypted Email" /></p>
 
 <h3>Digital Signatures</h3>
 
@@ -92,9 +92,9 @@ GPG Suite will automatically decrypt the email and show it to you. It&#8217;s se
 
 <p>However, there is an easy way to avoid MITM attacks (man-in-the-middle attacks, where a third-party could modify the text of the email before it reaches you).</p>
 
-<p>Simply <a href="http://en.wikipedia.org/wiki/Digital_signature">(digitally) sign</a> every email you send. GPG Suite makes this very easy. Just make sure the button next to the padlock is clicked:</p>
+<p>Simply <a href="https://en.wikipedia.org/wiki/Digital_signature">(digitally) sign</a> every email you send. GPG Suite makes this very easy. Just make sure the button next to the padlock is clicked:</p>
 
-<p><img src="http://blog.timothyandrew.net/images/encryption/5.png" alt="Signature Button" /></p>
+<p><img src="https://blog.timothyandrew.net/images/encryption/5.png" alt="Signature Button" /></p>
 
 <p>Here&#8217;s what this does:</p>
 
@@ -108,9 +108,4 @@ GPG Suite will automatically decrypt the email and show it to you. It&#8217;s se
 
 
 <p>An email client that supports digital signatures (GPG Suite included) will complain if this verification fails.</p>
-<div class="author">
-  <img src="http://nilenso.com/images/alumni/tim.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&#39;s Blog</a></i>
-  </span>
-</div>
+

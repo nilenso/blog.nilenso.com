@@ -3,7 +3,7 @@ title: "Using RoboGuice to Inject Views Into a POJO"
 kind: article
 created_at: 2013-07-10 05:20:00 UTC
 author: Timothy Andrew
-post_url: "http://blog.timothyandrew.net/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/"
+post_url: "https://blog.timothyandrew.net/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/"
 layout: post
 ---
 <p><a href="https://github.com/roboguice/roboguice">RoboGuice</a> is great. It lets you get rid of code like:</p>
@@ -48,7 +48,7 @@ layout: post
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Now we&#8217;re rewriting <a href="http://github.com/nilenso/ashoka-survey-mobile">ashoka-survey-mobile</a> as a layered <a href="(http://github.com/nilenso/ashoka-survey-mobile-native">native app</a>).
+<p>Now we&#8217;re rewriting <a href="https://github.com/nilenso/ashoka-survey-mobile">ashoka-survey-mobile</a> as a layered <a href="(https://github.com/nilenso/ashoka-survey-mobile-native">native app</a>).
 We have a LoginView (POJO) which needs references to views present on-screen. Normally, we would instantiate the POJO in the activity, and pass it all the views it needs.</p>
 
 <p>But can we do this with RoboGuice? We can&#8217;t really use <code>@InjectView</code> in a POJO. It needs an Activity context.
@@ -101,9 +101,4 @@ The next best thing is to inject the activity into the POJO (RoboGuice is smart 
 
 
 <p>And then your POJO can manipulate the views that are on-screen as required.</p>
-<div class="author">
-  <img src="http://nilenso.com/images/alumni/tim.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&#39;s Blog</a></i>
-  </span>
-</div>
+

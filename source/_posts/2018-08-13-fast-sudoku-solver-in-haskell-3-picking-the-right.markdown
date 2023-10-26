@@ -877,7 +877,7 @@ $ cat sudoku17.txt | time stack exec sudoku &gt; /dev/null
 <span id="cb27-21"><a href="#cb27-21"></a>    prepend <span class="op">~</span>[y] ys <span class="ot">=</span> y<span class="op">:</span>ys</span></code></pre></div>
 <p>Let’s zoom into lines 6–14. Here, we do a fold with a nested fold over the non-fixed cells of the given block to accumulate the mapping from the digits to the indices of the cells they occur in. We use a <a href="https://hackage.haskell.org/package/containers-0.6.0.1/docs/Data-Map-Strict.html" target="_blank" rel="noopener"><code>Data.Map.Strict</code></a> map as the accumulator. If a digit is not present in the map as a key then we add a singleton list containing the corresponding cell index as the value. If the digit is already present in the map then we prepend the cell index to the list of indices for the digit. So we end up “mutating” the map repeatedly.</p>
 <p>Of course, it’s not actual mutation because the map data structure we are using is immutable. Each change to the map instance creates a new copy with the addition, which we thread through the fold operation, and we get the final copy at the end. This may be the reason of the slowness in this section of the code.</p>
-<p>What if, instead of using an immutable data structure for this, we used a mutable one? But how can we do that when we know that Haskell is a pure language? Purity means that all code must be <a href="https://en.wikipedia.org/wiki/Referential_transparency" target="_blank" rel="noopener">referentially transparent</a>, and mutability certainly isn’t. It turns out, there is an escape hatch to mutability in Haskell. Quoting the relevant section from the book <a href="http://book.realworldhaskell.org/read/advanced-library-design-building-a-bloom-filter.html#id680273" target="_blank" rel="noopener">Real World Haskell</a>:</p>
+<p>What if, instead of using an immutable data structure for this, we used a mutable one? But how can we do that when we know that Haskell is a pure language? Purity means that all code must be <a href="https://en.wikipedia.org/wiki/Referential_transparency" target="_blank" rel="noopener">referentially transparent</a>, and mutability certainly isn’t. It turns out, there is an escape hatch to mutability in Haskell. Quoting the relevant section from the book <a href="https://book.realworldhaskell.org/read/advanced-library-design-building-a-bloom-filter.html#id680273" target="_blank" rel="noopener">Real World Haskell</a>:</p>
 <blockquote>
 <p>Haskell provides a special monad, named <code>ST</code>, which lets us work safely with mutable state. Compared to the <code>State</code> monad, it has some powerful added capabilities.</p>
 <ul>
@@ -1210,9 +1210,4 @@ $ cat sudoku17.txt | time stack exec sudoku &gt; /dev/null
 <li id="fn10" role="doc-endnote"><p>The code for the mutable vector based implementation can be found <a href="https://code.abhinavsarkar.net/abhin4v/hasdoku/src/commit/4a9a1531d5780e7abc7d5ab2a26dccbf34382031" target="_blank" rel="noopener">here</a>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/fast-sudoku-solver-in-haskell-3/#comment-container">leave a comment</a>.</p><img src="https://anna.abhinavsarkar.net/piwik.php?idsite=1&amp;rec=1" style="border:0; display: none;" />
-<div class="author">
-  <img src="https://nilenso.com/images/alumni/abhinav.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/abhin4v">Abhinav Sarkar</a> - check out <a href="https://abhinavsarkar.net">All posts on abhinavsarkar.net</a></i>
-  </span>
-</div>
+

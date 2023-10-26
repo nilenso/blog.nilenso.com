@@ -12,9 +12,9 @@ As we set out to develop the native android app for [Ashoka Survey](https://thes
 - [Robolectric](https://github.com/robolectric/robolectric)
 - [RoboGuice](https://github.com/roboguice/roboguice)
 - [Mockito](https://code.google.com/p/mockito)
-- [FEST](http://fest.easytesting.org/)
+- [FEST](https://fest.easytesting.org/)
 
-Maven dictated the basic skeleton to work out from. If you are not aware of dependency injection, do check out an [earlier post by us on RoboGuice](http://planet.nilenso.com/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/). We used [Android Async Http library](https://github.com/loopj/android-async-http) to deal with servicing network requests.
+Maven dictated the basic skeleton to work out from. If you are not aware of dependency injection, do check out an [earlier post by us on RoboGuice](https://planet.nilenso.com/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/). We used [Android Async Http library](https://github.com/loopj/android-async-http) to deal with servicing network requests.
 
 Once we had the project setup sorted out, we ventured into getting out a basic login screen.
 
@@ -109,4 +109,4 @@ The mock is setup and verified to see if the contract defined by `ILoginView` in
 
 We wanted to give MVP a go because android applications did not appear to have patterns set in stone. It still isn't clear if MVP would pan out well with complex views or is it justified to break view logic entirely out of `Activity`. This is very much a work in progress.
 
-![Login Screen](http://cl.ly/image/131M1t0b1K2n/2013-09-09%2009.47.00.png)
+![Login Screen](https://cl.ly/image/131M1t0b1K2n/2013-09-09%2009.47.00.png)

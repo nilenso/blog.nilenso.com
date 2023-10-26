@@ -6,7 +6,7 @@ author: Abhinav Sarkar
 post_url: "https://abhinavsarkar.net/posts/ps-simple-rest-service/"
 layout: post
 ---
-<p>At <a href="https://nilenso.com" target="_blank" rel="noopener">Nilenso</a>, we’ve been working with a client who has chosen <a href="http://purescript.org" target="_blank" rel="noopener">PureScript</a> as their primary programming language. Since I couldn’t find any canonical documentation on writing a web service in PureScript, I thought I’d jot down the approach that we took.</p>
+<p>At <a href="https://nilenso.com" target="_blank" rel="noopener">Nilenso</a>, we’ve been working with a client who has chosen <a href="https://purescript.org" target="_blank" rel="noopener">PureScript</a> as their primary programming language. Since I couldn’t find any canonical documentation on writing a web service in PureScript, I thought I’d jot down the approach that we took.</p>
 <p>The aim of this two-part tutorial is to create a simple JSON <a href="https://en.wikipedia.org/wiki/REST" target="_blank" rel="noopener">REST</a> web service written in PureScript, to run on a node.js server. <!--more--> This assumes that you have basic proficiency with PureScript. We have the following requirements:</p>
 <ol type="1">
 <li>persisting users into a Postgres database.</li>
@@ -21,7 +21,7 @@ layout: post
 <p>We start with installing PureScript and the required tools. This assumes that we have <a href="https://nodejs.org" target="_blank" rel="noopener">node</a> and <a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a> installed on our machine.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a>$ <span class="fu">mkdir</span> -p ~/.local/</span>
 <span id="cb1-2"><a href="#cb1-2"></a>$ <span class="ex">npm</span> install -g purescript pulp bower --prefix ~/.local/</span></code></pre></div>
-<p><a href="https://github.com/purescript-contrib/pulp" target="_blank" rel="noopener">Pulp</a> is a build tool for PureScript projects and <a href="http://bower.io" target="_blank" rel="noopener">bower</a> is a package manager used to get PureScript libraries. We’ll have to add <code>~/.local/bin</code> in our <code>$PATH</code> (if it is not already added) to access the binaries installed.</p>
+<p><a href="https://github.com/purescript-contrib/pulp" target="_blank" rel="noopener">Pulp</a> is a build tool for PureScript projects and <a href="https://bower.io" target="_blank" rel="noopener">bower</a> is a package manager used to get PureScript libraries. We’ll have to add <code>~/.local/bin</code> in our <code>$PATH</code> (if it is not already added) to access the binaries installed.</p>
 <p>Let’s create a directory for our project and make Pulp initialize it:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a>$ <span class="fu">mkdir</span> ps-simple-rest-service</span>
 <span id="cb2-2"><a href="#cb2-2"></a>$ <span class="bu">cd</span> ps-simple-rest-service</span>
@@ -332,7 +332,7 @@ Indexes:
 <span id="cb15-2"><a href="#cb15-2"></a><span class="ex">*</span> Building project in ps-simple-rest-service</span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="ex">*</span> Build successful.</span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="ex">Server</span> listening on :4000</span></code></pre></div>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1 # should return the user we created earlier
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1 # should return the user we created earlier
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 25
@@ -345,7 +345,7 @@ X-Powered-By: Express
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;Abhinav&quot;
 }</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/s
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/s
 HTTP/1.1 422 Unprocessable Entity
 Connection: keep-alive
 Content-Length: 38
@@ -357,7 +357,7 @@ X-Powered-By: Express
 {
     &quot;error&quot;: &quot;User ID must be an integer: s&quot;
 }</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/2
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/2
 HTTP/1.1 404 Not Found
 Connection: keep-alive
 Content-Length: 36
@@ -400,7 +400,7 @@ X-Powered-By: Express
 <span id="cb20-15"><a href="#cb20-15"></a>        <span class="kw">else</span> respond <span class="dv">404</span> { <span class="fu">error</span><span class="op">:</span> <span class="st">&quot;User not found with id: &quot;</span> <span class="op">&lt;&gt;</span> sUserId }</span></code></pre></div>
 <p>After the usual validations on the route param, <code>deleteUser</code> tries to find the user by the given user ID and if found, it deletes the user. Both the persistence related functions are run inside a single SQL transaction using <code>PG.withTransaction</code> function. <code>deleteUser</code> return 404 status if the user is not found, else it returns 204 status.</p>
 <p>Let’s try it out:</p>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 25
@@ -413,12 +413,12 @@ X-Powered-By: Express
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;Abhinav&quot;
 }</code></pre>
-<pre class="http"><code>$ http DELETE http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http DELETE https://localhost:4000/v1/user/1
 HTTP/1.1 204 No Content
 Connection: keep-alive
 Date: Mon, 11 Sep 2017 05:10:56 GMT
 X-Powered-By: Express</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1
 HTTP/1.1 404 Not Found
 Connection: keep-alive
 Content-Length: 37
@@ -430,7 +430,7 @@ X-Powered-By: Express
 {
     &quot;error&quot;: &quot;User not found with id: 1&quot;
 }</code></pre>
-<pre class="http"><code>$ http DELETE http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http DELETE https://localhost:4000/v1/user/1
 HTTP/1.1 404 Not Found
 Connection: keep-alive
 Content-Length: 37
@@ -501,7 +501,7 @@ X-Powered-By: Express
 <span id="cb29-19"><a href="#cb29-19"></a>          respondNoContent <span class="dv">201</span></span></code></pre></div>
 <p><code>createUser</code> calls <a href="https://pursuit.purescript.org/packages/purescript-express/0.5.2/docs/Node.Express.Request#v:getBody" target="_blank" rel="noopener"><code>getBody</code></a> which has type signature <code>forall e a. (Decode a) =&gt; HandlerM (express :: EXPRESS | e) (Either MultipleErrors a)</code>. It returns either a list of parsing errors or a parsed instance, which in our case is a <code>User</code>. In case of errors, we just return the errors rendered as string with a 422 status. If we get a parsed <code>User</code> instance, we do some validations on it, returning appropriate error messages. If all validations pass, we create the user in the database by calling <code>insertUser</code> from the persistence layer and respond with a status 201.</p>
 <p>We can try it out:</p>
-<pre class="http"><code>$ http POST http://localhost:4000/v1/users name=&quot;abhinav&quot;
+<pre class="http"><code>$ http POST https://localhost:4000/v1/users name=&quot;abhinav&quot;
 HTTP/1.1 422 Unprocessable Entity
 Connection: keep-alive
 Content-Length: 97
@@ -513,7 +513,7 @@ X-Powered-By: Express
 {
     &quot;error&quot;: &quot;Error at array index 0: (ErrorAtProperty \&quot;id\&quot; (TypeMismatch \&quot;Int\&quot; \&quot;Undefined\&quot;))&quot;
 }</code></pre>
-<pre class="http"><code>$ http POST http://localhost:4000/v1/users id:=1 name=&quot;&quot;
+<pre class="http"><code>$ http POST https://localhost:4000/v1/users id:=1 name=&quot;&quot;
 HTTP/1.1 422 Unprocessable Entity
 Connection: keep-alive
 Content-Length: 39
@@ -525,13 +525,13 @@ X-Powered-By: Express
 {
     &quot;error&quot;: &quot;User name must not be empty&quot;
 }</code></pre>
-<pre class="http"><code>$ http POST http://localhost:4000/v1/users id:=1 name=&quot;abhinav&quot;
+<pre class="http"><code>$ http POST https://localhost:4000/v1/users id:=1 name=&quot;abhinav&quot;
 HTTP/1.1 201 Created
 Connection: keep-alive
 Content-Length: 0
 Date: Mon, 11 Sep 2017 05:52:23 GMT
 X-Powered-By: Express</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 25
@@ -604,7 +604,7 @@ X-Powered-By: Express
 <span id="cb36-15"><a href="#cb36-15"></a>  <span class="kw">where</span></span>
 <span id="cb36-16"><a href="#cb36-16"></a>    patch <span class="ot">=</span> http (<span class="dt">CustomMethod</span> <span class="st">&quot;patch&quot;</span>)</span></code></pre></div>
 <p>We can try it out now:</p>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 26
@@ -617,7 +617,7 @@ X-Powered-By: Express
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;abhinav&quot;
 }</code></pre>
-<pre class="http"><code>$ http PATCH http://localhost:4000/v1/user/1 name=abhinavsarkar
+<pre class="http"><code>$ http PATCH https://localhost:4000/v1/user/1 name=abhinavsarkar
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 31
@@ -630,7 +630,7 @@ X-Powered-By: Express
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;abhinavsarkar&quot;
 }</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http GET https://localhost:4000/v1/user/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 31
@@ -643,12 +643,12 @@ X-Powered-By: Express
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;abhinavsarkar&quot;
 }</code></pre>
-<pre class="http"><code>$ http PATCH http://localhost:4000/v1/user/1
+<pre class="http"><code>$ http PATCH https://localhost:4000/v1/user/1
 HTTP/1.1 204 No Content
 Connection: keep-alive
 Date: Fri, 11 Sep 2017 06:42:31 GMT
 X-Powered-By: Express</code></pre>
-<pre class="http"><code>$ http PATCH http://localhost:4000/v1/user/1 name=&quot;&quot;
+<pre class="http"><code>$ http PATCH https://localhost:4000/v1/user/1 name=&quot;&quot;
 HTTP/1.1 422 Unprocessable Entity
 Connection: keep-alive
 Content-Length: 39
@@ -686,13 +686,13 @@ X-Powered-By: Express
 <span id="cb43-14"><a href="#cb43-14"></a>  <span class="kw">where</span></span>
 <span id="cb43-15"><a href="#cb43-15"></a>    patch <span class="ot">=</span> http (<span class="dt">CustomMethod</span> <span class="st">&quot;patch&quot;</span>)</span></code></pre></div>
 <p>And that’s it. We can test this endpoint:</p>
-<pre class="http"><code>$ http POST http://localhost:4000/v1/users id:=2 name=sarkarabhinav
+<pre class="http"><code>$ http POST https://localhost:4000/v1/users id:=2 name=sarkarabhinav
 HTTP/1.1 201 Created
 Connection: keep-alive
 Content-Length: 0
 Date: Fri, 11 Sep 2017 07:06:24 GMT
 X-Powered-By: Express</code></pre>
-<pre class="http"><code>$ http GET http://localhost:4000/v1/users
+<pre class="http"><code>$ http GET https://localhost:4000/v1/users
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 65
@@ -713,9 +713,3 @@ X-Powered-By: Express
 ]</code></pre>
 <h2 id="conclusion" data-track-content data-content-name="conclusion" data-content-piece="ps-simple-rest-service">Conclusion<a href="#conclusion" class="ref-link"></a><a href="#top" class="top-link" title="Back to top"></a></h2>
 <p>That concludes the first part of the two-part tutorial. We learned how to set up a PureScript project, how to access a Postgres database and how to create a JSON REST API over the database. The code till the end of this part can be found in <a href="https://github.com/abhin4v/ps-simple-rest-service/tree/9fdfe3a15508a3c29bd4bc96310fcf52b1022678" target="_blank" rel="noopener">github</a>. In the <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service-2/">next</a> part, we’ll learn how to do API validation, application configuration and logging. Discuss this post in the <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service/#comment-container">comments</a>.</p><p>If you liked this post, please <a href="https://abhinavsarkar.net/posts/ps-simple-rest-service/#comment-container">leave a comment</a>.</p><img src="https://anna.abhinavsarkar.net/piwik.php?idsite=1&amp;rec=1" style="border:0; display: none;" />
-<div class="author">
-  <img src="https://nilenso.com/images/alumni/abhinav.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/abhin4v">Abhinav Sarkar</a> - check out <a href="https://abhinavsarkar.net">All posts on abhinavsarkar.net</a></i>
-  </span>
-</div>

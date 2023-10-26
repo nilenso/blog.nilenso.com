@@ -3,10 +3,10 @@ title: "YAML Serialization for Delayed Job"
 kind: article
 created_at: 2013-04-28 02:38:00 UTC
 author: Timothy Andrew
-post_url: "http://blog.timothyandrew.net/blog/2013/04/28/yaml-serialization-for-delayed-job/"
+post_url: "https://blog.timothyandrew.net/blog/2013/04/28/yaml-serialization-for-delayed-job/"
 layout: post
 ---
-<p>When we first moved excel generation off to a delayed job on <a href="http://github.com/c42/survey-web">survey-web</a>, we had code that looked like this:</p>
+<p>When we first moved excel generation off to a delayed job on <a href="https://github.com/c42/survey-web">survey-web</a>, we had code that looked like this:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -48,9 +48,4 @@ After some time getting nowhere, we solved it like this:</p>
 <p>And that worked great.</p>
 
 <p>(The files in question are <a href="https://github.com/c42/survey-web/blob/master/app/controllers/responses_controller.rb#L16">here</a> and <a href="https://github.com/c42/survey-web/blob/master/app/models/reports/excel/job.rb%22">here</a>).</p>
-<div class="author">
-  <img src="http://nilenso.com/images/alumni/tim.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&#39;s Blog</a></i>
-  </span>
-</div>
+

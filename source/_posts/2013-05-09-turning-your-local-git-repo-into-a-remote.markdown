@@ -3,7 +3,7 @@ title: "Turning Your Local Git Repo Into a Remote"
 kind: article
 created_at: 2013-05-09 14:48:00 UTC
 author: Timothy Andrew
-post_url: "http://blog.timothyandrew.net/blog/2013/05/09/turning-your-local-git-repo-into-a-remote/"
+post_url: "https://blog.timothyandrew.net/blog/2013/05/09/turning-your-local-git-repo-into-a-remote/"
 layout: post
 ---
 <p>Need to pull some changes from a friend&#8217;s local Git repo without having to push to <code>origin</code>? This post will show you how to do that.</p>
@@ -28,7 +28,7 @@ layout: post
 
 <p>You&#8217;ll need the IP address of this machine as well. (Use <code>ifconfig</code>)</p>
 
-<p>Make sure you can access the python server from a browser on the client machine. You should be able to see something like this at <code>http://ip.address:5000/</code></p>
+<p>Make sure you can access the python server from a browser on the client machine. You should be able to see something like this at <code>https://ip.address:5000/</code></p>
 
 <p><img src="images/2013-05-09-python-server.png" alt="Python Server Browser Screenshot" /></p>
 
@@ -36,8 +36,8 @@ layout: post
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git ls-remote http://ip.address:5000
-</span><span class='line'><span class="nv">$ </span>git pull http://ip.address:5000 master
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git ls-remote https://ip.address:5000
+</span><span class='line'><span class="nv">$ </span>git pull https://ip.address:5000 master
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -45,12 +45,7 @@ layout: post
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git remote add http://ip.address:5000 <span class="nb">local</span>-foo
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git remote add https://ip.address:5000 <span class="nb">local</span>-foo
 </span><span class='line'><span class="nv">$ </span>git pull <span class="nb">local</span>-foo master
 </span></code></pre></td></tr></table></div></figure>
-<div class="author">
-  <img src="http://nilenso.com/images/alumni/tim.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/timothyandrew">Timothy Andrew</a> - check out <a href="http://blog.timothyandrew.net/">Timothy&#39;s Blog</a></i>
-  </span>
-</div>
+

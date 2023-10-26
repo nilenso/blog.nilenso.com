@@ -6,9 +6,9 @@ comments: true
 categories: 
 ---
 
-We use [Octopress](http://octopress.com) with [planet.rb](https://github.com/pote/planet.rb) for this blog. It aggregates our personal blogs and also lets us post on the company's behalf. It works pretty well.
+We use [Octopress](https://octopress.com) with [planet.rb](https://github.com/pote/planet.rb) for this blog. It aggregates our personal blogs and also lets us post on the company's behalf. It works pretty well.
 
-We started off with [planetplanet](http://www.planetplanet.org/), tried [planetvenus](http://www.intertwingly.net/code/venus/docs/index.html) and then settled on planet.rb. The plusses are:
+We started off with [planetplanet](https://www.planetplanet.org/), tried [planetvenus](https://www.intertwingly.net/code/venus/docs/index.html) and then settled on planet.rb. The plusses are:
 
 -  We can now use the blog as both: a company blog and an aggregator at the same time.
 -  Octopress is great for us Ruby devs. We needed partials, sass, themeability, extensibility and a static site.
@@ -32,15 +32,15 @@ Another issue with planet.rb was that it quit abruptly when it failed to parse a
 
 {% codeblock $planet generate lang:bash %}
 planet-nilenso|master $ planet generate
-=> Parsing http://blog.kitallis.in/feeds/posts/default
+=> Parsing https://blog.kitallis.in/feeds/posts/default
 => Found post titled GSoC - 1 & 2 - by Akshay Gupta
         => Ignored post titled: Computers with categories: [personal]
 => Found post titled GSoC 2011 - 0 - by Akshay Gupta
 => Found post titled "Open Containing Folder" for EoG and gedit - by Akshay Gupta
         => Ignored post titled: Init with categories: [personal]
-=> Parsing http://blog.deobald.ca/feeds/posts/default                                                         
-        => Failed to fetch http://blog.deobald.ca/feeds/posts/default with response_code: 0                                                      
-=> Parsing http://blog.timothyandrew.net/atom.xml
+=> Parsing https://blog.deobald.ca/feeds/posts/default                                                         
+        => Failed to fetch https://blog.deobald.ca/feeds/posts/default with response_code: 0                                                      
+=> Parsing https://blog.timothyandrew.net/atom.xml
 => Found post titled Encrypt Your Emails on OS X - by Timothy Andrew
 => Found post titled Pow Over HTTPS - by Timothy Andrew                   
 {% endcodeblock %}

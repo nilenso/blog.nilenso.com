@@ -7,7 +7,7 @@ layout: post
 ---
 <p>A few days into learning clojure, I thought it would be a good idea to look at some actual clojure projects in github. I was feeling all confident and what not &#8211; you know getting used to lispy way of writing things. The purpose of going through some code, was to get a gist of what was going on in the code, if not understanding it fully. I guess you already know where this is going don&#8217;t you ? Yep, I find myself reading through code and I find these two, <code>-&gt;</code> and <code>-&gt;&gt;</code> (and a lot more <em>scary </em>stuff) staring at me, and I had no clue what to make of it. I guess there would at least be a few of you guys who felt the same.</p>
 <p>Apparently, they are called threading macros. <code>-&gt;</code> is the thread first and <code>-&gt;&gt;</code> thread last macros, and they are syntactical sugar to your code. It makes reading/writing code easier. &#8220;Meh! Just that?&#8221; you ask. Let&#8217;s see.</p>
-<p>The syntax goes something like this : <a href="http://clojuredocs.org/clojure.core/-%3E"><code>(-&gt; x &amp; forms)</code></a> and <a href="http://clojuredocs.org/clojure.core/-%3E%3E"><code>(-&gt;&gt; x &amp; forms)</code></a>. The following examples might help you understand it.</p>
+<p>The syntax goes something like this : <a href="https://clojuredocs.org/clojure.core/-%3E"><code>(-&gt; x &amp; forms)</code></a> and <a href="https://clojuredocs.org/clojure.core/-%3E%3E"><code>(-&gt;&gt; x &amp; forms)</code></a>. The following examples might help you understand it.</p>
 <p>Let say you want to do this (divide 2 by 1 then subtract 3 then add 4 and multiply with 5). How would you write it in clojure?</p>
 <h2><a id="user-content--" class="anchor" href="https://github.com/krish8664/til/blob/master/clojure/threading.md#-"></a>-&gt;</h2>
 <div class="highlight highlight-source-clojure">
@@ -101,9 +101,3 @@ layout: post
 </div>
 <p>You could use the threading operator or even write it in a single line, but it would be messy.</p>
 <p class="p1"><span class="s2">A </span><span class="s3">threading</span><span class="s2"> macro can be used to reverse the read order: the value is primarily for people reading your code later; if using a </span><span class="s3">threading</span><span class="s2"> macro doesn&#8217;t feel like it will make your code easier for the next person to read, it&#8217;s probably the wrong choice.</span></p>
-<div class="author">
-  <img src="https://nilenso.com/images/alumni/unni.webp" style="width: 96px; height: 96;">
-  <span style=" padding: 32px 15px;">
-    <i>Original post by <a href="http://twitter.com/krish8664">Unnikrishnan Geethagovindan</a> - check out <a href="http://blog.unnikrishnan.in">My blog</a></i>
-  </span>
-</div>
