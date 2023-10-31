@@ -6,11 +6,7 @@ author: Atharva Raykar
 layout: post
 ---
 
-Software engineers produce value by producing code that solves some problem. This doesn't capture the essence of software engineering. Where is this value coming from, really? Is it merely the action of producing code?
-
-It's more than just that—the value is in the quality and stability of the work.
-
-What contributes to a software product being of high quality and stability? To me it can be categorised this way:
+What contributes to a software product being of high quality and stability? I shall categorise it this way:
 
 * The mapping of abstractions and patterns to the problem.
 * Choice of tools and technologies.
