@@ -6,12 +6,12 @@ author: Atharva Raykar
 layout: post
 ---
 
-What contributes to a software product being of high quality and stability? I shall categorise it this way:
+What contributes to a stable, high quality software product? I shall categorise it this way:
 
 * The mapping of abstractions and patterns to the problem.
 * Choice of tools and technologies.
 
-Software discourse tends to be disproportionately focused a lot on the latter. I find myself contributing to this skew as well. Perhaps it's because tools and technologies are more concrete and easy to talk about. It's also easy to get people worked up about it.
+Software discourse tends to be disproportionately focused on the latter. I find myself contributing to this skew as well. Perhaps it's because tools and technologies are more concrete and easy to talk about. It's also easy to get people worked up about it.
 
 Yet tools and technologies only exist in service of the first category, which fundamentally capture the highest-value bits of a developer's job—concept mapping. Or making analogies. Pick whichever phrase that makes the most sense to you. I shall present a short motivating example for what I mean by concept-mapping.
 
