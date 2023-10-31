@@ -36,8 +36,15 @@ p, p li, article {
 }
 
 blockquote {
-    font-style: italic;
-    margin-left: 2em;
+    border-left: 4px solid #ddd;
+    padding: 0 1em;
+    margin-bottom: 1em;
+    color: #767676;
+    display: inline-block;
+}
+
+blockquote p {
+    margin-bottom: 0 !important;
 }
 
 .monospaced {
@@ -53,6 +60,11 @@ h1 {
 h2, h3, h4 {
     font-family: Poppins, sans-serif;
     font-weight: 500;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #menuToggle {
@@ -290,8 +302,8 @@ article {
 }
 
 article figure, article iframe {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     margin: auto;
 }
 
@@ -325,11 +337,6 @@ article a {
     color: var(--nilenso-pink);
 }
 
-article h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 article pre {
     background: #fdf6e3 url('/images/noise.png?1433967138') top left;
     -moz-border-radius: 0.4em;
@@ -348,7 +355,7 @@ p code,li code {
     display: inline-block;
     white-space: no-wrap;
     background: #fff;
-    font-size: .8em;
+    font-size: .7em;
     line-height: 1.5em;
     color: #555;
     border: 1px solid #ddd;
@@ -365,20 +372,39 @@ p pre code,li pre code {
     border: none;
 }
 
-article h3 {
+figure.code {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+article h2 {
     font-size: 1.75rem;
-    color: var(--grey);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    color: #666;
     margin-bottom: 1.2rem;
+    margin-top: 2rem;
 }
 
 article h4 {
     color: var(--nilenso-black);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1.2rem;
+    margin-top: 2rem;
 }
 
 article p {
     margin-bottom: 1.5rem;
+}
+
+article .separator {
+  content: "\2022 ";
+  padding: 0;
+  display: inline-block;
 }
 
 article .pre-quote {
