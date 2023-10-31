@@ -428,7 +428,7 @@ article .pre-quote {
 }
 
 #blog-archives .blog-archive-item {
-    padding: 1em 0 1em;
+    padding-bottom: 1em;
     position: relative;
     border-bottom: 1px solid #eee;
     display: flex;
