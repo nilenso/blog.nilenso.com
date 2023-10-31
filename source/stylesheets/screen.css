@@ -424,12 +424,13 @@ article .pre-quote {
 /* Blog Archive Page CSS */
 #blog-archives {
     color: var(--grey);
+    margin-bottom: 4rem;
 }
 
-#blog-archives article {
+#blog-archives .blog-archive-item {
     padding: 1em 0 1em;
     position: relative;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x;
+    border-bottom: 1px solid #eee;
     display: flex;
 }
 
@@ -445,6 +446,16 @@ article .pre-quote {
 
 .pagination-url {
     color: var(--nilenso-pink);
+    max-width: 33%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4rem;
+}
+
+.pagination-url-left::before {
+    content: "«";
+    float: right;
 }
 
 .author {
@@ -459,7 +470,7 @@ article .pre-quote {
     grid-auto-flow: dense;
     gap: 10px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 6rem;
 }
 
 #index-page-grid > * {
@@ -563,4 +574,9 @@ article .pre-quote {
 .meta {
     color: var(--grey);
     margin-bottom: 10px;
+}
+
+.entry-content {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
 }
