@@ -9,10 +9,10 @@ footer: false
   <div class="blog-archive-item flex items-center">
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% if year == this_year %}
-    <h2 class="blog-year hidden md:block"></h2>
+    <h3 class="blog-year hidden mt-0 mb-0 md:block"></h3>
     {% else %}
     {% assign year = this_year %}
-    <h2 class="blog-year hidden md:block">{{ year }}</h2>
+    <h3 class="blog-year hidden mt-0 mb-0 md:block">{{ year }}</h3>
     {% endif %}
     <div class="flex flex-col-reverse md:w-8/12">
       {% include archive_post.html %}

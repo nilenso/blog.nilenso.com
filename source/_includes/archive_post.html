@@ -2,4 +2,4 @@
 <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate class="flex items-center">
     {{ post.date | date: "<span>%-d</span>&nbsp;<span>%B</span>&nbsp;<span>%Y</span>"}}
 </time>
-<h2 class="mb-1"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h2>
+<h3 class="mb-1"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h3>
