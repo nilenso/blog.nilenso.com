@@ -9,7 +9,7 @@ My father decided to get a whole bunch of new furniture made (like we all do at 
 
 I dropped into a Google Sheet and got started. By the end I had half a dozen worksheets, a few pivot tables and a variety of formulas. The work finished over a couple of weeks. We paid out the carpenter from the calculations in the sheet.
 
-As a software engineer, I like to write and appreciate <em>good</em> software (no, I pine for it). Software that is easy to work with, easy to understand, amenable to change, and reliable. The sheet was none of these things. 
+As a software engineer, I like to write and appreciate <em>good</em> software (no, I pine for it) – easy to work with, easy to understand, amenable to change, and reliable. The sheet was none of these things. 
 
 I was compelled to take a close look at why it was so. It's been a few months since. This is a quick summary of things I've found, some of my thoughts and what I’ve been up to with them.
 
@@ -58,13 +58,13 @@ Other names have been used synonymously (personal software, organizational softw
 </div>
 
 If we posit that spreadsheets are small software, how do they fare on the qualities we’re looking for? Consider the following
-- Spreadsheet software is fully backward compatible to prevent breakage in old sheets, to the extent that newer ones preserve bugs from older ones[^excel-leap-year-bug]. Change is <em>accretive</em> and almost no features have been discarded in the last couple of decades[^finance-industry]. Every spreadsheet software needs to be compatible with MS Excel and carries the same baggage.
-- There's little support for structured programming concepts to help with maintaining and debugging spreadsheets. While there's been some new additions (named functions, tables) they don't fit as well.
-- As a symptom, errors in spreadsheets are commonplace and a big problem. There’s an <a href="https://eusprig.org/">interest group</a> that tackles problems in this area and <a href="https://www.perfectxl.com/">many</a> <a href="https://www.i-nth.com/">consulting</a> <a href="https://incisive.com/solutions-for-microsoft-excel/">firms</a> that teach how to make good spreadsheets. Spreadsheet errors can cause damage very much like software. They’re not as well understood which makes them more unfortunate.
+- Spreadsheet software is fully backward compatible to prevent breakage in old sheets, to the extent that newer ones preserve bugs from older ones[^excel-leap-year-bug]. Change is <em>accretive</em> and almost no features have been discarded in the last couple of decades[^finance-industry]. Every spreadsheet needs to be compatible with MS Excel and carries the same baggage.
+- There's little support for structured programming concepts for maintaining and debugging spreadsheets. While there's been some new additions (named functions, tables) they don't fit as well.
+- As a symptom, errors in spreadsheets are commonplace and a big problem. There’s an <a href="https://eusprig.org/">interest group</a> that tackles problems in this area and <a href="https://www.perfectxl.com/">many</a> <a href="https://www.i-nth.com/">consulting</a> <a href="https://incisive.com/solutions-for-microsoft-excel/">firms</a> that teach how to make good spreadsheets. Spreadsheet errors can cause damage very much like real software. They’re not as well understood which makes them more unfortunate.
 
-Over the years, software developers have arrived at some must-haves to build reliable and maintainable information systems. We like to use good languages, write tests, peer review our code etc. Very little of this has made its way to spreadsheets so it’s not surprising they’re
+Over the years, software developers have arrived at some must-haves to build reliable and maintainable information systems. We like to use good languages, write tests, peer review our code etc. Very little of this has made its way to spreadsheets. It’s not surprising they’re
 - Easy to spike in but hard to maintain and audit.
-- Ridden with errors, universally.
+- Riddled with errors, universally.
 - Hard to build robust processes around. 
 - Harder to use than they should be.
 
@@ -72,7 +72,7 @@ Over the years, software developers have arrived at some must-haves to build rel
 
 One, I think the spreadsheet medium is nascent, by the measure of how much has and hasn’t been tried out. There are many bad primitives and very few guardrails. We don’t get a new spreadsheet every year. We do this with programming languages all the time. 
 
-<a href="https://rows.com/">New spreadsheets</a> or <a href="https://www.airtable.com/">spin-offs</a> that try to solve these problems usually depart from the recipe in some significant way. <a href="https://datarabbit.com/">Dataflow</a> <a href="https://joshuahhh.com/projects/pane/">programming</a> and <a href="https://sdg.csail.mit.edu/projects/espalier">experimental spreadsheets</a> have their own place but they are all <em>something</em> <em>different</em>. And it’s not reasonable to expect mainstream spreadsheets to solve this.
+<a href="https://rows.com/">New spreadsheets</a> or <a href="https://www.airtable.com/">spin-offs</a> that try to solve these problems usually depart from the recipe in some significant way. <a href="https://sdg.csail.mit.edu/projects/espalier">Experimental ones</a> and <a href="https://datarabbit.com/">dataflow</a> <a href="https://joshuahhh.com/projects/pane/">programming</a> have their own place but they are all <em>something</em> <em>different</em>. And it’s not reasonable to expect mainstream spreadsheets to solve this.
 
 Secondly, I think patching your favorite programming language on top does not work well. Each language has its abstractions and ways of working, which may be at odds with the spreadsheet paradigm. Translating between paradigms has a real cost that a user has to bear. Users also realize that there are too many languages to deal with already and more of them is a problem[^python-in-excel].
 
