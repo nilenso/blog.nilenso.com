@@ -58,10 +58,9 @@ Other names have been used synonymously (personal software, organizational softw
 </div>
 
 If we posit that spreadsheets are small software, how do they fare on the qualities we’re looking for? Consider the following
-- Spreadsheet software is fully backward compatible to prevent breakage in old sheets, to the extent that newer ones preserve bugs from older ones[^copy-bugs]. Change is <em>accretive</em> and almost no features have been discarded in the last couple of decades[^finance-industry].
-- Excel's formula language is the universal standard. All sheet programming works more or less the same way, with minor variations in look and feel. There are some distinctive features: Microsoft Excel has VBA, Apple Numbers does tables differently, Google Sheets is good at forms  and collaboration. But there are no formula <em>dialects</em>.
+- Spreadsheet software is fully backward compatible to prevent breakage in old sheets, to the extent that newer ones preserve bugs from older ones[^copy-bugs]. Change is <em>accretive</em> and almost no features have been discarded in the last couple of decades[^finance-industry]. Every spreadsheet software needs to be compatible with MS Excel and carries the same baggage.
+- There's little support for structured programming concepts to help with maintaining and debugging spreadsheets. While there's been some new additions (named functions, tables) they don't fit as well.
 - As a symptom, errors in spreadsheets are commonplace and a big problem. There’s an <a href="https://eusprig.org/">interest group</a> that tackles problems in this area and <a href="https://www.perfectxl.com/">many</a> <a href="https://www.i-nth.com/">consulting</a> <a href="https://incisive.com/solutions-for-microsoft-excel/">firms</a> that teach how to make good spreadsheets. Spreadsheet errors can cause damage very much like software. They’re not as well understood which makes them more unfortunate.
-- Any other way of writing functional programs requires a big commitment to learn and get started. The choice is between the scrappy utilities in spreadsheets and installing Python on your computer.
 
 Over the years, software developers have arrived at some must-haves to build reliable and maintainable information systems. We like to use good languages, write tests, peer review our code etc. Very little of this has made its way to spreadsheets so it’s not surprising they’re
 - Easy to spike in but hard to maintain and audit.
@@ -86,7 +85,7 @@ Thirdly, I think more people should be implementing their own spreadsheet softwa
 
 So we’re <a href="https://github.com/nilenso/bean">writing a spreadsheet</a> at nilenso to try out some of these ideas. It's intended to be a playground to implement things explored in theory and conduct small experiments. <em>Maybe eventually</em>, it'll become a full-fledged spreadsheet software that I wouldn't mind using. The plan is to write about the proceedings as we go.
 
-Lastly, I think spreadsheets still hold the promise of a well-formed environment for making small software; where the medium, the language, and the tooling works as one so I can get stuff done.
+Lastly, any other way of writing sane and functional programs requires a big commitment to learn and get started. The choice is between the scrappy utilities in existing spreadsheets and installing Python on your computer. I think spreadsheets still hold the promise of a well-formed environment for making small software; where the medium, the language, and the tooling works as one.
 
 --- 
 Thanks to <a href="https://twitter.com/AtharvaRaykar">Atharva</a>, <a href="https://twitter.com/prathyvsh/">Prathyush</a> and friends for reviewing this post.
