@@ -7,7 +7,7 @@
   text-black text-base font-light">
   <header role="banner">{% include header.html %}</header>
   <nav role="navigation">{% include navigation.html %}</nav>
-  <div id="main" class="pl-6 pr-8 md:px-12">
+  <div id="main" class="px-0 md:px-6">
     <div id="content">
       {{ content | expand_urls: root_url }}
     </div>

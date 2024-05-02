@@ -11,7 +11,7 @@ layout: default
       </h2>
     </div>
 </section>
-<section id="index-page-grid">
+<section id="index-page-grid" class="px-4 md:px-0">
   {% assign index = true %}
   {% for post in paginator.posts %}
     {% assign metadata = site.data.post_metadata | find: "title", post.title %}
