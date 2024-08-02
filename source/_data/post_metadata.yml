@@ -1,8 +1,12 @@
+- title: "We, the Citizens and Systems Thinking"
+  image: https://m.media-amazon.com/images/I/41YwB2IjlHL.jpg
+
 - title: "Leaky Bucket Rate Limiting"
   image: /images/blog/leaky-bucket-rate-limiting/bucket.webp
 
 - title: "Spreadsheets and Small Software"
   image: /images/blog/spreadsheets-and-small-software/image1.jpg
+  description: "We wanted tools to make sheds, we got tools to make skyscrapers. "
 
 - title: "FOSSMeet 2023: The brazen indifference for Free Software, because people think Something Else is more important."
   image: /images/blog/fossmeet-2023/fossmeet-venue.webp
@@ -24,7 +28,7 @@
   description: A reflection on how software is a conceptual mapping built on a pit of analogies.
 
 - title: "small-stalk: Beanstalkd in Clojure"
-  description: When someone told me about beanstalkd, the seed of an idea was planted in my mind.
+  image: /images/blog/small-stalk/architecture.png
 
 - title: "Everyday Recipes for Cooking Noobs"
   image: /images/blog/everyday-recipes-for-cooking-noobs/tomato-curry.jpg
