@@ -1,0 +1,8 @@
+---
+title: Test Post
+kind: article
+author: Prabhanshu Gupta
+created_at: 2024-08-09T17:10:00.000Z
+layout: post
+---
+![](/images/blog/dall·e-2024-06-12-13.42.32-a-sleek-and-modern-icon-for-a-slack-bot-that-sends-reminders-for-actions-to-be-taken-for-candidates-in-the-hiring-pipeline.-the-icon-should-include-el.webp)
