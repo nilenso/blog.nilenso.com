@@ -6,3 +6,5 @@ created_at: 2024-08-09 00:00:00 UTC
 layout: post
 ---
 This is a test blog.
+
+![](/images/blog/1.png)
