@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building an offline survey tool for Rural India"
-date: 2013-09-19 18:21
+created_at: 2013-09-19 18:21 UTC
 comments: true
 published: true
 

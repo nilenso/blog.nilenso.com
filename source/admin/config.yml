@@ -22,6 +22,6 @@ collections:
       - { label: "Post URL", name: "post_url", widget: "string", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Body", name: "body", widget: "markdown" }
-    sortable_fields: ["title", "created_at"]
+    sortable_fields: ["created_at"]
     preview_path: blog/{{year}}/{{month}}/{{day}}/{{title}}
     preview_path_date_field: created_at
