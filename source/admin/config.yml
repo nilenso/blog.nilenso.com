@@ -22,7 +22,7 @@ collections:
       - { label: "Kind", name: "kind", widget: "hidden", default: "article" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Created At", name: "created_at", widget: "datetime", date_format: "YYYY-MM-DD HH:mm:ss UTC" }
-      - { label: "Post URL", name: "post_url", widget: "string", required: false }
+      - { label: "External post URL", name: "post_url", widget: "string", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Body", name: "body", widget: "markdown" }
     sortable_fields: ["created_at"]

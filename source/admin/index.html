@@ -9,6 +9,17 @@
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
+    <script>
+      if (!localStorage.getItem('decap-cms.entries.sort')) {
+        localStorage.setItem('decap-cms.entries.sort', '{"posts":{"created_at":{"key":"created_at","direction":"Descending","index":0}}}');
+      }
+  </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
+
+  <style>
+    #preview-pane {
+      padding: 15px;
+    }
+  </style>
 </html>
