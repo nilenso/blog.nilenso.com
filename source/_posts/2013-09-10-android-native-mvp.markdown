@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android Development - Harnessing powers of MVP"
-date: 2013-09-10 18:33
+created_at: 2013-09-10 18:33 UTC
 comments: true
 ---
 

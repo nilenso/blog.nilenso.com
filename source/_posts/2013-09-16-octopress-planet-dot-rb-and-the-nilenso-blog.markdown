@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopress, Planet.rb and the Nilenso Blog"
-date: 2013-09-16 16:26
+created_at: 2013-09-16 16:26 UTC
 comments: true
 categories: 
 ---
