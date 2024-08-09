@@ -21,16 +21,10 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Kind", name: "kind", widget: "hidden", default: "article" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "Created At", name: "created_at", widget: "datetime" }
+      - { label: "Created At", name: "created_at", widget: "datetime", date_format: "YYYY-MM-DD HH:mm:ss UTC" }
       - { label: "Post URL", name: "post_url", widget: "string", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Body", name: "body", widget: "markdown" }
     sortable_fields: ["created_at"]
     preview_path: blog/{{year}}/{{month}}/{{day}}/{{title}}
     preview_path_date_field: created_at
-
-title: "Spreadsheets and Small Software"
-kind: article
-created_at: 2023-11-10 13:40:00 UTC
-author: Prabhanshu Gupta
-layout: post
