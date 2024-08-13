@@ -20,7 +20,9 @@ This mindset is misguided. A significant amount of effort is invested in instrum
 
 Instead, first define what you are trying to do, and then come up with an acceptable metric to measure it. Acknowledge that all metrics are approximations, and that they will fall short (as numbers always do), when they try to represent reality. Also ask yourself if a more precise measurement will really make a _significant difference to outcomes_. If not, move on. You can always revisit the metrics as your product and consumers evolve, but frequent churn with definitions, and parsing of greater and greater quantities of data in more and more complex ways will invariably cost you more than it’s worth.
 
-Conversion rates by ad, or media, are a great example of a metric that Product Managers track obsessively, without much to show for it. While the metric itself is important, acknowledging that it is difficult to correlate how much influence a specific ad has in inciting a purchase is equally important. Decide how good your estimates need to be, and live with them.
+Conversion rates by ad, or media, are a great example of a metric that Product Managers track uncompromisingly, without much to show for it. While the metric itself is important, acknowledging that it is difficult to correlate how much influence a specific ad has in inciting a purchase is equally important. Decide how good your estimates need to be, and live with them.
+
+In the same way, I've seen Product Managers obsess over whether churn was 35% or 36%, when it has no material impact on what you're going to do about it. Consistently applying the same methodology and definitions, and observing trends is a far better way to spend your time.
 
 Similarly, customer support ticket volume tracks the number of support requests or issues reported. General trends and patterns can be valuable, even if individual ticket data isn't completely accurate or comprehensive.
 
