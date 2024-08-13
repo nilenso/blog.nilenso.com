@@ -1,5 +1,5 @@
 ---
-title: What's better than good? Good enough
+title: Good enough data
 kind: article
 author: Deepa
 created_at: 2024-08-13 00:00:00 UTC
