@@ -1,7 +1,7 @@
 ---
 title: Good enough data
 kind: article
-author: Deepa Venkatraman
+author: Deepa
 created_at: 2024-08-13 00:00:00 UTC
 layout: post
 ---
