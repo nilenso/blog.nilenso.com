@@ -10,7 +10,7 @@ layout: post
 > \- Community (sometimes tv shows make sense)
 
 \
-You've probably seen awareness campaigns about the dangers of air or water pollution. Programmes to improve nutrition to curb obesity and diabetes. Vaccination camps to ensure that children are properly inoculated against debilitating conditions. How do governments decide where to deploy limited budgets so they have the greatest impact on population health? This is not something we think about often (or at all), but accurate and consistent data on disease and death rates are critical for policy makers to spend their energies and budgets in the most effective manner.
+You've probably seen awareness campaigns about the dangers of air or water pollution. Nutrition programmes to curb obesity and diabetes. Vaccination camps to ensure that children are properly inoculated against debilitating conditions. How do governments decide where to deploy limited budgets so they have the greatest impact on population health? This is not something we think about often (or at all), but accurate and consistent data on disease and death rates are critical for policy makers to spend their energies and budgets in the most effective manner.
 
 One approach, is to start by collecting _all_ the data. This is how medical doctor and economist Dr. Chris Murray went about the Global Burden of Disease studies with the intent to tabulate the world's illness and mortality. [1]
 
