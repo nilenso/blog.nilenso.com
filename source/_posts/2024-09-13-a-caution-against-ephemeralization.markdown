@@ -60,7 +60,14 @@ I don't find a lot of joy in using some of our modern marvels. Broadly speaking,
 * Developing a [discerning palate](https://gappa.atharvaraykar.com/atharva/a-low-hanging-yet-joyous-fruit-to-pluck).
 * Investing in colour and texture—for clothes, rugs and articles that are often used.
 
-## Appendix: A narrative about a smart thing Apple did to wean people off their instinct against low dimensionality
+---
+
+_This piece originally appeared in Atharva's [internet place](https://gappa.atharvaraykar.com/atharva/a-caution-against-ephemeralization)._
+
+---
+
+
+## Appendix 1: A narrative about a smart thing Apple did to wean people off their instinct against low dimensionality
 
 Pure speculation, but allow me to weave this narrative. I'd say Apple's iPhone was a big driver that moved a lot of people's waking hours into low-dimensionality activities. The number of things one could do on this flat, buttonless, low-tactility panel was unprecedented. It might have been uncomfortable too, in a world that wasn't used to this level of dematerialisation.
 
