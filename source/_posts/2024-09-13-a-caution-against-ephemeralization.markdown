@@ -62,12 +62,7 @@ I don't find a lot of joy in using some of our modern marvels. Broadly speaking,
 
 ---
 
-_This piece originally appeared in Atharva's [internet place](https://gappa.atharvaraykar.com/atharva/a-caution-against-ephemeralization)._
-
----
-
-
-## Appendix 1: A narrative about a smart thing Apple did to wean people off their instinct against low dimensionality
+### Appendix 1: A narrative about a smart thing Apple did to wean people off their instinct against low dimensionality
 
 Pure speculation, but allow me to weave this narrative. I'd say Apple's iPhone was a big driver that moved a lot of people's waking hours into low-dimensionality activities. The number of things one could do on this flat, buttonless, low-tactility panel was unprecedented. It might have been uncomfortable too, in a world that wasn't used to this level of dematerialisation.
 
@@ -76,3 +71,10 @@ But Apple's UI designers provided a bridge from the highly material to the highl
 <img src="https://images.macrumors.com/t/NcRTXfKbgJMeix-WsOKXISF8pu8=/1600x0/article-new/2013/05/skeuomorphism.jpg" style="width:80%;">
 
 This surely would have helped make the transition less jarring. Eventually, these elements were stripped away once the visceral barrier had been overcome and people were enjoying the conveniences and power of the modern smartphone.
+
+---
+
+_This piece originally appeared in [atharva's internet place](https://gappa.atharvaraykar.com/atharva/a-caution-against-ephemeralization)._
+
+---
+
