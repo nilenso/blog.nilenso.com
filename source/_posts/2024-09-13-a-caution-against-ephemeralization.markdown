@@ -73,6 +73,6 @@ Pure speculation, but allow me to weave this narrative. I'd say Apple's iPhone w
 
 But Apple's UI designers provided a bridge from the highly material to the highly ephemeral world to ease this transition. They made a lot of the early apps and interfaces *skeuomorphic*—it's an old design trick where the designer carries some familiar elements of older technology onto a new medium. All the fake wood and leather, although a poor imitation of the real thing, did its job.
 
-![Skeuomorphs](https://images.macrumors.com/t/NcRTXfKbgJMeix-WsOKXISF8pu8=/1600x0/article-new/2013/05/skeuomorphism.jpg)
+<img src="https://images.macrumors.com/t/NcRTXfKbgJMeix-WsOKXISF8pu8=/1600x0/article-new/2013/05/skeuomorphism.jpg" style="width:80%;">
 
 This surely would have helped make the transition less jarring. Eventually, these elements were stripped away once the visceral barrier had been overcome and people were enjoying the conveniences and power of the modern smartphone.
