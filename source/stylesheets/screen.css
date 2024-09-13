@@ -583,3 +583,54 @@ article .pre-quote {
     margin-bottom: 1rem;
     border-bottom: 1px solid #eee;
 }
+
+/* Table Styling */
+table {
+    width: 70%;
+    min-width: 300px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 1.5rem;
+    font-family: Crimson Pro, serif;
+    font-size: 1.1rem;
+}
+
+th, td {
+    padding: 0.5rem 0.75rem;
+}
+
+th {
+    font-family: Crimson Pro, serif;
+    font-weight: 600;
+    border-bottom: 2px solid var(--nilenso-gray-2);
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Left-align first column, center-align others */
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+td:not(:first-child),
+th:not(:first-child) {
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.4rem 0.6rem;
+    }
+}
