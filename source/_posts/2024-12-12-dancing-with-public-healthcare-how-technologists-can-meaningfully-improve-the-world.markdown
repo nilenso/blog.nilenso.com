@@ -20,7 +20,7 @@ Here's a bad thing I saw around me—the prevalence of hypertension and diabetes
 
 Here's what we can do to fix it—collaborate with all the thankless people in the trenches of public health and enable them to do their job.
 
-Public health is notoriously hard. Before I worked with Resolve To Save Lives, I had almost no clue about what I could do to make any kind of dent in this space. It turns out that it helps to think in systems. Let's strengthen the notion of what I mean by a system.
+Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what I could do to make any kind of dent in this space. It turns out that it helps to think in systems. Let's strengthen the notion of what I mean by a system.
 
 *System*: A set of elements or parts that is coherently organized and interconnected in a pattern or structure that produces a characteristic set of behaviors, often classified as its “function” or “purpose".
 
@@ -30,6 +30,8 @@ Public health is notoriously hard. Before I worked with Resolve To Save Lives, I
 * System structure is the source of system behavior. System behavior reveals itself as a series of events over time.
 
 The public healthcare system is so fractally complex that it would be futile for me to even begin to describe it. Anyway, here are some components of how a program to tackle hypertension might look like.
+
+
 
 * talk about the flows
 * stocks: patient data, patient well-being, willingness to return to care
