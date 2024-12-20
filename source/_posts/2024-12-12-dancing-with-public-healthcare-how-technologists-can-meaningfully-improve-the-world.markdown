@@ -32,5 +32,17 @@ The public healthcare system is so fractally complex that it would be futile for
 
 ![](/images/blog/sydiag1.png)
 
+I've taken a peculiar decision to label the arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
+
+We also have a few _stocks_, which you can think of as the memory of the history of changing flows in this system.
+
+To put it together;
+
+**Stock**: The number of registered patients that need to return to care to take their medicines and get their vitals (like blood pressure) checked.  
+**Patient Flow**: They go to clinics or hospitals to get their medicines.
+
+**Stock**: Patients appointment data collected when a patient visits. Is their BP controlled? Have they been prescribed and given medication? Did they not show up at all?  
+**Patient Data Flow**: 
+
 * talk about the flows
 * stocks: patient data, patient well-being, willingness to return to care
