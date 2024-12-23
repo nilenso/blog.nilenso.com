@@ -10,30 +10,34 @@ layout: post
 >
 > — *Donella H. Meadows*
 
-What can a technologist do to make the world a better place?
+A public healthcare system can be so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
+
+Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program. A doctor advises this patient to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
+
+This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world.
+
+The patient's BPs are collected at every appointment, and this data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+
+![](/images/blog/sydiag1.png)
+
+Despite all this hard work on the ground, the annual report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
+
+Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what I could do to make any kind of dent in this space. It turns out that it helps to think in systems.
 
 My stint in public health taught me that it is approachable for a technologist to massively improve the world—and that adopting a systems thinking lens can help a lot.
 
 We have the skill sets and the tools to scale ideas and methods. This puts us in a position where we do not have to accept a bad thing that we see around us—we can fix it.
 
-Here's a bad thing I saw around me—the prevalence of hypertension and diabetes—around ten million people die every year because of this.
-
-Here's what we can do to fix it—collaborate with all the thankless people in the trenches of public health and enable them to do their job.
-
-Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what I could do to make any kind of dent in this space. It turns out that it helps to think in systems. Let's strengthen the notion of what I mean by a system.
+Let's first strengthen the notion of what I mean by a system.
 
 *System*: A set of elements or parts that is coherently organized and interconnected in a pattern or structure that produces a characteristic set of behaviors, often classified as its “function” or “purpose".
+
+Our system in this case, is Peculiaristan's hypertension control program. Here's some adages on systems.
 
 * A system is more than the sum of its parts.
 * Many of the interconnections in systems operate through the flow of information.
 * The least obvious part of the system, its function or purpose, is often the most crucial determinant of the system’s behavior.
 * System structure is the source of system behavior. System behavior reveals itself as a series of events over time.
-
-The public healthcare system is so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
-
-This is a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country.
-
-![](/images/blog/sydiag1.png)
 
 I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
 
@@ -42,12 +46,6 @@ The thinner arrows represent information links—these are actions that affect t
 We also have a bunch _stocks_ (represented by the boxes and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
 
 This is a great start, and it has taken Peculiaristan a massive effort to get here!
-
-Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If they have a high BP, they are registered for a hypertension control program, where a doctor advises them to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
-
-The patient's BPs are collected at every appointment, and this data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
-
-Despite all this hard work on the ground for, the end-of-year report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
 
 It can get overwhelming to untangle this. But I've found Donella Meadow's leverage points as a useful framework to navigate this.
 
