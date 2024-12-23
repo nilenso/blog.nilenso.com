@@ -28,7 +28,7 @@ Conversion rates by ad, or media, are another great example of a product metric 
 
 In each of these cases, striving for accuracy is important. However, actionable insights can often be derived from approximate data, allowing teams to make informed decisions without needing perfect information. Not only does this ensure that you're optimising the dollars spent on instrumentation, storage and analysis, it also trains you to focus on what's important -- impact.
 
-tl;dr Understand that data collection and visualisation are complex, and take effort. More importantly, recognise when you have "good enough" data, and move to the next step.
+tl;dr Understand that data collection and visualisation are complex, and take effort, time and money. More importantly, recognise when you have "good enough" data, and move to the next step.
 
 [1]
 [Epic Measures](https://www.goodreads.com/book/show/22693187-epic-measures) by Jeremy Smith describes Dr. Murray's Murray’s journey. 
