@@ -7,7 +7,7 @@ layout: post
 ---
 > It's better than good. It's good enough.
 >
-> \- Community (sometimes tv shows make sense)
+> \- Community (sometimes tv shows make sense)   
 
 \
 You've probably seen awareness campaigns about the dangers of air or water pollution. Nutrition programmes to curb obesity and diabetes. Vaccination camps to ensure that children are properly inoculated against debilitating conditions. How do governments decide where to deploy limited budgets so they have the greatest impact on population health? This is not something we think about often (or at all), but accurate and consistent data on disease and death rates are critical for policy makers to invest their energies and budgets in the most effective manner.
