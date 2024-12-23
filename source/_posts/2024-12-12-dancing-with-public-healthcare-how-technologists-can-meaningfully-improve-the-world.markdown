@@ -3,6 +3,7 @@ title: how to systematically save a good chunk of lives; a technologist's guide
 kind: article
 author: Atharva Raykar
 created_at: 2024-12-12 00:00:00 UTC
+post_url: cvh-systems-thinking
 layout: post
 ---
 > “Hunger, poverty, environmental degradation, economic instability, unemployment, chronic disease, drug addiction, and war, for example, persist in spite of the analytical ability and technical brilliance that have been directed toward eradicating them. No one deliberately creates those problems, no one wants them to persist, but they persist nonetheless. That is because they are intrinsically systems problems—undesirable behaviors characteristic of the system structures that produce them. They will yield only as we reclaim our intuition, stop casting blame, see the system as the source of its own problems, and find the courage and wisdom to *restructure* it.”
@@ -30,23 +31,17 @@ Public health is a notoriously hard problem to work on. Before I worked with Res
 
 The public healthcare system is so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
 
-This is a program that the non-communicable diseases division of the Health Department of Peculiaristan has come up with.
+This is a program that the non-communicable diseases division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country.
 
 ![](/images/blog/sydiag1.png)
 
 I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
 
-We also have a few _stocks_, which you can think of as the memory of the history of changing flows in this system.
+The thinner arrows represent information links—these are actions that affect the flow.
 
-To put it together;
+We also have a bunch _stocks_ (represented by the squares and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
 
-**Stock**: The number of registered patients that need to return to care to take their medicines and get their vitals (like blood pressure) checked.  
-**Patient Flow**: They go to clinics or hospitals to get their medicines.
-
-**Stock**: Patients appointment data collected when a patient visits. Is their BP controlled? Have they been prescribed and given medication? Did they not show up at all?  
-**Patient Data Flow**: This is the flow of the data that has been recorded on the ground into the hands of analysts and program managers who will aggregate these into indicators to drive decisions.
-
-
+This is a great start, and it has taken Peculiaristan a massive effort to get here!
 
 * talk about the flows
 * stocks: patient data, patient well-being, willingness to return to care
