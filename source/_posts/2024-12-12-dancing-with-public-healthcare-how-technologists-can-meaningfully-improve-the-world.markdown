@@ -1,5 +1,5 @@
 ---
-title: "Dancing with public healthcare: a technologist's map to improve our world"
+title: how to systematically save a good chunk of lives; a technologist's guide
 kind: article
 author: Atharva Raykar
 created_at: 2024-12-12 00:00:00 UTC
@@ -42,7 +42,9 @@ To put it together;
 **Patient Flow**: They go to clinics or hospitals to get their medicines.
 
 **Stock**: Patients appointment data collected when a patient visits. Is their BP controlled? Have they been prescribed and given medication? Did they not show up at all?  
-**Patient Data Flow**: 
+**Patient Data Flow**: This is the flow of the data that has been recorded on the ground into the hands of analysts and program managers who will aggregate these into indicators to drive decisions.
+
+
 
 * talk about the flows
 * stocks: patient data, patient well-being, willingness to return to care
