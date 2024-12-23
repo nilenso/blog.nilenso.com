@@ -28,11 +28,13 @@ Public health is a notoriously hard problem to work on. Before I worked with Res
 * The least obvious part of the system, its function or purpose, is often the most crucial determinant of the system’s behavior.
 * System structure is the source of system behavior. System behavior reveals itself as a series of events over time.
 
-The public healthcare system is so fractally complex that it would be futile for me to even begin to describe it. Anyway, here are some components of how a program to tackle hypertension might look like.
+The public healthcare system is so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
+
+This is a program that the non-communicable diseases division of the Health Department of Peculiaristan has come up with.
 
 ![](/images/blog/sydiag1.png)
 
-I've taken a peculiar decision to label the arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
+I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
 
 We also have a few _stocks_, which you can think of as the memory of the history of changing flows in this system.
 
