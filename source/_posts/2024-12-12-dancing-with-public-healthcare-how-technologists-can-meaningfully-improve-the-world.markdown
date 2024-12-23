@@ -14,6 +14,8 @@ A public healthcare system can be so fractally complex that one could argue that
 
 Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program. A doctor advises this patient to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
 
+![](/images/blog/sydiag0.png)
+
 This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world.
 
 The patient's BPs are collected at every appointment, and this data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
@@ -39,11 +41,11 @@ Our system in this case, is Peculiaristan's hypertension control program. Here's
 * The least obvious part of the system, its function or purpose, is often the most crucial determinant of the system’s behavior.
 * System structure is the source of system behavior. System behavior reveals itself as a series of events over time.
 
-I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's _stated_ purpose!).
+I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's *stated* purpose!).
 
 The thinner arrows represent information links—these are actions that affect the flow.
 
-We also have a bunch _stocks_ (represented by the boxes and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
+We also have a bunch *stocks* (represented by the boxes and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
 
 This is a great start, and it has taken Peculiaristan a massive effort to get here!
 
@@ -55,12 +57,11 @@ Here are the leverage points as stated by her, in decreasing order of effectiven
 2. Buffers: The sizes of stabilizing stocks relative to their flows
 3. Stock-and-Flow Structures: Physical systems and their nodes of intersection
 4. Delays: The lengths of time relative to the rates of system changes
-8. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct
-7. Reinforcing Feedback Loops: The strength of the gain of driving loops
-6. Information Flows: The structure of who does and does not have access to information
-5. Rules: Incentives, punishments, constraints
-4. Self-Organization: The power to add, change, or evolve system structure 
-3. Goals: The purpose of the system
-2. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises
-1. Transcending Paradigms
-
+5. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct
+6. Reinforcing Feedback Loops: The strength of the gain of driving loops
+7. Information Flows: The structure of who does and does not have access to information
+8. Rules: Incentives, punishments, constraints
+9. Self-Organization: The power to add, change, or evolve system structure 
+10. Goals: The purpose of the system
+11. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises
+12. Transcending Paradigms
