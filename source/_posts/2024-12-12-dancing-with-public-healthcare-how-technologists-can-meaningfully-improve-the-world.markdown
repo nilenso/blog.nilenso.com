@@ -31,7 +31,7 @@ Public health is a notoriously hard problem to work on. Before I worked with Res
 
 The public healthcare system is so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
 
-This is a program that the non-communicable diseases division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country.
+This is a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country.
 
 ![](/images/blog/sydiag1.png)
 
@@ -39,9 +39,30 @@ I've taken a peculiar decision to label the fat arrows as "flows". This is becau
 
 The thinner arrows represent information links—these are actions that affect the flow.
 
-We also have a bunch _stocks_ (represented by the squares and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
+We also have a bunch _stocks_ (represented by the boxes and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
 
 This is a great start, and it has taken Peculiaristan a massive effort to get here!
 
-* talk about the flows
-* stocks: patient data, patient well-being, willingness to return to care
+Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If they have a high BP, they are registered for a hypertension control program, where a doctor advises them to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
+
+The patient's BPs are collected at every appointment, and this data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+
+Despite all this hard work on the ground for, the end-of-year report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
+
+It can get overwhelming to untangle this. But I've found Donella Meadow's leverage points as a useful framework to navigate this.
+
+Here are the leverage points as stated by her, in decreasing order of effectiveness:
+
+1. Numbers: Constants and parameters such as subsidies, taxes, and standards
+2. Buffers: The sizes of stabilizing stocks relative to their flows
+3. Stock-and-Flow Structures: Physical systems and their nodes of intersection
+4. Delays: The lengths of time relative to the rates of system changes
+8. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct
+7. Reinforcing Feedback Loops: The strength of the gain of driving loops
+6. Information Flows: The structure of who does and does not have access to information
+5. Rules: Incentives, punishments, constraints
+4. Self-Organization: The power to add, change, or evolve system structure 
+3. Goals: The purpose of the system
+2. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises
+1. Transcending Paradigms
+
