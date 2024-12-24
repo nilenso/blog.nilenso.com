@@ -8,7 +8,7 @@ layout: post
 ---
 > “Hunger, poverty, environmental degradation, economic instability, unemployment, chronic disease, drug addiction, and war, for example, persist in spite of the analytical ability and technical brilliance that have been directed toward eradicating them. No one deliberately creates those problems, no one wants them to persist, but they persist nonetheless. That is because they are intrinsically systems problems—undesirable behaviors characteristic of the system structures that produce them. They will yield only as we reclaim our intuition, stop casting blame, see the system as the source of its own problems, and find the courage and wisdom to *restructure* it.”
 >
-> <span style="margin-left: auto">— *Donella H. Meadows*</span>
+> <div style="margin-right: 10%; text-align: right">— *Donella H. Meadows*</div>
 
 Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program.
 
@@ -82,6 +82,14 @@ Let's step back to what went wrong with our Peculiaristan's health program. To r
 The reason for the system's surprise is that the wrong lever was pulled in the wrong direction. The information the QI team lacked is that not enough efforts were made to actually get the patients to regularly come to their appointments and take medicines—the "registered patients" stock was increasing, but "patient appointment count" stock was not. The motivation to improve one's health was not in enough supply to improve the flow. The hospitals had no mechanism to sort through their paper records and figure out which patients had missed their appointments!
 
 Moreover there were other negative feedback loops—the district hospitals were quite far from the villages from which most patients were screened. The patients were unsure if there were enough drugs in stock at the facility—a shortage was not common.
+
+Fundamentally, the main issues with this system were:
+* The QI team could only see and optimise an input metric like "patients registered", and not outcome metrics like "Percentage of patients with controlled BP", "Percentage of patients who missed their appointments", etc
+* The right information was not accessible to the right people in a reasonable amount of time—Collecting paper records and adding them up slowed down the program team a lot. Not knowing which patients needed to come back to care also did not help the health care workers in the district hospital.
+
+Can you think of other problems with this system?
+
+
 
 Here are the leverage points as stated by her, in increasing order of effectiveness:
 
