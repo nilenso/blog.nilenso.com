@@ -162,6 +162,29 @@ We want to be able to enable other partners and governments to build and grow th
 
 **3. Goals: The purpose of the system**
 
+The true goal of a system contorts every leverage point below this one, be it physical stocks and flows, feedback loops, information flows—even self-organizing behavior.
+
+If the ultimate goal of our system and everyone who has agency over it is to maximally save lives, it means that every intervention we make will be to keep that in mind.
+
+All the work done by the team at Resolve To Save Lives grew out of this goal.
+
 **2. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises**
 
+Paradigms are the shared ideas in the minds of society—the great big unstated assumptions, or deepest set of beliefs about how the world works. These beliefs are unstated because it is unnecessary to state them—everyone already knows them.
+
+Here are some random examples of paradigms that underpin everything I and the team at RTSL have done:
+* The shoggoth of human mortality, cardiovascular disease, can be eliminated.
+* User-centered technology and information systems are a useful tool that can help save lives.
+* We must engage with public healthcare and help improve human well-being.
+* It's possible to give great care by empowering the healthcare workers.
+* Systemic thinking helps us make sense of hard problems.
+
 **1. Transcending Paradigms**
+
+I can only speak for myself here. This leverage point is one that strikes deeply to me at a personal level—it's the recognition that existence of paradigms is itself a paradigm, and beyond that lies a void.
+
+The truth is that there's no certainty in any worldview. The world we inhabit in is beyond comprehension. Meaning is something we arbitrarily assign to our felt sense of reality.
+
+> “If no paradigm is right, you can choose whatever one will help to achieve your purpose. If you have no idea where to get a purpose, you can listen to the universe. ”
+
+I often don't know where my purpose comes from, and why, _really why_ I've chosen to do the things that I do. But what the universe has told me is that it's important to expand my boundary of caring—may it someday engulf the world. 
