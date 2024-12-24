@@ -123,7 +123,7 @@ Our constant focus on making the Simple app easy to use for healthcare workers h
 
 **7. Information Flows: The structure of who does and does not have access to information**
 
-This is a leverage point that keeps on giving. We have been able to massively improve patient outcomes by improving how information flows. It's impossible to improve something that's hard to see or access!
+This is a leverage point that keeps on giving, and one that's easily within reach for technologists like us. We have been able to massively improve patient outcomes by improving how information flows. It's impossible to improve something that's hard to see or access!
 
 * Health care workers have easy access to patient records and can easily see and call patients that are overdue.
 * Health care workers can also see control rates and statistics for their own facility which helps them understand how they are collectively performing, and make local decisions.
@@ -134,7 +134,7 @@ It's also important to note the information that we choose to not show. Adding a
 
 #### The last five leverage points
 
-These
+These are leverage points that are often the most effective, but the hardest to pull. My examples run sparse here, but we are aware that even a few interventions here would have a massive payoff.
 
 **8. Rules: Incentives, punishments, constraints**
 
