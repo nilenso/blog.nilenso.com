@@ -2,7 +2,7 @@
 title: Good enough data
 kind: article
 author: Deepa Venkatraman
-created_at: 2024-08-13 00:00:00 UTC
+created_at: 2024-12-24 00:00:00 UTC
 layout: post
 ---
 > It's better than good. It's good enough.
