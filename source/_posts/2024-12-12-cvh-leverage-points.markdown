@@ -134,7 +134,7 @@ It's also important to note the information that we choose to not show. Adding a
 
 #### The last five leverage points
 
-
+These
 
 **8. Rules: Incentives, punishments, constraints**
 
