@@ -136,11 +136,14 @@ It's also important to note the information that we choose to not show. Adding a
 
 These are leverage points that are often the most effective, but the hardest to pull. My examples run sparse here, but we are aware that even a few interventions here would have a massive payoff.
 
-**8. Rules: Incentives, punishments, constraints**
+**6. Rules: Incentives, punishments, constraints**
 
 
 
-9. Self-Organization: The power to add, change, or evolve system structure 
-10. Goals: The purpose of the system
-11. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises
-12. Transcending Paradigms
+**9. Self-Organization: The power to add, change, or evolve system structure**
+
+**10. Goals: The purpose of the system**
+
+**11. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises**
+
+**12. Transcending Paradigms**
