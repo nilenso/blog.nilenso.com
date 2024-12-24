@@ -87,20 +87,59 @@ Fundamentally, the main issues with this system were:
 * The QI team could only see and optimise an input metric like "patients registered", and not outcome metrics like "Percentage of patients with controlled BP", "Percentage of patients who missed their appointments", etc
 * The right information was not accessible to the right people in a reasonable amount of time—Collecting paper records and adding them up slowed down the program team a lot. Not knowing which patients needed to come back to care also did not help the health care workers in the district hospital.
 
+What we desired is a system that controls BP at a population level and thus saves lives. But what we ended up with instead was a system that maximizes the number of patients that need to be screened!
+
 Can you think of other problems with this system?
 
+At Resolve To Save Lives, I've seen my team make many such interventions to programs around the world. The bulk of my work has been through the system enabled by our [offline first app, Simple](/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/).
+
+Our interventions often map to what the Systems Thinker Donella Meadows describes as "Leverage Points" which are places to intervene in a system.
+
+Here are the leverage points as stated by her, in increasing order of effectiveness. The more effective the lever, the harder it is to pull:
+
+**12. Numbers: Constants and parameters such as subsidies, taxes, and standards**
+
+These are like arranging deck chairs on the Titanic. Twiddling with these numbers in an existing system rarely changes its behaviour in significant ways. An example of this in Peculiaristan's program is increasing the rate of screening visiting patients.
+
+**11. Buffers: The sizes of stabilizing stocks relative to their flows**
+
+Bigger buffers and stocks can help us stabilize systems. Improving the capacity of hospitals to allow more patient appointments, as well as increasing the drug stock supply, are some ways to improve our system. Because a lot of these stocks are physical entities, I have found these pretty tricky to change as technologists.
+
+**10. Stock-and-Flow Structures: Physical systems and their nodes of intersection**
+
+An effective leverage point in our work is helping with the decentralization of care. Our digital systems are designed to encourage transfer of patients from large district hospitals to smaller clinics near their area, while still maintaining the same patient record. This greatly reduces the burden of patients as well as caregivers. 
+
+**9. Delays: The lengths of time relative to the rates of system changes**
+
+A huge motivator to introduce a well-designed digital information system in places that previously used paper records is the fact that it greatly reduces the delays and tightens feedback loops—the patient data is rapidly made available to the QI teams and programs can thus improve faster and more iteratively.
+
+**8. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct**
+
+A lot of our work goes into improving and strengthening the feedback loops that are present in our system. In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility and make it a tap away to call them and get them back into care.
+
+**6. Reinforcing Feedback Loops: The strength of the gain of driving loops**
+
+Our constant focus on making the Simple app easy to use for healthcare workers has led to a pleasantly surprising reinforcing feedback loop. It turns out that a user-friendly app reduces the burden of training because peers can explain to each other how the app works, which is strengthened by the number of people who are experienced with using the app in a facility!
+
+**7. Information Flows: The structure of who does and does not have access to information**
+
+This is a leverage point that keeps on giving. We have been able to massively improve patient outcomes by improving how information flows. It's impossible to improve something that's hard to see or access!
+
+* Health care workers have easy access to patient records and can easily see and call patients that are overdue.
+* Health care workers can also see control rates and statistics for their own facility which helps them understand how they are collectively performing, and make local decisions.
+* Facility managers can see drug stock levels and predict if they will be able to accept higher patient volumes. 
+* Through the Simple dashboard and our Hearts360 indicators, QI teams have easy access to constantly updating aggregate data of key outcome indicators (control rates, missed visits, etc) which lets them quickly understand what's working and not working in their program and make improvements.
+
+It's also important to note the information that we choose to not show. Adding a lot of complex and irrelevant data increases the burden on health care workers collecting the patient level data and makes the dashboard less useful due to a lot of noise and complexity. 
+
+#### The last five leverage points
 
 
-Here are the leverage points as stated by her, in increasing order of effectiveness:
 
-1. Numbers: Constants and parameters such as subsidies, taxes, and standards
-2. Buffers: The sizes of stabilizing stocks relative to their flows
-3. Stock-and-Flow Structures: Physical systems and their nodes of intersection
-4. Delays: The lengths of time relative to the rates of system changes
-5. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct
-6. Reinforcing Feedback Loops: The strength of the gain of driving loops
-7. Information Flows: The structure of who does and does not have access to information
-8. Rules: Incentives, punishments, constraints
+**8. Rules: Incentives, punishments, constraints**
+
+
+
 9. Self-Organization: The power to add, change, or evolve system structure 
 10. Goals: The purpose of the system
 11. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises
