@@ -179,7 +179,7 @@ Here are some random examples of paradigms that underpin everything I and the te
 * It's possible to give great care by empowering the healthcare workers.
 * Systemic thinking helps us make sense of hard problems.
 
-**1. Transcending Paradigms**
+#### 1. The final leverage point: Transcending Paradigms
 
 I can only speak for myself here. This leverage point is one that strikes deeply to me at a personal level—it's the recognition that existence of paradigms is itself a paradigm, and beyond that lies a void.
 
@@ -187,4 +187,4 @@ The truth is that there's no certainty in any worldview. The world we inhabit in
 
 > “If no paradigm is right, you can choose whatever one will help to achieve your purpose. If you have no idea where to get a purpose, you can listen to the universe. ”
 
-I often don't know where my purpose comes from, and why, _really why_ I've chosen to do the things that I do. But what the universe has told me is that it's important to expand my boundary of caring—may it someday engulf the world. 
+I often don't know where my purpose comes from, _really why_ and from _what place_ I've chosen to do the things that I do. But what the universe has told me is that it's important to expand my boundary of caring—may it someday engulf the world.
