@@ -10,15 +10,19 @@ layout: post
 >
 > — *Donella H. Meadows*
 
-A public healthcare system can be so fractally complex that one could argue that it would be futile for me to even begin to describe it. Anyway here goes.
+Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program.
 
-Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program. A doctor advises this patient to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
+![](/images/blog/screening.png)
 
-![](/images/blog/sydiag0.png)
+A doctor advises this patient to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
+
+![](/images/blog/screening_and_appointment.png)
 
 This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world.
 
-The patient's BPs are collected at every appointment, and this data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+The health officials in the NCD division need to know how their program is performing.
+
+The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
 
 ![](/images/blog/sydiag1.png)
 
