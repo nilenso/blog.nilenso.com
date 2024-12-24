@@ -34,4 +34,4 @@ In each of these cases, striving for accuracy is important. However, actionable 
 Data collection and visualisation are complex, and require effort, time and money. Recognise when you have "good enough" data, and move to the next step. Your time and resources are better spent driving meaningful impact than chasing perfection.
 
 [1]
-[Epic Measures](https://www.goodreads.com/book/show/22693187-epic-measures) by Jeremy Smith describes Dr. Murray's Murray’s journey. 
+[Epic Measures](https://www.goodreads.com/book/show/22693187-epic-measures) by Jeremy Smith describes Dr. Murray's journey. 
