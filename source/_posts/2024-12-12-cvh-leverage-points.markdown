@@ -117,11 +117,11 @@ A huge motivator to introduce a well-designed digital information system in plac
 
 A lot of our work goes into improving and strengthening the feedback loops that are present in our system. In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility and make it a tap away to call them and get them back into care.
 
-**6. Reinforcing Feedback Loops: The strength of the gain of driving loops**
+**7. Reinforcing Feedback Loops: The strength of the gain of driving loops**
 
 Our constant focus on making the Simple app easy to use for healthcare workers has led to a pleasantly surprising reinforcing feedback loop. It turns out that a user-friendly app reduces the burden of training because peers can explain to each other how the app works, which is strengthened by the number of people who are experienced with using the app in a facility!
 
-**7. Information Flows: The structure of who does and does not have access to information**
+**6. Information Flows: The structure of who does and does not have access to information**
 
 This is a leverage point that keeps on giving, and one that's easily within reach for technologists like us. We have been able to massively improve patient outcomes by improving how information flows. It's impossible to improve something that's hard to see or access!
 
@@ -136,14 +136,32 @@ It's also important to note the information that we choose to not show. Adding a
 
 These are leverage points that are often the most effective, but the hardest to pull. My examples run sparse here, but we are aware that even a few interventions here would have a massive payoff.
 
-**6. Rules: Incentives, punishments, constraints**
+**5. Rules: Incentives, punishments, constraints**
 
+Driving change cannot happen in a vacuum. In our case, this means partnering with stakeholders that can push the right incentives and understand what it takes to improve programs and, thus, the well being of their citizens.
 
+Rules can govern how data is captured, used, and monitored within the program, effectively decided what can and cannot be built.
 
-**9. Self-Organization: The power to add, change, or evolve system structure**
+Rules can enforce usage of treatment protocols that simplifies patient care, like the one from WHO's HEARTS technical package—the effect of these flow into other areas, like improving drug stock management.
 
-**10. Goals: The purpose of the system**
+Rules can help create SOPs for decentralisation of care, define roles and processes that ensure the smooth flow of stocks and reinforcement of positive feedback loops.
 
-**11. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises**
+Rules can help decide how all the actors in our systems are empowered to provide care.
 
-**12. Transcending Paradigms**
+**4. Self-Organization: The power to add, change, or evolve system structure**
+
+Meadows describes this well;
+
+> ﻿“The most stunning thing living systems and some social systems can do is to change themselves utterly by creating whole new structures and behaviors. In biological systems that power is called evolution. In human economies it’s called technical advance or social revolution. In systems lingo it’s called self-organization.”
+
+A massive learning for me while working as a technologist in public healthcare is that to truly make a lasting change, we have to work towards a purpose that is bigger than ourselves and beyond the organisation we're a part of.
+
+The most important change that we have worked on over the years is not the well-crafted code we have written over the years, the technical systems or even the user experience and designs. It's larger than that—it's compiling, publishing and sharing all our hard-earned lessons and patterns that we have learned through all these years of engaging with this vastly complex public healthcare machinery across countries and partners.
+
+We want to be able to enable other partners and governments to build and grow their versions of a "Simple system" that cater to their needs and outgrow all of us and attain a life of its own.
+
+**3. Goals: The purpose of the system**
+
+**2. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises**
+
+**1. Transcending Paradigms**
