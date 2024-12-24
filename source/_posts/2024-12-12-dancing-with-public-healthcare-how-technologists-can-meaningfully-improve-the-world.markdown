@@ -57,17 +57,33 @@ One way to think about systems is in terms of *stocks* and *flows*. Let's look a
 
 The fat arrow is a *flow*. All systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's stated purpose!).
 
-Each box represents a *stock*—you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
+Each box represents a *stock*—you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or the BP control rate. It could also be an abstract qualitative resource like an individual patient's motivation to improve their health.
 
-The thinner arrows represent information links—these are actions that affect the flow.
+The neat thing about stocks in a system is that they naturally decouple flows in a system by acting as a buffering mechanism. They allow the stocks to temporarily be out of balance with each other. Buffers offer some resilience to systems. (It would be impossible for hospitals had to send all their paper record data at the same rate patients are visiting for appointments!)
 
-We also have a bunch *stocks* (represented by the boxes and circles), which 
+Can you identify the stocks in our program model below?
 
-This is a great start, and it has taken Peculiaristan a massive effort to get here!
+![](/images/blog/identify_stocks_ex.png)
 
-It can get overwhelming to untangle this. But I've found Donella Meadow's leverage points as a useful framework to navigate this.
+Readers might also have noticed the thinner arrows that represent information links—these are actions that affect the flow rates. The motivation to improve one's health and the desire for free medication are stocks that would affect the flow rate of patients going for their appointments. The more of it there is, the more would be the flow rate, and vice versa. This constitutes something called a _feedback loop_.
 
-Here are the leverage points as stated by her, in decreasing order of effectiveness:
+Almost every decision point comes with a feedback loop. An important feedback loop we have in our system is the one enabled by aggregating patient data and using it to improve screening. If the number of patients registered are low, this will be caught and the implementation of aggressive screening will bring this stock back up. A thermostat is a classic example of a system with a balancing feedback loop.
+
+Another important kind of feedback loop that is not represented in the system above is a reinforcing feedback loop. This is a loop that represents compounding or snowballing—like an interest-bearing bank account. We will come back to how we can use these to help us soon.  <later: peer training example>
+
+Stocks, buffers, information flows, and feedback loops are all things that we can influence that will help us understand and improve our systems. These are some of our leverage points.
+
+Let's step back to what went wrong with our Peculiaristan's health program. To recap:
+* Patients were screened and the hypertensive ones were identified.
+* They were asked to come to the hospital every 28 days.
+* The QI teams got a hold of the patient screening data—they wanted to drive up this number, and thus screened more aggressively. Millions of patients were screened!
+* No improvement to mortality rates!
+
+The reason for the system's surprise is that the wrong lever was pulled in the wrong direction. The information the QI team lacked is that not enough efforts were made to actually get the patients to regularly come to their appointments and take medicines—the "registered patients" stock was increasing, but "patient appointment count" stock was not. The motivation to improve one's health was not in enough supply to improve the flow. The hospitals had no mechanism to sort through their paper records and figure out which patients had missed their appointments!
+
+Moreover there were other negative feedback loops—the district hospitals were quite far from the villages from which most patients were screened. The patients were unsure if there were enough drugs in stock at the facility—a shortage was not common.
+
+Here are the leverage points as stated by her, in increasing order of effectiveness:
 
 1. Numbers: Constants and parameters such as subsidies, taxes, and standards
 2. Buffers: The sizes of stabilizing stocks relative to their flows
