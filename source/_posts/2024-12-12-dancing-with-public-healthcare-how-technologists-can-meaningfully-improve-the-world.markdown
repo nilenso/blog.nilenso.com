@@ -8,7 +8,7 @@ layout: post
 ---
 > “Hunger, poverty, environmental degradation, economic instability, unemployment, chronic disease, drug addiction, and war, for example, persist in spite of the analytical ability and technical brilliance that have been directed toward eradicating them. No one deliberately creates those problems, no one wants them to persist, but they persist nonetheless. That is because they are intrinsically systems problems—undesirable behaviors characteristic of the system structures that produce them. They will yield only as we reclaim our intuition, stop casting blame, see the system as the source of its own problems, and find the courage and wisdom to *restructure* it.”
 >
-> — *Donella H. Meadows*
+> <span style="margin-left: auto">— *Donella H. Meadows*</span>
 
 Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program.
 
@@ -18,13 +18,21 @@ A doctor advises this patient to take a CCB medication like Amlodipine. They nee
 
 ![](/images/blog/screening_and_appointment.png)
 
-This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world.
+This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world. And this is entirely preventable, if patients are regularly returning to care, and taking their medicines!
+
+The hope is that by running this at scale, we are improving the health and well being of the general population.
+
+![](/images/blog/health_improvement_flow.png)
 
 The health officials in the NCD division need to know how their program is performing.
 
-The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing. They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
 
-![](/images/blog/sydiag1.png)
+![](/images/blog/qi_introduced.png)
+
+They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+
+![](/images/blog/improve_screening.png)
 
 Despite all this hard work on the ground, the annual report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
 
