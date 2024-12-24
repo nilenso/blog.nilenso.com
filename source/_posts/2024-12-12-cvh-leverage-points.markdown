@@ -26,7 +26,7 @@ The hope is that by running this at scale, we are improving the health and well 
 
 The health officials in the NCD division need to know how their program is performing.
 
-The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests for aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
+The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
 
 ![](/images/blog/qi_introduced.png)
 
@@ -183,7 +183,7 @@ Here are some random examples of paradigms that underpin everything I and the te
 
 I can only speak for myself here. This leverage point is one that strikes deeply to me at a personal level—it's the recognition that existence of paradigms is itself a paradigm, and beyond that lies a void.
 
-The truth is that there's no certainty in any worldview. The world we inhabit in is beyond comprehension. Meaning is something we arbitrarily assign to our felt sense of reality.
+The truth is that there's no certainty in any worldview. The world we inhabit is beyond comprehension. Meaning is something we arbitrarily assign to our felt sense of reality.
 
 > “If no paradigm is right, you can choose whatever one will help to achieve your purpose. If you have no idea where to get a purpose, you can listen to the universe. ”
 
