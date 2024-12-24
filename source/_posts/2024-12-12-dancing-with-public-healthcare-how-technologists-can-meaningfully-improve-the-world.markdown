@@ -36,11 +36,9 @@ They might then drive action to improve this figure—for example, they sample p
 
 Despite all this hard work on the ground, the annual report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
 
-Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what I could do to make any kind of dent in this space. It turns out that it helps to think in systems.
+Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what it takes to make any kind of dent in this space. It turns out that it helps to think in systems.
 
-My stint in public health taught me that it is approachable for a technologist to massively improve the world—and that adopting a systems thinking lens can help a lot.
-
-We have the skill sets and the tools to scale ideas and methods. This puts us in a position where we do not have to accept a bad thing that we see around us—we can fix it.
+As technologists, we have the skill sets and the tools to scale ideas and methods. This puts us in a position where we do not have to accept a bad thing that we see around us—we can fix it.
 
 Let's first strengthen the notion of what I mean by a system.
 
