@@ -51,11 +51,17 @@ Our system in this case, is Peculiaristan's hypertension control program. Here's
 * The least obvious part of the system, its function or purpose, is often the most crucial determinant of the system’s behavior.
 * System structure is the source of system behavior. System behavior reveals itself as a series of events over time.
 
-I've taken a peculiar decision to label the fat arrows as "flows". This is because all systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's *stated* purpose!).
+One way to think about systems is in terms of *stocks* and *flows*. Let's look at the patient screening subsystem again:
+
+![](/images/blog/screening.png)
+
+The fat arrow is a *flow*. All systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's stated purpose!).
+
+Each box represents a *stock*—you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
 
 The thinner arrows represent information links—these are actions that affect the flow.
 
-We also have a bunch *stocks* (represented by the boxes and circles), which you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or an abstract qualitative resource like the motivation to improve one's health.
+We also have a bunch *stocks* (represented by the boxes and circles), which 
 
 This is a great start, and it has taken Peculiaristan a massive effort to get here!
 
