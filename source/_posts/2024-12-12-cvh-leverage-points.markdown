@@ -115,33 +115,39 @@ What we desire is a system that controls BP at a population level and thus saves
 
 Can you think of other problems with this system?
 
-## Leverage Points: Learnings from building digital tools in Public Health
+## Leverage Points: Learnings from building digital tools in public health
 
 At Resolve To Save Lives, I've seen my team make many such interventions to programs around the world. The bulk of my work has been through the system enabled by our [offline first app, Simple](/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/).
 
-Our interventions often map to what the Systems Thinker Donella Meadows describes as "Leverage Points" which are places to intervene in a system.
+Our interventions often map to what the Systems Thinker Donella Meadows describes as "Leverage Points" which are places to intervene in a system. I love this articulation, because it gives us a clear way to see how to be an agent of change and engage with the systems around us.
 
-Here are the leverage points as stated by her, in increasing order of effectiveness. The more effective the lever, the harder it is to pull:
+Here are the leverage points as stated by her, in increasing order of effectiveness. The more effective the lever, the harder it is to usually pull:
 
 **12. Numbers: Constants and parameters such as subsidies, taxes, and standards**
 
 These are like arranging deck chairs on the Titanic. Twiddling with these numbers in an existing system rarely changes its behaviour in significant ways. An example of this in Peculiaristan's program is increasing the rate of screening visiting patients.
 
+While these are occasionally useful, my team understands that it's more important to be directionally correct and [not let perfect be the enemy of good when it comes to numbers](/blog/2024/12/24/good-enough-data/).
+
 **11. Buffers: The sizes of stabilizing stocks relative to their flows**
 
-Bigger buffers and stocks can help us stabilize systems. Improving the capacity of hospitals to allow more patient appointments, as well as increasing the drug stock supply, are some ways to improve our system. Because a lot of these stocks are physical entities, I have found these pretty tricky to change as technologists.
+Bigger buffers and stocks can help us stabilize systems.
+
+Improving the capacity of hospitals to allow more patient appointments and increasing the drug stock supply are some ways to improve our system. Because a lot of these stocks are physical entities, I have found these pretty tricky to change as technologists.
 
 **10. Stock-and-Flow Structures: Physical systems and their nodes of intersection**
 
-An effective leverage point in our work is helping with the decentralization of care. Our digital systems are designed to encourage transfer of patients from large district hospitals to smaller clinics near their area, while still maintaining the same patient record. This greatly reduces the burden of patients as well as caregivers. 
+An effective leverage point in our work is helping with the [decentralization of care](https://resolvetosavelives.org/timeline/new-study-encourages-care-closer-to-home/). Our digital systems are designed to encourage transfer of patients from large district hospitals to smaller clinics near their area, while still maintaining the same patient record. This greatly reduces the burden of patients as well as caregivers. 
 
 **9. Delays: The lengths of time relative to the rates of system changes**
 
-A huge motivator to introduce a well-designed digital information system in places that previously used paper records is the fact that it greatly reduces the delays and tightens feedback loops—the patient data is rapidly made available to the QI teams and programs can thus improve faster and more iteratively.
+A huge motivator to introduce [a well-designed digital information system](https://www.simple.org/blog/user-centered-design-public-health/) in places that previously used paper records is the fact that it greatly reduces the delays and tightens feedback loops—the patient data is rapidly made available to the QI teams and programs can thus improve faster and more iteratively.
 
 **8. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct**
 
-A lot of our work goes into improving and strengthening the feedback loops that are present in our system. In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility and make it a tap away to call them and get them back into care.
+A lot of our work goes into improving and strengthening the feedback loops that are present in our system.
+
+In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility and make it a tap away to call them and get them back into care. Additionally, we also send SMS reminders for patients that are overdue. These are actions that have improved the patient flow to clinics—which in turn have improved 
 
 **7. Reinforcing Feedback Loops: The strength of the gain of driving loops**
 
