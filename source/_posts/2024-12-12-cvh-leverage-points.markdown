@@ -10,6 +10,8 @@ layout: post
 >
 > <div style="margin-right: 10%; text-align: right">— <em>Donella H. Meadows</em></div>
 
+## The Story of Peculiaristan
+
 Healthcare workers in Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient has a high blood pressure, they are enrolled for a hypertension control program and sent off to a doctor.
 
 ![](/images/blog/screening.png)
@@ -28,19 +30,23 @@ The hope is that by running this at scale, we are improving the health and well 
 
 The health officials in the NCD division need to know how their program is performing.
 
-The appointment data is collected in paper records. The quality improvement teams in the NCD division requests aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
+The clinicians collect data from each patient visit into paper records. The quality improvement teams in the NCD division requests aggregate patient data from the hospitals (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
 
 ![](/images/blog/qi_introduced.png)
 
-They might then drive action to improve this figure—for example, they sample patients at the hospital more aggressively to improve the screening flow.
+They might then drive action to improve this figure—in Peculiaristan, they chose to sample patients at the hospital more aggressively to improve the screening flow.
 
 ![](/images/blog/improve_screening.png)
+
+Later that year, an independent annual survey on heart disease and BP control rates was conducted on the patient population served by the district hospitals. The results were grim.
 
 Despite all this hard work on the ground, the annual report showed no improvement in mortality rates and the population's BP control rate—in fact, it was worse than the year before! What happened?
 
 Public health is a notoriously hard problem to work on. Before I worked with Resolve To Save Lives, I had almost no clue about what it takes to make any kind of dent in this space. It turns out that it helps to think in systems.
 
 As technologists, we have the skill sets and the tools to scale ideas and methods. This puts us in a position where we do not have to accept a bad thing that we see around us—we can fix it.
+
+## The Systems Frame: Peculiaristan's stocks, buffers and information flows
 
 Let's first strengthen the notion of what I mean by a system.
 
