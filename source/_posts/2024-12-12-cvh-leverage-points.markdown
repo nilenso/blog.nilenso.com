@@ -10,15 +10,17 @@ layout: post
 >
 > <div style="margin-right: 10%; text-align: right">— <em>Donella H. Meadows</em></div>
 
-Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient is found to have a high BP, they are registered for a hypertension control program.
+Healthcare workers in Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient has a high blood pressure, they are enrolled for a hypertension control program and sent off to a doctor.
 
 ![](/images/blog/screening.png)
 
-A doctor advises this patient to take a CCB medication like Amlodipine. They need to be taking these everyday to keep their BP under control (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to show up to the hospital once every 28 days.
+The doctor advises this patient to take a CCB medication like Amlodipine. They need to take this drug every day control their BP (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to come back to the hospital once every 28 days.
 
 ![](/images/blog/screening_and_appointment.png)
 
-This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with, typical of a growing, developing country. It turns out that hypertension eventually kills more people than anything else in the world. And this is entirely preventable, if patients are regularly returning to care, and taking their medicines!
+This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with. It's typical of a growing, developing country. It turns out that hypertension (ie, high BP) eventually kills more people than anything else in the world.
+
+To reduce deaths due to heart disease, hypertensive patients need to keep their BP under control (<140/90 mm Hg)—this means regularly returning to care, and taking their medicines.
 
 The hope is that by running this at scale, we are improving the health and well being of the general population.
 
@@ -26,7 +28,7 @@ The hope is that by running this at scale, we are improving the health and well 
 
 The health officials in the NCD division need to know how their program is performing.
 
-The appointment data is collected in paper records. Some hospitals have started using a digital system. The quality improvement teams in the NCD division requests aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
+The appointment data is collected in paper records. The quality improvement teams in the NCD division requests aggregate patient data (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
 
 ![](/images/blog/qi_introduced.png)
 
