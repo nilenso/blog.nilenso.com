@@ -5,6 +5,11 @@ single: true
 
 <div>
 <article class="hentry" role="article">
+  {% if page.cover_image %}
+    <div class="cover-image-container">
+      <img src="{{ page.cover_image }}" alt="Cover image for {{ page.title }}" class="cover-image">
+    </div>
+  {% endif %}
   {% include article.html %}
   <footer class="flex">
 
