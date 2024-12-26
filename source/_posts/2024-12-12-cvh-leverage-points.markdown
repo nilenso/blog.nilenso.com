@@ -73,6 +73,20 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
+<details>
+  <summary>Reveal Answers</summary>
+  <ul>
+    <li>Total population in a region</li>
+    <li>Registered patients that need to return to care</li>
+    <li>Motivation to improve health/Desire for free medication</li>
+    <li>Patient appointments in public facilities</li>
+    <li>Patient data received by the QI team</li>
+    <li>Indicators and analyses (eg: added up patient screening counts)</li>
+    <li>Actual BP control rate on ground (proxy for health outcomes)</li>
+  </ul>
+  <p>We could choose to include other stocks in our model, like drug stocks at hospitals, clinician's energy levels and more—we have kept it somewhat simple for the sake of demonstration.</p>
+</details>
+
 Readers might also have noticed the thinner arrows that represent information links—these are actions that affect the flow rates. The motivation to improve one's health and the desire for free medication are stocks that would affect the flow rate of patients going for their appointments. The more of it there is, the more would be the flow rate, and vice versa. This constitutes something called a _feedback loop_.
 
 Almost every decision point comes with a feedback loop. An important feedback loop we have in our system is the one enabled by aggregating patient data and using it to improve screening. If the number of patients registered are low, this will be caught and the implementation of aggressive screening will bring this stock back up. A thermostat is a classic example of a system with a balancing feedback loop.
