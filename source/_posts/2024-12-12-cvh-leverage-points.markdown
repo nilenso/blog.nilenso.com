@@ -87,15 +87,15 @@ Can you identify the stocks in our program model below?
   <p>We could choose to include other stocks in our model, like drug stocks at hospitals, clinician's energy levels and more—we have kept it somewhat simple for the sake of demonstration.</p>
 </details>
 
-Readers might also have noticed the thinner arrows that represent information links—these are actions that affect the flow rates. The motivation to improve one's health and the desire for free medication are stocks that would affect the flow rate of patients going for their appointments. The more of it there is, the more would be the flow rate, and vice versa. This constitutes something called a _feedback loop_.
+Readers might have noticed that thinner arrows represent actions or decisions that affect flow rates—we call these information links. The motivation to improve one's health and the desire for free medication are stocks that would affect the flow rate of patients going to their appointments. The more of it there is, the more would be the flow rate, and vice versa. This constitutes something called a _feedback loop_.
 
-Almost every decision point comes with a feedback loop. An important feedback loop we have in our system is the one enabled by aggregating patient data and using it to improve screening. If the number of patients registered are low, this will be caught and the implementation of aggressive screening will bring this stock back up. A thermostat is a classic example of a system with a balancing feedback loop.
+Almost every decision point comes with a feedback loop. An important feedback loop we have in our system is one enabled by aggregating patient data and using it to improve screening. If the number of patients registered are low, this will be caught and the implementation of aggressive screening will bring this stock back up. A thermostat is a classic example of a system with a _balancing feedback loop_.
 
-Another important kind of feedback loop that is not represented in the system above is a reinforcing feedback loop. This is a loop that represents compounding or snowballing—like an interest-bearing bank account. We will come back to how we can use these to help us soon.
+Another important kind of feedback loop not represented in the system above is a reinforcing feedback loop. This is a loop that represents compounding or snowballing, like an interest-bearing bank account. We will come back to how we can use these to help us soon.
 
 Stocks, buffers, information flows, and feedback loops are all things that we can influence that will help us understand and improve our systems. These are some of our leverage points.
 
-## Leverage Points: Learnings from building digital tools in Public Health
+## Re-examining the Peculiaristan program through the systems frame
 
 Let's step back to what went wrong with our Peculiaristan's health program. To recap:
 * Patients were screened and the hypertensive ones were identified.
@@ -103,17 +103,19 @@ Let's step back to what went wrong with our Peculiaristan's health program. To r
 * The QI teams got a hold of the patient screening data—they wanted to drive up this number, and thus screened more aggressively. Millions of patients were screened!
 * No improvement to mortality rates!
 
-The reason for the system's surprise is that the wrong lever was pulled in the wrong direction. The information the QI team lacked is that not enough efforts were made to actually get the patients to regularly come to their appointments and take medicines—the "registered patients" stock was increasing, but "patient appointment count" stock was not. The motivation to improve one's health was not in enough supply to improve the flow. The hospitals had no mechanism to sort through their paper records and figure out which patients had missed their appointments!
+The reason for this systems surprise is that the wrong lever was pulled in the wrong direction. There was not enough effort to get patients to regularly return to care and take their medicines, nor was this data tracked. The "registered patients" stock was increasing, but "patient appointment count" stock was not. The motivation to improve one's health was not in enough supply to improve the flow. The hospitals had no mechanism to sort through their paper records and figure out which patients had missed their appointments!
 
 Moreover there were other negative feedback loops—the district hospitals were quite far from the villages from which most patients were screened. The patients were unsure if there were enough drugs in stock at the facility—a shortage was not common.
 
-Fundamentally, the main issues with this system were:
-* The QI team could only see and optimise an input metric like "patients registered", and not outcome metrics like "Percentage of patients with controlled BP", "Percentage of patients who missed their appointments", etc
-* The right information was not accessible to the right people in a reasonable amount of time—Collecting paper records and adding them up slowed down the program team a lot. Not knowing which patients needed to come back to care also did not help the health care workers in the district hospital.
+At its core, the main issues with this system were:
+* The data wasn't useful or sufficient! The QI team could only see and optimise an input metric like "patients registered", and not outcome metrics like "Percentage of patients with controlled BP", "Percentage of patients who missed their appointments"
+* The right information was not quickly accessible to the right people—collecting paper records and adding them up slowed down the program team a lot. Not knowing which patients needed to come back to care also did not help the health care workers in the district hospital.
 
-What we desired is a system that controls BP at a population level and thus saves lives. But what we ended up with instead was a system that maximizes the number of patients that need to be screened!
+What we desire is a system that controls BP at a population level and thus saves lives. But what we ended up with was a system that maximizes the number of patients that need to be screened!
 
 Can you think of other problems with this system?
+
+## Leverage Points: Learnings from building digital tools in Public Health
 
 At Resolve To Save Lives, I've seen my team make many such interventions to programs around the world. The bulk of my work has been through the system enabled by our [offline first app, Simple](/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/).
 
