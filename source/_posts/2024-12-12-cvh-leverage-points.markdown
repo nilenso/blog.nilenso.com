@@ -77,9 +77,11 @@ Readers might also have noticed the thinner arrows that represent information li
 
 Almost every decision point comes with a feedback loop. An important feedback loop we have in our system is the one enabled by aggregating patient data and using it to improve screening. If the number of patients registered are low, this will be caught and the implementation of aggressive screening will bring this stock back up. A thermostat is a classic example of a system with a balancing feedback loop.
 
-Another important kind of feedback loop that is not represented in the system above is a reinforcing feedback loop. This is a loop that represents compounding or snowballing—like an interest-bearing bank account. We will come back to how we can use these to help us soon.  <later: peer training example>
+Another important kind of feedback loop that is not represented in the system above is a reinforcing feedback loop. This is a loop that represents compounding or snowballing—like an interest-bearing bank account. We will come back to how we can use these to help us soon.
 
 Stocks, buffers, information flows, and feedback loops are all things that we can influence that will help us understand and improve our systems. These are some of our leverage points.
+
+## Leverage Points: Learnings from building digital tools in Public Health
 
 Let's step back to what went wrong with our Peculiaristan's health program. To recap:
 * Patients were screened and the hypertensive ones were identified.
