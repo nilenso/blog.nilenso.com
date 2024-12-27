@@ -87,7 +87,7 @@ Can you identify the stocks in our program model below?
   <p>We could choose to include other stocks in our model, like drug stocks at hospitals, clinician's energy levels and more—we have kept it somewhat simple for the sake of demonstration.</p>
 </details>
 
-  
+ \
 
 Readers might have noticed that thinner arrows represent actions or decisions that affect flow rates—we call these information links. The motivation to improve one's health and the desire for free medication are stocks that would affect the flow rate of patients going to their appointments. The more of it there is, the more would be the flow rate, and vice versa. This constitutes something called a _feedback loop_.
 
