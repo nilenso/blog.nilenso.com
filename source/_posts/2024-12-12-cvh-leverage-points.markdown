@@ -129,7 +129,7 @@ Here are the leverage points as stated by her, in increasing order of effectiven
 
 These are like arranging deck chairs on the Titanic. Twiddling with these numbers in an existing system rarely changes its behaviour in significant ways. An example of this in Peculiaristan's program is increasing the rate of screening visiting patients.
 
-While these are occasionally useful, my team understands that it's more important to be directionally correct and [not let perfect be the enemy of good when it comes to numbers](/blog/2024/12/24/good-enough-data/).
+While these are occasionally useful, our team understands that it's more important to be directionally correct and not let perfect be the enemy of good when it comes to numbers.
 
 **11. Buffers: The sizes of stabilizing stocks relative to their flows**
 
@@ -149,40 +149,44 @@ A huge motivator to introduce [a well-designed digital information system](https
 
 **8. Balancing Feedback Loops: The strength of the feedbacks relative to the impacts they are trying to correct**
 
-A lot of our work goes into improving and strengthening the feedback loops that are present in our system.
+A lot of our work goes into improving and strengthening the balancing feedback loops that are present in our system. One of the trickiest ones to maintain is the one that brings patients back to care.
 
-In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility and make it a tap away to call them and get them back into care. Additionally, we also send SMS reminders for patients that are overdue. These are actions that have improved the patient flow to clinics—which in turn have improved 
+In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility—patients can be called from the line list with a single tap, which enables healthcare workers to get them back into care. Additionally, we also send SMS reminders for patients that are overdue. All these actions improve the patient flow to clinics—which in turn have improve the quality of data we receive. This enables better data-driven decisions to improve the program.
+
+It's [a domino effect of good outcomes](https://www.simple.org/blog/revealing-data-behind-overdue-patient-calls/) that result in an improved BP control rate!
 
 **7. Reinforcing Feedback Loops: The strength of the gain of driving loops**
+
+It's also important to strengthen positive feedback loops.
 
 Our constant focus on making the Simple app easy to use for healthcare workers has led to a pleasantly surprising reinforcing feedback loop. It turns out that a user-friendly app reduces the burden of training because peers can explain to each other how the app works, which is strengthened by the number of people who are experienced with using the app in a facility!
 
 **6. Information Flows: The structure of who does and does not have access to information**
 
-This is a leverage point that keeps on giving, and one that's easily within reach for technologists like us. We have been able to massively improve patient outcomes by improving how information flows. It's impossible to improve something that's hard to see or access!
+This is a leverage point that keeps on giving, and one that's technologists are great at enabling. We have been able to massively improve patient outcomes by improving how information flows, and making the right data visible to the right people. It's impossible to improve something that's hard to see or access!
 
-* Health care workers have easy access to patient records and can easily see and call patients that are overdue.
+* Health care workers have easy access to patient records in their district and can easily see and call patients that are overdue.
 * Health care workers can also see control rates and statistics for their own facility which helps them understand how they are collectively performing, and make local decisions.
 * Facility managers can see drug stock levels and predict if they will be able to accept higher patient volumes. 
-* Through the Simple dashboard and our Hearts360 indicators, QI teams have easy access to constantly updating aggregate data of key outcome indicators (control rates, missed visits, etc) which lets them quickly understand what's working and not working in their program and make improvements.
+* Through the Simple dashboard and our [HEARTS360 indicators](https://hearts360.org/), QI teams have easy access to constantly updating aggregate data of key outcome indicators (control rates, missed visits, etc) which lets them quickly understand what's working and not working in their program and make improvements.
 
-It's also important to note the information that we choose to not show. Adding a lot of complex and irrelevant data increases the burden on health care workers collecting the patient level data and makes the dashboard less useful due to a lot of noise and complexity. 
+It's also important to note the information that we choose to not show. Adding a lot of [complex and irrelevant data](/blog/2024/12/24/good-enough-data/) increases the [burden on health care workers](https://www.simple.org/blog/user-centered-design-public-health/) collecting the patient level data and makes the dashboard less useful due to a lot of noise and complexity.
 
 #### The last five leverage points
 
-These are leverage points that are often the most effective, but the hardest to pull. My examples run sparse here, but we are aware that even a few interventions here would have a massive payoff.
+These are leverage points that are often the most effective, but the hardest to pull. My examples run sparse here, but we are aware that even a few interventions in these points would have a massive payoff.
 
 **5. Rules: Incentives, punishments, constraints**
 
-Driving change cannot happen in a vacuum. In our case, this means partnering with stakeholders that can push the right incentives and understand what it takes to improve programs and, thus, the well being of their citizens.
+Driving change cannot happen in a vacuum. In our case, this means partnering with stakeholders that can push the right incentives and understand what it takes to improve programs and, therefore improve the well being of their citizens.
 
 Rules can govern how data is captured, used, and monitored within the program, effectively decided what can and cannot be built.
 
-Rules can enforce usage of treatment protocols that simplifies patient care, like the one from WHO's HEARTS technical package—the effect of these flow into other areas, like improving drug stock management.
+Rules can enforce usage of treatment protocols that simplifies patient care, like the one from WHO's [HEARTS](https://www.simple.org/blog/hearts360-dashboard/) technical package—the effect of these flow into other areas, like improving drug stock management.
 
-Rules can help create SOPs for decentralisation of care, define roles and processes that ensure the smooth flow of stocks and reinforcement of positive feedback loops.
+Rules can help create SOPs enabling decentralisation of care, define roles and processes that ensure the smooth flow of stocks and reinforcement of positive feedback loops. All our technological interventions can only succeed if they are enforced at a program level.
 
-Rules can help decide how all the actors in our systems are empowered to provide care.
+Rules can also help decide how all the actors in our systems are empowered to provide care.
 
 **4. Self-Organization: The power to add, change, or evolve system structure**
 
@@ -192,11 +196,15 @@ Meadows describes this well;
 
 A massive learning for me while working as a technologist in public healthcare is that to truly make a lasting change, we have to work towards a purpose that is bigger than ourselves and beyond the organisation we're a part of.
 
-The most important change that we have worked on over the years is not the well-crafted code we have written over the years, the technical systems or even the user experience and designs. It's larger than that—it's compiling, publishing and sharing all our hard-earned lessons and patterns that we have learned through all these years of engaging with this vastly complex public healthcare machinery across countries and partners.
+The most important change that we have worked on over the years is not the well-crafted code we have written over the years, the technical systems or even the user experience and designs. It's a lot more than that—it's compiling, publishing and sharing all our hard-earned lessons and patterns that we have learned through all these years of engaging with this vastly complex public healthcare machinery across countries and partners.
 
-We want to be able to enable other partners and governments to build and grow their versions of a "Simple system" that cater to their needs and outgrow all of us and attain a life of its own.
+It's critically important to enable other partners and governments to build and grow their versions of a "Simple system" that cater to their needs, and find a way to evolve beyond our own interventions.
+
+We don't want to be the system and engulf everything. We want to instead create an ecosystem that gives rise to other wonderful systems that improve lives, ones that sustain long beyond our individual and organisational lifetimes.
 
 **3. Goals: The purpose of the system**
+
+What's more important than self-organisation are goals.
 
 The true goal of a system contorts every leverage point below this one, be it physical stocks and flows, feedback loops, information flows—even self-organizing behavior.
 
@@ -206,13 +214,12 @@ All the work done by the team at Resolve To Save Lives grew out of this goal.
 
 **2. Paradigms: The mind-set out of which the system—its goals, structure, rules, delays, parameters—arises**
 
-Paradigms are the shared ideas in the minds of society—the great big unstated assumptions, or deepest set of beliefs about how the world works. These beliefs are unstated because it is unnecessary to state them—everyone already knows them.
+Paradigms are the shared ideas in the minds of society—the great big unstated assumptions, or deepest set of beliefs about how the world works. These beliefs are unstated because it is unnecessary to state them—everyone already knows them. Shifting paradigms cause massive changes.
 
 Here are some random examples of paradigms that underpin everything I and the team at RTSL have done:
-* The shoggoth of human mortality, cardiovascular disease, can be eliminated.
-* User-centered technology and information systems are a useful tool that can help save lives.
+* User-centered technology and information systems must be designed to empower healthcare workers on the ground.
 * We must engage with public healthcare and help improve human well-being.
-* It's possible to give great care by empowering the healthcare workers.
+* The shoggoth of human mortality, cardiovascular disease, can be eliminated.
 * Systemic thinking helps us make sense of hard problems.
 
 #### 1. The final leverage point: Transcending Paradigms﻿
@@ -221,6 +228,8 @@ I can only speak for myself here. This leverage point is one that strikes deeply
 
 The truth is that there's no certainty in any worldview. The world we inhabit is beyond comprehension. Meaning is something we arbitrarily assign to our felt sense of reality.
 
-> “If no paradigm is right, you can choose whatever one will help to achieve your purpose. If you have no idea where to get a purpose, you can listen to the universe. ”
+> “If no paradigm is right, you can choose whatever one will help to achieve your purpose. If you have no idea where to get a purpose, you can listen to the universe. ”  
+> [...]  
+> “It is in this space of mastery over paradigms that people throw off addictions, live in constant joy, bring down empires, get locked up or burned at the stake or crucified or shot, and have impacts that last for millennia.”
 
 I often don't know where my purpose comes from, _really why_ and from _what place_ I've chosen to do the things that I do. But what the universe has told me is that it's important to expand my boundary of caring—may it someday engulf the world.
