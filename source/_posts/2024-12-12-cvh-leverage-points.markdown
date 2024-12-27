@@ -16,7 +16,7 @@ Healthcare workers in Peculiaristan's district hospitals are randomly screening 
 
 ![](/images/blog/screening.webp)
 
-The doctor advises this patient to take a CCB medication like Amlodipine. They need to take this drug every day control their BP (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to come back to the hospital once every 28 days.
+The doctor advises this patient to take a CCB medication like Amlodipine. They need to take this drug every day to control their BP (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to come back to the hospital once every 28 days.
 
 ![](/images/blog/screening_and_appointment.webp)
 
