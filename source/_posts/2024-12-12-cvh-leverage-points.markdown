@@ -1,5 +1,5 @@
 ---
-title: how to systematically save a good chunk of lives; a technologist's guide
+title: "Saving Lives: A Systems Frame"
 kind: article
 author: Atharva Raykar
 created_at: 2024-12-12 00:00:00 UTC
