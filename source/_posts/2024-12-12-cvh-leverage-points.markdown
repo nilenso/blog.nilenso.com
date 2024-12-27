@@ -71,7 +71,7 @@ The neat thing about stocks in a system is that they naturally decouple flows in
 
 Can you identify the stocks in our program model below?
 
-![](/images/blog/identify_stocks_ex.webp)
+![](/images/blog/identify_stocks_ex.w)
 
 <details style='background-color:#eee; padding:0.4rem 0.8rem 0.4rem 0.8rem; border-radius:3px'>
   <summary>Reveal Answers</summary>
