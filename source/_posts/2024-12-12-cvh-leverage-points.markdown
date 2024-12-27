@@ -73,9 +73,9 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
- \
+  
 
-<details>
+<details style='background-color:#eee'>
   <summary>Reveal Answers</summary>
   <ul>
     <li>Total population in a region</li>
