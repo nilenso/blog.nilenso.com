@@ -73,7 +73,7 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
-<details style='background-color:#eee; padding:0.5rem; border-radius:3px'>
+<details style='background-color:#eee; padding:0.4rem 0.8rem 0.4rem 0.8rem; border-radius:3px'>
   <summary>Reveal Answers</summary>
   <ul>
     <li>Total population in a region</li>
@@ -119,9 +119,9 @@ Can you think of other problems with this system?
 
 ## Leverage Points: Learnings from building digital tools in public health
 
-At Resolve To Save Lives, I've seen my team make many such interventions to programs around the world. The bulk of my work has been through the system enabled by our [offline first app, Simple](/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/).
+I've seen my team make many such interventions to programs around the world. The bulk of my work has been through the system enabled by our [offline first app, Simple](/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/).
 
-Our interventions often map to what the Systems Thinker Donella Meadows describes as "Leverage Points" which are places to intervene in a system. I love this articulation, because it gives us a clear way to see how to be an agent of change and engage with the systems around us.
+Our interventions often map to what prominent systems thinker Donella Meadows described as "Leverage Points"—these are places to intervene in a system. I love this articulation, because it gives us a clear way to see how to be an agent of change and engage with the systems around us.
 
 Here are the leverage points as stated by her, in increasing order of effectiveness. The more effective the lever, the harder it is to usually pull:
 
@@ -139,7 +139,9 @@ Improving the capacity of hospitals to allow more patient appointments and incre
 
 **10. Stock-and-Flow Structures: Physical systems and their nodes of intersection**
 
-An effective leverage point in our work is helping with the [decentralization of care](https://resolvetosavelives.org/timeline/new-study-encourages-care-closer-to-home/). Our digital systems are designed to encourage transfer of patients from large district hospitals to smaller clinics near their area, while still maintaining the same patient record. This greatly reduces the burden of patients as well as caregivers. 
+This would amount to rearranging where our fat arrows flow, and where the stocks are placed.
+
+An effective leverage point in our work is helping with the [decentralization of care](https://resolvetosavelives.org/timeline/new-study-encourages-care-closer-to-home/). Our digital systems are designed to encourage transfer of patients from large district hospitals to smaller clinics near their area, while still maintaining the same patient record. This greatly reduces the burden of patients as well as caregivers.
 
 **9. Delays: The lengths of time relative to the rates of system changes**
 
