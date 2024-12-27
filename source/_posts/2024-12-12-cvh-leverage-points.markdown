@@ -67,7 +67,7 @@ The fat arrow is a *flow*. All systems involve interconnects through which infor
 
 Each box represents a *stock*—you can think of as the memory of the history of changing flows in this system. A stock may be a physical thing, like the number of registered patients, or the BP control rate. It could also be an abstract qualitative resource like an individual patient's motivation to improve their health.
 
-The neat thing about stocks in a system is that they naturally decouple flows in a system by acting as a buffering mechanism. They allow the stocks to temporarily be out of balance with each other. Buffers offer some resilience to systems. (It would be impossible for hospitals had to send all their paper record data at the same rate patients are visiting for appointments!)
+The neat thing about stocks in a system is that they naturally decouple flows in a system by acting as a buffering mechanism. They allow the stocks to temporarily be out of balance with each other. Buffers offer some resilience to systems. (It would be impossible for hospitals to send all their paper record data at the same rate patients are visiting for appointments!)
 
 Can you identify the stocks in our program model below?
 
@@ -151,7 +151,7 @@ A huge motivator to introduce [a well-designed digital information system](https
 
 A lot of our work goes into improving and strengthening the balancing feedback loops that are present in our system. One of the trickiest ones to maintain is the one that brings patients back to care.
 
-In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility—patients can be called from the line list with a single tap, which enables healthcare workers to get them back into care. Additionally, we also send SMS reminders for patients that are overdue. All these actions improve the patient flow to clinics—which in turn have improve the quality of data we receive. This enables better data-driven decisions to improve the program.
+In the Simple app, we make it easy for health care workers to see all the overdue patients in their facility—patients can be called from the line list with a single tap, which enables healthcare workers to get them back into care. Additionally, we also send SMS reminders for patients that are overdue. All these actions improve the patient flow to clinics—which in turn improves the quality of data we receive. This enables better data-driven decisions to improve the program.
 
 It's [a domino effect of good outcomes](https://www.simple.org/blog/revealing-data-behind-overdue-patient-calls/) that result in an improved BP control rate!
 
@@ -163,7 +163,7 @@ Our constant focus on making the Simple app easy to use for healthcare workers h
 
 **6. Information Flows: The structure of who does and does not have access to information**
 
-This is a leverage point that keeps on giving, and one that's technologists are great at enabling. We have been able to massively improve patient outcomes by improving how information flows, and making the right data visible to the right people. It's impossible to improve something that's hard to see or access!
+This is a leverage point that keeps on giving, and one that technologists are great at enabling. We have been able to massively improve patient outcomes by improving how information flows, and making the right data visible to the right people. It's impossible to improve something that's hard to see or access!
 
 * Health care workers have easy access to patient records in their district and can easily see and call patients that are overdue.
 * Health care workers can also see control rates and statistics for their own facility which helps them understand how they are collectively performing, and make local decisions.
@@ -180,9 +180,9 @@ These are leverage points that are often the most effective, but the hardest to 
 
 Driving change cannot happen in a vacuum. In our case, this means partnering with stakeholders that can push the right incentives and understand what it takes to improve programs and, therefore improve the well being of their citizens.
 
-Rules can govern how data is captured, used, and monitored within the program, effectively decided what can and cannot be built.
+Rules can govern how data is captured, used, and monitored within the program, effectively deciding what can and cannot be built.
 
-Rules can enforce usage of treatment protocols that simplifies patient care, like the one from WHO's [HEARTS](https://www.simple.org/blog/hearts360-dashboard/) technical package—the effect of these flow into other areas, like improving drug stock management.
+Rules can enforce usage of treatment protocols that simplify patient care, like the one from WHO's [HEARTS](https://www.simple.org/blog/hearts360-dashboard/) technical package—their effects flow into other areas, like improving drug stock management.
 
 Rules can help create SOPs enabling decentralisation of care, define roles and processes that ensure the smooth flow of stocks and reinforcement of positive feedback loops. All our technological interventions can only succeed if they are enforced at a program level.
 
