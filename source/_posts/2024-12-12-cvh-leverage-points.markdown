@@ -3,7 +3,7 @@ title: "Saving Lives: A Systems Frame"
 kind: article
 author: Atharva Raykar
 created_at: 2024-12-12 00:00:00 UTC
-post_url: cvh-systems-thinking
+post_url: ""
 layout: post
 ---
 > “Hunger, poverty, environmental degradation, economic instability, unemployment, chronic disease, drug addiction, and war, for example, persist in spite of the analytical ability and technical brilliance that have been directed toward eradicating them. No one deliberately creates those problems, no one wants them to persist, but they persist nonetheless. That is because they are intrinsically systems problems—undesirable behaviors characteristic of the system structures that produce them. They will yield only as we reclaim our intuition, stop casting blame, see the system as the source of its own problems, and find the courage and wisdom to *restructure* it.”
@@ -14,11 +14,11 @@ layout: post
 
 Healthcare workers in Peculiaristan's district hospitals are randomly screening visiting patients for hypertension. If a patient has a high blood pressure, they are enrolled for a hypertension control program and sent off to a doctor.
 
-![](/images/blog/screening.png)
+![](/images/blog/screening.webp)
 
 The doctor advises this patient to take a CCB medication like Amlodipine. They need to take this drug every day control their BP (every 20mm increase in systolic BP doubles their risk of death). To get their drugs, they need to come back to the hospital once every 28 days.
 
-![](/images/blog/screening_and_appointment.png)
+![](/images/blog/screening_and_appointment.webp)
 
 This is part of a program that the non-communicable diseases (NCD) division of the Health Department of Peculiaristan has come up with. It's typical of a growing, developing country. It turns out that hypertension (ie, high BP) eventually kills more people than anything else in the world.
 
@@ -26,17 +26,17 @@ To reduce deaths due to heart disease, hypertensive patients need to keep their 
 
 The hope is that by running this at scale, we are improving the health and well being of the general population.
 
-![](/images/blog/health_improvement_flow.png)
+![](/images/blog/health_improvement_flow.webp)
 
 The health officials in the NCD division need to know how their program is performing.
 
 The clinicians collect data from each patient visit into paper records. The quality improvement teams in the NCD division requests aggregate patient data from the hospitals (like number of patients screened in this program)—they add these up across districts to understand how this program is performing.
 
-![](/images/blog/qi_introduced.png)
+![](/images/blog/qi_introduced.webp)
 
 They might then drive action to improve this figure—in Peculiaristan, they chose to sample patients at the hospital more aggressively to improve the screening flow.
 
-![](/images/blog/improve_screening.png)
+![](/images/blog/improve_screening.webp)
 
 Later that year, an independent annual survey on heart disease and BP control rates was conducted on the patient population served by the district hospitals. The results were grim.
 
@@ -61,7 +61,7 @@ Our system in this case, is Peculiaristan's hypertension control program. Here's
 
 One way to think about systems is in terms of *stocks* and *flows*. Let's look at the patient screening subsystem again:
 
-![](/images/blog/screening.png)
+![](/images/blog/screening.webp)
 
 The fat arrow is a *flow*. All systems involve interconnects through which information (or actual people) flows. These flows play an important role in defining a system's purpose (which may or may not match the system's stated purpose!).
 
@@ -71,7 +71,7 @@ The neat thing about stocks in a system is that they naturally decouple flows in
 
 Can you identify the stocks in our program model below?
 
-![](/images/blog/identify_stocks_ex.png)
+![](/images/blog/identify_stocks_ex.webp)
 
 <details style='background-color:#eee; padding:0.4rem 0.8rem 0.4rem 0.8rem; border-radius:3px'>
   <summary>Reveal Answers</summary>
