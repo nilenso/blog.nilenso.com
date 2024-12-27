@@ -73,6 +73,8 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
+ \
+
 <details>
   <summary>Reveal Answers</summary>
   <ul>
@@ -211,7 +213,7 @@ Here are some random examples of paradigms that underpin everything I and the te
 * It's possible to give great care by empowering the healthcare workers.
 * Systemic thinking helps us make sense of hard problems.
 
-#### 1. The final leverage point: Transcending Paradigms
+#### 1. The final leverage point: Transcending Paradigms﻿
 
 I can only speak for myself here. This leverage point is one that strikes deeply to me at a personal level—it's the recognition that existence of paradigms is itself a paradigm, and beyond that lies a void.
 
