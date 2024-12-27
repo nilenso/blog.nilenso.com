@@ -73,7 +73,7 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
-<details style='background-color:#eee; margin:0.3rem; border-radius:3px'>
+<details style='background-color:#eee; padding:0.5rem; border-radius:3px'>
   <summary>Reveal Answers</summary>
   <ul>
     <li>Total population in a region</li>
@@ -107,7 +107,7 @@ Let's step back to what went wrong with our Peculiaristan's health program. To r
 
 The reason for this systems surprise is that the wrong lever was pulled in the wrong direction. There was not enough effort to get patients to regularly return to care and take their medicines, nor was this data tracked. The "registered patients" stock was increasing, but "patient appointment count" stock was not. The motivation to improve one's health was not in enough supply to improve the flow. The hospitals had no mechanism to sort through their paper records and figure out which patients had missed their appointments!
 
-Moreover there were other negative feedback loops—the district hospitals were quite far from the villages from which most patients were screened. The patients were unsure if there were enough drugs in stock at the facility—a shortage was not common.
+There were other negative feedback loops—the district hospitals were quite far from the villages from which most patients were screened. The patients were unsure if there were enough drugs in stock at the facility—a shortage was not common.
 
 At its core, the main issues with this system were:
 * The data wasn't useful or sufficient! The QI team could only see and optimise an input metric like "patients registered", and not outcome metrics like "Percentage of patients with controlled BP", "Percentage of patients who missed their appointments"
