@@ -73,7 +73,7 @@ Can you identify the stocks in our program model below?
 
 ![](/images/blog/identify_stocks_ex.png)
 
-<details style='background-color:#eee'>
+<details style='background-color:#eee; margin:0.3rem; border-radius:3px'>
   <summary>Reveal Answers</summary>
   <ul>
     <li>Total population in a region</li>
