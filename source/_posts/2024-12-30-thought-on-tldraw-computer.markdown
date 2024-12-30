@@ -8,7 +8,7 @@ layout: post
 tldraw is canvas software that runs on your browser (like MS Paint, excalidraw etc). This project caught my attention when I saw [demos of fun AI experiments with the canvas interface](https://x.com/tldraw/status/1805680673497432472)[^1]. Even the plain canvas software without the experimental AI frills is delightful to use—it's become the default thing I reach for when I want to create diagrams, sketch out an idea or make a presentation.
 
 They recently released their most compelling experiment, [tldraw computer](https://computer.tldraw.com). I think this thirty second video gives a good taste of what this is.
-<!--more-->
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u1016UnJIgA?si=flc0YCCFbUuqu4bL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 It's a node-and-wire visual programming system. Plenty of those exist[^2]. What makes this one different is that most of the tasks and data shovelling is done with natural language instructions.
