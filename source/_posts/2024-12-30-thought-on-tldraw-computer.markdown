@@ -1,5 +1,5 @@
 ---
-title: Thought on tldraw computer
+title: Thoughts on tldraw computer
 kind: article
 author: Atharva Raykar
 created_at: 2024-12-30 00:00:00 UTC
