@@ -134,9 +134,9 @@ Here are the leverage points as stated by her, in increasing order of effectiven
 
 **12\. Numbers: Constants and parameters such as subsidies, taxes, and standards**
 
-These are like arranging deck chairs on the Titanic. Twiddling with these numbers in an existing system rarely changes its behaviour in significant ways. An example of this in Dynamica's program is increasing the rate of screening visiting patients.
+Numbers pertain to the sizes of our flows. An example is how aggressively Dynamica is screening visiting patients, or how quickly patient data is aggregated. These are some of the most visible and natural leverage points and they are levers worth pulling. But they're also a lot less powerful than the leverage points further up this list. At certain critical thresholds these numbers can have a large effect. But most systems settle into a state where the flows naturally resist getting anywhere close to these critical thresholds.
 
-While these are occasionally useful, our team understands that it's more important to be directionally correct and not let perfect be the enemy of good when it comes to numbers.
+While a lot of our work involves improving the numbers that affect the size of our flows, we also understand that these kinds of interventions need to be supported by the other interventions further up this list.
 
 **11\. Buffers: The sizes of stabilizing stocks relative to their flows**
 
@@ -227,7 +227,7 @@ Here are some random examples of paradigms that underpin everything I and the te
 
 * User-centered technology and information systems must be designed to empower healthcare workers on the ground.  
 * We must engage with public healthcare and help improve human well-being.  
-* The shoggoth of human mortality, cardiovascular disease, can be eliminated.  
+* Cardiovascular disease can be eliminated, even today.
 * Systemic thinking helps us make sense of hard problems.
 
 #### **1\. The final leverage point: Transcending Paradigms﻿**
