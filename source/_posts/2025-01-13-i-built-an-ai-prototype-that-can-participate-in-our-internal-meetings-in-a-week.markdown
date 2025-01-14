@@ -170,7 +170,7 @@ const noteTool = {
 };
 ```
 
-The way the Gemini API works is that it will send us a "function call" with the arguments. I can extract this call, and actually do it in our system (for now I dump notes in a text file) and return the response back to the model if needed and continue generation.
+The way the Gemini API works is that it will send us a "function call" with the arguments. I can extract this call, and actually perform it in our system (for now I dump notes in a text file) and return the response back to the model if needed and continue generation.
 
 What's great about a live API like this is that it's a two-way street. The model can be listening or talking back while also simultaneously performing actions. I really like that you can interrupt it and steer the conversation. The client and server is constantly pushing events to each other and reacting on them, rather than going through a single-turn request-response cycle.
 
