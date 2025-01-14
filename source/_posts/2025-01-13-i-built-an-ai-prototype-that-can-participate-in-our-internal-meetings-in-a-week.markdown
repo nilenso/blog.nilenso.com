@@ -188,7 +188,7 @@ Given how far I could get in a week, I think it's only a matter of time that we'
 
 ## Costs?
 
-I used the Gemini Flash 2.0 Experimental model, which is available for free for developers. We still don't know how much it costs in production.
+I used the Gemini Flash 2.0 Experimental model, which is free to try for development purposes. We still don't know how much it costs in production.
 
 But I can speculate. Gemini 1.5 Flash, the previous model in the series is $0.075/million input tokens. Google's docs say that audio data takes up 32 tokens per second.
 
