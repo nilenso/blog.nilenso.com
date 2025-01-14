@@ -115,7 +115,7 @@ async createVirtualSource(sourceName = "virtual_mic") {
 }
 ```
 
-The browser automation effectively thinks that it's getting audio from the system microphone, but it's a mock microphone. I'm using `pacat` to feed audio bytes from Gemini's API to "speak" into the microphone. If I had the time, I'd have much cleaner and better ways to do this, but I wanted a proof of concept out in a week. Using `pacat` involved some hacks when I wanted to allow the user to interrupt our bot.
+The browser automation effectively thinks that it's getting audio from the system microphone, but it's a mock microphone. I'm using `pacat` to feed audio bytes from Gemini's API to "speak" into the microphone. If I had the time, I'd have much cleaner and better ways to do this, but I wanted a proof of concept out in a week. Using the simplistic `pacat` also called for some ugly hacks to allow users to interrupt our bot.
 
 ## The AI Integration
 
