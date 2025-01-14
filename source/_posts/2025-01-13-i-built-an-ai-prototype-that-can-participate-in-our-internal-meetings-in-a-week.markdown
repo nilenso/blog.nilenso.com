@@ -32,6 +32,8 @@ Let me give you a sketch of how I made this.
 
 ## System Overview
 
+_TODO: Diagram_
+
 Looking at the diagram above, we have three main components:
 
 1. **Browser Automation**: Using Puppeteer to control a Google Chrome instance that joins the Meet call
