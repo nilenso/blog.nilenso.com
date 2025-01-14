@@ -150,7 +150,7 @@ ALWAYS use the ${this.noteTool.name} tool when nobody is addressing you directly
 
 I spent a cool ten minutes to make this prompt. Anyone who has built an AI application knows the importance of prompt engineering (nb, link to that research paper about it), so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
 
-Oh, and I haven't even done any evals. But hey, I made this in a week. If this was something that's far more serious, I'd seriously emphasise the increased importance of engineering maturity when baking intelligence into your product.
+Oh, and I haven't even done any evals. But hey, I made this in a week. If this was something that's far more serious, I'd seriously emphasise the increased importance of engineering maturity when baking intelligence into your product. (this should link to the govind article. govind pls wrap this up)
 
 The tool system is particularly interesting. Instead of just chatting, the AI can perform actions:
 
