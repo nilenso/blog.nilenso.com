@@ -18,7 +18,7 @@ Today's AI can hear you speak, understand context, and talk back naturally. Here
 
 _video demo goes here_
 
-LLMs (Large Language Models) are mainstream because of interfaces like ChatGPT - you type something, wait a bit, and get text back. But fewer people know that many models natively work with audio. They can process speech directly, understand the nuances of conversation, and even respond with natural-sounding voice. The challenge is: how do we actually plug this intelligence into our existing tools?
+LLMs (Large Language Models) are mainstream because of interfaces like ChatGPT - you type something, wait a bit, and get text back. Far fewer people know that models can also natively work with audio. They can process speech directly, understand the nuances of conversation, and even respond with natural-sounding voice. The challenge is: how do we actually plug this intelligence into our existing tools?
 
 That's what this project explores. I built a bot that:
 - Joins Google Meet calls like a regular participant
