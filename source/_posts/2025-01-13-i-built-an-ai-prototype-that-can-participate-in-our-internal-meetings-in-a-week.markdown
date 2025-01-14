@@ -178,7 +178,7 @@ What's great about a live API like this is that it's a two-way street. The model
 
 So are we there yet? Is it possible to have these AI employees join our meetings and just do things?
 
-Given that I could get this far in a week, I think it's only a matter of time. There's a few notable limitations to address though:
+Given how far I could get in a week, I think it's only a matter of time that we'll see more AI employees show up in meetings. There's a few notable limitations to address though:
 
 * The security situation is currently quite bad. The more we give models access to the real world outside, the more we expose it to malicious prompt injection attacks that can hijack the model and make it do bad things. Models are currently very gullible. We can't build serious agents without mitigating this problem.
 * Currently, the API only supports 15 minute interactions. After which the model has to reconnect and lose context. We also know that context windows (ie, the effective "memory" of a language model in an interaction) degrades as it gets more crowded over time. This can potentially be mitigated through good quality data retrievals baked into the integration.
