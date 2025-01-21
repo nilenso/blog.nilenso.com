@@ -1,6 +1,5 @@
 ---
-title: I built an AI prototype that can participate in our internal meetings (in
-  a week)
+title: I built an AI prototype that can participate in our internal meetings
 kind: article
 author: Atharva Raykar
 created_at: 2025-01-13 00:00:00 UTC
@@ -22,7 +21,7 @@ That's what this project explores. I built a bot that:
 
 * Joins Google Meet calls like a regular participant
 * Listens to everything being said
-* Takes notes automatically
+* Takes notes automatically in our Notion workspace
 * Responds verbally when addressed directly
 * Can potentially handle meeting-related tasks like setting reminders or assigning action items
 * So many more possibilities actually. More on this later when I wax philosophical at the end.
