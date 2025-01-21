@@ -14,21 +14,22 @@ Why not drop an AI assistant straight into our Google Meet calls?
 
 I'm not quite satisfied with how AI integrations in meetings are mostly about summarising things after the fact. The process of ensuring that a meeting goes well as it happens is far more valuable than a summary. It's about ensuring things stay focused, and the right information and context is available to all participants.
 
-_video demo goes here_
+*video demo goes here*
 
 LLMs (Large Language Models) are mainstream because of interfaces like ChatGPT—you type something, wait a bit, and get text back. Far fewer people know that models can also natively work with audio. They can process speech directly, understand the nuances of conversation, and even respond with natural-sounding voice. The challenge is: how do we actually plug this intelligence into our existing tools?
 
 That's what this project explores. I built a bot that:
-- Joins Google Meet calls like a regular participant
-- Listens to everything being said
-- Takes notes automatically
-- Responds verbally when addressed directly
-- Can potentially handle meeting-related tasks like setting reminders or assigning action items
-- So many more possibilities actually. More on this later when I wax philosophical at the end.
+
+* Joins Google Meet calls like a regular participant
+* Listens to everything being said
+* Takes notes automatically
+* Responds verbally when addressed directly
+* Can potentially handle meeting-related tasks like setting reminders or assigning action items
+* So many more possibilities actually. More on this later when I wax philosophical at the end.
 
 ## System Overview
 
-_TODO: Diagram_
+![system diagram: lenso](/images/blog/lenso_diagram.webp)
 
 Looking at the diagram above, we have three main components:
 
@@ -41,11 +42,12 @@ Each of these parts has its own challenges. Let's dive into them one by one.
 ## Joining a Google Meet is surprisingly tricky
 
 Google Meet wasn't exactly designed with bots in mind. The official APIs don't let you do much. To get our assistant into our call, I came up with this:
-- Launch a browser programmatically
-- Navigate through Meet's UI
-- Handle permissions for microphone and camera
-- Capture the audio stream
-- Feed our AI's responses back in
+
+* Launch a browser programmatically
+* Navigate through Meet's UI
+* Handle permissions for microphone and camera
+* Capture the audio stream
+* Feed our AI's responses back in
 
 Here's a sketch of how we handle the join process:
 
@@ -85,6 +87,7 @@ The code is simple, but getting here involved some trial and error. Meet's UI el
 ## The Audio Pipeline
 
 This is where things get interesting. We need to:
+
 1. Capture the WebM audio stream from Meet (I used puppeteer-stream for this, which is a package that uses the Chrome extension API to expose browser audio)
 2. Convert it to 16kHz PCM format that Gemini expects
 3. Take Gemini's responses and convert them to 24kHz PCM
@@ -116,10 +119,11 @@ The browser automation effectively thinks that it's getting audio from the syste
 ## The AI Integration
 
 Now for the fun part - making our bot actually intelligent. We use Gemini (Google's multimodal AI model) through a WebSocket connection for real-time communication. The bot needs to:
-- Process incoming audio continuously
-- Understand when it's being addressed
-- Generate appropriate responses
-- Manage tool calls for tasks like note-taking
+
+* Process incoming audio continuously
+* Understand when it's being addressed
+* Generate appropriate responses
+* Manage tool calls for tasks like note-taking
 
 Here's how we set up the AI's personality:
 
@@ -200,13 +204,13 @@ Intelligence is cheap.
 
 This prototype barely scratches the surface. Off the top of my head, I can think of all of these things that are possible to implement with the technology we have today.
 
-- Integrate it with calendar apps for scheduling.
-- Let it set up reminders for you.
-- Allow it to browse the web and scrape information for you during the meeting.
-- Recall what was said in previous meetings.
-- Screen sharing understanding.
-- Critique a proposal.
-- Delegate to an inference-time reasoning model to solve hard problems.
+* Integrate it with calendar apps for scheduling.
+* Let it set up reminders for you.
+* Allow it to browse the web and scrape information for you during the meeting.
+* Recall what was said in previous meetings.
+* Screen sharing understanding.
+* Critique a proposal.
+* Delegate to an inference-time reasoning model to solve hard problems.
 
 ## Reflections on the state of AI
 
@@ -220,6 +224,6 @@ It's not enough that the models we have are smart. They need to be easy and natu
 
 "Talk is cheap. Show me the code!"
 
-Okay, here you go: _link_
+Okay, here you go: *link*
 
 But this is prototype quality code. Please do not let this go anywhere near production!
