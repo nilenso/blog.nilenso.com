@@ -48,70 +48,44 @@ Google Meet wasn't exactly designed with bots in mind. The official APIs don't l
 * Capture the audio stream
 * Feed our AI's responses back in
 
-Here's a sketch of how we handle the join process:
+The code is simple, but getting there involved some trial and error. Meet's UI elements don't always have consistent selectors, and the timing of operations is crucial. I had some trouble getting the default locator methods of puppeteer to work well, and I ended up resorting to injecting code into the browser that manually queried the DOM to keep things moving.
 
-```javascript
-async joinMeeting(meetLink) {
-  await this.page.goto(meetLink, { waitUntil: "networkidle0" });
-  
-  // Click through the initial dialog
-  await this.page.waitForSelector("::-p-text(Got it)");
-  await this.page.click("::-p-text(Got it)");
-  
-  // Enter the bot's name
-  const nameInputSelector = 'input[aria-label="Your name"]';
-  await this.page.waitForSelector(nameInputSelector);
-  await this.page.type(nameInputSelector, "Lenso");
-  
-  // Find and click the join button
-  const joinButtonSelectors = [
-    "button[data-join-button]",
-    'button[aria-label="Ask to join"]',
-    'button[jsname="Qx7uuf"]'
-  ];
-  
-  // Try multiple selectors because Meet's UI can be inconsistent
-  let joinButton = null;
-  for (const selector of joinButtonSelectors) {
-    joinButton = await this.page.$(selector);
-    if (joinButton) break;
-  }
-  
-  await joinButton.evaluate((b) => b.click());
-}
-```
-
-The code is simple, but getting here involved some trial and error. Meet's UI elements don't always have consistent selectors, and the timing of operations is crucial.
+There's also some subtle edge cases, for example, when you join a meeting with over five participants, you are muted by default. The first version of Lenso was talking without unmuting itself when it joined such meetings!
 
 ## The Audio Pipeline
 
 This is where things get interesting. We need to:
 
-1. Capture the WebM audio stream from Meet (I used puppeteer-stream for this, which is a package that uses the Chrome extension API to expose browser audio)
+1. Capture the audio stream from Meet (I used puppeteer-stream for this, which is a package that uses the Chrome extension API to expose browser audio)
 2. Convert it to 16kHz PCM format that Gemini expects
-3. Take Gemini's responses and convert them to 24kHz PCM
-4. Feed that back into Meet through a virtual audio device (set up with PulseAudio)
+3. Receive Gemini's responses into a buffer
+4. Feed that audio data back into Meet through a virtual audio device set up with PulseAudio
 
-The trickiest part was handling the virtual audio devices. We use PulseAudio to create a virtual microphone that can both play our AI's responses and capture them for Meet:
+The trickiest part was handling the virtual audio devices. We use PulseAudio to create a virtual microphone that can both play our AI's responses and capture them for Meet. Here's a sketch:
 
 ```javascript
 async createVirtualSource(sourceName = "virtual_mic") {
-  // Create a null sink
+  this.sourceName = sourceName;
+
+  // Create null sink and store its module ID
   const { stdout: sinkStdout } = await execAsync(
-    `pactl load-module module-null-sink sink_name=${sourceName}`
+    `pactl load-module module-null-sink sink_name=${sourceName}`,
   );
-  
-  // Create a remap source
+  this.moduleIds.sink = sinkStdout.trim();
+
+  // Create remap source and store its module ID
   const { stdout: remapStdout } = await execAsync(
     `pactl load-module module-remap-source ` +
-    `source_name=${sourceName}_input ` +
-    `master=${sourceName}.monitor`
+      `source_name=${sourceName}_input ` +
+      `master=${sourceName}.monitor`,
   );
-  
+  this.moduleIds.remap = remapStdout.trim();
+
   // Set as default source
   await execAsync(`pactl set-default-source ${sourceName}_input`);
-}
-```
+
+  return sourceName;
+}```
 
 The browser automation effectively thinks that it's getting audio from the system microphone, but it's a mock microphone. I'm using `pacat` to feed audio bytes from Gemini's API to "speak" into the microphone. If I had the time, I'd have much cleaner and better ways to do this, but I wanted a proof of concept out in a week. Using the simplistic `pacat` also called for some ugly hacks to allow users to interrupt our bot.
 
