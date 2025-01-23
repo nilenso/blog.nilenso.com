@@ -87,7 +87,43 @@ async createVirtualSource(sourceName = "virtual_mic") {
   return sourceName;
 }```
 
-The browser automation effectively thinks that it's getting audio from the system microphone, but it's a mock microphone. I'm using `pacat` to feed audio bytes from Gemini's API to "speak" into the microphone. If I had the time, I'd have much cleaner and better ways to do this, but I wanted a proof of concept out in a week. Using the simplistic `pacat` also called for some ugly hacks to allow users to interrupt our bot.
+And to "speak" into this mic:
+
+```javascript
+writeChunk(chunk) {
+  // Guard against uninitialized stream
+  if (!this.pacat || !this.isPlaying || this.pacat.killed) {
+    return false;
+  }
+
+  // Append new chunk to processing buffer
+  const newBuffer = new Uint8Array(this.processingBuffer.length + chunk.length);
+  newBuffer.set(this.processingBuffer);
+  newBuffer.set(chunk, this.processingBuffer.length);
+  this.processingBuffer = newBuffer;
+
+  // Split into fixed-size buffers
+  while (this.processingBuffer.length >= this.bufferSize) {
+    const buffer = this.processingBuffer.slice(0, this.bufferSize);
+    this.playQueue.push(buffer);
+    this.processingBuffer = this.processingBuffer.slice(this.bufferSize);
+  }
+
+  // Write queued buffers to audio stream
+  try {
+    while (this.isPlaying && this.playQueue.length && !this.pacat.killed) {
+      this.pacat.stdin.write(this.playQueue.shift());
+    }
+    return true;
+  } catch (error) {
+    return error.code === "EPIPE" ? false : error;
+  }
+}
+```
+
+I'm sure seasoned audio developers can make this a lot better, but this worked well for the prototype I built.
+
+The browser automation effectively thinks that it's getting audio from the system microphone, but it's a mock microphone. I'm using `pacat` to feed audio bytes from Gemini's API to "speak" into the microphone. If I had the time, I'd have much spent time on better ways to do this, but I wanted a proof of concept out in a week. Using the simplistic `pacat` also called for some ugly hacks to allow users to interrupt our bot.
 
 ## The AI Integration
 
@@ -104,28 +140,35 @@ Here's how we set up the AI's personality:
 const systemInstruction = {
   parts: [{
     text: `You are a helpful assistant named Lenso (who works for nilenso, a software cooperative).
-When you hear someone speak:
-1. Listen carefully to their words
-2. Use the ${this.noteTool.name} tool to record the essence of what they are saying
-3. DO NOT RESPOND. If you have to, just say "ack".
+You have two modes of operation: NOTETAKING MODE and SPEAKING MODE.
 
+NOTETAKING MODE: This is your default mode. Be alert about when you need to switch to SPEAKING MODE.
+When you hear someone speak:
+1. Use the ${this.noteTool.name} tool to record the essence of what they are saying.
+2. DO NOT RESPOND WITH AUDIO.
+
+SPEAKING MODE: Activated when you're addressed by your name.
 You may respond only under these circumstances:
-- You were addressed by name, and specifically asked a question.
+- You were addressed directly with "Hey Lenso", and specifically asked a question. Respond concisely.
 - In these circumstances, DO NOT USE ANY TOOL.
 
-Remember that you're in a Google Meet call, so multiple people can talk to you.
-Whenever you hear a new voice, ask who that person is, make note and then only
-answer the question.
+Examples of when to respond. When any meeting participant says:
+- "Hey Lenso, can you..."
+- "Lenso, will you note that down?"
+- "Lenso, what do you think?"
 
-Make sure you remember who you're responding to.
+Examples of when to use ${this.noteTool.name}:
+- "Lenso, will you note down what we just spoke about?"
+- "Hey <someone else's name>, ..."
+- "...<random conversation where the word 'Lenso' is not mentioned>..."
 
-ALWAYS use the ${this.noteTool.name} tool when nobody is addressing you directly.
-Only respond to someone when you are addressed by name.`
+Remember that you're in a Google Meet call, so multiple people can talk to you. Whenever you hear a new voice, ask who that person is, make note and only then answer the question.
+Make sure you remember who you're responding to.`
   }]
 };
 ```
 
-I spent a cool ten minutes to make this prompt. Anyone who has built an AI application knows the importance of prompt engineering (nb, link to that research paper about it), so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
+I spent a cool ten minutes to make this prompt, which I  with . Anyone who has built an AI application knows the importance of prompt engineering (nb, link to that research paper about it), so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
 
 Oh, and I haven't even done any evals. But hey, I made this in a week. If this was something that's far more serious, I'd seriously emphasise the increased importance of engineering maturity when baking intelligence into your product. (this should link to the govind article. govind pls wrap this up)
 
