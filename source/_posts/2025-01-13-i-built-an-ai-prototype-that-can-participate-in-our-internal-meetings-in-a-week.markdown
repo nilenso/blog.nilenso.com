@@ -243,7 +243,7 @@ It's not enough for our models to be smart. They need to be easy and natural to 
 
 ## Appendix A
 
-The code for Lenso is here: https://github.com/nilenso/meeting-bot
+The code for Lenso is [here](https://github.com/nilenso/meeting-bot).
 
 This is prototype quality code. Please do not let this go anywhere near production!
 
