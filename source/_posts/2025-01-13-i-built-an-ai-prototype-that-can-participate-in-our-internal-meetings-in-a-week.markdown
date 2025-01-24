@@ -13,8 +13,6 @@ Why not drop an AI assistant straight into our Google Meet calls?
 
 I'm not quite satisfied with how AI integrations in meetings are mostly about summarising things after the fact. The process of ensuring that a meeting goes well as it happens is far more valuable than a summary. It's about ensuring things stay focused, and the right information and context is available to all participants.
 
-*video demo goes here*
-
 LLMs (Large Language Models) are mainstream because of interfaces like ChatGPT—you type something, wait a bit, and get text back. Far fewer people know that models can also natively work with audio. They can process speech directly, understand the nuances of conversation, and even respond with natural-sounding voice. The challenge is: how do we actually plug this intelligence into our existing tools?
 
 That's what this project explores. I built a bot that:
@@ -25,6 +23,10 @@ That's what this project explores. I built a bot that:
 * Responds verbally when addressed directly
 * Can potentially handle meeting-related tasks like setting reminders or assigning action items
 * So many more possibilities actually. More on this later when I wax philosophical at the end.
+
+*video demo goes here*
+
+As you can see in the demo, the model I used is not quite there yet–it struggles to handle the transition between taking notes and talking to participants, but it shows a lot of promise. I don't see a fundamental limitation in its ability to use tools well enough. And this isn't too bad for something built in about a week.
 
 ## System Overview
 
@@ -168,7 +170,7 @@ Make sure you remember who you're responding to.`
 };
 ```
 
-I spent a cool ten minutes to make this prompt, which I  with . Anyone who has built an AI application knows the importance of prompt engineering (nb, link to that research paper about it), so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
+I didn't spend much time at all on this prompt. Anyone who has built an AI application knows the importance of prompt engineering (nb, link to that research paper about it), so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
 
 Oh, and I haven't even done any evals. But hey, I made this in a week. If this was something that's far more serious, I'd seriously emphasise the increased importance of engineering maturity when baking intelligence into your product. (this should link to the govind article. govind pls wrap this up)
 
