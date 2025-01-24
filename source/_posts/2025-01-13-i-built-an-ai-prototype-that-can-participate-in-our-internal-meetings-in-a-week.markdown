@@ -87,7 +87,8 @@ async createVirtualSource(sourceName = "virtual_mic") {
   await execAsync(`pactl set-default-source ${sourceName}_input`);
 
   return sourceName;
-}```
+}
+```
 
 And to "speak" into this mic:
 
