@@ -26,7 +26,7 @@ That's what this project explores. I built a bot that:
 
 *video demo goes here*
 
-As you can see in the demo, the model I used is not quite there yet–it struggles to handle the transition between taking notes and talking to participants, but it shows a lot of promise. I don't see a fundamental limitation in its ability to use tools well enough. And this isn't too bad for something built in about a week.
+As you can see in the demo, the model I used is not quite there yet–it struggles to handle the transition between taking notes and talking to participants, but it shows a lot of promise. I don't see a fundamental limitation in its ability to use tools well enough.
 
 ## System Overview
 
