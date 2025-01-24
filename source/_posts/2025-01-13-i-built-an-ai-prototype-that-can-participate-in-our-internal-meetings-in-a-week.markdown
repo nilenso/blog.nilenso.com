@@ -236,7 +236,7 @@ Firstly, multimodality is a huge value unlock waiting to happen. Text-only inter
 
 More importantly, integration is everything. A lot of the intelligence we have created often goes to waste, because it exists in a vacuum, unable to interact with the world around it. They lack the necessary sensors and actuators (to borrow terminology I once read in Norvig and Russell's seminal AI textbook).
 
-It's not enough that the models we have are smart. They need to be easy and natural to work with in order to provide value to businesses and society. That means we need to go beyond our current paradigm of chatting with text emitters.
+It's not enough for our models to be smart. They need to be easy and natural to work with in order to provide value to businesses and society. That means we need to go beyond our current paradigm of chatting with text emitters.
 
 ---
 
