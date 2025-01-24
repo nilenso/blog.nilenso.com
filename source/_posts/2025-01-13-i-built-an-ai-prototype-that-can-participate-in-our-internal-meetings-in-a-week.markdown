@@ -15,7 +15,7 @@ I'm not quite satisfied with how AI integrations in meetings are mostly about su
 
 LLMs (Large Language Models) are mainstream because of interfaces like ChatGPT—you type something, wait a bit, and get text back. Far fewer people know that models can also natively work with audio. They can process speech directly, understand the nuances of conversation, and even respond with natural-sounding voice. The challenge is: how do we actually plug this intelligence into our existing tools?
 
-That's what this project explores. I built a bot that:
+That's what this project explores. I quickly built a bot that:
 
 * Joins Google Meet calls like a regular participant
 * Listens to everything being said
