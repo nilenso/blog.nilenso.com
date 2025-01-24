@@ -238,10 +238,19 @@ More importantly, integration is everything. A lot of the intelligence we have c
 
 It's not enough that the models we have are smart. They need to be easy and natural to work with in order to provide value to businesses and society. That means we need to go beyond our current paradigm of chatting with text emitters.
 
-## Appendix
+---
 
-"Talk is cheap. Show me the code!"
+## Appendix A
 
-Okay, here you go: *link*
+The code for Lenso is here: https://github.com/nilenso/meeting-bot
 
-But this is prototype quality code. Please do not let this go anywhere near production!
+This is prototype quality code. Please do not let this go anywhere near production!
+
+---
+
+## Appendix B
+
+There's a couple of frameworks that I've found to help build realtime multimodal GenAI apps. I haven't been able to try them out:
+
+* [Pipecat](https://pipecat.ai)
+* [LiveKit Agents](https://docs.livekit.io/agents/)
