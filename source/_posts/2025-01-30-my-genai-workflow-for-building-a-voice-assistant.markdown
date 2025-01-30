@@ -14,6 +14,8 @@ This started with a challenge to myself to learn a new framework, something sign
 * Cline: A VSCode coding assistant plugin using anthropic LLM apis, with a claude-3-5-sonnet model
 * ChatGPT 4o mini: Conversational AI model, used here for learning about flutter.
 
+*See the open source code for Swara mobile app [here](https://github.com/nilenso/swara-ai)*
+
 ## Learn basic building blocks
 
 Diving in, first you need to understand where you are. Read about the basics, and I don’t mean syntax here, which is the approach taken by many language docs. GenAI can give you a better overview based on your preferences.
@@ -59,7 +61,7 @@ Walking through the files that were created helped me understand the different p
 
 ## Inform yourself about best practices
 
-## Along with the basics, it’s also useful to look at best practices in that field.
+Along with the basics, it’s also useful to look at best practices in that field.
 
 **Prompt**
 
