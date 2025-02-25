@@ -671,14 +671,17 @@ The key distinctions from standard neural networks:
 
 3. **Weighted Averaging**: The final operation aggregates information across the sequence, meaning gradients from one output position affect weights used for all input positions.
 
-Despite these complexities, backpropagation remains valid because all operations in the attention mechanism are differentiable. Deep learning frameworks handle these complex gradient calculations automatically through their autograd systems.
+Despite these complexities, backpropagation remains valid because **all operations in the attention mechanism are differentiable**. Deep learning frameworks handle these complex gradient calculations automatically through their autograd systems.
 
 - - -
 
 **User Prompt**
 
 ```
-Understood, now going back to the transformer description in the beginning, talk to me about the overall architecture, focus on the  parts we have not discussed yet like  Layer normalization components, Residual connections
+Understood, now going back to the transformer description in the beginning,
+talk to me about the overall architecture, 
+focus on the  parts we have not discussed yet like  
+Layer normalization components, Residual connections
 
 ```
 
@@ -816,3 +819,15 @@ Together, these create a model that can:
 - Generalize across a wide range of sequence modeling tasks
 
 These architectural choices have proven so effective that they've been the foundation for almost all state-of-the-art NLP models since 2017, including BERT, GPT, T5, and their successors.
+- - -
+
+**User Prompt**
+
+```
+I want some flowchart code to display the architecture of a simple transformer (one layer with attention and feed-forward sublayer), showing all the diff blocks. Choose the flowchart language of your choice for this.
+
+```
+
+- - -
+
+<img src="/images/blog/transformer-architecture/mermaid-diagram-transformer-architecture.svg" alt="Transformer Architecture" class="bucket-image" style="margin: auto">
