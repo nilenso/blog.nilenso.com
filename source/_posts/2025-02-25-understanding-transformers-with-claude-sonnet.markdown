@@ -500,52 +500,8 @@ Traditional neural network layers treat each input independently. If you have a 
 
 Attention explicitly models relationships between tokens by computing dot products between query and key vectors. This allows information to flow between different positions in the sequence - something impossible with standard feed-forward networks.
 
-### Training Loop Pseudocode
 
-```python
-# Initialize weights
-WQ = initialize_random((10, 10))
-WK = initialize_random((10, 10))
-WV = initialize_random((10, 10))
-W1 = initialize_random((10, 32))
-W2 = initialize_random((32, 10))
-b1 = zeros(32)
-b2 = zeros(10)
-
-# Optimization
-optimizer = Adam([WQ, WK, WV, W1, W2, b1, b2])
-
-for epoch in range(num_epochs):
-    for batch in dataloader:
-        # Get sequence of tokens
-        X = batch.tokens  # Shape: (3, 10)
-        targets = batch.target_tokens  # Shape: (3, vocab_size)
-        
-        # Forward pass
-        # 1. Self-attention
-        Q = X @ WQ
-        K = X @ WK
-        V = X @ WV
-        
-        attention_scores = Q @ K.transpose()
-        scaled_scores = attention_scores / sqrt(10)
-        attention_weights = softmax(scaled_scores, dim=1)
-        attention_output = attention_weights @ V
-        
-        # 2. Feed-forward network
-        hidden = relu(attention_output @ W1 + b1)
-        output = hidden @ W2 + b2
-        
-        # Calculate loss
-        loss = cross_entropy(output, targets)
-        
-        # Backward pass
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-```
-
-The crucial insight is that while traditional neural networks only mix features within a single example, attention allows mixing information across different positions in the sequence.
+**The crucial insight is that while traditional neural networks only mix features within a single example, attention allows mixing information across different positions in the sequence.**
 
 - - -
 
