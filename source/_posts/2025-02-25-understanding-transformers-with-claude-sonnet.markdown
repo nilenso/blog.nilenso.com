@@ -26,7 +26,8 @@ Try to be as accurate in that field
 **User Prompt**
 
 ```
-What are transformers in machine learning. Attention is the key topic in the transformers paper, what is it and how is it computed.
+What are transformers in machine learning. 
+Attention is the key topic in the transformers paper, what is it and how is it computed.
 
 ```
 
