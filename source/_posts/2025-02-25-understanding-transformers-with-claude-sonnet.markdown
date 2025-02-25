@@ -824,10 +824,13 @@ These architectural choices have proven so effective that they've been the found
 **User Prompt**
 
 ```
-I want some flowchart code to display the architecture of a simple transformer (one layer with attention and feed-forward sublayer), showing all the diff blocks. Choose the flowchart language of your choice for this.
+I want some flowchart code to display the architecture of a simple transformer
+(one layer with attention and feed-forward sublayer), showing all the diff blocks. 
+Choose the flowchart language of your choice for this.
 
 ```
 
 - - -
+Flowchart drawn using mermaid flow:
 
 <img src="/images/blog/transformer-architecture/mermaid-diagram-transformer-architecture.svg" alt="Transformer Architecture" class="bucket-image" style="margin: auto">
