@@ -833,4 +833,4 @@ Choose the flowchart language of your choice for this.
 - - -
 Flowchart drawn using mermaid flow:
 
-<img src="/images/blog/transformer-architecture/mermaid-diagram-transformer-architecture.svg" alt="Transformer Architecture" class="bucket-image" style="margin: auto">
+<img src="/images/blog/transformer-architecture/mermaid-flow-transformer-arch.svg" alt="Transformer Architecture" width="300" style="margin: auto" height="400">
