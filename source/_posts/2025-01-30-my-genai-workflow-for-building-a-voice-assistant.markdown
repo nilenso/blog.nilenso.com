@@ -66,7 +66,8 @@ Along with the basics, it’s also useful to look at best practices in that fiel
 **Prompt**
 
 ```
-Consider me a newbie building a Flutter app. What are some good practices to follow while structuring widgets. 
+Consider me a newbie building a Flutter app.
+What are some good practices to follow while structuring widgets. 
 Share any additional important advice to follow while using flutter
 ```
 
