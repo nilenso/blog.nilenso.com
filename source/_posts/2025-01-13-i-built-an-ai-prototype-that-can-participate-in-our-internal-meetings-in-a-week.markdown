@@ -173,7 +173,7 @@ Make sure you remember who you're responding to.`
 
 I didn't spend much time at all on this prompt. Anyone who has built an AI application knows the importance of [prompt engineering](https://arxiv.org/pdf/2406.06608) supported by strong evals, so consider the fact that the meeting bot proof of concept is nowhere near the level of intelligence it actually could be having.
 
-Oh, and I haven't even done any evals. But hey, I made this in a week. If this was a serious production-use project, I'd strongly emphasise the importance of engineering maturity when baking intelligence into your product. (this should link to the govind article. govind pls wrap this up)
+Oh, and I haven't even done any evals. But hey, I made this in a week. If this was a serious production-use project, I'd strongly emphasise the importance of engineering maturity when baking intelligence into your product.
 
 The tool system is particularly interesting. Instead of just chatting, the AI can perform actions:
 
