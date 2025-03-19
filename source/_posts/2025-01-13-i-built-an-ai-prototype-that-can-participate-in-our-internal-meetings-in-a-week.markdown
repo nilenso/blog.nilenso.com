@@ -24,7 +24,7 @@ That's what this project explores. I quickly built a bot that:
 * Can potentially handle meeting-related tasks like setting reminders or assigning action items
 * So many more possibilities actually. More on this later when I wax philosophical at the end.
 
-*video demo goes here*
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xUmLgw9CnCo?si=wytIagRYuOaxcOfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 As you can see in the demo, the product is nowhere near production quality–it particularly struggles to handle the transition between taking notes and talking to participants, but it shows a lot of promise. I don't see a fundamental limitation in its ability to use tools well enough.
 
@@ -211,11 +211,9 @@ Given how far I could get in a week, I think it's only a matter of time that we'
 
 ## Costs?
 
-I used the Gemini Flash 2.0 Experimental model, which is free to try for development purposes. We still don't know how much it costs in production.
+I made this demo back Gemini Flash 2.0 was an experimental model, which is free to try for development purposes. We now know how much this costs in production: $0.7/million input tokens, as of March 2025.
 
-But I can speculate. Gemini 1.5 Flash, the previous model in the series is $0.075/million input tokens. Google's docs say that audio data takes up 32 tokens per second.
-
-Even if we assume that the new model is 10x more expensive, our meeting bot would cost less than a dollar for actively participating in an hour-long meeting.
+This means our meeting bot would cost less than a dollar for actively participating in an hour-long meeting.
 
 Intelligence is cheap.
 
