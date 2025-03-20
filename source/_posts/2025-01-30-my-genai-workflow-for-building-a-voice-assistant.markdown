@@ -54,8 +54,8 @@ The most famous skeleton project is `Hello World` in any language.
 ```
 
 - - -
-<img src="/images/blog/genai-workflow/flutter_skeleton_app.png" alt="A flutter skeleton app to count button clicks" class="bucket-image" style="margin: auto">
 
+<img src="/images/blog/genai-workflow/flutter_skeleton_app.png" alt="A flutter skeleton app to count button clicks" class="bucket-image" style="margin: auto; text-align:center; max-width: 250px">
 
 Walking through the files that were created helped me understand the different pieces of the puzzle. I then ran the build process, launched the simulator, and checked out DevTools with the basic app. This way, I made sure everything was working correctly end-to-end. Also, setting up the project required installing Flutter, CocoaPods, and some plugins as prompted by the command line tool. Getting this initial setup right made me feel like I was on the right track.
 
@@ -95,12 +95,12 @@ Finally, it was time to code! This is where things get more specific to what you
 
 So that’s my experience learning Flutter with GenAI. I hope you find these tips helpful in your own journey!
 
-
 ## Some prompt examples
-<img src="/images/blog/genai-workflow/prompt1.png" alt="Initial prompt to create a flutter app" class="bucket-image" style="margin: auto">
 
-<img src="/images/blog/genai-workflow/prompt2.png" alt="Start modifying the skeleton app" class="bucket-image" style="margin: auto">
+<img src="/images/blog/genai-workflow/prompt1.png" alt="Initial prompt to create a flutter app" class="bucket-image" style="margin: auto; max-width: 500px">
 
-<img src="/images/blog/genai-workflow/prompt3.png" alt="Enable a testing workflow via UI" class="bucket-image" style="margin: auto">
+<img src="/images/blog/genai-workflow/prompt2.png" alt="Start modifying the skeleton app" class="bucket-image" style="margin: auto; max-width: 500px">
 
-<img src="/images/blog/genai-workflow/debug_prompt.png" alt="A flutter skeleton app to count button clicks" class="bucket-image" style="margin: auto">
+<img src="/images/blog/genai-workflow/prompt3.png" alt="Enable a testing workflow via UI" class="bucket-image" style="margin: auto; max-width: 500px">
+
+<img src="/images/blog/genai-workflow/debug_prompt.png" alt="A flutter skeleton app to count button clicks" class="bucket-image" style="margin: auto; max-width: 500px">
