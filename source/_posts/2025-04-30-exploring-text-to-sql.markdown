@@ -1,6 +1,7 @@
 ---
 title: "Exploring text-to-SQL "
 kind: article
+cover_image: /images/blog/text-to-sql-cover-image.png
 author: Sezal Jain
 created_at: 2025-04-30 00:00:00 UTC
 layout: post
@@ -70,5 +71,4 @@ These evaluation metrics help us to focus on techniques which will be useful in 
 
 We will be writing about our experiments with the different approaches, and our opinions and observations while implementing them in upcoming blogs.
 
-References:  
 [^1]: [Next-Generation Database Interfaces: A Survey of LLM-based Text-to-SQL](https://arxiv.org/pdf/2406.08426v3) This is an anlaysis of recent advances in LLM-based text-to-SQL
