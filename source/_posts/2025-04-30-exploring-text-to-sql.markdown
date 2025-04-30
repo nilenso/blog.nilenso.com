@@ -15,11 +15,10 @@ There are other business problems where LLMs can be used effectively, but we are
 - Accurate evaluation by executing the generated and reference queries
 - An immediately usable product for organizations
 
-<aside>
+
 
 > How to take text-to-SQL beyond a proof of concept, and create a robust product which is valuable to organizations
 
-</aside>
 
 One of the surveys[^1] done on text-to-SQL explores more than a 100 papers on SQL generation and the different techniques used to improve the quality/accuracy of the sql generated. At nilenso, we are exploring such techniques, looking at their advantages, ease of application and relevance for real world usecases.
 
@@ -71,5 +70,5 @@ These evaluation metrics help us to focus on techniques which will be useful in 
 
 We will be writing about our experiments with the different approaches, and our opinions and observations while implementing them in upcoming blogs.
 
-
+References:  
 [^1]: [Next-Generation Database Interfaces: A Survey of LLM-based Text-to-SQL](https://arxiv.org/pdf/2406.08426v3) This is an anlaysis of recent advances in LLM-based text-to-SQL
