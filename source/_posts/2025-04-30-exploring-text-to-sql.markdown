@@ -1,12 +1,15 @@
 ---
 title: "Exploring text-to-SQL "
 kind: article
-cover_image: /images/blog/text-to-sql-cover-image.png
 author: Sezal Jain
 created_at: 2025-04-30 00:00:00 UTC
 layout: post
 ---
 With LLMs becoming useful in coding and producing structured data, SQL generation from natural language questions is a problem with thousands of solutions built over the past year. But, no standard approach has been established, leaving room for further exploration and improvement.
+
+
+<img src="/images/blog/text-to-sql-cover-image.png" width="800" alt="Text to SQL" class="bucket-image" style="margin: auto; max-width: 500px" >
+
 
 Writing SQL queries to get the required data is a core need for all organizations. These Text-to-SQL tools don’t eliminate the need for SQL knowledge/expertise completely; rather they reduce the turnaround time and enable rapid experimentation and exploration. Analysts still review and validate every query, but they spend far less time hand-coding and iterating. This isn't merely about technical convenience, it's about empowering entire teams to participate in data-driven decision-making, thereby driving business agility.
 
