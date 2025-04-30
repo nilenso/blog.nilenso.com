@@ -39,7 +39,6 @@ There are common techniques we end up using across these approaches, like format
 [Bird-Bench](https://bird-bench.github.io/) is an extensive cross-domain database that contains over **12,751** unique question-SQL pairs spread over different domains and datasets, with ~1500 questions in its dev-set.  For our experimentation, we have first focused on the 1500 questions in the dev-set.
 
 A sample entry in the questions can look like:
-A sample entry in the questions can look like:
 
 ```
   {
