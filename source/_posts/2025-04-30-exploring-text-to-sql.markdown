@@ -9,7 +9,7 @@ Data analysis is an important need for all organizations. But writing SQL is a t
 
 To assist data analysts, many natural language → SQL solutions based on LLM have been attempted in the last few years. But, no standard approaches have been established yet and generating precise SQL that is faithful to user’s intent and a database’s structure is still an open problem.
 
-Writing SQL queries to get the required data is a core need for all organizations. Tools to generate SQL given a natural language query don’t eliminate the need for SQL knowledge/expertise completely; rather they reduce the turnaround time and enable rapid experimentation and exploration. Analysts still review and validate every query, but they spend far less time hand-coding and iterating. This isn't merely about technical convenience, it's about empowering entire teams to participate in data-driven decision-making, thereby driving business agility.
+Tools to generate SQL given a natural language query don’t eliminate the need for SQL knowledge/expertise completely; rather they reduce the turnaround time and enable rapid experimentation and exploration. Analysts still review and validate every query, but they spend far less time hand-coding and iterating. This isn't merely about technical convenience, it's about empowering entire teams to participate in data-driven decision-making, thereby driving business agility.
 
 There are other business problems where LLMs can be used effectively, but we are focusing first on text-to-SQL because:
 
