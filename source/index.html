@@ -35,7 +35,7 @@ layout: default
                 {% assign blog_author = site.data.members | find: "name", post.author %}
                 {% if blog_author %}
                   <div class="p-2">
-                    <img src="{{ blog_author.image_url }}" class="w-12 h-12 rounded-full">
+                    <img src="{{ blog_author.image_url }}" class="w-12 h-12 rounded-full object-cover">
                   </div>
                   <div class="p-2 flex flex-col place-content-evenly">
                     <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
