@@ -462,7 +462,7 @@ At the end of the process, I had a significantly faster query. I played with a b
 | work\_mem \= 1GB, gather merge workers: 3, effective\_io\_concurrency: 400 | 23GB | 23GB | 903,961 |
 | work\_mem \= 1GB, gather merge workers: 2, random\_io\_cost: 1.1 | 23GB | 23GB | 849,473 |
 
-Is this something a human could most definitely do well? Yes indeed. I exchanged notes with Srihari, and someone with deep experience such as he would have figured this out in an afternoon.
+Is this something a human could most definitely do well? Yes indeed. I exchanged notes with [Srihari](https://nilenso.com/people/srihari-sriraman/), and someone with deep experience such as he would have figured this out in an afternoon.
 
 Where Sir Sonnet helped me is that I could, as someone who has never turned a knob on a PostgreSQL database, could be as productive as a Srihari. And my adversarial relationship with Sir Sonnet made me learn about PostgreSQL internals at unprecedented pace.
 
