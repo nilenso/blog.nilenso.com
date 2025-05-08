@@ -8,7 +8,7 @@ layout: post
 
 > Is it possible to take text-to-SQL beyond a proof of concept, and create a robust product which is valuable to organizations?
 
-Writing SQL is a time-consuming and iterative process even for a data analyst proficient in SQL. To assist them, many natural language → SQL solutions based on LLM have been attempted in the last few years. But, no standard approaches have been established yet and generating precise SQL that is faithful to user’s intent and a database’s structure is still an open problem. By having a reliable and convenient solution, we can empower entire teams to participate in data-driven decision making and driving business agility.
+Writing SQL is a time-consuming and iterative process even for a data analyst proficient in SQL. To assist them, many natural language → SQL solutions based on LLMs have been attempted in the last few years, but there is no clearly established best approach. Generating precise SQL that is faithful to user’s intent and a database’s structure is still an open problem.
 
 One of the surveys[^1] done on text-to-SQL explores more than a 100 papers on SQL generation and the different techniques used to improve the quality/accuracy of the sql generated. At nilenso, we are exploring such techniques, looking at their advantages, ease of application and relevance for real world usecases.
 
