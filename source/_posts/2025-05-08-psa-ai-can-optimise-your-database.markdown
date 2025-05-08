@@ -287,30 +287,26 @@ This was my prompt:
 <p>This is a PostgreSQL EXPLAIN ANALYZE output</p>
 
 <p>Tell me what configuration parameters I can tune to make this go faster.</p>
-
-<p><system_info></p>
-<p>
-RAM = 32 GB<br>
-Current parameters:<br>
- synchronous_commit: "on"<br>
- max_connections: "200"<br>
- shared_buffers: "8GB"<br>
- effective_cache_size: "24GB"<br>
- maintenance_work_mem: "2GB"<br>
- checkpoint_completion_target: "0.9"<br>
- wal_buffers: "16MB"<br>
- default_statistics_target: "100"<br>
- random_page_cost: "1.1"<br>
- effective_io_concurrency: "200"<br>
- work_mem: "20971kB" # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely<br>
- min_wal_size: "1GB"<br>
- max_wal_size: "4GB"<br>
- max_worker_processes: "4"<br>
- max_parallel_workers_per_gather: "2"<br>
- max_parallel_workers: "4"<br>
- max_parallel_maintenance_workers: "2"
-</p>
-<p><system_info></p>
+<p><strong>System Info:</strong></p>
+<p>RAM = 32 GB</p>
+<p>Current parameters:</p>
+<p>&nbsp;&nbsp;synchronous_commit: "on"</p>
+<p>&nbsp;&nbsp;max_connections: "200"</p>
+<p>&nbsp;&nbsp;shared_buffers: "8GB"</p>
+<p>&nbsp;&nbsp;effective_cache_size: "24GB"</p>
+<p>&nbsp;&nbsp;maintenance_work_mem: "2GB"</p>
+<p>&nbsp;&nbsp;checkpoint_completion_target: "0.9"</p>
+<p>&nbsp;&nbsp;wal_buffers: "16MB"</p>
+<p>&nbsp;&nbsp;default_statistics_target: "100"</p>
+<p>&nbsp;&nbsp;random_page_cost: "1.1"</p>
+<p>&nbsp;&nbsp;effective_io_concurrency: "200"</p>
+<p>&nbsp;&nbsp;work_mem: "20971kB" # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely</p>
+<p>&nbsp;&nbsp;min_wal_size: "1GB"</p>
+<p>&nbsp;&nbsp;max_wal_size: "4GB"</p>
+<p>&nbsp;&nbsp;max_worker_processes: "4"</p>
+<p>&nbsp;&nbsp;max_parallel_workers_per_gather: "2"</p>
+<p>&nbsp;&nbsp;max_parallel_workers: "4"</p>
+<p>&nbsp;&nbsp;max_parallel_maintenance_workers: "2"</p>
 </blockquote>
 
 Sir Sonnet said so:
