@@ -15,7 +15,7 @@ I did what any well-bred engineer must do.
 EXPLAIN ANALYZE <my slow query>
 ```
 
-After waiting a cool 27 minutes, I was met with a rather friendly output that approximately looked like this.
+After waiting a cool 13 minutes, I was met with a rather friendly output that approximately looked like this.
 <details>
     <summary>Rather Friendly Output</summary>
   <pre>                                                                                                                                                            QUERY PLAN
@@ -309,9 +309,97 @@ Current parameters:
           max_parallel_workers: "4"
           max_parallel_maintenance_workers: "2"
 </system_info>
-<blockquote>
+</blockquote>
 
 Sir Sonnet said so:
-```
 
-```
+<blockquote>
+# PostgreSQL Performance Analysis
+
+## Key Performance Metrics
+- Total Execution Time: 813.4 seconds (13.5 minutes)
+- Planning Time: 26.5ms
+- Total Rows: 30,302,109
+- Buffer Usage:
+  - Shared Hit: 1,741,739
+  - Shared Read: 6,483,035
+  - Temp Read: 8,284,857
+  - Temp Written: 8,284,920
+
+## Major Performance Issues Identified
+
+1. **Heavy Disk I/O for Sorting**
+   - Multiple large external sorts occurring
+   - Largest sort using 8018MB of disk space
+   - Many temp buffers being read and written
+
+2. **Parallel Query Execution Limitations**
+   - Only using 2 parallel workers
+   - Several large sequential scans that could benefit from more parallelism
+
+3. **Memory Pressure**
+   - Multiple operations spilling to disk despite high work_mem
+   - Large hash joins and sorts requiring temporary files
+
+## Recommended Parameter Adjustments
+
+### Critical Changes
+
+1. `max_parallel_workers_per_gather`: 4 (currently 2)
+   - Justification: Query shows heavy parallel operations with large sequential scans
+   - This change alone could significantly improve the performance of the parallel operations
+
+2. `work_mem`: 2GB (currently 1.5GB)
+   - Justification: Multiple sorts spilling to disk
+   - With 32GB RAM and considering the parallel workers, we can safely increase this
+   - Note: Effective memory per sort will be work_mem × number of parallel workers
+
+3. `max_parallel_workers`: 8 (currently 4)
+   - Justification: System has enough RAM to support more parallel workers
+   - Will allow better utilization of parallel operations
+
+### Secondary Adjustments
+
+4. `maintenance_work_mem`: 4GB (currently 2GB)
+   - Justification: Large sorts occurring in maintenance operations
+   - System has enough RAM to support this increase
+
+5. `effective_io_concurrency`: 300 (currently 200)
+   - Justification: Heavy I/O operations occurring
+   - If using SSDs, this can be increased further
+
+6. `random_page_cost`: 1.0 (currently 1.1)
+   - Justification: If using SSDs, this should be lowered to better reflect actual I/O costs
+
+## Additional Recommendations
+
+1. **Index Recommendations**
+   - Consider adding indexes to support these join conditions:
+     - Joins between patients and reporting_prescriptions tables
+     - Joins on date-based operations
+
+2. **Table Partitioning**
+   - Consider partitioning the following tables by date:
+     - reporting_prescriptions
+     - reporting_patient_visits
+     - reporting_patient_blood_sugars
+     - reporting_patient_blood_pressures
+
+3. **Materialized Views**
+   - Consider creating materialized views for the complex region hierarchy joins
+   - These joins are creating multiple sorts and hash operations
+
+## Monitoring Recommendations
+
+After implementing these changes:
+1. Monitor temp file usage (`pg_stat_database`)
+2. Watch for memory pressure using `pg_stat_activity`
+3. Track parallel execution effectiveness with `pg_stat_statements`
+</blockquote>
+
+Not all the recommendations made sense, but the critical ones seem good. So I obeyed the AI and reran the query.
+
+My database crashed.
+
+I vibed too close to the sun.
+
