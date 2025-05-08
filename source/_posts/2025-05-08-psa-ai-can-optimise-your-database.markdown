@@ -283,35 +283,37 @@ I did what few well-bred engineers where doing at the time. I shoved my plan and
 
 This was my prompt:
 
-<blockquote>
-<p>This is a PostgreSQL EXPLAIN ANALYZE output</p>
+```
+This is a PostgreSQL EXPLAIN ANALYZE output
 
-<p>Tell me what configuration parameters I can tune to make this go faster.</p>
-<p><strong>System Info:</strong></p>
-<p>RAM = 32 GB</p>
-<p>Current parameters:</p>
-<p>&nbsp;&nbsp;synchronous_commit: "on"</p>
-<p>&nbsp;&nbsp;max_connections: "200"</p>
-<p>&nbsp;&nbsp;shared_buffers: "8GB"</p>
-<p>&nbsp;&nbsp;effective_cache_size: "24GB"</p>
-<p>&nbsp;&nbsp;maintenance_work_mem: "2GB"</p>
-<p>&nbsp;&nbsp;checkpoint_completion_target: "0.9"</p>
-<p>&nbsp;&nbsp;wal_buffers: "16MB"</p>
-<p>&nbsp;&nbsp;default_statistics_target: "100"</p>
-<p>&nbsp;&nbsp;random_page_cost: "1.1"</p>
-<p>&nbsp;&nbsp;effective_io_concurrency: "200"</p>
-<p>&nbsp;&nbsp;work_mem: "20971kB" # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely</p>
-<p>&nbsp;&nbsp;min_wal_size: "1GB"</p>
-<p>&nbsp;&nbsp;max_wal_size: "4GB"</p>
-<p>&nbsp;&nbsp;max_worker_processes: "4"</p>
-<p>&nbsp;&nbsp;max_parallel_workers_per_gather: "2"</p>
-<p>&nbsp;&nbsp;max_parallel_workers: "4"</p>
-<p>&nbsp;&nbsp;max_parallel_maintenance_workers: "2"</p>
-</blockquote>
+Tell me what configuration parameters I can tune to make this go faster.
+
+<system_info>
+RAM = 32 GB
+Current parameters:
+          synchronous_commit: "on"
+          max_connections: "200"
+          shared_buffers: "8GB"
+          effective_cache_size: "24GB"
+          maintenance_work_mem: "2GB"
+          checkpoint_completion_target: "0.9"
+          wal_buffers: "16MB"
+          default_statistics_target: "100"
+          random_page_cost: "1.1"
+          effective_io_concurrency: "200"
+          work_mem: "20971kB"  # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely
+          min_wal_size: "1GB"
+          max_wal_size: "4GB"
+          max_worker_processes: "4"
+          max_parallel_workers_per_gather: "2"
+          max_parallel_workers: "4"
+          max_parallel_maintenance_workers: "2"
+</system_info>
+```
 
 Sir Sonnet said so:
 
-<blockquote>
+```
 # PostgreSQL Performance Analysis
 
 ## Key Performance Metrics
@@ -393,7 +395,7 @@ After implementing these changes:
 1. Monitor temp file usage (`pg_stat_database`)
 2. Watch for memory pressure using `pg_stat_activity`
 3. Track parallel execution effectiveness with `pg_stat_statements`
-</blockquote>
+```
 
 Not all the recommendations made sense, but the critical ones seem good. So I obeyed the AI and reran the query.
 
@@ -403,7 +405,7 @@ I committed the original sin. I vibed too close to the sun.
 
 Exasperated, I went back to Sir Sonnet.
 
-<blockquote>
+<pre>
 I get this issue whenever I try to run a long query in my postgresql console in production:
 
 
@@ -419,11 +421,11 @@ The connection to the server was lost. Attempting reset: Failed.
 Help me fix this
 
 My effective_shared_cache is 24GB. Setting my work_mem to 2GB just for this one long-running query causes a crash. Why is that?
-</blockquote>
+</pre>
 
 Sir Sonnet responded,
 
-<blockquote>
+<pre>
 Ah, this is a crucial detail. The issue is that work_mem is allocated PER OPERATION in a query plan, not per query or per connection. This is a common misconception that can lead to server crashes.
 Let's break this down:
 
@@ -444,7 +446,7 @@ The potential memory usage could be:
 ```
 
 This is why the server crashes - it's trying to allocate much more memory than available!
-</blockquote>
+</pre>
 
 At this point, I want you to imagine a few more iterations, a bit or railing against Sir Sonnet's confident confabulations.
 
