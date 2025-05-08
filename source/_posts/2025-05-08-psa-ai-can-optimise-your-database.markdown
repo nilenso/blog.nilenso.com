@@ -269,5 +269,5 @@ After waiting a cool 27 minutes, I was met with a rather friendly output that ap
 (246 rows)</pre>
 </details>
 
-A month before the day of yore, October 2024, people were saying glowing things about a model now known as Sonnet 3.6, then known as Sonnet 3.5 (new). Yes, I know. What matters is that it was the clear best model when there were clear best AI models.
+A month before the day of yore, October 2024, people were saying glowing things about a model now known as Sonnet 3.6, then known as Sonnet 3.5 (new). Simpler times. What matters here is that it was the clear best model when there were clear best AI models.
 
