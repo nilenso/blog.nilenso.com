@@ -269,5 +269,49 @@ After waiting a cool 27 minutes, I was met with a rather friendly output that ap
 (246 rows)</pre>
 </details>
 
-A month before the day of yore, October 2024, people were saying glowing things about a model now known as Sonnet 3.6, then known as Sonnet 3.5 (new). Simpler times. What matters here is that it was the clear best model when there were clear best AI models.
+We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us with a [rather fine tool](explain.depesz.com) for dealing with Rather Friendly Outputs.
 
+[image of depesz screenshot]
+
+My Rather Friendly Output is friendlier still, as I have a big red box honking at me pointing to what has gone wrong. But my well-bred engineer brain thought: Now What?!
+
+Sir depesz in his rather fine tool hinted at a `work_mem` problem. But how must I think and reason about this? What can my hardware support? I had little experience with PostgreSQL knobs.
+
+A month before the aforementioned day of yore, October 2024, people were saying glowing things about a model now known as Sonnet 3.6, then known as Sonnet 3.5 (new). Simpler times. What matters here is that it was the clear best model when there were clear best AI models.
+
+I did what few well-bred engineers where doing at the time. I shoved my plan and my hardware spec into Sir Sonnet 3.5 (new).
+
+This was my prompt:
+
+<blockquote>
+This is a PostgreSQL EXPLAIN ANALYZE output
+
+Tell me what configuration parameters I can tune to make this go faster.
+
+<system_info>
+RAM = 32 GB
+Current parameters:
+          synchronous_commit: "on"
+          max_connections: "200"
+          shared_buffers: "8GB"
+          effective_cache_size: "24GB"
+          maintenance_work_mem: "2GB"
+          checkpoint_completion_target: "0.9"
+          wal_buffers: "16MB"
+          default_statistics_target: "100"
+          random_page_cost: "1.1"
+          effective_io_concurrency: "200"
+          work_mem: "20971kB"  # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely
+          min_wal_size: "1GB"
+          max_wal_size: "4GB"
+          max_worker_processes: "4"
+          max_parallel_workers_per_gather: "2"
+          max_parallel_workers: "4"
+          max_parallel_maintenance_workers: "2"
+</system_info>
+<blockquote>
+
+Sir Sonnet said so:
+```
+
+```
