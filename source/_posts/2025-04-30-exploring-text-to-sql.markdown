@@ -87,7 +87,7 @@ We will use Bird-Bench to evaluate all our approaches as a benchmark to understa
 #### Leaderboard
 This benchmark maintains a leaderboard which allows us to see what approaches work how well.
 
-<img src="/images/blog/bird-bench-leaderboard.png" width="800" alt="Top 5 in Bird Bench Leaderboard (8May'25)">
+<img src="/images/blog/bird-bench-leaderboard.png" class="bucket-image" style="margin: auto; text-align:center; max-width: 250px" alt="Top 5 in Bird Bench Leaderboard (8May'25)">
 
 The top-10 approaches on this leaderboard all use a combination of SFT, RL, RAG and ICL with a majority of them relying on SFT. But Supervised Fine Tuning and Reinforcement Learning can make your frameworks less transferrable.
 
