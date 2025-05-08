@@ -1,5 +1,5 @@
 ---
-title: "Exploring text-to-SQL "
+title: "Exploring text-to-SQL"
 kind: article
 author: Sezal Jain
 created_at: 2025-04-30 00:00:00 UTC
@@ -16,7 +16,7 @@ One of the surveys[^1] done on text-to-SQL explores more than a 100 papers on SQ
 
 The very first approach one can take for SQL generation is to put the question and the database schema into the prompt and ask to generate SQL query. This approach has shortcomings like:
 
-- Most orgs have quite a few tables and passing all their schema will bloat up the prompt and obscure relevant information. This can be hard to see during a POC, but you will get hallucinations when you start adding schema for >10 tables.
+- Most orgs have quite a few tables and passing all their schema will bloat up the prompt and obscure relevant information. Hallucinations will happen when you start adding schema for >10 tables.
 - Domain/Company specific information is not provided in this approach. Sometimes this information can come from data itself (eg. enums in a table etc), and is crucial to have to produce the right query.
 - This doesn’t allow for any user input, iterations or validations. Complex SQL queries are best built iteratively, which allows for better understanding and more confidence. In this approach, we start from scratch every time.
 
@@ -28,8 +28,8 @@ In-context learning is a technique where an LLM is given examples and instructio
 For this initial exploration, we focused on ICL with off-the-shelf models to translate natural-language queries to SQL, deliberately excluding fine-tuning. We also reduce our reliance on detailed table and column descriptions, recognizing that such metadata is often scarce in real-world scenarios.
 
 We are currently exploring the following approaches for ICL.
-- Retrieval Augmented Generation (**RAG**) Architecture: Preprocessing focused approach which creates and stores relevant information for future SQL generation as embeddings. Pertinent embeddings (semantically similar) are fetched and added to prompt during SQL generation
-- Declarative agentic workflow: A predetermined workflow utilizing tools to interact with db, prompt engineering with the retrieved information to generate desired results.
+- Retrieval Augmented Generation (**RAG**) Architecture: Preprocessing focused approach which creates and stores relevant information for future SQL generation as embeddings.
+- Declarative agentic workflow: A **predetermined** workflow utilizing tools to interact with db, prompt engineering with the retrieved information to generate desired results.
 - React agentic workflow: A iterative **reasoning + action** agentic workflow which decides what tool to use and how based on past context per iteration to get to the final answer.
 
 There are common techniques we end up using across these approaches, like formatting a schema a certain way, breaking down queries etc. 
@@ -63,6 +63,7 @@ Structure of the `loans` table inside `financial` database:
 | payments    | monthly payment, real, [unit: US dollar]   |
 | status | repayment status,text,"'A' stands for contract finished, no problems; 'B' stands for contract finished, loan not paid; 'C' stands for running contract, OK so far; 'D' stands for running contract, client in debt    |
 
+
 Another example question:
 ```
   {
@@ -87,7 +88,7 @@ We will use Bird-Bench to evaluate all our approaches as a benchmark to understa
 #### Leaderboard
 This benchmark maintains a leaderboard which allows us to see what approaches work how well.
 
-<img src="/images/blog/bird-bench-leaderboard.png" class="bucket-image" style="margin: auto; text-align:center; max-width: 250px" alt="Top 5 in Bird Bench Leaderboard (8May'25)">
+<img src="/images/blog/bird-bench-leaderboard.png" class="bucket-image" style="margin: auto; text-align:center" alt="Top 5 in Bird Bench Leaderboard (8May'25)">
 
 The top-10 approaches on this leaderboard all use a combination of SFT, RL, RAG and ICL with a majority of them relying on SFT. But Supervised Fine Tuning and Reinforcement Learning can make your frameworks less transferrable.
 
