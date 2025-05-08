@@ -1,48 +1,36 @@
 ---
-title: "Exploring text-to-SQL "
+title: "Exploring text-to-SQL"
 kind: article
 author: Sezal Jain
 created_at: 2025-04-30 00:00:00 UTC
 layout: post
 ---
-Data analysis is an important need for all organizations. But writing SQL is a time-consuming and iterative process even for a data analyst proficient in SQL. 
-
-To assist data analysts, many natural language → SQL solutions based on LLM have been attempted in the last few years. But, no standard approaches have been established yet and generating precise SQL that is faithful to user’s intent and a database’s structure is still an open problem.
-
-Writing SQL queries to get the required data is a core need for all organizations. Tools to generate SQL given a natural language query don’t eliminate the need for SQL knowledge/expertise completely; rather they reduce the turnaround time and enable rapid experimentation and exploration. Analysts still review and validate every query, but they spend far less time hand-coding and iterating. This isn't merely about technical convenience, it's about empowering entire teams to participate in data-driven decision-making, thereby driving business agility.
-
-There are other business problems where LLMs can be used effectively, but we are focusing first on text-to-SQL because:
-
-- Availability of benchmark datasets for evaluation (Bird Bench, Spider SQL etc)
-- Accurate evaluation by executing the generated and reference queries
-- An immediately usable product for organizations
-
-
 
 > Is it possible to take text-to-SQL beyond a proof of concept, and create a robust product which is valuable to organizations?
 
+Writing SQL is a time-consuming and iterative process even for a data analyst proficient in SQL. To assist them, many natural language → SQL solutions based on LLMs have been attempted in the last few years, but there is no clearly established best approach. Generating precise SQL that is faithful to user’s intent and a database’s structure is still an open problem.
 
 One of the surveys[^1] done on text-to-SQL explores more than a 100 papers on SQL generation and the different techniques used to improve the quality/accuracy of the sql generated. At nilenso, we are exploring such techniques, looking at their advantages, ease of application and relevance for real world usecases.
 
-### Basic Approach: Zero shot prompting with question + DB schema
+### Baseline Approach: Zero shot prompting with question + DB schema
 
-The very first approach one can take for SQL generation is to put the question and the database schema into the prompt and ask to generate SQL query. This approach is definitely giving better and better results with the latest LLMs, but still has shortcomings like:
+The very first approach one can take for SQL generation is to put the question and the database schema into the prompt and ask to generate SQL query. This approach has shortcomings like:
 
-- Most orgs have quite a few tables and passing all their schema will bloat up the prompt and obscure relevant information. This can be hard to see during a POC, but you will get hallucinations when you start adding schema for >10 tables.
+- Most orgs have quite a few tables and passing all their schema will bloat up the prompt and obscure relevant information. Hallucinations will happen when you start adding schema for >10 tables.
 - Domain/Company specific information is not provided in this approach. Sometimes this information can come from data itself (eg. enums in a table etc), and is crucial to have to produce the right query.
-- This doesn’t allow for any iterations or validations. Complex SQL queries are best built iteratively, which allows for better understanding and more confidence.
+- This doesn’t allow for any user input, iterations or validations. Complex SQL queries are best built iteratively, which allows for better understanding and more confidence. In this approach, we start from scratch every time.
 
-Because of these, we continue experimenting with different approaches to improve SQL accuracy, while keeping this approach as the **Control Group** during evaluation.
+Because of these, we continue experimenting with different approaches to improve SQL accuracy, while keeping this approach as the **Baseline** during evaluation.
 
 ### In Context Learning
 
-For this initial exploration, we focused on **in-context learning** (ICL) with off-the-shelf models to translate natural-language queries to SQL, deliberately excluding fine-tuning. We also reduce our reliance on detailed table and column descriptions, recognizing that such metadata is often scarce in real-world scenarios.
+In-context learning is a technique where an LLM is given examples and instructions within the input prompt to guide its response.
+For this initial exploration, we focused on ICL with off-the-shelf models to translate natural-language queries to SQL, deliberately excluding fine-tuning. We also reduce our reliance on detailed table and column descriptions, recognizing that such metadata is often scarce in real-world scenarios.
 
 We are currently exploring the following approaches for ICL.
-
-- RAG Architecture
-- Declarative agentic workflow
-- Reactive agentic workflow
+- Retrieval Augmented Generation (**RAG**) Architecture: Preprocessing focused approach which creates and stores relevant information for future SQL generation as embeddings.
+- Declarative agentic workflow: A **predetermined** workflow utilizing tools to interact with db, prompt engineering with the retrieved information to generate desired results.
+- React agentic workflow: A iterative **reasoning + action** agentic workflow which decides what tool to use and how based on past context per iteration to get to the final answer.
 
 There are common techniques we end up using across these approaches, like formatting a schema a certain way, breaking down queries etc. 
 
@@ -62,22 +50,53 @@ A sample entry in the questions can look like:
     "difficulty": "moderate"
   },
 ```
+Bird bench has 95 different databases with questions spread across them. Every question map has the natural language `question` we would use as input, `db_id` to reference the relevant db, `evidence` (hint) which provides some domain knowledge about the question and db to generate the right conditions. The `difficulty` can be used to measure accuracy for different complexity levels of input questions. `SQL` is the query manually generated by data analysts and students, this is used as the reference query to evaluate an LLM generated query.
 
-This gives you the input NL question as well as the reference-SQL generated by data engineers. We can now evaluate the generated SQL against the reference with different methods easily.
+Structure of the `loans` table inside `financial` database:
 
-Some key aspects of Bird-Bench dataset make it very suitable to evaluating an application for robustness:
+| Column    | Description |
+| -------- | ------- |
+| loan_id |   the id number identifying the loan data,integer    |
+| account_id | the id number identifying the account, integer     |
+| date    | the date when the loan is approved, date  |
+| amount | approved amount, integer [unit：US dollar]    |
+| payments    | monthly payment, real, [unit: US dollar]   |
+| status | repayment status,text,"'A' stands for contract finished, no problems; 'B' stands for contract finished, loan not paid; 'C' stands for running contract, OK so far; 'D' stands for running contract, client in debt    |
+
+
+Another example question:
+```
+  {
+    "question_id": 239,
+    "db_id": "toxicology",
+    "question": "How many connections does the atom 19 have?",
+    "evidence": "connections refers to bond_id; atom 19 refers to atom_id like 'TR%_19';",
+    "SQL": "SELECT COUNT(T.bond_id) FROM connected AS T WHERE SUBSTR(T.atom_id, -2) = '19'",
+    "difficulty": "simple"
+  },
+```
+
+
+Bird-Bench dataset is very suitable for evaluating an application for robustness:
 - Real, large databases across different domains with messy prod data, redundant columns etc.
 - Varying levels of query difficulty, needing joins + nested + window + set ops and more.
 - Dev set and Train set have different dbs, making sure overfitting is devalued.
 - External domain knowledge is required (eg. understanding of school system, or finance data etc) where you can utilize the LLMs to the fullest.
 
-Bird Bench dataset will be used in all our approaches as a benchmark to understand what techniques improve the solution and which dont. We will also be benchmarking on other datasets like [Spider-SQL](https://yale-lily.github.io/spider), which follows a very similar structure.
+We will use Bird-Bench to evaluate all our approaches as a benchmark to understand what techniques improve the solution and which dont. We will also be benchmarking on other datasets like [Spider-SQL](https://yale-lily.github.io/spider), which follows a very similar structure.
+
+#### Leaderboard
+This benchmark maintains a leaderboard which allows us to see what approaches work how well.
+
+<img src="/images/blog/bird-bench-leaderboard.png" class="bucket-image" style="margin: auto; text-align:center" alt="Top 5 in Bird Bench Leaderboard (8May'25)">
+
+The top-10 approaches on this leaderboard all use a combination of SFT, RL, RAG and ICL with a majority of them relying on SFT. But Supervised Fine Tuning and Reinforcement Learning can make your frameworks less transferrable.
 
 ### Evaluation:
 
-The methods to evaluate the generated vs reference SQL are broadly divided into content matching (exact string or component matching), query execution or LLM-as-judge based evaluation methods.
+The methods to evaluate the generated vs reference SQL are broadly divided into content matching (exact string or component matching), exeuction accuracy and LLM-as-judge based evaluation methods. Bird-bench focuses mainly on Execution Accuracy as well as VES(Valid Efficiency Score) which focuses on how efficiently the query executes. 
 
-We focus on execution based methods for our experiments. We match the data generated by the two queries, but don’t fail evaluation in the following cases:
+We focus solely on Execution Accuracy, with a focus on factual accuracy for our experiments. We match the data generated by the two queries, but don’t fail evaluation in the following cases:
 
 - The column names or order are different.
 - If there are extra columns generated by the query as the additional information can be useful to the analyst
