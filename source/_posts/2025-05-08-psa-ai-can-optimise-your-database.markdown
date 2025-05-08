@@ -284,31 +284,33 @@ I did what few well-bred engineers where doing at the time. I shoved my plan and
 This was my prompt:
 
 <blockquote>
-This is a PostgreSQL EXPLAIN ANALYZE output
+<p>This is a PostgreSQL EXPLAIN ANALYZE output</p>
 
-Tell me what configuration parameters I can tune to make this go faster.
+<p>Tell me what configuration parameters I can tune to make this go faster.</p>
 
-<system_info>
-RAM = 32 GB
-Current parameters:
-          synchronous_commit: "on"
-          max_connections: "200"
-          shared_buffers: "8GB"
-          effective_cache_size: "24GB"
-          maintenance_work_mem: "2GB"
-          checkpoint_completion_target: "0.9"
-          wal_buffers: "16MB"
-          default_statistics_target: "100"
-          random_page_cost: "1.1"
-          effective_io_concurrency: "200"
-          work_mem: "20971kB"  # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely
-          min_wal_size: "1GB"
-          max_wal_size: "4GB"
-          max_worker_processes: "4"
-          max_parallel_workers_per_gather: "2"
-          max_parallel_workers: "4"
-          max_parallel_maintenance_workers: "2"
-</system_info>
+<p><system_info></p>
+<p>
+RAM = 32 GB<br>
+Current parameters:<br>
+ synchronous_commit: "on"<br>
+ max_connections: "200"<br>
+ shared_buffers: "8GB"<br>
+ effective_cache_size: "24GB"<br>
+ maintenance_work_mem: "2GB"<br>
+ checkpoint_completion_target: "0.9"<br>
+ wal_buffers: "16MB"<br>
+ default_statistics_target: "100"<br>
+ random_page_cost: "1.1"<br>
+ effective_io_concurrency: "200"<br>
+ work_mem: "20971kB" # NOTE: but for just this query, we temporarily have set it to 1.5GB, which is the most we can push it safely<br>
+ min_wal_size: "1GB"<br>
+ max_wal_size: "4GB"<br>
+ max_worker_processes: "4"<br>
+ max_parallel_workers_per_gather: "2"<br>
+ max_parallel_workers: "4"<br>
+ max_parallel_maintenance_workers: "2"
+</p>
+<p><system_info></p>
 </blockquote>
 
 Sir Sonnet said so:
