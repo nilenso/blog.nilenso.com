@@ -401,5 +401,69 @@ Not all the recommendations made sense, but the critical ones seem good. So I ob
 
 My database crashed.
 
-I vibed too close to the sun.
+I committed the original sin. I vibed too close to the sun.
 
+Exasperated, I went back to Sir Sonnet.
+
+<blockquote>
+I get this issue whenever I try to run a long query in my postgresql console in production:
+
+
+```
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+SSL SYSCALL error: EOF detected
+The connection to the server was lost. Attempting reset: Failed.
+!?>
+```
+
+Help me fix this
+
+My effective_shared_cache is 24GB. Setting my work_mem to 2GB just for this one long-running query causes a crash. Why is that?
+</blockquote>
+
+Sir Sonnet responded,
+
+<blockquote>
+Ah, this is a crucial detail. The issue is that work_mem is allocated PER OPERATION in a query plan, not per query or per connection. This is a common misconception that can lead to server crashes.
+Let's break this down:
+
+If your query has multiple operations (like sorts, hash joins, etc.), each operation can use up to the specified work_mem
+If your query runs in parallel, each parallel worker gets its own allocation
+Multiple concurrent connections each get their own allocations
+
+For example, if you have:
+
+work_mem = 2GB
+A query with 4 sort operations
+Running with a parallel worker degree of 3
+5 concurrent users running similar queries
+
+The potential memory usage could be:
+```
+2GB * 4 operations * 3 parallel workers * 5 concurrent users = 120GB
+```
+
+This is why the server crashes - it's trying to allocate much more memory than available!
+</blockquote>
+
+At this point, I want you to imagine a few more iterations, a bit or railing against Sir Sonnet's confident confabulations.
+
+At the end of the process, I had a significantly faster query. I played with a bunch of PostgreSQL knobs and made a matrix.
+
+| parameters | gather merge disk IO |  | query time (ms) |
+| :---- | ----- | :---- | ----: |
+|  | **bytes read** | **bytes written** |  |
+| (current setting) work\_mem \= 20971kB, gather merge workers: 2 | 52GB | 52GB | 1,622,533 |
+| work\_mem \= 1.5GB, gather merge workers: 2 | 23GB | 23GB | 813,398 |
+| work\_mem \= 1GB, gather merge workers: 2 | 23GB | 23GB | 874,059 |
+| work\_mem \= 1GB, gather merge workers: 3 | 23GB | 23GB | 888,341 |
+| work\_mem \= 1GB, gather merge workers: 3, effective\_io\_concurrency: 400 | 23GB | 23GB | 903,961 |
+| work\_mem \= 1GB, gather merge workers: 2, random\_io\_cost: 1.1 | 23GB | 23GB | 849,473 |
+
+Is this something a human could most definitely do well? Yes indeed. I exchanged notes with Srihari, and someone with deep experience such as he would have figured this out in an afternoon.
+
+Where Sir Sonnet helped me is that I could, as someone who has never turned a knob on a PostgreSQL database, could be as productive as a Srihari. And my adversarial relationship with Sir Sonnet made me learn about PostgreSQL internals at unprecedented pace.
+
+LLMs are abundantly smarter than the days of yore (November 2024). The models can reason intelligently and use tools better than before. There's more to do with it than vibe code.
