@@ -399,7 +399,7 @@ After implementing these changes:
 
 Not all the recommendations made sense, but the critical ones seem good. So I obeyed the AI and reran the query.
 
-My database crashed.
+And my database crashed.
 
 I committed the original sin. I vibed too close to the sun.
 
