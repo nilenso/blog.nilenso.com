@@ -17,7 +17,7 @@ EXPLAIN ANALYZE <my slow query>
 
 After waiting a cool 13 minutes, I was met with a rather friendly output that approximately looked like this.
 
-<details>
+<details style='margin-bottom: 1em'>
     <summary>Rather Friendly Output</summary>
   <pre>                                                                                                                                                            QUERY PLAN
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
