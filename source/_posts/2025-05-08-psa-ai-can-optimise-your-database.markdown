@@ -272,7 +272,7 @@ After waiting a cool 13 minutes, I was met with a rather friendly output that ap
 
 We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us with a [rather fine tool](explain.depesz.com) for dealing with Rather Friendly Outputs.
 
-![Sir depesz screenshot, honks red at me](/images/blog/screenshot-2025-05-09-at-13.02.08.png "explain.depesz.com")
+![explain.depesz.com](/images/blog/screenshot-2025-05-09-at-13.02.08.png "Sir depesz screenshot, honks red at me")
 
 My Rather Friendly Output is friendlier still, as I have a big red box honking at me pointing to what has gone wrong. But my well-bred engineer brain thought: Now What?!
 
