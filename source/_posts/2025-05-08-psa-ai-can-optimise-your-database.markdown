@@ -441,7 +441,7 @@ At this point, I want you to imagine a few more iterations, a bit or railing aga
 
 At the end of the process, I had a significantly faster query. I played with a bunch of PostgreSQL knobs and made a matrix.
 
-
+<table style='width:100%'>
   <thead>
     <tr>
       <th>parameters</th>
@@ -494,6 +494,7 @@ At the end of the process, I had a significantly faster query. I played with a b
       <td>849,473</td>
     </tr>
   </tbody>
+</table>
 
 Is this something a human could most definitely do well? Yes indeed. I exchanged notes with [Srihari](https://nilenso.com/people/srihari-sriraman/), and someone with deep experience such as he would have figured this out in an afternoon.
 
