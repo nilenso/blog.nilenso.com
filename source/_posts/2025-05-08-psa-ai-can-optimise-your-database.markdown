@@ -1,5 +1,5 @@
 ---
-title: "PSA: AI can optimise your database"
+title: A database optimisation story ft. Sir Sonnet
 kind: article
 author: Atharva Raykar
 created_at: 2025-05-08 00:00:00 UTC
