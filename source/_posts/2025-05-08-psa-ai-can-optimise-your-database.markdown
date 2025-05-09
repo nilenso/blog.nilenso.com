@@ -5,11 +5,11 @@ author: Atharva Raykar
 created_at: 2025-05-08 00:00:00 UTC
 layout: post
 ---
-In the days of yore (November 2024), before there was a 'vibe' before 'code', I was to optimise a query in PostgreSQL.
+In the days of yore (November 2024), before there was a 'vibe' before 'code', I was to optimise a whole suite of queries in PostgreSQL.
 
-This was a query we used to generate a materialised view, which is a denormalised view of our transactional tables. This query was huge and slow.
+We had ten or so queries to generate a set of reporting tables for analytics once a day—a denormalised view of our transactional tables. These queries were huge and slow.
 
-I did what any well-bred engineer must do.
+I did what any well-bred engineer must do. I took the slowest query and:
 
 ```
 EXPLAIN ANALYZE <my slow query>
@@ -275,7 +275,9 @@ We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us wit
 
 My Rather Friendly Output is friendlier still, as I have a big red box honking at me pointing to what has gone wrong. But my well-bred engineer brain thought: Now What?!
 
-Sir depesz in his rather fine tool hinted at a `work_mem` problem. But how must I think and reason about this? What can my hardware support? I had little experience with PostgreSQL knobs.
+Sir depesz in his rather fine tool hinted at a `work_mem` problem. Ah yes, a knob that I can turn for the duration of these overnight queries. This is a more useful lever for me than rewriting a 200 line SQL query that joins the world.
+
+But how must I think and reason about this? What can my hardware support? I had little experience with PostgreSQL knobs.
 
 A month before the aforementioned day of yore, October 2024, people were saying glowing things about a model now known as Sonnet 3.6, then known as Sonnet 3.5 (new). Simpler times. What matters here is that it was the clear best model when there were clear best AI models.
 
@@ -370,24 +372,6 @@ Sir Sonnet said so:
 
 6. `random_page_cost`: 1.0 (currently 1.1)
    - Justification: If using SSDs, this should be lowered to better reflect actual I/O costs
-
-## Additional Recommendations
-
-1. **Index Recommendations**
-   - Consider adding indexes to support these join conditions:
-     - Joins between patients and reporting_prescriptions tables
-     - Joins on date-based operations
-
-2. **Table Partitioning**
-   - Consider partitioning the following tables by date:
-     - reporting_prescriptions
-     - reporting_patient_visits
-     - reporting_patient_blood_sugars
-     - reporting_patient_blood_pressures
-
-3. **Materialized Views**
-   - Consider creating materialized views for the complex region hierarchy joins
-   - These joins are creating multiple sorts and hash operations
 
 ## Monitoring Recommendations
 
