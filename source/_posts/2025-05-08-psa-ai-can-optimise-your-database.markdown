@@ -405,7 +405,9 @@ The connection to the server was lost. Attempting reset: Failed.
 
 Help me fix this
 
-My effective_shared_cache is 24GB. Setting my work_mem to 2GB just for this one long-running query causes a crash. Why is that?
+My effective_shared_cache is 24GB.
+
+Setting my work_mem to 2GB just for this one long-running query causes a crash. Why is that?
 </pre>
 
 Sir Sonnet responded,
@@ -415,7 +417,8 @@ Ah, this is a crucial detail. The issue is that work_mem is allocated PER OPERAT
 not per query or per connection. This is a common misconception that can lead to server crashes.
 Let's break this down:
 
-If your query has multiple operations (like sorts, hash joins, etc.), each operation can use up to the specified work_mem
+If your query has multiple operations (like sorts, hash joins, etc.), each operation can use up to
+the specified work_mem
 If your query runs in parallel, each parallel worker gets its own allocation
 Multiple concurrent connections each get their own allocations
 
