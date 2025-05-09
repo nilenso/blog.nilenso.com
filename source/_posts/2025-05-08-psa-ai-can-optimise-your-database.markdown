@@ -16,6 +16,7 @@ EXPLAIN ANALYZE <my slow query>
 ```
 
 After waiting a cool 13 minutes, I was met with a rather friendly output that approximately looked like this.
+
 <details>
     <summary>Rather Friendly Output</summary>
   <pre>                                                                                                                                                            QUERY PLAN
@@ -271,7 +272,7 @@ After waiting a cool 13 minutes, I was met with a rather friendly output that ap
 
 We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us with a [rather fine tool](explain.depesz.com) for dealing with Rather Friendly Outputs.
 
-[image of depesz screenshot]
+![Sir depesz screenshot, honks red at me](/images/blog/screenshot-2025-05-09-at-13.02.08.png "explain.depesz.com")
 
 My Rather Friendly Output is friendlier still, as I have a big red box honking at me pointing to what has gone wrong. But my well-bred engineer brain thought: Now What?!
 
@@ -436,15 +437,15 @@ At this point, I want you to imagine a few more iterations, a bit or railing aga
 
 At the end of the process, I had a significantly faster query. I played with a bunch of PostgreSQL knobs and made a matrix.
 
-| parameters | gather merge disk IO |  | query time (ms) |
-| :---- | ----- | :---- | ----: |
-|  | **bytes read** | **bytes written** |  |
-| (current setting) work\_mem \= 20971kB, gather merge workers: 2 | 52GB | 52GB | 1,622,533 |
-| work\_mem \= 1.5GB, gather merge workers: 2 | 23GB | 23GB | 813,398 |
-| work\_mem \= 1GB, gather merge workers: 2 | 23GB | 23GB | 874,059 |
-| work\_mem \= 1GB, gather merge workers: 3 | 23GB | 23GB | 888,341 |
-| work\_mem \= 1GB, gather merge workers: 3, effective\_io\_concurrency: 400 | 23GB | 23GB | 903,961 |
-| work\_mem \= 1GB, gather merge workers: 2, random\_io\_cost: 1.1 | 23GB | 23GB | 849,473 |
+| parameters                                                             | gather merge disk IO |                   | query time (ms) |
+| ---------------------------------------------------------------------- | -------------------- | ----------------- | --------------- |
+|                                                                        | **bytes read**       | **bytes written** |                 |
+| (current setting) work_mem = 20971kB, gather merge workers: 2          | 52GB                 | 52GB              | 1,622,533       |
+| work_mem = 1.5GB, gather merge workers: 2                              | 23GB                 | 23GB              | 813,398         |
+| work_mem = 1GB, gather merge workers: 2                                | 23GB                 | 23GB              | 874,059         |
+| work_mem = 1GB, gather merge workers: 3                                | 23GB                 | 23GB              | 888,341         |
+| work_mem = 1GB, gather merge workers: 3, effective_io_concurrency: 400 | 23GB                 | 23GB              | 903,961         |
+| work_mem = 1GB, gather merge workers: 2, random_io_cost: 1.1           | 23GB                 | 23GB              | 849,473         |
 
 Is this something a human could most definitely do well? Yes indeed. I exchanged notes with [Srihari](https://nilenso.com/people/srihari-sriraman/), and someone with deep experience such as he would have figured this out in an afternoon.
 
