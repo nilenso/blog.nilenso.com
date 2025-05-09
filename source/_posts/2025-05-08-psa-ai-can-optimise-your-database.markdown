@@ -438,15 +438,59 @@ At this point, I want you to imagine a few more iterations, a bit or railing aga
 
 At the end of the process, I had a significantly faster query. I played with a bunch of PostgreSQL knobs and made a matrix.
 
-| parameters                                                             | gather merge disk IO |                   | query time (ms) |
-| ---------------------------------------------------------------------- | -------------------- | ----------------- | --------------- |
-|                                                                        | **bytes read**       | **bytes written** |                 |
-| (current setting) work_mem = 20971kB, gather merge workers: 2          | 52GB                 | 52GB              | 1,622,533       |
-| work_mem = 1.5GB, gather merge workers: 2                              | 23GB                 | 23GB              | 813,398         |
-| work_mem = 1GB, gather merge workers: 2                                | 23GB                 | 23GB              | 874,059         |
-| work_mem = 1GB, gather merge workers: 3                                | 23GB                 | 23GB              | 888,341         |
-| work_mem = 1GB, gather merge workers: 3, effective_io_concurrency: 400 | 23GB                 | 23GB              | 903,961         |
-| work_mem = 1GB, gather merge workers: 2, random_io_cost: 1.1           | 23GB                 | 23GB              | 849,473         |
+
+  <thead>
+    <tr>
+      <th>parameters</th>
+      <th>gather merge disk IO</th>
+      <th>&nbsp;</th>
+      <th>query time (ms)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td><strong>bytes read</strong></td>
+      <td><strong>bytes written</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>(current setting) work_mem = 20971kB, gather merge workers: 2</td>
+      <td>52GB</td>
+      <td>52GB</td>
+      <td>1,622,533</td>
+    </tr>
+    <tr>
+      <td>work_mem = 1.5GB, gather merge workers: 2</td>
+      <td>23GB</td>
+      <td>23GB</td>
+      <td>813,398</td>
+    </tr>
+    <tr>
+      <td>work_mem = 1GB, gather merge workers: 2</td>
+      <td>23GB</td>
+      <td>23GB</td>
+      <td>874,059</td>
+    </tr>
+    <tr>
+      <td>work_mem = 1GB, gather merge workers: 3</td>
+      <td>23GB</td>
+      <td>23GB</td>
+      <td>888,341</td>
+    </tr>
+    <tr>
+      <td>work_mem = 1GB, gather merge workers: 3, effective_io_concurrency: 400</td>
+      <td>23GB</td>
+      <td>23GB</td>
+      <td>903,961</td>
+    </tr>
+    <tr>
+      <td>work_mem = 1GB, gather merge workers: 2, random_io_cost: 1.1</td>
+      <td>23GB</td>
+      <td>23GB</td>
+      <td>849,473</td>
+    </tr>
+  </tbody>
 
 Is this something a human could most definitely do well? Yes indeed. I exchanged notes with [Srihari](https://nilenso.com/people/srihari-sriraman/), and someone with deep experience such as he would have figured this out in an afternoon.
 
