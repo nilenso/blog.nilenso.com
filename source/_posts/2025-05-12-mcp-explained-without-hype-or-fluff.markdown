@@ -25,6 +25,7 @@ layout: post
 ## Should I build an MCP?
 * Reemphasise properties of MCPs
 * A lot of usefulness and capabilities exist on the client
+* MCP is a clear concrete thing to do, but it doesn't make a good product. It's another tool in your toolbox.
 
 ## Details about the protocol (should this be in the appendix?)
 
