@@ -9,7 +9,7 @@ Model Context Protocols, like nearly all protocols, solve the M ⨯ N integratio
 
 By integrating against the MCP standard, an AI application does not have to figure out how to fetch data or take actions specific to a platform.
 
-MCP may not make your AI smarter, or improve your product, but it will reduce the friction to integrate against other applications that already support MCP.
+MCP may not make your AI smarter, or improve your product, but it will reduce the friction to integrate against other applications that already support MCP. This may or may not be important to you.
 
 ## MCP is solving the problem that most protocols solve
 
