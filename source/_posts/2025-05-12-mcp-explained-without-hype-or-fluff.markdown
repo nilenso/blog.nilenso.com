@@ -5,6 +5,12 @@ author: Atharva Raykar
 created_at: 2025-05-12 00:00:00 UTC
 layout: post
 ---
+Model Context Protocols, like nearly all protocols, solve the M ⨯ N integration problem by turning it into an M + N integration problem.
+
+By integrating against the MCP standard, an AI application does not have to figure out how to fetch data or take actions specific to a platform.
+
+MCP may not make your AI smarter, or improve your product, but it will reduce the friction to integrate against other applications that already support MCP.
+
 ## MCP is solving the problem that most protocols solve
 
 * m x n problem
