@@ -127,12 +127,30 @@ I was able to take advantage of Claude's analysis tool to help me visualise the 
 
 ![A split-screen view showing a conversation about creating a judicial demographics dashboard on the left and the actual dashboard visualization on the right. The right side displays an "Indian Judiciary Demographics Dashboard" analyzing Supreme Court Justices from 1950-2019, with visualizations showing gender representation (95.6% male, 4.4% female), women's representation over time (a line graph showing gradual increase from the 1970s to 2010s), and a partial view of SC Justices appointed by decade.](/images/blog/screenshot-2025-05-14-at-14.59.44.png)
 
-## Should I build an MCP?
+I can envision other MCP clients in the future that could make better use of this data, beyond this basic conversational interface and tackle problems such as backlinks and provenance, while providing more structured, opinionated visualisations and analysis.
 
-* Reemphasise properties of MCPs
-* A lot of usefulness and capabilities exist on the client
-* MCP is a clear concrete thing to do, but it doesn't make a good product. It's another tool in your toolbox.
+## Should I build "an MCP"?
 
-## Details about the protocol (should this be in the appendix?)
+It's worth noting that this is not a mature protocol—[it is continuously evolving](https://modelcontextprotocol.io/development/roadmap). But the adoption has been fantastic—I opened the first random MCP aggregating website and it lists over 4000 servers coming from various organisations and individuals. I'd estimate there's a lot more out there.
+
+Building against MCP is a clear, well-defined thing to do, something that's rare in the volatile landscape of AI. This could explain its popularity. But it doesn't make a good product. It's another tool in your toolbox.
+
+I (and other folks at nilenso) maintain that good products are built on the foundation of software engineering maturity, and this is especially true of AI products.
+
+So let's revisit what MCP brings to the table:
+* Turns M ⨯ N integration problem by turning it into an M + N integration problem.
+* Decouples AI client applications from AI tools and workflows for a platform.
+
+This decoupling is not free of cost. There is extra scaffolding to make your applications talk this protocol. Your LLM performance is sensitive to prompting and tool descriptions. Adding lots of tools indiscriminately affects latencies and overall quality of your responses.
+
+It makes sense for GitHub to expose repository actions for AI tools like Cursor or Windsurf to carry out. This is a valuable form of decoupling.
+
+Does it make sense to have this decoupling for an internal tool, where the clients and servers are under your control, and the value comes from having well-optimised finetuned responses? Probably not.
+
+Anywho, here's some references. Happy building.
 
 ## References, for a deeper dive
+
+* [Official Docs](https://modelcontextprotocol.io/introduction)
+* [Why MCP Won](https://www.latent.space/p/why-mcp-won)
+* [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
