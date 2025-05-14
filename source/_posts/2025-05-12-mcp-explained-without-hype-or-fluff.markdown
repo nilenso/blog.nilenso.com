@@ -92,7 +92,7 @@ async def get_resource_details(resource_id: str, ctx: Context = None) -> str:
 
 The details of the SDK are better explained in official guides, but the gist of it is that it is an abstraction over JSON-RPC request-response messages that are defined in the protocol. The server I have implemented runs locally, launched as a subprocess by the client app and uses the stdio streams to pass these protocol messages around. Remote MCP servers are a thing as well.
 
-After I wrote this server, I exposed it to the Claude desktop app, which is also an MCP client by editing `claude_desktop_config.json`. I pointed it to \[JusticeHub](justicehub.in), a CKAN instance that contains legal and justice data, created by the folks at CivicDataLabs.
+After I wrote this server, I exposed it to the Claude desktop app, which is also an MCP client by editing `claude_desktop_config.json`. I pointed it to [JusticeHub](justicehub.in), a CKAN instance that contains legal and justice data, created by the folks at CivicDataLabs.
 
 ```json
 {
