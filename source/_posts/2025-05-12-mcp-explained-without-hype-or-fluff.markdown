@@ -32,7 +32,7 @@ I wrote a tiny MCP server to expose actions to take on CKAN, an open source data
 
 This is not particularly conducive to discovery and drilling through data. It's also significant friction to connect dots across datasets. I thought it would be nice to have an AI application that can access all the datasets on CKAN and make sense of it. Open Data is as useful as the insights that can be extracted from it.
 
-One way for me to have approached this is to write an AI application from scratch encoded with knowledge about all the CKAN REST APIs. Unfortunately, this would have "locked in" AI use of CKAN open data sets to just my application. And [data, especially Open Data wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free).
+One way for me to have approached this is to write an AI application from scratch encoded with knowledge about all the CKAN REST APIs. Unfortunately, this would have "locked in" AI use of CKAN open data sets to just my application. [And data, especially Open Data wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free).
 
 What I really wanted is a well-known "doorknob" that a lot of AI applications and agents in the world would know how to open. This is what MCP servers do. I wrote one in a couple of hours.
 
