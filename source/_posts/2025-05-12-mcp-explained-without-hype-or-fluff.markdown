@@ -117,15 +117,15 @@ After wrote this server, I exposed it to the Claude desktop app, which is also a
 
 This allowed me to use this data through Claude.
 
-![](/images/blog/screenshot-2025-05-14-at-14.58.08.png)
+![A screenshot of a conversation with an AI assistant about exploring JusticeHub open data. The assistant lists available datasets, tags, and organizations on the JusticeHub platform. The conversation shows multiple function calls like list_datasets, list_tags, list_organizations, and search_datasets to explore different aspects of the data.](/images/blog/screenshot-2025-05-14-at-14.58.08.png)
 
 Claude discovered my MCP server and gave me a summary of what kind of data was available in JusticeHub.
 
-![](/images/blog/screenshot-2025-05-14-at-14.58.41.png)
+![A continuation of the conversation showing the assistant's comprehensive overview of the JusticeHub open data platform. It describes JusticeHub as a specialized data platform focused on the Indian justice system. The overview includes key dataset categories like Judicial System Performance, Legal Budget and Financial Data, Legal Aid and Access to Justice, and Parliamentary and Legislative Data, with bullet points listing specific datasets under each category.](/images/blog/screenshot-2025-05-14-at-14.58.41.png)
 
 I was able to take advantage of Claude's analysis tool to help me visualise the data in an interactive dashboard!
 
-![](/images/blog/screenshot-2025-05-14-at-14.59.44.png)
+![A split-screen view showing a conversation about creating a judicial demographics dashboard on the left and the actual dashboard visualization on the right. The right side displays an "Indian Judiciary Demographics Dashboard" analyzing Supreme Court Justices from 1950-2019, with visualizations showing gender representation (95.6% male, 4.4% female), women's representation over time (a line graph showing gradual increase from the 1970s to 2010s), and a partial view of SC Justices appointed by decade.](/images/blog/screenshot-2025-05-14-at-14.59.44.png)
 
 ## Should I build an MCP?
 
