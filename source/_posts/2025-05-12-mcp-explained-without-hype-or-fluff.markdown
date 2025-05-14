@@ -14,6 +14,7 @@ MCP may not make your AI smarter, or improve your product, but it will reduce th
 The protocol specifies MCP Servers, that generally connect to data sources and expose tools specific to it. Then there are MCP clients, which are a part of AI applications. They can connect to any MCP Server, typically through a configuration that specifies how to connect to or run the server.
 
 The Servers, more commonly implemented than Clients, may expose:
+
 * **Tools** that the LLM can call, eg, `fetch_file` for a filesystem or `send_mail` for a mail client integration.
 * **Prompts**, which are reusable templates of instructions or multi-step conversations for the LLM, that are intended to be user-controlled.
 * **Resources** that are exposed via URIs; it's up to the client application's design to decide how these are fetched or used.
@@ -89,7 +90,7 @@ async def get_resource_details(resource_id: str, ctx: Context = None) -> str:
 
 The details of the SDK are better explained in official guides, but the gist of it is that it is an abstraction over JSON-RPC request-response messages that are defined in the protocol. The server I have implemented runs locally, launched as a subprocess by the client app and uses the stdio streams to pass these protocol messages around. Remote MCP servers are a thing as well.
 
-After wrote this server, I exposed it to the Claude desktop app, which is also an MCP client by editing `claude_desktop_config.json`. I pointed it to justicehub.in, a CKAN instance that contains legal and justice data, created by the folks at CivicDataLabs.
+After wrote this server, I exposed it to the Claude desktop app, which is also an MCP client by editing `claude_desktop_config.json`. I pointed it to \[JusticeHub](justicehub.in), a CKAN instance that contains legal and justice data, created by the folks at CivicDataLabs.
 
 ```json
 {
@@ -116,9 +117,18 @@ After wrote this server, I exposed it to the Claude desktop app, which is also a
 
 This allowed me to use this data through Claude.
 
+![](/images/blog/screenshot-2025-05-14-at-14.58.08.png)
 
+Claude discovered my MCP server and gave me a summary of what kind of data was available in JusticeHub.
+
+![](/images/blog/screenshot-2025-05-14-at-14.58.41.png)
+
+I was able to take advantage of Claude's analysis tool to help me visualise the data in an interactive dashboard!
+
+![](/images/blog/screenshot-2025-05-14-at-14.59.44.png)
 
 ## Should I build an MCP?
+
 * Reemphasise properties of MCPs
 * A lot of usefulness and capabilities exist on the client
 * MCP is a clear concrete thing to do, but it doesn't make a good product. It's another tool in your toolbox.
