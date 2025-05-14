@@ -151,6 +151,6 @@ Anywho, here's some references. Happy building.
 
 ## References, for a deeper dive
 
-* [Official Docs](https://modelcontextprotocol.io/introduction)
+* [Official Docs](https://modelcontextprotocol.io/introduction): If I have left out a lot of details on the specifics of MCP, it's because the official docs are pretty solid and far likely to be up-to-date.
 * [Why MCP Won](https://www.latent.space/p/why-mcp-won)
 * [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
