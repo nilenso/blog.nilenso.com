@@ -26,7 +26,7 @@ There are a few more functions and nuances to Servers, but these are what broadl
 
 I wrote a tiny MCP server to expose actions to take on CKAN, an open source data management system that's used by Governments and other organisations to publish open datasets. CKAN has a web interface that links to these tagged datasets, which are usually semi-structured (CSVs, XLS) or totally unstructured (PDF reports and papers).
 
-(image of the UI)
+![A view of the CKAN interface](/images/blog/screenshot-2025-05-14-at-15.48.51.png)
 
 This is not particularly conducive to discovery and drilling through data. It's also significant friction to connect dots across datasets. I thought it would be nice to have an AI application that can access all the datasets on CKAN and make sense of it. Open Data is as useful as the insights that can be extracted from it.
 
@@ -138,6 +138,7 @@ Building against MCP is a clear, well-defined thing to do, something that's rare
 I (and other folks at nilenso) maintain that good products are built on the foundation of software engineering maturity, and this is especially true of AI products.
 
 So let's revisit what MCP brings to the table:
+
 * Turns M ⨯ N integration problem by turning it into an M + N integration problem.
 * Decouples AI client applications from AI tools and workflows for a platform.
 
