@@ -5,24 +5,21 @@ author: Atharva Raykar
 created_at: 2025-05-12 00:00:00 UTC
 layout: post
 ---
-Model Context Protocols, like nearly all protocols, solve the M ⨯ N integration problem by turning it into an M + N integration problem.
+Model Context Protocol, like most protocols, solves the M ⨯ N integration problem by turning it into an M + N integration problem.
 
-By integrating against the MCP standard, an AI application does not have to figure out how to fetch data or take actions specific to a platform.
+An AI client application that speaks this protocol does not have to figure out how to fetch data or take actions specific to a platform.
 
 MCP may not make your AI smarter, or improve your product, but it will reduce the friction to integrate against other applications that already support MCP. This may or may not be important to you.
 
-## MCP is solving the problem that most protocols solve
+The protocol specifies MCP Servers, that generally connect to data sources and expose tools specific to it. Then there are MCP clients, which are a part of AI applications. They can connect to any MCP Server, typically through a configuration that specifies how to connect to or run the server.
 
-* m x n problem
-* AI's m x n problem
-* "USB-C for AI"
-* How MCP makes an mxn problem into an m+n problem
+The Servers, which is far more often implemented than Clients may expose:
+* **Tools** that the LLM can call, eg, `fetch_file` for a filesystem or `send_mail` for a mail client integration.
+* **Prompts**, which are reusable templates of instructions or multi-step conversations for the LLM, that are intended to be user-controlled.
+* **Resources** that are exposed via URIs; it's up to the client application's design to decide how these are fetched or used.
+* **Sampling** lets the server borrow the LLM on the MCP client, which can be especially useful for agentic patterns that need the client context.
 
-## What MCP does not solve
-* It does not make your AI product smarter
-* Giving access to more tools prompts and resources ≠ better product
-
-## Use case: exposing Open Data to AI agents
+## A concrete example
 * How I wrote this
 * Brief explanation of the code
 * How this MCP theoretically helps
