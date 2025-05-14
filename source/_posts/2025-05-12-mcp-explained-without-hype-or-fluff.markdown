@@ -23,6 +23,14 @@ There are a few more functions and nuances to Servers, but these are what broadl
 
 ## A tiny concrete example: an MCP for Open Data access
 
+I wrote a tiny MCP server to expose actions to take on CKAN, an open source data management system that's used by Governments and other organisations to publish open datasets. It has a web interface that links to these tagged datasets, which are usually semi-structured (CSVs, XLS) or entirely unstructured (PDF reports and papers).
+
+(image of the UI)
+
+This is not particularly conducive to discovery and drilling through data. It's also significant friction to connect dots across datasets.
+
+ 
+
 * How I wrote this
 * Brief explanation of the code
 * How this MCP theoretically helps
