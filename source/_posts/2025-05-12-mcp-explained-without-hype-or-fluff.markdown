@@ -137,7 +137,7 @@ It's worth noting that this is not a mature protocol—[it is continuously evolv
 
 Building against MCP is a clear, well-defined thing to do, something that's rare in the volatile landscape of AI. This could explain its popularity. But it doesn't make a good product. It's another tool in your toolbox.
 
-I (and other folks at nilenso) maintain that good products are built on the foundation of software engineering maturity, and this is especially true of AI products.
+I (and other folks at nilenso) maintain that good products are built on a foundation that requires software engineering maturity, and this is especially true of AI products.
 
 So let's revisit what MCP brings to the table:
 
