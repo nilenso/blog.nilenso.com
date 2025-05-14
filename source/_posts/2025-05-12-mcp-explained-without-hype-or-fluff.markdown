@@ -9,6 +9,8 @@ Model Context Protocol, like most protocols, solves the M ⨯ N integration prob
 
 An AI client application that speaks this protocol does not have to figure out how to fetch data or take actions specific to a platform.
 
+![](/images/blog/mcp.png)
+
 MCP may not make your AI smarter, or improve your product, but it will reduce the friction to integrate against other applications that already support MCP. This may or may not be important to you.
 
 The protocol specifies MCP Servers, that generally connect to data sources and expose tools specific to it. Then there are MCP clients, which are a part of AI applications. They can connect to any MCP Server, typically through a configuration that specifies how to connect to or run the server.
