@@ -20,7 +20,7 @@ The servers, more commonly implemented than clients, may expose:
 * **Tools** that the LLM can call, eg, `fetch_file` for a filesystem or `send_mail` for a mail client integration.
 * **Prompts**, which are reusable templates of instructions or multi-step conversations for the LLM, that are intended to be user-controlled.
 * **Resources** that are exposed via URIs; it's up to the client application's design to decide how these are fetched or used.
-* **Sampling** lets the server borrow the LLM on the MCP client, which can be especially useful for agentic patterns that need the client context.
+* **Sampling**, which allows servers to request LLM completions on the client application, which is useful for agentic patterns and running context-aware inference without needing to receive all the contextual data from the client.
 
 There are a few more functions and nuances to servers, but these are what broadly stood out to me. Most servers that I have seen or used mostly just expose tool calls.
 
@@ -119,7 +119,9 @@ After I wrote this server, I exposed it to the Claude desktop app, which is also
 
 This allowed me to use this data through Claude.
 
-![A screenshot of a conversation with an AI assistant about exploring JusticeHub open data. The assistant lists available datasets, tags, and organizations on the JusticeHub platform. The conversation shows multiple function calls like list_datasets, list_tags, list_organizations, and search_datasets to explore different aspects of the data.](/images/blog/screenshot-2025-05-14-at-14.58.08.png)
+![A screenshot of a conversation with an AI assistant about exploring JusticeHub open data. The assistant lists available datasets, tags, and organizations on the JusticeHub platform. The conversation shows multiple function calls like list_datasets, list_tags, list_organizations, and search_datasets to explore different aspects of the data.](/images/blog/screenshot-2025-05-15-at-16.51.51.png)
+
+![](/images/blog/screenshot-2025-05-15-at-16.52.08.png)
 
 Claude discovered my MCP server and gave me a summary of what kind of data was available in JusticeHub.
 
