@@ -119,7 +119,9 @@ After I wrote this server, I exposed it to the Claude desktop app, which is also
 
 This allowed me to use this data through Claude.
 
-![A screenshot of a conversation with an AI assistant about exploring JusticeHub open data. The assistant lists available datasets, tags, and organizations on the JusticeHub platform. The conversation shows multiple function calls like list_datasets, list_tags, list_organizations, and search_datasets to explore different aspects of the data.](/images/blog/screenshot-2025-05-14-at-14.58.08.png)
+![A screenshot of a conversation with an AI assistant about exploring JusticeHub open data. The assistant lists available datasets, tags, and organizations on the JusticeHub platform. The conversation shows multiple function calls like list_datasets, list_tags, list_organizations, and search_datasets to explore different aspects of the data.](/images/blog/screenshot-2025-05-15-at-16.51.51.png)
+
+![](/images/blog/screenshot-2025-05-15-at-16.52.08.png)
 
 Claude discovered my MCP server and gave me a summary of what kind of data was available in JusticeHub.
 
