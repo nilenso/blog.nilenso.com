@@ -20,7 +20,7 @@ The servers, more commonly implemented than clients, may expose:
 * **Tools** that the LLM can call, eg, `fetch_file` for a filesystem or `send_mail` for a mail client integration.
 * **Prompts**, which are reusable templates of instructions or multi-step conversations for the LLM, that are intended to be user-controlled.
 * **Resources** that are exposed via URIs; it's up to the client application's design to decide how these are fetched or used.
-* **Sampling** lets the server borrow the LLM on the MCP client, which can be especially useful for agentic patterns that need the client context.
+* **Sampling**, which allows servers to request LLM completions on the client application, which is useful for agentic patterns and running context-aware inference without needing to receive all the contextual data from the client.
 
 There are a few more functions and nuances to servers, but these are what broadly stood out to me. Most servers that I have seen or used mostly just expose tool calls.
 
