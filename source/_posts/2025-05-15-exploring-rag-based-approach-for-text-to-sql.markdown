@@ -20,7 +20,6 @@ Our initial RAG pipeline is straightforward and has two steps:
 ### 1. Data Preparation
 
 **Schema Representation**
-
 To ensure the language model effectively understands database schemas, we structured schema information into clear, human-readable textual descriptions. This structured format includes  table name, each column's name, data type, constraints, and descriptive details, as well as relationships between tables.
 
 An example of our initial schema representation looks like this:
