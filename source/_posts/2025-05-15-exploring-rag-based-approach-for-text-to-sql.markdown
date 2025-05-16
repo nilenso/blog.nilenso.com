@@ -53,7 +53,7 @@ Now as we have our data prepped up, we can use this to generate our queries. To 
 
 This straightforward approach allowed us to validate the core functionality quickly. However, as we began testing this initial setup more extensively, several notable limitations became apparent.
 
-![image.png](/images/blog/screenshot-2025-04-25-at-2.15.31 pm.png)
+![RAG](/images/blog/screenshot-2025-04-25-at-2.15.31 pm.png)
 
 **Issues with the initial RAG setup**
 
@@ -254,7 +254,7 @@ Against our original test set the improvement was barely noticeable. Unsurprisin
 
 This is how our final RAG based solution looks with all the suggested changes:
 
-![image.png](/images/blog/screenshot-2025-05-15-at-3.35.03 pm.png)
+![Refined Rag](/images/blog/screenshot-2025-05-15-at-3.35.03 pm.png)
 
 - - -
 
