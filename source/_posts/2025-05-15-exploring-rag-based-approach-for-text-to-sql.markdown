@@ -5,6 +5,8 @@ author: Tarun
 created_at: 2025-05-15 00:00:00 UTC
 layout: post
 ---
+## Exploring RAG based approach for Text to SQL
+
 *This post is part of our Text-to-SQL series. You can find the first installment [here](https://blog.nilenso.com/blog/2025/04/30/exploring-text-to-sql/)*
 
 In this post, we explore how Retrieval-Augmented Generation (RAG) can improve SQL query generation from natural language. 
@@ -20,6 +22,7 @@ Our initial RAG pipeline is straightforward and has two steps:
 ### 1. Data Preparation
 
 **Schema Representation**
+
 To ensure the language model effectively understands database schemas, we structured schema information into clear, human-readable textual descriptions. This structured format includes  table name, each column's name, data type, constraints, and descriptive details, as well as relationships between tables.
 
 An example of our initial schema representation looks like this:
@@ -51,9 +54,9 @@ To retrieve relevant schema information efficiently, we transformed our schema d
 
 Now as we have our data prepped up, we can use this to generate our queries. To do this, we compute the semantic similarity between the user's query and the stored schema embeddings. Based on this, we retrieve the top-k (5 in our case) most relevant schema descriptions. These descriptions are then passed along with some basic prompt to the LLM to generate the SQL query.
 
-This straightforward approach allowed us to validate the core functionality quickly. However, as we began testing this initial setup more extensively, several notable limitations became apparent.
-
 ![RAG](/images/blog/screenshot-2025-04-25-at-2.15.31 pm.png)
+
+This straightforward approach allowed us to validate the core functionality quickly. However, as we began testing this initial setup more extensively, several notable limitations became apparent.
 
 **Issues with the initial RAG setup**
 
@@ -69,13 +72,13 @@ This initial baseline performance on benchmark datasets was:
 
 - - -
 
-## Iterative Improvements
+## Improvements made to the baseline
 
 To tackle these issues, we introduced a series of targeted improvements.
 
 *To keep turnaround time short, we didn’t run the full benchmark after every tweak.*
 
-\*Instead, we worked with a subset of ~60 questions **\*\*from the BirdBench dev \*\***set that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
+*Instead, we worked with a subset of ~60 questions ***\*from the BirdBench dev \****set that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
 
 ### 1. Fixing the Low-Hanging Fruits
 
@@ -91,11 +94,11 @@ Additionally, we addressed smaller inconsistencies like the model occasionally w
 
 **Post processing**
 
-Even after explicitly stating not to wrap the result in `sql` code block, the model sometimes returned it in sql block. Instead of further experimenting with the prompt, we added a tiny cleanup step to remove these codeblocks. 
+Even after explicitly stating not to wrap the result in `sql` code block, the model sometimes returned it in sql block. Instead of further experimenting with the prompt, we added a cleanup step to remove these codeblocks. 
 
-We found these issues more with `gpt-4o` and `claude-3-5-sonnet` models. `gemini-2.0-flash`  had fewer cases of name hallucinations. 
+These inconsistencies were more prevalent in `gpt-4o` and `claude-3-5-sonnet`. `gemini-2.0-flash`  had fewer cases of column name hallucinations. 
 
-Both of these fixes improved the results of out test set by around 2% (with gemini-2-0-flash).
+Both of these fixes improved the results of out test set by around 2% (with `gemini-2.0-flash`).
 
 - - -
 
@@ -135,7 +138,7 @@ With just those two fixes, we had relevant tables getting better similarity scor
 # Model: all‑miniLM‑L6‑v2  (384 d)
 Table                            | Similarity score
 ---------------------------------------------------
-satscores                        |  0.345   ← irrelevant table edges ahead
+satscores                        |  0.345   ← an irrelevant table has higher score
 schools                          |  0.344
 frpm (free or reduced price meal)|  0.315
 
@@ -254,7 +257,7 @@ Against our original test set the improvement was barely noticeable. Unsurprisin
 
 This is how our final RAG based solution looks with all the suggested changes:
 
-![Refined Rag](/images/blog/screenshot-2025-05-15-at-3.35.03 pm.png)
+![Refined RAG](/images/blog/screenshot-2025-05-15-at-3.35.03 pm.png)
 
 - - -
 
@@ -272,9 +275,7 @@ We ran both baseline and our solution through \~1500 questions of Bird bench dev
 
 ## Next Steps
 
-There are still various techniques that we could try on this pipeline like adding a [Query plan CoT](https://arxiv.org/pdf/2410.01943), or using a more performant [m-schema](https://arxiv.org/pdf/2411.08599) representation. We could also have used smarter candidate selector and query fixer that run the generated query and analyze the result but we didn’t dwelve into this intentionally as in production-grade scenarios, running queries directly against a live database at inference time may not always be practical or desirable. With this in mind, our approach ensures that the connection to the actual database occurs only during the data preparation phase and not during query generation. 
-
-Next up: a deep-dive into agentic flows for Text-to-SQL. Stay tuned
+There are still various techniques that we could try on this pipeline like adding a [Query plan CoT](https://arxiv.org/pdf/2410.01943), or using a more performant [m-schema](https://arxiv.org/pdf/2411.08599) representation. We could also have used smarter candidate selector and query fixer that run the generated query and analyze the result but we didn’t avoided this for now, as in production scenarios, running queries directly against a live database at inference time may not always be practical or desirable. With this in mind, our approach ensures that the connection to the actual database occurs only during the data preparation phase and not during query generation. 
 
 ## Referenced Papers
 
