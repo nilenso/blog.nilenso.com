@@ -5,8 +5,6 @@ author: Tarun
 created_at: 2025-05-15 00:00:00 UTC
 layout: post
 ---
-## Exploring RAG based approach for Text to SQL
-
 *This post is part of our Text-to-SQL series. You can find the first installment [here](https://blog.nilenso.com/blog/2025/04/30/exploring-text-to-sql/)*
 
 In this post, we explore how Retrieval-Augmented Generation (RAG) can improve SQL query generation from natural language. 
