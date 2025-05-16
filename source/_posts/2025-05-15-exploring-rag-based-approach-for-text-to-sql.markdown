@@ -61,8 +61,7 @@ This straightforward approach allowed us to validate the core functionality quic
 One major issue was the imprecision of similarity scores, which occasionally resulted in irrelevant schema contexts being ranked higher than the more relevant ones. We also encountered model hallucinations, where the generated SQL queries included nonexistent columns or tables. Even when provided with accurate schema context, the model's adherence to it was inconsistent, causing occasional inaccuracies in query generation.
 
 This initial baseline performance on benchmark datasets was:
-
-\| Architecture | Bird (dev) Accuracy
+| Architecture | Bird (dev) Accuracy
 (~1500 questions) | Spider Accuracy
 (first 500 questions) |
 | --- | --- | --- |
@@ -262,11 +261,9 @@ This is how our final RAG based solution looks with all the suggested changes:
 ## Results
 
 We ran both baseline and our solution through \~1500 questions of Bird bench dev dataset and \~500 questions from spider dataset and here are the results:
-
-|     | Bird (dev) | Spider |
-| --- | ---------- | ------ |
-
-\| Basic RAG architecture
+|  | Bird (dev) | Spider |
+| --- | --- | --- |
+| Basic RAG architecture
 (Gemini-2-0) | 57.1 |  |
 | Refined RAG + sample values + self-correction + few-shot + divide-and-conquer
 (Gemini-2-0) | 61.8 | 88.9 |
