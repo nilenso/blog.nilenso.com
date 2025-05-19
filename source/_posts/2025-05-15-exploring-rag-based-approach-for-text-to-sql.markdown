@@ -64,7 +64,7 @@ This initial baseline performance on benchmark datasets was:
 
 | Architecture           | Bird (dev) Accuracy <br> (~1500 questions) | Spider Accuracy <br> (first 500 questions) |
 | ---------------------- | ------------------------------------------ | ------------------------------------------ |
-| Basic RAG (Gemini-2-0) | 57.1%                                      | 55.6%                                      |
+| Basic RAG (Gemini-2-0) | 57.1%                                      | 85.6%                                      |
 
 - - -
 
@@ -263,8 +263,8 @@ We ran both baseline and our solution through \~1500 questions of Bird bench dev
 
  | | Bird (dev) | Spider |
  | --- | --- | --- |
- | Basic RAG architecture <br> (Gemini-2-0) | 57.1 |  |
- | Refined RAG <br> + sample values + self-correction <br> + few-shot + divide-and-conquer <br> (Gemini-2-0) | 61.8 | 88.9 |
+ | Basic RAG architecture <br> (Gemini-2-0) | 57.1% | 85.6% |
+ | Refined RAG <br> + sample values + self-correction <br> + few-shot + divide-and-conquer <br> (Gemini-2-0) | 61.8% | 88.9% |
 
 ## Next Steps
 
