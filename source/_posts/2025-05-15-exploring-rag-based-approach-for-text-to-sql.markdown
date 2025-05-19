@@ -61,11 +61,10 @@ This straightforward approach allowed us to validate the core functionality quic
 One major issue was the imprecision of similarity scores, which occasionally resulted in irrelevant schema contexts being ranked higher than the more relevant ones. We also encountered model hallucinations, where the generated SQL queries included nonexistent columns or tables. Even when provided with accurate schema context, the model's adherence to it was inconsistent, causing occasional inaccuracies in query generation.
 
 This initial baseline performance on benchmark datasets was:
-| Architecture | Bird (dev) Accuracy
-(~1500 questions) | Spider Accuracy
-(first 500 questions) |
+
+\| | Architecture | Bird (dev) Accuracy (~1500 questions) | Spider Accuracy (first 500 questions) |
 | --- | --- | --- |
-| Basic RAG (Gemini-2-0) | 57.1% |  |
+| | Basic RAG (Gemini-2-0) | 57.1% | 55.6% |
 
 - - -
 
@@ -75,7 +74,7 @@ To tackle these issues, we introduced a series of targeted improvements.
 
 *To keep turnaround time short, we didn’t run the full benchmark after every tweak.*
 
-*Instead, we worked with a subset of ~60 questions ***\*from the BirdBench dev \****set that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
+\*Instead, we worked with a subset of ~60 questions from the BirdBench devset that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.\*
 
 ### 1. Fixing the Low-Hanging Fruits
 
