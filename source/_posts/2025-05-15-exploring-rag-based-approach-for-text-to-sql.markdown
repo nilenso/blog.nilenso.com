@@ -62,7 +62,7 @@ One major issue was the imprecision of similarity scores, which occasionally res
 
 This initial baseline performance on benchmark datasets was:
 
-\| | Architecture | Bird (dev) Accuracy (~1500 questions) | Spider Accuracy (first 500 questions) |
+| | Architecture | Bird (dev) Accuracy (~1500 questions) | Spider Accuracy (first 500 questions) |
 | --- | --- | --- |
 | | Basic RAG (Gemini-2-0) | 57.1% | 55.6% |
 
