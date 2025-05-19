@@ -122,7 +122,7 @@ To address these, we refined our schema embedding process in two key ways.
 
 With just those two fixes, we had relevant tables getting better similarity scores.
 
-```sql
+```markdown
 # Natural Language question:
 # “What is the Percent (%) Eligible Free (K‑12) in the school
 #  administered by an administrator whose first name is Alusine?
