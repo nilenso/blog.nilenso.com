@@ -260,12 +260,11 @@ This is how our final RAG based solution looks with all the suggested changes:
 ## Results
 
 We ran both baseline and our solution through \~1500 questions of Bird bench dev dataset and \~500 questions from spider dataset and here are the results:
-|  | Bird (dev) | Spider |
-| --- | --- | --- |
-| Basic RAG architecture
-(Gemini-2-0) | 57.1 |  |
-| Refined RAG + sample values + self-correction + few-shot + divide-and-conquer
-(Gemini-2-0) | 61.8 | 88.9 |
+
+ | | Bird (dev) | Spider |
+ | --- | --- | --- |
+ |Basic RAG architecture <br> (Gemini-2-0) | 57.1 |  |
+ | Refined RAG <br> + sample values + self-correction + few-shot + divide-and-conquer <br> (Gemini-2-0) | 61.8 | 88.9 |
 
 ## Next Steps
 
