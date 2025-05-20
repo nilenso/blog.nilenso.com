@@ -74,7 +74,7 @@ To tackle these issues, we introduced a series of targeted improvements.
 
 *To keep turnaround time short, we didn’t run the full benchmark after every tweak.*
 
-*Instead, we worked with a subset of ~60 questions ***\*from the BirdBench dev \****set that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
+*Instead, we worked with a subset of ~60 questions from the BirdBench devset that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
 
 ### 1. Fixing the Low-Hanging Fruits
 
