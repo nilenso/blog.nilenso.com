@@ -52,19 +52,19 @@ To retrieve relevant schema information efficiently, we transformed our schema d
 
 Now as we have our data prepped up, we can use this to generate our queries. To do this, we compute the semantic similarity between the user's query and the stored schema embeddings. Based on this, we retrieve the top-k (5 in our case) most relevant schema descriptions. These descriptions are then passed along with some basic prompt to the LLM to generate the SQL query.
 
-![RAG](/images/blog/screenshot-2025-04-25-at-2.15.31 pm.png)
+![Simple RAG](/images/blog/screenshot-2025-04-25-at-2.15.31 pm.png)
+
+Performance of this baseline approach on benchmark datasets was:
+
+| Architecture           | Bird (dev) Accuracy <br> (~1500 questions) | Spider Accuracy <br> (first 500 questions) |
+| ---------------------- | ------------------------------------------ | ------------------------------------------ |
+| Basic RAG (Gemini-2-0) | 57.1%                                      | 85.6%                                      |
 
 This straightforward approach allowed us to validate the core functionality quickly. However, as we began testing this initial setup more extensively, several notable limitations became apparent.
 
 **Issues with the initial RAG setup**
 
 One major issue was the imprecision of similarity scores, which occasionally resulted in irrelevant schema contexts being ranked higher than the more relevant ones. We also encountered model hallucinations, where the generated SQL queries included nonexistent columns or tables. Even when provided with accurate schema context, the model's adherence to it was inconsistent, causing occasional inaccuracies in query generation.
-
-This initial baseline performance on benchmark datasets was:
-
-| Architecture           | Bird (dev) Accuracy <br> (~1500 questions) | Spider Accuracy <br> (first 500 questions) |
-| ---------------------- | ------------------------------------------ | ------------------------------------------ |
-| Basic RAG (Gemini-2-0) | 57.1%                                      | 85.6%                                      |
 
 - - -
 
@@ -74,13 +74,13 @@ To tackle these issues, we introduced a series of targeted improvements.
 
 *To keep turnaround time short, we didn’t run the full benchmark after every tweak.*
 
-\*Instead, we worked with a subset of ~60 questions from the BirdBench devset that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.\*
+*Instead, we worked with a subset of ~60 questions ***\*from the BirdBench dev \****set that let us iterate faster. Accuracy percent for this set with our initial baseline is 51.6%.*
 
 ### 1. Fixing the Low-Hanging Fruits
 
 **Prompt Engineering**
 
-Initially, the model sometimes generated queries with incorrect or hallucinated columns. To mitigate this, we provided explicit instructions in the prompt:
+Initially, the model occasionally generated queries with incorrect or hallucinated columns. To mitigate this, we provided explicit instructions in the prompt:
 
 > "Use only columns and tables explicitly mentioned in the provided schema."
 
@@ -90,7 +90,7 @@ Additionally, we addressed smaller inconsistencies like the model occasionally w
 
 **Post processing**
 
-Even after explicitly stating not to wrap the result in `sql` code block, the model sometimes returned it in sql block. Instead of further experimenting with the prompt, we added a cleanup step to remove these codeblocks. 
+Even after explicitly stating not to wrap the result in `sql` code block, the model occasionally returned it in sql block. Instead of further experimenting with the prompt, we added a cleanup step to remove these codeblocks. 
 
 These inconsistencies were more prevalent in `gpt-4o` and `claude-3-5-sonnet`. `gemini-2.0-flash`  had fewer cases of column name hallucinations. 
 
@@ -116,13 +116,37 @@ To address these, we refined our schema embedding process in two key ways.
 1. Short summaries
 
    We introduced a **schema summarization** step. Using an LLM, we generated concise summaries for each table schema. These focused summaries cuts down the noise resulting in better similarity scores
+
+   ```sql
+   # Here is an example of summary generated using LLM for `frpm` table in our DB
+   # Schema
+   Database: 'california_schools'
+   Table: 'frpm'.
+   The table has the following columns:
+   - "Enrollment (K-12)" (type: REAL). Enrollment (K-12).  Sample values: 1087.0, 395.0, 244.0, 191.0, 257.0
+   - "Free Meal Count (K-12)" (type: REAL). Free Meal Count (K-12).  Sample values: 565.0, 186.0, 134.0, 113.0, 14.0
+   - "Percent (%) Eligible Free (K-12)" (type: REAL). .  Sample values: 0.519779208831647, 0.470886075949367, 0.549180327868853, 0.591623036649215, 0.0544747081712062
+   ...
+
+   # Generated Summary
+   The 'frpm' table in the California Schools database tracks Free and 
+   Reduced-Price Meal program participation across schools. It stores detailed 
+   eligibility metrics including enrollment counts, free meal counts, and FRPM 
+   percentages for both K-12 and ages 5-17 populations. The table contains 
+   comprehensive school identification information (codes, names, types) along 
+   with administrative details like charter status, grade ranges, and NSLP 
+   provision status. This data helps measure socioeconomic factors across 
+   California's educational institutions. The table links to the 'schools' 
+   table via the CDSCode field, allowing correlation between meal program 
+   participation and other school characteristics.
+   ```
 2. A larger embedding model
 
    We **upgraded our embedding model** to a model with [higher dimensions](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)(all-mpnet-base-v2, 768 dimensions), enabling it to capture more information.
 
 With just those two fixes, we had relevant tables getting better similarity scores.
 
-```markdown
+```sql
 # Natural Language question:
 # “What is the Percent (%) Eligible Free (K‑12) in the school
 #  administered by an administrator whose first name is Alusine?
@@ -137,13 +161,6 @@ Table                            | Similarity score
 satscores                        |  0.345   ← an irrelevant table has higher score
 schools                          |  0.344
 frpm (free or reduced price meal)|  0.315
-
-# Model: all‑mpnet‑base‑v2 (768 d)
-Table                            | Similarity score
----------------------------------------------------
-satscores                        | 0.388
-schools                          | 0.359
-frpm                             | 0.354
 
 # ── Similarity scores of LLM‑generated summaries embeddings ────────────────────────
 # Model: all‑mpnet‑base‑v2 (768 d)
@@ -160,7 +177,7 @@ satscores                        | 0.388
 
 ### 3. Enhancing Context with Sample Values
 
-Even with improved embeddings, subtle semantic mismatches remained problematic. Consider the following question
+Even with improved embeddings, some subtle mismatches still remained problematic. Consider the following question
 
 ```sql
 -- Question: How many superheroes have gold hair color 
@@ -226,7 +243,7 @@ Large language models learn fast by example as shown in the paper [Language Mode
    ```
 2. **Embed and store questions**
 
-   We store the question-sql pairs in our db. Along with these, we store vector embedding of the question text as well. This helps us in doing the similarity search later on.
+   We store vector embeddings of the question text along with the question-sql pairs in our db. This helps us in doing the similarity search later on.
 3. **Retrieve similar examples at inference time**
 
    When a user asks a question, we embed it, find the cosine similarities against the stored embeddings, select the top-3 matches, and append those example pairs to the prompt.
@@ -253,7 +270,7 @@ Against our original test set the improvement was barely noticeable. Unsurprisin
 
 This is how our final RAG based solution looks with all the suggested changes:
 
-![Refined RAG](/images/blog/screenshot-2025-05-15-at-3.35.03 pm.png)
+![Refined RAG](/images/blog/screenshot-2025-05-20-at-10.56.04 am.png)
 
 - - -
 
@@ -261,14 +278,20 @@ This is how our final RAG based solution looks with all the suggested changes:
 
 We ran both baseline and our solution through \~1500 questions of Bird bench dev dataset and \~500 questions from spider dataset and here are the results:
 
- | | Bird (dev) | Spider |
- | --- | --- | --- |
- | Basic RAG architecture <br> (Gemini-2-0) | 57.1% | 85.6% |
- | Refined RAG <br> + sample values + self-correction <br> + few-shot + divide-and-conquer <br> (Gemini-2-0) | 61.8% | 88.9% |
+|                                                                                                           | Bird (dev) | Spider |
+| --------------------------------------------------------------------------------------------------------- | ---------- | ------ |
+| Basic RAG architecture <br> (Gemini-2-0)                                                                  | 57.1%      | 85.6%  |
+| Refined RAG <br> + sample values + self-correction <br> + few-shot + divide-and-conquer <br> (Gemini-2-0) | 61.8%      | 88.9%  |
+
+We got a better improvement score of around 12% on the limited test set of 60 questions that we had but it translated to only 5% improvrment overall on bird bench.
+
+On our ~60-question test set, the refined pipeline resulted in abot 12% improvement in accuracy; once we broadened the evaluation to the full BirdBench dev set, that gain tapered to about 5 % suggesting a degree of overfitting to the smaller set, yet still confirming that the tweaks carry measurable benefits at scale.
 
 ## Next Steps
 
-There are still various techniques that we could try on this pipeline like adding a [Query plan CoT](https://arxiv.org/pdf/2410.01943), or using a more performant [m-schema](https://arxiv.org/pdf/2411.08599) representation. We could also have used smarter candidate selector and query fixer that run the generated query and analyze the result but we didn’t avoided this for now, as in production scenarios, running queries directly against a live database at inference time may not always be practical or desirable. With this in mind, our approach ensures that the connection to the actual database occurs only during the data preparation phase and not during query generation. 
+There are still various techniques that we could try on this pipeline like adding a [Query plan CoT](https://arxiv.org/pdf/2410.01943), or using a more performant [m-schema](https://arxiv.org/pdf/2411.08599) representation. We could also have used smarter candidate SQL selector and query fixer(the self correction mechanism) that run the generated query and analyze the result but we didn’t avoided this for now, as in production scenarios, running queries directly against a live database at inference time may not always be practical or desirable. With this in mind, our approach ensures that the connection to the actual database occurs only during the data preparation phase and not during query generation. 
+
+Next up: Experimenting with Self-hosted LLMs for Text-to-SQL. Stay tuned
 
 ## Referenced Papers
 
