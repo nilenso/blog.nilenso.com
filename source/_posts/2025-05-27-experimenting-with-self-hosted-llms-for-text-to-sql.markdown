@@ -25,17 +25,17 @@ I set up [**Ollama**](https://ollama.com/) to run the models locally. Since the 
 
 ### Running the Models
 
-It is quite easy to run a model in Ollama. You just need to do run
+It is quite easy to run a model in Ollama. You just need to say
 ```
 ollama run qwen2.5-coder
 ```
-and the model will be up and running in a matter of minutes. You can also interact with the model, in the terminal, or over an HTTP API that ollama exposes. 
+and the model will be up and running in a matter of minutes. You can also interact with the model in the same terminal, or over an HTTP API that ollama exposes. 
 
 I initially tried the DeepSeek R1, but it did not perform as well as I’d hoped, it kept generating invalid SQL. So I switched to Alibaba’s **Qwen 2.5 Coder** models and also tested [**DeepCoder**](https://www.together.ai/blog/deepcoder), a fine-tuned variant of DeepSeek.
 
 ### Agentic Workflow
 
-I wrote a custom script to interact with multiple LLMs in an agentic workflow. You can specify the provider (e.g., OpenAI, Google, Anthropic, Ollama) and select the model to use. We initially used only cloud-based APIs like Gemini, Claude, and ChatGPT — but adding Ollama as a provider made local testing seamless.
+I wrote a custom script to interact with multiple LLMs in an agentic workflow. In the script, you can specify the provider (e.g., OpenAI, Google, Anthropic, Ollama) and select the model to use. I initially used only cloud-based APIs like Gemini, Claude, and ChatGPT — but adding Ollama as a provider was seamless, and I could run whichever model I want. You can find the code [here](https://github.com/nilenso/agentic-sql-generator).
 
 ## Text-to-SQL
 
@@ -74,11 +74,9 @@ prompt = f"""
 
 ```
 
-I made some changes in the prompt, where, initially, I was adding the `CREATE TABLE` command returned by sqlite in the prompt, but later I switched to using the column definitions provided in the csv files of the bird-bench dataset. 
+This is the final prompt. Initially, I was directly adding the `CREATE TABLE` command returned by sqlite in the prompt, but later I switched to using the column definitions provided in the csv files of the bird-bench dataset. 
 
-Also, initially, I wasn’t appending the `evidence` in the prompt, but later, I added that as well. 
-
-Soon enough, the **Qwen 2.5 Coders** started to shine. DeepSeek had previously struggled to generate valid SQL, but the finer tuned models like DeepCoder perform surprisingly well.
+After testing with a few models, I realized that the **Qwen 2.5 Coders** give the best performance as compared to the model size and response times. DeepSeek R1 had struggled to generate valid SQL, but the finer tuned models like DeepCoder performed surprisingly well.
 
 ## Results
 
