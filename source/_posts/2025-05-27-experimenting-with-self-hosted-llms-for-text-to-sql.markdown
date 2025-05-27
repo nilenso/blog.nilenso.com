@@ -25,7 +25,13 @@ I set up [**Ollama**](https://ollama.com/) to run the models locally. Since the 
 
 ### Running the Models
 
-I initially tried the DeepSeek family of models, but they didn’t perform as well as I’d hoped, they kept generating invalid sql. especially for SQL generation. So I switched to Alibaba’s **Qwen 2.5 Coder** models and also tested [**DeepCoder**](https://www.together.ai/blog/deepcoder), a fine-tuned variant of DeepSeek.
+It is quite easy to run a model in Ollama. You just need to do run
+```
+ollama run qwen2.5-coder
+```
+and the model will be up and running in a matter of minutes. You can also interact with the model, in the terminal, or over an HTTP API that ollama exposes. 
+
+I initially tried the DeepSeek R1, but it did not perform as well as I’d hoped, it kept generating invalid SQL. So I switched to Alibaba’s **Qwen 2.5 Coder** models and also tested [**DeepCoder**](https://www.together.ai/blog/deepcoder), a fine-tuned variant of DeepSeek.
 
 ### Agentic Workflow
 
