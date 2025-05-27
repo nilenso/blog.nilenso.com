@@ -12,16 +12,16 @@ Local large language models (LLMs) are quickly becoming viable for real-world ta
 - What inspired me was the control — I could choose which model to run, tweak parameters, test different quantizations, and see how it all affects performance.
 - I was curious about how an LLM is loaded onto a GPU, how Ollama handles model execution, and how it uses `llama.cpp` internally.
 
-I hadn't run local models before — this was my first attempt. I had previously tried Simon Willison’s [LLM tool](https://github.com/simonw/llm), but not for running models locally.
+I hadn't run local models before and this was my first attempt. I had previously tried Simon Willison’s [LLM tool](https://github.com/simonw/llm), but not for running models locally.
 
 ## Setting Up Ollama
 
-I set up [**Ollama**](https://ollama.com/) to run the models locally. Since the machine running the models is at home and I work from my office, I used [**Tailscale**](https://tailscale.com/) to expose the Ollama API securely over a VPN. This setup let me call the local model API as if it were cloud-hosted — from anywhere.
+I set up [**Ollama**](https://ollama.com/) to run the models. Since the machine running the models is at home and I work from my office, I used [**Tailscale**](https://tailscale.com/) to expose the Ollama API securely over a VPN. This setup let me call the local model API as if it were cloud-hosted — from anywhere.
 
 ### Choosing Which Model to Run
 
-- I started by browsing online forums to see which models were commonly used for code generation. DeepSeek and the Qwen 2.5 family stood out.
-- A key factor was model size and VRAM requirements. Since I’m using a 16GB RX 7800XT GPU, I needed models that would fit in VRAM without bottlenecks.
+- I started by browsing online forums to see which models were commonly used for code generation. **DeepSeek** and the **Qwen 2.5** family stood out.
+- A key factor was model size and VRAM requirements. Since I’m using a **16GB RX 7800XT** GPU, I needed models that would fit in VRAM without bottlenecks.
 
 ### Running the Models
 
@@ -76,7 +76,7 @@ prompt = f"""
 
 This is the final prompt. Initially, I was directly adding the `CREATE TABLE` command returned by sqlite in the prompt, but later I switched to using the column definitions provided in the csv files of the bird-bench dataset. 
 
-After testing with a few models, I realized that the **Qwen 2.5 Coders** give the best performance as compared to the model size and response times. DeepSeek R1 had struggled to generate valid SQL, but the finer tuned models like DeepCoder performed surprisingly well.
+After testing with a few models, I realized that the **Qwen 2.5 Coder** gives the best performance as compared to the model size and response times. DeepSeek R1 had struggled to generate valid SQL, but the finer tuned models like DeepCoder performed surprisingly well.
 
 ## Results
 
@@ -92,6 +92,7 @@ Set of 5 easy questions, to get an idea of response times for each model/size/qu
 | DeepCoder | 14B | Q4_K | 10GB | 17–120s |
 
 ### Benchmark 1: 50 Easy Text-to-SQL Tasks
+The actual SQL output is available in the github repo [here](https://github.com/nilenso/agentic-sql-generator).
 
 | Model Name | Parameters | Quantization | SQL Accuracy |
 | --- | --- | --- | --- |
@@ -107,6 +108,7 @@ Set of 5 easy questions, to get an idea of response times for each model/size/qu
 - **Prompt engineering** is critical — lean, clear, structured prompts made a noticeable difference.
 - **VRAM is the hard limit** — 16GB was just enough to run 14B models comfortably with quantization.
 - **Quantization** plays a huge role in running models efficiently. Using 4-bit versions made the difference between a responsive and unusable setup, with minimal impact on performance.
+- Although quantized models were quick, they were **less accurate** while generating SQL.
 - Tools like Ollama **abstract away a lot of the infrastructure overhead**, making it surprisingly easy to test local models with an API-style interface.
 
 ## What’s Next?
