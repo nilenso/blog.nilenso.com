@@ -50,6 +50,7 @@ The hype around the velocity has lead to some people and teams hastily adopting 
 * Break down the problem. AI works better the more specific you are.
     * If it's a big feature, break it down into small tasks, and feed the tasks one by one, making a commit at the end of each task
     * Supply tech specs and relevant documentation about the product and feature. Don't just ask it to write code without broader context of the product.
+    * Also feed it documentation on how to use the libraries you are using. Pasting links often works with most tools. llms.txt is also a thing.
     * You can ask the AI itself to break down the problem! Reasoning models are great at this.
     * If you are not sure how to prompt the AI for best results, try asking the model itself.
     * One pattern that works well is to break down the feature into "planning" and "execution" stages.
@@ -57,7 +58,6 @@ The hype around the velocity has lead to some people and teams hastily adopting 
     * Always paste the error context (I prefer XML tag delineation)
     * Explain what you have tried, and additional observations to help the model generate correct hypotheses and eliminate bad ones. Provide lots of context.
 * Do not take AI suggestions for granted. Ask it to justify its choices, present alternatives and think about advantages and drawbacks.
-
 
 ## Tools and techniques outside the editor
 
@@ -72,3 +72,11 @@ The hype around the velocity has lead to some people and teams hastily adopting 
 * To reduce time to first PR review, use a code reviewing bot for the first part. But do not replace human review!
 * Use researching capabilities to help find solutions to uncommon errors.
 * Use LLMs to help you optimise databases and tune configuration. When doing so provide context on the infrastructure and hardware. Share query plans.
+
+## Implications on how AI changes how we build things
+
+* It's even less valuable to spend too much time looking for and building sophisticated abstractions. LLMs make some more repetition palatable and allow you to wait a bit more and avoid premature abstraction.
+* Redoing work is now extremely cheap. Code in the small is less important than structural patterns and organisation in the large.
+    * You can also build lots of prototypes to test an idea out. Here you can vibe-code as much as needed, as long as you throw away the prototype and rewrite it properly later.
+* Working with LLMs also let's you take advantage of the generator-verifier gap. Often it's easier to verify and fix things than it is to produce them from scratch. This reduces activation energy to try new things.
+* Tests are non-negotiable, and AI removes all excuses to not write them because of how fast they can belt them out. But always review the assertions!
