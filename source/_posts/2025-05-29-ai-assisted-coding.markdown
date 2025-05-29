@@ -81,3 +81,9 @@ The hype around the velocity has lead to some people and teams hastily adopting 
     * You can also build lots of prototypes to test an idea out. Here you can vibe-code as much as needed, as long as you throw away the prototype and rewrite it properly later.
 * Working with LLMs also let's you take advantage of the generator-verifier gap. Often it's easier to verify and fix things than it is to produce them from scratch. This reduces activation energy to try new things.
 * Tests are non-negotiable, and AI removes all excuses to not write them because of how fast they can belt them out. But always review the assertions!
+
+## Future additions
+
+* Deploying autonomous agents like Devin/Jules/Claude Code on GitHub.
+* AI tooling for writing queries, performing analysis
+* ???
