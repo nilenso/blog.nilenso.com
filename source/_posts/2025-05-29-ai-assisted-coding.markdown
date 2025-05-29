@@ -68,6 +68,7 @@ The hype around the velocity has lead to some people and teams hastily adopting 
     * Identify missing test cases more intelligently
 * Create mockservers to coordinate between frontend and backend teams without unblocking each other. All that is needed is agreeing on a contract.
 * Create runbooks and guides for infra deployments, common types of troubleshooting and more by supplying shell history sessions to the LLM.
+* Feed existing runbooks and guides to an LLM to make them into scripts automating common tasks.
 * Have a template for Pull Requests, feed the code diff of each feature to the AI to explain the changes and how to deploy them.
 * To reduce time to first PR review, use a code reviewing bot for the first part. But do not replace human review!
 * Use researching capabilities to help find solutions to uncommon errors.
