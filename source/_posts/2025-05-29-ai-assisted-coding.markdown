@@ -22,7 +22,7 @@ The hype around the velocity has led to some people and teams hastily adopting a
 
 ## AI is a multiplier
 
-To make AI good, get good yourself. AI is a multiplier. If you are a small coefficient, you’ll not see much gain. If you are a negative coefficient, expect negative gains.
+To make AI good, get good yourself. AI is a multiplier. If you are a small coefficient, you won't see much gain. If you are a negative coefficient, expect negative gains.
 
 What I have noticed is that the best and most experienced engineers are able to extract a lot more out of AI tools. There are several reasons for this:
 
@@ -63,7 +63,7 @@ Guess which prompt is going to better achieve the program designer’s intent?
 
 Another technique that has worked well for us is *metaprompting*. I prompt the model with a simple task and ask it to help surface tradeoffs and edge cases. Then I turn it into a tech spec and hand it off to another LLM agent to execute.
 
-The mechanics of these things have been in flux, but a robust thing I can say is really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
+The mechanics of these tools are still evolving, but one robust principle is to really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
 
 ## What helps the human helps the AI
 
