@@ -6,6 +6,7 @@ created_at: 2025-05-29 00:00:00 UTC
 layout: post
 ---
 *Status: Living document based on production experience*
+*Last updated: 5-Jun-2025*
 
 AI should be adopted by serious engineering teams that want to build thoughtful, well-crafted products. Doing so is predicated on skillful usage of these tools. Our obsession with building high-quality software for over a decade has driven us to figure out how this new way of building can result in better products.
 
