@@ -8,7 +8,7 @@ layout: post
 *Status: Living document based on production experience*
 *Last updated: 5-Jun-2025*
 
-AI should be adopted by serious engineering teams that want to build thoughtful, well-crafted products. Doing so is predicated on skillful usage of these tools. Our obsession with building high-quality software for over a decade has driven us to figure out how this new way of building can result in better products.
+AI should be adopted by serious engineering teams that want to build thoughtful, well-crafted products. This requires skillful usage of these tools. Our obsession with building high-quality software for over a decade has driven us to figure out how this new way of building can result in better products.
 
 This living playbook is based on our experience working with AI tools in the messy trenches of production software, where no one can afford to get away with vibes. I hope other teams can learn and benefit from our findings.
 
@@ -18,7 +18,7 @@ This living playbook is based on our experience working with AI tools in the mes
 
 This velocity is important, because when harnessed correctly, it allows teams to tighten feedback loops with users faster and make the product better. Any team that does not adopt AI tools effectively will be outcompeted by teams that ship faster using them.
 
-The hype around the velocity has lead to some people and teams hastily adopting and pushing AI tools, and finding themselves disappointed by the output and quality. There is a good reason for this. AI tools are sophisticated tools that are frankly, difficult to use and unintuitive. Hold it wrong, and you can generate underwhelming results, worse still, slow down your velocity by drowning your project in slop and technical debt. I have seen this play out time after time.
+The hype around the velocity has led to some people and teams hastily adopting and pushing AI tools, and finding themselves disappointed by the output and quality. There is a good reason for this. AI tools are sophisticated tools that are frankly, difficult to use and unintuitive. Hold it wrong, and you can generate underwhelming results, worse still, slow down your velocity by drowning your project in slop and technical debt. I have seen this play out time after time.
 
 ## AI is a multiplier
 
@@ -27,11 +27,11 @@ To make AI good, get good yourself. AI is a multiplier. If you are a small coeff
 What I have noticed is that the best and most experienced engineers are able to extract a lot more out of AI tools. There are several reasons for this:
 
 - They are extremely good at communicating technical ideas.
-- They have a keen calibration and feel for what leads to a good system and can steer LLMs accordingly, ie, they have what I like to call "the mechanic's touch".
+- They have a keen calibration and feel for what leads to a good system and can steer LLMs accordingly, i.e., they have what I like to call "the mechanic's touch".
 - They have strong fundamentals, so they immediately get up to speed with new tools and systems where knowledge, not skill is the bottleneck.
 - AI is still sensitive to language and style and will often mirror the tastes and sensibilities of the prompter. Highly skilled engineers have really sharpened taste and instinct for what works and what doesn’t.
 
-Therefore, embody the care of a craftperson. At the end of the day, you should produce artifacts you are proud of, even if the AI assisted in making it. This has translated well into the output I are seeing from these systems.
+Therefore, embody the care of a craftperson. At the end of the day, you should produce artifacts you are proud of, even if the AI assisted in making it. This has translated well into the output I am seeing from these systems.
 
 Here’s an example. This prompt is not unreasonable but not particularly thoughtful:
 
@@ -69,7 +69,7 @@ The mechanics of these things have been in flux, but a robust thing I can say is
 
 Allow me to clarify what software engineering is, something worth revisiting in the light of disruption from advancements in AI.
 
-It is not about writing code. Or at least, that’s not the defining characteristic, much like how writing is not wrist exercises on an ink and paper.
+It is not about writing code. Or at least, that’s not the defining characteristic, much like how writing is not wrist exercises on ink and paper.
 
 To me software engineering is the art and science of maintaining a large body of well-defined mental models that achieve a business or economic need. Much of the work is around crafting and curating these large, complex sociotechnical systems, and code is just one representation of these systems.
 
@@ -89,7 +89,7 @@ Today’s AI can and will make use of all these things to make things "just work
 
 A rich environment and context helps the AI work better.
 
-Here’s an anecdote: when I was working at a project that had two services, one of the services had all of the things I described above—good tests, well-documented changes, consistent patterns in the code, lots of checks and guardrails. The other service on the other hand was messier and had none of the above. Our AI coding assistant struggled to complete a task of equal difficulty on the latter codebase when compared to the former! This is likely because the messier codebase was confusing for the AI to work with, just as it would be for a human. There are mixed signals about the right way to do things.
+Here’s an anecdote: when I was working at a project that had two services, one of the services had all of the things I described above—good tests, well-documented changes, consistent patterns in the code, lots of checks and guardrails. The other service on the other hand was messier and had none of the above. Our AI coding assistant struggled to complete a task of equal difficulty on the latter codebase when compared to the former! This is likely because the messier codebase was as confusing for the AI as it would be for a human. There were mixed signals about the right way to do things.
 
 ## Tools and techniques in the editor
 
@@ -112,7 +112,7 @@ Now that I have outlined the general strategy, here are some tactics that have h
 - Break down the problem. AI works better the more specific you are. Remember, you can also use the AI to reduce the tedium of making your prompts better written and more specific. Reasoning models are great at this!
 - If you are working on a big feature, break it down into small tasks, and feed the tasks one by one, making a commit at the end of each task. If you do these with your stories, the story card description with the task list is often a very helpful description for the AI.
 - Supply tech specs and relevant documentation about the product and feature. Don't just ask it to write code without broader context of the product. Also feed it documentation on how to use the libraries you are using. Pasting links to documentation often works with most tools. Some libraries provide a [llms.txt](https://llmstxt.org/) for coding agents to use.
-- Another pattern that has worked well for us is to break down the feature into "planning" and "execution" stages. Some coding agents already to this kind of a breakdown for you.
+- Another pattern that has worked well for us is to break down the feature into "planning" and "execution" stages. Some coding agents already do this kind of a breakdown for you.
 - Do not take AI suggestions for granted. Ask it to justify its choices, present alternatives and think about advantages and drawbacks.
 
 ### Debugging
@@ -167,7 +167,7 @@ Firstly, It's less valuable to spend too much time looking for and building soph
 
 Redoing work is now extremely cheap. Code in the small is less important than structural patterns and organisation of the code in the large. You can also build lots of prototypes to test an idea out. For this, vibe-coding is great, as long as the prototype is thrown away and rewritten properly later.
 
-Working with LLMs also let's you take advantage of the generator-verifier gap. Often it's easier to verify and fix things than it is to produce them from scratch. This reduces activation energy to try new things.
+Working with LLMs also lets you take advantage of the generator-verifier gap. Often it's easier to verify and fix things than it is to produce them from scratch. This reduces activation energy to try new things.
 
 Tests are non-negotiable, and AI removes all excuses to not write them because of how fast they can belt them out. But always review the assertions!
 
