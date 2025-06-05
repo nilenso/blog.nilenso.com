@@ -156,7 +156,7 @@ LLMs greatly reduce the cost of creating lubricants for all the minor friction p
 ### Performance optimisations
 
 - Use LLMs to help you optimise databases and tune configuration. When doing so provide context on the infrastructure and hardware. Share query plans.
-- This is an example of such an interaction I had recently.
+- [This](https://blog.nilenso.com/blog/2025/05/08/psa-ai-can-optimise-your-database/) is an example of such an interaction I had recently.
 
 ## Implications on how AI changes craft
 
