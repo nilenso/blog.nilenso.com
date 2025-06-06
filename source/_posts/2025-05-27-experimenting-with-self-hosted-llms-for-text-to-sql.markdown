@@ -5,15 +5,16 @@ author: Yogiraj Hendre
 created_at: 2025-05-27 00:00:00 UTC
 layout: post
 ---
+# Experimenting with Self-Hosted LLMs for Text-to-SQL
 
-After reading [Kiran's blog](https://blog.nilenso.com/blog/2025/05/06/local-llm-setup/) on self-hosting LLMs, I decided to try it out myself to see how viable local LLMs are, for real world tasks. Since I was already working on the Text-to-SQL problem with Sezal and Tarun, it seemed like the perfect task to test that out.
+After reading [Kiran's blog](https://blog.nilenso.com/blog/2025/05/06/local-llm-setup/) on self-hosting them, I decided to try it out myself to see how viable local LLMs are, for real world tasks. Since I was already working on the Text-to-SQL problem with Sezal and Tarun, it seemed like the perfect task to test that out.
 
 ## Key Takeaways
 
 - Local LLMs achieve **comparable accuracy to frontier models** on easy and moderate Text-to-SQL tasks.
 - **VRAM is the hard limit** — 16GB was just enough to run 14B models comfortably with quantization.
 - Tools like Ollama **abstract away a lot of the infrastructure overhead**, making it surprisingly easy to test local models with an API-style interface.
-- Prompt minimalism (+JSON schema) bought ~5 % accuracy.  
+- Prompt minimalism (+JSON schema) bought ~5 % accuracy.
 
 ## Why Local LLMs?
 
@@ -28,9 +29,40 @@ I hadn't run local models before and this was my first attempt. I had previously
 
 16 GB RX 7800 XT, Ollama + Tailscale.  
 
-### Dataset & Prompt  
+### Dataset  
 
-BirdBench subset (link). Final prompt shown here.  
+DataSet: [Bird-Bench](https://bird-bench.github.io/)
+
+### Prompt
+
+```python
+prompt = f"""
+    Given the following question: "{question}"
+
+    And the following database table definitions:
+    {table_ddls}
+
+    Generate a valid sqlite query that answers this question.
+    Ensure the query is syntactically correct and uses only the tables and columns defined above.
+
+    The query should only return the exact column(s) necessary to answer the question. Avoid including extra data unless it's the answer.
+
+    Return your response strictly in the JSON format, with the following fields:
+      "query": "your sqlite query here",
+      "explanation": "a brief explanation of how the query answers the question"
+
+    Important: Return ONLY the raw JSON object without any markdown formatting, code blocks, or additional text.
+    """
+
+    # Add evidence to the prompt if provided
+    if evidence:
+        prompt += f"""
+
+    Additional evidence to consider:
+    {evidence}
+    """
+
+```
 
 ### Models Tested  
 
