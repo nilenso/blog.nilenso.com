@@ -10,15 +10,11 @@ layout: post
 
 AI should be adopted by serious engineering teams that want to build thoughtful, well-crafted products. This requires skillful usage of these tools. Our obsession with building high-quality software for over a decade has driven us to figure out how this new way of building can result in better products.
 
+**Building with AI is fast**. The gains in velocity are important, because when harnessed correctly, it allows teams to tighten feedback loops with users faster and make better products.
+
+Yet, AI tools are tricky to use. Hold it wrong, and you can generate underwhelming results, worse still, slow down your velocity by drowning your project in slop and technical debt.
+
 This living playbook is based on our experience working with AI tools in the messy trenches of production software, where no one can afford to get away with vibes. I hope other teams can learn and benefit from our findings.
-
-## Why build with AI?
-
-**Building with AI is fast**. With the right kind of usage, I have indeed seen massive improvements in velocity for shipping new features. The velocity improvements are not evenly spread. In our experience, the smaller straightforward tasks benefit massively more from AI compared to bigger, gnarlier work such as designing a good architecture for a system. But the speed-up in the smaller ongoing engineering work helps teams allocate more time and focus on harder problems. Moreover, when velocity increases at an individual level, you can eliminate coordination overhead with leaner teams, which can unlock even more velocity.
-
-This velocity is important, because when harnessed correctly, it allows teams to tighten feedback loops with users faster and make the product better. Any team that does not adopt AI tools effectively will be outcompeted by teams that ship faster using them.
-
-The hype around the velocity has led to some people and teams hastily adopting and pushing AI tools, and finding themselves disappointed by the output and quality. There is a good reason for this. AI tools are sophisticated tools that are frankly, difficult to use and unintuitive. Hold it wrong, and you can generate underwhelming results, worse still, slow down your velocity by drowning your project in slop and technical debt. I have seen this play out time after time.
 
 ## AI is a multiplier
 
@@ -44,12 +40,10 @@ I would expect this prompt to give okay results, but also miss some edge cases, 
 ```markdown
 Implement a token bucket rate limiter in Python with the following requirements:
 
-- 10 requests per minute per user (identified by user_id string)
+- 10 requests per minute per user (identified by `user_id` string)
 - Thread-safe for concurrent access
-- Memory-efficient with automatic cleanup of expired entries
+- Automatic cleanup of expired entries
 - Return tuple of (allowed: bool, retry_after_seconds: int)
-- Include docstring with usage example
-- Handle edge cases: empty user_id, first request, burst scenarios
 
 Consider:
 - Should tokens refill gradually or all at once?
@@ -61,15 +55,15 @@ Prefer simple, readable implementation over premature optimization. Use stdlib o
 
 Guess which prompt is going to better achieve the program designer’s intent?
 
-Another technique that has worked well for us is *metaprompting*. I prompt the model with a simple task and ask it to help surface tradeoffs and edge cases. Then I turn it into a tech spec and hand it off to another LLM agent to execute.
+A technique that has worked well for us is *metaprompting*. I prompt the model with a simple task and ask it to help surface tradeoffs and edge cases. Then I turn it into a tech spec and hand it off to another LLM agent to execute. Even the "better prompt" I shared above is a result of asking the AI to come up with a good prompt. From my experience, models have become good at prompting themselves.
 
-The mechanics of these tools are still evolving, but one robust principle is to really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
+The mechanics of what works for these tools are in flux, but one robust principle is to really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
 
 ## What helps the human helps the AI
 
-Allow me to clarify what software engineering is, something worth revisiting in the light of disruption from advancements in AI.
+I shall clarify what software engineering is, something I found worth revisiting in the light of disruption from AI advancements.
 
-It is not about writing code. Or at least, that’s not the defining characteristic, much like how writing is not wrist exercises on ink and paper.
+Software engineering is not about writing code. Or at least, that’s not the defining characteristic, much like how writing is not wrist exercises with ink on paper.
 
 To me software engineering is the art and science of maintaining a large body of well-defined mental models that achieve a business or economic need. Much of the work is around crafting and curating these large, complex sociotechnical systems, and code is just one representation of these systems.
 
@@ -152,7 +146,7 @@ LLMs greatly reduce the cost of creating lubricants for all the minor friction p
 ### Debugging and monitoring live applications
 
 - Use researching capabilities of LLMs to help find solutions to uncommon errors. Follow the advice of debugging in the editor to debug outside it. Provide as much context as you can.
-- LLMs are quite decent at writing queries and alerting rules for observability tools. They also are good at crunching data and performing analyses by writing custom python code. Make use of this ability.
+- LLMs are quite decent at writing queries and alerting rules for observability tools. They also are good at crunching data and performing analyses by writing custom python code.
 
 ### Performance optimisations
 
