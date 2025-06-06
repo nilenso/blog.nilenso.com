@@ -87,8 +87,8 @@ Set of 5 easy questions, to get an idea of response times for each model/size/qu
 | Model Name | Parameters | Quantization | VRAM Usage | Response Time |
 | --- | --- | --- | --- | --- | 
 | **Qwen2.5-Coder** | 14B | Q4_K | 9GB | **2–5s** |
-| Qwen2.5-Coder | 32B | Q4_K | 19.8GB | 9–47s |
 | Qwen2.5-Coder | 14B | Q8_0 | 15.6GB | 6–11s |
+| Qwen2.5-Coder | 32B | Q4_K | 19.8GB | 9–47s |
 | DeepCoder | 14B | Q4_K | 10GB | 17–120s |
 
 ### Benchmark 1: 50 Easy Text-to-SQL Tasks
