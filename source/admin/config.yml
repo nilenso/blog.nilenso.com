@@ -5,7 +5,7 @@ backend:
   repo: nilenso/blog.nilenso.com
   branch: master # Branch to update (optional; defaults to master)
   squash_merges: true
-  auth_endpoint: /api/auth
+  auth_endpoint: /auth
   base_url: https://api.netlify.com
 
 media_folder: "source/images/blog" # Media files will be stored in the repo under images/uploads
