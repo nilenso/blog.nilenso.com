@@ -57,7 +57,7 @@ Guess which prompt is going to better achieve the program designer’s intent?
 
 A technique that has worked well for us is *metaprompting*. I prompt the model with a simple task and ask it to help surface tradeoffs and edge cases. Then I turn it into a tech spec and hand it off to another LLM agent to execute. Even the "better prompt" I shared above is a result of asking the AI to come up with a good prompt. From my experience, models have become good at prompting themselves.
 
-The mechanics of these tools are still evolving, but one robust principle is to really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
+The mechanics of what works for these tools are in flux, but one robust principle is to really work on yourself to be a good engineer. Your habits will quickly pass on to the AI systems you work with. The reason this works is because what helps the human helps the AI.
 
 ## What helps the human helps the AI
 
