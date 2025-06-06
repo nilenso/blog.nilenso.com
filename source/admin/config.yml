@@ -1,9 +1,12 @@
 site_url: https://blog.nilenso.com
 
 backend:
-  name: git-gateway
+  name: github
+  repo: nilenso/blog.nilenso.com
+  base_url: https://blog.nilenso.com
   branch: master # Branch to update (optional; defaults to master)
   squash_merges: true
+  auth_endpoint: /api/auth
 
 media_folder: "source/images/blog" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/blog"
