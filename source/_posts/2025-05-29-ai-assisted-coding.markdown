@@ -83,7 +83,7 @@ Today’s AI can and will make use of all these things to make things "just work
 
 A rich environment and context helps the AI work better.
 
-Here’s an anecdote: when I was working at a project that had two services, one of the services had all of the things I described above—good tests, well-documented changes, consistent patterns in the code, lots of checks and guardrails. The other service on the other hand was messier and had none of the above. Our AI coding assistant struggled to complete a task of equal difficulty on the latter codebase when compared to the former! This is likely because the messier codebase was as confusing for the AI as it would be for a human. There were mixed signals about the right way to do things.
+Here’s an anecdote: when I was working at a project that had two services, one of them had all of the things I described above—good tests, well-documented changes, consistent patterns in the code, lots of checks and guardrails. The other service was messier and had none of the above. Our AI coding assistant struggled to complete a task of equal difficulty on the latter codebase when compared to the former! This is likely because the messier codebase was as confusing for the AI as it would be for a human. There were mixed signals about the right way to do things.
 
 ## Tools and techniques in the editor
 
