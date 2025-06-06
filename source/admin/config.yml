@@ -1,7 +1,8 @@
 site_url: https://blog.nilenso.com
 
 backend:
-  name: git-gateway
+  name: github
+  repo: nilenso/blog.nilenso.com
   branch: master # Branch to update (optional; defaults to master)
   squash_merges: true
 
