@@ -139,11 +139,12 @@ Set of 5 easy questions, to get an idea of response times for each model/size/qu
 For me, local LLMs have become *good enough* for many workflows. Text-to-SQL is one of them.
 
 - On a single GPU workstation, I can now:
-  - Prototype quickly
+  - Run easy-moderate SQL tasks
+  - Quickly prototype agentic workflows
   - Control the full LLM stack
   - Easily expose LLMs over the network using Tailscale and the likes
 
-But the frontier models are still quite ahead in terms of benchmarks. On bird-bench alone, there's a difference of 15-20%. Also, VRAM is the hard limit, and running bigger and better models will require bigger GPUs. I have several things planned ahead:
+Even though local LLMs are *good enough*, the frontier models are still quite ahead in terms of benchmarks. On bird-bench alone, there's a difference of 15-20%. Running bigger and better models will require a bigger GPU. I have several things planned ahead:
 
 - Introduce evals to make the feedback loop quicker and tighter.
 - Making the agentic workflow smarter, so that it can do iterations on generating SQL, to increase accuracy.
