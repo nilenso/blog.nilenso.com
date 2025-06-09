@@ -7,6 +7,7 @@ backend:
   squash_merges: true
   auth_endpoint: /auth
   base_url: https://api.netlify.com
+  auth_scope: public_repo
 
 media_folder: "source/images/blog" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/blog"
