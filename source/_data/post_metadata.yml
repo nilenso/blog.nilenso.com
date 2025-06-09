@@ -1,11 +1,33 @@
+- title: "AI-assisted coding for teams that can't get away with vibes"
+  description: "A playbook for building high-quality software with AI."
+  image: /images/blog/ai-assisted-coding/ai-assisted-coding-cover-image.jpg
+
+- title: "Experimenting with Self-Hosted LLMs for Text-to-SQL"
+  description: "Yogi pits local and frontier LLMs against each other to see how they fare on Text-to-SQL tasks."
+
+- title: "Exploring RAG based approaches for Text-to-SQL"
+  description: "Tarun iteratively improves upon a Retrieval-Augmented Generation (RAG) pipeline to generate SQL queries from natural language."
+
+- title: "MCP explained without hype or fluff"
+  description: "tldr; like most protocols, MCP solves the M⨯N integration problem by turning it into an M+N integration problem."
+
+- title: "A database optimisation story ft. Sir Sonnet"
+  description: "Beyond code generation: how I optimised a database query with LLM assistance."
+
 - title: "Tiny Models, Local Throttles: Exploring My Local AI Dev Setup"
-  description: "I’ve been exploring how small, open-source language models can fit into a local development setup to improve how I work day-to-day."
+  description: "Kiran explores how small, open-source language models can fit into a local development setup to improve how he works day-to-day."
+
+- title: "Text-to-SQL with GenAI: A Practical Exploration"
+  description: "Is it possible to take text-to-SQL beyond a proof of concept, and create a robust product which is valuable to organizations?"
 
 - title: "Exploring text-to-SQL"
   description: "Is it possible to take text-to-SQL beyond a proof of concept?"
 
 - title: "My GenAI workflow for building a voice assistant"
   description: "Learn any new programming framework with the help of GenAI"
+
+- title: "I built an AI prototype that can participate in our internal meetings"
+  description: "A quick hack turns into a reflection on the state of realtime multimodal AI"
 
 - title: "A ‘systems thinking’ approach to saving lives from heart attacks and strokes"
   image: https://www.simple.org/images/blog/a-systems-thinking-approach-to-saving-lives-from-heart-attacks-and-strokes/systems-thinking-cover.jpg

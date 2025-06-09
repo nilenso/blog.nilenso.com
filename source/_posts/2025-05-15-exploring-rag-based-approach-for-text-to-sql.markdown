@@ -1,5 +1,5 @@
 ---
-title: Exploring RAG based approach for Text to SQL
+title: Exploring RAG based approaches for Text-to-SQL
 kind: article
 author: Tarun Kumar
 created_at: 2025-05-15 00:00:00 UTC

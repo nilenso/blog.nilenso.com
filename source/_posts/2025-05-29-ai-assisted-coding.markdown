@@ -1,6 +1,7 @@
 ---
 title: AI-assisted coding for teams that can't get away with vibes
 kind: article
+cover_image: /images/blog/ai-assisted-coding/ai-assisted-coding-cover-image.jpg
 author: Atharva Raykar
 created_at: 2025-05-29 00:00:00 UTC
 layout: post
