@@ -32,13 +32,14 @@ Two main factors motivated this exploration:
 ### Hardware & Runner  
 
 
-16 GB RX 7800 XT, Ollama + Tailscale.  
+**Hardware:** 16GB RX 7800 XT GPU  
+**Software:** Ollama with Tailscale for remote access
 
 
 ### Dataset  
 
 
-Dataset: [Bird-Bench](https://bird-bench.github.io/)
+**Dataset**: [Bird-Bench](https://bird-bench.github.io/)
 
 
 ### Prompt
