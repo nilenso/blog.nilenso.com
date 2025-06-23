@@ -41,3 +41,5 @@ My sources:
 
 
 AI drive thru issues: https://www.youtube.com/watch?v=TwdduNZJKUM
+fake cases: https://arstechnica.com/tech-policy/2023/06/lawyers-have-real-bad-day-in-court-after-citing-fake-cases-made-up-by-chatgpt/
+nyc AI chatbot, lawbreaker: https://themarkup.org/news/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law
