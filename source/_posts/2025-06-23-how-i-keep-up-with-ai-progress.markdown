@@ -70,6 +70,8 @@ Most labs usually have a bunch of useful resources that help deepen your underst
     * Examples: [Engineering at Anthropic](https://www.anthropic.com/engineering/building-effective-agents), [OpenAI's voice agent guide](https://platform.openai.com/docs/guides/voice-agents?voice-agent-architecture=speech-to-speech), [Gemini Cookbook](https://github.com/google-gemini/cookbook/tree/main/examples/)
 * System/Model Cards for more details on the models—expect more detailed information on context windows, benchmarks, safety testing, etc
     * Example: [Claude 4 System Card](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf)
+* Research Papers
+    * Examples: [DeepSeek R1's paper about RL](https://arxiv.org/pdf/2501.12948), [Anthropic's On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
 
 If you see anyone making an explosive claim about capabilities, or quoting some research from these labs, I like to bypass the person making the claim and read it straight from the source.
 
