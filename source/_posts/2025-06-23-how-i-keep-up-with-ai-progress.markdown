@@ -39,7 +39,7 @@ To help with this, I've curated a list of sources that make up an information pi
     * Commentary on the frontier of AI capabilities
     * Application layer use cases
     * Commentary on security issues and ethics
-* Example articles: [The Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
+* A sample: [The Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
 
 ### Andrej Karpathy on [Twitter](https://x.com/karpathy) and [YouTube](https://www.youtube.com/@AndrejKarpathy)
 
@@ -49,6 +49,7 @@ To help with this, I've curated a list of sources that make up an information pi
     * Commentary on the frontier of AI capabilities
     * Approachable explanations on the internals of AI (I haven't gone through all of these yet, but heard praise for his GPT-2 from scratch and zero to hero tutorials)
     * Strong cultural influence and observations on AI impact. He coined the terms "vibe coding" and "jagged intelligence".
+* A sample: [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI&pp=ygUIa2FycGF0aHnSBwkJvgkBhyohjO8%3D), [How I Use LLMs](https://www.youtube.com/watch?v=EWvNQjAaOHw&pp=ygUIa2FycGF0aHk%3D)
 
 ### [Every's Chain of Thought](https://every.to/chain-of-thought?sort=newest)
 
