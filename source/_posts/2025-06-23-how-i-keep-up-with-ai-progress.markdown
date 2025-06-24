@@ -89,7 +89,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect:
     * Great write-ups on evals and continuously improving AI systems.
     * Notes on using libraries while building AI tools.
-* A sample: []
+* A sample: [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/), [LLM Eval FAQ](https://hamel.dev/blog/posts/evals-faq/)
+
+### [Shreya Shankar](https://www.sh-reya.com/)
+
+* Researcher at UC Berkeley. Has been writing about AI engineering the last few years.
+* Expect:
+    * Great write-ups on evals and continuously improving AI systems.
+    * Field notes, musings, experiments
+* A sample: [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/)
 
 My sources:
 * Simon Willison
