@@ -46,7 +46,11 @@ To help with this, I've curated a list of sources that make up an information pi
 * Director of AI @ Tesla, was a founding member of OpenAI.
 * The best starting point to get an overview of how the models themselves work. His 3.5 hour video is the best million feet overview on the internals of LLMs and surprisingly approachable for relatively non-technical people too.
 * Expect:
-    * Commentary on the frontier of AI
+    * Commentary on the frontier of AI capabilities
+    * Approachable explanations on the internals of AI (I haven't gone through all of these yet, but heard praise for his GPT-2 from scratch and zero to hero tutorials)
+    * Strong cultural influence and observations on AI impact. He coined the terms "vibe coding" and "jagged intelligence".
+
+
 
 
 My sources:
