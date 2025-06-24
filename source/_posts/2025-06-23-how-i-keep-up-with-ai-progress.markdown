@@ -54,6 +54,7 @@ To help with this, I've curated a list of sources that make up an information pi
 ### [Every's Chain of Thought](https://every.to/chain-of-thought?sort=newest)
 
 * Written by Dan Shipper, the co-founder of Every. I like going through their test runs of the latest frontier models. It's also a good way to get a sense of how these AI models can be used everyday.
+* Expect: Practical applications of AI at work, vibe-checks for model capabilities outside of benchmark numbers.
 * A sample: [Vibe Check: Codex](https://every.to/chain-of-thought/vibe-check-codex-openai-s-new-coding-agent), [Vibe Check: o3](https://every.to/chain-of-thought/vibe-check-o3-is-out-and-it-s-great)
 
 
