@@ -57,7 +57,7 @@ To help with this, I've curated a list of sources that make up an information pi
 * Expect: Practical applications of AI at work, vibe-checks for model capabilities outside of benchmark numbers.
 * A sample: [Vibe Check: Codex](https://every.to/chain-of-thought/vibe-check-codex-openai-s-new-coding-agent), [Vibe Check: o3](https://every.to/chain-of-thought/vibe-check-o3-is-out-and-it-s-great)
 
-
+## Official announcements, blogs and papers from those building AI
 
 My sources:
 * Simon Willison
