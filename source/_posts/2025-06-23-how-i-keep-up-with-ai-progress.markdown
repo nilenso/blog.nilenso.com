@@ -50,8 +50,9 @@ To help with this, I've curated a list of sources that make up an information pi
     * Approachable explanations on the internals of AI (I haven't gone through all of these yet, but heard praise for his GPT-2 from scratch and zero to hero tutorials)
     * Strong cultural influence and observations on AI impact. He coined the terms "vibe coding" and "jagged intelligence".
 
+### [Every's Chain of Thought](https://every.to/chain-of-thought?sort=newest)
 
-
+* Written by Dan Shipper, the co-founder of Every. I like going through their test runs of the latest frontier models. It's also a good way to get a sense of how these AI models can be used everyday.
 
 My sources:
 * Simon Willison
