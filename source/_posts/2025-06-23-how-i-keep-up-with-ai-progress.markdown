@@ -5,6 +5,8 @@ author: Atharva Raykar
 created_at: 2025-06-23 00:00:00 UTC
 layout: post
 ---
+_Last Updated: 23rd June 2025_
+
 Generative AI has been the fastest moving technology I have seen in my lifetime. Its capabilities also happen to be terribly misunderstood.
 
 Organisations that underestimate the capabilities of AI are likely to miss out on its disruption potential. An example most visible to me is missing out on the [speed increase](https://www.youtube.com/watch?v=KVZ3vMx_aJ4) brought in by [AI coding tools](/blog/2025/05/29/ai-assisted-coding/).
@@ -19,7 +21,27 @@ The pattern for errors of overestimation and underestimation are rooted in lack 
 
 This is surprisingly challenging. We are in one of the most polluted information environments. If you're not being deliberate about it, you are likely to be exposed to a lot of misinformation that overstates or dismisses the capability of AI.
 
-To help with this, I've compiled a list of sources that make up an information pipeline that I consider balanced and healthy. If you're late to the game, consider this a good starting point.
+To help with this, I've curated a list of sources that make up an information pipeline that I consider balanced and healthy. If you're late to the game, consider this a good starting point.
+
+## General guidelines
+
+* Stay close to the source. The further you stray from reading official announcements and write-ups from the AI labs, the more likely you are going to be exposed to pure noise. Always assume that all reporting is wrong by default, unless it's coming from the primary source.
+* Follow trustworthy individuals for commentary. I have linked to many individuals who I consider to be commenting and talking about AI developments in good faith and a deep sense of curiosity.
+
+
+## Starting Points
+
+### [Simon Willison's Blog](https://simonwillison.net/tags/ai/)
+
+* The best starting point for most technical people. If I had to only pick one stream of information, it would be this one.
+* Expect:
+    * Commentary on the frontier of AI capabilities
+    * Application layer use cases
+    * Commentary on security issues and ethics
+* Example articles: [The Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
+
+### Andrej Karpathy on [Twitter]() and [YouTube]()
+
 
 My sources:
 * Simon Willison
