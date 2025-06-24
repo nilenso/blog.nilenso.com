@@ -34,13 +34,19 @@ To help with this, I've curated a list of sources that make up an information pi
 ### [Simon Willison's Blog](https://simonwillison.net/tags/ai/)
 
 * The best starting point for most technical people. If I had to only pick one stream of information, it would be this one.
+* He's also known for creating Django and Datasette.
 * Expect:
     * Commentary on the frontier of AI capabilities
     * Application layer use cases
     * Commentary on security issues and ethics
 * Example articles: [The Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
 
-### Andrej Karpathy on [Twitter]() and [YouTube]()
+### Andrej Karpathy on [Twitter](https://x.com/karpathy) and [YouTube](https://www.youtube.com/@AndrejKarpathy)
+
+* Director of AI @ Tesla, was a founding member of OpenAI.
+* The best starting point to get an overview of how the models themselves work. His 3.5 hour video is the best million feet overview on the internals of LLMs and surprisingly approachable for relatively non-technical people too.
+* Expect:
+    * Commentary on the frontier of AI
 
 
 My sources:
