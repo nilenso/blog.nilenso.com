@@ -85,8 +85,11 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 ### [Hamel Husain](https://hamel.dev/)
 
-* Machine Learning Engineer, runs a consultancy (Parlance Labs)
-* In my head he's the "evals guy". Has the clearest write-ups on evaluating LLMs
+* Machine Learning Engineer, runs a consultancy. Contributed to a few ML tools.
+* Expect:
+    * Great write-ups on evals and continuously improving AI systems.
+    * Notes on using libraries while building AI tools.
+* A sample: []
 
 My sources:
 * Simon Willison
