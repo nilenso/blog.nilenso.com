@@ -97,7 +97,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect:
     * Great write-ups on evals and continuously improving AI systems.
     * Field notes, musings, experiments
-* A sample: [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/)
+* A sample: [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/), [Short Musings on AI Engineering and "Failed AI Projects"](https://www.sh-reya.com/blog/ai-engineering-short/)
+
+### [Jason Liu](https://jxnl.co/)
+
+* Independent consultant, ML Engineer, creator of [Instructor](https://python.useinstructor.com/).
+* Expect:
+    * Detailed write-ups on RAG, evals and continuously improving AI systems.
+    * AI consulting guides (especially for indie consultants)
+* A sample: [The RAG Playbook](https://jxnl.co/writing/2024/08/19/rag-flywheel/), [Common RAG Mistakes](https://jxnl.co/writing/2024/01/07/inverted-thinking-rag/)
 
 My sources:
 * Simon Willison
