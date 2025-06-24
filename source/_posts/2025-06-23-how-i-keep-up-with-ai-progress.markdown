@@ -19,6 +19,8 @@ The pattern for errors of overestimation and underestimation are rooted in lack 
 
 This is surprisingly challenging. We are in one of the most polluted information environments. If you're not being deliberate about it, you are likely to be exposed to a lot of misinformation that overstates or dismisses the capability of AI.
 
+To help with this, I've compiled a list of sources that make up an information pipeline that I consider balanced and healthy. If you're late to the game, consider this a good starting point.
+
 My sources:
 * Simon Willison
 * Andrej Karpathy
