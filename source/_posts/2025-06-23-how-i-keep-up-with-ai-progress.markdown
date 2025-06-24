@@ -125,7 +125,9 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect:
     * Write-ups on better abstractions than prompts (DSPy addresses this)
     * Commentary on emerging research
-* A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/)
+* A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/), [twitter post on better abstractions for AI apps](https://x.com/lateinteraction/status/1921565300690149759)
+
+### 
 
 
 My sources:
