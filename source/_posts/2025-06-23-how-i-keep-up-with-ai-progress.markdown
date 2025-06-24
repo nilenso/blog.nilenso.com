@@ -107,6 +107,27 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * AI consulting guides (especially for indie consultants)
 * A sample: [The RAG Playbook](https://jxnl.co/writing/2024/08/19/rag-flywheel/), [Common RAG Mistakes](https://jxnl.co/writing/2024/01/07/inverted-thinking-rag/)
 
+### Eugene Yan [(link)](https://eugeneyan.com/)
+
+* Principal Applied Scientist at Amazon, specialises in RecSys, currently working on LLM systems.
+* Expect:
+    * Detailed write-ups on LLMs, digging a bit more into ML/Language Model fundamentals and the math behind it.
+    * Write-ups on side projects and prototypes
+* A sample: [Task-Specific LLM Evals that Do & Don't Work](https://eugeneyan.com/writing/evals/), [AlignEval](https://eugeneyan.com/writing/aligneval/), [Intuition on Attention](https://eugeneyan.com/writing/attention/)
+
+### What We’ve Learned From A Year of Building with LLMs [(link)](https://applied-llms.org/)
+
+* This is an ensemble of practitioners who have written down everything they've learnt about building with LLMs. Includes all the practitioners mentioned above!
+
+### Omar Khattab (link to [website](https://omarkhattab.com/) and [twitter](https://x.com/lateinteraction))
+
+* Research Scientist at Databricks, creator of DSPy.
+* Expect:
+    * Write-ups on better abstractions than prompts (DSPy addresses this)
+    * Commentary on emerging research
+* A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/)
+
+
 My sources:
 * Simon Willison
 * Andrej Karpathy
