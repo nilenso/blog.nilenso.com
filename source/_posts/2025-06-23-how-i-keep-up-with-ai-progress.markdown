@@ -59,6 +59,20 @@ To help with this, I've curated a list of sources that make up an information pi
 
 ## Official announcements, blogs and papers from those building AI
 
+Anyone trying to keep up with AI developments must follow the work of the AI labs building them. Even though they sometimes get a bad rap for hyping up AI capabilities, their official announcements have a lot of valuable and generally accurate information on the capabilities of AI.
+
+Always look out for the announcements from [OpenAI](https://openai.com/news/), [Google DeepMind](https://deepmind.google/), [Anthropic](https://www.anthropic.com/news), [DeepSeek](https://huggingface.co/organizations/deepseek-ai/activity/all), [Meta AI](https://ai.meta.com/blog/), [xAI](https://x.ai/news) and [Qwen](https://huggingface.co/organizations/Qwen/activity/all).
+
+Most labs usually have a bunch of useful resources that help deepen your understanding of LLM capabilities.
+* Announcement blog posts for an overview
+    * Example: [OpenAI o3 announcement post](https://openai.com/index/introducing-o3-and-o4-mini/).
+* Official engineering blogs, guides and cookbooks
+    * Examples: [Engineering at Anthropic](https://www.anthropic.com/engineering/building-effective-agents), [OpenAI's voice agent guide](https://platform.openai.com/docs/guides/voice-agents?voice-agent-architecture=speech-to-speech), [Gemini Cookbook](https://github.com/google-gemini/cookbook/tree/main/examples/)
+* System/Model Cards for more details on the models—expect more detailed information on context windows, benchmarks, safety testing, etc
+    * Example: [Claude 4 System Card](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf)
+
+If you see anyone making an explosive claim about capabilities, or quoting some research from these labs, I like to bypass the person making the claim and read it straight from the source.
+
 My sources:
 * Simon Willison
 * Andrej Karpathy
