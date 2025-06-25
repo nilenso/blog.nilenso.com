@@ -37,7 +37,7 @@ To help with this, I've curated a list of sources that make up an information pi
 
 ### Andrej Karpathy on [Twitter](https://x.com/karpathy) and [YouTube](https://www.youtube.com/@AndrejKarpathy)
 
-* Director of AI @ Tesla, was a founding member of OpenAI.
+* Director of AI @ Tesla, founding member of OpenAI.
 * The best starting point to get an overview of how the models themselves work. His 3.5 hour video is the best million feet overview on the internals of LLMs and surprisingly approachable for relatively non-technical people too.
 * Expect:
     * Commentary on the frontier of AI capabilities
