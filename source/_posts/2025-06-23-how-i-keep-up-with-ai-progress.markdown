@@ -69,7 +69,7 @@ Most labs usually have a bunch of useful resources that help deepen your underst
 * Research Papers
     * Examples: [DeepSeek R1's paper about RL](https://arxiv.org/pdf/2501.12948), [Anthropic's On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
 
-If you see anyone making an explosive claim about capabilities, or quoting some research from these labs, I like to bypass the person making the claim and read it straight from the source.
+If you see anyone making an explosive claim about capabilities, or quoting some research from these labs, I always bypass the person making the claim and read it straight from the source, with the surrounding context.
 
 A caveat: the cookbooks may not represent the ideal way to do things in my experience, even if they are an excellent starting point. [We're all still figuring this out](https://xcancel.com/seconds_0/status/1935411600829374937). Your own experience of putting AI capabilities into production backed by data trumps everything.
 
