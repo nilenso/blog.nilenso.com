@@ -129,15 +129,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 
 Sources to expand on:
-* ~Simon Willison~
-* ~Andrej Karpathy~
+* ~~Simon Willison~~
+* ~~Andrej Karpathy~~
 * Algotrained Twitter
 * Nato Lambert's interconnected newsletter
-* ~Every~
-* ~Official blogs: Anthropic, OpenAI, Meta~
+* ~~Every~~
+* ~~Official blogs: Anthropic, OpenAI, Meta~~
 * Ethan Mollick
 * Chip Huyen
-* ~Eugene Yan~
+* ~~Eugene Yan~~
 * swyx
 * SmolAI twitter roundups
 * David Crawshaw
@@ -152,8 +152,8 @@ Sources to expand on:
 * Aparna Dhinakaran
 * Jo Kristian Bergum
 * Erik Meijer
-* ~Omar Khattab~
-* ~Jason Liu~
+* ~~Omar Khattab~~
+* ~~Jason Liu~~
 * Greg Kamradt
 * Gwen Shapira
 * Your local AI meetup
