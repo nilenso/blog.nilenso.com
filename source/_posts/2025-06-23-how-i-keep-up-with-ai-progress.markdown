@@ -123,19 +123,21 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Commentary on emerging research
 * A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/), [twitter post on better abstractions for AI apps](https://x.com/lateinteraction/status/1921565300690149759)
 
-### 
+### Kwindla Kramer
+
+* 
 
 
-My sources:
-* Simon Willison
-* Andrej Karpathy
+Sources to expand on:
+* ~Simon Willison~
+* ~Andrej Karpathy~
 * Algotrained Twitter
 * Nato Lambert's interconnected newsletter
-* Every
-* Official blogs: Anthropic, OpenAI, Meta
+* ~Every~
+* ~Official blogs: Anthropic, OpenAI, Meta~
 * Ethan Mollick
 * Chip Huyen
-* Eugene Yan
+* ~Eugene Yan~
 * swyx
 * SmolAI twitter roundups
 * David Crawshaw
@@ -150,13 +152,9 @@ My sources:
 * Aparna Dhinakaran
 * Jo Kristian Bergum
 * Erik Meijer
-* Omar Khattab
-* Jason Liu
+* ~Omar Khattab~
+* ~Jason Liu~
 * Greg Kamradt
 * Gwen Shapira
 * Your local AI meetup
 
-
-AI drive thru issues: https://www.youtube.com/watch?v=TwdduNZJKUM
-fake cases: https://arstechnica.com/tech-policy/2023/06/lawyers-have-real-bad-day-in-court-after-citing-fake-cases-made-up-by-chatgpt/
-nyc AI chatbot, lawbreaker: https://themarkup.org/news/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law
