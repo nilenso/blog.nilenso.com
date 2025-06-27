@@ -165,12 +165,13 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 ## News and Media
 
-I tend to not listen to podcasts or follow the news, but a tiny dose of it was warranted to follow AI developments. These are my preferred sources.
+I tend to not listen to podcasts or follow the news, but a tiny dose of it to follow AI developments was warranted. These are my preferred sources.
 
 ### Twitter / X
 
 * Twitter is the only large-scale social media platform for conversations on cutting edge of AI developments. Almost all the resources I have found here could plausibly be traced back to twitter.
 * Twitter can also be a toxic place, but it's possible to [use](https://grantslatton.com/twitter) [it](https://near.blog/how-to-twitter-successfully/) [well](https://atharvaraykar.com/how-to-how-to-how-to-how-to-how-to-how-to-how-to-how-to-how-to-how-to-how-to/#how-to-use-twitterx-without-frying-my-brain). Twitter works great for me.
+* Okay, but I understand if you just really don't want to use Twitter. I have an alternative. Read on.
 
 ### Shawn Wang aka swyx ([twitter link](https://x.com/swyx)) / AI news by smol.ai ([link](https://news.smol.ai/))
 
