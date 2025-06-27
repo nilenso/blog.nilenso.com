@@ -178,6 +178,22 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 * swyx has been a great at curating industry trends on his [Latent Space](https://www.latent.space) newsletter, and seems to be the most popular promoter of the discipline of [AI Engineering](https://www.latent.space/p/ai-engineer).
 * But twitter is not for everyone and comes with downsides. For those people, I point to [AI news](https://news.smol.ai/), which compiles and summarises the latest in AI across all the platforms where notable conversations happen.
 
+### Dwarkesh Patel ([link](https://www.dwarkesh.com/))
+
+* If you like podcasts, I found this one pretty good. Dwarkesh asks great, well researched questions to everyone that matters. Very little fluff.
+
+## Governance, Safety, Alignment
+
+### LessWrong ([link](https://www.lesswrong.com/w/ai?sortedBy=magic)) / AI Alignment Forum ([link](https://www.alignmentforum.org/))
+
+* I don't frequent here often, but occasionally get linked to some interesting discussion on these forums.
+* You'll find people really getting into the details and talking about things that you don't see discussed as much in the twitter mainstream.
+
+
+
+## Prompt Whisperers
+
+
 
 Sources to expand on:
 * ~~Simon Willison~~
