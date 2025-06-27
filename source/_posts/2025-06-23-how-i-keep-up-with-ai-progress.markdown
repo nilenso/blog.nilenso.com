@@ -155,6 +155,23 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect: Commentary on the "R" in RAG.
 * A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158)
 
+### David Crawshaw
+
+* Co-founder of Tailscale, seasoned software engineer.
+* Expect:
+    * Good write-ups on software engineering in general
+    * Of late, write-ups on programming with AI
+* A sample: [How I program with LLMs](https://crawshaw.io/blog/programming-with-llms), [How I program with Agents](https://crawshaw.io/blog/programming-with-agents)
+
+## News and Media
+
+I tend to not listen to podcasts or follow the news, but a tiny dose of it was warranted to follow AI developments. These are my preferred sources.
+
+### Shawn Wang aka swyx ([twitter link](https://x.com/swyx)) / AI news by smol.ai ([link](https://news.smol.ai/))
+
+* swyx has been a great at curating industry trends on his [Latent Space](https://www.latent.space) newsletter, and seems to be the most popular promoter of the discipline of [AI Engineering](https://www.latent.space/p/ai-engineer).
+* Twitter is the social media platform for conversations on cutting edge of AI developments. But twitter is not for everyone and comes with downsides. For those people, I point to [AI news](https://news.smol.ai/), which compiles and summarises the latest in AI across all the platforms where notable conversations happen.
+
 
 
 Sources to expand on:
@@ -171,7 +188,6 @@ Sources to expand on:
 * SmolAI twitter roundups
 * David Crawshaw
 * Janus
-* Jeremy Howard
 * LessWrong
 * Gwern
 * Dwarkesh Patel
@@ -179,10 +195,7 @@ Sources to expand on:
 * Alexander Doria
 * Kwindla Kramer
 * Jo Kristian Bergum
-* Erik Meijer
 * ~~Omar Khattab~~
 * ~~Jason Liu~~
-* Greg Kamradt
-* Gwen Shapira
 * Your local AI meetup
 
