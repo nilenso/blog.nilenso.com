@@ -131,12 +131,6 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Detailed guides on building state-of-the-art realtime voice AI agents
 * A sample: [Voice AI and Voice Agents: An Illustrated Primer](https://voiceaiandvoiceagents.com/), [Advice on Building Voice AI in June 2025](https://www.daily.co/blog/advice-on-building-voice-ai-in-june-2025/)
 
-### Jo Kristian Bergum ([link](https://x.com/jobergum))
-
-* Founder of vespa.ai
-* Expect: Commentary on the "R" in RAG.
-* A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158), [MLOps Lessons from ChatGPT’s 'Sycophantic' Rollback](https://leehanchung.github.io/blogs/2025/04/30/ai-ml-llm-ops/)
-
 ### Han Chung Lee ([link](https://leehanchung.github.io/))
 
 * Machine Learning Engineer.
@@ -144,7 +138,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Crisp write-ups on ML techniques relevant to building AI applications
     * Deep (and not-so-deep) dives into AI applications and frameworks
     * Commentary on AI dev tooling
-* A sample: [MCP is not REST API](https://leehanchung.github.io/blogs/2025/05/17/mcp-is-not-rest-api/), [Poking around Claude Code](https://leehanchung.github.io/blogs/2025/03/07/claude-code/), []()
+* A sample: [MCP is not REST API](https://leehanchung.github.io/blogs/2025/05/17/mcp-is-not-rest-api/), [Poking around Claude Code](https://leehanchung.github.io/blogs/2025/03/07/claude-code/), [MLOps Lessons from ChatGPT’s 'Sycophantic' Rollback](https://leehanchung.github.io/blogs/2025/04/30/ai-ml-llm-ops/)
+
+### Jo Kristian Bergum ([link](https://x.com/jobergum))
+
+* Founder of vespa.ai
+* Expect: Commentary on the "R" in RAG.
+* A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158)
+
+
 
 Sources to expand on:
 * ~~Simon Willison~~
