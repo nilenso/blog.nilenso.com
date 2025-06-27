@@ -115,6 +115,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 * This is an ensemble of practitioners who have written down everything they've learnt about building with LLMs. Includes all the practitioners mentioned above!
 
+### Chip Huyen ([link](https://huyenchip.com/))
+
+* ML Engineer, author of books on ML systems and AI Engineering.
+* [AI Engineering](https://huyenchip.com/books/) is a good book.
+* Expect:
+    * Commentary and recommendations on building AI systems in production.
+    * Highly detailed engineering blog posts on AI engineering and ML systems.
+* A sample: [https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html), [Agents](https://huyenchip.com/2025/01/07/agents.html)
+
 ### Omar Khattab (link to [website](https://omarkhattab.com/) and [twitter](https://x.com/lateinteraction))
 
 * Research Scientist at Databricks, creator of DSPy.
