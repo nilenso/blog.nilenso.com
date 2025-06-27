@@ -123,9 +123,15 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Commentary on emerging research
 * A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/), [twitter post on better abstractions for AI apps](https://x.com/lateinteraction/status/1921565300690149759)
 
-### Kwindla Kramer
+### Kwindla Hultman Kramer (link to [blogs](https://www.daily.co/blog/author/kwindla-hultman-kramer/) and [twitter]())
 
-* 
+* CEO and co-founder of [Daily](https://daily.co), which created the [Pipecat](https://www.pipecat.ai/) framework for multimodal AI applications.
+* Expect:
+    * Commentary on the frontier of realtime voice/video AI capabilities
+    * Detailed guides on building state-of-the-art realtime voice AI agents
+* A sample: [Voice AI and Voice Agents: An Illustrated Primer](https://voiceaiandvoiceagents.com/), [Advice on Building Voice AI in June 2025](https://www.daily.co/blog/advice-on-building-voice-ai-in-june-2025/)
+
+### 
 
 
 Sources to expand on:
