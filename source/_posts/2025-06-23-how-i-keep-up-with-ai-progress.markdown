@@ -95,7 +95,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Field notes, musings, experiments
 * A sample: [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/), [Short Musings on AI Engineering and "Failed AI Projects"](https://www.sh-reya.com/blog/ai-engineering-short/)
 
-### [Jason Liu](https://jxnl.co/)
+### Jason Liu ([link](https://jxnl.co/))
 
 * Independent consultant, ML Engineer, creator of [Instructor](https://python.useinstructor.com/).
 * Expect:
@@ -103,7 +103,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * AI consulting guides (especially for indie consultants)
 * A sample: [The RAG Playbook](https://jxnl.co/writing/2024/08/19/rag-flywheel/), [Common RAG Mistakes](https://jxnl.co/writing/2024/01/07/inverted-thinking-rag/)
 
-### Eugene Yan [(link)](https://eugeneyan.com/)
+### Eugene Yan ([link](https://eugeneyan.com/))
 
 * Principal Applied Scientist at Amazon, specialises in RecSys, currently working on LLM systems.
 * Expect:
