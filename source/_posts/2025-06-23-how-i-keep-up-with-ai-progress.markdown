@@ -238,31 +238,3 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 
 * There's a community of researchers (often independent and anonymous) that try to understand LLM behaviours at the boundaries by pushing it with unusual prompts which dig up the hidden corners of their latent spaces.
 * A sample: [Anomalous tokens reveal the original identities of Instruct models](https://generative.ink/posts/anomalous-tokens-reveal-the-original-identities-of-instruct-models/), [the void](https://nostalgebraist.tumblr.com/post/785766737747574784/the-void)
-
-
-Sources to expand on:
-* ~~Simon Willison~~
-* ~~Andrej Karpathy~~
-* ~~Algotrained Twitter~~
-* ~~Nato Lambert's interconnect newsletter~~
-* ~~Every~~
-* ~~Official blogs: Anthropic, OpenAI, Meta~~
-* ~~Ethan Mollick~~
-* ~~Arvind Narayanan~~
-* ~~Chip Huyen~~
-* ~~Eugene Yan~~
-* ~~swyx~~
-* ~~SmolAI twitter roundups~~
-* ~~David Crawshaw~~
-* ~~Janus~~
-* ~~LessWrong~~
-* ~~Gwern~~
-* ~~Dwarkesh Patel~~
-* ~~Wyatt Walls~~
-* ~~Alexander Doria~~
-* ~~Kwindla Kramer~~
-* ~~Jo Kristian Bergum~~
-* ~~Omar Khattab~~
-* ~~Jason Liu~~
-* Your local AI meetup
-
