@@ -182,14 +182,18 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 
 * If you like podcasts, I found this one pretty good. Dwarkesh asks great, well researched questions to everyone that matters. Very little fluff.
 
-## Governance, Safety, Alignment
+## Esoterica
 
 ### LessWrong ([link](https://www.lesswrong.com/w/ai?sortedBy=magic)) / AI Alignment Forum ([link](https://www.alignmentforum.org/))
 
-* I don't frequent here often, but occasionally get linked to some interesting discussion on these forums.
+* I don't frequent here often, but occasionally get linked to some _really_ interesting discussion on these forums.
 * You'll find people really getting into the details and talking about things that you don't see discussed as much in the twitter mainstream.
+* Expect:
+    * AI Alignment, Governance, and Safety discussions.
+    * Generally very technical.
+* A sample: [Claude plays Pokémon breakdown](https://www.lesswrong.com/posts/7mqp8uRnnPdbBzJZE/is-gemini-now-better-than-claude-at-pokemon), [The Waluigi Effect](https://www.lesswrong.com/posts/D7PumeYTDPfBTp3i7/the-waluigi-effect-mega-post)
 
-
+### Gwern ([link]())
 
 ## Prompt Whisperers
 
