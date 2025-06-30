@@ -53,7 +53,7 @@ To help with this, I've curated a list of sources that make up an information pi
 ## General guidelines
 
 * Stay close to the source. The further you stray from reading official announcements and write-ups from the AI labs, the more likely you are going to be exposed to noise. Always assume that all reporting is wrong by default, unless it's coming from the primary source, or one of the people listed here.
-* Follow trustworthy individuals for commentary. I have linked to many individuals talk about AI developments in good faith and a deep sense of curiosity.
+* Follow trustworthy individuals for commentary. I have linked to many individuals who talk about AI developments in good faith and engage with a deep sense of curiosity.
 
 
 ## Starting Points
