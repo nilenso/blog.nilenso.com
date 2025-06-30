@@ -53,7 +53,7 @@ To help with this, I've curated a list of sources that make up an information pi
 ## General guidelines
 
 * Stay close to the source. The further you stray from reading official announcements and write-ups from the AI labs, the more likely you are going to be exposed to noise. Always assume that all reporting is wrong by default, unless it's coming from the primary source, or one of the people listed here.
-* Follow trustworthy individuals for commentary. I have linked to many individuals who I consider to be commenting and talking about AI developments in good faith and a deep sense of curiosity.
+* Follow trustworthy individuals for commentary. I have linked to many individuals talk about AI developments in good faith and a deep sense of curiosity.
 
 
 ## Starting Points
@@ -271,3 +271,9 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 
 * There's a community of researchers (often independent and anonymous) that try to understand LLM behaviours at the boundaries by pushing it with unusual prompts which dig up the hidden corners of their latent spaces.
 * A sample: [Anomalous tokens reveal the original identities of Instruct models](https://generative.ink/posts/anomalous-tokens-reveal-the-original-identities-of-instruct-models/), [the void](https://nostalgebraist.tumblr.com/post/785766737747574784/the-void)
+
+## Do I chug water from a firehose?
+
+It seems like a lot of work to keep up with _all of that_, but in practice it really isn't.
+
+I have my twitter feed "tuned" so that the things worth paying attention to are boosted by people I trust.
