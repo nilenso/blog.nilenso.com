@@ -17,6 +17,39 @@ It's surprisingly challenging to build a clear understanding of AI. We are in on
 
 To help with this, I've curated a list of sources that make up an information pipeline that I consider balanced and healthy. If you're late to the game, consider this a good starting point.
 
+## Table of Contents
+
+- [General guidelines](#general-guidelines)
+- [Starting Points](#starting-points)
+   * [Simon Willison's Blog (link)](#simon-willisons-blog-link)
+   * [Andrej Karpathy (Twitter and YouTube)](#andrej-karpathy-twitter-and-youtube)
+   * [Every's Chain of Thought (link)](#everys-chain-of-thought-link)
+- [Official announcements, blogs and papers from those building AI](#official-announcements-blogs-and-papers-from-those-building-ai)
+- [High signal people to follow](#high-signal-people-to-follow)
+   * [Hamel Husain (link)](#hamel-husain-link)
+   * [Shreya Shankar (link)](#shreya-shankar-link)
+   * [Jason Liu (link)](#jason-liu-link)
+   * [Eugene Yan (link)](#eugene-yan-link)
+   * [What We’ve Learned From A Year of Building with LLMs (link)](#what-weve-learned-from-a-year-of-building-with-llms-link)
+   * [Chip Huyen (link)](#chip-huyen-link)
+   * [Omar Khattab (link to website and twitter)](#omar-khattab-link-to-website-and-twitter)
+   * [Kwindla Hultman Kramer (link to blogs and twitter)](#kwindla-hultman-kramer-link-to-blogs-and-twitter)
+   * [Han Chung Lee (link)](#han-chung-lee-link)
+   * [Jo Kristian Bergum (link)](#jo-kristian-bergum-link)
+   * [David Crawshaw (link)](#david-crawshaw-link)
+   * [Alexander Doria / Pierre Carl-Langlais (link)](#alexander-doria-pierre-carl-langlais-link)
+   * [Nathan Lambert's "Interconnects" (link)](#nathan-lamberts-interconnects-link)
+   * [Ethan Mollick (link)](#ethan-mollick-link)
+   * [Arvind Narayanan and Sayash Kapoor's "AI Snake Oil" (link)](#arvind-narayanan-and-sayash-kapoors-ai-snake-oil-link)
+- [News and Media](#news-and-media)
+   * [Twitter / X](#twitter-x)
+   * [Shawn Wang aka swyx (twitter link) / AI news by smol.ai (link)](#shawn-wang-aka-swyx-twitter-link-ai-news-by-smolai-link)
+   * [Dwarkesh Patel (link)](#dwarkesh-patel-link)
+- [Esoterica](#esoterica)
+   * [LessWrong (link) / AI Alignment Forum (link)](#lesswrong-link-ai-alignment-forum-link)
+   * [Gwern (link)](#gwern-link)
+   * [Prompt Whisperers and Latent space explorers: Janus, Wyatt Walls, Claude Backrooms (1, 2, 3)](#prompt-whisperers-and-latent-space-explorers-janus-wyatt-walls-claude-backrooms-1-2-3)
+
 ## General guidelines
 
 * Stay close to the source. The further you stray from reading official announcements and write-ups from the AI labs, the more likely you are going to be exposed to noise. Always assume that all reporting is wrong by default, unless it's coming from the primary source, or one of the people listed here.
