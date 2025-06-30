@@ -188,7 +188,14 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Analysis on AI is affecting corporations and society
 * A sample: [Using AI Right Now: A Quick Guide](https://www.oneusefulthing.org/p/using-ai-right-now-a-quick-guide), [Making AI Work: Leadership, Lab, and Crowd](https://www.oneusefulthing.org/p/making-ai-work-leadership-lab-and)
 
-### 
+### Arvind Narayanan and Sayash Kapoor's "AI Snake Oil" ([link](https://www.aisnakeoil.com/))
+
+* Princeton CS Professors analysing impacts of AI.
+* Expect:
+    * Commentary on AI hype and AI doom
+    * Analysis of AI capabilities.
+    * Opinions on AI policy
+* A sample: [AGI is not a milestone](https://www.aisnakeoil.com/p/agi-is-not-a-milestone), [Evaluating LLMs is a minefield](https://www.cs.princeton.edu/~arvindn/talks/evaluating_llms_minefield)
 
 ## News and Media
 
