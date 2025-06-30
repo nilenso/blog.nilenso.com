@@ -155,7 +155,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect:
     * Commentary and recommendations on building AI systems in production.
     * Highly detailed engineering blog posts on AI engineering and ML systems.
-* A sample: [https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html), [Agents](https://huyenchip.com/2025/01/07/agents.html)
+* A sample: [Common pitfalls when building generative AI applications](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html), [Agents](https://huyenchip.com/2025/01/07/agents.html)
 
 ### Omar Khattab (link to [website](https://omarkhattab.com/) and [twitter](https://x.com/lateinteraction))
 
