@@ -212,19 +212,20 @@ Sources to expand on:
 * ~~Every~~
 * ~~Official blogs: Anthropic, OpenAI, Meta~~
 * Ethan Mollick
-* Chip Huyen
+* Arvind Narayanan
+* ~~Chip Huyen~~
 * ~~Eugene Yan~~
-* swyx
-* SmolAI twitter roundups
-* David Crawshaw
+* ~~swyx~~
+* ~~SmolAI twitter roundups~~
+* ~~David Crawshaw~~
 * Janus
-* LessWrong
-* Gwern
-* Dwarkesh Patel
+* ~~LessWrong~~
+* ~~Gwern~~
+* ~~Dwarkesh Patel~~
 * Wyatt Walls
 * Alexander Doria
-* Kwindla Kramer
-* Jo Kristian Bergum
+* ~~Kwindla Kramer~~
+* ~~Jo Kristian Bergum~~
 * ~~Omar Khattab~~
 * ~~Jason Liu~~
 * Your local AI meetup
