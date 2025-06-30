@@ -280,6 +280,6 @@ I go through my twitter feed like one would a newspaper. Some things catch my ey
 
 It helps that my twitter feed has a lot of thoughtful commentary on particular announcements, papers or articles that provide more context on what's worth paying attention to. If I find someone who has shared something interesting, I follow them and also go through their other work. This is not very different from how I would discover music.
 
-I actually find this kind of foraging quite fun, and I don't consider it as "work". I grew up on science fiction stories. Artificial Intelligence is something I've been fascinated with ever since I was a kid, and it's endlessly fascinating and awe-inspiring to see powerful AI being built piece by piece in front of me, within my lifetime. It's easy to forget what excites us in these times.
+I actually find this kind of foraging quite fun, and I don't consider it as "work". I grew up on science fiction stories. Artificial Intelligence is something I've been fascinated with ever since I was a kid, and it's endlessly fascinating and awe-inspiring to see powerful AI being built piece by piece in front of me, within my lifetime.
 
 I hope this list gives you a starting point to get you excited the way I am.
