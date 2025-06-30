@@ -7,7 +7,7 @@ layout: post
 ---
 _Last Updated: 30th June 2025_
 
-Generative AI has been the fastest moving technology I have seen in my lifetime. Its capabilities also happen to be terribly misunderstood.
+Generative AI has been the fastest moving technology I have seen in my lifetime. Its also happens to be terribly misunderstood.
 
 We have already seen large [companies](https://www.youtube.com/watch?v=TwdduNZJKUM) and even [governments](https://themarkup.org/news/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law) ship dysfunctional or even [dangerous](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/#this-is-a-very-common-problem) AI products. Sufficiently uninformed people [misunderstand how to apply AI](https://arstechnica.com/tech-policy/2023/06/lawyers-have-real-bad-day-in-court-after-citing-fake-cases-made-up-by-chatgpt/) with concretely negative consequences.
 
