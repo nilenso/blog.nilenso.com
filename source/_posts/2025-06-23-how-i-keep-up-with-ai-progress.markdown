@@ -254,11 +254,11 @@ Sources to expand on:
 * ~~swyx~~
 * ~~SmolAI twitter roundups~~
 * ~~David Crawshaw~~
-* Janus
+* ~~Janus~~
 * ~~LessWrong~~
 * ~~Gwern~~
 * ~~Dwarkesh Patel~~
-* Wyatt Walls
+* ~~Wyatt Walls~~
 * ~~Alexander Doria~~
 * ~~Kwindla Kramer~~
 * ~~Jo Kristian Bergum~~
