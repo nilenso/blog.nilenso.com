@@ -63,9 +63,9 @@ To help with this, I've curated a list of sources that make up an information pi
 * The best starting point for most technical people. If I had to only pick one stream of information, it would be this one.
 * He's also known for creating Django and Datasette.
 * Expect:
-    * Commentary on the frontier of AI capabilities
-    * Application layer use cases
-    * Commentary on security issues and ethics
+    * Commentary on the frontier of AI capabilities.
+    * Application layer use cases.
+    * Commentary on security issues and ethics.
 * A sample: [The Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
 
 ### Andrej Karpathy ([Twitter](https://x.com/karpathy) and [YouTube](https://www.youtube.com/@AndrejKarpathy))
@@ -82,7 +82,7 @@ To help with this, I've curated a list of sources that make up an information pi
 
 * Written by Dan Shipper, the co-founder of Every. I like going through their test runs of the latest frontier models. It's also a good way to get a sense of how these AI models can be used everyday.
 * Expect:
-    * Practical applications of AI at work
+    * Practical applications of AI at work.
     * Vibe-checks for model capabilities outside of benchmark numbers.
 * A sample: [Vibe Check: Codex](https://every.to/chain-of-thought/vibe-check-codex-openai-s-new-coding-agent), [Vibe Check: o3](https://every.to/chain-of-thought/vibe-check-o3-is-out-and-it-s-great)
 
@@ -125,7 +125,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Researcher at UC Berkeley. Has been writing about AI engineering the last few years.
 * Expect:
     * Great write-ups on evals and continuously improving AI systems.
-    * Field notes, musings, experiments
+    * Field notes, musings, experiments.
 * A sample: [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/), [Short Musings on AI Engineering and "Failed AI Projects"](https://www.sh-reya.com/blog/ai-engineering-short/)
 
 ### Jason Liu ([link](https://jxnl.co/))
@@ -133,7 +133,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Independent consultant, ML Engineer, creator of [Instructor](https://python.useinstructor.com/).
 * Expect:
     * Detailed write-ups on RAG, evals and continuously improving AI systems.
-    * AI consulting guides (especially for indie consultants)
+    * AI consulting guides (especially for indie consultants).
 * A sample: [The RAG Playbook](https://jxnl.co/writing/2024/08/19/rag-flywheel/), [Common RAG Mistakes](https://jxnl.co/writing/2024/01/07/inverted-thinking-rag/)
 
 ### Eugene Yan ([link](https://eugeneyan.com/))
@@ -141,7 +141,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Principal Applied Scientist at Amazon, specialises in RecSys, currently working on LLM systems.
 * Expect:
     * Detailed write-ups on LLMs, digging a bit more into ML/Language Model fundamentals and the math behind it.
-    * Write-ups on side projects and prototypes
+    * Write-ups on side projects and prototypes.
 * A sample: [Task-Specific LLM Evals that Do & Don't Work](https://eugeneyan.com/writing/evals/), [AlignEval](https://eugeneyan.com/writing/aligneval/), [Intuition on Attention](https://eugeneyan.com/writing/attention/)
 
 ### What We’ve Learned From A Year of Building with LLMs [(link)](https://applied-llms.org/)
@@ -161,47 +161,47 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 * Research Scientist at Databricks, creator of DSPy.
 * Expect:
-    * Write-ups on better abstractions than prompts (DSPy addresses this)
-    * Commentary on emerging research
+    * Write-ups on better abstractions than prompts (DSPy addresses this).
+    * Commentary on emerging research.
 * A sample: [A Guide to Large Language Model Abstractions](https://www.twosigma.com/articles/a-guide-to-large-language-model-abstractions/), [twitter post on better abstractions for AI apps](https://x.com/lateinteraction/status/1921565300690149759)
 
 ### Kwindla Hultman Kramer (link to [blogs](https://www.daily.co/blog/author/kwindla-hultman-kramer/) and [twitter]())
 
 * CEO and co-founder of [Daily](https://daily.co), which created the [Pipecat](https://www.pipecat.ai/) framework for multimodal AI applications.
 * Expect:
-    * Commentary on the frontier of realtime voice/video AI capabilities
+    * Commentary on the frontier of realtime voice/video AI capabilities.
     * Detailed guides on building state-of-the-art realtime voice AI agents
-* A sample: [Voice AI and Voice Agents: An Illustrated Primer](https://voiceaiandvoiceagents.com/), [Advice on Building Voice AI in June 2025](https://www.daily.co/blog/advice-on-building-voice-ai-in-june-2025/)
+* A sample: [Voice AI and Voice Agents: An Illustrated Primer](https://voiceaiandvoiceagents.com/), [Advice on Building Voice AI in June 2025](https://www.daily.co/blog/advice-on-building-voice-ai-in-june-2025/).
 
 ### Han Chung Lee ([link](https://leehanchung.github.io/))
 
 * Machine Learning Engineer.
 * Expect:
-    * Crisp write-ups on ML techniques relevant to building AI applications
-    * Deep (and not-so-deep) dives into AI applications and frameworks
-    * Commentary on AI dev tooling
+    * Crisp write-ups on ML techniques relevant to building AI applications.
+    * Deep (and not-so-deep) dives into AI applications and frameworks.
+    * Commentary on AI dev tooling.
 * A sample: [MCP is not REST API](https://leehanchung.github.io/blogs/2025/05/17/mcp-is-not-rest-api/), [Poking around Claude Code](https://leehanchung.github.io/blogs/2025/03/07/claude-code/), [MLOps Lessons from ChatGPT’s 'Sycophantic' Rollback](https://leehanchung.github.io/blogs/2025/04/30/ai-ml-llm-ops/)
 
 ### Jo Kristian Bergum ([link](https://x.com/jobergum))
 
 * Founder of vespa.ai
 * Expect: Commentary on the "R" in RAG.
-* A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158)
+* A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158).
 
 ### David Crawshaw ([link](https://crawshaw.io/))
 
 * Co-founder of Tailscale, seasoned software engineer.
 * Expect:
-    * Good write-ups on software engineering in general
-    * Of late, write-ups on programming with AI
+    * Good write-ups on software engineering in general.
+    * Of late, write-ups on programming with AI.
 * A sample: [How I program with LLMs](https://crawshaw.io/blog/programming-with-llms), [How I program with Agents](https://crawshaw.io/blog/programming-with-agents)
 
 ### Alexander Doria / Pierre Carl-Langlais ([link](https://vintagedata.org/blog/))
 
 * Trains LLMs at [Pleias](https://pleias.fr/).
 * Expect:
-    * Excellent posts that go into some details of training processes
-    * Observations and opinions on where the industry is heading
+    * Excellent posts that go into some details of training processes.
+    * Observations and opinions on where the industry is heading.
 * A sample: [The Model is the Product](https://vintagedata.org/blog/posts/model-is-the-product), [A Realistic AI Timeline](https://vintagedata.org/blog/posts/realistic-ai-timeline)
 
 ### Nathan Lambert's "Interconnects" ([link](https://www.interconnects.ai/))
@@ -217,17 +217,17 @@ These are people who have contributed to the AI Engineering ecosystem in various
 
 * Researcher on the effects of AI on work, entrepreneurship, and education.
 * Expect:
-    * Guides on everyday usage of AI tools
-    * Analysis on AI is affecting corporations and society
+    * Guides on everyday usage of AI tools.
+    * Analysis on AI is affecting corporations and society.
 * A sample: [Using AI Right Now: A Quick Guide](https://www.oneusefulthing.org/p/using-ai-right-now-a-quick-guide), [Making AI Work: Leadership, Lab, and Crowd](https://www.oneusefulthing.org/p/making-ai-work-leadership-lab-and)
 
 ### Arvind Narayanan and Sayash Kapoor's "AI Snake Oil" ([link](https://www.aisnakeoil.com/))
 
 * Princeton CS Professors analysing impacts of AI.
 * Expect:
-    * Commentary on AI hype and AI doom
+    * Commentary on AI hype and AI doom.
     * Analysis of AI capabilities.
-    * Opinions on AI policy
+    * Opinions on AI policy.
 * A sample: [AGI is not a milestone](https://www.aisnakeoil.com/p/agi-is-not-a-milestone), [Evaluating LLMs is a minefield](https://www.cs.princeton.edu/~arvindn/talks/evaluating_llms_minefield)
 
 ## News and Media
