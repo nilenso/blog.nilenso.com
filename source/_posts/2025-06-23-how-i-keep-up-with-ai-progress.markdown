@@ -236,7 +236,7 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 
 ### Prompt Whisperers and Latent space explorers: Janus, Wyatt Walls, Claude Backrooms ([1](https://generative.ink/), [2](https://x.com/lefthanddraft), [3](https://dreams-of-an-electric-mind.webflow.io/))
 
-* There's a community of researchers (often independent and anonymous) that try to understand LLM behaviours and inclinations by pushing it with unusual prompts and trying to dig up the hidden corners of their latent spaces.
+* There's a community of researchers (often independent and anonymous) that try to understand LLM behaviours at the boundaries by pushing it with unusual prompts which dig up the hidden corners of their latent spaces.
 * A sample: [Anomalous tokens reveal the original identities of Instruct models](https://generative.ink/posts/anomalous-tokens-reveal-the-original-identities-of-instruct-models/), [the void](https://nostalgebraist.tumblr.com/post/785766737747574784/the-void)
 
 
