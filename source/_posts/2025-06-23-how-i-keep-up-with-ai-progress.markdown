@@ -79,7 +79,7 @@ It's occasionally worth keeping tabs on smaller players like [Nous Research](htt
 
 These are people who have contributed to the AI Engineering ecosystem in various ways, either by building open source tooling or putting in the work of integrating these AI models. Often, I've found more detailed and helpful recommendations than what the official cookbooks and guides suggest.
 
-### [Hamel Husain](https://hamel.dev/)
+### Hamel Husain ([link](https://hamel.dev/))
 
 * Machine Learning Engineer, runs a consultancy. Contributed to a few ML tools.
 * Expect:
@@ -87,7 +87,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Notes on using libraries while building AI tools.
 * A sample: [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/), [LLM Eval FAQ](https://hamel.dev/blog/posts/evals-faq/)
 
-### [Shreya Shankar](https://www.sh-reya.com/)
+### Shreya Shankar ([link](https://www.sh-reya.com/))
 
 * Researcher at UC Berkeley. Has been writing about AI engineering the last few years.
 * Expect:
