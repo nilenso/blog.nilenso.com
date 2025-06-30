@@ -180,6 +180,16 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Curated reading lists.
 * A sample: [What comes next with Reinforcement Learning](https://www.interconnects.ai/p/what-comes-next-with-reinforcement), [Reinforcement learning with random rewards actually works with Qwen 2.5](https://www.interconnects.ai/p/reinforcement-learning-with-random)
 
+### Ethan Mollick ([link](https://www.oneusefulthing.org/))
+
+* Researcher on the effects of AI on work, entrepreneurship, and education.
+* Expect:
+    * Guides on everyday usage of AI tools
+    * Analysis on AI is affecting corporations and society
+* A sample: [Using AI Right Now: A Quick Guide](https://www.oneusefulthing.org/p/using-ai-right-now-a-quick-guide), [Making AI Work: Leadership, Lab, and Crowd](https://www.oneusefulthing.org/p/making-ai-work-leadership-lab-and)
+
+### 
+
 ## News and Media
 
 I tend to not listen to podcasts or follow the news, but a tiny dose of it to follow AI developments was warranted. These are my preferred sources.
@@ -224,11 +234,11 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 Sources to expand on:
 * ~~Simon Willison~~
 * ~~Andrej Karpathy~~
-* Algotrained Twitter
-* Nato Lambert's interconnected newsletter
+* ~~Algotrained Twitter~~
+* ~~Nato Lambert's interconnect newsletter~~
 * ~~Every~~
 * ~~Official blogs: Anthropic, OpenAI, Meta~~
-* Ethan Mollick
+* ~~Ethan Mollick~~
 * Arvind Narayanan
 * ~~Chip Huyen~~
 * ~~Eugene Yan~~
@@ -240,7 +250,7 @@ Sources to expand on:
 * ~~Gwern~~
 * ~~Dwarkesh Patel~~
 * Wyatt Walls
-* Alexander Doria
+* ~~Alexander Doria~~
 * ~~Kwindla Kramer~~
 * ~~Jo Kristian Bergum~~
 * ~~Omar Khattab~~
