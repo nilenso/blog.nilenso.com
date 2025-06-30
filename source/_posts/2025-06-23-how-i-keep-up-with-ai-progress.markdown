@@ -193,7 +193,12 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
     * Generally very technical.
 * A sample: [Claude plays Pokémon breakdown](https://www.lesswrong.com/posts/7mqp8uRnnPdbBzJZE/is-gemini-now-better-than-claude-at-pokemon), [The Waluigi Effect](https://www.lesswrong.com/posts/D7PumeYTDPfBTp3i7/the-waluigi-effect-mega-post)
 
-### Gwern ([link]())
+### Gwern ([link](https://gwern.net/))
+
+* Some of the most enyclopedic writing by a single person ever, and a lot of it is about AI.
+* He was one of the first few outside the labs who saw LLM scaling coming.
+* I haven't really read most of what he's written (there's too much), but I've found it quite interesting to skim through the posts which are quite rich and deeply hyperlinked.
+* A sample: [The Scaling Hypothesis](https://gwern.net/scaling-hypothesis), [Proposal: "You could have invented transformers" tutorial](https://gwern.net/blog/2025/you-could-have-invented-transformers)
 
 ## Prompt Whisperers
 
