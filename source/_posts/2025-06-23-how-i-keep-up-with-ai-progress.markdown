@@ -234,8 +234,10 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 * I haven't really read most of what he's written (there's too much), but I've found it quite interesting to skim through the posts which are quite rich and deeply hyperlinked.
 * A sample: [The Scaling Hypothesis](https://gwern.net/scaling-hypothesis), [Proposal: "You could have invented transformers" tutorial](https://gwern.net/blog/2025/you-could-have-invented-transformers)
 
-### Prompt Whisperers and Latent space explorers: Janus, Wyatt Walls, Claude Backrooms ([], [2](), [3](https://dreams-of-an-electric-mind.webflow.io/))
+### Prompt Whisperers and Latent space explorers: Janus, Wyatt Walls, Claude Backrooms ([1](https://generative.ink/), [2](https://x.com/lefthanddraft), [3](https://dreams-of-an-electric-mind.webflow.io/))
 
+* There's a community of researchers (often independent and anonymous) that try to understand LLM behaviours and inclinations by pushing it with unusual prompts and trying to dig up the hidden corners of their latent spaces.
+* A sample: [Anomalous tokens reveal the original identities of Instruct models](https://generative.ink/posts/anomalous-tokens-reveal-the-original-identities-of-instruct-models/), [the void](https://nostalgebraist.tumblr.com/post/785766737747574784/the-void)
 
 
 Sources to expand on:
