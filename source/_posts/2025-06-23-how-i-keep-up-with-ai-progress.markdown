@@ -155,7 +155,7 @@ These are people who have contributed to the AI Engineering ecosystem in various
 * Expect: Commentary on the "R" in RAG.
 * A sample: [Search is the natural abstraction for augmenting AI with moving context](https://x.com/jobergum/status/1906631610952270158)
 
-### David Crawshaw
+### David Crawshaw ([link](https://crawshaw.io/))
 
 * Co-founder of Tailscale, seasoned software engineer.
 * Expect:
