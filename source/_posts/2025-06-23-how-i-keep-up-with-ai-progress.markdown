@@ -49,6 +49,7 @@ To help with this, I've curated a list of sources that make up an information pi
    * [LessWrong / AI Alignment Forum](#lesswrong-link--ai-alignment-forum-link)
    * [Gwern](#gwern-link)
    * [Prompt Whisperers and Latent space explorers](#prompt-whisperers-and-latent-space-explorers-janus-wyatt-walls-claude-backrooms-1-2-3)
+- [Do I chug water from a firehose?](#do-i-chug-water-from-a-firehose)
 
 ## General guidelines
 
