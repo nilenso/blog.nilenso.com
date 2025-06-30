@@ -75,7 +75,7 @@ A caveat: the cookbooks may not represent the ideal way to do things in my exper
 
 It's occasionally worth keeping tabs on smaller players like [Nous Research](https://nousresearch.com/blog/), [Allen AI](https://allenai.org/blog/olmo2-32B), [Prime Intellect](https://www.primeintellect.ai/), [Pleias](https://pleias.fr/blog) (open source, open research), [Cohere](https://cohere.com/blog) (enterprise) and [Goodfire](https://www.goodfire.ai/blog) (interpretability research). A lot of them go into technical depth that I don't have the prerequisites to fully understand, but it gave me some sense of what's happening outside the frontier labs and my AI engineering bubble. Interestingly, I have noticed (especially with the first few examples) these labs are willing to talk more about what exactly they are doing compared to frontier labs.
 
-## Practitioners and tool builders
+## High signal people to follow
 
 These are people who have contributed to the AI Engineering ecosystem in various ways, either by building open source tooling or putting in the work of integrating these AI models. Often, I've found more detailed and helpful recommendations than what the official cookbooks and guides suggest.
 
