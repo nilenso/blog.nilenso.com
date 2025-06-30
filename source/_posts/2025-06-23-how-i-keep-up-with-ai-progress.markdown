@@ -11,9 +11,9 @@ Generative AI has been the fastest moving technology I have seen in my lifetime.
 
 We have already seen large [companies](https://www.youtube.com/watch?v=TwdduNZJKUM) and even [governments](https://themarkup.org/news/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law) ship dysfunctional or even [dangerous](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/#this-is-a-very-common-problem) AI products. Sufficiently uninformed people [misunderstand how to apply AI](https://arstechnica.com/tech-policy/2023/06/lawyers-have-real-bad-day-in-court-after-citing-fake-cases-made-up-by-chatgpt/) with concretely negative consequences.
 
-The most common errors of misunderstanding are either underestimation ("it's all hype") or overestimation ("I don't need programmers anymore"). These patterns are rooted in a lack of a solid understanding of the technology and how it is evolving over time.
+The most common errors of misunderstanding are either underestimation ("it's all hype that will blow over") or overestimation ("I don't need programmers anymore"). These patterns are rooted in a lack of a solid understanding of the technology and how it is evolving over time.
 
-Building an understanding is surprisingly challenging. We are in one of the most polluted information environments. If you're not being deliberate about it, you are likely to be exposed to a lot of misinformation that overstates or dismisses the capability of AI.
+It's surprisingly challenging to build a clear understanding of AI. We are in one of the most polluted information environments. If you're not being deliberate about it, you are likely exposed to a lot of misinformation that overstates or dismisses AI capabilities.
 
 To help with this, I've curated a list of sources that make up an information pipeline that I consider balanced and healthy. If you're late to the game, consider this a good starting point.
 
