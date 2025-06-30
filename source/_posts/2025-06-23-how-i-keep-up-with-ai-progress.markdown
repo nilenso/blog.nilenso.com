@@ -210,7 +210,7 @@ I tend to not listen to podcasts or follow the news, but a tiny dose of it to fo
 ### Shawn Wang aka swyx ([twitter link](https://x.com/swyx)) / AI news by smol.ai ([link](https://news.smol.ai/))
 
 * swyx has been a great at curating industry trends on his [Latent Space](https://www.latent.space) newsletter, and seems to be the most popular promoter of the discipline of [AI Engineering](https://www.latent.space/p/ai-engineer).
-* But twitter is not for everyone and comes with downsides. For those people, I point to [AI news](https://news.smol.ai/), which compiles and summarises the latest in AI across all the platforms where notable conversations happen.
+* If you want to avoid twitter, I'd like to point to his daily [AI news](https://news.smol.ai/) site, which compiles and summarises the latest in AI across all the platforms where notable conversations happen.
 
 ### Dwarkesh Patel ([link](https://www.dwarkesh.com/))
 
