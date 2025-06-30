@@ -163,6 +163,23 @@ These are people who have contributed to the AI Engineering ecosystem in various
     * Of late, write-ups on programming with AI
 * A sample: [How I program with LLMs](https://crawshaw.io/blog/programming-with-llms), [How I program with Agents](https://crawshaw.io/blog/programming-with-agents)
 
+### Alexander Doria / Pierre Carl-Langlais ([link](https://vintagedata.org/blog/))
+
+* Trains LLMs at [Pleias](https://pleias.fr/).
+* Expect:
+    * Excellent posts that go into some details of training processes
+    * Observations and opinions on where the industry is heading
+* A sample: [The Model is the Product](https://vintagedata.org/blog/posts/model-is-the-product), [A Realistic AI Timeline](https://vintagedata.org/blog/posts/realistic-ai-timeline)
+
+### Nathan Lambert's "Interconnects" ([link](https://www.interconnects.ai/))
+
+* Machine Learning Researcher, Post-training lead at [Allen AI](https://allenai.org/)
+* Expect:
+    * Long-form technical analysis on "specific aspects of current AI training, deployment, systems, or impacts"
+    * High signal, opinionated takes and analysis on AI developments. I've particularly enjoyed the recent posts on RL.
+    * Curated reading lists.
+* A sample: [What comes next with Reinforcement Learning](https://www.interconnects.ai/p/what-comes-next-with-reinforcement), [Reinforcement learning with random rewards actually works with Qwen 2.5](https://www.interconnects.ai/p/reinforcement-learning-with-random)
+
 ## News and Media
 
 I tend to not listen to podcasts or follow the news, but a tiny dose of it to follow AI developments was warranted. These are my preferred sources.
