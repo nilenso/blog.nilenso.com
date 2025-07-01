@@ -284,3 +284,11 @@ It helps that my twitter feed has a lot of thoughtful commentary on particular a
 I actually find this kind of foraging quite fun, and I don't consider it as "work". I grew up on science fiction stories. Artificial Intelligence is something I've been fascinated with ever since I was a kid, and it's endlessly fascinating and awe-inspiring to see powerful AI being built piece by piece in front of me, within my lifetime.
 
 I hope this list gives you a starting point to get you excited the way I am.
+
+## Links
+
+I have made the above recommendations as a twitter / X list, which should make it easy to follow all the people above.
+
+[Link to list](https://x.com/i/lists/1939691972626878620).
+
+Coming soon: RSS-friendly list.
