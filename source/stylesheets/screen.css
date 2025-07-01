@@ -290,10 +290,6 @@ hr {
 /* CSS for article and its content */
 
 @media (min-width: 768px) {
-    article h1 {
-        line-height: 4.5rem !important;
-    }
-
     article h4 {
         line-height: 2.25rem;
     }
@@ -303,6 +299,16 @@ article {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.875rem;
+}
+
+article h2,
+article h3,
+article h4 {
+    font-family: Charter, serif;
+}
+
+article h1 {
+    margin-top: 16px;
 }
 
 article figure, article iframe {
@@ -328,7 +334,6 @@ article video,article .flash-video {
 article ul {
     margin-left: 2em;
     list-style-type: disc;
-    margin-bottom: 1.5rem;
 }
 
 article ol {
@@ -388,8 +393,9 @@ article h2 {
 }
 
 article h3 {
-    font-size: 1.5rem;
-    color: #666;
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 700;
     margin-bottom: 1.2rem;
     margin-top: 2rem;
 }
@@ -402,7 +408,8 @@ article h4 {
 }
 
 article p {
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 article .separator {
