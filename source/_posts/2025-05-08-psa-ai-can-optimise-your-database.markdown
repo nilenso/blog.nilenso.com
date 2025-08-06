@@ -270,7 +270,7 @@ After waiting a cool 13 minutes, I was met with a rather friendly output that ap
 (246 rows)</pre>
 </details>
 
-We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us with a [rather fine tool](explain.depesz.com) for dealing with Rather Friendly Outputs.
+We have the good folk such as Hubert "depesz" Lubaczewski who has blessed us with a [rather fine tool](https://explain.depesz.com) for dealing with Rather Friendly Outputs.
 
 ![explain.depesz.com](/images/blog/screenshot-2025-05-09-at-13.02.08.png "Sir depesz screenshot, honks red at me")
 
