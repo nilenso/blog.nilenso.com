@@ -25,13 +25,12 @@ And [Calvino et al](https://www.oecd.org/content/dam/oecd/en/publications/report
 
 Here’s a sample of the ripple effect with GPTs, in simple terms. The diffusion lag from one column to the next in number of years, is listed below it. The table is an approximation to give you an idea, and in reality tracking all this is fairly fuzzy.
 
-
-| Technology        | **1st Order Effects**                                                   | **2nd Order Effects**                                      |
-|-------------------|--------------------------------------------------------------------------|------------------------------------------------------------|
-| **Steam Engine**  | Trains, steamships<br>*40-60 years*                                     | Travel across countries, factory jobs<br>*10-30 years*     |
-| **Electricity**   | Light bulbs, electric motors<br>*5-15 years*                            | Home lighting, appliances, 24-hour cities<br>*15-30 years* |
-| **Semiconductors**| Microchips, personal computers<br>*10 years*                            | Smartphones, digital life, automation<br>*20-40 years*     |
-| **Internet**      | Web browsers, Wi-Fi<br>*10 years*                                       | Online shopping, social media, remote work<br>*5-15 years* |
+| Technology           | **1st Order Effects**                                                  | **2nd Order Effects**                                                        |
+| -------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Steam Engine**     | Trains, steamships<br>*40-60 years*                                    | Travel across countries, factory jobs<br>*10-30 years*                       |
+| **Electricity**      | Light bulbs, electric motors<br>*5-15 years*                           | Home lighting, appliances, 24-hour cities<br>*15-30 years*                   |
+| **Semiconductors**   | Microchips, personal computers<br>*10 years*                           | Smartphones, digital life, automation<br>*20-40 years*                       |
+| **Internet**         | Web browsers, Wi-Fi<br>*10 years*                                      | Online shopping, social media, remote work<br>*5-15 years*                   |
 | **AI (Transformer)** | LLMs, vision models, GPU boom, Fine tuning, Compression<br>*2-4 years* | Customer service automation, Agentic coding, Content creation<br>*3-6 years* |
 
 You can see the diffusion (another overloaded term, sorry) lags reduce over time, and with AI the diffusion lag is very low because a part of the distribution infrastructure, the internet, already exists, and is mature. There are still major gaps, for example with inference and compute scaling, that will take years to stabilise. 
@@ -40,7 +39,7 @@ Still, it’s the fastest GPT diffusion ever, we’re in the middle of it, and i
 
 It’s important to understand that rapid progress in science and technology alone isn’t enough to speed up economic diffusion. It’s a two-way street where R&D in AI labs has to drive economic growth, for the economic growth to invest more into R&D in AI labs. The state of the economy, the attitude of world leaders towards AI, can slow down, or speed up progress.
 
-![image.png](Why%20Does%20AI%20Feel%20So%20Different%202380f0425dae80be914bc138c40847eb/image.png)
+![a triad of science technology and economy](/images/blog/science-technology-economy.png)
 
 It’s not *just another GPT* though. It’s more.
 
@@ -53,7 +52,6 @@ These are all GPTs too, but of a different, more radical kind. Each of these hav
 The internet had these aspects too, especially evident in the [Solow Paradox](https://en.wikipedia.org/wiki/Productivity_paradox).
 
 > "You can see the computer age everywhere but in the productivity statistics."
-> 
 
 WSJ [wrote about it](https://archive.is/60M2P) recently. Andrej Karpathy wrote about this too, in his [power to the people article](https://karpathy.bearblog.dev/power-to-the-people/). The revolution with AI is apparent in the speed that AI took over google search as the way to access the internet. But the implications of accessible knowledge are far beyond replacing search engines.
 
@@ -74,16 +72,15 @@ It’s not *just the new internet* though.
 Thinking, or reasoning, is a defining aspect of humans. It’s the skill that differentiates us from animals. Immanuel Kant describes it as:
 
 > *Revolution der Denkart*
-revolution of the way of thinking
-> 
+> revolution of the way of thinking
 
 Through our history, we’ve had various landmarks in the centuries of evolution of human thinking abilities. And each of these has been a revolution that impacts our defining skill as a species.
 
-- Thinking by questioning (Socrates)
-- Thinking by logic (Aristotle)
-- Thinking by observing: Empiricism / Scientific Method (Bacon)
-- Thinking by heuristics and biases: System 1 and 2 (Kahneman)
-- Thinking by… augmentation? (AI)
+* Thinking by questioning (Socrates)
+* Thinking by logic (Aristotle)
+* Thinking by observing: Empiricism / Scientific Method (Bacon)
+* Thinking by heuristics and biases: System 1 and 2 (Kahneman)
+* Thinking by… augmentation? (AI)
 
 Even without AGI, AI is changing our way of thinking already.
 
@@ -122,7 +119,9 @@ Humans, software, and AI… they each build and use each other, and themselves. 
 
 There’s an autonomy slider on each edge here, and different kinds of tasks have different levels of autonomy. 
 
-![image.png](Why%20Does%20AI%20Feel%20So%20Different%202380f0425dae80be914bc138c40847eb/image%201.png)
+![a triad of humans, software and ai](/images/blog/humans-software-ai.png)
+
+
 
 And history doesn’t quite help us here, maybe fiction does. But yeah, we’re in fairly uncharted territory. If and when AGI does come, all bets are off.
 
@@ -146,17 +145,21 @@ What is your role in this revolution?
 
 ## Footnotes
 
-- [Vasant Dhar’s article](https://arxiv.org/pdf/2308.02558) on the paradigm shift in AI gives a good perspective of the paradigm shift in the science of AI, via Kuhn’s framework. Perhaps we’re indeed in the [later phases](https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions#Phases) of the paradigm shift in AI science where textbooks are rewritten and a new era is ushered.
-- Here are some examples that should get you in the mind space of a paradigm shift:
-    - Philosophic shifts
-        - Ptolemaic (earth at centre) to Copernican cosmology (sun at centre)
-        - Newtonian gravity (inverse square law) to Einstein’s general relativity (mc2)
-    - Operational shifts in programming
-        - Object oriented programming to Functional programming
-        - C family of languages to Lisp family of languages
-- The speed of diffusion is something else. ChatGPT had millions of users overnight. Google search and stackoverflow were superseded so quickly.
-- Because of the enigmatically stochastic nature of the AI, it’s not an exact science to apply or evolve it. So, it gives everyone (not just scientists) the opportunity to unlock its benefits. The effectiveness of LLMs is evident and relevant to science mostly because engineering (and everyone else too) tries to exploit it every way possible.
-    - This is the reason interpretability is big, it allows us to look behind the curtain.
-- I like build vs use as a framing for what you’re doing with AI. Karpathy too, made different videos for the general audience. One about building and another about using.
+* [Vasant Dhar’s article](https://arxiv.org/pdf/2308.02558) on the paradigm shift in AI gives a good perspective of the paradigm shift in the science of AI, via Kuhn’s framework. Perhaps we’re indeed in the [later phases](https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions#Phases) of the paradigm shift in AI science where textbooks are rewritten and a new era is ushered.
+* Here are some examples that should get you in the mind space of a paradigm shift:
+
+  * Philosophic shifts
+
+    * Ptolemaic (earth at centre) to Copernican cosmology (sun at centre)
+    * Newtonian gravity (inverse square law) to Einstein’s general relativity (mc2)
+  * Operational shifts in programming
+
+    * Object oriented programming to Functional programming
+    * C family of languages to Lisp family of languages
+* The speed of diffusion is something else. ChatGPT had millions of users overnight. Google search and stackoverflow were superseded so quickly.
+* Because of the enigmatically stochastic nature of the AI, it’s not an exact science to apply or evolve it. So, it gives everyone (not just scientists) the opportunity to unlock its benefits. The effectiveness of LLMs is evident and relevant to science mostly because engineering (and everyone else too) tries to exploit it every way possible.
+
+  * This is the reason interpretability is big, it allows us to look behind the curtain.
+* I like build vs use as a framing for what you’re doing with AI. Karpathy too, made different videos for the general audience. One about building and another about using.
 
 I'm grateful to Udit, Atharva and Deepa, who helped me think this through, and reviewed the writing too.
