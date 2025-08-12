@@ -11,7 +11,7 @@ It doesn’t fit into any of my existing mental models. I use it in every aspect
 
 ## It’s a new General Purpose Technology (GPT)
 
-Andrew Ng popularised [“AI is the new electricity”.](https://youtu.be/LCEmiRjPEtQ?si=lmrtLo7D463qMwRk&t=391) It’s not just any random analogy about a future possibility, it’s a well researched reality. It’s useful to understand what this really means. 
+Andrew Ng popularised [“AI is the new electricity”.](https://youtu.be/5p248yoa3oE?si=Sa_v-JPrS9i7dGXX&t=70) It’s not just any random analogy about a future possibility, it’s a well researched reality. It’s useful to understand what this really means. 
 
 When [science](https://en.wikipedia.org/wiki/Normal_science) results in a breakthrough like the steam engine, or electricity, or the internet, or the transformer, it’s called a paradigm shift, or a scientific revolution. Thomas Kuhn defines and explains this well, in [The Structure of Scientific Revolutions](https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions), 1962. And the paradigm shifts in AI as a science, have been studied via Kuhn’s framework in [2012](https://journals.sagepub.com/doi/abs/10.3233/AIC-130582), and [2023](https://arxiv.org/pdf/2308.02558).
 
@@ -20,29 +20,19 @@ However, a paradigm shift in science also causes paradigm shifts in engineering.
 While Kuhn doesn’t go into it, the technological diffusion, and the economic impact of scientific revolutions are better studied through the GPT (general purpose technology) paper from [Bresnahan & Trajtenberg in 1995](https://www.nber.org/papers/w4148). 
 
 > "General Purpose Technologies (GPTs) are technologies that can affect an entire economy (usually at a national or global level). They have the potential for pervasive use in a wide range of sectors and, as they improve, they contribute to overall productivity growth."
-> 
 
 And [Calvino et al](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/is-generative-ai-a-general-purpose-technology_6c76e7b2/704e2d12-en.pdf) in June 2025, finds that AI meets the key criteria of a General Purpose Technology. It’s pervasive, rapidly improving, enables new products, services and research methodologies, and enhances other sectors’ R&D and productivity.
 
 Here’s a sample of the ripple effect with GPTs, in simple terms. The diffusion lag from one column to the next in number of years, is listed below it. The table is an approximation to give you an idea, and in reality tracking all this is fairly fuzzy.
 
-| Technology | **1st Order Effects** | **2nd Order Effects** |
-| --- | --- | --- |
-| **Steam Engine** | Trains, steamships
-*40-60 years* | Travel across countries, factory jobs
-*10-30 years* |
-| **Electricity** | Light bulbs, electric motors
-*5-15 years* | Home lighting, appliances, 24-hour cities
-*15-30 years* |
-| **Semiconductors** | Microchips, personal computers
-*10 years* | Smartphones, digital life, automation
-*20-40 years* |
-| **Internet** | Web browsers, Wi-Fi
-*10 years* | Online shopping, social media, remote work
-*5-15 years* |
-| **AI (Transformer)** | LLMs, vision models, GPU boom, Fine tuning, Compression
-*2-4 years* | Customer service automation, Agentic coding, Content creation
-*3-6 years* |
+
+| Technology        | **1st Order Effects**                                                   | **2nd Order Effects**                                      |
+|-------------------|--------------------------------------------------------------------------|------------------------------------------------------------|
+| **Steam Engine**  | Trains, steamships<br>*40-60 years*                                     | Travel across countries, factory jobs<br>*10-30 years*     |
+| **Electricity**   | Light bulbs, electric motors<br>*5-15 years*                            | Home lighting, appliances, 24-hour cities<br>*15-30 years* |
+| **Semiconductors**| Microchips, personal computers<br>*10 years*                            | Smartphones, digital life, automation<br>*20-40 years*     |
+| **Internet**      | Web browsers, Wi-Fi<br>*10 years*                                       | Online shopping, social media, remote work<br>*5-15 years* |
+| **AI (Transformer)** | LLMs, vision models, GPU boom, Fine tuning, Compression<br>*2-4 years* | Customer service automation, Agentic coding, Content creation<br>*3-6 years* |
 
 You can see the diffusion (another overloaded term, sorry) lags reduce over time, and with AI the diffusion lag is very low because a part of the distribution infrastructure, the internet, already exists, and is mature. There are still major gaps, for example with inference and compute scaling, that will take years to stabilise. 
 
@@ -168,3 +158,5 @@ What is your role in this revolution?
 - Because of the enigmatically stochastic nature of the AI, it’s not an exact science to apply or evolve it. So, it gives everyone (not just scientists) the opportunity to unlock its benefits. The effectiveness of LLMs is evident and relevant to science mostly because engineering (and everyone else too) tries to exploit it every way possible.
     - This is the reason interpretability is big, it allows us to look behind the curtain.
 - I like build vs use as a framing for what you’re doing with AI. Karpathy too, made different videos for the general audience. One about building and another about using.
+
+I'm grateful to Udit, Atharva and Deepa, who helped me think this through, and reviewed the writing too.
