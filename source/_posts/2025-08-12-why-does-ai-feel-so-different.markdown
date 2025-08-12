@@ -142,6 +142,9 @@ What is your role in this revolution?
 
 ## Footnotes
 
+* Because of the enigmatically stochastic nature of the AI, it’s not an exact science to apply or evolve it. So, it gives everyone (not just scientists) the opportunity to unlock its benefits. The effectiveness of LLMs is evident and relevant to science mostly because engineering (and everyone else too) tries to exploit it every way possible.
+
+  * This is the reason interpretability is big, it allows us to look behind the curtain.
 * [Vasant Dhar’s article](https://arxiv.org/pdf/2308.02558) on the paradigm shift in AI gives a good perspective of the paradigm shift in the science of AI, via Kuhn’s framework. Perhaps we’re indeed in the [later phases](https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions#Phases) of the paradigm shift in AI science where textbooks are rewritten and a new era is ushered.
 * Here are some examples that should get you in the mind space of a paradigm shift:
 
@@ -154,9 +157,6 @@ What is your role in this revolution?
     * Object oriented programming to Functional programming
     * C family of languages to Lisp family of languages
 * The speed of diffusion is something else. ChatGPT had millions of users overnight. Google search and stackoverflow were superseded so quickly.
-* Because of the enigmatically stochastic nature of the AI, it’s not an exact science to apply or evolve it. So, it gives everyone (not just scientists) the opportunity to unlock its benefits. The effectiveness of LLMs is evident and relevant to science mostly because engineering (and everyone else too) tries to exploit it every way possible.
-
-  * This is the reason interpretability is big, it allows us to look behind the curtain.
 * I like build vs use as a framing for what you’re doing with AI. Karpathy too, made different videos for the general audience. One about building and another about using.
 
 *I'm grateful to Udit, Atharva and Deepa, who helped me think this through, and reviewed the writing too.*
