@@ -41,7 +41,7 @@ Still, it’s the fastest GPT diffusion ever, we’re in the middle of it, and i
 
 It’s important to understand that rapid progress in science and technology alone isn’t enough to speed up economic diffusion. It’s a two-way street where R&D in AI labs has to drive economic growth, for the economic growth to invest more into R&D in AI labs. The state of the economy, the attitude of world leaders towards AI, can slow down, or speed up progress.
 
-![a triad of science technology and economy](/images/blog/science-technology-economy.png)
+![a triad of science, technology and economy](/images/blog/science-technology-economy.png)
 
 </div>
 
@@ -76,6 +76,7 @@ It’s not *just the new internet* though.
 Thinking, or reasoning, is a defining aspect of humans. It’s the skill that differentiates us from animals. Immanuel Kant describes it as:
 
 > *Revolution der Denkart*
+> \
 > revolution of the way of thinking
 
 Through our history, we’ve had various landmarks in the centuries of evolution of human thinking abilities. And each of these has been a revolution that impacts our defining skill as a species.
@@ -123,7 +124,7 @@ AGI isn’t here yet, and AI isn’t building itself without humans. But, AI is 
 
 Humans, software, and AI… they each build and use each other, and themselves. Well okay, no one is building humans (yet). But humans build and use Software and AI. Software builds and uses AI. AI builds and uses Software. Arguably, Software and AI use humans too. There’s an autonomy slider on each edge here, and different kinds of tasks have different levels of autonomy. 
 
-![a triad of humans, software and ai](/images/blog/humans-software-ai.png)
+![a triad of humans, AI and software](/images/blog/humans-software-ai.png)
 
 </div>
 
