@@ -166,4 +166,4 @@ What is your role in this revolution?
   * This is the reason interpretability is big, it allows us to look behind the curtain.
 * I like build vs use as a framing for what you’re doing with AI. Karpathy too, made different videos for the general audience. One about building and another about using.
 
-I'm grateful to Udit, Atharva and Deepa, who helped me think this through, and reviewed the writing too.
+*I'm grateful to Udit, Atharva and Deepa, who helped me think this through, and reviewed the writing too.*
