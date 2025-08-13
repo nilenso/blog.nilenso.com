@@ -25,6 +25,8 @@ And [Calvino et al](https://www.oecd.org/content/dam/oecd/en/publications/report
 
 Here’s a sample of the ripple effect with GPTs, in simple terms. The diffusion lag from one column to the next in number of years, is listed below it. The table is an approximation to give you an idea, and in reality tracking all this is fairly fuzzy.
 
+<div class="full-width-table" markdown="1">
+
 | Technology           | **1st Order Effects**                                                  | **2nd Order Effects**                                                        |
 | -------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **Steam Engine**     | Trains, steamships<br>*40-60 years*                                    | Travel across countries, factory jobs<br>*10-30 years*                       |
@@ -33,14 +35,17 @@ Here’s a sample of the ripple effect with GPTs, in simple terms. The diffusion
 | **Internet**         | Web browsers, Wi-Fi<br>*10 years*                                      | Online shopping, social media, remote work<br>*5-15 years*                   |
 | **AI (Transformer)** | LLMs, vision models, GPU boom, Fine tuning, Compression<br>*2-4 years* | Customer service automation, Agentic coding, Content creation<br>*3-6 years* |
 
+</div>
 You can see the diffusion (another overloaded term, sorry) lags reduce over time, and with AI the diffusion lag is very low because a part of the distribution infrastructure, the internet, already exists, and is mature. There are still major gaps, for example with inference and compute scaling, that will take years to stabilise. 
 
 Still, it’s the fastest GPT diffusion ever, we’re in the middle of it, and it’s changing the world around us. And the sheer scale of it is staggering. 10s of thousands of researchers and engineers across the world, burning billions of dollars with governments and mega-corps, to make progress happen. It is remarkable. It’s like the world coming up with covid vaccines all over again, every few weeks.
 
+<div class="two-columns-text-and-image" markdown="1">
 It’s important to understand that rapid progress in science and technology alone isn’t enough to speed up economic diffusion. It’s a two-way street where R&D in AI labs has to drive economic growth, for the economic growth to invest more into R&D in AI labs. The state of the economy, the attitude of world leaders towards AI, can slow down, or speed up progress.
 
 ![a triad of science, technology and economy](/images/blog/science-technology-economy.png)
 
+</div>
 It’s not *just another GPT* though. It’s more.
 
 ## It’s a paradigm shift in accessing knowledge
@@ -116,9 +121,12 @@ Code is data is code. Lispers get this, its turtles all the way down. Let’s wa
 
 AGI isn’t here yet, and AI isn’t building itself without humans. But, AI is already fairly bootstrapped. Kimi K2 is [LLMs all the way down](https://x.com/_ScottCondron/status/1948842670949904541). This is one of the reasons the technology is evolving really quickly. AI, Software, and Humans, are together enhanced by AI.
 
+<div class="two-columns-text-and-image" markdown="1">
+
 Humans, software, and AI… they each build and use each other, and themselves. Well okay, no one is building humans (yet). But humans build and use Software and AI. Software builds and uses AI. AI builds and uses Software. Arguably, Software and AI use humans too. There’s an autonomy slider on each edge here, and different kinds of tasks have different levels of autonomy. 
 
 ![a triad of humans, AI and software](/images/blog/humans-software-ai.png)
+</div>
 
 And history doesn’t quite help us here, maybe fiction does. But yeah, we’re in fairly uncharted territory. If and when AGI does come, all bets are off.
 

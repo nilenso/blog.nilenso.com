@@ -659,3 +659,25 @@ th:not(:first-child) {
     object-fit: cover;
     display: block;
 }
+
+.two-columns-text-and-image {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+ .two-columns-text-and-image > :nth-child(2) { 
+  flex: 4;  
+}
+
+ .two-columns-text-and-image > :nth-child(1) { 
+  flex: 10;  
+}
+
+.full-width-table table {
+    width: 100%;
+}
+
+.full-width-table :not(:first-child), .full-width-table :not(:first-child) {
+    text-align: left;
+}
