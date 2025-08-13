@@ -661,6 +661,15 @@ th:not(:first-child) {
 }
 
 .two-columns-text-and-image {
-    display: flex;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
+ .two-columns-text-and-image > :nth-child(2) { 
+  flex: 4;  
+}
+
+ .two-columns-text-and-image > :nth-child(1) { 
+  flex: 10;  
+}
