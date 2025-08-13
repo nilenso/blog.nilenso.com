@@ -673,3 +673,11 @@ th:not(:first-child) {
  .two-columns-text-and-image > :nth-child(1) { 
   flex: 10;  
 }
+
+.full-width-table table {
+    width: 100%;
+}
+
+.full-width-table :not(:first-child), .full-width-table :not(:first-child) {
+    text-align: left;
+}
