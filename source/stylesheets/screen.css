@@ -659,3 +659,8 @@ th:not(:first-child) {
     object-fit: cover;
     display: block;
 }
+
+.two-columns-text-and-image {
+    display: flex;
+}
+
