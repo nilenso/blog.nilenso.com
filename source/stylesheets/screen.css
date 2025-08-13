@@ -660,6 +660,10 @@ th:not(:first-child) {
     display: block;
 }
 
+@media (max-width: 700px) {
+  .two-columns-text-and-image { flex-direction: column; }
+}
+
 .two-columns-text-and-image {
   display: flex;
   gap: 1rem;
