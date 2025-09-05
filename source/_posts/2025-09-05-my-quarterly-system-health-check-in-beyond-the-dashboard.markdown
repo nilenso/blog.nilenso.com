@@ -5,7 +5,7 @@ author: Srihari Sriraman
 created_at: 2025-09-05 00:00:00 UTC
 layout: post
 ---
-As a practice, it is essential to periodically take a few steps back from the day to day and reflect on where we are against our strategic goals. If you’re an engineering leader, a head of engineering, a director, or a VP, you likely have a recurring meeting to this effect.
+It is essential to periodically take a few steps back from the day to day and reflect on where we are against our strategic goals. If you’re an engineering leader, a head of engineering, a director, or a VP, you likely have a recurring meeting to this effect.
 
 In this post, I propose a structure for this operational exercise (complementing a business review) that lasts 2-4 hours, every month or quarter. I see quality as solving for the Pareto front with the tangible dimensions of reliability, performance, cost, delivery and security, and the more intangible dimensions of simplicity and social structures. For each dimension, go through the list of questions below and try to answer them together. The questions are:
 
