@@ -1,5 +1,5 @@
 ---
-title: My quarterly system health check-in beyond the dashboard
+title: "My Quarterly System Health Check-in: Beyond The Dashboard"
 kind: article
 author: Srihari Sriraman
 created_at: 2025-09-05 00:00:00 UTC
