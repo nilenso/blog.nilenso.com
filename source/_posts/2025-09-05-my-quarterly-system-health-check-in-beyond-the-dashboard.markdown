@@ -160,4 +160,4 @@ The questions will make conversations happen, but it is up to you to truly liste
 
 Also, I’m also assuming you’re doing the work of ensuring the work is focused on the right problem to begin with. Climbing a ladder fast isn’t useful if it’s against the wrong wall. 
 
-*Thanks to Atharva for his thought review of this post.*
+*Thanks to Atharva for his thoughtful review of this post.*
