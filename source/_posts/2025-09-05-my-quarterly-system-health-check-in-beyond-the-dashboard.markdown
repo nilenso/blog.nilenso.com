@@ -145,7 +145,7 @@ In order to enable high ownership and agency, we should be willing to restructur
     - Do users build on the system by composing and configuring, or do they need to collaborate and coordinate with us to get work done?
     - Which people have “meetings all day”, and is their time best spent that way? Does it compensating for poor system or org structure?
     - Which processes would we drop if we trusted everyone like we trust ourselves?
-    - Is there a [CONTRIBUTING.md](http://contributing.md/) defined?
+    - Is there a CONTRIBUTING.md defined?
     - What is the average number of PRs open at any point in time?
 
 ## Cost, Security
