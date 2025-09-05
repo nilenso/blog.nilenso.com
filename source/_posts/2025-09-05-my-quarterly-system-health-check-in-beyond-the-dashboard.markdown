@@ -5,7 +5,7 @@ author: Srihari Sriraman
 created_at: 2025-09-05 00:00:00 UTC
 layout: post
 ---
-As a practice, it is essential to periodically take a few steps back from the day to day and reflect on where we are against our strategic goals. If you’re an engineering leader, a head of engineering, a director, or a VP, you likely have a recurring meeting to this effect.
+It is essential to periodically take a few steps back from the day to day and reflect on where we are against our strategic goals. If you’re an engineering leader, a head of engineering, a director, or a VP, you likely have a recurring meeting to this effect.
 
 In this post, I propose a structure for this operational exercise (complementing a business review) that lasts 2-4 hours, every month or quarter. I see quality as solving for the Pareto front with the tangible dimensions of reliability, performance, cost, delivery and security, and the more intangible dimensions of simplicity and social structures. For each dimension, go through the list of questions below and try to answer them together. The questions are:
 
@@ -145,7 +145,7 @@ In order to enable high ownership and agency, we should be willing to restructur
     - Do users build on the system by composing and configuring, or do they need to collaborate and coordinate with us to get work done?
     - Which people have “meetings all day”, and is their time best spent that way? Does it compensating for poor system or org structure?
     - Which processes would we drop if we trusted everyone like we trust ourselves?
-    - Is there a [CONTRIBUTING.md](http://contributing.md/) defined?
+    - Is there a CONTRIBUTING.md defined?
     - What is the average number of PRs open at any point in time?
 
 ## Cost, Security
