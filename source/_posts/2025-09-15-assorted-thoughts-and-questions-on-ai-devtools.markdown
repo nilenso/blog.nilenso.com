@@ -6,3 +6,9 @@ created_at: 2025-09-15 00:00:00 UTC
 layout: post
 ---
 TODO
+
+* Frameworks
+    * Why use frameworks?
+
+* Gateways and API standards
+    * Why use 
