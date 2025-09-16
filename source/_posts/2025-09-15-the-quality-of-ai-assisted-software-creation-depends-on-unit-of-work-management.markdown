@@ -34,6 +34,8 @@ Breaking down your task to "right-sized" units of work, whose description has ju
 
 ## The right sized unit of work controls the propagation of errors
 
+If per-action error rate is p and a task needs k actions, success ≈ (1-p)^k. Failure ≈ 1-(1-p)^k. With p=0.01, k=100 → 1-0.99^{100}\approx0.634
+
 Task horizons from METR. 50% error rates etc.
 
 Error propagations.
