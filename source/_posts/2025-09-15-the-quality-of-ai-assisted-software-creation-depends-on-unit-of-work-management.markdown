@@ -28,7 +28,7 @@ Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-
 
 The best AI-assisted craftsmen are often thinking about the design and arrangement of their context to get the AI to one-shot a solution. This is tricky and effortful, contrary to what the AI coding hype suggests.
 
-If you don't provide the necessary information in the context to do a good job, your AI will hallucinate or generate code that is not congruent with the practices of your codebase. Fill up the context too much information, and the quality of your output degrades, because of a lack of focused attention.
+If you don't provide the necessary information in the context to do a good job, your AI will hallucinate or generate code that is not congruent with the practices of your codebase. Fill up the context with too much information, and [the quality of your output degrades](https://research.trychroma.com/context-rot), because of a lack of focused attention.
 
 Context rot / Context degradation benchmarks
 Compaction tips from the claude code team (and other prominent people) that support this claim. also worth referencing dbreunig's post on types of context problems: clash, poisoning, confusion, distraction.
