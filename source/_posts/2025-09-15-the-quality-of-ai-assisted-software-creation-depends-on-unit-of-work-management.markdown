@@ -24,8 +24,11 @@ I like Anthropic's visualisation of the context window.
 
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence of the quality of your generated output.
 
-Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html#context-distraction) on all kinds of things that often go wrong your context. I will summarise his descriptions:
-* Context Poisoning is when a hallucination or other error makes it into the context, where it is repeatedly referenced.
+Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that often go wrong your context and the various techniques to fix them.
+
+The best AI-assisted craftsmen are often thinking about the design and arrangement of their context to get the AI to one-shot a solution. This is tricky and effortful, contrary to what the AI coding hype suggests.
+
+If you don't provide the necessary information in the context to do a good job, your AI will hallucinate or generate code that is not congruent with the practices of your codebase. Fill up the context too much information, and the quality of your output degrades, because of a lack of focused attention.
 
 Context rot / Context degradation benchmarks
 Compaction tips from the claude code team (and other prominent people) that support this claim. also worth referencing dbreunig's post on types of context problems: clash, poisoning, confusion, distraction.
