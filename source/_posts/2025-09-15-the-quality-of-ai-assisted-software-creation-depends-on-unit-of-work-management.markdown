@@ -1,11 +1,13 @@
 ---
-title: The quality of AI-assisted software creation depends on unit of work management
+title: The quality of AI-assisted software depends on unit of work management
 kind: article
 author: Atharva Raykar
 created_at: 2025-09-15 00:00:00 UTC
 post_url: ai-assisted-unit-of-work-management
 layout: post
 ---
+
+
 Recap of the the AI assisted engineering post that Karpathy cited to bring up the point about keeping AI on a leash.
 
 what's changed since:
