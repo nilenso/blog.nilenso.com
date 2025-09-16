@@ -32,6 +32,8 @@ If you don't provide the necessary information in the context to do a good job, 
 
 Breaking down your task to "right-sized" units of work, whose description has just the right level and detail of context is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
 
+## The right sized unit of work controls the propagation of errors
+
 Task horizons from METR. 50% error rates etc.
 
 Error propagations.
