@@ -6,12 +6,13 @@ created_at: 2025-09-15 00:00:00 UTC
 post_url: ai-assisted-unit-of-work-management
 layout: post
 ---
+AI-assisted programming is an emerging craft. When I was new to this craft, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
+
+A couple of months ago, I had written about what some of that looked like. I want to expand on it, in a time where more "agentic" harnesses like Claude Code and Codex are becoming increasingly popular.
+
+Andrej Karpathy, while referencing that article, described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint—work on small chunks of a single concrete thing.
 
 
-Recap of the the AI assisted engineering post that Karpathy cited to bring up the point about keeping AI on a leash.
-
-what's changed since:
-there are now agents.
 
 Context engineering opened up vocabulary to better describe how AI applications must be developed.
 
