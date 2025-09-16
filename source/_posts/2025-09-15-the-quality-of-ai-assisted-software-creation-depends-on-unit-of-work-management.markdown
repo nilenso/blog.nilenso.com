@@ -18,6 +18,15 @@ It is clear that the craft of AI-assisted software creation is ultimately about 
 
 I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the main "canvas" against which our AI is generating code.
 
+I like Anthropic's visualisation of the context window.
+
+![](https://mintcdn.com/anthropic/PF_69UDRSEsLpN9D/images/context-window.svg?fit=max&auto=format&n=PF_69UDRSEsLpN9D&q=85&s=0e62b88b8d27b13a38dd2261151bada6)
+
+The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence of the quality of your generated output.
+
+Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html#context-distraction) on all kinds of things that often go wrong your context. I will summarise his descriptions:
+* Context Poisoning is when a hallucination or other error makes it into the context, where it is repeatedly referenced.
+
 Context rot / Context degradation benchmarks
 Compaction tips from the claude code team (and other prominent people) that support this claim. also worth referencing dbreunig's post on types of context problems: clash, poisoning, confusion, distraction.
 
