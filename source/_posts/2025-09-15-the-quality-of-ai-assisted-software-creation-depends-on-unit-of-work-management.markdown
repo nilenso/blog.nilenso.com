@@ -12,9 +12,11 @@ A couple of months ago, I had written about what some of that looked like. I wan
 
 Andrej Karpathy, while referencing that article, described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint—work on small chunks of a single concrete thing.
 
+It is clear that the craft of AI-assisted software creation is ultimately about correctly managing units of work.
 
+## Context Engineering is also important for creating software
 
-Context engineering opened up vocabulary to better describe how AI applications must be developed.
+I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the main "canvas" against which our AI is generating code.
 
 Context rot / Context degradation benchmarks
 Compaction tips from the claude code team (and other prominent people) that support this claim. also worth referencing dbreunig's post on types of context problems: clash, poisoning, confusion, distraction.
