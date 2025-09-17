@@ -38,6 +38,8 @@ Let's say your AI agent has a 5% chance of making a mistake. I'm not just referr
 
 In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1 – 0.95)<sup>10</sup> = 59.9% chance of success. Not very high.
 
+[Utkarsh Kanwat in his blog post](https://utkarshkanwat.com/writing/betting-against-agents) has made the same argument. His conclusion was that any AI agent would need some kind of human-verifiable gating mechanism at each step for a long-horizon task.
+
 <table>
   <thead>
     <tr>
