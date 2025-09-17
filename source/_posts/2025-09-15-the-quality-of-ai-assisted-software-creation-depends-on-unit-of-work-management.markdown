@@ -26,7 +26,9 @@ Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-
 
 The best AI-assisted craftsmen are often thinking about the design and arrangement of their context to get the AI to one-shot a solution. This is tricky and effortful, contrary to what the AI coding hype suggests.
 
-If you don't provide the necessary information in the context to do a good job, your AI will hallucinate or generate code that is not congruent with the practices of your codebase. Fill up the context with too much information, and [the quality of your output degrades](https://research.trychroma.com/context-rot), because of a lack of focused attention.
+If you don't provide the necessary information in the context to do a good job, your AI will hallucinate or generate code that is not congruent with the practices of your codebase. It is especially brittle at integration points of your software system.
+
+Fill up the context with too much information, and [the quality of your output degrades](https://research.trychroma.com/context-rot), because of a lack of focused attention.
 
 Breaking down your task to "right-sized" units of work, whose description has just the right level and detail of context is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
 
