@@ -64,7 +64,7 @@ METR recently published a popular chart [describing how AI models are getting be
 
 ![Chart showing results of METR's chart showing task horizons increasing over time](/images/blog/metr.png)
 
-Doesn't that seem suspicious to you? As a regular user of agentic coding tools (at the moment Codex CLI), I'll eat my shoe if GPT-5 starts nailing my tasks 99.9% of the time.
+Doesn't that seem suspicious to you? As a regular user of agentic coding tools (my current one is Codex CLI), I'll eat my shoe if GPT-5 starts nailing my tasks 99.9% of the time.
 
 My intuition derived from experience tells me that even the best AI right now isn't even 95% likely to be correct. So where is the difference coming from? It needs a closer look at the actual paper:
 
