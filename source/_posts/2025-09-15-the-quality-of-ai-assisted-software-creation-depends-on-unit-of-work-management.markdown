@@ -109,7 +109,7 @@ Deliverable business value is also what all stakeholders can understand and work
 | Amazon Kiro Spec | small     | technical value             |
 | User Story       | small     | business value              |
 
-Most AI agents today have well-functioning "planning" modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work are composable—they can be planned with existing planning tools that primarily exist to keep the agent on rails. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
+Most AI agents today have well-functioning "planning" modes. These are good at keeping the agent on rails, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work can be planned with existing planning tools. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
 
 Of course, plain old User Stories as described in the Agile canon is not sufficient. It needs to be accompanied by "something more" that can nudge the agents to gather the right context that serves the business value outcome of the stories. What that "something more" could look like is something we hope to answer in the coming months.
 
