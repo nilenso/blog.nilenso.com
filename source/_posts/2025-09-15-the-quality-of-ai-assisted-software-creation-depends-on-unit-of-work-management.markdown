@@ -41,7 +41,7 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
 <table>
   <thead>
     <tr>
-      <th rowspan="2">Per-action error rate</th>
+      <th rowspan="2">Per-action<br>error rate</th>
       <th colspan="4">Overall Error Rate</th>
     </tr>
     <tr>
