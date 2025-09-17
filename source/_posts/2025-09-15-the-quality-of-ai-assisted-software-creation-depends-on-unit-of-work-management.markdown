@@ -70,6 +70,8 @@ My intuition derived from experience tells me that even the best AI right now is
 
 > Our tasks typically use environments that do not significantly change unless directly acted upon by the agent. In contrast, real tasks often occur in the context of a changing environment.
 >
+> \[...]
+>
 > Similarly, very few of our tasks are punishing of single mistakes. This is in part to reduce the expected cost of collecting human baselines.
 
 This is not at all like the tasks I am doing!
