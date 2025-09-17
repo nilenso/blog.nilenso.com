@@ -60,7 +60,6 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
   </tbody>
 </table>
 
-
 METR recently published a popular chart [describing how AI models are getting better at long-horizon tasks](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/). Currently GPT-5 is at the top of the leaderboard, where it can do about 2-hour long tasks at around a 70% success rate. Working backwards (let's say a 2 hour task is 50+ turns) we are talking about a sub-1% error rate per action.
 
 ![Chart showing results of METR's chart showing task horizons increasing over time](/images/blog/metr.png)
@@ -83,7 +82,7 @@ By METR's definitions, the kind of software engineering work that I'm mostly exp
 
 > An increase in task messiness by 1 point reduces mean success rates by roughly 8.1%
 
-Extrapolating from METR's measured effect of messiness, GPT-5 would go from 70% to around 40% success rate for 2 hour tasks. This maps to my experienced reality.
+Extrapolating from METR's measured effect of messiness, GPT-5 would go from 70% to around 40% success rate for 2-hour tasks. This maps to my experienced reality.
 
 I am not certain that pure intelligence can solve for messiness. Robustness to environmental chaos and the fuzzy nature of reality is fundamentally about managing context well. Until we find the magic sauce that solves for this, it is clear that we need a workflow that can break down our problem into units of work, with verifiable checkpoints to manage the compounding of errors.
 
