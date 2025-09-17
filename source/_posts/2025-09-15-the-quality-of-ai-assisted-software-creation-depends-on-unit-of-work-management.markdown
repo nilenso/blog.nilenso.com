@@ -18,7 +18,7 @@ I like the term [context engineering](https://simonwillison.net/2023/Jan/23/rile
 
 ![Anthropic's visualisation of a context window filling up for each turn until it exceeds the window limit](/images/blog/context-window.jpg)
 
-The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence of the quality of your generated output.
+The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence on the quality of your generated output.
 
 Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong your context and the various techniques to fix them.
 
