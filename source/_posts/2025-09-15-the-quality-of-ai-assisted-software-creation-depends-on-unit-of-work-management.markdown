@@ -16,9 +16,9 @@ Andrej Karpathy, while referencing my earlier article on this topic, described t
 
 I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
 
-I like Anthropic's visualisation of the context window.
 
-![](https://mintcdn.com/anthropic/PF_69UDRSEsLpN9D/images/context-window.svg?fit=max&auto=format&n=PF_69UDRSEsLpN9D&q=85&s=0e62b88b8d27b13a38dd2261151bada6)
+![Anthropic's visualisation of a context window filling up for each turn until it exceeds the window limit](/images/blog/context-window.jpg)
+
 
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence of the quality of your generated output.
 
@@ -69,7 +69,7 @@ Doesn't that seem suspicious to you? As a regular user of agentic coding tools (
 My intuition derived from experience tells me that even the best AI right now isn't even 95% likely to be correct. So where is the difference coming from? It needs a closer look at the actual paper:
 
 > Our tasks typically use environments that do not significantly change unless directly acted upon by the agent. In contrast, real tasks often occur in the context of a changing environment.
-
+>
 > Similarly, very few of our tasks are punishing of single mistakes. This is in part to reduce the expected cost of collecting human baselines.
 
 This is not at all like the tasks I am doing!
@@ -84,7 +84,7 @@ Extrapolating from METR's measured effect of messiness, GPT-5 would go from 70% 
 
 I am not certain that pure intelligence can solve for messiness. Robustness to environmental chaos and the fuzzy nature of reality is fundamentally about managing context well. Until we find the magic sauce that solves for this, it is clear that we need a workflow that can break down our problem into units of work, with verifiable checkpoints to manage the compounding of errors.
 
-These verifiable checkpoints need to be _legible to humans_.
+These verifiable checkpoints need to be *legible to humans*.
 
 (diagram of nodes with verifiable checkpoints)
 
@@ -98,12 +98,12 @@ Software engineers have already defined a unit of work that provides business va
 
 Deliverable business value is also what all stakeholders can understand and work with. Software is not built in a vacuum by developers—it needs the coordination of teams, product owners, business people and users. The fact that AI agents work in their own context environment separate from the other stakeholders hurts effectiveness and transfer of its benefits. I think this is an important gap that needs to be bridged.
 
-||unit size|outcome of completion|
-|-|-|-|
-|TODO item|small|incremental technical value|
-|"Plan Mode"|large|technical value|
-|Amazon Kiro Spec|small|technical value|
-|User Story|small|business value|
+|                  | unit size | outcome of completion       |
+| ---------------- | --------- | --------------------------- |
+| TODO item        | small     | incremental technical value |
+| "Plan Mode"      | large     | technical value             |
+| Amazon Kiro Spec | small     | technical value             |
+| User Story       | small     | business value              |
 
 Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work are composable—they can be planned with existing planning tools that primarily exist to keep the agent on rails. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
 
