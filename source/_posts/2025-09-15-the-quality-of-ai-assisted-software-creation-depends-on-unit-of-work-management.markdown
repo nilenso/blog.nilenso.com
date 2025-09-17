@@ -84,7 +84,7 @@ By METR's definitions, the kind of software engineering work that I'm mostly exp
 
 Extrapolating from METR's measured effect of messiness, GPT-5 would go from 70% to around 40% success rate for 2-hour tasks. This maps to my experienced reality.
 
-I am not certain that pure intelligence can solve for messiness. Robustness to environmental chaos and the fuzzy nature of reality is fundamentally about managing context well. Until we find the magic sauce that solves for this, it is clear that we need a workflow that can break down our problem into units of work, with verifiable checkpoints to manage the compounding of errors.
+I am not certain that pure intelligence can solve for messiness. Robustness to environmental chaos and the fuzzy nature of reality is fundamentally about managing context well. Until we find the magic sauce that solves this, it is clear that we need a workflow that can break down our problem into units of work, with verifiable checkpoints to manage the compounding of errors.
 
 These verifiable checkpoints need to be *legible to humans*.
 
