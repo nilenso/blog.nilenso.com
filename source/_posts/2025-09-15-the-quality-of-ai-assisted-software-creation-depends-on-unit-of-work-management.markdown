@@ -74,7 +74,7 @@ My intuition derived from experience tells me that even the best AI right now is
 >
 > Similarly, very few of our tasks are punishing of single mistakes. This is in part to reduce the expected cost of collecting human baselines.
 
-This is not at all like the tasks I am doing!
+This is not at all like the tasks I am doing.
 
 METR acknowledges the messiness of the real world. They have come up with a "messiness rating" for their tasks, and the "mean messiness" of their tasks is 3.2/16. 
 
