@@ -59,17 +59,21 @@ My intuition derived from experience tells me that even the best AI right now is
 
 This is not at all like the tasks I am doing!
 
-Even if it is really intelligent, access to the right context will lead to an error and that error will propagate.
+METR acknowledges the messiness of the real world. They have come up with a "messiness rating" for their tasks, and the "mean messiness" of their tasks is 3.2/16. 
 
-This looks extremely impressive
+By METR's definitions, the kind of software engineering work that I'm mostly exposed to would score at least around 7-8, given that software engineering projects are path-dependent, dynamic and without clear counterfactuals.
 
-Task horizons from METR. 50% error rates etc.
+> An increase in task messiness by 1 point reduces mean success rates by roughly 8.1%
 
-Error propagations.
+Extrapolating from METR's measured effect of messiness, GPT-5 would go from 70% to around 40% success rate for 2 hour tasks. This maps to my experienced reality.
 
-Therefore the important thing is to break it down to units of work.
+I am not certain that pure intelligence can solve for messiness. Robustness to environmental chaos and the fuzzy nature of reality is fundamentally about managing context well. Until we find the magic sauce that solves for this, it is clear that we need a workflow that can break down our problem into units of work, with verifiable checkpoints to manage the compounding of errors.
 
-What is the correct unit of work?
+These verifiable checkpoints need to be _legible to humans_.
+
+(diagram of nodes with verifiable checkpoints)
+
+## What is the correct unit of work?
 
 small.\
 verifiable.\
