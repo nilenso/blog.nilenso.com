@@ -38,7 +38,7 @@ Time for some napkin maths.
 
 Let's say your AI agent has a 5% chance of making a mistake. I'm not just referring to hallucinations—it could be a subtle mistake because it forgot to look up some documentation or you missed a detail in your specification.
 
-In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1-0.95)<sup>10</sup> = 59.9% chance of success. Not very high.
+In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1 – 0.95)<sup>10</sup> = 59.9% chance of success. Not very high.
 
 | Per-action error rate | 5 turns | 10 turns | 20 turns | 50 turns |
 |-----------------------|---------|----------|----------|----------|
