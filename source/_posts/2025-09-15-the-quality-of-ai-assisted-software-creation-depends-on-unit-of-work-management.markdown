@@ -34,12 +34,12 @@ Breaking down your task to "right-sized" units of work, whose description has ju
 
 Time for some napkin maths.
 
-Let's say your AI has a 5% chance of making a mistake. I'm not just referring to hallucinations—it could be a subtle mistake because it forgot to look up some documentation or missed a detail in your specification.
+Let's say your AI has a 5% chance of making a mistake. I'm not just referring to hallucinations—it could be a subtle mistake because it forgot to look up some documentation or you missed a detail in your specification.
 
-In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1-0.95)<sup>10</sup> = 59.9% chance of success. Not very high. As far as I can tell, even the best AI right now is not really 95% correct. Even if it is really intelligent, access to the right context will lead to an error and that error will propagate.
+In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1-0.95)<sup>10</sup> = 59.9% chance of success. Not very high.
 
 | Per-action error rate | 5 turns | 10 turns | 20 turns | 50 turns |
-|------------------------|---------|----------|----------|----------|
+|-----------------------|---------|----------|----------|----------|
 | 0.1%                  | 99.5%   | 99.0%    | 98.0%    | 95.1%    |
 | 1%                    | 95.1%   | 90.4%    | 81.8%    | 60.5%    |
 | 5%                    | 77.4%   | 59.9%    | 35.8%    | 7.7%     |
@@ -47,7 +47,21 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
 | 20%                   | 32.8%   | 10.7%    | 1.2%     | 0.0%     |
 
 
-METR recently published a popular chart describing 
+METR recently published a popular chart [describing how AI models are getting better at long-horizon tasks](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/). Currently GPT-5 is at the top of the leaderboard, where it can do about 2-hour long tasks at around a 70% success rate. Working backwards (let's say a 2 hour task is 50+ turns) we are talking about a sub-1% error rate per action.
+
+Doesn't that seem suspicious to you? As a regular user of agentic coding tools (at the moment Codex CLI), I'll eat my shoe if GPT-5 correctly nailing my tasks 99.9% of the time.
+
+My intuition derived from experience tells me that even the best AI right now isn't 95% likely to be correct. So where is the difference coming from? My guess is that the answer lies in these parts of the METR evals paper:
+
+> Our tasks typically use environments that do not significantly change unless directly acted upon by the agent. In contrast, real tasks often occur in the context of a changing environment.
+
+> Similarly, very few of our tasks are punishing of single mistakes. This is in part to reduce the expected cost of collecting human baselines.
+
+This is not at all like the tasks I am doing!
+
+Even if it is really intelligent, access to the right context will lead to an error and that error will propagate.
+
+This looks extremely impressive
 
 Task horizons from METR. 50% error rates etc.
 
