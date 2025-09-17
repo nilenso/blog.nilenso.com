@@ -88,8 +88,6 @@ These verifiable checkpoints need to be _legible to humans_.
 
 (diagram of nodes with verifiable checkpoints)
 
-Not only does the unit of work need to be small, yet detailed enough to respect the language model's context window, it also needs to be verifiable and legible for humans, so that we can catch and correct errors before they compound.
-
 ## So, what is the "right sized" unit of work?
 
 The right sized unit of work needs to be small and describe the desired outcome concisely.
