@@ -77,9 +77,21 @@ Not only does the unit of work need to be small, yet detailed enough to respect 
 
 ## So, what is the "right sized" unit of work?
 
-small.\
-verifiable.\
-provides business value.
+The right sized unit of work needs to be small and describe the desired outcome concisely.
+
+The desired outcome on completion of a unit of work needs to be human-legible. I argue that it needs to provide legible business value. Ultimately, the users of software are going to be humans (or systems that model human constructs). Therefore, an elegant way to break down a project is to model it as small units of work that provide legible business value at each checkpoint. This will serve the purpose of respecting the context window of the LLM and help manage the propagation of errors.
+
+Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center outcomes over tasks, making them robust to the messy dynamic environment of software development.
+
+||unit size|outcome of completion|
+|-|-|-|
+|TODO item|small|incremental technical value|
+|"Plan Mode"|large|technical value|
+|Amazon Kiro Spec|small|technical value|
+|Taskmaster spec|small|technical value|
+|User Story|small|business value|
+
+Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. Our proposed unit of work
 
 Planning tools and modes keep an agent on rails and break down work into small chunks. With Kiro's specs, there's some verifiability.
 
