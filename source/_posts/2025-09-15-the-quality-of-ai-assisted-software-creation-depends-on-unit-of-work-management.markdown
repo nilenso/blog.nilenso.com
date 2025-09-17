@@ -84,8 +84,6 @@ I am not certain that pure intelligence can solve for messiness. Robustness to e
 
 These verifiable checkpoints need to be *legible to humans*.
 
-(diagram of nodes with verifiable checkpoints)
-
 ## So, what is the "right sized" unit of work?
 
 The right sized unit of work needs to be small and describe the desired outcome concisely.
@@ -112,3 +110,5 @@ Of course, plain old User Stories as described in the Agile canon is not suffici
 We are running an open experiment at nilenso called [StoryMachine](https://github.com/nilenso/storymachine) to help automate the process of creating the unit of work that has the properties described above. Currently StoryMachine does not do much—it reads your PRD and Tech Specs and produces story cards. But we will be setting up an evaluation system that will help us iterate to a unit of work that helps us build useful software effortlessly. I hope to share updates on what we find in the coming months.
 
 I want the craft of AI-assisted development to be less effortful and less like a slot-machine. And our best lever to get there is managing the unit of work.
+
+![A diagram of boxes that represent units of work, with circles that represent checkpoints where users can verify outcomes and make corrections](/images/blog/unit-of-work-management.jpg)
