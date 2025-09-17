@@ -81,7 +81,7 @@ The right sized unit of work needs to be small and describe the desired outcome 
 
 The desired outcome on completion of a unit of work needs to be human-legible. I argue that it needs to provide legible business value. Ultimately, the users of software are going to be humans (or systems that model human constructs). Therefore, an elegant way to break down a project is to model it as small units of work that provide legible business value at each checkpoint. This will serve the purpose of respecting the context window of the LLM and help manage the propagation of errors.
 
-Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center outcomes over tasks, making them robust to the messy dynamic environment of software development.
+Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center outcomes over tasks which are robust to the messy dynamic environment of software development.
 
 Deliverable business value is also what all stakeholders can understand and work with. Software is not built in a vacuum by developers—it needs the coordination of teams, product owners, business people and users. The fact that AI agents work in their own context environment separate from the other stakeholders hurts effectiveness and transfer of its benefits. I think this is an important gap that needs to be bridged.
 
@@ -94,5 +94,11 @@ Deliverable business value is also what all stakeholders can understand and work
 |User Story|small|business value|
 
 Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work are composable—they can be planned with existing planning tools that primarily exist to keep the agent on rails. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
+
+Of course, plain old User Stories as described in the Agile canon is not sufficient. It needs to be accompanied with "something more" that can nudge the agents to gather the right context that serves the business value outcome of the stories. What that "something else" could look like is something we hope to answer in the coming months.
+
+## The StoryMachine experiment
+
+We are running an experiment at nilenso
 
 <mention storymachine trying to test out this hypothesis, give a way to run the research preview>
