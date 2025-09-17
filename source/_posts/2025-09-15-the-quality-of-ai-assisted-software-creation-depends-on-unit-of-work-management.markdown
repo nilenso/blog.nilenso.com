@@ -20,7 +20,7 @@ I like the term [context engineering](https://simonwillison.net/2023/Jan/23/rile
 
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence on the quality of your generated output.
 
-[Drew Breunig has an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong with your context and the various techniques to fix them.
+[Drew Breunig wrote an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong with your context and the various techniques to fix them.
 
 The best AI-assisted craftsmen are often thinking about the design and arrangement of their context to get the AI to one-shot a solution. This is tricky and effortful, contrary to what the AI coding hype suggests.
 
