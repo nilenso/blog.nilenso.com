@@ -40,14 +40,27 @@ Let's say your AI agent has a 5% chance of making a mistake. I'm not just referr
 
 In an agentic multi-turn workflow, which is what all coding workflows are converging to, this error compounds. If your task takes 10 turns to implement, you will have a (1 – 0.95)<sup>10</sup> = 59.9% chance of success. Not very high.
 
-| Per-action error rate | 5 turns | 10 turns | 20 turns | 50 turns |
-|-----------------------|---------|----------|----------|----------|
-| 0.1%                  | 99.5%   | 99.0%    | 98.0%    | 95.1%    |
-| 1%                    | 95.1%   | 90.4%    | 81.8%    | 60.5%    |
-| 5%                    | 77.4%   | 59.9%    | 35.8%    | 7.7%     |
-| 10%                   | 59.0%   | 34.9%    | 12.2%    | 0.5%     |
-| 20%                   | 32.8%   | 10.7%    | 1.2%     | 0.0%     |
-
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Per-action error rate</th>
+      <th colspan="4">Overall Error Rate</th>
+    </tr>
+    <tr>
+      <th>5 turns</th>
+      <th>10 turns</th>
+      <th>20 turns</th>
+      <th>50 turns</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>0.1%</td><td>99.5%</td><td>99.0%</td><td>98.0%</td><td>95.1%</td></tr>
+    <tr><td>1%</td><td>95.1%</td><td>90.4%</td><td>81.8%</td><td>60.5%</td></tr>
+    <tr><td>5%</td><td>77.4%</td><td>59.9%</td><td>35.8%</td><td>7.7%</td></tr>
+    <tr><td>10%</td><td>59.0%</td><td>34.9%</td><td>12.2%</td><td>0.5%</td></tr>
+    <tr><td>20%</td><td>32.8%</td><td>10.7%</td><td>1.2%</td><td>0.0%</td></tr>
+  </tbody>
+</table>
 
 METR recently published a popular chart [describing how AI models are getting better at long-horizon tasks](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/). Currently GPT-5 is at the top of the leaderboard, where it can do about 2-hour long tasks at around a 70% success rate. Working backwards (let's say a 2 hour task is 50+ turns) we are talking about a sub-1% error rate per action.
 
