@@ -62,6 +62,8 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
 
 METR recently published a popular chart [describing how AI models are getting better at long-horizon tasks](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/). Currently GPT-5 is at the top of the leaderboard, where it can do about 2-hour long tasks at around a 70% success rate. Working backwards (let's say a 2 hour task is 50+ turns) we are talking about a sub-1% error rate per action.
 
+![Chart showing results of METR's chart showing task horizons increasing over time](/images/blog/metr.png)
+
 Doesn't that seem suspicious to you? As a regular user of agentic coding tools (at the moment Codex CLI), I'll eat my shoe if GPT-5 starts nailing my tasks 99.9% of the time.
 
 My intuition derived from experience tells me that even the best AI right now isn't even 95% likely to be correct. So where is the difference coming from? It needs a closer look at the actual paper:
@@ -92,7 +94,7 @@ The right sized unit of work needs to be small and describe the desired outcome 
 
 The desired outcome on completion of a unit of work needs to be human-legible. I argue that it needs to provide legible business value. Ultimately, the users of software are going to be humans (or systems that model human constructs). Therefore, an elegant way to break down a project is to model it as small units of work that provide legible business value at each checkpoint. This will serve the purpose of respecting the context window of the LLM and help manage the propagation of errors.
 
-Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center _business outcomes_, which unlike "tasks", are robust to the messy dynamic environment of software development.
+Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center *business outcomes*, which unlike "tasks", are robust to the messy dynamic environment of software development.
 
 Deliverable business value is also what all stakeholders can understand and work with. Software is not built in a vacuum by developers—it needs the coordination of teams, product owners, business people and users. The fact that AI agents work in their own context environment separate from the other stakeholders hurts effectiveness and transfer of its benefits. I think this is an important gap that needs to be bridged.
 
