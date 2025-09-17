@@ -60,6 +60,7 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
   </tbody>
 </table>
 
+
 METR recently published a popular chart [describing how AI models are getting better at long-horizon tasks](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/). Currently GPT-5 is at the top of the leaderboard, where it can do about 2-hour long tasks at around a 70% success rate. Working backwards (let's say a 2 hour task is 50+ turns) we are talking about a sub-1% error rate per action.
 
 ![Chart showing results of METR's chart showing task horizons increasing over time](/images/blog/metr.png)
