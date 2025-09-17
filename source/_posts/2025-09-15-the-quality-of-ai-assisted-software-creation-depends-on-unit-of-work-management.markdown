@@ -99,6 +99,6 @@ Of course, plain old User Stories as described in the Agile canon is not suffici
 
 ## The StoryMachine experiment
 
-We are running an experiment at nilenso
+We are running an experiment at nilenso called StoryMachine to help automate the process of creating the unit of work that has the properties described above. Currently StoryMachine does not do much—it reads your PRD and Tech Specs and produces story cards. But we will be setting up an evaluation system that will help us iterate to a unit of work that helps us build useful software effortlessly.
 
-<mention storymachine trying to test out this hypothesis, give a way to run the research preview>
+I want the craft of AI-assisted development to be less effortful and less like a slot-machine. And our best lever to get there is managing the unit of work.
