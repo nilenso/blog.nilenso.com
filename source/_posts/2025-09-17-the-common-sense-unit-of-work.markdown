@@ -66,7 +66,7 @@ When is a unit considered **done**? When the slice has been served. When it’s 
 
 ![verifying](/images/blog/verifying.webp)
 
-And that’s it. To manage the life cycle of software development, we manage the unit of work. Some would say we need to [INVEST](https://xp123.com/invest-in-good-stories-and-smart-tasks/) in good units of work. And some of you might recognise this unit sort of looks like a [User Story](https://c2.com/xp/UserStory.html).
+And that’s it. To manage the life cycle of software development, we manage the unit of work. Some would say we need to [INVEST](https://xp123.com/invest-in-good-stories-and-smart-tasks/) in good units of work. And some of you might rightly recognise this unit sort of looks like a [User Story](https://c2.com/xp/UserStory.html).
 
 - - -
 
