@@ -90,7 +90,6 @@ Deliverable business value is also what all stakeholders can understand and work
 |TODO item|small|incremental technical value|
 |"Plan Mode"|large|technical value|
 |Amazon Kiro Spec|small|technical value|
-|Taskmaster spec|small|technical value|
 |User Story|small|business value|
 
 Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work are composable—they can be planned with existing planning tools that primarily exist to keep the agent on rails. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
