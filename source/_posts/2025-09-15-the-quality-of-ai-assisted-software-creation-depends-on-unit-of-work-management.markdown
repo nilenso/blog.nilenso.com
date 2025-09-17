@@ -30,7 +30,7 @@ If you don't provide the necessary information in the context to do a good job, 
 
 Fill up the context with too much information, and [the quality of your output degrades](https://research.trychroma.com/context-rot), because of a lack of focused attention.
 
-Breaking down your task to "right-sized" units of work, whose description has just the right level and detail of context is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
+Breaking down your task to "right-sized" units of work, which describes just the right amount of detail is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
 
 ## The right sized unit of work controls the propagation of errors
 
