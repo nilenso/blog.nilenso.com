@@ -83,6 +83,8 @@ The desired outcome on completion of a unit of work needs to be human-legible. I
 
 Software engineers have already defined a unit of work that provides business value and serve as the placeholder for all the context and negotiation of scope—User Stories. I think they are a good starting point to help us break down a large problem into smaller problems that an LLM can one-shot, while providing a concrete result. They center outcomes over tasks, making them robust to the messy dynamic environment of software development.
 
+Deliverable business value is also what all stakeholders can understand and work with. Software is not built in a vacuum by developers—it needs the coordination of teams, product owners, business people and users. The fact that AI agents work in their own context environment separate from the other stakeholders hurts effectiveness and transfer of its benefits.
+
 ||unit size|outcome of completion|
 |-|-|-|
 |TODO item|small|incremental technical value|
@@ -91,14 +93,6 @@ Software engineers have already defined a unit of work that provides business va
 |Taskmaster spec|small|technical value|
 |User Story|small|business value|
 
-Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. Our proposed unit of work
-
-Planning tools and modes keep an agent on rails and break down work into small chunks. With Kiro's specs, there's some verifiability.
-
-But planning still operates starting from a large document or arc of what needs to be built. This can still be large enough to degrade the quality or the plan itself.
-
-Planning needs to happen in the right level of detail. Hypothesis: deliverable business value is the right amount of detail. It is verifiable and if done correctly still fairly small.
-
-Deliverable business value is also what all stakeholders can understand and work with. Software is not built in a vacuum by developers—it needs the coordination of teams, product owners, business people and users. The fact that AI agents work in their own context environment separate from the other stakeholders hurts effectiveness and transfer of its benefits.
+Most AI agents have fairly good "planning" functions and modes. These are good, but they mostly provide technical value, and not necessarily a legible business outcome. I believe planning is complementary to our idea of breaking down a project into small units of business value. My proposed unit of work are composable—they can be planned with existing planning tools that primarily exist to keep the agent on rails. And I believe this is superior to planning over a large unit of work due to the context rot issues described earlier.
 
 <mention storymachine trying to test out this hypothesis, give a way to run the research preview>
