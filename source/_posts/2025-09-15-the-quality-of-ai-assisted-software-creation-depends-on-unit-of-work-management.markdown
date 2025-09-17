@@ -61,7 +61,7 @@ This is not at all like the tasks I am doing!
 
 METR acknowledges the messiness of the real world. They have come up with a "messiness rating" for their tasks, and the "mean messiness" of their tasks is 3.2/16. 
 
-By METR's definitions, the kind of software engineering work that I'm mostly exposed to would score at least around 7-8, given that software engineering projects are path-dependent, dynamic and without clear counterfactuals.
+By METR's definitions, the kind of software engineering work that I'm mostly exposed to would score at least around 7-8, given that software engineering projects are path-dependent, dynamic and without clear counterfactuals. I have worked on problems that get to around 13/16 levels of messiness.
 
 > An increase in task messiness by 1 point reduces mean success rates by roughly 8.1%
 
