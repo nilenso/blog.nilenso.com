@@ -10,11 +10,11 @@ It is clear that the craft of AI-assisted software creation is ultimately about 
 
 When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
 
-Andrej Karpathy, while referencing my earlier article on this topic, described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint—work on small chunks of a single concrete thing.
+Andrej Karpathy, while referencing [my earlier article on this topic](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint—work on small chunks of a single concrete thing.
 
 ## The right sized unit of work respects the context
 
-I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
+I like the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
 
 ![Anthropic's visualisation of a context window filling up for each turn until it exceeds the window limit](/images/blog/context-window.jpg)
 
