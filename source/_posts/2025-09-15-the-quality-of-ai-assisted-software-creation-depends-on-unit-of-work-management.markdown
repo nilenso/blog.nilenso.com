@@ -51,7 +51,7 @@ METR recently published a popular chart [describing how AI models are getting be
 
 Doesn't that seem suspicious to you? As a regular user of agentic coding tools (at the moment Codex CLI), I'll eat my shoe if GPT-5 starts nailing my tasks 99.9% of the time.
 
-My intuition derived from experience tells me that even the best AI right now isn't even 95% likely to be correct. So where is the difference coming from? My guess is that the answer lies in these parts of the METR evals paper:
+My intuition derived from experience tells me that even the best AI right now isn't even 95% likely to be correct. So where is the difference coming from? It needs a closer look at the actual paper:
 
 > Our tasks typically use environments that do not significantly change unless directly acted upon by the agent. In contrast, real tasks often occur in the context of a changing environment.
 
