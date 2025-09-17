@@ -10,7 +10,7 @@ The craft of AI-assisted software creation is substantially about correctly mana
 
 When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
 
-Andrej Karpathy, while referencing [my earlier article on this topic](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint—work on small chunks of a single concrete thing.
+Andrej Karpathy, while referencing [my earlier article on this topic](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint: work on small chunks of a single concrete thing.
 
 ## The right sized unit of work respects the context
 
@@ -20,7 +20,7 @@ I like the term [context engineering](https://simonwillison.net/2023/Jan/23/rile
 
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence on the quality of your generated output.
 
-Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong your context and the various techniques to fix them.
+Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong with your context and the various techniques to fix them.
 
 The best AI-assisted craftsmen are often thinking about the design and arrangement of their context to get the AI to one-shot a solution. This is tricky and effortful, contrary to what the AI coding hype suggests.
 
@@ -28,7 +28,7 @@ If you don't provide the necessary information in the context to do a good job, 
 
 On the other hand, if you fill up the context with too much information, and [the quality of your output degrades](https://research.trychroma.com/context-rot), because of a lack of focused attention.
 
-Breaking down your task to "right-sized" units of work, which describes just the right amount of detail is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
+Breaking down your task into "right-sized" units of work, which describe just the right amount of detail is perhaps the most powerful lever to improve your context window, and thus the correctness and quality of the generated code.
 
 ## The right sized unit of work controls the propagation of errors
 
