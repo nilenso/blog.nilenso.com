@@ -6,7 +6,7 @@ created_at: 2025-09-15 00:00:00 UTC
 post_url: ai-assisted-unit-of-work-management
 layout: post
 ---
-It is clear that the craft of AI-assisted software creation is ultimately about correctly managing units of work.
+The craft of AI-assisted software creation is substantially about correctly managing units of work.
 
 When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
 
