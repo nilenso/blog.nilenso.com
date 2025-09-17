@@ -14,7 +14,7 @@ Andrej Karpathy, while referencing my earlier article on this topic, described t
 
 ## The right sized unit of work respects the context
 
-I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the main "canvas" against which our AI is generating code.
+I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
 
 I like Anthropic's visualisation of the context window.
 
