@@ -16,6 +16,8 @@ Andrej Karpathy, while referencing my earlier article on this topic, described t
 
 I enjoy the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
 
+![Anthropic's visualisation of a context window filling up for each turn until it exceeds the window limit](/images/blog/context-window.jpg)
+
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence of the quality of your generated output.
 
 Drew Breunig has [an excellent article](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html) on all kinds of things that can go wrong your context and the various techniques to fix them.
