@@ -10,7 +10,7 @@ The craft of AI-assisted software creation is substantially about correctly mana
 
 When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
 
-Andrej Karpathy, while referencing [my earlier article on this topic](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint: work on small chunks of a single concrete thing.
+Andrej Karpathy, [while referencing](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC) my [earlier article on this topic](https://blog.nilenso.com/blog/2025/05/29/ai-assisted-coding/), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint: work on small chunks of a single concrete thing.
 
 ## The right sized unit of work respects the context
 
