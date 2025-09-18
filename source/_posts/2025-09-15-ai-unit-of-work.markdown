@@ -16,6 +16,8 @@ Andrej Karpathy, [while referencing](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoD
 
 I like the term [context engineering](https://simonwillison.net/2023/Jan/23/riley-goodside/), because it has opened up the vocabulary to better describe why managing units of work is perhaps the most important technique to get better results out of AI tools. It centers our discussion around the "canvas" against which our AI is generating code.
 
+I like [Anthropic's visualisation](docs.anthropic.com/en/docs/build-with-claude/context-windows) from their docs:
+
 ![Anthropic's visualisation of a context window filling up for each turn until it exceeds the window limit](/images/blog/context-window-thinking-tools.jpg)
 
 The generated output of the LLM is a sample of the next token probability. Every time we generate a token, what has already been generated in the previous iteration is appended to the context window. What this context window looks like has a huge influence on the quality of your generated output.
@@ -44,7 +46,7 @@ In an agentic multi-turn workflow, which is what all coding workflows are conver
   <thead>
     <tr>
       <th rowspan="2">Per-action<br>error rate</th>
-      <th colspan="4">Overall Error Rate</th>
+      <th colspan="4">Overall Success Rate</th>
     </tr>
     <tr>
       <th>5 turns</th>
