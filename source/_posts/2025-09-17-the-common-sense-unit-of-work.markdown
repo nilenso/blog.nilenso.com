@@ -7,9 +7,7 @@ layout: post
 ---
 The real world of software development processes is a vast and fragmented landscape of practices depending on culture, scale and goals. But the essence of all those practices are a few familiar and simple activities, revolving around a unit of work that’s valuable to the business.
 
-If a typical software development lifecycle were to be modelled in software, the unit of work would be the central abstraction. We would have state machines or workflows around it, carrying it from specification to deployment, customisable to each team’s processes. But their effectiveness depends on how good this abstraction is, and how well it enables the activities around it.
-
-Such activities on the unit of work are performed by various team members like product managers, engineers, designers, etc through its life. So, it’s important for the same abstraction to work well for all its users.
+If a typical software development lifecycle were to be modelled in software, the unit of work would be the central abstraction. We would have state machines or workflows around it, carrying it from specification to deployment based on activities performed on it by various team members like product managers, engineers, designers, etc. The process can customisable to each team’s processes have all the bells and whistles. But fundamentally, its effectiveness, and its adaptability depend on how good this central abstraction of a unit of work is.
 
 Here’s a walkthrough of those familiar real-world activities, so we can learn about the properties of a unit of work.
 
@@ -23,13 +21,13 @@ In other words, we need the unit of work to be a slice of the cake, not a layer.
 
 ![slice-of-cake](/images/blog/breaking-it-down.webp)
 
-Of course, bug fixes and refactors aren’t providing value in the same way, and that’s okay. Sometimes there are technical tasks that are best left independent. That’s okay too. No need to be dogmatic as long as the broad needs of value, and sense of progress are being met.
+Of course, bug fixes and refactors aren’t providing value in the same way, and that’s okay. Sometimes there are technical tasks that are best left independent. That’s okay too. No need to be dogmatic as long as the broad needs of value and sense of progress are being met.
 
 ## Planning
 
-Before starting work, we want to **prioritise**, because it saves a lot of time. We want to ship the most valuable slices first, and perhaps discard some low priority slices. But we can’t prioritise without weighing the business value against the implementation effort.
+Before starting work, we want to **prioritise**, because it saves a lot of time. We want to ship the most valuable slices first, and perhaps discard some low priority slices. But we can’t prioritise without weighing the business value against the implementation effort. All slices aren’t the same size, so we **estimate** the implementation effort first.
 
-All slices aren’t the same size, so we **estimate** the implementation effort first. Some large slices can have low product value, so we would want to break them into even smaller slices to prioritise parts we care about most. Some smaller slices can’t be engineered independently, so we build the larger slice anyway. The unit needs to be **negotiable**.
+Then, some large slices can have low product value, so we would want to break them into even smaller slices to prioritise parts we care about most. Some other large slices can't be sliced further meaningfully, and that's okay. Some smaller slices can’t be engineered independently, so we build the larger slice anyway. The unit needs to be **negotiable**.
 
 ![planning-with-slices](/images/blog/planning-cake-cut.webp)
 
@@ -56,36 +54,37 @@ Knowing exactly what we’re solving for is very helpful, so we can build *just 
 
 Then, solve until we meet them. 
 
-It’s good to **automate checking** whether the meet the acceptance criteria, because we’re going to be doing that an awful lot when solving.
+It’s good to **automate checking** whether they meet the acceptance criteria, because we’re going to be doing that an awful lot when solving.
 
 ## Verifying
 
-Confidence usually doesn’t require checking every possible case, only the key ones that capture most of the impact. Yes, we checked this slice every step of the way, but it is useful to inspect it one last time before serving.
+Confidence usually doesn’t require checking every possible case, only the key ones that capture most of the impact. Yes, we checked this slice at every step of the way, but it is useful to inspect it one last time before serving.
 
 When is a unit considered **done**? When the slice has been served. When it’s in the hands of the user, in production, potentially behind a feature flag.
 
 ![verifying](/images/blog/verifying.webp)
 
-And that’s it. To manage the life cycle of software development, we manage the unit of work. Some would say we need to [INVEST](https://xp123.com/invest-in-good-stories-and-smart-tasks/) in good units of work. And some of you might rightly recognise this unit sort of looks like a [User Story](https://c2.com/xp/UserStory.html).
+And that’s it. To manage the life cycle of software development, we manage the unit of work. Some would say we need to [INVEST](https://xp123.com/invest-in-good-stories-and-smart-tasks/) in good units of work. And some of you might rightly recognise that it looks like a [User Story](https://c2.com/xp/UserStory.html). But as long as the described properties and affordances for its users exist, it should make for a decent unit of work regardless of what we call it.
 
 - - -
 
 ## Does your unit of work need refactoring?
 
-We’re fairly aware of the penalties of leaky abstractions in software. The incidental complexity of getting our primary real world abstractions wrong, grows exponentially with each layer of software built over it, until the whole system is slow sludgy slop that’s difficult to work with. We can hack it here and there, and celebrate minor wins, but the big wins were lost in the ignored opportunities to refactor that central abstraction.
+We’re fairly aware of the penalties of leaky abstractions in software. The incidental complexity of getting our primary real world abstractions wrong, grows exponentially with each layer of software built over it, until the whole system is slow, sludgy slop that’s difficult to work with. We can hack it here and there, and celebrate minor wins, but the big wins were lost in the ignored opportunities to refactor that central abstraction.
 
 If we apply the same thought process to software development, we’ll see that our core abstraction, the unit of work, might need refactoring.
 
 Big gains in developer productivity in this economic weather are important. Prioritising by value, eliminating unnecessary work, and validating quickly, are some holistic ways to be more productive. And they require a good unit of work.
 
-*Even your favourite AI assistant needs a well defined unit of work.*
+*Even your favourite AI assistant needs a well-defined unit of work.*
 
-Hence, this article rehashing a two-decade old pitch for some common sense agile.
+Hence, this article rehashing a two-decade-old pitch for some common sense agile.
 
 ## Annexes and apologies
 
 * Yes, I’m aware the classic definition of user stories doesn’t have implementation details.
-* Slicing can happen across n-dimensions, and breaking down a hard problem effectively, can actually be a very hard problem.
+* In reality, the workflow isn't as linear, and there is much back and forth between the steps. I've kept it simple to focus on the properties.
+* Slicing can happen across many dimensions, and breaking down a hard problem effectively, can actually be a very hard problem.
 * If you want to read the OG Agile material, you can read:
 
   * Kent Beck introducing story cards in [XPX](https://www.goodreads.com/book/show/67833.Extreme_Programming_Explained) (Chapter 15 on planning)
