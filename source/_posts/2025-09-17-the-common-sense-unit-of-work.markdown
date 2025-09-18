@@ -11,7 +11,7 @@ The unit of work would be the fundamental abstraction. We'd build state machines
 
 Get this abstraction wrong, and complexity scales exponentially. All the processes built around it inherit the dysfunction. Planning becomes chaotic, progress becomes opaque, and coordination becomes an expensive mess.
 
-We deal with leaky abstractions by periodically refactoring them, so why not do the same thing with the unit of work? But what makes a good unit of work? Let's walk through these familiar activities and see what properties emerge.
+We deal with leaky abstractions by periodically refactoring them, so why not do the same thing with the unit of work? What makes a good unit of work? Let's walk through these familiar activities and observe the properties that emerge.
 
 ## Breaking it down
 
@@ -56,7 +56,7 @@ Knowing exactly what we’re solving for is very helpful, so we can build *just 
 
 Then, solve until we meet them. 
 
-It’s good to **automate checking** whether they meet the acceptance criteria, because we’re going to be doing that an awful lot while solving.
+It’s good to **automate** checking whether they meet the acceptance criteria, because we’re going to be doing that an awful lot while solving.
 
 ## Verifying
 
