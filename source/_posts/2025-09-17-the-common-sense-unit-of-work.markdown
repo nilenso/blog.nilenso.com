@@ -5,11 +5,13 @@ author: Srihari Sriraman
 created_at: 2025-09-17 00:00:00 UTC
 layout: post
 ---
-If you were to model a typical software development lifecycle in code, the unit of work would be the central abstraction. You'd build state machines and workflows around it, carrying work from specification to deployment through activities performed by actors like product managers, engineers, designers, and others. The process could be customised to each team's needs, with all the bells and whistles. But fundamentally, its effectiveness and adaptability depends on how good this central abstraction is.
+What if we were to model a typical software development lifecycle in code?
 
-Get this abstraction wrong, and complexity scales exponentially. All the processes built around it inherit the dysfunction. Planning becomes chaotic, progress becomes opaque, and coordination becomes an expensive mess. We deal with leaky abstractions by periodically refactoring them, so why not do the same thing with the unit of work?
+The unit of work would be the fundamental abstraction. We'd build state machines and workflows around it, carrying it from specification to deployment through activities performed by product managers, engineers, designers, and others. The process could be customised to each team's needs, with all the bells and whistles. But fundamentally, its effectiveness and adaptability depends on how good this central abstraction is.
 
-But what makes a good unit of work? Let's walk through the familiar activities that happen around any piece of work, and see what properties emerge.
+Get this abstraction wrong, and complexity scales exponentially. All the processes built around it inherit the dysfunction. Planning becomes chaotic, progress becomes opaque, and coordination becomes an expensive mess.
+
+We deal with leaky abstractions by periodically refactoring them, so why not do the same thing with the unit of work? But what makes a good unit of work? Let's walk through these familiar activities and see what properties emerge.
 
 ## Breaking it down
 
