@@ -78,20 +78,20 @@ If we apply the same thought process to software development, we’ll see that o
 
 Big gains in developer productivity in this economic weather are important. Organisations that use DORA measure deploy or commit frequencies might find them valuable in some dimensions, but they're not a measure of productivity in terms of outcomes for the customer. I love these last lines in [Kent Beck’s writing about measuring developer productivity](<>):
 
-\> Be suspicious of anyone claiming to measure developer productivity. Ask who is asking & why. Ask them what unit they are measuring & how those units are connected to profit.
-
-\> I am 100% pro-accountability. Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting.
+> Be suspicious of anyone claiming to measure developer productivity. Ask who is asking & why. Ask them what unit they are measuring & how those units are connected to profit.\
+> \
+> I am 100% pro-accountability. Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting.
 
 And I think a unit of work as defined above could be used to measure productivity holistically. Prioritising by value, eliminating unnecessary work, and validating quickly then become obvious, and measurable ways to increase productivity. 
 
-Productivity gains through use of AI assistants is also popularly reported and benchmarked in terms of % of code generated, but that's not a very valuable dimension for measurement. If the benchmarks for AI productivity revolved around units of work valuable to the customer, then we'd be talking true productivity gains. AI assistants also need small, well specified slices of work, and hence, will also benefit from a well defined unit of work. My colleague Atharva has written about that in more detail: https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/.
+Productivity gains through use of AI assistants is also popularly reported and benchmarked in terms of % of code generated, but that's not a very valuable dimension for measurement. If the benchmarks for AI productivity revolved around units of work valuable to the customer, then we'd be talking true productivity gains. AI assistants also need small, well specified slices of work, and hence, will also benefit from a well defined unit of work. My colleague Atharva has written a wonderful [blog post](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/) about that in detail.
 
 Yeah, this article is mostly about rehashing a two-decade-old pitch for some common sense agile. But I hope it has been worth your time.
 
 ## Annexes
 
-* Yes, I’m aware the classic definition of user stories doesn’t have implementation details.
 * In reality, the workflow isn't as linear, and there is much back and forth between the steps. I've kept it simple to focus on the properties.
+* Yes, I’m aware the classic definition of user stories doesn’t have implementation details.
 * Slicing can happen across many dimensions, and breaking down a hard problem effectively, can actually be a very hard problem.
 * If you want to read the OG Agile material, you can read:
 
