@@ -56,7 +56,7 @@ Knowing exactly what we’re solving for is very helpful, so we can build *just 
 
 Then, solve until we meet them. 
 
-It’s good to **automate checking** whether they meet the acceptance criteria, because we’re going to be doing that an awful lot when solving.
+It’s good to **automate checking** whether they meet the acceptance criteria, because we’re going to be doing that an awful lot while solving.
 
 ## Verifying
 
