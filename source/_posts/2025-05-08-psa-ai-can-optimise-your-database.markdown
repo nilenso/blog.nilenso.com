@@ -1,5 +1,5 @@
 ---
-title: A database optimisation story ft. Sir Sonnet
+title: A database optimisation story
 kind: article
 author: Atharva Raykar
 created_at: 2025-05-08 00:00:00 UTC
@@ -413,7 +413,7 @@ Setting my work_mem to 2GB just for this one long-running query causes a crash. 
 Sir Sonnet responded,
 
 <pre>
-Ah, this is a crucial detail. The issue is that work_mem is allocated PER OPERATION in a query plan,  
+Ah, this is a crucial detail. The issue is that work_mem is allocated PER OPERATION in a query plan,
 not per query or per connection. This is a common misconception that can lead to server crashes.
 Let's break this down:
 
