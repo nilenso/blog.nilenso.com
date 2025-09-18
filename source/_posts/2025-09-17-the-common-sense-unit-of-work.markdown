@@ -78,9 +78,9 @@ If we apply the same thought process to software development, we’ll see that o
 
 Big gains in developer productivity in this economic weather are important. Organisations that use DORA measure deploy or commit frequencies might find them valuable in some dimensions, but they're not a measure of productivity in terms of outcomes for the customer. I love these last lines in [Kent Beck’s writing about measuring developer productivity](<>):
 
-\> Be suspicious of anyone claiming to measure developer productivity. Ask who is asking & why. Ask them what unit they are measuring & how those units are connected to profit.
-
-\> I am 100% pro-accountability. Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting.
+> Be suspicious of anyone claiming to measure developer productivity. Ask who is asking & why. Ask them what unit they are measuring & how those units are connected to profit.\
+> \
+> I am 100% pro-accountability. Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting.
 
 And I think a unit of work as defined above could be used to measure productivity holistically. Prioritising by value, eliminating unnecessary work, and validating quickly then become obvious, and measurable ways to increase productivity. 
 
