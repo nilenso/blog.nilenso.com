@@ -5,11 +5,11 @@ author: Srihari Sriraman
 created_at: 2025-09-17 00:00:00 UTC
 layout: post
 ---
-The real world of software development processes is a vast and fragmented landscape of practices depending on culture, scale and goals. But the essence of all those practices are a few familiar and simple activities, revolving around a unit of work that’s valuable to the business.
+If you were to model a typical software development lifecycle in code, the unit of work would be the central abstraction. You'd build state machines and workflows around it, carrying work from specification to deployment through activities performed by actors like product managers, engineers, designers, and others. The process could be customised to each team's needs, with all the bells and whistles. But fundamentally, its effectiveness and adaptability depends on how good this central abstraction is.
 
-If a typical software development lifecycle were to be modelled in software, the unit of work would be the central abstraction. We would have state machines or workflows around it, carrying it from specification to deployment based on activities performed on it by various team members like product managers, engineers, designers, etc. The process can customisable to each team’s processes have all the bells and whistles. But fundamentally, its effectiveness, and its adaptability depend on how good this central abstraction of a unit of work is.
+Get this abstraction wrong, and complexity scales exponentially. All the processes built around it inherit the dysfunction. Planning becomes chaotic, progress becomes opaque, and coordination becomes an expensive mess. We deal with leaky abstractions by periodically refactoring them, so why not do the same thing with the unit of work?
 
-Here’s a walkthrough of those familiar real-world activities, so we can learn about the properties of a unit of work.
+But what makes a good unit of work? Let's walk through the familiar activities that happen around any piece of work, and see what properties emerge.
 
 ## Breaking it down
 
