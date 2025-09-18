@@ -1,14 +1,14 @@
 ---
 title: The quality of AI-assisted software depends on unit of work management
 kind: article
+cover_image: /images/blog/ai-unit-of-work/cover.jpg
 author: Atharva Raykar
 created_at: 2025-09-15 00:00:00 UTC
-post_url: ai-assisted-unit-of-work-management
 layout: post
 ---
 The craft of AI-assisted software creation is substantially about correctly managing units of work.
 
-When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is providing the correct context and not intelligence.
+When I was new to this emerging craft of AI-assisted coding, I was getting lousy results, despite the models being rather intelligent. Turns out the major bottleneck is not intelligence, but rather providing the correct context.
 
 Andrej Karpathy, [while referencing](https://youtube.com/clip/Ugkx7m0MVzHTnKXdoDjlqei60zlK4DWCXWr2?si=kIwnm0xQXdSKMQCC) my [earlier article on this topic](/blog/2025/05/29/ai-assisted-coding/), described the work of AI-assisted engineering as "putting AI on a tight leash". What does a tight leash look like for a process where AI agents are operating on your code more independently than ever? He dropped a hint: work on small chunks of a single concrete thing.
 
@@ -78,7 +78,7 @@ My intuition derived from experience tells me that even the best AI right now is
 
 This is not at all like the tasks I am doing.
 
-METR acknowledges the messiness of the real world. They have come up with a "messiness rating" for their tasks, and the "mean messiness" of their tasks is 3.2/16. 
+METR acknowledges the messiness of the real world. They have come up with a "messiness rating" for their tasks, and the "mean messiness" of their tasks is 3.2/16.
 
 By METR's definitions, the kind of software engineering work that I'm mostly exposed to would score at least around 7-8, given that software engineering projects are path-dependent, dynamic and without clear counterfactuals. I have worked on problems that get to around 13/16 levels of messiness.
 
