@@ -76,13 +76,19 @@ We’re fairly aware of the penalties of leaky abstractions in software. The inc
 
 If we apply the same thought process to software development, we’ll see that our core abstraction, the unit of work, might need refactoring.
 
-Big gains in developer productivity in this economic weather are important. Prioritising by value, eliminating unnecessary work, and validating quickly, are some holistic ways to be more productive. And they require a good unit of work.
+Big gains in developer productivity in this economic weather are important. Organisations that use DORA measure deploy or commit frequencies might find them valuable in some dimensions, but they're not a measure of productivity in terms of outcomes for the customer. I love these last lines in [Kent Beck’s writing about measuring developer productivity](<>):
 
-*Even your favourite AI assistant needs a well-defined unit of work.*
+\> Be suspicious of anyone claiming to measure developer productivity. Ask who is asking & why. Ask them what unit they are measuring & how those units are connected to profit.
 
-Hence, this article rehashing a two-decade-old pitch for some common sense agile.
+\> I am 100% pro-accountability. Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting.
 
-## Annexes and apologies
+And I think a unit of work as defined above could be used to measure productivity holistically. Prioritising by value, eliminating unnecessary work, and validating quickly then become obvious, and measurable ways to increase productivity. 
+
+Productivity gains through use of AI assistants is also popularly reported and benchmarked in terms of % of code generated, but that's not a very valuable dimension for measurement. If the benchmarks for AI productivity revolved around units of work valuable to the customer, then we'd be talking true productivity gains. AI assistants also need small, well specified slices of work, and hence, will also benefit from a well defined unit of work. My colleague Atharva has written about that in more detail: https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/.
+
+Yeah, this article is mostly about rehashing a two-decade-old pitch for some common sense agile. But I hope it has been worth your time.
+
+## Annexes
 
 * Yes, I’m aware the classic definition of user stories doesn’t have implementation details.
 * In reality, the workflow isn't as linear, and there is much back and forth between the steps. I've kept it simple to focus on the properties.
@@ -95,4 +101,3 @@ Hence, this article rehashing a two-decade-old pitch for some common sense agile
   * Ron Jefferies on [Card, Conversation and Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/).
   * Mike Cohn’s [User Stories Applied](https://www.goodreads.com/book/show/3856.User_Stories_Applied) is a deep dive.
 * I like [Gergely Orosz and Kent Beck’s response to McKinsey](https://newsletter.pragmaticengineer.com/p/measuring-developer-productivity) on measuring developer productivity. Gergely’s [writing about DORA, and SPACE](https://newsletter.pragmaticengineer.com/p/developer-productivity-a-new-framework) is interesting, but I wonder if metrics can be more granular, around this unit of work, and its affordances. That would shift-left the feedback on productivity, to where it matters.
-* I love this last line in [Kent Beck’s answer](https://tidyfirst.substack.com/p/measuring-developer-productivity-440): “Weekly delivery of customer-appreciated value is the best accountability, the most aligned, the least distorting”.
