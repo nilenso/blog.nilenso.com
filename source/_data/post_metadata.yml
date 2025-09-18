@@ -2,6 +2,15 @@
   description: "The craft of AI-assisted software creation is substantially about correctly managing units of work."
   image: /images/blog/ai-unit-of-work/cover.jpg
 
+- title: "My Quarterly System Health Check-in"
+  description: "An operational exercise for engineering leaders."
+
+- title: "Why Does AI Feel So Different?"
+  description: "More about the recursive paradigm shifting paradigm shift."
+
+- title: "How I keep up with AI progress"
+  description: "A curation of quality sources to keep up with AI progress."
+
 - title: "AI-assisted coding for teams that can't get away with vibes"
   description: "A playbook for building high-quality software with AI."
   image: /images/blog/ai-assisted-coding/ai-assisted-coding-cover-image.jpg
@@ -15,7 +24,7 @@
 - title: "MCP explained without hype or fluff"
   description: "tldr; like most protocols, MCP solves the M⨯N integration problem by turning it into an M+N integration problem."
 
-- title: "A database optimisation story ft. Sir Sonnet"
+- title: "A database optimisation story"
   description: "Beyond code generation: how I optimised a database query with LLM assistance."
 
 - title: "Tiny Models, Local Throttles: Exploring My Local AI Dev Setup"

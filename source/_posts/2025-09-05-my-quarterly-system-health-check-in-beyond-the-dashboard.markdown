@@ -1,5 +1,5 @@
 ---
-title: "My Quarterly System Health Check-in: Beyond The Dashboard"
+title: "My Quarterly System Health Check-in"
 kind: article
 author: Srihari Sriraman
 created_at: 2025-09-05 00:00:00 UTC
@@ -49,7 +49,7 @@ This is the most important dimension to reflect on quality. But it is best treat
 
 ## Delivery
 
-That is, delivery of business value, not code. It's faster to deliver newer and smaller software. As it gets older and larger, how do we maintain the speed? It’s mostly about the flywheel. How quickly do we get feedback, and how much of it do we get before going to production? 
+That is, delivery of business value, not code. It's faster to deliver newer and smaller software. As it gets older and larger, how do we maintain the speed? It’s mostly about the flywheel. How quickly do we get feedback, and how much of it do we get before going to production?
 
 1. Does it feel like we are moving slowly?
     - If so, what do you think makes us slow?
@@ -150,7 +150,7 @@ In order to enable high ownership and agency, we should be willing to restructur
 
 ## Cost, Security
 
-These are important dimensions, and are very much part of the Pareto frontier. Unfortunately, I haven’t built a lot of intuitions with these dimensions. I understand them enough to work on related problems, but not enough to be writing a health check questionnaire on. I hope someone does this. It would be useful. 
+These are important dimensions, and are very much part of the Pareto frontier. Unfortunately, I haven’t built a lot of intuitions with these dimensions. I understand them enough to work on related problems, but not enough to be writing a health check questionnaire on. I hope someone does this. It would be useful.
 
 Write in if you would like to collaborate on these sections with me!
 
@@ -158,6 +158,6 @@ Write in if you would like to collaborate on these sections with me!
 
 The questions will make conversations happen, but it is up to you to truly listen, understand, and make the most of it. I would suggest using the meeting to focus on the problems. You can prioritise and solve for them later on.
 
-Also, I’m also assuming you’re doing the work of ensuring the work is focused on the right problem to begin with. Climbing a ladder fast isn’t useful if it’s against the wrong wall. 
+Also, I’m also assuming you’re doing the work of ensuring the work is focused on the right problem to begin with. Climbing a ladder fast isn’t useful if it’s against the wrong wall.
 
 *Thanks to Atharva for his thoughtful review of this post.*

@@ -1,5 +1,5 @@
 ---
-title: How I keep up with AI progress (and why you must too)
+title: How I keep up with AI progress
 kind: article
 author: Atharva Raykar
 created_at: 2025-06-30 00:00:00 UTC
