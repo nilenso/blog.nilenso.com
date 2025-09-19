@@ -1,3 +1,6 @@
+- title: "The common sense unit of work"
+  description: "Consider refactoring the unit of work that your team operates on."
+
 - title: "The quality of AI-assisted software depends on unit of work management"
   description: "The craft of AI-assisted software creation is substantially about correctly managing units of work."
   image: /images/blog/ai-unit-of-work/cover.jpg
