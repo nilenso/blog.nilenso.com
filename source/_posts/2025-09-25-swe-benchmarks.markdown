@@ -215,6 +215,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
 
   <p><strong>Starting point file: <code>src/main/java/BankAccount.java</code></strong></p>
 <div class="language-java highlighter-rouge">
+<div class="highlight">
   <pre class="highlight"><code>
 class BankAccount {
     void open() throws BankAccountActionInvalidException {
@@ -239,6 +240,7 @@ class BankAccount {
     }
 }
 </code></pre>
+</div>
 
 </div>
 </article>
