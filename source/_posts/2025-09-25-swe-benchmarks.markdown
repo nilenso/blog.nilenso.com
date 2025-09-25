@@ -157,8 +157,7 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
       <strong>Input:</strong> <code>uid: number</code><br>
       <strong>Output:</strong> <code>Promise&lt;string | null&gt;</code><br>
       <strong>Description:</strong> Returns the most appropriate email for admin actions like force validate or resend.
-    </p>
-</article>
+    </p></article>
 </details>
 
 ### Verdict
@@ -177,49 +176,52 @@ If the coding agent (specifically, Aider) can solve hard-level Exercism problems
 
 ### The specifics
 
-Exercism is a platform for learning programming. It has “kata-style” programming exercises. So it’s not as algorithmic as LeetCode, but still pretty contained to optimise for learning. Here’s an example problem:
+Exercism is a platform for learning programming. It has “kata-style” programming exercises. So it’s not as algorithmic as LeetCode, but still pretty contained to optimise for learning.
 
-- Instructions.md
-    
-    **Instructions**
-    
+<details style="margin-bottom:1em;">
+  <summary><strong>Example input for Aider's polyglot</strong></summary>
+
+  <p><strong>Instructions</strong></p>
+  <p>
     Your task is to implement bank accounts supporting opening/closing, withdrawals, and deposits of money.
-    
-    As bank accounts can be accessed in many different ways 
-    (internet, mobile phones, automatic charges), your bank software must 
-    allow accounts to be safely accessed from multiple threads/processes 
+  </p>
+  <p>
+    As bank accounts can be accessed in many different ways
+    (internet, mobile phones, automatic charges), your bank software must
+    allow accounts to be safely accessed from multiple threads/processes
     (terminology depends on your programming language) in parallel.
-    For example, there may be many deposits and withdrawals occurring in 
-    parallel; you need to ensure there are no [race conditions](https://en.wikipedia.org/wiki/Race_condition#In_software) between when you read the account balance and set the new balance.
-    
-    It should be possible to close an account; operations against a closed account must fail.
-    
-- src/main/java/BankAccount.java
-    
-    ```java
-    class BankAccount {
-    		void open() throws BankAccountActionInvalidException {
-    		    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    		}
-    		
-    		void close() throws BankAccountActionInvalidException {
-    		    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    		}
-    		
-    		synchronized int getBalance() throws BankAccountActionInvalidException {
-    		    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    		}
-    		
-    		synchronized void deposit(int amount) throws BankAccountActionInvalidException {
-    		    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    		}
-    		
-    		synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
-    		    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    		}
+    For example, there may be many deposits and withdrawals occurring in
+    parallel; you need to ensure there are no
+    <a href="https://en.wikipedia.org/wiki/Race_condition#In_software" target="_blank" rel="noopener">race conditions</a>
+    between when you read the account balance and set the new balance.
+  </p>
+  <p>It should be possible to close an account; operations against a closed account must fail.</p>
+
+  <p><strong>Starting point file: <code>src/main/java/BankAccount.java</code></strong></p>
+
+  <pre><code class="language-java">class BankAccount {
+    void open() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
-    ```
-    
+
+    void close() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    synchronized int getBalance() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    synchronized void deposit(int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+}
+</code></pre>
+</details>
 
 It seems to have far more language diversity than most other popular benchmarks: C++, Java, Go, Python, JavaScript and Rust are covered. The more functional programming languages are still unrepresented.
 
