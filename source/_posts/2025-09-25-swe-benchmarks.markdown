@@ -39,8 +39,9 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
 - The solutions have a mean of 107 lines of code, and a median of 55 lines of code, and usually span an average of 4 files. Also good.
 - They actually got humans to rewrite problems based on issues, commits and PRs to ensure there’s no missing information. They also added “requirements [that] are grounded on the unit tests that are used for validation”. They also may add interface code for some problems.
 - They also have dockerized environments set up with all the dependencies installed and configured, so the benchmark explicitly does not test if your agent can setup your repository.
-- Here’s an example problem statement from SWE-Bench Pro
-    
+- Here’s an example problem statement from SWE-Bench Pro:
+
+
     **Title: Email Validation Status Not Handled Correctly in ACP and Confirmation Logic**
     
     **Description:**
