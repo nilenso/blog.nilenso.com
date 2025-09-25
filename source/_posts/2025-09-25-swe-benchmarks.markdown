@@ -50,10 +50,10 @@ Notes and quirks of SWE-bench Verified:
 Recently, Scale AI published an improved version called **SWE-bench Pro** that tries to address some quirks of Verified. Here are my notes:
 
 * 1865 problems, from 41 repositories. It’s a mix of copyleft/GPL public repositories and some private repositories. I’m skeptical that choosing copyleft would meaningfully combat contamination, given AI labs [are known to resort to piracy to train their models](https://www.bbc.com/news/articles/c5y4jpg922qo). But this is still an improvement.
-* The repositories are Python, Go, JS and TS—we don’t know the distribution, except that they are “not uniform”. But they also ensure every repository having only 50-100 problem instances.
+* The repositories are Python, Go, JS and TS—we don’t know the distribution, except that they are “not uniform”. But they also ensure every repository has only 50-100 problem instances.
 * They claim to sample repositories “from a diverse range of topics, including consumer applications with complex UI logic, B2B platforms with intricate business rules, and developer tools with sophisticated APIs”—much better than SWE-Bench Verified. That said, I could not find what this distribution looks like.
 * The solutions have a mean of 107 lines of code, and a median of 55 lines of code, and usually span an average of 4 files. Also good.
-* They actually got humans to rewrite problems based on issues, commits and PRs to ensure there’s no missing information. They also added “requirements \[that] are grounded on the unit tests that are used for validation”. They also may add interface code for some problems.
+* They actually got humans to rewrite problems based on issues, commits and PRs to ensure there’s no missing information. They also added “requirements \[that] are grounded on the unit tests that are used for validation”. They may also add interface code for some problems.
 * They also have dockerized environments set up with all the dependencies installed and configured, so the benchmark explicitly does not test if your agent can setup your repository.
 
 <details style="margin-top:1em; background-color:#EEE;">
@@ -178,9 +178,9 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
 
 Overall, I think SWE-bench is a good, if still very flawed benchmark (most other benchmarks are a lot worse). I also think SWE-bench Pro addresses some severe problems with Verified (which at this point should just be ignored in any frontier model report). I’ll note that there’s significant drift from what this measures and how I actually work with AI coding agents.
 
-SWE-Bench is measuring how well AI performs on well-defined units of work. So when we say 25% is the SOTA in SWE-bench Pro, we are saying: “In a problem set of well-defined issues with pointed requirements and (the occasional) specification of code interfaces, 25% of the solutions from the agents get the respective problem’s unit test cases to pass”.
+SWE-Bench is measuring how well AI performs on well-defined units of work. So when we say that an agent scores 25% in SWE-bench Pro, we are saying: “In a problem set of well-defined issues with pointed requirements and (the occasional) specification of code interfaces, 25% of the solutions from the agent get the respective problem’s unit test cases to pass”.
 
-This is a useful measurement of progress. But this is not SWE as I understand it—most of the high-leverage parts are in working with product owners to come up with a good specification, translate them into useful interfaces, and then writing secure, maintainable code. With this benchmark we do not have any idea if the code is maintainable, secure, provably correct or well-crafted—we just know that the unit test cases for it will pass[^utboost].
+This is a useful measurement of progress. But this is not SWE as I understand it—most of the high-leverage parts are in working with product owners to come up with a good specification, translate them into useful interfaces, and then writing secure, maintainable code. With this benchmark we do not have any idea if the code is maintainable, secure, provably correct, or well-crafted—we just know that the unit test cases for it will pass[^utboost].
 
 ## Aider Polyglot
 
@@ -295,7 +295,7 @@ Not a SWE benchmark. This will tell you how good a model is at for solving LeetC
 
 **SWE-Lancer**: OpenAI released this earlier in the year, and I thought it was neat because it directly maps the work to economic value by getting the agents to work on Expensify/Upwork tasks. The validation comes from E2E tests rather than unit tests. Unfortunately, their reporting of this benchmark has been quite lowkey since. And nobody is running this benchmark on non-OpenAI models anymore (which I’m curious to see especially since Claude Sonnet 3.5 outshone the o1 model back in the day). There are other flaws with this benchmark. But this framing seems to be in the right direction.
 
-**METR’s Long Horizon Benchmark**: This was an interesting framing, as it considered the time horizons LLMs working autonomously. They also have a detailed rubric for the “messiness” of a task. I have talked about this benchmark in my article about managing units of work for AI agents.
+**METR’s Long Horizon Benchmark**: This was an interesting framing, as it considered the time horizons of LLMs working autonomously. They also have a detailed rubric for the “messiness” of a task. I have talked about this benchmark in my article about managing units of work for AI agents.
 
 **Multi-SWE-Bench**: ByteDance made a polyglot benchmark that works similarly to SWE-Bench, that spans seven languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
 
@@ -305,7 +305,7 @@ Not a SWE benchmark. This will tell you how good a model is at for solving LeetC
 
 ## Benchmarking is hard and this makes me bullish on coding agents
 
-A large lesson I took away from studying the specifics of popular benchmarks is that designing a good benchmark is highly labour-intensive. Without human review and annotations, it’s mostly impossible to make a good benchmark. The more sophisticated the benchmark gets, the more it seems to require human intervention to ensure that the tasks are high-quality and not nonsensical or impossible.
+A large lesson I took away from studying the specifics of popular benchmarks is that designing a good benchmark is highly labour-intensive. Without human review and annotations, it’s nearly impossible to make a good benchmark. The more sophisticated the benchmark gets, the more it seems to require human intervention to ensure that the tasks are high-quality and not nonsensical or impossible.
 
 And then there are the actual evaluation methods. The way to scale up evaluations is to have automated verification across all tasks. It’s not surprising that most evaluations boil down to “make the unit tests pass” due to this reason. But this will always fall short when it comes to actually benchmarking what I consider the core work of an SWE—which is to translate a problem into structured, verifiable solutions. There is some subjectivity and fuzzy judgement involved around satisfying business needs and timelines, making the right architectural tradeoffs and ensuring the solution is good over a long time horizon.
 
