@@ -287,7 +287,7 @@ Python competitive-programming skills under hidden test suites with a rolling, �
 
 ### Verdict
 
-Not a SWE benchmark. This will tell you how good a model is at for solving LeetCode style Python problems, along with a mix of some slightly unusual skills like “mental execution” of code and test case output prediction.
+This isn't a SWE benchmark. This will tell you how good a model is at for solving LeetCode style Python problems, along with a mix of some slightly unusual skills like “mental execution” of code and test case output prediction.
 
 ## Other benchmarks
 
