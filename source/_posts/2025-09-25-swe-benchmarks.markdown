@@ -64,7 +64,6 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
   <article style="padding:12px 16px;">
     <h3>Title: Email Validation Status Not Handled Correctly in ACP and Confirmation Logic</h3>
 
-```
 <p><strong>Description</strong></p>
 <p>
   The Admin Control Panel (ACP) does not accurately reflect the email validation status of users.
@@ -155,11 +154,9 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
     excessive resends.
   </li>
 </ul>
-```
 
 <p><strong>New interfaces introduced</strong></p>
 
-```
 <p>
   <strong>Type:</strong> Method<br>
   <strong>Name:</strong> <code>db.mget</code><br>
@@ -177,8 +174,6 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
   <strong>Output:</strong> <code>Promise&lt;string | null&gt;</code><br>
   <strong>Description:</strong> Returns the most appropriate email for admin actions like force validate or resend.
 </p></article>
-```
-
 </details>
 
 ### Verdict
