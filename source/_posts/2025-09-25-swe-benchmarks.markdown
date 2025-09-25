@@ -5,9 +5,9 @@ author: Atharva Raykar
 created_at: 2025-09-25 00:00:00 UTC
 layout: post
 ---
-While I was figuring out the experimental design for [StoryMachine](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-storymachine-experiment), where we try to break down real-world software development tasks into agent-executable units of work, I ended up looking more deeply than usual into popular coding benchmarks.
+While building [StoryMachine](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-storymachine-experiment)—an experiment in breaking down software tasks into agent-executable units—I dug into popular coding benchmarks.
 
-They are often measuring something much narrower than what their names suggest. In general, they are [a lot less messy](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-right-sized-unit-of-work-controls-the-propagation-of-errors) than how we write software. This is why for example Claude scoring 80% on SWE-bench does not translate to Claude one-shotting 80% of the things I throw at it.
+They are measure something narrower than what their names suggest. In general, they are [a lot less messy](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-right-sized-unit-of-work-controls-the-propagation-of-errors) than how we write software. This is why for example Claude scoring 80% on SWE-bench does not translate to Claude one-shotting 80% of the things I throw at it.
 
 Let’s look at what these benchmarks are actually measuring.
 
