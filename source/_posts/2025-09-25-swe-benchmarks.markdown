@@ -215,29 +215,28 @@ Exercism is a platform for learning programming. It has “kata-style” program
 
   <p><strong>Starting point file: <code>src/main/java/BankAccount.java</code></strong></p>
 <div class="language-java">
-  <pre><code class="highlight">class BankAccount {
+  <pre><code class="highlight">
+class BankAccount {
     void open() throws BankAccountActionInvalidException {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-```
-void close() throws BankAccountActionInvalidException {
-    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-}
 
-synchronized int getBalance() throws BankAccountActionInvalidException {
-    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-}
+    void close() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-synchronized void deposit(int amount) throws BankAccountActionInvalidException {
-    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-}
+    synchronized int getBalance() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
-    throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-}
-```
+    synchronized void deposit(int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
+    synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 }
 </code></pre>
 
