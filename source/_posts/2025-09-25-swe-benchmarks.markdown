@@ -41,7 +41,7 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
 - They also have dockerized environments set up with all the dependencies installed and configured, so the benchmark explicitly does not test if your agent can setup your repository.
 
 
-<details style="margin-bottom:1em; background-color:#EEE;">
+<details style="margin-top:1em; background-color:#EEE;">
   <summary>Here’s an example problem statement from SWE-Bench Pro</summary>
 
   <article style="padding:12px 16px;">
