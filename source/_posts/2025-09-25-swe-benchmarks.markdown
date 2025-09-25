@@ -199,7 +199,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
 
   <p><strong>Starting point file: <code>src/main/java/BankAccount.java</code></strong></p>
 
-  <pre><code class="language-java">class BankAccount {
+  <pre><code class="highlight">class BankAccount {
     void open() throws BankAccountActionInvalidException {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
