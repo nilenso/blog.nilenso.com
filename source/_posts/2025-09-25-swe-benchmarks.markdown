@@ -11,6 +11,24 @@ They are often measuring something much narrower than what their names suggest. 
 
 Let’s look at what these benchmarks are actually measuring.
 
+## Table of Contents
+
+- [SWE-bench Verified and SWE-bench Pro](#swe-bench-verified-and-swe-bench-pro)
+  - [What it measures](#what-it-measures)
+  - [The specifics](#the-specifics)
+  - [Verdict](#verdict)
+- [Aider Polyglot](#aider-polyglot)
+  - [What it measures](#what-it-measures-1)
+  - [The specifics](#the-specifics-1)
+  - [Verdict](#verdict-1)
+- [LiveCodeBench](#livecodebench)
+  - [What it measures](#what-it-measures-2)
+  - [The specifics](#the-specifics-2)
+  - [Verdict](#verdict-2)
+- [Other benchmarks](#other-benchmarks)
+- [Benchmarking is hard and this makes me bullish on coding agents](#benchmarking-is-hard-and-this-makes-me-bullish-on-coding-agents)
+- [References and further reading](#references-and-further-reading)
+
 ## SWE-bench Verified and SWE-bench Pro
 
 ### What it measures
