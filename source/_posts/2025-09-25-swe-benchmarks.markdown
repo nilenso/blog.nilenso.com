@@ -180,7 +180,7 @@ Overall, I think SWE-bench is a good, if still very flawed benchmark (most other
 
 SWE-Bench is measuring how well AI performs on well-defined units of work. So when we say 25% is the SOTA in SWE-bench Pro, we are saying: “In a problem set of well-defined issues with pointed requirements and (the occasional) specification of code interfaces, 25% of the solutions from the agents get the respective problem’s unit test cases to pass”.
 
-This is a useful measurement of progress. But this is not SWE as I understand it—most of the high-leverage parts are in working with product owners to come up with a good specification, translate them into useful interfaces, and then writing secure, maintainable code. With this benchmark we do not have any idea if the code is maintainable, secure, provably correct or well-crafted—we just know that the unit test cases for it will pass.
+This is a useful measurement of progress. But this is not SWE as I understand it—most of the high-leverage parts are in working with product owners to come up with a good specification, translate them into useful interfaces, and then writing secure, maintainable code. With this benchmark we do not have any idea if the code is maintainable, secure, provably correct or well-crafted—we just know that the unit test cases for it will pass[^1].
 
 ## Aider Polyglot
 
@@ -370,4 +370,6 @@ On a very short notice, I can already think of a bunch of ideas for what could b
 * [Paper](https://arxiv.org/pdf/2107.03374)  
 * [GitHub](https://github.com/openai/human-eval)
 
-UTBench etc also
+## Footnotes
+
+[1]: The [UTBoost paper](https://arxiv.org/abs/2506.09289) exposes how a lot of tasks pass unit tests in SWE-Bench without resolving the underlying issues.
