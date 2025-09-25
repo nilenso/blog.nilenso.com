@@ -37,13 +37,11 @@ How well a coding agent can submit a patch for a real-world GitHub issue that pa
 
 ### The specifics
 
-This benchmark is treated as the gold standard, and labs cite it in each frontier model release.
-
-There’s many variants: Full, Verified, Lite, Bash-only, Multimodal. Most labs in their chart report on **SWE-bench Verified**, which is a cleaned and human-reviewed subset.
+There are many variants: Full, Verified, Lite, Bash-only, Multimodal. Most labs in their chart report on **SWE-bench Verified**, which is a cleaned and human-reviewed subset.
 
 Notes and quirks of SWE-bench Verified:
 
-* 500 problems and it’s entirely Python. And in that, over 40% of it is Django issues. The rest are libraries. Web applications are entirely missing.
+* It has 500 problems, all in Python. Over 40% are issues from the Django source repository; the rest are libraries. Web applications are entirely missing.
 * Solutions to these issues are small—think surgical edits or small function additions. The mean lines of code per solution are 11, and median lines of code are 4. Amazon found that [over 77.6% of the solutions touch only one function](https://arxiv.org/pdf/2504.08703).
 * All the issues are from 2023 and earlier, and we can be almost certain that this data was trained on. Thus it’s hard to tell how much of the improvements are due to memorisation.
 
