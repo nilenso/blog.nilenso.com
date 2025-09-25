@@ -43,11 +43,11 @@ Notes and quirks of SWE-bench Verified:
 
 * It has 500 problems, all in Python. Over 40% are issues from the Django source repository; the rest are libraries. Web applications are entirely missing.
 * Solutions to these issues are small—think surgical edits or small function additions. The mean lines of code per solution are 11, and median lines of code are 4. Amazon found that [over 77.6% of the solutions touch only one function](https://arxiv.org/pdf/2504.08703).
-* All the issues are from 2023 and earlier, and we can be almost certain that this data was trained on. Thus it’s hard to tell how much of the improvements are due to memorisation.
+* All the issues are from 2023 and earlier. This data was almost certainly in the training sets. Thus it’s hard to tell how much of the improvements are due to memorisation.
 
 ![METR Bar Chart showing SWE-Bench Verified repository distribution](/images/blog/image.png)
 
-Recently, Scale AI published an improved version called **SWE-bench Pro** that tries to address some quirks of Verified. Here’s my notes:
+Recently, Scale AI published an improved version called **SWE-bench Pro** that tries to address some quirks of Verified. Here are my notes:
 
 * 1865 problems, from 41 repositories. It’s a mix of copyleft/GPL public repositories and some private repositories. I’m skeptical that choosing copyleft would meaningfully combat contamination, given AI labs [are known to resort to piracy to train their models](https://www.bbc.com/news/articles/c5y4jpg922qo). But this is still an improvement.
 * The repositories are Python, Go, JS and TS—we don’t know the distribution, except that they are “not uniform”. But they also ensure every repository having only 50-100 problem instances.
@@ -178,7 +178,7 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
 
 Overall, I think SWE-bench is a good, if still very flawed benchmark (most other benchmarks are a lot worse). I also think SWE-bench Pro addresses some severe problems with Verified (which at this point should just be ignored in any frontier model report). I’ll note that there’s significant drift from what this measures and how I actually work with AI coding agents.
 
-What we are actually measuring here is how well can AI perform on some well-defined units of work. So when we say 25% is the SOTA in SWE-bench Pro, we are saying: “In a problem set of well-defined issues with pointed requirements and (the occasional) specification of code interfaces, 25% of the solutions from the agents get the respective problem’s unit test cases to pass”.
+SWE-Bench is measuring how well AI performs on well-defined units of work. So when we say 25% is the SOTA in SWE-bench Pro, we are saying: “In a problem set of well-defined issues with pointed requirements and (the occasional) specification of code interfaces, 25% of the solutions from the agents get the respective problem’s unit test cases to pass”.
 
 This is a useful measurement of progress. But this is not SWE as I understand it—most of the high-leverage parts are in working with product owners to come up with a good specification, translate them into useful interfaces, and then writing secure, maintainable code. With this benchmark we do not have any idea if the code is maintainable, secure, provably correct or well-crafted—we just know that the unit test cases for it will pass.
 
@@ -190,7 +190,7 @@ If the coding agent (specifically, Aider) can solve hard-level Exercism problems
 
 ### The specifics
 
-Exercism is a platform for learning programming. It has “kata-style” programming exercises. So it’s not as algorithmic as LeetCode, but still pretty contained to optimise for learning.
+Exercism is a learning platform with “kata-style” programming exercises. It’s not as algorithmic as LeetCode, but still pretty contained.
 
 <details style="margin-bottom:1em; background-color:#EEE;">
   <summary><strong>Example input for Aider's polyglot</strong></summary>
@@ -281,7 +281,7 @@ Python competitive-programming skills under hidden test suites with a rolling, �
 * Everything is Python.
 * There’s a fairly even balance between Easy, Medium and Hard problems.
 * The evaluations are just like LeetCode: run hidden test cases.
-* One thing we are certain of is that there’s not much contamination—only problems released after each model’s cutoff date is evaluated.
+* We know there’s little contamination—only problems released after each model’s cutoff date is evaluated.
 
   * That said, because it’s LeetCode style, lots of problems will look quite similar to each other.
 
@@ -305,7 +305,7 @@ Not a SWE benchmark. This will tell you how good a model is at for solving LeetC
 
 ## Benchmarking is hard and this makes me bullish on coding agents
 
-If there’s anything I learned from looking at the specifics of popular benchmarks, it’s that designing a good benchmark is extremely labour-intensive. Without human review and annotations, it’s mostly impossible to make a good benchmark. The more sophisticated the benchmark gets, the more it seems to require human intervention to ensure that the tasks are high-quality and not nonsensical or impossible.
+A large lesson I took away from studying the specifics of popular benchmarks is that designing a good benchmark is highly labour-intensive. Without human review and annotations, it’s mostly impossible to make a good benchmark. The more sophisticated the benchmark gets, the more it seems to require human intervention to ensure that the tasks are high-quality and not nonsensical or impossible.
 
 And then there are the actual evaluation methods. The way to scale up evaluations is to have automated verification across all tasks. It’s not surprising that most evaluations boil down to “make the unit tests pass” due to this reason. But this will always fall short when it comes to actually benchmarking what I consider the core work of an SWE—which is to translate a problem into structured, verifiable solutions. There is some subjectivity and fuzzy judgement involved around satisfying business needs and timelines, making the right architectural tradeoffs and ensuring the solution is good over a long time horizon.
 
