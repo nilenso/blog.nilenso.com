@@ -138,31 +138,27 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
       </li>
     </ul>
 
-    <p><strong>New interfaces introduced</strong></p>
-    <dl>
-      <dt>Type</dt><dd>Method</dd>
-      <dt>Name</dt><dd><code>db.mget</code></dd>
-      <dt>Path</dt>
-      <dd>
-        <code>src/database/mongo/main.js</code>, <code>src/database/postgres/main.js</code>,
-        <code>src/database/redis/main.js</code>
-      </dd>
-      <dt>Input</dt><dd><code>keys: string[]</code></dd>
-      <dt>Output</dt><dd><code>Promise&lt;(string | null)[]&gt;</code></dd>
-      <dt>Description</dt>
-      <dd>A batch retrieval method on the database abstraction layer.</dd>
-    </dl>
 
-    <dl>
-      <dt>Type</dt><dd>Function</dd>
-      <dt>Name</dt><dd><code>user.email.getEmailForValidation</code></dd>
-      <dt>Path</dt><dd><code>src/user/email.js</code></dd>
-      <dt>Input</dt><dd><code>uid: number</code></dd>
-      <dt>Output</dt><dd><code>Promise&lt;string | null&gt;</code></dd>
-      <dt>Description</dt>
-      <dd>Returns the most appropriate email for admin actions like force validate or resend.</dd>
-    </dl>
-  </article>
+<p><strong>New interfaces introduced</strong></p>
+
+    <p>
+      <strong>Type:</strong> Method<br>
+      <strong>Name:</strong> <code>db.mget</code><br>
+      <strong>Path:</strong> <code>src/database/mongo/main.js</code>, <code>src/database/postgres/main.js</code>, <code>src/database/redis/main.js</code><br>
+      <strong>Input:</strong> <code>keys: string[]</code><br>
+      <strong>Output:</strong> <code>Promise&lt;(string | null)[]&gt;</code><br>
+      <strong>Description:</strong> A batch retrieval method on the database abstraction layer.
+    </p>
+
+    <p>
+      <strong>Type:</strong> Function<br>
+      <strong>Name:</strong> <code>user.email.getEmailForValidation</code><br>
+      <strong>Path:</strong> <code>src/user/email.js</code><br>
+      <strong>Input:</strong> <code>uid: number</code><br>
+      <strong>Output:</strong> <code>Promise&lt;string | null&gt;</code><br>
+      <strong>Description:</strong> Returns the most appropriate email for admin actions like force validate or resend.
+    </p>
+</article>
 </details>
 
 ### Verdict
