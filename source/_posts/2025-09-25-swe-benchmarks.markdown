@@ -42,7 +42,7 @@ Recently, Scale AI published an improved version called **SWE-bench Pro** that t
 
 
 <details style="margin-top:1em; background-color:#EEE;">
-  <summary>Here’s an example problem statement from SWE-Bench Pro</summary>
+  <summary><strong>An example problem statement from SWE-Bench Pro</strong></summary>
 
   <article style="padding:12px 16px;">
     <h3>Title: Email Validation Status Not Handled Correctly in ACP and Confirmation Logic</h3>
@@ -180,7 +180,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
 
 <details style="margin-bottom:1em; background-color:#EEE;">
   <summary><strong>Example input for Aider's polyglot</strong></summary>
-
+  <article style="padding:12px 16px;">
   <p><strong>Instructions</strong></p>
   <p>
     Your task is to implement bank accounts supporting opening/closing, withdrawals, and deposits of money.
@@ -221,6 +221,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
     }
 }
 </code></pre>
+</article>
 </details>
 
 It seems to have far more language diversity than most other popular benchmarks: C++, Java, Go, Python, JavaScript and Rust are covered. The more functional programming languages are still unrepresented.
