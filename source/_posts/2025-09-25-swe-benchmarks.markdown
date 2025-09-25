@@ -198,7 +198,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
   <p>It should be possible to close an account; operations against a closed account must fail.</p>
 
   <p><strong>Starting point file: <code>src/main/java/BankAccount.java</code></strong></p>
-
+<div class="language-java">
   <pre><code class="highlight">class BankAccount {
     void open() throws BankAccountActionInvalidException {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
@@ -221,6 +221,7 @@ Exercism is a platform for learning programming. It has “kata-style” program
     }
 }
 </code></pre>
+</div>
 </article>
 </details>
 
