@@ -372,5 +372,5 @@ On a very short notice, I can already think of a bunch of ideas for what could b
 
 ---
 
-[^selection]: My criteria for covering these specific benchmarks was roughly: look at recent frontier model releases and see what coding benchmarks do they report for their models.
+[^selection]: My criteria for covering these specific benchmarks was roughly: look at recent frontier model releases and see what coding benchmarks they report they mention.
 [^utboost]: The [UTBoost paper](https://arxiv.org/abs/2506.09289) exposes how a lot of tasks pass unit tests in SWE-Bench without resolving the underlying issues.
