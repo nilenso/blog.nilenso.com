@@ -178,7 +178,7 @@ If the coding agent (specifically, Aider) can solve hard-level Exercism problems
 
 Exercism is a platform for learning programming. It has “kata-style” programming exercises. So it’s not as algorithmic as LeetCode, but still pretty contained to optimise for learning.
 
-<details style="margin-bottom:1em;">
+<details style="margin-bottom:1em; background-color:#EEE;">
   <summary><strong>Example input for Aider's polyglot</strong></summary>
 
   <p><strong>Instructions</strong></p>
