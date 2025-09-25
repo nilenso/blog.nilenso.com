@@ -370,6 +370,6 @@ On a very short notice, I can already think of a bunch of ideas for what could b
 * [Paper](https://arxiv.org/pdf/2107.03374)  
 * [GitHub](https://github.com/openai/human-eval)
 
-## Footnotes
+---
 
 [1]: The [UTBoost paper](https://arxiv.org/abs/2506.09289) exposes how a lot of tasks pass unit tests in SWE-Bench without resolving the underlying issues.
