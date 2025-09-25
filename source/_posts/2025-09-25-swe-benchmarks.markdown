@@ -7,7 +7,7 @@ layout: post
 ---
 While building [StoryMachine](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-storymachine-experiment)—an experiment in breaking down software tasks into agent-executable units—I dug into popular coding benchmarks.
 
-They are measure something narrower than what their names suggest. In general, they are [a lot less messy](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-right-sized-unit-of-work-controls-the-propagation-of-errors) than how we write software. This is why for example Claude scoring 80% on SWE-bench does not translate to Claude one-shotting 80% of the things I throw at it.
+They are measure something narrower than what their names suggest. In general, they are [a lot less messy](https://blog.nilenso.com/blog/2025/09/15/ai-unit-of-work/#the-right-sized-unit-of-work-controls-the-propagation-of-errors) than how we write software. This is why Claude scoring 80% on SWE-bench does not translate to Claude one-shotting 80% of the things I throw at it.
 
 Let’s look at what these benchmarks are actually measuring.
 
@@ -37,7 +37,7 @@ How well a coding agent can submit a patch for a real-world GitHub issue that pa
 
 ### The specifics
 
-This benchmark seems to be the gold standard for measuring coding capabilities, and what all labs are flexing on every new model release.
+This benchmark is treated as the gold standard, and labs cite it in each frontier model release.
 
 There’s many variants: Full, Verified, Lite, Bash-only, Multimodal. Most labs in their chart report on **SWE-bench Verified**, which is a cleaned and human-reviewed subset.
 
@@ -372,5 +372,4 @@ On a very short notice, I can already think of a bunch of ideas for what could b
 * [Paper](https://arxiv.org/pdf/2107.03374)  
 * [GitHub](https://github.com/openai/human-eval)
 
-```java
-```
+UTBench etc also
