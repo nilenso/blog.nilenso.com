@@ -281,7 +281,7 @@ Python competitive-programming skills under hidden test suites with a rolling, �
 * Everything is Python.
 * There’s a fairly even balance between Easy, Medium and Hard problems.
 * The evaluations are just like LeetCode: run hidden test cases.
-* We know there’s little contamination—only problems released after each model’s cutoff date is evaluated.
+* We know there’s little contamination—only problems released after each model’s cutoff date are evaluated.
 
   * That said, because it’s LeetCode style, lots of problems will look quite similar to each other.
 
