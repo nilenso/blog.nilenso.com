@@ -41,7 +41,7 @@ There are many variants: Full, Verified, Lite, Bash-only, Multimodal. Most labs 
 
 Notes and quirks of SWE-bench Verified:
 
-* It has 500 problems, all in Python. [Over 40% are issues from the Django source repository](https://epoch.ai/blog/what-skills-does-swe-bench-verified-evaluate); the rest are libraries. Web applications are entirely missing.
+* It has 500 problems, all in Python. [Over 40% are issues from the Django source repository](https://epoch.ai/blog/what-skills-does-swe-bench-verified-evaluate); the rest are libraries. Web applications are entirely missing. The repositories that the agents have to operate are real, hefty open source projects.
 * Solutions to these issues are small—think surgical edits or small function additions. The mean lines of code per solution are 11, and median lines of code are 4. Amazon found that [over 77.6% of the solutions touch only one function](https://arxiv.org/pdf/2504.08703).
 * All the issues are from 2023 and earlier. This data was almost certainly in the training sets. Thus it’s hard to tell how much of the improvements are due to memorisation.
 
