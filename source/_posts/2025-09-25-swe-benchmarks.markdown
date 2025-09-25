@@ -299,13 +299,41 @@ On a very short notice, I can already think of a bunch of ideas for what could b
 - Use well-calibrated human judges to score on the fuzzier criteria of quality (this seems quite hard to do right, and “well-calibrated” is doing a lot of heavy lifting in that sentence).
 
 ## References and further reading
+**SWE-bench / Verified**  
+- [Dataset](https://huggingface.co/datasets/princeton-nlp/SWE-bench)  
+- [Leaderboard](https://www.swebench.com/leaderboard)  
+- [AWS SWE-bench analysis](https://arxiv.org/pdf/2504.08703)  
+- [Original paper](https://arxiv.org/pdf/2306.03093)  
 
-- https://arxiv.org/pdf/2507.02825v2
-- https://metr.org/blog/2025-08-12-research-update-towards-reconciling-slowdown-with-time-horizons/
-- https://arxiv.org/pdf/2502.12115
-- https://openreview.net/pdf?id=VTF8yNQM66
-- https://scale.com/research/swe_bench_pro
-- https://aider.chat/2024/12/21/polyglot.html
-- http://livecodebench.github.io/index.html
-- https://www.tbench.ai/
--
+**SWE-bench Pro**  
+- [Scale AI blog](https://scale.com/research/swe_bench_pro)  
+- [Paper](https://arxiv.org/pdf/2507.02825)  
+- [Leaderboard](https://swe-bench-pro.github.io)  
+
+**Aider Polyglot**  
+- [Aider blog post](https://aider.chat/2024/12/21/polyglot.html)  
+
+**LiveCodeBench**  
+- [Project page](http://livecodebench.github.io/index.html)  
+
+**TerminalBench**  
+- [Official site](https://www.tbench.ai/)  
+- [Docs](https://docs.tbench.ai)  
+
+**SWE-Lancer**  
+- [OpenAI blog](https://openai.com/research/swe-lancer)  
+- [Paper](https://arxiv.org/pdf/2502.12115)  
+
+**METR Long-Horizon**  
+- [Blog update](https://metr.org/blog/2025-08-12-research-update-towards-reconciling-slowdown-with-time-horizons/)  
+- [Paper](https://openreview.net/pdf?id=VTF8yNQM66)  
+
+**Polyglot SWE-bench variants**  
+- [Multi-SWE-bench (ByteDance)](https://github.com/bytedance-research/Multi-SWE-bench)  
+- [ArXiv paper](https://arxiv.org/abs/2507.02825v2)  
+- [Hugging Face dataset](https://huggingface.co/datasets/ByteDance/Multi-SWE-bench)  
+- [SWE-bench Multilingual](https://github.com/princeton-nlp/SWE-bench-Multilingual)  
+
+**HumanEval**  
+- [Paper](https://arxiv.org/pdf/2107.03374)  
+- [GitHub](https://github.com/openai/human-eval)  
