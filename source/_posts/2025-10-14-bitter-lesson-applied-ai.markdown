@@ -23,7 +23,7 @@ Here’s my observation: The bitter lesson applies to developers building and wo
 
 ## How not to code with AI
 
-There’s a type of AI-maximalist programmer that I have seen—you’ll often find them at vibe coding events, workshops and demos. Their setup often has a folder full of text files that describe “rules”, “modes”, “roles”, prompts, or subagents. It often looks like a dump of all possible individual actions a developer can take—PRD analyser, planner, user story writer, code reviewer, UAT tester, etc. They are full of long instructions, with lots of “pleading” language, capitalisation and even step-by-step logic telling an LLM how it should think.
+I've observed a type of AI-maximalist programmer often found at vibe coding events, workshops and demos. Their setup often has a folder full of text files that describe “rules”, “modes”, “roles”, prompts, or subagents. It often looks like a dump of all possible individual actions a developer can take—PRD analyser, planner, user story writer, code reviewer, UAT tester, etc. These files are full of long instructions, with lots of “pleading” language, capitalisation and even step-by-step logic telling an LLM how it should think and act.
 
 The fundamental error in the above methods is that they bake in assumptions of what a workflow should look like, and how the agent should operate. They meddle with the model’s behaviour. It is what Sutton would describe as a “human knowledge based” method.
 
@@ -33,11 +33,11 @@ The engineer that has digested the bitter lesson will instead [set up an environ
 
 ## How not to build LLM wrappers
 
-The first generation of AI coding tools (Cursor, Sourcegraph Cody, Codeium[^2], Copilot) heavily used chunk-and-embed paradigm, ie, have a separate vector embeddings storage layer that prefills retrieved chunks into the LLM’s context window. [^3]
+The first generation of AI coding tools (Cursor, Sourcegraph Cody, Codeium[^2], Copilot) heavily relied on chunk-and-embed paradigm, ie, use a separate vector embeddings storage layer that prefills retrieved chunks into the LLM’s context window. [^3]
 
 Newer AI tools (Cline, Windsurf, Amp, Claude Code, Codex, OpenHands) eschew pre-filled retrievals in favour of agentic search—ie, tell the AI how to invoke a search, and let it figure it out from there. How the search is performed is an implementation detail.
 
-The latter approach is more bitter-lessoned. Do not bake in your human knowledge assumptions by prefilling items into the agent’s context window.
+The latter approach better embodies the bitter-lesson. Do not bake in your human knowledge assumptions by prefilling items into the agent’s context window.
 
 Reinforcement learning produces goal-seeking agents. Anyone who has digested the bitter lesson knows that more compute is being poured into these LLMs to make goal-seekers (they get a reward signal when they achieve their goal). Leverage this fact. As models get better at goal-seeking in general, they will get better inside applications that mirror this action → feedback loop.
 
@@ -64,9 +64,9 @@ Let’s contrast some human-knowledge driven “artisanal” architectures again
 
 ## When to use artisanal architectures
 
-This is not to say that artisanal architectures are bad. What I’m saying is that artisanal architectures must account for the bitter lesson.
+This is not to say that artisanal architectures are bad. It's that artisanal architectures must account for the bitter lesson.
 
-When the model isn’t good at your task yet, but may get there under the current scaling regime—design an artisanal architecture to build what is needed today, but do so with the knowledge that some day you may have to throw this functionality away—make the artisanal parts especially easy to remove when the bitter lesson inevitably strikes. [^4]
+When the model isn’t good at your task yet, but may get there eventually under the current scaling regime—design an artisanal architecture to build what is needed today, but do so with the knowledge that some day you may have to throw this functionality away—make the artisanal parts especially easy to remove when the bitter lesson inevitably strikes. [^4]
 
 A more permanently artisanal architecture also makes sense when your task does not require a repeated sequence of actions and deep thinking, for example, a classification task in a pipeline or a task to link similar address records.
 
