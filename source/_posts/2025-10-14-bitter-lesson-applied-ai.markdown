@@ -5,7 +5,7 @@ author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
 layout: post
 ---
-*tldr? Your AI product must be built with the knowledge of Sutton's Bitter Lesson.*
+*tldr? Your AI product must "price in" the knowledge of Sutton's Bitter Lesson.*
 
 ---
 
