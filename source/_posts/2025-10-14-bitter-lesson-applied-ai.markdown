@@ -104,6 +104,6 @@ _Thanks to Ravi Chandra Padmala for reviewing drafts of this._
 
 [^3]: There’s also Aider—while it is not using embeddings, inserts a repomap into the LLM context, which makes it a form of prefilling.
 
-[^details]: The devil of course is in the details and the elbow grease. And also the parts which actually do not improve even when AI scaling continues.
+[^details]: The devil of course is in the details and the elbow grease. And also the parts which actually do not improve even when AI scaling continues. While the fundamental architecture is _simple_, it's not necessarily _easy_ to nail down all the details. But artisanal architectures are neither simple nor easy.
 
 [^4]: In some instances, you might see a hop from one type of artisanal workflow to another, due to a model improving, but still not improving enough to remove the need for a human knowledge informed method, as was the case with [Devin and Sonnet 4.5](https://cognition.ai/blog/devin-sonnet-4-5-lessons-and-challenges).
