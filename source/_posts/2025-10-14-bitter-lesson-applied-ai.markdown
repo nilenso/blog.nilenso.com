@@ -84,8 +84,11 @@ Training methods will also not solve for important parts that are gluing things 
 - Account for the scaling in your AI application—avoid human-informed workflows in lieu of action-infer-feedback loops.
 - Artisanal architectures and methods may be necessary for many applications—but do so with the knowledge that you might have to throw it away when the next frontier model drops.
 - Some things won't scale with compute—most of your artisanal ingenuity may be required here.
+---
 
-### Footnotes
+_Thanks to Ravi Chandra Padmala for reviewing drafts of this._
+
+---
 
 [^1]: Mostly thanks to the recent [Dwarkesh Podcast](https://www.youtube.com/watch?v=21EYKqUsPfg). I am aware that even though this whole article is going to be LLM-centric, Sutton himself does not believe LLMs are the most “bitter lesson-pilled” AI architecture. But I believe it's fair to say that there's a spectrum to the bitter lesson and LLMs are definitely less human-knowledge based than other generalist AI architectures.
 
@@ -94,7 +97,3 @@ Training methods will also not solve for important parts that are gluing things 
 [^3]: There’s also Aider—while it is not using embeddings, inserts a repomap into the LLM context, which makes it a form of prefilling.
 
 [^4]: In some instances, you might see a hop from one type of artisanal workflow to another, due to a model improving, but still not improving enough to remove the need for a human knowledge informed method, as was the case with [Devin and Sonnet 4.5](https://cognition.ai/blog/devin-sonnet-4-5-lessons-and-challenges).
-
----
-
-_Thanks to Ravi Chandra Padmala for reviewing drafts of this._
