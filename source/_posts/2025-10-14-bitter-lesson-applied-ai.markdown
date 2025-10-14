@@ -78,6 +78,13 @@ Current training methods have also not scaled context window sizes as reliably�
 
 Training methods will also not solve for important parts that are gluing things together, like retries and reliable execution, or good interface design.
 
+## Summary
+
+- Make a note of what aspects of models will improve with the current scaling regime.
+- Account for the scaling in your AI application—avoid human-informed workflows in lieu of action-infer-feedback loops.
+- Artisanal architectures and methods may be necessary for many applications—but do so with the knowledge that you might have to throw it away when the next frontier model drops.
+- Some things won't scale with compute—most of your artisanal ingenuity may be required here.
+
 ### Footnotes
 
 [^1]: Mostly thanks to the recent [Dwarkesh Podcast](https://www.youtube.com/watch?v=21EYKqUsPfg). I am aware that even though this whole article is going to be LLM-centric, Sutton himself does not believe LLMs are the most “bitter lesson-pilled” AI architecture. But I believe it's fair to say that there's a spectrum to the bitter lesson and LLMs are definitely less human-knowledge based than other generalist AI architectures.
