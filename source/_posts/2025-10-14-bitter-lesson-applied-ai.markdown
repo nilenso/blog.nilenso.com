@@ -1,5 +1,5 @@
 ---
-title: Bitter Lesson applied AI
+title: Applied AI
 kind: article
 author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
@@ -62,7 +62,7 @@ Let’s contrast some human-knowledge driven “artisanal” architectures again
 
 This is not to say that artisanal architectures are bad. What I’m saying is that artisanal architectures must account for the bitter lesson.
 
-When the model isn’t good at your task yet, but may get there under the current scaling regime—design an artisanal architecture to build what is needed today, but do so with the knowledge that some day you may have to throw this functionality away—make the artisanal parts especially easy to remove when the bitter lesson inevitably strikes. [4]
+When the model isn’t good at your task yet, but may get there under the current scaling regime—design an artisanal architecture to build what is needed today, but do so with the knowledge that some day you may have to throw this functionality away—make the artisanal parts especially easy to remove when the bitter lesson inevitably strikes. [^4]
 
 A more permanently artisanal architecture also makes sense when your task does not require a repeated sequence of actions and deep thinking, for example, a classification task in a pipeline or a task to link similar address records.
 
@@ -82,7 +82,7 @@ Training methods will also not solve for important parts that are gluing things 
 
 [^3]: There’s also Aider—while it is not using embeddings, inserts a repomap into the LLM context, which makes it a form of prefilling.
 
-[^4] Devin: One type of artisanal to another
+[^4]: In some instances, you might see a hop from one type of artisanal workflow to another, due to a model improving, but still not improving enough to remove the need for a human knowledge informed method, as was the case with [Devin and Sonnet 4.5](https://cognition.ai/blog/devin-sonnet-4-5-lessons-and-challenges).
 
 ---
 
