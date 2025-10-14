@@ -94,7 +94,7 @@ Training methods will also not solve for important parts that are gluing things 
 
 ---
 
-_Thanks to Ravi Chandra Padmala for reviewing drafts of this._
+_Thanks to Srihari and Ravi Chandra Padmala for reviewing drafts of this._
 
 ---
 
