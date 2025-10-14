@@ -1,5 +1,5 @@
 ---
-title: Applied AI
+title: "Failing to digest the "
 kind: article
 author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
@@ -9,7 +9,7 @@ layout: post
 
 ---
 
-Everyone is talking about Richard Sutton’s bitter lesson once again[^1].
+Everyone is talking about Richard Sutton’s Bitter Lesson once again[^1].
 
 > The biggest lesson that can be read from 70 years of AI research is that general methods that leverage computation are ultimately the most  effective, and by a large margin.
 > 
@@ -33,9 +33,11 @@ The engineer that has digested the bitter lesson will instead [set up an environ
 
 ## How not to build LLM wrappers
 
+I have observed engineers directly jump to complex workflows, indiscriminate application of prompting tricks and multiple agents with fixed roles when designing an LLM-integrated application. These add unnecessary complexity and should not be the default starting point. To better illustrate why, we can look at how coding agents have evolved over time.
+
 The first generation of AI coding tools (Cursor, Sourcegraph Cody, Codeium[^2], Copilot) heavily relied on chunk-and-embed paradigm, ie, use a separate vector embeddings storage layer that prefills retrieved chunks into the LLM’s context window. [^3]
 
-Newer AI tools (Cline, Windsurf, Amp, Claude Code, Codex, OpenHands) eschew pre-filled retrievals in favour of agentic search—ie, tell the AI how to invoke a search, and let it figure it out from there. How the search is performed is an implementation detail.
+Newer AI tools (Cline, Windsurf, Amp, Claude Code, Codex, OpenHands) eschew pre-filled retrievals in favour of agentic search—ie, tell the AI how to invoke a search, and let it figure it out from there. How the search is performed is an implementation detail. This is a much simpler fundamental architecture. [^details]
 
 The latter approach better embodies the bitter-lesson. Do not bake in your human knowledge assumptions by prefilling items into the agent’s context window.
 
@@ -84,6 +86,12 @@ Training methods will also not solve for important parts that are gluing things 
 - Account for the scaling in your AI application—avoid human-informed workflows in lieu of action-infer-feedback loops.
 - Artisanal architectures and methods may be necessary for many applications—but do so with the knowledge that you might have to throw it away when the next frontier model drops.
 - Some things won't scale with compute—most of your artisanal ingenuity may be required here.
+
+## Similar articles
+
+- [Learning the Bitter Lesson](https://rlancemartin.github.io/2025/07/30/bitter_lesson/)
+- [The Model is the Product](https://vintagedata.org/blog/posts/model-is-the-product)
+
 ---
 
 _Thanks to Ravi Chandra Padmala for reviewing drafts of this._
@@ -95,5 +103,7 @@ _Thanks to Ravi Chandra Padmala for reviewing drafts of this._
 [^2]: Before Codeium became the more agentic windsurf.
 
 [^3]: There’s also Aider—while it is not using embeddings, inserts a repomap into the LLM context, which makes it a form of prefilling.
+
+[^details]: The devil of course is in the details and the elbow grease. And also the parts which actually do not improve even when AI scaling continues.
 
 [^4]: In some instances, you might see a hop from one type of artisanal workflow to another, due to a model improving, but still not improving enough to remove the need for a human knowledge informed method, as was the case with [Devin and Sonnet 4.5](https://cognition.ai/blog/devin-sonnet-4-5-lessons-and-challenges).
