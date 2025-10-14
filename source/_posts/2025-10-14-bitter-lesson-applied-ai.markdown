@@ -5,6 +5,10 @@ author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
 layout: post
 ---
+*tldr? Your AI product must be built with the knowledge of Sutton's Bitter Lesson.*
+
+---
+
 Everyone is talking about Richard Sutton’s bitter lesson once again[^1].
 
 > The biggest lesson that can be read from 70 years of AI research is that general methods that leverage computation are ultimately the most  effective, and by a large margin.
@@ -76,7 +80,7 @@ Training methods will also not solve for important parts that are gluing things 
 
 ### Footnotes
 
-[^1]: I am aware that even though this whole article is going to be LLM-centric, Sutton himself does not believe LLMs are the most “bitter lesson-pilled” AI architecture. But there’s a spectrum to the bitter lesson and LLMs are definitely less human-knowledge based than other generalist AI architectures.
+[^1]: Mostly thanks to the recent [Dwarkesh Podcast](https://www.youtube.com/watch?v=21EYKqUsPfg). I am aware that even though this whole article is going to be LLM-centric, Sutton himself does not believe LLMs are the most “bitter lesson-pilled” AI architecture. But I believe it's fair to say that there's a spectrum to the bitter lesson and LLMs are definitely less human-knowledge based than other generalist AI architectures.
 
 [^2]: Before Codeium became the more agentic windsurf.
 
