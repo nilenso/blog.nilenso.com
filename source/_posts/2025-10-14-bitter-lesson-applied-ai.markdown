@@ -1,5 +1,5 @@
 ---
-title: "Failing to digest the "
+title: Failing to digest the bitter lesson, AI engineering edition
 kind: article
 author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
