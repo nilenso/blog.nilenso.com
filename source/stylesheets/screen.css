@@ -631,6 +631,12 @@ th:not(:first-child) {
     text-align: center;
 }
 
+/* Two-column tables: center-align all cells */
+table:has(> :is(thead, tbody) > tr:first-child > *:nth-child(2):last-child) th,
+table:has(> :is(thead, tbody) > tr:first-child > *:nth-child(2):last-child) td {
+  text-align: center;
+}
+
 @media (max-width: 640px) {
     table {
         width: 100%;
