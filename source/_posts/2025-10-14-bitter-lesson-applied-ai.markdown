@@ -1,5 +1,5 @@
 ---
-title: Failing to digest the bitter lesson, AI engineering edition
+title: Artisanal shims for the bitter lesson age
 kind: article
 author: Atharva Raykar
 created_at: 2025-10-14 00:00:00 UTC
@@ -12,10 +12,10 @@ layout: post
 Everyone is talking about Richard Sutton’s Bitter Lesson once again[^1].
 
 > The biggest lesson that can be read from 70 years of AI research is that general methods that leverage computation are ultimately the most  effective, and by a large margin.
-> 
-> 
+>
+>
 > Rich Sutton, [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
-> 
+>
 
 I highly recommend taking a detour to read Richard’s essay if you haven’t yet, before coming back to this page. It’s very short.
 
@@ -23,11 +23,11 @@ Here’s my observation: The bitter lesson applies to developers building and wo
 
 ## How not to code with AI
 
-I've observed a type of AI-maximalist programmer often found at vibe coding events, workshops and demos. Their setup often has a folder full of text files that describe “rules”, “modes”, “roles”, prompts, or subagents. It often looks like a dump of all possible individual actions a developer can take—PRD analyser, planner, user story writer, code reviewer, UAT tester, etc. These files are full of long instructions, with lots of “pleading” language, capitalisation and even step-by-step logic telling an LLM how it should think and act.
+I've observed a type of AI-maximalist programmer often found at vibe coding events, workshops and demos. Their setup often has a folder full of text files that describe “rules”, “modes”, “roles”, prompts, or subagents. It often looks like a dump of all possible individual actions a developer can take—PRD analyser, planner, user story writer, code reviewer, UAT tester, etc. These files are full of long instructions, with lots of “pleading” language (or threats), capitalisation and even step-by-step logic telling an LLM how it should think and act.
 
 The fundamental error in the above methods is that they bake in assumptions of what a workflow should look like, and how the agent should operate. They meddle with the model’s behaviour. It is what Sutton would describe as a “human knowledge based” method.
 
-Some of these tricks were necessary when the models were weaker and less agentic. Today, they can reason well and learn from the feedback in the environment. Force-fitting a complex web of workflows and roles is potentially [fighting against the model weights](https://x.com/dbreunig/status/1965855381529436639).
+Some of these tricks were necessary when the models were weaker and less agentic. Today, they can reason well and learn from feedback in the environment. Force-fitting a complex web of workflows and roles is potentially [fighting against the model weights](https://x.com/dbreunig/status/1965855381529436639).
 
 The engineer that has digested the bitter lesson will instead [set up an environment that can provide feedback loops to the agent](https://simonwillison.net/2025/Sep/30/designing-agentic-loops/). This setup is simpler and better accommodates frontier reasoning models that are scaled with reinforcement learning by getting out of their way.
 
