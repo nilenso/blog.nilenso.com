@@ -34,7 +34,7 @@ For context, the initial prompt provides product requirements and a tech spec, t
 
 You can see the components change and grow over time,
 
-[Screen Recording 2025-10-28 at 11.07.19 AM.mov](attachment:744e1056-0b59-4f91-8baf-c9b24ff8ddc1:Screen_Recording_2025-10-28_at_11.07.19_AM.mov)
+https://github.com/user-attachments/assets/5bfc3f49-88f3-4f03-9666-ad0007b585b3
 
 visualise growth of components as percentages of total token count,
 
