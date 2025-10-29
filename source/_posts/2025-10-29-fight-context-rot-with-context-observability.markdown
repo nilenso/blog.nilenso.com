@@ -5,7 +5,7 @@ author: Srihari Sriraman
 created_at: 2025-10-29 00:00:00 UTC
 layout: post
 ---
-You can’t fix what you can’t see. I built a tool that pulls apart LLM context into meaningful components that you can see, measure, and then meaningfully engineer.
+TL;DR: You can’t fix what you can’t see. I built a tool that pulls apart LLM context into meaningful components that you can see, measure, and then meaningfully engineer.
 
 ## The need for context observability
 
