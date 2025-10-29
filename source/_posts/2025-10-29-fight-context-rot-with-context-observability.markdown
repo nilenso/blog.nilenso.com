@@ -34,15 +34,15 @@ For context, the initial prompt provides product requirements and a tech spec, t
 
 You can see the components change and grow over time,
 
-<video src="/videos/components-view.mp4" controls preload></video>
+<video src="/videos/components-view.mp4" controls preload autoplay loop muted></video>
 
 visualise growth of components as percentages of total token count,
 
-<video src="/videos/timeline-view.mp4" controls preload></video>
+<video src="/videos/timeline-view.mp4" controls preload autoplay loop muted></video>
 
 and filter, sort, search through messages in a conversation however you'd like.
 
-<video src="/videos/conversation-view.mp4" controls preload></video>
+<video src="/videos/conversation-view.mp4" controls preload autoplay loop muted></video>
 
 Here’s that Github link again, if you want to try it out: [nilenso/context-viewer](https://github.com/nilenso/context-viewer/)
 
@@ -117,6 +117,6 @@ LangChain’s [insights agent](https://blog.langchain.com/insights-agent-multitu
 
 I had a lot of fun building this, and I plan to write about that experience. Meanwhile, here's an end-to-end demo at 2x:
 
-<video src="/videos/full-cv-demo-2x.mp4" controls preload></video>
+<video src="/videos/full-cv-demo-2x.mp4" controls preload autoplay loop muted></video>
 
 I’d love to hear what you think. Join the discussion on Hacker News! Contributions welcome through PRs. You can also tweet [@nilenso](https://x.com/nilenso), or email us at [hello@nilenso.com](mailto:hello@nilenso.com) to reach us.
