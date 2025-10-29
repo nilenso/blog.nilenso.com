@@ -34,17 +34,17 @@ For context, the initial prompt provides product requirements and a tech spec, t
 
 You can see the components change and grow over time,
 
-https://github.com/user-attachments/assets/5bfc3f49-88f3-4f03-9666-ad0007b585b3
+<video src="https://github.com/user-attachments/assets/5bfc3f49-88f3-4f03-9666-ad0007b585b3" controls preload></video>
 
 visualise growth of components as percentages of total token count,
 
-[Screen Recording 2025-10-28 at 11.14.27 AM.mov](attachment:8519f0e3-48e0-47c4-8735-7c54b02107cb:Screen_Recording_2025-10-28_at_11.14.27_AM.mov)
+<video src="https://github.com/user-attachments/assets/8ab364b3-8460-4931-856e-183ca59f701f" controls preload></video>
 
 and filter, sort, search through messages in a conversation however you’d like.
 
-[Screen Recording 2025-10-28 at 11.20.35 AM.mov](attachment:a0aa6dd2-5f76-4443-8d11-d3f6aebd5fe9:Screen_Recording_2025-10-28_at_11.20.35_AM.mov)
+<video src="https://github.com/user-attachments/assets/48b8ddf3-bdda-4da2-afdd-47e264514fd8" controls preload></video>
 
-Here’s that Github link again, if you want to try it out: https://github.com/nilenso/context-viewer/
+Here’s that Github link again, if you want to try it out: [nilenso/context-viewer](https://github.com/nilenso/context-viewer/)
 
 ## How it works
 
@@ -117,6 +117,6 @@ LangChain’s [insights agent](https://blog.langchain.com/insights-agent-multitu
 
 I had a lot of fun building this, and I plan to write about that experience. Meanwhile, here’s an end-to-end demo at 2x:
 
-[foo-2x.mov](attachment:14f2fbaf-e8c4-4ccc-a51f-5409a6799c02:foo-2x.mov)
+<video src="https://github.com/user-attachments/assets/91d6fe07-ba9d-45f0-8892-23bf70f21833" controls preload></video>
 
 I’d love to hear what you think. Join the discussion on Hacker News! Contributions welcome through PRs. You can also tweet [@nilenso](https://x.com/nilenso), or email us at [hello@nilenso.com](mailto:hello@nilenso.com) to reach us.
