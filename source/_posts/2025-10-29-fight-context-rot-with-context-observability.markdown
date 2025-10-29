@@ -105,7 +105,7 @@ LangChain’s [insights agent](https://blog.langchain.com/insights-agent-multitu
 
 ## Try it out
 
-* Go to https://github.com/nilenso/context-viewer/, clone it
+* Go to [nilenso/context-viewer](https://github.com/nilenso/context-viewer/), and clone it
 * Add AI API keys in environment variables as `README.md` says, build and run it.
 * Export your context as a JSON file. Honestly, this isn’t as straightforward as I would like for it to be. Currently I’ve built support for Open AI formats:
 
