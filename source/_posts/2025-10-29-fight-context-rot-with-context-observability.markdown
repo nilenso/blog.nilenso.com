@@ -32,19 +32,19 @@ You drag-drop a conversation JSON log into it, and with some AI assistance, it p
 
 For context, the initial prompt provides product requirements and a tech spec, then it reads the repository to get a relevant summary, and then breaks down the work into user stories in stages with some human feedback. There’s more details in [a section below](#why-i-built-this-and-how-it-has-helped).
 
-You can see the components change and grow over time,
+You can see a list of components, and how they change and grow over time. Recency matters in context, so just looking at space won't do, it has to be across time and space.
 
 <video src="/videos/components-view.mp4" controls preload autoplay loop muted></video>
 
-visualise growth of components as percentages of total token count,
+It visualises growth of components as counts and percentages of total token count.
 
 <video src="/videos/timeline-view.mp4" controls preload autoplay loop muted></video>
 
-and filter, sort, search through messages in a conversation however you'd like.
+And it also lets you filter, sort, search through messages in a conversation however you'd like. Not all messages have the same prominence even at the same token count. User messages that direct the conversation carry more weight.
 
 <video src="/videos/conversation-view.mp4" controls preload autoplay loop muted></video>
 
-Here’s that Github link again, if you want to try it out: [nilenso/context-viewer](https://github.com/nilenso/context-viewer/)
+Here’s the Github link again, if you want to try it out: [nilenso/context-viewer](https://github.com/nilenso/context-viewer/)
 
 ## How it works
 
@@ -53,13 +53,13 @@ It’s a fairly simple process with a few steps.
 1. **Parse the conversation**: This is currently one of the open-ai formats of chat-completions / responses / conversations API logs. It’s easy enough to parse another format. You can also drop multiple conversations to process them in parallel. Interface has basic search, filtering and sorting too.
 2. **Count the tokens:** It uses [dqbd/tiktoken](https://github.com/dqbd/tiktoken)’s WASM bindings to count tokens per message in parallel.
 3. **Segment large messages:** Messages over a certain threshold of tokens (which is 500, somewhat arbitrarily) get broken down into smaller pieces using AI. If there are multiple parts in a single prompt / message, the parts get broken down here. This is basically a dead-simple-single-prompt version of [semantic chunking](https://x.com/GregKamradt/status/1738276097471754735), lot of room to improve this.
-4. **Find components:**  Given the entire conversation, an AI call identifies the components, and another call assigns components to individual messages.
+4. **Find components:**  Given the entire conversation, an AI call identifies the components, and another call assigns components to individual messages. You can also tweak the prompts right in the UI, and iterate on the components until you get to a classification you’re happy with.
 5. **Visualise:** The components view follows [anthropic’s visualisation](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) of context. There’s a time-slider that lets one traverse through how context fills up, and there’s also a simple stacked bar graph that shows growth over time.
-6. **Synthesize:** Given the generated data of component growth over time, and a summary of the conversation, an AI can do a pretty great job of telling us about growth patterns good and bad, redundancy, and relevance.
+6. **Synthesize:** Given the generated data of component growth over time, and a summary of the conversation, an AI can do a pretty great job of telling us about growth patterns good and bad, redundancy, and relevance. It might then also provide reasonable solutions since there's sufficient light on the problem now.
 
-The prompts are very short descriptions of the goals, targeted at what the simplest model is very good at. You can also tweak the prompts right in the UI, and iterate on the components until you get to a classification you’re happy with.
+The [prompts](https://github.com/nilenso/context-viewer/blob/main/src/prompts.ts) are very short descriptions of the goals, targeted at what the simplest model is very good at. While I have found these default prompts to be good, they're meant to be iterated on to assist us in a process of finding the right segment sizes and the right dimension to split components with. Some might want much more granular components, some purposes need more domain specific categories, and some might prefer hierarchical categorisation with the ability to zoom in/out of them.
 
-Analysing a \~13k tokens conversation for all the above steps takes \~15s. A \~35k tokens conversation takes \~40s. I’d say it scales linearly. I didn’t care too much about performance or cost with this tool. But if I find that this is worth building out into something more full fledged and practical for large scale usage, then it’ll probably be redesigned. Suggestions welcome!
+Analysing a \~13k tokens conversation for all the above steps takes \~15s. A \~35k tokens conversation takes \~40s. I’d say it scales linearly. I didn’t care too much about performance or cost with this tool. But if I find that this is worth building out into something more full fledged and practical for large scale usage, then I'll probably redesign parts of it. Suggestions welcome!
 
 ## Why I built this, and how it has helped
 
