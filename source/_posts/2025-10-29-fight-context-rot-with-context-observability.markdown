@@ -118,4 +118,4 @@ I had a lot of fun building this, and I plan to write about that experience. Mea
 
 <video src="/videos/full-cv-demo-2x.mp4" controls preload autoplay loop muted></video>
 
-I’d love to hear what you think. Join the discussion on Hacker News! Contributions welcome through PRs. You can also tweet [@nilenso](https://x.com/nilenso), or email us at [hello@nilenso.com](mailto:hello@nilenso.com) to reach us.
+I’d love to hear what you think. Join the discussion on [Hacker News](https://news.ycombinator.com/item?id=45760437)! Contributions welcome through PRs. You can also tweet [@nilenso](https://x.com/nilenso), or email us at [hello@nilenso.com](mailto:hello@nilenso.com) to reach us.
