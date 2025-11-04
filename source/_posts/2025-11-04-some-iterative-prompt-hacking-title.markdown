@@ -186,6 +186,10 @@ After:
 After breaking down messages into smaller chunks, I had to categorise them. So in the same manner, I iterated with my prompt and inputs on ChatGPT until I could find something that worked reasonably well.
 
 Here’s a detailed description of my task, that became a prompt:
+<details>
+<summary>
+<code> Initial Prompt </code>
+</summary>
 
 ````markdown
 **Goal**
@@ -263,12 +267,13 @@ Return a **JSON array** of top-level categories.
   }
 ]
 ````
+</details>
 
 What didn’t work? That reflection list in the prompt is a good list of things that failed!
 
 It wouldn’t return all message parts, some parts would remain without a category, some categories would be created without the parts. Sometimes the message part ids would be hallucinated. And of course, all of this took a long time.
 
-Following the same method, I thought about what the model is actually good at, and went with this prompt:
+Following the same method, I thought about what the model is actually good at, and went with this one-line prompt:
 
 ```markdown
 given this conversation, give me a list of categories that shows how information is organized. just give me a list of categories in a json array
