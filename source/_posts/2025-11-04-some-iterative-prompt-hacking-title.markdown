@@ -59,9 +59,12 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 * It didn’t return full message chunks, it would snip them with \`…\` in between or write a summary that represented the chunk.
 * I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. No juice.
 
-There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. And at the end of these iterations, here’s the prompt I got to:
-
-````
+There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
+<details>
+<summary>
+And at the end of these iterations, here’s the prompt I got to:
+</summary>
+````markdown
 ## **Task**
 
 Segment a structured JSON containing message parts into **atomic semantic units**.
@@ -135,7 +138,7 @@ Each `source_part_id` corresponds to one original message part that was segmente
 Each `target_part` contains one extracted semantic unit, preserving order and meaning.
 ```
 ````
-
+</details>
 
 
 The next day, I woke up thinking “why is this so difficult, I thought LLMs are good at this stuff”. And then I tried the simplest prompt to test a hypothesis.
