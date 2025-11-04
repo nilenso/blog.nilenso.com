@@ -45,7 +45,7 @@ Return **only** a single JSON object in this format:
         },
         {
           "id": "42.2",
-          "type": <same_as_source_type",
+          "type": same_as_source_type",
           "text": "subpart content 2"
         }
       ]
