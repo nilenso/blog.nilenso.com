@@ -20,9 +20,13 @@ In both these cases, I went from a prompt that was 1 paragraph, to a 1 page supe
 
 The goal was to split AI conversations represented as JSON logs, with large text messages into smaller chunks of text, while preserving the semantic meaning, and the flow of text. Since I’m working with inputs that are prompts or skill markdown files, I was likely to have delimiters that were XML / Markdown, etc.
 
-The input text was *like* a `messages` array, with assistant and user messages, and the messages had ids. And I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages.
+The input text was *like* a `messages` array, with assistant and user messages, and the messages had ids. And I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. 
 
-So, I started with this prompt:
+So, I started with this prompt.
+<details>
+<summary>
+<code>Initial prompt</code>
+</summary>
 
 ````markdown
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
@@ -49,6 +53,7 @@ Return **only** a single JSON object in this format:
   ]
 }
 ````
+</details>
 
 I pasted this prompt into a ChatGPT conversation, attached a messages.json, and started hacking away, trying to find a prompt that worked reasonably. The issues were:
 
@@ -60,10 +65,13 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 * I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. No juice.
 
 There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
+And at the end of these iterations, here’s the prompt I got to:
+
 <details>
 <summary>
-And at the end of these iterations, here’s the prompt I got to:
+<code>Detailed prompt with all the fixes</code>
 </summary>
+
 ````markdown
 ## **Task**
 
@@ -148,7 +156,7 @@ The next day, I woke up thinking “why is this so difficult, I thought LLMs are
 Given the following text, tell me where all you would apply a break.
 ```
 
-Voila! The results were instant, and exactly what I wanted. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
+Woo! The results were instant, and exactly what I wanted. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
 
 ```markdown
 Given the following text, tell me where all you would apply a break. The purpose is semantic chunking in way that's suitable for categorization. Only give me the top level sections to split the text into coherent topical chunks.
