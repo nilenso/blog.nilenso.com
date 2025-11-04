@@ -5,8 +5,6 @@ author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
 layout: post
 ---
-## Some iterative prompt hacking (title)
-
 When building context viewer, I used LLMs to do a few things:
 
 1. Segment: break apart one prompt, or message into semantically meaningful chunks.
@@ -14,9 +12,9 @@ When building context viewer, I used LLMs to do a few things:
 
 In both these cases, I went from a prompt that was 1 paragraph, to a 1 page super detailed instruction, and then to 2 simple lines that worked well. I thought I’d share. The “secret sauce” is basically:
 
-- Finding out what the model is good (bitter lesson pilled) at, and leaning into its strengths
-- Breaking down the problem, or moulding it to fit the strengths
-- Engineering around limitations of the model
+* Finding out what the model is good (bitter lesson pilled) at, and leaning into its strengths
+* Breaking down the problem, or moulding it to fit the strengths
+* Engineering around limitations of the model
 
 ## Segmentation
 
@@ -26,7 +24,7 @@ The input text was *like* a `messages` array, with assistant and user messages, 
 
 So, I started with this prompt:
 
-```markdown
+````markdown
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
 
 Return **only** a single JSON object in this format:
@@ -50,100 +48,100 @@ Return **only** a single JSON object in this format:
     }
   ]
 }
-```
-```
+````
 
 I pasted this prompt into a ChatGPT conversation, attached a messages.json, and started hacking away, trying to find a prompt that worked reasonably. The issues were:
 
-- It only returned a single replacement most of the times
-    - I thought this was because I only had one replacement in the sample response. I added two replacements in the response and the issue reduced, but persisted.
-    - I asked chatgpt why it only returned one replacement. It told me that I had said **any** part, not **all** parts. Silly me. I fixed that, but the issue persisted.
-    - It tried to use code tools, but I didn’t want it to take so much time (I specifically wanted low latency), and I wanted a generic solution.
-- It didn’t return full message chunks, it would snip them with `…` in between or write a summary that represented the chunk.
-    - I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. No juice.
+* It only returned a single replacement most of the times
+* I thought this was because I only had one replacement in the sample response. I added two replacements in the response and the issue reduced, but persisted.
+* I asked chatgpt why it only returned one replacement. It told me that I had said \*\*any\*\* part, not \*\*all\*\* parts. Silly me. I fixed that, but the issue persisted.
+* It tried to use code tools, but I didn’t want it to take so much time (I specifically wanted low latency), and I wanted a generic solution.
+* It didn’t return full message chunks, it would snip them with \`…\` in between or write a summary that represented the chunk.
+* I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. No juice.
 
 There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. And at the end of these iterations, here’s the prompt I got to:
 
-- <Click to expand>
-    
-    ```markdown
-    ## **Task**
-    
-    Segment a structured JSON containing message parts into **atomic semantic units**.
-    Each resulting unit must represent a single, self-contained **intent, fact, or function**, suitable for hierarchical categorization.
-    Preserve all original wording, order, and structure.
-    
-    ---
-    
-    ## **Segmentation Rules**
-    
-    * Each atomic unit should express **one topic, question, instruction, or operation**.
-    * If a part contains multiple such elements, extract them as separate contiguous spans.
-    * **Do not paraphrase, omit, or reorder** any text.
-    * **Preserve all tokens exactly** as in the source.
-    * Use existing natural boundaries such as XML/HTML tags, JSON objects, Markdown headers, list items, or paragraphs.
-    * Code blocks, tool calls, and similar technical sections must remain whole.
-    * Maintain the original hierarchy and `type` values.
-    
-    ---
-    
-    ## **Extraction Objective**
-    
-    Identify and extract spans that each convey a single semantic role.
-    Think of this as **semantic segmentation for classification**, not text rewriting.
-    Output exact text spans that can stand alone and be categorized unambiguously.
-    
-    ---
-    
-    ## **Output Format**
-    
-    Return only one JSON object in this format:
-    
-    ```json
+````
+## **Task**
+
+Segment a structured JSON containing message parts into **atomic semantic units**.
+Each resulting unit must represent a single, self-contained **intent, fact, or function**, suitable for hierarchical categorization.
+Preserve all original wording, order, and structure.
+
+---
+
+## **Segmentation Rules**
+
+* Each atomic unit should express **one topic, question, instruction, or operation**.
+* If a part contains multiple such elements, extract them as separate contiguous spans.
+* **Do not paraphrase, omit, or reorder** any text.
+* **Preserve all tokens exactly** as in the source.
+* Use existing natural boundaries such as XML/HTML tags, JSON objects, Markdown headers, list items, or paragraphs.
+* Code blocks, tool calls, and similar technical sections must remain whole.
+* Maintain the original hierarchy and `type` values.
+
+---
+
+## **Extraction Objective**
+
+Identify and extract spans that each convey a single semantic role.
+Think of this as **semantic segmentation for classification**, not text rewriting.
+Output exact text spans that can stand alone and be categorized unambiguously.
+
+---
+
+## **Output Format**
+
+Return only one JSON object in this format:
+
+```json
+{
+  "replacements": [
     {
-      "replacements": [
+      "source_part_id": "42",
+      "target_parts": [
         {
-          "source_part_id": "42",
-          "target_parts": [
-            {
-              "id": "42.1",
-              "type": "<same_as_source_type>",
-              "text": "<exact text span 1>"
-            },
-            {
-              "id": "42.2",
-              "type": "<same_as_source_type>",
-              "text": "<exact text span 2>"
-            }
-          ]
+          "id": "42.1",
+          "type": "<same_as_source_type>",
+          "text": "<exact text span 1>"
         },
         {
-          "source_part_id": "84",
-          "target_parts": [
-            {
-              "id": "84.1",
-              "type": "<same_as_source_type>",
-              "text": "<exact text span 1>"
-            },
-            {
-              "id": "84.2",
-              "type": "<same_as_source_type>",
-              "text": "<exact text span 2>"
-            }
-          ]
+          "id": "42.2",
+          "type": "<same_as_source_type>",
+          "text": "<exact text span 2>"
+        }
+      ]
+    },
+    {
+      "source_part_id": "84",
+      "target_parts": [
+        {
+          "id": "84.1",
+          "type": "<same_as_source_type>",
+          "text": "<exact text span 1>"
+        },
+        {
+          "id": "84.2",
+          "type": "<same_as_source_type>",
+          "text": "<exact text span 2>"
         }
       ]
     }
-    ```
-    
-    Each `source_part_id` corresponds to one original message part that was segmented.
-    Each `target_part` contains one extracted semantic unit, preserving order and meaning.
-    ```
-    
+  ]
+}
+```
+
+Each `source_part_id` corresponds to one original message part that was segmented.
+Each `target_part` contains one extracted semantic unit, preserving order and meaning.
+```
+````
+
+
 
 The next day, I woke up thinking “why is this so difficult, I thought LLMs are good at this stuff”. And then I tried the simplest prompt to test a hypothesis.
 
-```markdown
+```
+
 Given the following text, tell me where all you would apply a break.
 ```
 
@@ -163,14 +161,14 @@ And without event structured outputs, this worked every time, within a few secon
 
 Before:
 
-- **AI:** One prompt to identify large messages, identify semantic chunks, and split up messages accordingly.
+* **AI:** One prompt to identify large messages, identify semantic chunks, and split up messages accordingly.
 
 After:
 
-- **Engineering:** Identify large messages
-- **Engineering:** Create one prompt per message
-- **AI:** Identify semantic chunks given plain text, return a JSON array of substrings / regexes
-- **Engineering:** Split up messages
+* **Engineering:** Identify large messages
+* **Engineering:** Create one prompt per message
+* **AI:** Identify semantic chunks given plain text, return a JSON array of substrings / regexes
+* **Engineering:** Split up messages
 
 ## Categorisation
 
@@ -178,7 +176,7 @@ After breaking down messages into smaller chunks, I had to categorise them. So i
 
 Here’s a detailed description of my task, that became a prompt:
 
-```markdown
+````markdown
 **Goal**
 Produce a **hierarchical category map** that shows how information is organized in a conversation. Each category aggregates related message parts, summaries, and structure, enabling visualization and navigation of context usage.
 
@@ -253,7 +251,7 @@ Return a **JSON array** of top-level categories.
     "message_parts": ["mp_30", "mp_31"]
   }
 ]
-```
+````
 
 What didn’t work? That reflection list in the prompt is a good list of things that failed!
 
@@ -337,12 +335,13 @@ just give me a simple json object {id: component}
 
 Before:
 
-- AI: A single prompt to identify hierarchical categories, assign categories to message parts, and return the final mapping.
+* AI: A single prompt to identify hierarchical categories, assign categories to message parts, and return the final mapping.
 
 After:
 
-- AI: Identify components
-- AI: Assign components to message part ids
-    - Engineering: Some basic JSON merging
+* AI: Identify components
+* AI: Assign components to message part ids
+
+  * Engineering: Some basic JSON merging
 
 Overall I’m glad that the prompts I needed in the end were tiny. I think that’s a signal that I’m using LLMs correctly. Just needed to break the problem down, with some good old fashioned engineering.
