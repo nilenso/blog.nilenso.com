@@ -40,13 +40,13 @@ Return **only** a single JSON object in this format:
       "target_parts": [
         {
           "id": "42.1",
-          "type": "<same_as_source_type>",
-          "text": "<subpart content 1>"
+          "type": same_as_source_type",
+          "text": "subpart content 1"
         },
         {
           "id": "42.2",
-          "type": "<same_as_source_type>",
-          "text": "<subpart content 2>"
+          "type": <same_as_source_type",
+          "text": "subpart content 2"
         }
       ]
     }
