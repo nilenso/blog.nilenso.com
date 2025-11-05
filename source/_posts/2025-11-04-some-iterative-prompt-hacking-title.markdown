@@ -311,7 +311,7 @@ given this conversation, give me a list of categories that shows how information
 ]
 ```
 
-These weren’t the categories I wanted. I realised didn’t want categories that represented the information in text, I was looking for *components* of the conversation, because with context-viewer, I was not looking to analyse the conversation itself, but *how* the conversation happened. So I changed that one part:
+These weren’t the categories I wanted. I realised I didn’t want categories that represented the information in text, I was looking for *components* of the conversation, because with context-viewer, I was not looking to analyse the conversation itself, but *how* the conversation happened. So I changed that one part:
 
 ```markdown
 given this conversation, give me a list of components it comprises of. just give me a list in a json array
