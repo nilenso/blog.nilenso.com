@@ -25,7 +25,7 @@ The input is an AI conversation, or a typical `messages` array, represented in J
 
 I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. So, I started with this prompt.
 
-<details markdown="1">
+<details markdown="1" style="white-space: pre-wrap;">
 
 <summary>
 <code>Initial prompt</code>
