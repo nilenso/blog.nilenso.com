@@ -113,13 +113,13 @@ Return only one JSON object in this format:
       "target_parts": [
         {
           "id": "42.1",
-          "type": "<same_as_source_type>",
-          "text": "<exact text span 1>"
+          "type": "same_as_source_type",
+          "text": "exact text span 1"
         },
         {
           "id": "42.2",
-          "type": "<same_as_source_type>",
-          "text": "<exact text span 2>"
+          "type": "same_as_source_type",
+          "text": "exact text span 2"
         }
       ]
     },
@@ -128,13 +128,13 @@ Return only one JSON object in this format:
       "target_parts": [
         {
           "id": "84.1",
-          "type": "<same_as_source_type>",
-          "text": "<exact text span 1>"
+          "type": "same_as_source_type",
+          "text": "exact text span 1"
         },
         {
           "id": "84.2",
-          "type": "<same_as_source_type>",
-          "text": "<exact text span 2>"
+          "type": "same_as_source_type",
+          "text": "exact text span 2"
         }
       ]
     }
