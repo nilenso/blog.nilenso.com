@@ -168,7 +168,7 @@ just give me a json array.
 ]
 ```
 
-Woo! The results were instant (down to 5s from 20s), and exactly what I wanted. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
+Woo! The results were instant (down to 5s from 20s), and exactly what I expected. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
 
 ```markdown
 Given the following text, tell me where all you would apply a break. The purpose is semantic chunking in way that's suitable for categorization. Only give me the top level sections to split the text into coherent topical chunks.
