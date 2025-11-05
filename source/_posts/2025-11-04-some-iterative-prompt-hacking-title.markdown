@@ -149,7 +149,6 @@ Return only one JSON object in this format:
 
 Each `source_part_id` corresponds to one original message part that was segmented.
 Each `target_part` contains one extracted semantic unit, preserving order and meaning.
-```
 </code>
 </pre>
 </details>
