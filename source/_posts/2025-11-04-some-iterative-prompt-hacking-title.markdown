@@ -9,7 +9,7 @@ When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-co
 
  The “secret sauce” is basically:
 
-* Finding out what the model is good (bitter lesson pilled) at, and leaning into its strengths
+* Finding out what the model is good ([bitter-lesson-pilled](https://blog.nilenso.com/blog/2025/10/14/bitter-lesson-applied-ai/)) at, and leaning into its strengths
 * Breaking down the problem, or moulding it to fit the strengths
 * Engineering around limitations of the model
 
@@ -64,7 +64,7 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 * I asked chatgpt why it only returned one replacement. It told me that I had said \*\*any\*\* part, not \*\*all\*\* parts. Silly me. I fixed that, but the issue persisted.
 * It tried to use code tools, but I didn’t want it to take so much time (I specifically wanted low latency), and I wanted a generic solution.
 * It didn’t return full message chunks, it would snip them with \`…\` in between or write a summary that represented the chunk.
-* I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. No juice.
+* I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. Still no luck.
 
 There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
 And at the end of these iterations, here’s the prompt I got to:
@@ -178,7 +178,7 @@ Return ONLY a valid JSON array of regexes with positive lookahead which I can us
 Example response format: ["(?=regex-of-section-1)", "(?=regex-of-section2)"]
 ```
 
-And without event structured outputs, this worked every time, within a few seconds. No reasoning, and no coding tools.
+And without even structured outputs, this worked every time, within a few seconds. No reasoning, and no coding tools.
 
 ### Summary
 
