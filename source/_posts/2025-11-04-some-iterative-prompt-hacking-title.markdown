@@ -71,7 +71,7 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
 And at the end of these iterations, here’s the prompt I got to:
 
-<details  markdown="1">
+<details markdown="1">
 <summary>
 <code>Detailed prompt with all the fixes</code>
 </summary>
@@ -153,8 +153,9 @@ Each `target_part` contains one extracted semantic unit, preserving order and me
 
 The next day, I woke up thinking: _“why is this so difficult, I thought LLMs are good at this stuff”_. And then I tried the simplest prompt to test the hypothesis that I'm using LLMs wrong.
 
-```
+<div markdown="1" class="wrap-code">
 
+```markdown
 given the following text, tell me where all you would apply a break.
 just give me a json array.
 
@@ -169,8 +170,11 @@ just give me a json array.
   "<reflection>"
 ]
 ```
+</div>
 
 Woo! The results were instant (down to 5s from 20s), and exactly what I expected. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
+
+<div markdown="1" class="wrap-code">
 
 ```markdown
 Given the following text, tell me where all you would apply a break. The purpose is semantic chunking in way that's suitable for categorisation. Only give me the top level sections to split the text into coherent topical chunks.
@@ -179,8 +183,11 @@ Return ONLY a valid JSON array of regexes with positive lookahead which I can us
 
 Example response format: ["(?=regex-of-section-1)", "(?=regex-of-section2)"]
 ```
+</div>
 
 And without even structured outputs, this worked every time, within a few seconds. No reasoning, and no coding tools.
+
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
 ### Summary
 
@@ -194,6 +201,7 @@ After:
 * **Engineering:** Create one prompt per message
 * **AI:** Identify semantic chunks given plain text, return a JSON array of substrings / regexes
 * **Engineering:** Split up messages
+</div>
 
 ## Categorisation
 
@@ -290,6 +298,8 @@ It wouldn’t return all message parts, some parts would remain without a catego
 
 Following the same method, I thought about what the model is actually good at, and went with this one-line prompt:
 
+<div markdown="1" class="wrap-code">
+
 ```markdown
 given this conversation, give me a list of categories that shows how information is organized. just give me a list of categories in a json array
 
@@ -311,8 +321,11 @@ given this conversation, give me a list of categories that shows how information
   "Repository and code organization"
 ]
 ```
+</div>
 
 These weren’t the categories I wanted. I realised I didn’t want categories that represented the information in text, I was looking for *components* of the conversation, because with context-viewer, I was not looking to analyse the conversation itself, but *how* the conversation happened. So I changed that one part:
+
+<div markdown="1" class="wrap-code">
 
 ```markdown
 given this conversation, give me a list of components it comprises of. just give me a list in a json array
@@ -330,7 +343,11 @@ given this conversation, give me a list of components it comprises of. just give
 ]
 ```
 
+</div>
+
 That worked! While no output specification was necessary, I tweaked it a little as I experimented with some more input files.
+
+<div markdown="1" class="wrap-code">
 
 ```markdown
 given this conversation, give me a list of all its components
@@ -340,7 +357,11 @@ just give me a list in a json array like this example:
 ["abc_document", "xyz_structure", "foo_context", "task", "sources", "breakdown", "reflection", "files_about_bar", "files_about_baz", "tool_calls_about_quix", "xyz blocks", "pqr list"]
 ```
 
+</div>
+
 And then I used another prompt to get the category mapping for each message part, which worked on the first try.
+
+<div markdown="1" class="wrap-code">
 
 ```markdown
 given this conversation and the list of components, give me a mapping of message part ids in the conversation, to a component from the list, for all the message parts
@@ -362,6 +383,10 @@ just give me a simple json object {id: component}
   ...
 ```
 
+</div>
+
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+
 ### Summary:
 
 Before:
@@ -373,6 +398,8 @@ After:
 * AI: Identify components
 * AI: Assign components to message part ids
 * Engineering: Some basic JSON merging
+
+</div>
 
 ---
 Overall I’m glad that the prompts I needed in the end were tiny. I think that’s a signal that I’m using LLMs correctly. Just needed to break the problem down, let the model do what it's good at, and augment it with some good old fashioned engineering where needed.
