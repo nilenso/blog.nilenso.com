@@ -1,14 +1,16 @@
 ---
-title: Some iterative prompt hacking (title)
+title: Some iterative prompt hacking
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
 layout: post
 ---
-When building context viewer, I used LLMs to do a few things:
+_TL;DR: I went from a 300-word prompts that barely worked to 15-word prompts that worked well enough. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering._
 
-1. Segment: break apart one prompt, or message into semantically meaningful chunks.
-2. Categorise / classify: Assign each message a “category” / “component name” so it’s easy to identify it when zooming out to the larger picture.
+When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/), I used LLMs to do a few things, notably:
+
+1. **Segment**: break apart one prompt, or message into semantically meaningful chunks.
+2. **Categorise**: Assign each message a “category” / “component name” so it’s easy to identify it when zooming out to the larger picture.
 
 In both these cases, I went from a prompt that was 1 paragraph, to a 1 page super detailed instruction, and then to 2 simple lines that worked well. I thought I’d share. The “secret sauce” is basically:
 
