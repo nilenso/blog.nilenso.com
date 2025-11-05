@@ -5,7 +5,7 @@ author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
 layout: post
 ---
-_TL;DR: I went from 300-word prompts that barely worked to 15-word prompts that worked well enough. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering._
+_TL;DR: I went from 300-word prompts that barely worked to 15-word prompts that worked quite well. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering._
 
 When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/), I used LLMs to do a few things, notably:
 
