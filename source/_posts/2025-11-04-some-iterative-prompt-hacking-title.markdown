@@ -5,32 +5,33 @@ author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
 layout: post
 ---
-_TL;DR: I went from 300-word prompts that barely worked to 15-word prompts that worked quite well. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering._
+When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/), I used LLMs to analyse language semantics. I went from 300-word prompts that barely worked to 15-word prompts that worked quite well. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering.
 
-When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/), I used LLMs to do a few things, notably:
-
-1. **Segment**: break apart one prompt, or message into semantically meaningful chunks.
-2. **Categorise**: Assign each message a “category” / “component name” so it’s easy to identify it when zooming out to the larger picture.
-
-In both these usecases, I went from 300-word prompts that barely worked to 15-word prompts that worked quite well. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering. The “secret sauce” is basically:
+ The “secret sauce” is basically:
 
 * Finding out what the model is good (bitter lesson pilled) at, and leaning into its strengths
 * Breaking down the problem, or moulding it to fit the strengths
 * Engineering around limitations of the model
 
+
+The 2 main use-cases were in segmentation and categorisation.
+1. **Segment**: break apart one prompt, or message into semantically meaningful chunks.
+2. **Categorise**: Assign each message a “category” / “component name” so it’s easy to identify it when zooming out to the larger picture.
+
+
 ## Segmentation
+The problem here is to pull apart a single message from an assistant, or prompt from the user, into meaningful chunks like various text or code blocks, instructions, files supplied as context, etc.
 
-The goal was to split AI conversations represented as JSON logs, with large text messages into smaller chunks of text, while preserving the semantic meaning, and the flow of text. Since I’m working with inputs that are prompts or skill markdown files, I was likely to have delimiters that were XML / Markdown, etc.
+The input is an AI conversation, or a message array, represented in JSON. I need to preserve the semantic meaning while chunking, and the flow of text too. I can't change the order of text, since that matters to an LLM. Since I’m working with inputs that are prompts or skill markdown files, I was likely to have delimiters that were XML / Markdown, etc.
 
-The input text was *like* a `messages` array, with assistant and user messages, and the messages had ids. And I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. 
+I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. So, I started with this prompt.
 
-So, I started with this prompt.
 <details>
 <summary>
 <code>Initial prompt</code>
 </summary>
 
-```markdown
+````markdown
 
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
 
@@ -54,7 +55,7 @@ Return **only** a single JSON object in this format:
     }
   ]
 }
-```
+````
 </details>
 
 I pasted this prompt into a ChatGPT conversation, attached a messages.json, and started hacking away, trying to find a prompt that worked reasonably. The issues were:
