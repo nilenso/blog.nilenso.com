@@ -73,7 +73,7 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
 And at the end of these iterations, here’s the prompt I got to:
 
-<details>
+<details  markdown="1">
 <summary>
 <code>Detailed prompt with all the fixes</code>
 </summary>
@@ -149,6 +149,7 @@ Return only one JSON object in this format:
 Each `source_part_id` corresponds to one original message part that was segmented.
 Each `target_part` contains one extracted semantic unit, preserving order and meaning.
 ```
+
 </details>
 
 
@@ -189,12 +190,12 @@ After:
 After breaking down messages into smaller chunks, I had to categorise them. So in the same manner, I iterated with my prompt and inputs on ChatGPT until I could find something that worked reasonably well.
 
 Here’s a detailed description of my task, that became a prompt:
-<details>
+<details markdown="1">
 <summary>
 <code> Initial Prompt </code>
 </summary>
 
-````markdown
+```markdown
 **Goal**
 Produce a **hierarchical category map** that shows how information is organized in a conversation. Each category aggregates related message parts, summaries, and structure, enabling visualization and navigation of context usage.
 
@@ -234,7 +235,6 @@ Before returning the final JSON, perform the following validation steps:
 ### Output specification
 Return a **JSON array** of top-level categories.
 
-```json
 [
   {
     "id": "checklist",
@@ -269,7 +269,7 @@ Return a **JSON array** of top-level categories.
     "message_parts": ["mp_30", "mp_31"]
   }
 ]
-````
+```
 </details>
 
 What didn’t work? That reflection list in the prompt is a good list of things that failed!
