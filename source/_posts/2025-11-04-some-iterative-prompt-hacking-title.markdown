@@ -380,4 +380,4 @@ After:
 * Engineering: Some basic JSON merging
 
 ---
-Overall I’m glad that the prompts I needed in the end were tiny. I think that’s a signal that I’m using LLMs correctly. Just needed to break the problem down, with some good old fashioned engineering.
+Overall I’m glad that the prompts I needed in the end were tiny. I think that’s a signal that I’m using LLMs correctly. Just needed to break the problem down, let the model do what it's good at, and augment it with some good old fashioned engineering where needed.
