@@ -72,7 +72,7 @@ And at the end of these iterations, here’s the prompt I got to:
 <code>Detailed prompt with all the fixes</code>
 </summary>
 
-````markdown
+```markdown
 ## **Task**
 
 Segment a structured JSON containing message parts into **atomic semantic units**.
@@ -105,7 +105,6 @@ Output exact text spans that can stand alone and be categorized unambiguously.
 
 Return only one JSON object in this format:
 
-```json
 {
   "replacements": [
     {
@@ -140,12 +139,10 @@ Return only one JSON object in this format:
     }
   ]
 }
-```
 
 Each `source_part_id` corresponds to one original message part that was segmented.
 Each `target_part` contains one extracted semantic unit, preserving order and meaning.
 ```
-````
 </details>
 
 
