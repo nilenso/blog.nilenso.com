@@ -153,7 +153,7 @@ Each `target_part` contains one extracted semantic unit, preserving order and me
 </details>
 
 
-The next day, I woke up thinking “why is this so difficult, I thought LLMs are good at this stuff”. And then I tried the simplest prompt to test a hypothesis.
+The next day, I woke up thinking: _“why is this so difficult, I thought LLMs are good at this stuff”_. And then I tried the simplest prompt to test the hypothesis that I'm using LLMs wrong.
 
 ```
 
@@ -176,7 +176,7 @@ And without event structured outputs, this worked every time, within a few secon
 
 Before:
 
-* **AI:** One prompt to identify large messages, identify semantic chunks, and split up messages accordingly.
+* **AI:** One (overengineered) prompt to identify large messages, identify semantic chunks, and split up messages accordingly.
 
 After:
 
