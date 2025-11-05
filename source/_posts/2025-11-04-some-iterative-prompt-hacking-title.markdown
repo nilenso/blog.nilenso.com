@@ -1,5 +1,5 @@
 ---
-title: My worse prompts that worked better
+title: My dumb prompts that worked better
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
