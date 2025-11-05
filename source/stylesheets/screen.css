@@ -30,8 +30,8 @@ html {
   --nilenso-gray-2: #0c0a0a;
   --font-sans: Poppins, sans-serif;
   --font-serif: Charter, serif;
-  --font-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-monospace: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 p,
@@ -365,16 +365,10 @@ article a {
 }
 
 article pre {
-  background: #fdf6e3 url("/images/noise.png?1433967138") top left;
-  -moz-border-radius: 0.4em;
-  -webkit-border-radius: 0.4em;
-  border-radius: 0.4em;
-  border: 1px solid #e7dec3;
   line-height: 1.45em;
   font-size: 13px;
   margin-bottom: 2.1em;
   padding: 0.8em 1em;
-  color: #586e75;
   overflow: auto;
 }
 
@@ -394,8 +388,15 @@ li code {
   margin: -1px 0;
 }
 
+code {
+  font-family: var(--font-monospace);
+  font-size: 1rem;
+  text-wrap: auto;
+}
+
 p pre code,
 li pre code {
+  font-family: var(--font-monospace);
   font-size: 1em !important;
   background: none;
   border: none;

@@ -20,17 +20,17 @@ Planet.rb is still in development, and there were a couple of things that needed
 ### A whitelist
    One such feature was the ability to filter posts that are not suitable for the company blog. We implemented this as a whitelist of tags. Only posts that have any tags in the whitelist will be imported.
 
-{% codeblock planet.yml lang:java %}
+```java
 planet:
     posts_directory: source/_posts/
     templates_directory: source/_layouts/
     whitelisted_tags: ["nilenso", "open source", "software", "gsoc", "gnome", "lifehacks", "dev"]
-{% endcodeblock %}
+```
 
 ### Fault tolerance
 Another issue with planet.rb was that it quit abruptly when it failed to parse a blog because the blog was unreacheable. We fixed that and then it was good to go. Here's how it looks now when we run `planet generate`:
 
-{% codeblock $planet generate lang:bash %}
+```bash
 planet-nilenso|master $ planet generate
 => Parsing https://blog.kitallis.in/feeds/posts/default
 => Found post titled GSoC - 1 & 2 - by Akshay Gupta
@@ -38,26 +38,25 @@ planet-nilenso|master $ planet generate
 => Found post titled GSoC 2011 - 0 - by Akshay Gupta
 => Found post titled "Open Containing Folder" for EoG and gedit - by Akshay Gupta
         => Ignored post titled: Init with categories: [personal]
-=> Parsing https://blog.deobald.ca/feeds/posts/default                                                         
-        => Failed to fetch https://blog.deobald.ca/feeds/posts/default with response_code: 0                                                      
+=> Parsing https://blog.deobald.ca/feeds/posts/default
+        => Failed to fetch https://blog.deobald.ca/feeds/posts/default with response_code: 0
 => Parsing https://blog.timothyandrew.net/atom.xml
 => Found post titled Encrypt Your Emails on OS X - by Timothy Andrew
-=> Found post titled Pow Over HTTPS - by Timothy Andrew                   
-{% endcodeblock %}
+=> Found post titled Pow Over HTTPS - by Timothy Andrew
+```
 
 ## The deploy hook and cronjob
 
 We use [Capistrano](https://github.com/capistrano/capistrano) to deploy our blog. Here's the post deploy hook that we use on it:
-{% codeblock config/deploy.rb lang:ruby %}
+```ruby
 task :octopress_planet_generate do
   run "cd #{deploy_to}/current && bundle exec planet generate && bundle exec rake generate"
 end
 
 after "deploy", :octopress_planet_generate
-{% endcodeblock %}
+```
 
 Taking the final step in automating this, we set up a simple cronjob to aggregate posts everyday:
-{% codeblock $crontab -l lang:bash %}
+```bash
 @daily cd /path/to/blog && planet generate && rake generate
-{% endcodeblock %}
-
+```

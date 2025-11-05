@@ -65,12 +65,12 @@ I pasted this prompt into a ChatGPT conversation, attached a messages.json, and 
 
 * It only returned a single replacement most of the times
 * I thought this was because I only had one replacement in the sample response. I added two replacements in the response and the issue reduced, but persisted.
-* I asked chatgpt why it only returned one replacement. It told me that I had said \*\*any\*\* part, not \*\*all\*\* parts. Silly me. I fixed that, but the issue persisted.
+* I asked chatgpt why it only returned one replacement. It told me that I had said **any** part, not **all** parts. Silly me. I fixed that, but the issue persisted.
 * It tried to use code tools, but I didn’t want it to take so much time (I specifically wanted low latency), and I wanted a generic solution.
 * It didn’t return full message chunks, it would snip them with \`…\` in between or write a summary that represented the chunk.
 * I additionally instructed it to “output exact text spans”, added principles on why I wanted it that way, etc. Still no luck.
 
-There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples. 
+There were a few other issues around the json structure, preserving additional fields, etc. I also added a couple of guiding examples.
 And at the end of these iterations, here’s the prompt I got to:
 
 <details markdown="1">

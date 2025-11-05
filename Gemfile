@@ -7,6 +7,4 @@ end
 gem 'jekyll'
 
 gem 'jekyll-paginate'
-gem 'pygments.rb'
-
 gem "webrick", "~> 1.7"
