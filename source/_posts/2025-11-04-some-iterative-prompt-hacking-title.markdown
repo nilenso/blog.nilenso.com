@@ -7,11 +7,14 @@ layout: post
 ---
 When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/), I used LLMs to analyse language semantics. I went from 300-word prompts that barely worked to 15-word prompts that worked quite well. I learned about working with LLMs instead of fighting them, and to balance AI with plain old engineering.
 
- The “secret sauce” is basically:
+The “secret sauce” is basically:
 
-* Finding out what the model is good ([bitter-lesson-pilled](https://blog.nilenso.com/blog/2025/10/14/bitter-lesson-applied-ai/)) at, and leaning into its strengths
-* Breaking down the problem, or moulding it to fit the strengths
-* Engineering around limitations of the model
+<div markdown="1" style="border-left:4px solid #FF3D84; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+
+* Learn what the model is good ([bitter-lesson-pilled](https://blog.nilenso.com/blog/2025/10/14/bitter-lesson-applied-ai/)) at, and lean into its strengths
+* Break down the problem, or mould it to fit the strengths
+* Engineer around limitations of the model
+</div>
 
 The two main use-cases were segmentation and categorisation.
 
