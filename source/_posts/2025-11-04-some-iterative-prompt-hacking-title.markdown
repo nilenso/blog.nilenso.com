@@ -34,7 +34,7 @@ I wanted to get a list of “splits”, so that I could replace a single message
 <pre style="white-space: pre-wrap; word-break: break-word;">
 <code class="markdown">
 
-Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
+Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorisation. Output **only** the complete replacements JSON object described.
 
 Return **only** a single JSON object in this format:
 {
@@ -83,7 +83,7 @@ And at the end of these iterations, here’s the prompt I got to:
 ## **Task**
 
 Segment a structured JSON containing message parts into **atomic semantic units**.
-Each resulting unit must represent a single, self-contained **intent, fact, or function**, suitable for hierarchical categorization.
+Each resulting unit must represent a single, self-contained **intent, fact, or function**, suitable for hierarchical categorisation.
 Preserve all original wording, order, and structure.
 
 ---
@@ -104,7 +104,7 @@ Preserve all original wording, order, and structure.
 
 Identify and extract spans that each convey a single semantic role.
 Think of this as **semantic segmentation for classification**, not text rewriting.
-Output exact text spans that can stand alone and be categorized unambiguously.
+Output exact text spans that can stand alone and be categorised unambiguously.
 
 ---
 
@@ -176,7 +176,7 @@ just give me a json array.
 Woo! The results were instant (down to 5s from 20s), and exactly what I expected. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
 
 ```markdown
-Given the following text, tell me where all you would apply a break. The purpose is semantic chunking in way that's suitable for categorization. Only give me the top level sections to split the text into coherent topical chunks.
+Given the following text, tell me where all you would apply a break. The purpose is semantic chunking in way that's suitable for categorisation. Only give me the top level sections to split the text into coherent topical chunks.
 
 Return ONLY a valid JSON array of regexes with positive lookahead which I can use to run string split in javascript.
 
