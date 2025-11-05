@@ -691,3 +691,9 @@ table:has(> :is(thead, tbody) > tr:first-child > *:nth-child(2):last-child) td {
 .full-width-table :not(:first-child), .full-width-table :not(:first-child) {
     text-align: left;
 }
+
+/* Wrap text in highlighted code sections within details blocks */
+details pre.highlight {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
