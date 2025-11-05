@@ -27,6 +27,7 @@ The input is an AI conversation, or a message array, represented in JSON. I need
 I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. So, I started with this prompt.
 
 <details>
+
 <summary>
 <code>Initial prompt</code>
 </summary>
