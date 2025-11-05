@@ -16,7 +16,7 @@ The “secret sauce” is basically:
 * Engineer around limitations of the model
 </div>
 
-The two main use-cases were segmentation and categorisation.
+Two main problems I had to solve were segmentation and categorisation.
 
 ## Segmentation
 The problem here is to pull apart a single message from an assistant, or prompt from the user, into meaningful chunks like various text or code blocks, instructions, files supplied as context, etc.
