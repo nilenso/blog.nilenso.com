@@ -368,7 +368,7 @@ After:
 
 * AI: Identify components
 * AI: Assign components to message part ids
+* Engineering: Some basic JSON merging
 
-  * Engineering: Some basic JSON merging
-
+---
 Overall I’m glad that the prompts I needed in the end were tiny. I think that’s a signal that I’m using LLMs correctly. Just needed to break the problem down, with some good old fashioned engineering.
