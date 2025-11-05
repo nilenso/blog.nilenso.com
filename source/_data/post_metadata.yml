@@ -1,6 +1,9 @@
 - title: "My dumb prompts that worked better"
   description: "How I went from 300-word prompts that barely worked to 15-word prompts that worked quite well."
 
+- title: "Fight context rot with context observability"
+  description: "I built a tool that pulls apart LLM context into meaningful components that you can see, measure, and then meaningfully engineer."
+
 - title: "Artisanal shims for the bitter lesson age"
   description: "Have you priced in the bitter lesson in your AI application's architecture?"
 
