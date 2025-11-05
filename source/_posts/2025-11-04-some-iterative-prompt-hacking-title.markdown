@@ -28,11 +28,11 @@ So, I started with this prompt.
 <code>Initial prompt</code>
 </summary>
 
-````markdown
+```markdown
+
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
 
 Return **only** a single JSON object in this format:
-```json
 {
   "replacements": [
     {
@@ -52,7 +52,7 @@ Return **only** a single JSON object in this format:
     }
   ]
 }
-````
+```
 </details>
 
 I pasted this prompt into a ChatGPT conversation, attached a messages.json, and started hacking away, trying to find a prompt that worked reasonably. The issues were:
