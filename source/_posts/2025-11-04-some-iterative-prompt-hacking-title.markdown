@@ -13,11 +13,7 @@ When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-co
 * Breaking down the problem, or moulding it to fit the strengths
 * Engineering around limitations of the model
 
-
-The 2 main use-cases were in segmentation and categorisation.
-1. **Segment**: break apart one prompt, or message into semantically meaningful chunks.
-2. **Categorise**: Assign each message a “category” / “component name” so it’s easy to identify it when zooming out to the larger picture.
-
+The two main use-cases were segmentation and categorisation.
 
 ## Segmentation
 The problem here is to pull apart a single message from an assistant, or prompt from the user, into meaningful chunks like various text or code blocks, instructions, files supplied as context, etc.
