@@ -157,7 +157,7 @@ The next day, I woke up thinking “why is this so difficult, I thought LLMs are
 
 ```
 
-Given the following text, tell me where all you would apply a break.
+given the following text, tell me where all you would apply a break.
 ```
 
 Woo! The results were instant, and exactly what I wanted. The JSON input was likely interfering with its capability in identifying semantics, so I sent it only the text. And I didn’t need it to do the actual text-splitting, `string.split` could do that. I could also do this in parallel for all the messages that needed to be split. After some more tweaking of instructions, I got to this prompt.
