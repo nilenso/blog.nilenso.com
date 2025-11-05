@@ -32,7 +32,7 @@ I wanted to get a list of “splits”, so that I could replace a single message
 </summary>
 
 <pre style="white-space: pre-wrap; word-break: break-word;">
-```markdown
+<code class="markdown">
 
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
 
@@ -58,6 +58,7 @@ Return **only** a single JSON object in this format:
 }
 
 ```
+</code>
 </pre>
 </details>
 
@@ -78,7 +79,7 @@ And at the end of these iterations, here’s the prompt I got to:
 <code>Detailed prompt with all the fixes</code>
 </summary>
 <pre style="white-space: pre-wrap; word-break: break-word;">
-```markdown
+<code class="markdown">
 ## **Task**
 
 Segment a structured JSON containing message parts into **atomic semantic units**.
@@ -149,6 +150,7 @@ Return only one JSON object in this format:
 Each `source_part_id` corresponds to one original message part that was segmented.
 Each `target_part` contains one extracted semantic unit, preserving order and meaning.
 ```
+</code>
 </pre>
 </details>
 
@@ -208,7 +210,7 @@ Here’s a detailed description of my task, that became a prompt:
 </summary>
 
 <pre style="white-space: pre-wrap; word-break: break-word;">
-```markdown
+<code class="markdown">
 **Goal**
 Produce a **hierarchical category map** that shows how information is organized in a conversation. Each category aggregates related message parts, summaries, and structure, enabling visualization and navigation of context usage.
 
@@ -283,6 +285,7 @@ Return a **JSON array** of top-level categories.
   }
 ]
 ```
+</code>
 </pre>
 </details>
 
