@@ -32,7 +32,7 @@ I wanted to get a list of “splits”, so that I could replace a single message
 <code>Initial prompt</code>
 </summary>
 
-````markdown
+```markdown
 
 Given a structured JSON containing message parts, split any part that combines multiple distinct ideas into smaller, self-contained units. Each resulting unit must represent **one classifiable concept or function**, preserving all meaning, order, and structure. This prepares the data for hierarchical categorization. Output **only** the complete replacements JSON object described.
 
@@ -57,7 +57,7 @@ Return **only** a single JSON object in this format:
   ]
 }
 
-````
+```
 
 </details>
 
