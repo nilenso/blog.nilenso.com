@@ -692,8 +692,9 @@ table:has(> :is(thead, tbody) > tr:first-child > *:nth-child(2):last-child) td {
     text-align: left;
 }
 
-/* Wrap text in highlighted code sections within details blocks */
-details pre.highlight {
+/* Wrap text in highlighted code sections within details blocks and wrap-code divs */
+details pre.highlight,
+.wrap-code pre.highlight {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
