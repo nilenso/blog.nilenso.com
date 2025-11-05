@@ -18,7 +18,7 @@ The two main use-cases were segmentation and categorisation.
 ## Segmentation
 The problem here is to pull apart a single message from an assistant, or prompt from the user, into meaningful chunks like various text or code blocks, instructions, files supplied as context, etc.
 
-The input is an AI conversation, or a message array, represented in JSON. I need to preserve the semantic meaning while chunking, and the flow of text too. I can't change the order of text, since that matters to an LLM. Since I’m working with inputs that are prompts or skill markdown files, I was likely to have delimiters that were XML / Markdown, etc.
+The input is an AI conversation, or a typical `messages` array, represented in JSON. I need to preserve the semantic meaning while chunking, and the flow of text too. I can't change the order of text, since that matters to an LLM. Since I’m working with inputs that are prompts or skill markdown files, I was likely to have delimiters that were XML / Markdown, etc.
 
 I wanted to get a list of “splits”, so that I could replace a single message in-place with a list of smaller messages. So, I started with this prompt.
 
