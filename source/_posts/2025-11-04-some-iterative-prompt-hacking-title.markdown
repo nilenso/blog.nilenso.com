@@ -9,7 +9,7 @@ When building [context-viewer](https://blog.nilenso.com/blog/2025/10/29/fight-co
 
 The “secret sauce” is basically:
 
-<div markdown="1" style="border-left:4px solid #FF3D84; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
 * Learn what the model is good ([bitter-lesson-pilled](https://blog.nilenso.com/blog/2025/10/14/bitter-lesson-applied-ai/)) at, and lean into its strengths
 * Break down the problem, or mould it to fit the strengths
