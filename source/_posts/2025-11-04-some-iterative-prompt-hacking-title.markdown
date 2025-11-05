@@ -1,5 +1,5 @@
 ---
-title: My dumb prompts that worked better
+title: A Short Lesson in Simpler Prompts
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
