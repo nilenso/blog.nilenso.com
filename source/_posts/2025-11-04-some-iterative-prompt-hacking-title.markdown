@@ -4,7 +4,7 @@ kind: article
 author: Srihari Sriraman
 created_at: 2025-11-04 00:00:00 UTC
 layout: post
-permalink: /blog/2025/11/04/my-dumb-prompts-that-worked-better/
+permalink: /blog/2025/11/04/a-short-lesson-in-simpler-prompts/
 description: How I went from 300-word prompts that barely worked to 15-word
   prompts that worked quite well.
 ---
