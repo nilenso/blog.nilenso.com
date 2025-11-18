@@ -3,6 +3,7 @@ title: "How to work with Product: At the tea table"
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-18 00:00:00 UTC
+post_url: how-to-work-with-product-at-the-tea-table
 layout: post
 ---
 The most impactful, and delightful work I’ve done as an engineer, has been on projects where I’ve had a great relationship with the product manager(s). Poorer the relationship, poorer the impact and experience.
