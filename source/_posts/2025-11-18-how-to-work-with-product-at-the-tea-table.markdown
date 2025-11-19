@@ -6,31 +6,30 @@ created_at: 2025-11-18 00:00:00 UTC
 post_url: how-to-work-with-product-at-the-tea-table
 layout: post
 ---
-*The most impactful, and delightful work I’ve done as an engineer, has been on projects where I’ve had a great relationship with the product manager(s). Poorer the relationship, poorer the impact and experience.*
+*The most impactful and delightful work I’ve done as an engineer, has been on projects where I had a great relationship with the product manager(s). Poorer the relationship, poorer the impact and experience.*
 
 
-*This relationship between people represents the relationship between problem and solution. In real life, problems and solutions evolve together. Each one affects the other. Similarly, the people need to grow a meaningful relationship together. They need to listen empathically, understand needs, comprehend each others’ writing, create artefacts together, communicate well, and have fun solving problems together.*
+*This relationship between people reflects the relationship between problem and solution. In real life, problems and solutions evolve together. Each one affects the other. Similarly, the people involved must grow a meaningful relationship together. They need to listen empathically, understand needs, comprehend each other's writing, create artefacts together, communicate well, and have fun solving problems together.*
 
 
-*Since I’ve predominantly played the engineering role, I’m writing to other engineers based on that experience. This series of posts details when and how engineering can work with product to create the synergy that powers wonderful products.*
+*Since I have predominantly played the engineering role, I’m writing to fellow engineers based on that experience. This series of posts details when and how engineering can work with product to create the synergy that powers wonderful products.*
 
 
 ![product-engineering-tea-table](/images/blog/product-tea-table-image.png)
 
 
-We reflect on our problems over tea. Or coffee. Or [sutta](https://www.urbandictionary.com/define.php?term=sutta), if you’re into that. A casual conversation that’s not bound by the colder confines of an office or work space, where we’re calm, set to truly listen and receive. Courageously vulnerable with our true thoughts and ideas. Reflection provides fertile ground for germination of ideas. It’s in this mental-space that people often understand, empathise, and find camaraderie. These are flaps of the butterfly wings, or rolls of that snowball of building product as a team.
+We reflect on our problems over tea. Or coffee. Or [sutta](https://www.urbandictionary.com/define.php?term=sutta), if you’re into that. It's a casual conversation that’s not bound by the colder confines of an office or work space, where we’re calm, set to truly listen and receive. We allow ourselves to be courageously vulnerable with our real thoughts and ideas. Reflection provides fertile ground for germination of ideas. It’s in this mental space that people often understand, empathise, and find camaraderie. These are flaps of the butterfly wings, or the rolls of that snowball we build as a product team.
 
 
-When someone who knows the problem very well is speaking about it, even casually, lean in. [Listen empathically](https://en.wikipedia.org/wiki/Rogerian_argument). Diagnose, before you can prescribe. Once you have a deep enough understanding of the problem, and the needs of the people therein, then you can start thinking about how to be valuable with your engineering skills.
+When someone who knows the problem very well speaks about it, even casually, lean in. [Listen empathically](https://en.wikipedia.org/wiki/Rogerian_argument). Diagnose before you can prescribe. Once you have a deep enough understanding of the problem, and the needs of the people therein, you can start thinking about how your engineering skills can add value.
 
 
-Following this are some autobiographical experiences. Read, and be inspired! Yeah, no, I’m just trying to illustrate what I mean, drawing from my experiences. If you don’t want to read my life stories, just skip to the list at the end.
-
+What follows are some autobiographical experiences. Read on, and be inspired! Yeah, no, I’m simply illustrating what I mean, drawing on my experiences. If you’d rather not read my life stories, feel free to skip ahead to the list at the end.
 
 <hr/>
 
 
-It’s in this kind of tea-table space that we found the courage to say *“screw it, lets go [offline first](https://www.simple.org/blog/offline-first-apps/)”*, with our initial efforts at [simple.org](http://simple.org). [Daniel](https://x.com/dburka) had spent months in the field with nurses, and in talking to true experts, understanding the problems of treating hypertension in public health. He then expressed to us, the engineering team, a deep need for nurses in rural areas to be independent of internet needs. We understood that need, and decided it’s worth a try with a “how hard can it be” attitude. After some 6 years, we still see that as one of the most important decisions to make the product successful, and truly useful to thousands of health care workers and millions of patients.
+It was in this kind of tea-table space that we found the courage to say *“screw it, lets go [offline first](https://www.simple.org/blog/offline-first-apps/)”*, with our initial efforts at [simple.org](http://simple.org). [Daniel](https://x.com/dburka) had spent months in the field with nurses, speaking to true experts, and understanding the problems of treating hypertension in public health. He then expressed to us, the engineering team, a deep need for nurses in rural areas to be independent of internet requirements. We understood that need, and decided it’s worth a try with a “how hard can it be” attitude. After some 6 years, we still see that as one of the most important decisions to make the product successful, and truly useful to thousands of health care workers and millions of patients.
 
 
 <hr/>
@@ -39,7 +38,7 @@ After a hearty lunch one day on the nilenso terrace, we were talking about how w
 
 <hr/>
 
-When I was working at [GoFood](https://gofood.co.id/en), we were out for dinner in Jakarta when I noticed [Hareesh](https://www.linkedin.com/in/hareeshwar-g-86240712/) kept returning to what seemed like a small issue: customers accidentally placing orders and immediately cancelling them. It didn’t look urgent, but it was quietly blocking a major release: restaurants that auto-accepted orders the moment they were placed. He never said this directly, but his fixation was the signal. I asked, *“How does Zomato do this?”*, and when we checked their app, we found a straightforward pattern—a 10-second confirmation timer and a clear message about non-cancellable orders. Because the app already had all the information needed to decide when to show that timer, I could confidently say, *“This can be an app-only change; we can ship it in a few days.”* The engineering work was trivial. Identifying that it was a blocker and needed a quick solve was the real contribution.
+At [GoFood](https://gofood.co.id/en), while we were having dinner in Jakarta I noticed [Hareesh](https://www.linkedin.com/in/hareeshwar-g-86240712/) kept returning to what seemed like a small issue: customers accidentally placing orders and immediately cancelling them. It didn’t appear urgent, but it was quietly blocking a major release: restaurants that auto-accepted orders the moment they were placed. He never said this directly, but his fixation was the signal. I asked, *“How does Zomato do this?”*, and when we checked their app, we found a straightforward pattern—a 10-second confirmation timer and a clear message about non-cancellable orders. Because the app already had all the information needed to decide when to show that timer, I could confidently say, *“This can be an app-only change; we can ship it in a few days.”* The engineering work was trivial. Identifying that it was a blocker and needed a quick solve was the real contribution.
 
 <hr/>
 
