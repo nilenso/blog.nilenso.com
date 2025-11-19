@@ -34,12 +34,19 @@ It’s in this kind of tea-table space that we found the courage to say *“scre
 
 
 <hr/>
+
 After a hearty lunch one day on the nilenso terrace, we were talking about how we need better mechanisms to validate ideas with nurses in the field. [Dhruv](https://x.com/_droov) said *“Ideally, I just want to be a fly on the wall, and observe the nurse use the app with real patients”*. Prototypes didn’t cut it, and user-research questions were based on possibilities that weren’t easy to communicate. I suggested building a separate app that we can use to [run experiments quickly](https://www.youtube.com/watch?v=1FqOF9P0nEY) in the field. This would normally take months with a small team (it was 2018), but I had built prototype-apps quickly before, and could confidently say *“Give me a couple of weeks, no one else needs to be involved and their work can continue”*. That was a small enough risk the leadership could take, and it paid off. We iterated on scanning UUIDs of various densities using low-spec phones, various error feedback mechanisms, and a custom number keypad for entering blood pressures, tried all these out with nurses in the field, and then built them into the actual app.
+
 <hr/>
+
 When I was working at [GoFood](https://gofood.co.id/en), we were out for dinner in Jakarta when I noticed [Hareesh](https://www.linkedin.com/in/hareeshwar-g-86240712/) kept returning to what seemed like a small issue: customers accidentally placing orders and immediately cancelling them. It didn’t look urgent, but it was quietly blocking a major release: restaurants that auto-accepted orders the moment they were placed. He never said this directly, but his fixation was the signal. I asked, *“How does Zomato do this?”*, and when we checked their app, we found a straightforward pattern—a 10-second confirmation timer and a clear message about non-cancellable orders. Because the app already had all the information needed to decide when to show that timer, I could confidently say, *“This can be an app-only change; we can ship it in a few days.”* The engineering work was trivial. Identifying that it was a blocker and needed a quick solve was the real contribution.
+
 <hr/>
+
 While working at a logistics firm recently, we had spent more than a month wrestling with the onboarding journeys for new partners. It was a legacy system where every bug fix spawned new ones, and understanding the possible solutions was even more painful than understanding the problems. Our competitors could onboard new partners in hours while we took days, and the decade-old architecture simply wasn’t letting the product evolve. One evening, after venting about all this with the head of product, I asked him, *“If we were to re-implement the entire onboarding flow from scratch, what would you do?”*, and it turned out he had been thinking the same thing but couldn’t voice it unprompted. It was too big and too costly a leap to suggest outright. That question unlocked the real conversation: by the end of it, we had enough product clarity and engineering rationale to justify a half-year rewrite.
+
 <hr/>
+
 I’ve tried to break down my instincts from such experiences at the ideation phase, to what I might tell another fellow engineer:
 
 
