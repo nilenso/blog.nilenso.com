@@ -19,6 +19,9 @@ I want to sharpen this observation a bit more.
 
 - my colleagues' preferences
 
+## Benchmark illusions
+
+## Models aren't fungible
 
 ## "Evals", Internal Benchmarks and Public Benchmarks
 
