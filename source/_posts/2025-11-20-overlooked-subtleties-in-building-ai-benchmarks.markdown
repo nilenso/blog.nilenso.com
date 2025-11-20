@@ -11,4 +11,4 @@ Well, I haven't built one yet, but I'm trying to. And in this process I have fou
 
 ## Types of benchmarks
 
-It's possible to 
+It's possible to categorise benchmarks in several ways, but for the purposes of this post, I'm 
