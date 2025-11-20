@@ -13,3 +13,18 @@ A big talking point that came up from the ICs and engineering leaders that parti
 
 *Pictured above, clockwise: (1) My co-facilitator Lavanya Tekumala. (2) Developers talking about benchmarks and AI-assisted coding. (3) The whiteboard from the session which featured the word "benchmark" three times.*
 
+I want to sharpen this observation a bit more.
+
+## "The vibes"
+
+- my colleagues' preferences
+
+
+## "Evals", Internal Benchmarks and Public Benchmarks
+
+
+## Aligned incentives
+
+
+## Minimum viable benchmark
+
