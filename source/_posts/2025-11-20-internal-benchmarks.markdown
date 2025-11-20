@@ -11,4 +11,5 @@ A big talking point that came up from the ICs and engineering leaders that parti
 
 ![](/images/blog/bof.jpg)
 
-*Pictured above: My co-facilitator Lavanya Tekumulla, developers talking about benchmarks and AI-assisted coding and whiteboard which featured the word "benchmark" three times.*
+*Pictured above: My co-facilitator Lavanya Tekumala, developers talking about benchmarks and AI-assisted coding and whiteboard which featured the word "benchmark" three times.*
+
