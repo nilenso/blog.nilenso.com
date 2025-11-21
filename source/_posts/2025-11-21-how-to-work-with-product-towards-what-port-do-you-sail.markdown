@@ -7,22 +7,26 @@ post_url: how-to-work-with-product-towards-what-port
 layout: post
 ---
 > If one does not know to which port one is sailing, no wind is favorable. 
-> …but when he knows, he must steer and watch the stars.
+> …but when he knows, he must steer and watch the stars.\
+>
 > *Letter 71, Moral Letters to Lucilius, Seneca*
 
 This might seem quite obvious, cliche even, but it’s quite difficult to apply to life. Or to building products. Making big decisions is hard. But then:
 
-> Hard choices easy life, easy choices hard life.
+> Hard choices easy life, easy choices hard life.\
+>
 > *Jerzy Gregorek*
 
 With building products in teams, the “hard life” part applies to the whole team. When leadership (engineering and product) fails to choose the port clearly, the entire team is stuck treading waters. And unfortunately this happens way too often. 
 
-> Management is doing things right; leadership is doing the right things.”
-> Stephen Covey
+> Management is doing things right; leadership is doing the right things.”\
+>
+> *Stephen Covey*
 
 Still, most leaders from what I know are familiar with this challenge, and take it up. However, many times, it’s more subtle, and usually of the form: *“There are 2 objectives, both are equally important”*.
 
-> We must realize, and act on the realization, that if we try to focus on everything, we focus on nothing.
+> We must realize, and act on the realization, that if we try to focus on everything, we focus on nothing.\
+>
 > *John E. Doerr, Measure What Matters*
 
 From the following excerpts of my experiences, I’ll try to illustrate how these kinds of issues show up in every day work.
