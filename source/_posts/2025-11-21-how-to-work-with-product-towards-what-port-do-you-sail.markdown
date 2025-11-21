@@ -72,3 +72,5 @@ In my experience, engineering is seldom involved in creating OKRs, and it’s us
 1. Demand clarity on goals, ideally in terms of metrics that you can track. Participate in the conversations needed to achieve that clarity.
 2. Make product-observability a first class requirement with every [unit of work](https://blog.nilenso.com/blog/2025/09/17/the-common-sense-unit-of-work/).
 3. Establish balancing and reinforcing feedback loops in day to day work that ties back to those metrics.
+
+![portless-boat](/images/blog/product-tea-table-image-1-.png)
