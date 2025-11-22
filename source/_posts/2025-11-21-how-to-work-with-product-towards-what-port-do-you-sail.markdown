@@ -58,12 +58,14 @@ Ideally, every single initiative should move the metric, and we respond by reinf
 
 This quote bears repeating in teams where product and engineering fail to work together. Without involvement from engineering in setting the goals, and understanding the metrics, there is no commitment to create the required observability, and the feedback loops necessary to work toward them.
 
-In my experience, engineering is seldom involved in creating OKRs, and it’s usually product and business teams. This is antithetical to forging a deep relationship between the functions. As an engineer, try to find your way into those objective setting meetings. The team will thank you for being in it, even if you weren't invited initially.
+In my experience, engineering is seldom involved in creating OKRs, and it’s usually owned by product and business teams. This is antithetical to forging a deep relationship between the functions. If you're a leader, use your influence to bring engineering to the table. If you don't have the influence yet, build it by creating value around the objectives anyway. Understand them, challenge them, and help make them real. Comment on the OKR docs with your views, push to refine that metric you think is poorly defined, or negotiate on that goal you think is too steep. It's hard, but you have to work your way up to the table.
 
 ### What should I do as an engineer?
 
-1. Demand clarity on goals, ideally in terms of metrics you can track. Participate in the conversations needed to achieve that clarity.
-2. Make product-observability a first class requirement with every [unit of work](https://blog.nilenso.com/blog/2025/09/17/the-common-sense-unit-of-work/).
-3. Establish balancing and reinforcing feedback loops in day-to-day work that ties back to those metrics.
+Work with product to get clarity on the port. Once you have it, as Seneca suggests, you must steer and watch the stars. It boils down to three simple things:
+
+1. Demand clarity on goals, ideally in terms of metrics you can track, and participate in the conversations needed to achieve that clarity.
+2. Make product observability a first-class requirement with every [unit of work](https://blog.nilenso.com/blog/2025/09/17/the-common-sense-unit-of-work/).
+3. Establish balancing and reinforcing feedback loops in day-to-day work that tie back to those metrics.
 
 ![portless-boat](/images/blog/product-tea-table-image-1-.png)
