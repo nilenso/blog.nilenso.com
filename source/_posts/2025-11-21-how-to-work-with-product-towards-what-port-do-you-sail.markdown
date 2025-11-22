@@ -10,25 +10,15 @@ layout: post
 >
 > *[Letter 71, Moral Letters to Lucilius, Seneca](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_71)*
 
-This might seem quite obvious, cliché even, but it’s surprisingly difficult to apply to life. Or to building products. Making big decisions is hard. But then:
+This might seem quite obvious, cliché even, but it’s surprisingly difficult to apply to life, or to building products. Making big decisions is hard. But then:
 
 > Hard choices easy life, easy choices hard life.
 >
 > *Jerzy Gregorek*
 
-With building products in teams, the “hard life” part applies to everyone. When leadership (engineering and product) fails to choose the port clearly, the entire team is stuck treading water. And unfortunately this happens way too often. 
+When leadership fails to make the hard choices, the entire team ends up stuck, treading water. Most leaders I know recognise this and try to make those calls. But the day-to-day challenges inside teams are more subtle, and often look like this: *"There are two objectives; both are equally important."*
 
-> Management is doing things right; leadership is doing the right things.
->
-> *[7 Habits of Highly Effective People, Stephen Covey](en.wikipedia.org/wiki/the_7_habits_of_highly_effective_people)*
-
-Most leaders I know are familiar with this challenge and take it up willingly. However, many times, it’s more subtle, and usually of the form: *“There are 2 objectives, both are equally important”*.
-
-> If we try to focus on everything, we focus on nothing.
->
-> *[John E. Doerr, Measure What Matters](https://www.whatmatters.com/)*
-
-I'd apologise for quoting many quotes if the quotes weren't so darned good. Anyway, In the following excerpts from my experience, I’ll illustrate how these issues show up in everyday work.
+If we try to focus on everything, we focus on nothing, as John Doerr puts it in [Measure What Matters](https://www.whatmatters.com/). In the following excerpts from my experience, I’ll illustrate how these issues show up in everyday work.
 
 ![towards-what-port](/images/blog/gemini-generated-image.png)
 
