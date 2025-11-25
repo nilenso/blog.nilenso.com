@@ -15,19 +15,22 @@ A big talking point that came up from the ICs and engineering leaders that parti
 
 I want to sharpen this observation a bit more.
 
-## "The vibes"
+## Benchmark illusions and "The vibes"
 
-- my colleagues' preferences
+Here's the benchmark that 
 
-## Benchmark illusions
+And here's the most popular benchmark for testing coding ability.
+
+![](/images/blog/swe-bench-chart-2025-11-25.png)
+
+
+
+my colleagues' preferences
 
 ## Models aren't fungible
 
 ## "Evals", Internal Benchmarks and Public Benchmarks
 
-
 ## Aligned incentives
 
-
 ## Minimum viable benchmark
-
