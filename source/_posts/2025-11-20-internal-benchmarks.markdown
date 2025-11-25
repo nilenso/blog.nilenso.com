@@ -27,6 +27,14 @@ And here's the most popular benchmark for testing coding ability.
 
 You would think that all the models are pretty interchangeable and that whenever a new model comes in, you can reap the fruits of the wonderful frontier lab training pipelines. And switch your coding model to whatever the new hotness is. Right?
 
+The issue with benchmarks is that they are lossy. They condense multidimensional and qualitative abilities into a number. Your business case may not look like whatever your number represents.
+
+Case Law v2 Gemini vs LegalBench Gemini
+
+
+
+### The vibes
+
 
 
 ## Models aren't fungible
