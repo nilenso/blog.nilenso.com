@@ -37,9 +37,13 @@ Let's take an example. You're working on an AI agent that operates in the legal 
 
 Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark [^statsig].
 
+But look at this—there's a CaseLaw v2 benchmark as well.
 
+![](/images/blog/caselawv2.png)
 
-Case Law v2 Gemini vs LegalBench Gemini
+Oh, so have they forgotten to bench our frontier Gemini model here? Actually no.
+
+Gemini genuinely
 
 UAT experience
 
