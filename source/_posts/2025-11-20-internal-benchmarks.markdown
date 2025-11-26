@@ -37,13 +37,15 @@ Let's take an example. You're working on an AI agent that operates in the legal 
 
 Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark [^statsig].
 
-But look at this—there's a CaseLaw v2 benchmark as well.
+But look at this—there's a CaseLaw (v2) benchmark as well.
 
 ![](/images/blog/caselawv2.png)
 
 Oh, so have they forgotten to bench our frontier Gemini model here? Actually no.
 
-Gemini genuinely
+Gemini 3 is poor enough at this benchmark that it's nowhere near the top of the leaderboard. In fact, it ranks #39 and is worse than the previous generation Gemini 2.5 Flash!
+
+Both of these are measuring different things in the legal domain, with CaseLaw appearing more like real-world legal work, and LegalBench being more like an academic exam. It's quite possible that Gemini can be good at some parts of some domains and poor at other parts of the same domain. Or maybe the CaseLaw evaluation has some unaddressed issues (after all, there seem to be a lot of surprising results in the leaderboard). Regardless, my point stands—don't base your decision off benchmark scores.
 
 UAT experience
 
