@@ -25,9 +25,19 @@ And here's the most popular benchmark for testing coding ability.
 
 ![](/images/blog/swe-bench-chart-2025-11-25.png)
 
-You would think that all the models are pretty interchangeable and that whenever a new model comes in, you can reap the fruits of the wonderful frontier lab training pipelines. And switch your coding model to whatever the new hotness is. Right?
+These charts in isolation suggest that AI models are pretty interchangeable and that whenever a new model comes in, you can reap the fruits of the wonderful frontier lab training pipelines. And switch your coding model to whatever the new hotness is. Right?
+
+No.
 
 The issue with benchmarks is that they are lossy. They condense multidimensional and qualitative abilities into a number. Your business case may not look like whatever your number represents.
+
+Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well overall in the benchmark (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
+
+![](/images/blog/legalbench.png)
+
+Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark [^statsig].
+
+
 
 Case Law v2 Gemini vs LegalBench Gemini
 
@@ -44,3 +54,7 @@ UAT experience
 ## Aligned incentives
 
 ## Minimum viable benchmark
+
+
+
+[^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
