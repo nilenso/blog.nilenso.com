@@ -61,3 +61,5 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 **Stronger flywheel ⇒ Immediate connection ⇒ Better product**
 
 So, review your flywheel periodically. Lubricate the gears, and tighten the feedback loops. Ultimately, ensure that everyone on the team feels empowered to stop the line, take a spoonful, and say, *"Needs more salt."*
+
+![](/images/blog/soup-salt-pepper.png)
