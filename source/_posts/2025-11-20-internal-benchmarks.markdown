@@ -9,8 +9,8 @@ A few months ago, I was co-facilitating [a "Birds of a Feather" session](https:/
 
 A big talking point was that popular public benchmarks are insufficient for determining if an AI model is a good fit for their product.
 
-<figure style="margin: 0 auto;">
-  <img src="/images/blog/bof.jpg" alt="Collage from the Birds of a Feather session showing co-facilitator Lavanya Tekumala, developers discussing benchmarks and AI-assisted coding, and a whiteboard featuring the word 'benchmark' three times" style='width: 70%'>
+<figure>
+  <img src="/images/blog/bof.jpg" alt="Collage from the Birds of a Feather session showing co-facilitator Lavanya Tekumala, developers discussing benchmarks and AI-assisted coding, and a whiteboard featuring the word 'benchmark' three times" style='display: block; width: 50%; margin: 0 auto;'>
   <figcaption>clockwise: (1) My co-facilitator Lavanya Tekumala. (2) Developers talking about benchmarks and AI-assisted coding. (3) The whiteboard from the session which featured the word "benchmark" three times.</figcaption>
 </figure>
 
@@ -64,8 +64,8 @@ Both of these are measuring different things in the legal domain, with CaseLaw a
 
 This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**.
 
-<figure style="margin: 0 auto;">
-  <img src="/images/blog/eqtweet.png" style='width: 70%'>
+<figure>
+  <img src="/images/blog/eqtweet.png" style='display: block; width: 70%; margin: 0 auto;'>
   <figcaption>A founder benefitting massively from internal benchmarks. Not all new models may be better than what came before for your use case.</figcaption>
 </figure>
 
