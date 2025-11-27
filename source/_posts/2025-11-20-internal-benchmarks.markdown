@@ -99,7 +99,7 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 ## Anyway,
 
-* Don't trust public benchmarks without seeing how well the methodology and metrics map to your product outcomes.
+* Don't trust public benchmarks numbers without seeing if the methodology and numbers map to your product outcomes.
 * Build your own minimal viable benchmark.
 * It's not that hard to start with, and it's really worth it. Don't skimp on measuring whether your product works!
 
