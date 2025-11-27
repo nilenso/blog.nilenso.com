@@ -41,7 +41,7 @@ While this seems like a simple enough principle to apply, in reality, we are fac
 
 Here’s a list of some ways to “taste” at each phase, and a healthy level of involvement of product and engineering in each of them.
 
-<div class="full-width-table">
+<div class="full-width-table" markdown="1">
 
 | Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %         |
 | ------------------------ | ----------------- | -------------------------------------------------------------------- | ----------------------------- |
