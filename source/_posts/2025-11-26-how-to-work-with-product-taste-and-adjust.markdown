@@ -33,8 +33,6 @@ To build the flywheel, we ask:
 * “What is the simplest experiment I can run to validate this hypothesis?”, and then
 * “What do I need to run this experiment?”
 
-
-
 </div>
 
 The machinery that enables running such experiments frequently and quickly is the flywheel.
@@ -43,7 +41,11 @@ It could be in the form of an operator’s console that allows product to tweak 
 
 While this seems like a simple enough principle to apply, in reality, we are faced with the inherent complexity of working with many people, roles, and tools. A typical product development lifecycle (PDLC) looks like the abstract machine shown below. Each phase has levers and meters around specific feedback loops (such as Idea ⇄ User), and the phases are interconnected through reinforcing and balancing information channels. 
 
+<div style="max-width:60%">
+
 ![product-development-flywheel](/images/blog/gears.png)
+
+</div>
 
 Here’s a list of some ways to “taste” at each phase, and a healthy level of involvement of product and engineering in each of them.
 
