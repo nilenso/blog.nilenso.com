@@ -49,6 +49,10 @@ Both of these are measuring different things in the legal domain, with CaseLaw a
 
 ## Minimum viable benchmark
 
+Without getting into the weeds of categorisations, I'd note that internal benchmarks are not all that different from what AI Engineering teams like to call *evals*.
+
+They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Building  a public benchmark is hard work—you have to collect a lot of data to get signal, ensure the environments are reproducible and your metrics trustworthy. This high effort has pushed teams away from building evals until it's too late—imagine scrambling to do the grunt work of collecting annotated high quality data when your house is burning.
+
 
 
 ## "Evals", Internal Benchmarks and Public Benchmarks
