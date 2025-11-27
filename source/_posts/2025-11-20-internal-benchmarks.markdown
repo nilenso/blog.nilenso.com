@@ -87,11 +87,15 @@ After this exercise a few things happen:
 
 This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on this when inevitably you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
 
-## "Evals", Internal Benchmarks and Public Benchmarks
+How we go from a minimal viable benchmark to a maximally useful benchmark would perhaps need its own article. But to give you a taste, ensure you have these properties:
 
-## Aligned incentives
+* It's easy to look at the data. And that your cross-functional team is involved in reviewing the data regularly.
+* What you are measuring maps to product outcomes.
+* There are enough samples to actually give you a sense of whether your system has actually improved[^binomialchart].
+* The tasks have a difficulty ramp-up to actually capture improvements to models and systems. If most of your tasks have the same difficulty, and a newly released AI model gained the ability to do that task, your benchmark would get saturated overnight and cease to capture further improvements.
+* The metrics are measured either deterministically or with an unbiased estimator[^llmjudge].
 
-
+## Footnotes
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
 
