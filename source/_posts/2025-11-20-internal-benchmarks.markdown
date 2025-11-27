@@ -21,7 +21,7 @@ I want to sharpen this observation a bit more.
 I've seen benchmarks serve a whole range of purposes.
 
 * **Benchmarks as decision-making tools**: You look at existing benchmarks to figure out whether to use model A or model B.
-* **Benchmarks as regression markers**: Like unit tests—it tells you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
+* **Benchmarks as regression markers**: Like unit tests, it tells you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
 * **Benchmarks as improvement indicator**: If you see benchmark go up, you can tell that your change to the model or system is improving the outcome.
 * **Benchmarks as product behaviour feedback**: A more subtle use—with the right analysis of trajectories, benchmarks can tell you about the strengths and weaknesses of your model across categories of tasks you are interested in.
 * **Benchmarks as research agenda setters**: When a new benchmark is published, AI labs start hill-climbing on it—publishing benchmarks is a great way to influence what AI is good at.
