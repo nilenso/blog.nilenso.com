@@ -43,7 +43,7 @@ While this seems like a simple enough principle to apply, in reality, we are fac
 
 <div markdown="1" style="max-width:60%; margin: 0 auto">
 
-![product-development-flywheel](/images/blog/gears.png)
+![product-development-flywheel](/images/blog/flywheel-an.png)
 
 </div>
 
