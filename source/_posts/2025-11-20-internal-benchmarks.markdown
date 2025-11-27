@@ -67,15 +67,25 @@ Without getting into the weeds of categorisations, I'd note that internal benchm
 
 They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Unfortunately, building a public benchmark is hard work—you have to collect a lot of data to get signal[^statsigcount], ensure the environments are reproducible and your metrics trustworthy. This [ugh field](https://www.lesswrong.com/posts/EFQ3F6kmt4WHXRqik/ugh-fields) has pushed teams away from building evals. Until it's too late—after which everyone is scrambling to do the grunt work of collecting annotated high quality data when the house is burning.
 
-I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to minimal viable benchmarks.
+I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to *minimum viable benchmarks*.
 
 A minimum viable benchmark is not concerned with being an arena for competing AI systems—they are a vehicle for figuring out *whether you are building the right product* and that the product works well.
 
-You don't need to have a nice cozy metric or your LLM eval frameworks in order to get started. You are instead figuring out the crucial part, which is to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet.
+You don't need to have a nice cozy metric or your LLM eval frameworks in order to get started. You are instead figuring out the crucial part, which is to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet and your product and engineering teams in one room.
 
-In your sheet, ensure you have your inputs to your AI system. Add the outputs after a few runs. Add freeform commentary in the last column about how it did.
+In your sheet, ensure you have your inputs to your AI system[^notevensystem]. Add the outputs after a few runs. Add free-form commentary in the last column about how it did. Don't optimise anything yet. Don't add any "metrics" yet.
 
+After this exercise a few things happen:
 
+* You realise whether the AI works at all for your task.
+* You realise what it feels like to be a user of your system and get a better sense of where AI is actually helping. This is product input.
+* You realise what actually needs to be measured for your benchmark metrics. It's never the vague pointless metrics that came with the eval framework you were looking at.
+* Your discovered benchmark metrics are often useful product metrics!
+* You now know how to scale your evals.
+* You catch the biggest blind spots of the AI system very early on. Gathering a large set of datasets are needed only when you are trying to catch *small effects*. Early on, most of your effects will be quite large!
+* Most importantly, you have overcome the Ugh Field! This exercise is often fun.
+
+This minimal viable benchmark would have already proven its usefulness early on. 
 
 ## "Evals", Internal Benchmarks and Public Benchmarks
 
@@ -86,3 +96,5 @@ In your sheet, ensure you have your inputs to your AI system. Add the outputs af
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
 
 [^statsigcount]: TODO
+
+[^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
