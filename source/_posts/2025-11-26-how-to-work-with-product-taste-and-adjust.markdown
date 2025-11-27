@@ -6,14 +6,16 @@ created_at: 2025-11-26 00:00:00 UTC
 post_url: how-to-work-with-product-taste-and-adjust
 layout: post
 ---
-> Eh! All of you, come here! Taste it! Taste it! Taste it! Taste it!
+> Eh! All of you, come here! Taste it! Taste it! Taste it! Taste it!\
+>
 > ***Gordon Ramsay***
 
 If you want to cook a great dish, you’ve got to taste it every step of the way. Taste the ingredients you buy, the components you prepare, and the spices and seasonings. If you can’t taste it, you smell it, feel it, or listen to it. And then you adjust. Taste and adjust until you create a dish you like.
 
-“Taste and adjust” is a form of [continuous improvement](https://en.wikipedia.org/wiki/Continual_improvement_process) applied to the creation of food. The hallmark methodologies of the [scientific method](https://en.wikipedia.org/wiki/Scientific_method), [Kaizen](https://en.wikipedia.org/wiki/Kaizen), [TPS](https://en.wikipedia.org/wiki/Toyota_Production_System), [PDCA](https://en.wikipedia.org/wiki/PDCA), [TDD](https://en.wikipedia.org/wiki/Test-driven_development), [design sprints](https://www.gv.com/sprint/), or [extreme programming](https://en.wikipedia.org/wiki/Extreme_programming), that have led to some of humanity’s best creations, are all forms of continuous improvement. At their core is this principle:
+*“Taste and adjust”* is a form of [continuous improvement](https://en.wikipedia.org/wiki/Continual_improvement_process) applied to the creation of food. The hallmark methodologies of the [scientific method](https://en.wikipedia.org/wiki/Scientific_method), [Kaizen](https://en.wikipedia.org/wiki/Kaizen), [TPS](https://en.wikipedia.org/wiki/Toyota_Production_System), [PDCA](https://en.wikipedia.org/wiki/PDCA), [TDD](https://en.wikipedia.org/wiki/Test-driven_development), [design sprints](https://www.gv.com/sprint/), or [extreme programming](https://en.wikipedia.org/wiki/Extreme_programming), that have led to some of humanity’s best creations, are all forms of continuous improvement. At their core is this principle:
 
-> Creators need an immediate connection to what they're creating.
+> Creators need an immediate connection to what they're creating.\
+>
 > ***Bret Victor, Inventing on Principle***
 
 Bret Victor says that *“working in the head doesn’t scale”*, and that [understanding comes from seeing data, flow, and state directly](https://worrydream.com/LearnableProgramming/). When building products, can you see the data, flow, and state directly? Can you “taste” your product every step to ensure it’s exactly what you and your users want?
@@ -22,7 +24,7 @@ The chef’s line-tasting, our flywheel, harness, environment, or feedback loop,
 
 ![taste-and-adjust](/images/blog/taste-and-adjust.png)
 
-### The product development flywheel
+## The product development flywheel
 
 To build the flywheel, we ask:
 
