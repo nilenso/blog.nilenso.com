@@ -57,15 +57,23 @@ So, have they forgotten to bench our frontier Gemini model here? Actually no.
 
 Gemini 3 is poor enough at this benchmark that it's nowhere near the top of the leaderboard. In fact, it ranks #39 and is worse than the previous generation Gemini 2.5 Flash!
 
-Both of these are measuring different things in the legal domain, with CaseLaw appearing more like real-world legal work, and LegalBench being more like an academic exam. It's quite possible that Gemini can be good at some parts of some domains and poor at other parts of the same domain. Or maybe the CaseLaw evaluation has some unaddressed issues (after all, there seem to be a lot of surprising results in the leaderboard). Or that Gemini hates Canadians. This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**.
+Both of these are measuring different things in the legal domain, with CaseLaw appearing more like real-world legal work, and LegalBench being more like an academic exam. It's quite possible that Gemini can be good at some parts of some domains and poor at other parts of the same domain. Or maybe the CaseLaw evaluation has some unaddressed issues (after all, there seem to be a lot of surprising results in the leaderboard). Or that Gemini hates Canadians.
+
+This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**.
 
 ## Minimum viable benchmark
 
-Without getting into the weeds of categorisations, I'd note that internal benchmarks are not all that different from what AI Engineering teams like to call *evals*.
+Without getting into the weeds of categorisations, I'd note that internal benchmarks are not all that different from what all the hip and cool new AI Engineering teams like to call *evals*.
 
-They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Building  a public benchmark is hard work—you have to collect a lot of data to get signal, ensure the environments are reproducible and your metrics trustworthy. This high effort has pushed teams away from building evals until it's too late—imagine scrambling to do the grunt work of collecting annotated high quality data when your house is burning.
+They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Unfortunately, building a public benchmark is hard work—you have to collect a lot of data to get signal[^statsigcount], ensure the environments are reproducible and your metrics trustworthy. This [ugh field](https://www.lesswrong.com/posts/EFQ3F6kmt4WHXRqik/ugh-fields) has pushed teams away from building evals. Until it's too late—after which everyone is scrambling to do the grunt work of collecting annotated high quality data when the house is burning.
 
 I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to minimal viable benchmarks.
+
+A minimum viable benchmark is not concerned with being an arena for competing AI systems—they are a vehicle for figuring out *whether you are building the right product* and that the product works well.
+
+You don't need to have a nice cozy metric or your LLM eval frameworks in order to get started. You are instead figuring out the crucial part, which is to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet.
+
+In your sheet, ensure you have your inputs to your AI system. Add the outputs after a few runs. Add freeform commentary in the last column about how it did.
 
 
 
@@ -76,3 +84,5 @@ I'd like to propose an alternate view—your internal evals don't need to be as 
 
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
+
+[^statsigcount]: TODO
