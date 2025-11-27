@@ -43,16 +43,15 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 
 <div class="full-width-table">
 
-| Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %        |
-| ------------------------ | ----------------- | -------------------------------------------------------------------- | ---------------------------- |
-| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product, 10% Engineering |
-| 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product, 30% Engineering |
-| 3. Plan                  | Idea ⇄ Spec       | Thin slices of work, Experiments, Spikes, Tracing Bullets            | 50% Product,                 |
-| 50% Engineering          |                   |                                                                      |                              |
-| 4. Develop               | Spec ⇄ Code       | TDD, Types, Compilation, REPL, AI Assisted Coding                    | 10% Product,                 |
-| 90% Engineering          |                   |                                                                      |                              |
-| 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product, 70% Engineering |
-| 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product, 50% Engineering |
+| Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %         |
+| ------------------------ | ----------------- | -------------------------------------------------------------------- | ----------------------------- |
+| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product,\
+10% Engineering |
+| 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product, 30% Engineering  |
+| 3. Plan                  | Idea ⇄ Spec       | Thin slices of work, Experiments, Spikes, Tracing Bullets            | 50% Product, 50% Engineering  |
+| 4. Develop               | Spec ⇄ Code       | TDD, Types, Compilation, REPL, AI Assisted Coding                    | 10% Product, 90% Engineering  |
+| 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product, 70% Engineering  |
+| 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product, 50% Engineering  |
 
 ### </div>
 
