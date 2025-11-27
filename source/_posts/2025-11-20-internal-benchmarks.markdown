@@ -23,6 +23,8 @@ I've seen benchmarks serve a whole range of purposes.
 * Benchmarks as regression markers: Like unit tests—it tells you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
 * Benchmarks as optimisation feedback: If you see benchmark go up, you can tell that your model is improving.
 * Benchmarks as product behaviour feedback: A more subtle use—with the right analysis of trajectories, benchmarks can tell you about the strengths and weaknesses of your model across categories of tasks you are interested in.
+* Benchmarks as research agenda setters: When a new benchmark is published, AI labs start hill-climbing on it—publishing benchmarks is a great way to influence what AI is good at.
+*
 * Benchmarks as RL environments: This is an emerging use case. Reinforcement Learning with Verifiable Rewards effectively works with a setup that doesn't look all too different from a benchmark.
 
 If a benchmark is not helping you with any of the above, your benchmark is useless. Many useless benchmarks unfortunately exist.
