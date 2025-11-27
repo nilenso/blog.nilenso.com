@@ -15,6 +15,18 @@ A big talking point that came up from the ICs and engineering leaders that parti
 
 I want to sharpen this observation a bit more.
 
+## What are benchmarks useful for?
+
+I've seen benchmarks serve a whole range of purposes.
+
+* Benchmarks as decision-making tools: You look at existing benchmarks to figure out whether to use model A or model B.
+* Benchmarks as regression markers: Like unit tests—it tells you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
+* Benchmarks as optimisation feedback: If you see benchmark go up, you can tell that your model is improving.
+* Benchmarks as product behaviour feedback: A more subtle use—with the right analysis of trajectories, benchmarks can tell you about the strengths and weaknesses of your model across categories of tasks you are interested in.
+* Benchmarks as RL environments: This is an emerging use case. Reinforcement Learning with Verifiable Rewards effectively works with a setup that doesn't look all too different from a benchmark.
+
+If a benchmark is not helping you with any of the above, your benchmark is useless. Many useless benchmarks unfortunately exist.
+
 ## Benchmark illusions and "The vibes"
 
 Here's the Artificial Analysis Intelligence index which aggregates all sorts of AI benchmarks.
@@ -52,6 +64,8 @@ Both of these are measuring different things in the legal domain, with CaseLaw a
 Without getting into the weeds of categorisations, I'd note that internal benchmarks are not all that different from what AI Engineering teams like to call *evals*.
 
 They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Building  a public benchmark is hard work—you have to collect a lot of data to get signal, ensure the environments are reproducible and your metrics trustworthy. This high effort has pushed teams away from building evals until it's too late—imagine scrambling to do the grunt work of collecting annotated high quality data when your house is burning.
+
+I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to minimal viable benchmarks.
 
 
 
