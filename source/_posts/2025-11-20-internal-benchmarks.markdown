@@ -66,7 +66,7 @@ This all points to one thing—don't base your decision off benchmark scores. In
 
 <figure>
   <img src="/images/blog/eqtweet.png" style='display: block; width: 70%; margin: 0 auto;'>
-  <figcaption>A founder benefitting massively from internal benchmarks. Not all new models may be better than what came before for your use case.</figcaption>
+  <figcaption>Another reason to have internal benchmarks. Not all new models may be better than what came before for your use case.</figcaption>
 </figure>
 
 ## Minimum viable benchmark
