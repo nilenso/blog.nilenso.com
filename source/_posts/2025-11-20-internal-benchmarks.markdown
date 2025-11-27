@@ -35,7 +35,7 @@ Let's take an example. You're working on an AI agent that operates in the legal 
 
 ![](/images/blog/legalbench.png)
 
-Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark [^statsig].
+Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark[^statsig].
 
 But look at this—there's a CaseLaw (v2) benchmark as well.
 
