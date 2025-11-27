@@ -93,7 +93,7 @@ After this exercise a few things happen:
 * You catch the biggest blind spots of the AI system very early on. Gathering a large datasets are needed only when you are trying to catch *small effects*. Early on, most of observed effects on any intervention will be quite large!
 * Most importantly, you have overcome the Ugh Field! This exercise is often fun. You may also have ended up with some stone soup[^stonesoup].
 
-This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on this when inevitably you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
+This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on it when, inevitably, you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
 
 How we go from a minimal viable benchmark to a maximally useful benchmark would perhaps need its own article. But to give you a taste, ensure you have these properties:
 
