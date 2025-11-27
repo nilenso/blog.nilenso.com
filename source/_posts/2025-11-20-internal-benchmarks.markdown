@@ -23,7 +23,7 @@ Here's the Artificial Analysis Intelligence index which aggregates all sorts of 
 
 And here's the most popular benchmark for testing coding ability.
 
-![](/images/blog/swe-bench-chart-2025-11-25.png)
+![](/images/blog/swe-bench-chart-2025-11-27.png)
 
 These charts in isolation suggest that AI models are pretty interchangeable and that whenever a new model comes in, you can reap the fruits of the wonderful frontier lab training pipelines. And switch your coding model to whatever the new hotness is. Right?
 
