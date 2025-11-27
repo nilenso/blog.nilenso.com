@@ -29,7 +29,7 @@ I've seen benchmarks serve a whole range of purposes.
 
 If a benchmark is not helping you with any of the above, your benchmark is useless. Many useless benchmarks unfortunately exist.
 
-## Benchmark illusions and "The vibes"
+## Benchmark traps
 
 Here's the Artificial Analysis Intelligence index which aggregates all sorts of AI benchmarks.
 
