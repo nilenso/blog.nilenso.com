@@ -29,7 +29,7 @@ These charts in isolation suggest that AI models are pretty interchangeable and 
 
 No.
 
-The issue with benchmarks is that they are lossy. They condense multidimensional and qualitative abilities into a number. Your business case may not look like whatever your number represents.
+The issue with benchmarks is that they are lossy. They condense multidimensional abilities into a single number. Your business case may not look like whatever your number represents.
 
 Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well overall in the benchmark (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
 
