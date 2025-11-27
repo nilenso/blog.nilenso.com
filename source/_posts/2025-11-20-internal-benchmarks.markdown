@@ -64,7 +64,10 @@ Both of these are measuring different things in the legal domain, with CaseLaw a
 
 This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**.
 
-![](/images/blog/eqtweet.png)
+<figure>
+  <img src="/images/blog/eqtweet.png" style='width: 70%'>
+  <figcaption>A founder benefitting massively from internal benchmarks. Not all new models may be better than what came before for your use case.</figcaption>
+</figure>
 
 ## Minimum viable benchmark
 
