@@ -41,6 +41,8 @@ While this seems like a simple enough principle to apply, in reality, we are fac
 
 Here’s a list of some ways to “taste” at each phase, and a healthy level of involvement of product and engineering in each of them.
 
+<div class="full-width-table">
+
 | Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %        |
 | ------------------------ | ----------------- | -------------------------------------------------------------------- | ---------------------------- |
 | 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product, 10% Engineering |
@@ -51,6 +53,8 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 | 90% Engineering          |                   |                                                                      |                              |
 | 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product, 70% Engineering |
 | 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product, 50% Engineering |
+
+### </div>
 
 ### Fine-Tuning the Flywheel
 
