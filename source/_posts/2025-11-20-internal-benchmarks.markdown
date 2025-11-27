@@ -115,7 +115,10 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
 
-[^statsigcount]: TODO
+[^statsigcount]: Chip Huyen's AI Engineering book brought this handy heuristic chart to my attention—this works well for binary classification evals (it's made some assumptions about the data being somewhat independent, so treat it more like a heuristic)
+    
+
+![](/images/blog/huyenheuristic.png)
 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
 
