@@ -31,7 +31,7 @@ No.
 
 The issue with benchmarks is that they are lossy. They condense multidimensional characteristics into a single number. Your business case may not look like whatever your number represents.
 
-Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well overall in the benchmark (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
+Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well across standard benchmarks (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
 
 ![](/images/blog/legalbench.png)
 
