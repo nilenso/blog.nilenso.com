@@ -79,7 +79,7 @@ I'd like to propose an alternate view—your internal evals don't need to be as 
 
 A minimum viable benchmark is not concerned with being an arena for competing AI systems—they are a vehicle for figuring out *whether you are building the right product* and that the product works well.
 
-You don't need to have a nice cozy metric or your LLM eval frameworks in order to get started. You are instead figuring out the crucial part, which is to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet and your product and engineering teams in one room.
+You don't need to have an intelligent-sounding metric or your LLM eval SaaS vendor figured out in order to get started. You are instead figuring out the crucial part, which is to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet and your product and engineering teams in one room.
 
 In your sheet, ensure you have your inputs to your AI system[^notevensystem]. Add the outputs after a few runs. Add free-form commentary in the last column about how it did. Don't optimise anything yet. Don't add any "metrics" yet.
 
