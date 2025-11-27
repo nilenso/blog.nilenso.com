@@ -6,7 +6,7 @@ created_at: 2025-11-26 00:00:00 UTC
 post_url: how-to-work-with-product-taste-and-adjust
 layout: post
 ---
-> Eh! All of you, come here! Taste it! Taste it! Taste it! Taste it!\
+> Eh! All of you, come here! Taste it! Taste it! Taste it! Taste it!
 >
 > ***Gordon Ramsay***
 
@@ -14,7 +14,7 @@ If you want to cook a great dish, you’ve got to taste it every step of the way
 
 *“Taste and adjust”* is a form of [continuous improvement](https://en.wikipedia.org/wiki/Continual_improvement_process) applied to the creation of food. The hallmark methodologies of the [scientific method](https://en.wikipedia.org/wiki/Scientific_method), [Kaizen](https://en.wikipedia.org/wiki/Kaizen), [TPS](https://en.wikipedia.org/wiki/Toyota_Production_System), [PDCA](https://en.wikipedia.org/wiki/PDCA), [TDD](https://en.wikipedia.org/wiki/Test-driven_development), [design sprints](https://www.gv.com/sprint/), or [extreme programming](https://en.wikipedia.org/wiki/Extreme_programming), that have led to some of humanity’s best creations, are all forms of continuous improvement. At their core is this principle:
 
-> Creators need an immediate connection to what they're creating.\
+> Creators need an immediate connection to what they're creating.
 >
 > ***Bret Victor, Inventing on Principle***
 
@@ -45,15 +45,14 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 
 | Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %         |
 | ------------------------ | ----------------- | -------------------------------------------------------------------- | ----------------------------- |
-| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product,\
-10% Engineering |
+| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product, 10% Engineering |
 | 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product, 30% Engineering  |
 | 3. Plan                  | Idea ⇄ Spec       | Thin slices of work, Experiments, Spikes, Tracing Bullets            | 50% Product, 50% Engineering  |
 | 4. Develop               | Spec ⇄ Code       | TDD, Types, Compilation, REPL, AI Assisted Coding                    | 10% Product, 90% Engineering  |
 | 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product, 70% Engineering  |
 | 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product, 50% Engineering  |
 
-### </div>
+</div>
 
 ### Fine-Tuning the Flywheel
 
