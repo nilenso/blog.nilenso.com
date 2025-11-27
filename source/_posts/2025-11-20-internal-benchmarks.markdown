@@ -9,9 +9,10 @@ A few months ago, I was co-facilitating [a "Birds of a Feather" session](https:/
 
 A big talking point was that popular public benchmarks are insufficient for determining if an AI model is a good fit for their product.
 
-![](/images/blog/bof.jpg)
-
-*Pictured above, clockwise: (1) My co-facilitator Lavanya Tekumala. (2) Developers talking about benchmarks and AI-assisted coding. (3) The whiteboard from the session which featured the word "benchmark" three times.*
+<figure>
+  <img src="/images/blog/bof.jpg" alt="Collage from the Birds of a Feather session showing co-facilitator Lavanya Tekumala, developers discussing benchmarks and AI-assisted coding, and a whiteboard featuring the word 'benchmark' three times">
+  <figcaption>Pictured above, clockwise: (1) My co-facilitator Lavanya Tekumala. (2) Developers talking about benchmarks and AI-assisted coding. (3) The whiteboard from the session which featured the word "benchmark" three times.</figcaption>
+</figure>
 
 I want to sharpen this observation a bit more.
 
