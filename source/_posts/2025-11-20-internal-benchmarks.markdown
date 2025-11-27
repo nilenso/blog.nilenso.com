@@ -5,9 +5,9 @@ author: Atharva Raykar
 created_at: 2025-11-20 00:00:00 UTC
 layout: post
 ---
-A few months ago, I was co-facilitating [a "Birds of a Feather" session](https://hasgeek.com/fifthelephant/2025/sub/birds-of-feather-bof-session-finding-signal-in-a-n-8hrRznGe3qf6e7zXxKwcDi) on keeping up with AI progress.
+A few months ago, I was co-facilitating [a "Birds of a Feather" session](https://hasgeek.com/fifthelephant/2025/sub/birds-of-feather-bof-session-finding-signal-in-a-n-8hrRznGe3qf6e7zXxKwcDi) on keeping up with AI progress. This was a group of engineering leaders and ICs.
 
-A big talking point that came up from the ICs and engineering leaders that participated was that popular public benchmarks are insufficient for determining if an AI model is a good fit for their product.
+A big talking point was that popular public benchmarks are insufficient for determining if an AI model is a good fit for their product.
 
 ![](/images/blog/bof.jpg)
 
