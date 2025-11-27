@@ -41,7 +41,7 @@ It could be in the form of an operator’s console that allows product to tweak 
 
 While this seems like a simple enough principle to apply, in reality, we are faced with the inherent complexity of working with many people, roles, and tools. A typical product development lifecycle (PDLC) looks like the abstract machine shown below. Each phase has levers and meters around specific feedback loops (such as Idea ⇄ User), and the phases are interconnected through reinforcing and balancing information channels. 
 
-<div markdown="1" style="max-width:60%">
+<div markdown="1" style="max-width:60%; margin: 0 auto">
 
 ![product-development-flywheel](/images/blog/gears.png)
 
