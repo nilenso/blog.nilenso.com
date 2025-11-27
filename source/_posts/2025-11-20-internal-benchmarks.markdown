@@ -81,7 +81,7 @@ A minimum viable benchmark is not concerned with being an arena for competing AI
 
 You don't need to have an intelligent-sounding metric or your LLM eval SaaS vendor figured out in order to get started. You only need to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet and your product and engineering teams in one room.
 
-In your sheet, ensure you have your inputs to your AI system[^notevensystem]. Add the outputs after a few runs. Add free-form commentary in the last column about how it did. Don't optimise anything yet. Don't add any "metrics" yet.
+In your sheet, ensure you have your inputs to your AI system. Add the outputs after a few runs in the system for the tasks you need[^notevensystem]. Add free-form commentary in the last column about how it did. Don't optimise anything yet. Don't add any "metrics" yet.
 
 After this exercise a few things happen:
 
