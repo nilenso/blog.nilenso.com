@@ -62,7 +62,9 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 * **Planning > Speed:** Development (phase 4) is arguably the most expensive part of most tech companies. While there’s a lot of focus on making development *faster* to reduce costs, *reducing* work through [planning](https://blog.nilenso.com/blog/2025/09/17/the-common-sense-unit-of-work/#planning) (phase 3) is far more effective. Break down problems, find thin slices of work to serve, and prioritise ruthlessly.
 * **Close outer feedback loops:** Phase 6 should close the loop on business [goals](https://blog.nilenso.com/blog/2025/11/21/how-to-work-with-product-towards-what-port-do-you-sail/) through product observability, in addition to the local feedback loops of individual features or initiatives.
 
+<div style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 **Stronger flywheel ⇒ Immediate connection ⇒ Better product**
+</div>
 
 So, review your flywheel periodically. Lubricate the gears, and tighten the feedback loops. Ultimately, ensure that everyone on the team feels empowered to stop the line, take a spoonful, and say, *"Needs more salt."*
 
