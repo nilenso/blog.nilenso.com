@@ -112,7 +112,6 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
 
 [^stonesoup]: The Stone Soup story, with apologies to Andy Hunt and Dave Thomas:  
-
 The three soldiers returning home from war were hungry. When they saw the village ahead, their spirits lifted—they were sure the villagers would give them a meal. But when they got there, they found the doors locked and the windows closed. After many years of war, the villagers were short of food, and hoarded what they had.  
 
 Undeterred, the soldiers boiled a pot of water and carefully placed three stones into it. The amazed villagers came out to watch.  
