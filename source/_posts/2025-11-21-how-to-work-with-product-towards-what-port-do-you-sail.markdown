@@ -1,5 +1,5 @@
 ---
-title: "How to work with product: To what port do you sail?"
+title: "How to work with Product: To What Port Do You Sail?"
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-21 00:00:00 UTC

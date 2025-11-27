@@ -1,5 +1,5 @@
 ---
-title: "How to work with Product: At the tea table"
+title: "How to work with Product: At the Tea Table"
 kind: article
 author: Srihari Sriraman
 created_at: 2025-11-18 00:00:00 UTC
