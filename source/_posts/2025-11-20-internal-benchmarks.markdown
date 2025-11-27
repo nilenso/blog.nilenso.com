@@ -77,15 +77,15 @@ In your sheet, ensure you have your inputs to your AI system[^notevensystem]. Ad
 
 After this exercise a few things happen:
 
+* You realise what your task is actually like and what it might involve.
 * You realise whether the AI works at all for your task.
-* You realise what it feels like to be a user of your system and get a better sense of where AI is actually helping. This is product input.
+* You realise what it feels like to be a user of your system and get a better sense of where AI is actually helping. This is input for the product team.
 * You realise what actually needs to be measured for your benchmark metrics. It's never the vague pointless metrics that came with the eval framework you were looking at.
 * Your discovered benchmark metrics are often useful product metrics!
-* You now know how to scale your evals.
-* You catch the biggest blind spots of the AI system very early on. Gathering a large set of datasets are needed only when you are trying to catch *small effects*. Early on, most of your effects will be quite large!
-* Most importantly, you have overcome the Ugh Field! This exercise is often fun.
+* You catch the biggest blind spots of the AI system very early on. Gathering a large datasets are needed only when you are trying to catch *small effects*. Early on, most of your effects will be quite large!
+* Most importantly, you have overcome the Ugh Field! This exercise is often fun. You have now made stone soup[^stonesoup].
 
-This minimal viable benchmark would have already proven its usefulness early on. 
+This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on this when inevitably you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
 
 ## "Evals", Internal Benchmarks and Public Benchmarks
 
@@ -99,59 +99,32 @@ This minimal viable benchmark would have already proven its usefulness early on.
 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
 
-[^stonesoup]:   Stone Soup and Boiled Frogs   
+[^stonesoup]: The Stone Soup story, with apologies to Andy Hunt and Dave Thomas:
 
-   *The
- three soldiers returning home from war were hungry. When they saw the 
-village ahead their spirits liftedthey were sure the villagers would 
-give them a meal. But when they got there, they found the doors locked 
-and the windows closed. After many years of war, the villagers were 
-short of food, and hoarded what they had.*   
+The three soldiers returning home from war were hungry. When they saw the village ahead, their spirits lifted—they were sure the villagers would give them a meal. But when they got there, they found the doors locked and the windows closed. After many years of war, the villagers were short of food, and hoarded what they had.
 
-  
-* Undeterred, the soldiers boiled a pot of water and carefully placed 
-three stones into it. The amazed villagers came out to watch.*   
+Undeterred, the soldiers boiled a pot of water and carefully placed three stones into it. The amazed villagers came out to watch.
 
-  
-* "This is stone soup," the soldiers explained. "Is that all you put in 
-it?" asked the villagers. "Absolutelyalthough some say it tastes even 
-better with a few carrots." A villager ran off, returning in no time 
-with a basket of carrots from his hoard.*   
+“This is stone soup,” the soldiers explained.
 
-   *A couple of minutes later, the villagers again asked "Is that it?"*   
+“Is that all you put in it?” asked the villagers.
 
-   *"Well," said the soldiers, "a couple of potatoes give it body." Off ran another villager.*   
+“Absolutely—although some say it tastes even better with a few carrots.”
 
-  
-* Over the next hour , the soldiers listed more ingredients that would 
-enhance the soup: beef, leeks, salt, and herbs. Each time a different 
-villager would run off to raid their personal stores.*   
+A villager ran off, returning in no time with a basket of carrots from his hoard.
 
-  
-* Eventually they had produced a large pot of steaming soup. The soldiers
- removed the stones, and they sat down with the entire village to enjoy 
-the first square meal any of them had eaten in months.*   
+A couple of minutes later, the villagers again asked, “Is that it?”
 
- 
- There are a couple of morals in the stone soup story. The villagers are
- tricked by the soldiers, who use the villagers' curiosity to get food 
-from them. But more importantly, the soldiers act as a catalyst, 
-bringing the village together so they can jointly produce something that
- they couldn't have done by themselves a synergistic result. Eventually 
-everyone wins.  
+“Well,” said the soldiers, “a couple of potatoes give it body.” Off ran another villager.
 
-  Every now and then, you might want to emulate the soldiers.  
+Over the next hour, the soldiers listed more ingredients that would enhance the soup: beef, leeks, salt, and herbs. Each time, a different villager would run off to raid their personal stores.
 
- 
- You may be in a situation where you know exactly what needs doing and 
-how to do it. The entire system just appears before your eyesyou know 
-it's right. But ask permission to tackle the whole thing and you'll be 
-met with delays and blank stares. People will form committees , budgets 
-will need approval, and things will get complicated. Everyone will guard
- their own resources. Sometimes this is called "start-up fatigue."  
+Eventually they had produced a large pot of steaming soup. The soldiers removed the stones, and they sat down with the entire village to enjoy the first square meal any of them had eaten in months.
 
-  It's time to bring out the stones. Work out what you  *can*  reasonably ask for. Develop it well. Once you've got it, show people, and let them marvel. Then say "of course, it  *would* 
- be better if we added." Pretend it's not important. Sit back and wait 
-for them to start asking you to add the functionality you originally 
-wanted. People find it easier to join an ongoing success. Show them a 
-glimpse of the future and you'll get them to rally around.
+There are a couple of morals in the stone soup story. The villagers are tricked by the soldiers, who use the villagers’ curiosity to get food from them. But more importantly, the soldiers act as a catalyst, bringing the village together so they can jointly produce something that they couldn't have done by themselves—a synergistic result. Eventually everyone wins.
+
+Every now and then, you might want to emulate the soldiers.
+
+You may be in a situation where you know exactly what needs doing and how to do it. The entire system just appears before your eyes—you know it’s right. But ask permission to tackle the whole thing and you’ll be met with delays and blank stares. People will form committees, budgets will need approval, and things will get complicated. Everyone will guard their own resources. Sometimes this is called “start-up fatigue.”
+
+It’s time to bring out the stones. Work out what you *can* reasonably ask for. Develop it well. Once you’ve got it, show people, and let them marvel. Then say, “Of course, it would be better if we added…” Pretend it’s not important. Sit back and wait for them to start asking you to add the functionality you originally wanted. People find it easier to join an ongoing success. Show them a glimpse of the future and you’ll get them to rally around.
