@@ -65,7 +65,7 @@ This all points to one thing—don't base your decision off benchmark scores. In
 
 Without getting into the weeds of categorisations, I'd note that internal benchmarks are not all that different from what all the hip and cool new AI Engineering teams like to call *evals*.
 
-They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Unfortunately, building a public benchmark is hard work—you have to collect a lot of data to get signal[^statsigcount], ensure the environments are reproducible and your metrics trustworthy. This [ugh field](https://www.lesswrong.com/posts/EFQ3F6kmt4WHXRqik/ugh-fields) has pushed teams away from building evals. Until it's too late—after which everyone is scrambling to do the grunt work of collecting annotated high quality data when the house is burning.
+They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Unfortunately, building a public benchmark is hard work—you have to collect a lot of data to get signal[^statsigcount](TODO), ensure the environments are reproducible and your metrics trustworthy. This [ugh field](https://www.lesswrong.com/posts/EFQ3F6kmt4WHXRqik/ugh-fields) has pushed teams away from building evals. Until it's too late—after which everyone is scrambling to do the grunt work of collecting annotated high quality data when the house is burning.
 
 I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to build a *minimum viable benchmark*.
 
@@ -97,15 +97,15 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 ## Anyway,
 
+* Don't trust public benchmarks without seeing how well the methodology and metrics map to your product outcomes.
+* Build your own minimal viable benchmark.
+* It's not that hard to start with, and it's really worth it. Don't skimp on measuring whether your product works!
 
-
----
+- - -
 
 ## Footnotes
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
-
-[^statsigcount]: TODO
 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
 
