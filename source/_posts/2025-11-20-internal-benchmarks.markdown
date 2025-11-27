@@ -48,13 +48,13 @@ The issue with benchmarks is that they are lossy. They condense multidimensional
 
 Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well across standard benchmarks (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
 
-![](/images/blog/legalbench.png)
+<img src="/images/blog/legalbench.png" style='width: 50%'>
 
 Great, so it's still the state-of-the-art Gemini 3 Pro, isn't it? It's clearly #1 on the benchmark[^statsig].
 
 But look at this—there's a CaseLaw (v2) benchmark as well.
 
-![](/images/blog/caselawv2.png)
+<img src="/images/blog/caselawv2.png" style='width: 50%'>
 
 So, have they forgotten to bench our frontier Gemini model here? Actually no.
 
