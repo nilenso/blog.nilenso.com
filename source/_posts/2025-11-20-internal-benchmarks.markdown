@@ -1,5 +1,5 @@
 ---
-title: Internal Benchmarks
+title: Minimum Viable Benchmark
 kind: article
 author: Atharva Raykar
 created_at: 2025-11-20 00:00:00 UTC
