@@ -90,7 +90,7 @@ After this exercise a few things happen:
 * You realise what it feels like to be a user of your system and get a better sense of where AI is actually helping. This is input for the product team.
 * You realise what actually needs to be measured for your benchmark metrics. It's never the vague pointless metrics that came with the eval framework you were looking at.
 * Your discovered benchmark metrics are often useful product metrics!
-* You catch the biggest blind spots of the AI system very early on. Gathering a large datasets are needed only when you are trying to catch *small effects*. Early on, most of your effects will be quite large!
+* You catch the biggest blind spots of the AI system very early on. Gathering a large datasets are needed only when you are trying to catch *small effects*. Early on, most of observed effects on any intervention will be quite large!
 * Most importantly, you have overcome the Ugh Field! This exercise is often fun. You have now made stone soup[^stonesoup].
 
 This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on this when inevitably you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
