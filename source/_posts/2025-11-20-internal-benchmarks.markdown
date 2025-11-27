@@ -75,7 +75,7 @@ Without getting into the weeds of categorisations, I'd note that internal benchm
 
 They are not structurally different from public benchmarks. You have your dataset of tasks. You (ideally) have your ground truth for these tasks. You measure your AI system against these tasks and get scores. Unfortunately, building a public benchmark is hard work—you have to collect a lot of data to get signal[^statsigcount], ensure the environments are reproducible and your metrics trustworthy. This [ugh field](https://www.lesswrong.com/posts/EFQ3F6kmt4WHXRqik/ugh-fields) has pushed teams away from building evals. Well, at least until it's too late, when you suddenly have everyone scrambling to do the grunt work of collecting annotated high quality data when the house is burning.
 
-I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to build a *minimum viable benchmark*.
+I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to be a *minimum viable benchmark*.
 
 A minimum viable benchmark is not concerned with being an arena for competing AI systems—they are a vehicle for figuring out *whether you are building the right product* and that the product works well.
 
