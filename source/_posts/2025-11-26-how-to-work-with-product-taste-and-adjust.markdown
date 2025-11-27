@@ -26,10 +26,16 @@ The chef’s line-tasting, our flywheel, harness, environment, or feedback loop,
 
 ## The product development flywheel
 
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+
 To build the flywheel, we ask:
 
 * “What is the simplest experiment I can run to validate this hypothesis?”, and then
 * “What do I need to run this experiment?”
+
+
+
+</div>
 
 The machinery that enables running such experiments frequently and quickly is the flywheel.
 
