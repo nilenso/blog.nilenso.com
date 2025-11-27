@@ -41,9 +41,9 @@ It could be in the form of an operator’s console that allows product to tweak 
 
 While this seems like a simple enough principle to apply, in reality, we are faced with the inherent complexity of working with many people, roles, and tools. A typical product development lifecycle (PDLC) looks like the abstract machine shown below. Each phase has levers and meters around specific feedback loops (such as Idea ⇄ User), and the phases are interconnected through reinforcing and balancing information channels. 
 
-<div markdown="1" style="max-width:60%; margin: 0 auto">
+<div style="max-width:60%">
 
-![product-development-flywheel](/images/blog/gears.png)
+![product-development-flywheel](/images/blog/flywheel-an.png)
 
 </div>
 
@@ -53,12 +53,12 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 
 | Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %        |
 | ------------------------ | ----------------- | -------------------------------------------------------------------- | ---------------------------- |
-| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product,<br/> 10% Engineering |
-| 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product,<br/> 30% Engineering |
-| 3. Plan                  | Idea ⇄ Spec       | Thin slices of work, Experiments, Spikes, Tracing Bullets            | 50% Product,<br/> 50% Engineering |
-| 4. Develop               | Spec ⇄ Code       | TDD, Types, Compilation, REPL, AI Assisted Coding                    | 10% Product,<br/> 90% Engineering |
-| 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product,<br/> 70% Engineering |
-| 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product,<br/> 50% Engineering |
+| 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product, 10% Engineering |
+| 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product, 30% Engineering |
+| 3. Plan                  | Idea ⇄ Spec       | Thin slices of work, Experiments, Spikes, Tracing Bullets            | 50% Product, 50% Engineering |
+| 4. Develop               | Spec ⇄ Code       | TDD, Types, Compilation, REPL, AI Assisted Coding                    | 10% Product, 90% Engineering |
+| 5. Integrate and release | Code ⇄ Product    | Previews, Devboxes, Staging, Integration, Quality Analysis           | 30% Product, 70% Engineering |
+| 6. Operate               | Product ⇄ User    | Product Observability, Operator Consoles, Alerts                     | 50% Product, 50% Engineering |
 
 </div>
 
@@ -78,8 +78,4 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 
 So, review your flywheel periodically. Lubricate the gears, and tighten the feedback loops. Ultimately, ensure that everyone on the team feels empowered to stop the line, take a spoonful, and say, *"Needs more salt."*
 
-<div markdown="1" style="display: flex; justify-content: center; align-items: center">
-  
 ![](/images/blog/soup-salt-pepper.png)
-
-</div>
