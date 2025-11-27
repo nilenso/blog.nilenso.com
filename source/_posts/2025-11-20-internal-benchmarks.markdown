@@ -111,6 +111,8 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
 
+[^statsigcount]: TODO
+
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
 
 [^stonesoup]: The Stone Soup anecdote from *The Pragmatic Programmer*, with apologies to Andy Hunt and Dave Thomas:
