@@ -39,7 +39,7 @@ The machinery that enables running such experiments frequently and quickly is th
 
 It could be in the form of an operator’s console that allows product to tweak config on the fly, or building a prototype, or a feature-flag allowing tests with beta-users, or publishing a new metric that removes a blind spot. Even unit tests that verify whether the code does what product intends are part of this flywheel.
 
-While this seems like a simple enough principle to apply, in reality, we are faced with the inherent complexity of working with many people, roles, and tools. A typical product development lifecycle (PDLC) looks like the abstract machine shown below. Each phase has levers and meters around specific feedback loops (such as Idea ⇄ User), and the phases are interconnected through reinforcing and balancing information channels. 
+While this seems like a simple enough principle to apply, in reality, we are faced with the inherent complexity of working with many people, roles, and tools. A typical product development lifecycle (PDLC) looks like the abstract machine shown below. Each phase has controls and measurements around specific feedback loops (such as Idea ⇄ User), and the phases are interconnected through reinforcing and balancing information channels. 
 
 <div markdown="1" style="max-width:80%; margin: 0 auto">
 
@@ -51,7 +51,7 @@ Here’s a list of some ways to “taste” at each phase, and a healthy level o
 
 <div class="full-width-table" markdown="1">
 
-| Phase                    | Feedback Loop     | Levers, feedback tools (ways to taste, smell, or touch)              | Healthy involvement %        |
+| Phase                    | Feedback Loop     | Feedback tools (ways to taste, smell, or touch)                      | Healthy involvement %        |
 | ------------------------ | ----------------- | -------------------------------------------------------------------- | ---------------------------- |
 | 1. Explore               | Idea ⇄ User       | Pen + Paper, User Research, Design Sprints, Landing Pages, Campaigns | 90% Product,<br/> 10% Engineering |
 | 2. Validate              | Hypothesis ⇄ User | Wireframes, Prototypes, Proofs of Concept                            | 70% Product,<br/> 30% Engineering |
