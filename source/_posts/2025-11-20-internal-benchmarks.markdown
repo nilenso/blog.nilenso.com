@@ -95,6 +95,12 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 * The tasks have a difficulty ramp-up to actually capture improvements to models and systems. If most of your tasks have the same difficulty, and a newly released AI model gained the ability to do that task, your benchmark would get saturated overnight and cease to capture further improvements.
 * The metrics are measured either deterministically or with an unbiased estimator[^llmjudge].
 
+## Anyway,
+
+
+
+---
+
 ## Footnotes
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. Almost no one I've seen reasons about whether the score differential is due to random noise or an actual effect.
