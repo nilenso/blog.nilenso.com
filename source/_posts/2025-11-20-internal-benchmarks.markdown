@@ -91,7 +91,7 @@ After this exercise, a few things happen:
 * You realise what actually needs to be measured for your benchmark metrics. It's never the vague, pointless metrics that came with the eval framework you were looking at.
 * The metrics you discover are often useful product metrics!
 * You catch the biggest blind spots of the AI system very early on. Gathering large datasets is needed only when you are trying to catch *small effects*. Early on, most of observed effects on any intervention will be quite large!
-* Most importantly, you have overcome the Ugh Field! This exercise is often fun. You may also have ended up with some stone soup[^stonesoup].
+* Most importantly, you have overcome the Ugh Field! This exercise is often fun.
 
 This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on it when, inevitably, you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time, your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
 
@@ -120,33 +120,3 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
     ![](/images/blog/huyenheuristic.png)
 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
-
-[^stonesoup]: The Stone Soup anecdote from *The Pragmatic Programmer*, with apologies to Andy Hunt and Dave Thomas:
-    
-    The three soldiers returning home from war were hungry. When they saw the village ahead, their spirits lifted—they were sure the villagers would give them a meal. But when they got there, they found the doors locked and the windows closed. After many years of war, the villagers were short of food, and hoarded what they had.
-
-    Undeterred, the soldiers boiled a pot of water and carefully placed three stones into it. The amazed villagers came out to watch.
-
-    “This is stone soup,” the soldiers explained.
-
-    “Is that all you put in it?” asked the villagers.
-
-    “Absolutely—although some say it tastes even better with a few carrots.”
-
-    A villager ran off, returning in no time with a basket of carrots from his hoard.
-
-    A couple of minutes later, the villagers again asked, “Is that it?”
-
-    “Well,” said the soldiers, “a couple of potatoes give it body.” Off ran another villager.
-
-    Over the next hour, the soldiers listed more ingredients that would enhance the soup: beef, leeks, salt, and herbs. Each time, a different villager would run off to raid their personal stores.
-
-    Eventually they had produced a large pot of steaming soup. The soldiers removed the stones, and they sat down with the entire village to enjoy the first square meal any of them had eaten in months.
-
-    There are a couple of morals in the stone soup story. The villagers are tricked by the soldiers, who use the villagers’ curiosity to get food from them. But more importantly, the soldiers act as a catalyst, bringing the village together so they can jointly produce something that they couldn't have done by themselves—a synergistic result. Eventually everyone wins.
-
-    Every now and then, you might want to emulate the soldiers.
-
-    You may be in a situation where you know exactly what needs doing and how to do it. The entire system just appears before your eyes—you know it’s right. But ask permission to tackle the whole thing and you’ll be met with delays and blank stares. People will form committees, budgets will need approval, and things will get complicated. Everyone will guard their own resources. Sometimes this is called “start-up fatigue.”
-
-    It’s time to bring out the stones. Work out what you *can* reasonably ask for. Develop it well. Once you’ve got it, show people, and let them marvel. Then say, “Of course, it would be better if we added…” Pretend it’s not important. Sit back and wait for them to start asking you to add the functionality you originally wanted. People find it easier to join an ongoing success. Show them a glimpse of the future and you’ll get them to rally around.
