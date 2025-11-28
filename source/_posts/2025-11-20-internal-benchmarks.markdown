@@ -97,7 +97,7 @@ This minimal viable benchmark would have already proven its usefulness early on.
 
 How we go from a minimal viable benchmark to a maximally useful benchmark would perhaps need its own article. But to give you a taste, ensure you have these properties:
 
-* It's easy to look at the data. And that your cross-functional team is involved in reviewing the data regularly.
+* It's easy to look at the data and your cross-functional team is involved in reviewing the data regularly.
 * What you are measuring maps to product outcomes.
 * There are enough samples to actually give you a sense of whether your system has actually improved.
 * The tasks have a difficulty ramp-up to actually capture improvements to models and systems. If most of your tasks have the same difficulty, and a newly released AI model gains the ability to do that task, your benchmark would get saturated overnight and cease to capture further improvements.
