@@ -21,7 +21,7 @@ I want to sharpen this observation a bit more.
 I've seen benchmarks serve a whole range of purposes.
 
 * **Benchmarks as decision-making tools**: You look at existing benchmarks to figure out whether to use model A or model B.
-* **Benchmarks as regression markers**: Like unit tests, it tells you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
+* **Benchmarks as regression markers**: Like unit tests, they tell you if your updated AI model or system isn't doing worse than before. This is especially useful in cost-optimisation exercises.
 * **Benchmarks as improvement indicator**: If you see benchmark go up, you can tell that your change to the model or system is improving the outcome.
 * **Benchmarks as product behaviour feedback**: A more subtle use—with the right analysis of trajectories, benchmarks can tell you about the strengths and weaknesses of your model across categories of tasks you are interested in.
 * **Benchmarks as research agenda setters**: When a new benchmark is published, AI labs start hill-climbing on it—publishing benchmarks is a great way to influence what AI is good at.
@@ -77,7 +77,7 @@ They are not structurally different from public benchmarks. You have your datase
 
 I'd like to propose an alternate view—your internal evals don't need to be as sophisticated as the public benchmarks. They only have to be a *minimum viable benchmark*.
 
-A minimum viable benchmark is not concerned with being an arena for competing AI systems—they are a vehicle for figuring out *whether you are building the right product* and that the product works well.
+A minimum viable benchmark is not concerned with being an arena for competing AI systems—it is a vehicle for figuring out *whether you are building the right product* and that the product works well.
 
 You don't need to have an intelligent-sounding metric or your LLM eval SaaS vendor figured out in order to get started. You only need to collect your data and annotate it. You can get started and make a lot of progress in a couple of hours, armed with only an excel sheet and your product and engineering teams in one room.
 
@@ -90,7 +90,7 @@ After this exercise a few things happen:
 * You realise what it feels like to be a user of your system and get a better sense of where AI is actually helping. This is input for the product team.
 * You realise what actually needs to be measured for your benchmark metrics. It's never the vague pointless metrics that came with the eval framework you were looking at.
 * Your discovered benchmark metrics are often useful product metrics!
-* You catch the biggest blind spots of the AI system very early on. Gathering a large datasets are needed only when you are trying to catch *small effects*. Early on, most of observed effects on any intervention will be quite large!
+* You catch the biggest blind spots of the AI system very early on. Gathering large datasets is needed only when you are trying to catch *small effects*. Early on, most of observed effects on any intervention will be quite large!
 * Most importantly, you have overcome the Ugh Field! This exercise is often fun. You may also have ended up with some stone soup[^stonesoup].
 
 This minimal viable benchmark would have already proven its usefulness early on. Everyone in your team will continue to build on top of this and rely on it when, inevitably, you have to avoid regressions, evaluate a new feature or model or optimise costs. Over time your minimal viable benchmark can grow into a useful, strong benchmark that forms the backbone of your AI project.
@@ -99,7 +99,7 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 * It's easy to look at the data. And that your cross-functional team is involved in reviewing the data regularly.
 * What you are measuring maps to product outcomes.
-* There are enough samples to actually give you a sense of whether your system has actually improved[^binomialchart].
+* There are enough samples to actually give you a sense of whether your system has actually improved.
 * The tasks have a difficulty ramp-up to actually capture improvements to models and systems. If most of your tasks have the same difficulty, and a newly released AI model gained the ability to do that task, your benchmark would get saturated overnight and cease to capture further improvements.
 * The metrics are measured either deterministically or with an unbiased estimator[^llmjudge].
 
