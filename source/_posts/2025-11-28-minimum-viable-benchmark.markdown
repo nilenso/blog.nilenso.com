@@ -26,7 +26,7 @@ I've seen benchmarks serve a whole range of purposes.
 * **Benchmarks as product behaviour feedback**: A more subtle use—with the right analysis of trajectories, benchmarks can tell you about the strengths and weaknesses of your model across categories of tasks you are interested in.
 * **Benchmarks as research agenda setters**: When a new benchmark is published, AI labs start hill-climbing on it—publishing benchmarks is a great way to influence what AI is good at.
 * **Benchmarks as RL environments**: This is an emerging use case. Reinforcement Learning with Verifiable Rewards effectively works with a setup that doesn't look all that different from a benchmark.
-* **Benchmarks as forecasting anchors**: You can use benchmarks to get a sense of how AI capabilities are progressing over time. [METR](https://evaluations.metr.org/gpt-5-1-codex-max-report/#extrapolating-on-trend-improvements-in-next-6-months) has made good use of this.
+* **Benchmarks as forecasting anchors**: You can use benchmarks to get a sense of how AI capabilities are progressing over time. [METR](https://evaluations.metr.org/gpt-5-1-codex-max-report/#extrapolating-on-trend-improvements-in-next-6-months) has made [good use](https://joel-becker.com/images/publications/forecasting_time_horizon_under_compute_slowdown.pdf) of this.
 
 If a benchmark is not helping you with any of the above, your benchmark is useless. Many useless benchmarks unfortunately exist.
 
@@ -117,7 +117,7 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 [^statsig]: Clearly #1 by a statistically insignificant amount. I've almost never seen anyone reason about whether the score differential is due to random noise or an actual effect.
 
-[^nilbench]: Our internal benchmark for StoryMachine has already caught on to the fact that Sonnet 4.5 is a lousy User Acceptance Tester compared to GPT-5. This is not something that would have been obvious from public benchmarks. When Opus 4.5 came out, I was able to immediately run the benchmark and confirm that there was indeed an improvement on that front. This becomes critical as the models get smarter and [it gets harder to figure out what they are good at](https://simonwillison.net/2025/Nov/24/claude-opus/#:~:text=The%20frontier,Diamond).
+[^nilbench]: Our internal benchmark for [StoryMachine](/blog/2025/09/15/ai-unit-of-work/) has already caught on to the fact that Sonnet 4.5 is a lousy User Acceptance Tester compared to GPT-5. This is not something that would have been obvious from public benchmarks. When Opus 4.5 came out, I was able to immediately run the benchmark and confirm that there was indeed an improvement on that front. This becomes critical as the models get smarter and [it gets harder to figure out what they are good at](https://simonwillison.net/2025/Nov/24/claude-opus/#:~:text=The%20frontier,Diamond).
 
 [^statsigcount]: Chip Huyen's AI Engineering book brought this handy heuristic chart to my attention—this works well for binary classification evals (it's made some assumptions about the data being somewhat independent, so treat it more like a heuristic)
     
