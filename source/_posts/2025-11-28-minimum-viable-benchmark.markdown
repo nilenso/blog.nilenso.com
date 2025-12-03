@@ -2,7 +2,7 @@
 title: Minimum Viable Benchmark
 kind: article
 author: Atharva Raykar
-created_at: 2025-11-20 00:00:00 UTC
+created_at: 2025-11-28 00:00:00 UTC
 layout: post
 ---
 A few months ago, I was co-facilitating [a "Birds of a Feather" session](https://hasgeek.com/fifthelephant/2025/sub/birds-of-feather-bof-session-finding-signal-in-a-n-8hrRznGe3qf6e7zXxKwcDi) on keeping up with AI progress. This was a group of engineering leaders and ICs.
@@ -44,7 +44,7 @@ These charts in isolation give the impression that AI models are pretty intercha
 
 No.
 
-The issue with benchmarks is that they are lossy. They condense multidimensional characteristics into a single number. Your business case may not look like whatever your number represents.
+The issue with benchmarks is that they are lossy. They condense multidimensional characteristics into a single number[^gleechpaper]. Your business case may not look like whatever your number represents.
 
 Let's take an example. You're working on an AI agent that operates in the legal domain. A profoundly unserious approach would be to look at which model is doing well across standard benchmarks (like the intelligence index above) and pick that. If we put a couple of extra brain cells to work, we might look at an independent benchmark score for the most popular legal benchmark. Right now this is LegalBench.
 
@@ -62,7 +62,7 @@ Gemini 3 Pro is poor enough at this benchmark that it's nowhere near the top of 
 
 Both of these are measuring different things in the legal domain, with CaseLaw appearing more like real-world legal work, and LegalBench being more like an academic exam. It's quite possible that Gemini can be good at some parts of some domains and poor at other parts of the same domain. Or maybe the CaseLaw evaluation has some unaddressed issues (after all, there seem to be a lot of surprising results in the leaderboard). Or that Gemini hates Canadians.
 
-This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure out how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**.
+This all points to one thing—don't base your decision off benchmark scores. Instead, look at the benchmark contents and methodology, figure out how closely it aligns with what tasks you are handing off to the AI and most importantly, **make your own internal benchmark**[^nilbench].
 
 <figure>
   <img src="/images/blog/eqtweet.png" style='display: block; width: 70%; margin: 0 auto;'>
@@ -113,10 +113,16 @@ How we go from a minimal viable benchmark to a maximally useful benchmark would 
 
 ## Footnotes
 
+[^gleechpaper]: As I was writing this article, I came across Gavin Leech's [Paper AI Tigers](https://www.gleech.org/paper#:~:text=Even%20less%20generalisation) which goes deeper into all the ways in which benchmarks fail to generalise on other tasks.
+
 [^statsig]: Clearly #1 by a statistically insignificant amount. I've almost never seen anyone reason about whether the score differential is due to random noise or an actual effect.
+
+[^nilbench]: Our internal benchmark for StoryMachine has already caught on to the fact that Sonnet 4.5 is a lousy User Acceptance Tester compared to GPT-5. This is not something that would have been obvious from public benchmarks. When Opus 4.5 came out, I was able to immediately run the benchmark and confirm that there was indeed an improvement on that front. This becomes critical as the models get smarter and [it gets harder to figure out what they are good at](https://simonwillison.net/2025/Nov/24/claude-opus/#:~:text=The%20frontier,Diamond).
 
 [^statsigcount]: Chip Huyen's AI Engineering book brought this handy heuristic chart to my attention—this works well for binary classification evals (it's made some assumptions about the data being somewhat independent, so treat it more like a heuristic)
     
     ![](/images/blog/huyenheuristic.png)
 
 [^notevensystem]: Sometimes, you don't need a working system at all—if your use case supports it, I sometimes just paste the prompt we would use to ChatGPT or Claude. Or if the work is more "agentic", I'd send it to Claude Code or OpenHands.
+
+[^llmjudge]: I have seen a lot of LLM-as-a-judge setups that are quite unprincipled and do not address the rather basic question of "who judges the judge?". To date, I have found only two principled ways to do this—the first is Eugene Yan's [Product Evals Recipe](https://eugeneyan.com/writing/product-evals/), where you measure the judge's agreement with human annotations, and align the judges accordingly. The other one is [this paper](https://arxiv.org/abs/2511.21140v1) which proposes a statistically sound way to to report LLM judge metrics with bias adjusted accuracy and confidence intervals. Both these approaches are complementary.
