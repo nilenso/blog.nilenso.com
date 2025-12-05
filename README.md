@@ -59,7 +59,7 @@ npm run build:og
 
 The generator requires Node.js 18+. Netlify and local development both honor the `.nvmrc`/`NODE_VERSION` setting, so builds will fail fast if an older runtime is used.
 
-Netlify caches the generated `source/og` images and `source/_data/og-images.json` manifest between builds via `@netlify/plugin-cache`, so even though the manifest is not committed to git the cache is reused on deploy previews and production runs. Running `npm run build:og -- --force` will repopulate the cache if it is ever cleared.
+Netlify caches the generated `source/og` images and `source/_data/og-images.json` manifest between builds via the `netlify-plugin-cache`, so even though the manifest is not committed to git the cache is reused on deploy previews and production runs. Running `npm run build:og -- --force` will repopulate the cache if it is ever cleared.
 
 The script only regenerates images when a post or the template changes. To force regeneration or target a single post:
 ```
