@@ -51,8 +51,9 @@ make serve
 
 ## Open Graph images
 
-Generate Open Graph previews for all posts (images are written to `source/og` and mapped via `source/_data/og-images.json`):
+Generate Open Graph previews for all posts (images are written to `source/og` and mapped via `source/_data/og-images.json`). Install the Playwright browser bundle once per environment, then run the generator:
 ```
+npm run playwright:install
 npm run build:og
 ```
 
