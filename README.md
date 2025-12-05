@@ -10,6 +10,11 @@ brew install rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 ```
 
+Install Node.js 18+ for generating Open Graph images:
+```
+brew install node@18
+```
+
 ## Using rvm
 Install `rvm` and run
 ```
@@ -25,6 +30,7 @@ You will probably need to close and re-open your shell after each of these comma
 rbenv instal 3.0.0
 gem install bundler
 bundle install
+npm install
 ```
 
 
@@ -41,6 +47,24 @@ make clean && make
 ## Local server
 ```
 make serve
+```
+
+## Open Graph images
+
+Generate Open Graph previews for all posts (images are written to `source/og` and mapped via `source/_data/og-images.json`). Install the Playwright browser bundle once per environment (no elevated privileges required), then run the generator:
+```
+npm run playwright:install
+npm run build:og
+```
+
+The generator requires Node.js 18+. Netlify and local development both honor the `.nvmrc`/`NODE_VERSION` setting, so builds will fail fast if an older runtime is used.
+
+Netlify caches the generated `source/og` images and `source/_data/og-images.json` manifest between builds via `@netlify/plugin-cache`, so even though the manifest is not committed to git the cache is reused on deploy previews and production runs. Running `npm run build:og -- --force` will repopulate the cache if it is ever cleared.
+
+The script only regenerates images when a post or the template changes. To force regeneration or target a single post:
+```
+node bin/generate-og-images.js --force
+node bin/generate-og-images.js --post source/_posts/2020-01-02-offline-first-apps-are-appropriate-for-many-clini.markdown
 ```
 
 ## Deploying

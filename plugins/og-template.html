@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+      @font-face {
+        font-family: 'Charter';
+        src: url('{{charterFontUrl}}') format('woff2');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      :root {
+        --bg: #f9fafb;
+        --card: #ffffff;
+        --accent: #ff3d84;
+        --text: #0c0a0a;
+        --muted: #4b5563;
+        --border: #e5e7eb;
+        --shadow: 0 30px 80px rgba(12, 10, 10, 0.12);
+        --font-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+        --font-serif: 'Charter', 'Georgia', serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 48px;
+        font-family: var(--font-sans);
+      }
+
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        box-shadow: var(--shadow);
+        padding: 64px 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(255, 61, 132, 0.08), transparent 35%),
+          radial-gradient(circle at 80% 0%, rgba(12, 10, 10, 0.04), transparent 25%);
+        pointer-events: none;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--accent);
+        text-transform: lowercase;
+      }
+
+      .brand::before {
+        content: '';
+        width: 36px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 9999px;
+      }
+
+      .title {
+        margin: 32px 0;
+        font-size: 64px;
+        line-height: 1.1;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .meta {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        font-family: var(--font-serif);
+        font-size: 26px;
+        color: var(--muted);
+      }
+
+      .meta .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="brand">nilenso blog</div>
+      <h1 class="title">{{title}}</h1>
+      <div class="meta">
+        <span>{{author}}</span>
+        <span class="dot"></span>
+        <span>{{date}}</span>
+      </div>
+    </div>
+  </body>
+</html>
