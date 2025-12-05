@@ -14,7 +14,7 @@
 
     {% capture description %}{% if page.description %}{{ page.description }}{%
     else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-    {% assign page_description = description | strip_html | condense_spaces | truncate:450 %}
+    {% assign page_description = description | strip_html | condense_spaces | truncate:150 %}
     <meta name="description" content="{{ page_description }}" />
     {% if page.keywords %}
     <meta name="keywords" content="{{ page.keywords }}" />
@@ -35,7 +35,7 @@
     endcapture %}
     <link rel="canonical" href="{{ canonical }}" />
 
-    {% assign meta_image = page.cover_image | default: page.image | default: site.og_image %}
+    {% assign meta_image = page.cover_image | default: page.image %}
     {% if meta_image %}
       {% if meta_image contains '://' %}
         {% assign meta_image_url = meta_image %}
