@@ -2,10 +2,22 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
 const matter = require('gray-matter');
 const fg = require('fast-glob');
 const { Command } = require('commander');
+
+const MIN_NODE_MAJOR = 18;
+const nodeMajorVersion = Number.parseInt(process.versions.node.split('.')[0], 10);
+
+if (Number.isNaN(nodeMajorVersion) || nodeMajorVersion < MIN_NODE_MAJOR) {
+  console.warn(
+    `Skipping OG image generation: Playwright requires Node.js ${MIN_NODE_MAJOR}+ (found ${process.versions.node}).`,
+  );
+  process.exit(0);
+}
+
+// Delayed require to avoid Playwright's Node version check on unsupported runtimes.
+const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
 const POSTS_DIR = path.join(ROOT, 'source', '_posts');

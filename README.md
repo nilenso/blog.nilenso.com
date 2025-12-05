@@ -56,6 +56,8 @@ Generate Open Graph previews for all posts (images are written to `source/og` an
 npm run build:og
 ```
 
+The generator requires Node.js 18+. On older runtimes (such as some CI images) it will skip generation without failing the build.
+
 The script only regenerates images when a post or the template changes. To force regeneration or target a single post:
 ```
 node bin/generate-og-images.js --force
