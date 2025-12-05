@@ -10,10 +10,11 @@ const MIN_NODE_MAJOR = 18;
 const nodeMajorVersion = Number.parseInt(process.versions.node.split('.')[0], 10);
 
 if (Number.isNaN(nodeMajorVersion) || nodeMajorVersion < MIN_NODE_MAJOR) {
-  console.warn(
-    `Skipping OG image generation: Playwright requires Node.js ${MIN_NODE_MAJOR}+ (found ${process.versions.node}).`,
+  console.error(
+    `OG image generation requires Node.js ${MIN_NODE_MAJOR}+ (found ${process.versions.node}). ` +
+      'Set NODE_VERSION or .nvmrc to 18 to match Playwright\'s requirement.',
   );
-  process.exit(0);
+  process.exit(1);
 }
 
 // Delayed require to avoid Playwright's Node version check on unsupported runtimes.
