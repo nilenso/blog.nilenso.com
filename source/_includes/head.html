@@ -12,10 +12,13 @@
     </title>
     <meta name="author" content="{{ site.author }}" />
 
-    {% capture description %}{% if page.description %}{{ page.description }}{%
+    {% capture description %}{% if page.description %}{{ page.description }}{% 
     else %}{{ content | raw_content }}{% endif %}{% endcapture %}
     {% assign page_description = description | strip_html | condense_spaces | truncate:150 %}
-    <meta name="description" content="{{ page_description }}" />
+    <meta
+      name="description"
+      content="{{ page_description }}"
+    />
     {% if page.keywords %}
     <meta name="keywords" content="{{ page.keywords }}" />
     {% endif %}
