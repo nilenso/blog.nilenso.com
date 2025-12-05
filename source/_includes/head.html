@@ -14,10 +14,8 @@
 
     {% capture description %}{% if page.description %}{{ page.description }}{%
     else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-    <meta
-      name="description"
-      content="{{ description | strip_html | condense_spaces | truncate:150 }}"
-    />
+    {% assign page_description = description | strip_html | condense_spaces | truncate:150 %}
+    <meta name="description" content="{{ page_description }}" />
     {% if page.keywords %}
     <meta name="keywords" content="{{ page.keywords }}" />
     {% endif %}
@@ -39,16 +37,36 @@
     {% assign og_manifest = site.data['og-images'] %}
     {% assign og_generated = nil %}
     {% if og_manifest and page.url %}
-    {% assign og_generated = og_manifest[page.url] %}
+      {% assign og_generated = og_manifest[page.url] %}
     {% endif %}
-    {% assign og_image_path = page.og_image | default: og_generated %}
-    {% if og_image_path %}
-    {% assign og_image_url = og_image_path %}
-    {% unless og_image_url contains '://' %}
-    {% assign og_image_url = site.url | append: og_image_url %}
-    {% endunless %}
-    <meta property="og:image" content="{{ og_image_url }}" />
-    <meta name="twitter:image" content="{{ og_image_url }}" />
+
+    {% assign meta_image = page.og_image | default: og_generated | default: page.cover_image | default: page.image %}
+    {% if meta_image %}
+      {% if meta_image contains '://' %}
+        {% assign meta_image_url = meta_image %}
+      {% else %}
+        {% assign meta_image_url = meta_image | prepend: site.url %}
+      {% endif %}
+    {% endif %}
+
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ page_description }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    {% if meta_image_url %}
+      <meta property="og:image" content="{{ meta_image_url }}" />
+    {% endif %}
+
+    {% assign twitter_card_type = meta_image_url | default: false %}
+    <meta name="twitter:card" content="{% if twitter_card_type %}summary_large_image{% else %}summary{% endif %}" />
+    {% if site.twitter_user %}
+      <meta name="twitter:site" content="@{{ site.twitter_user }}" />
+    {% endif %}
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+    <meta name="twitter:description" content="{{ page_description }}" />
+    {% if meta_image_url %}
+      <meta name="twitter:image" content="{{ meta_image_url }}" />
     {% endif %}
     <link
       rel="apple-touch-icon"
