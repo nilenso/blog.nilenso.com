@@ -41,8 +41,13 @@
     %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endif %}{%
     endcapture %}
     <link rel="canonical" href="{{ canonical }}" />
+    {% assign og_manifest = site.data['og-images'] %}
+    {% assign og_generated = nil %}
+    {% if og_manifest and page.url %}
+      {% assign og_generated = og_manifest[page.url] %}
+    {% endif %}
 
-    {% assign meta_image = page.cover_image | default: page.image %}
+    {% assign meta_image = page.og_image | default: og_generated | default: page.cover_image | default: page.image %}
     {% if meta_image %}
       {% if meta_image contains '://' %}
         {% assign meta_image_url = meta_image %}

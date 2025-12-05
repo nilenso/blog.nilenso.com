@@ -1,0 +1,15 @@
+[build]
+  command = "make"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+    paths = [
+      "source/og",
+      "source/_data/og-images.json",
+    ]
