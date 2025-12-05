@@ -26,7 +26,7 @@ layout: null
     {% endif%}
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.id }}</id>
-    <summary type="html"><![CDATA[{{ post.excerpt | strip_html | condense_spaces | truncate: 220 }}]]></summary>
+    <summary type="html"><![CDATA[{{ post.excerpt | strip_html | condense_spaces | truncate: 450 }}]]></summary>
     {% if post.external-url %}
     <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}<a rel="full-article" href="{{ site.url }}{{ post.url }}">Permalink</a>]]></content>&#8734;
     {% else %}
