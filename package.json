@@ -4,7 +4,7 @@
   "description": "Scripts to automate the nilenso blog/planet (v2)",
   "main": "index.js",
   "scripts": {
-    "playwright:install": "playwright install --with-deps chromium",
+    "playwright:install": "playwright install chromium",
     "build:og": "node bin/generate-og-images.js"
   },
   "keywords": [],
