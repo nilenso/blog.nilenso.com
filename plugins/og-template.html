@@ -3,13 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <style>
-      :root {
-        --bg: linear-gradient(135deg, #111827, #0ea5e9);
-        --text: #e5e7eb;
-        --accent: #f59e0b;
-        --secondary: #9ca3af;
-        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+      @font-face {
+        font-family: 'Charter';
+        src: url('{{charterFontUrl}}') format('woff2');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
       }
+
+      :root {
+        --bg: #f9fafb;
+        --card: #ffffff;
+        --accent: #ff3d84;
+        --text: #0c0a0a;
+        --muted: #4b5563;
+        --border: #e5e7eb;
+        --shadow: 0 30px 80px rgba(12, 10, 10, 0.12);
+        --font-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+        --font-serif: 'Charter', 'Georgia', serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         width: 1200px;
@@ -19,45 +37,76 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 48px;
+        font-family: var(--font-sans);
       }
+
       .card {
-        box-sizing: border-box;
-        padding: 64px 72px;
-        width: 1100px;
-        height: 520px;
-        background: rgba(17, 24, 39, 0.72);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--card);
+        border: 1px solid var(--border);
         border-radius: 32px;
+        box-shadow: var(--shadow);
+        padding: 64px 72px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow: hidden;
       }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(255, 61, 132, 0.08), transparent 35%),
+          radial-gradient(circle at 80% 0%, rgba(12, 10, 10, 0.04), transparent 25%);
+        pointer-events: none;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--accent);
+        text-transform: lowercase;
+      }
+
+      .brand::before {
+        content: '';
+        width: 36px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 9999px;
+      }
+
       .title {
+        margin: 32px 0;
         font-size: 64px;
         line-height: 1.1;
-        font-weight: 700;
-        margin: 0;
+        font-weight: 600;
+        color: var(--text);
       }
+
       .meta {
         display: flex;
         gap: 16px;
-        font-size: 26px;
-        color: var(--secondary);
         align-items: center;
+        font-family: var(--font-serif);
+        font-size: 26px;
+        color: var(--muted);
       }
+
       .meta .dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         background: var(--accent);
         border-radius: 50%;
-      }
-      .brand {
-        font-size: 24px;
-        letter-spacing: 0.2em;
-        color: var(--accent);
-        text-transform: uppercase;
-        font-weight: 600;
       }
     </style>
   </head>

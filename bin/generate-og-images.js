@@ -5,6 +5,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const fg = require('fast-glob');
 const { Command } = require('commander');
+const { pathToFileURL } = require('url');
 
 const MIN_NODE_MAJOR = 18;
 const nodeMajorVersion = Number.parseInt(process.versions.node.split('.')[0], 10);
@@ -26,6 +27,8 @@ const OUTPUT_DIR = path.join(ROOT, 'source', 'og');
 const DATA_DIR = path.join(ROOT, 'source', '_data');
 const MANIFEST_PATH = path.join(DATA_DIR, 'og-images.json');
 const TEMPLATE_PATH = path.join(ROOT, 'plugins', 'og-template.html');
+const CHARTER_FONT_PATH = path.join(ROOT, 'source', 'assets', 'fonts', 'charter_regular.woff2');
+const charterFontUrl = pathToFileURL(CHARTER_FONT_PATH).href;
 const VIEWPORT = { width: 1200, height: 630 };
 
 function escapeHtml(value) {
@@ -82,6 +85,7 @@ function buildHtml(template, data) {
     '{{title}}': escapeHtml(data.title || ''),
     '{{author}}': escapeHtml(data.author || ''),
     '{{date}}': escapeHtml(data.date || ''),
+    '{{charterFontUrl}}': data.charterFontUrl || '',
   };
   return Object.entries(replacements).reduce(
     (content, [placeholder, value]) => content.replace(new RegExp(placeholder, 'g'), value),
@@ -133,6 +137,7 @@ async function generateImages(options) {
         title: data.title || filename,
         author: data.author || '',
         date: formatDate(data.created_at || data.date),
+        charterFontUrl,
       });
 
       await renderImage(page, html, outputPath);
