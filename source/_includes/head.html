@@ -36,6 +36,20 @@
     %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endif %}{%
     endcapture %}
     <link rel="canonical" href="{{ canonical }}" />
+    {% assign og_manifest = site.data['og-images'] %}
+    {% assign og_generated = nil %}
+    {% if og_manifest and page.url %}
+    {% assign og_generated = og_manifest[page.url] %}
+    {% endif %}
+    {% assign og_image_path = page.og_image | default: og_generated %}
+    {% if og_image_path %}
+    {% assign og_image_url = og_image_path %}
+    {% unless og_image_url contains '://' %}
+    {% assign og_image_url = site.url | append: og_image_url %}
+    {% endunless %}
+    <meta property="og:image" content="{{ og_image_url }}" />
+    <meta name="twitter:image" content="{{ og_image_url }}" />
+    {% endif %}
     <link
       rel="apple-touch-icon"
       sizes="180x180"

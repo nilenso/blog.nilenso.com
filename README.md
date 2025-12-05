@@ -10,6 +10,11 @@ brew install rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 ```
 
+Install Node.js 18+ for generating Open Graph images:
+```
+brew install node@18
+```
+
 ## Using rvm
 Install `rvm` and run
 ```
@@ -25,6 +30,7 @@ You will probably need to close and re-open your shell after each of these comma
 rbenv instal 3.0.0
 gem install bundler
 bundle install
+npm install
 ```
 
 
@@ -41,6 +47,19 @@ make clean && make
 ## Local server
 ```
 make serve
+```
+
+## Open Graph images
+
+Generate Open Graph previews for all posts (images are written to `source/og` and mapped via `source/_data/og-images.json`):
+```
+npm run build:og
+```
+
+The script only regenerates images when a post or the template changes. To force regeneration or target a single post:
+```
+node bin/generate-og-images.js --force
+node bin/generate-og-images.js --post source/_posts/2020-01-02-offline-first-apps-are-appropriate-for-many-clini.markdown
 ```
 
 ## Deploying
