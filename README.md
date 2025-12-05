@@ -70,3 +70,28 @@ New tags can be added under the `whitelisted_tags` section in planet.yml.
 
 ### Caveats
 Adding a new tag *WILL ADD* posts with this tag from all the active feeds. Thus historical posts will also be added from the active feeds.
+
+## Open Graph image generation
+
+Node.js (>=18) with npm is required for generating OG preview images using Playwright.
+Install dependencies once with:
+
+```
+npm ci
+```
+
+To build images for every post run:
+
+```
+npm run build:og
+```
+
+The `make public` and `make serve` targets call this script automatically before
+Jekyll builds. Images are written to `source/og/` and copied into the built site.
+You can regenerate a single post locally with:
+
+```
+node bin/generate-og-images.js --post source/_posts/2024-01-01-example.markdown
+```
+
+Add `--force` to rebuild all images regardless of cached timestamps.

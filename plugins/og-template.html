@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-primary: #0e1c36;
+        --bg-secondary: #14284b;
+        --accent: #ffb703;
+        --text: #f3f4f6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1200px;
+        height: 630px;
+        font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+        color: var(--text);
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        width: 1120px;
+        height: 550px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        padding: 56px 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .brand::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+      .title {
+        font-size: 64px;
+        line-height: 1.12;
+        font-weight: 700;
+        margin: 0;
+        color: #fefefe;
+        text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 28px;
+        color: rgba(243, 244, 246, 0.82);
+      }
+      .meta .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        margin: 0 12px;
+      }
+      .faint {
+        color: rgba(243, 244, 246, 0.7);
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="brand">nilenso</div>
+      <h1 class="title">{{ title }}</h1>
+      <div class="meta">
+        <div>{{ author }}</div>
+        <div class="faint">{{ date }}</div>
+      </div>
+    </div>
+  </body>
+</html>
