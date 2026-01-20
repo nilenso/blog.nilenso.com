@@ -93,4 +93,6 @@ Studying the algorithm has shown me that disengaging would make my problem worse
 
 After all, there aren't all that many relatively quiet and straightforwardly serious public forums to contrast the twitters and HNs of the world that can surface niche computing curiosities.
 
+---
+
 See discussion on [Lobsters](https://lobste.rs/s/ngwloq/how_lobsters_front_page_works) and [Hacker News](https://news.ycombinator.com/item?id=46669996).
