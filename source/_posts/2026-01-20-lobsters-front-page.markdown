@@ -17,7 +17,7 @@ $$\textbf{hotness} = -1 \times (\text{base} + \text{order} \times \text{sign} + 
 
 The page is sorted in ascending order by \\( \textbf{hotness} \\\). The more negative the value of \\( \textbf{hotness} \\), the higher the story ranks.
 
-You can skip straight to the [interactive front page](https://atharvaraykar.com/lobsters/#explore) to help get a feel for the front page dynamics.
+You can skip straight to the [interactive front page](#explore) to help get a feel for the front page dynamics.
 
 ## Base
 
