@@ -1,5 +1,5 @@
 ---
-title: Lobsters Front Page
+title: How the Lobsters front page works
 kind: article
 author: Atharva Raykar
 created_at: 2026-01-18 00:00:00 UTC
