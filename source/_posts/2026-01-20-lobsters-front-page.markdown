@@ -15,13 +15,13 @@ $$\textbf{hotness} = -1 \times (\text{base} + \text{order} \times \text{sign} + 
 
  $$\text{hotness} \downarrow \implies \text{rank} \uparrow$$
 
-The page is sorted in ascending order by \( \textbf{hotness} \). The more negative the value of \( \textbf{hotness} \), the higher the story ranks.
+The page is sorted in ascending order by ( \textbf{hotness} ). The more negative the value of ( \textbf{hotness} ), the higher the story ranks.
 
 You can skip straight to the [interactive front page](https://atharvaraykar.com/lobsters/#explore) to help get a feel for the front page dynamics.
 
 ## Base
 
-The \( \textbf{base} \) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between ( -10 ) and ( +10 ) of all the tags in that story).
+The ( \textbf{base} ) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between ( -10 ) and ( +10 ) of all the tags in that story).
 
 $$\textbf{base} = \sum_{t \in \text{tags}} \text{hotness_mod}_t + \begin{cases} 0.25 & \text{if self-authored link} \ 0 & \text{otherwise} \end{cases}$$
 
@@ -51,7 +51,7 @@ If a story gets flagged enough to make the story score negatively (a flag is eff
 
 $$ \textbf{sign} = \begin{cases} -1 & \text{if score} < 0 \ +1 & \text{if score} > 0 \ 0 & \text{otherwise} \end{cases}$$
 
-The ( \textbf{sign} ) negates the effect of comment upvotes when the story scores zero, and make them contribute *negatively* to the rank when the story scores below zero.
+The \( \textbf{sign} \) doesn't actually seem to do anything in practice! The \( \textbf{order} \) is always zero whenever the score is less than zero. That’s because comment points are clamped to \( \min(\text{score}, \text{cpoints}) \), so the log input never exceeds 1 for non‑positive scores. For positive scores, \( \textbf{sign} = 1 \) anyway. So in practice the \( \textbf{sign} \) term never changes the result.
 
 ## Age
 
@@ -93,6 +93,14 @@ Studying the algorithm has shown me that disengaging would make my problem worse
 
 After all, there aren't all that many relatively quiet and straightforwardly serious public forums to contrast the twitters and HNs of the world that can surface niche computing curiosities.
 
----
+- - -
+
+This post originally appeared on [Atharva's personal site](https://atharvaraykar.com/lobsters/).
+
+- - -
+
+*Update: Issued a correction from the sign term, thanks to [strongoose](https://lobste.rs/s/ngwloq/how_lobsters_front_page_works#c_jitoot).*
+
+- - -
 
 See discussion on [Lobsters](https://lobste.rs/s/ngwloq/how_lobsters_front_page_works) and [Hacker News](https://news.ycombinator.com/item?id=46669996).
