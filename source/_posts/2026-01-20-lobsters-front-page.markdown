@@ -15,39 +15,39 @@ $$\textbf{hotness} = -1 \times (\text{base} + \text{order} \times \text{sign} + 
 
  $$\text{hotness} \downarrow \implies \text{rank} \uparrow$$
 
-The page is sorted in ascending order by ( \textbf{hotness} ). The more negative the value of ( \textbf{hotness} ), the higher the story ranks.
+The page is sorted in ascending order by \( \textbf{hotness} \). The more negative the value of \( \textbf{hotness} \), the higher the story ranks.
 
 You can skip straight to the [interactive front page](https://atharvaraykar.com/lobsters/#explore) to help get a feel for the front page dynamics.
 
 ## Base
 
-The ( \textbf{base} ) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between ( -10 ) and ( +10 ) of all the tags in that story).
+The \( \textbf{base} \) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between \( -10 \) and \( +10 \) of all the tags in that story).
 
 $$\textbf{base} = \sum_{t \in \text{tags}} \text{hotness_mod}_t + \begin{cases} 0.25 & \text{if self-authored link} \ 0 & \text{otherwise} \end{cases}$$
 
-Some tags (like `culture` or `rant`) have negative "hotness modifiers", which penalises their initial rank. Authors submitting their own content get a tiny boost, which is mildly surprising given the otherwise strict self-promo rules. The ( \textbf{base} ) has a modest effect on the hotness compared to ( \textbf{order} ) and ( \textbf{age} ).
+Some tags (like `culture` or `rant`) have negative "hotness modifiers", which penalises their initial rank. Authors submitting their own content get a tiny boost, which is mildly surprising given the otherwise strict self-promo rules. The \( \textbf{base} \) has a modest effect on the hotness compared to \( \textbf{order} \) and \( \textbf{age} \).
 
 ## Order
 
-The value of ( \textbf{order} ) is derived from the engagement that a story gets.
+The value of \( \textbf{order} \) is derived from the engagement that a story gets.
 
 $$\textbf{order} = \log_{10}\left(\max\left(|\text{score} + 1| + \text{cpoints}, 1\right)\right)$$
 
 The progression of the order term is logarithmic—this means going from 0 to 100 votes increases the rank far more than going from 1000 to 1100 votes.
 
-The ( \textbf{cpoints} ) is added to the story score, which accounts for non-submitter comment upvotes (a comment upvote is worth half a story upvote). If the ( \textbf{base} ) is negative (as is the case for a freshly submitted `rant`), then this term is zeroed, making the comments effectively contribute nothing to the rank.
+The \( \textbf{cpoints} \) is added to the story score, which accounts for non-submitter comment upvotes (a comment upvote is worth half a story upvote). If the \( \textbf{base} \) is negative (as is the case for a freshly submitted `rant`), then this term is zeroed, making the comments effectively contribute nothing to the rank.
 
 $$ \text{comment_points} = \begin{cases} 0 & \text{if } \text{base} < 0 \ \frac{1}{2}\sum(\text{comment_scores} + 1) & \text{otherwise} \end{cases} $$
 
 $$ \textbf{cpoints} = \min(\text{comment_points}, \text{story_score}) $$
 
-The ( \textbf{cpoints} ) can never exceed the story score. Therefore, stories that have a low score but lots of highly upvoted comments—perhaps a signature of controversy-generating low-quality submissions—do not get boosted by comment upvotes.
+The \( \textbf{cpoints} \) can never exceed the story score. Therefore, stories that have a low score but lots of highly upvoted comments—perhaps a signature of controversy-generating low-quality submissions—do not get boosted by comment upvotes.
 
 There are some details around merged stories that I am leaving out for the sake of simplifying this explanation. But it roughly does what you'd expect.
 
 ## Sign
 
-If a story gets flagged enough to make the story score negatively (a flag is effectively a downvote), the ( \textbf{sign} ) becomes negative.
+If a story gets flagged enough to make the story score negatively (a flag is effectively a downvote), the \( \textbf{sign} \) becomes negative.
 
 $$ \textbf{sign} = \begin{cases} -1 & \text{if score} < 0 \ +1 & \text{if score} > 0 \ 0 & \text{otherwise} \end{cases}$$
 
@@ -55,11 +55,11 @@ The \( \textbf{sign} \) doesn't actually seem to do anything in practice! The \(
 
 ## Age
 
-The value of ( \textbf{age} ) is fixed at the time of submission. This is the unix timestamp at which the story was created, divided by a configurable ( \textbf{hotness_window} ) time. The ( \textbf{hotness_window} ) is 22 hours by default—this means that the value of ( \textbf{age} ) increases by ( \text{1} ) unit every 22 hours.
+The value of \( \textbf{age} \) is fixed at the time of submission. This is the unix timestamp at which the story was created, divided by a configurable \( \textbf{hotness_window} \) time. The \( \textbf{hotness_window} \) is 22 hours by default—this means that the value of \( \textbf{age} \) increases by \( \text{1} \) unit every 22 hours.
 
  $$\textbf{age} = \frac{\text{created_at_timestamp}}{\text{hotness_window}}$$
 
-This value grows **linearly** with every newer story, pushing older stories down the rankings. The main tension in this algorithm is the fact that the ( \textbf{order} ) (dictated by score) grows **logarithmically**, so upvotes need to increase exponentially over time to counter the effect of ( \textbf{age} ) in order to stay on the front page. Father time comes for us all.
+This value grows **linearly** with every newer story, pushing older stories down the rankings. The main tension in this algorithm is the fact that the \( \textbf{order} \) (dictated by score) grows **logarithmically**, so upvotes need to increase exponentially over time to counter the effect of \( \textbf{age} \) in order to stay on the front page. Father time comes for us all.
 
 ## In a nutshell
 
@@ -67,7 +67,7 @@ $$\textbf{hotness} = -1 \times (\text{base} + \text{order} \times \text{sign} + 
 
  $$\text{hotness} \downarrow \implies \text{rank} \uparrow$$
 
-Where ( \textbf{base} ) is initialised based on the tag and who submitted the story. The  ( \textbf{age} ) increases linearly for every new submission and the  ( \textbf{order} ) for a story, as determined by votes, increases logarithmically.
+Where \( \textbf{base} \) is initialised based on the tag and who submitted the story. The  \( \textbf{age} \) increases linearly for every new submission and the  \( \textbf{order} \) for a story, as determined by votes, increases logarithmically.
 
 ## Explore
 
