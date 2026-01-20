@@ -15,13 +15,13 @@ $$\textbf{hotness} = -1 \times (\text{base} + \text{order} \times \text{sign} + 
 
  $$\text{hotness} \downarrow \implies \text{rank} \uparrow$$
 
-The page is sorted in ascending order by ( \textbf{hotness} ). The more negative the value of ( \textbf{hotness} ), the higher the story ranks.
+The page is sorted in ascending order by \( \textbf{hotness} \). The more negative the value of \( \textbf{hotness} \), the higher the story ranks.
 
 You can skip straight to the [interactive front page](https://atharvaraykar.com/lobsters/#explore) to help get a feel for the front page dynamics.
 
 ## Base
 
-The ( \textbf{base} ) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between ( -10 ) and ( +10 ) of all the tags in that story).
+The \( \textbf{base} \) is added to the order term to incentivise certain types of posts, and influence the initial ranking. It is the sum of the hotness modifiers (a value between ( -10 ) and ( +10 ) of all the tags in that story).
 
 $$\textbf{base} = \sum_{t \in \text{tags}} \text{hotness_mod}_t + \begin{cases} 0.25 & \text{if self-authored link} \ 0 & \text{otherwise} \end{cases}$$
 
