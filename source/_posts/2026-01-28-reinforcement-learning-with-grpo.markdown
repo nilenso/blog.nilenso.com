@@ -16,7 +16,7 @@ The above process has some drawbacks:
 
 Is there a more resource-efficient way to train a model?
 
-Reinforcement Learning with Verifiable Rewards
+# Reinforcement Learning with Verifiable Rewards
 
 [DeepSeek's paper](https://arxiv.org/pdf/2402.03300) in early 2024 demonstrated a powerful RL technique using verifiable rewards instead of a learned reward model. This approach was later named **Reinforcement Learning with Verifiable Rewards (RLVR)**. 
 
@@ -55,11 +55,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from trl import GRPOConfig, GRPOTrainer
 
 
-# Toy example: RLVR-style reward for code generation.
 # This runs unit tests (verifiable reward) and gives 1.0 for pass, 0.0 otherwise.
-#
-# SECURITY NOTE: Executing model-generated code is dangerous.
-# In real training, run this inside a sandbox (container/VM) with strict limits.
 def reward_fn(prompts, completions, **kwargs):
     """Return 1.0 if the completion passes the provided unit tests else 0.0."""
 
