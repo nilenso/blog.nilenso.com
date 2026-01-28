@@ -2,7 +2,34 @@
 Scripts to automate the nilenso blog/planet (v2)
 
 
-## Prerequisites
+## Setup
+
+### Option 1: Using Nix (Recommended)
+
+This project includes a Nix flake that provides all required dependencies (Ruby 3.3, Node.js 20, bundler, and native gem build dependencies).
+
+#### Install Nix
+
+If you don't have Nix installed, use the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer):
+
+```
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+#### Enter the development shell
+
+```
+nix develop
+```
+
+This drops you into a shell with all dependencies available. Then install project dependencies:
+
+```
+bundle install
+npm install
+```
+
+### Option 2: Using rbenv
 
 Install `rbenv` and add this to `~/.bash_profile`:
 ```
@@ -15,19 +42,21 @@ Install Node.js 18+ for generating Open Graph images:
 brew install node@18
 ```
 
-## Using rvm
-Install `rvm` and run
-```
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-rvm use ruby-3.0.0
-```
-
-## Installing
-
 You will probably need to close and re-open your shell after each of these commands, because Ruby.
 
 ```
-rbenv instal 3.0.0
+rbenv install 3.0.0
+gem install bundler
+bundle install
+npm install
+```
+
+### Option 3: Using rvm
+
+Install `rvm` and run:
+```
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+rvm use ruby-3.0.0
 gem install bundler
 bundle install
 npm install
