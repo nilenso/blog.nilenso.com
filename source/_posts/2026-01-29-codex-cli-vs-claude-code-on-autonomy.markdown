@@ -117,4 +117,4 @@ From the analysis in this post, Codex CLI optimizes for task completion, and Cla
 
 ### Footnote:
 
-My analysis is a by-product of a study on long prompts that I’m doing with Drew Breunig. He has been instrumental in giving it direction, and in encouraging me. We will have more to share soon.
+My analysis is a by-product of a study on long prompts that I’m doing with [Drew Breunig](https://x.com/dbreunig). He has been instrumental in giving it direction, and in encouraging me. We will have more to share soon.
