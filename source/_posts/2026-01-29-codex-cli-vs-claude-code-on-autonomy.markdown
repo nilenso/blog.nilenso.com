@@ -12,7 +12,7 @@ While there are many similarities and differences between them, one of the most 
 
 ---
 
-### You are a…
+## You are a…
 
 Here’s how the system prompts begin:
 
@@ -24,7 +24,7 @@ Codex 5.2 describes itself as an `assistant`, while 5.2-codex calls itself a `co
 
 ---
 
-### Should it stop and ask questions, or keep going?
+## Should it stop and ask questions, or keep going?
 
 Codex has a critical and [explicit section](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt_5_2_prompt.md#autonomy-and-persistence) for “Autonomy and Persistence” for the non-Codex models. 
 
@@ -52,7 +52,7 @@ If I were the model, I would interpret this as “I need to be cautious; I’ll 
 
 ---
 
-### Should it proactively take action, or propose a solution first?
+## Should it proactively take action, or propose a solution first?
 
 When there’s ambiguity about whether to write code or take action, it can look, at a surface level, like they make the same choice: when the user is asking questions or planning, don’t write code. But the manner in which they make the choice is quite different.
 
@@ -69,7 +69,7 @@ Claude’s prompt had a “Proactiveness” [section](https://github.com/asgeirt
 
 ---
 
-### Should it be ambitious and creative with its solutions?
+## Should it be ambitious and creative with its solutions?
 
 Here, Codex leans on ambition (with a caveat), and Claude takes a fairly conservative stance. 
 
@@ -94,7 +94,7 @@ The caveat for codex is that all the creativity is taken away when there’s an 
 
 ---
 
-### A quick note on Gemini CLI and Cursor CLI
+## A quick note on Gemini CLI and Cursor CLI
 
 Gemini CLI has an interactive mode and a non-interactive mode, which puts control over autonomy firmly in the user’s hands rather than letting the model decide.
 
@@ -108,7 +108,7 @@ And Cursor CLI seems to take a similar route to Codex, giving the agent full aut
 
 ---
 
-### It is very likely that Codex models are RL’d on this behaviour
+## It is very likely that Codex models are RL’d on this behaviour
 
 In the [5.2-codex model](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt-5.2-codex_prompt.md)’s prompt, the sections around autonomy, ambition, etc. are all gone. And its prompt is only half the size of prompt for GPT-5.2. And the codex model release notes mention that it is made for [long-running tasks](https://openai.com/index/gpt-5-1-codex-max/), which hints at autonomy being baked in.
 
@@ -116,7 +116,7 @@ Any customisation through model post-training is opaque to end users, unfortunat
 
 ---
 
-### My conclusions
+## My conclusions
 
 All this is my interpretation, of course, and I can’t know what parts of the system prompt get more attention during inference. From my experience in prompting these models though, I feel like they pick up on the general theme of instructions given the context, reading in between the words and filling the gaps where the words aren’t present, in order to interpret the author’s intentions. I guess I’m doing the same thing here.
 
@@ -128,6 +128,6 @@ From the analysis in this post, Codex CLI optimizes for task completion, and Cla
 
 ---
 
-### Footnote:
+## Footnote:
 
 My analysis is a by-product of a study on long prompts that I’m doing with [Drew Breunig](https://x.com/dbreunig). He has been instrumental in giving it direction, and in encouraging me. We will have more to share soon.
