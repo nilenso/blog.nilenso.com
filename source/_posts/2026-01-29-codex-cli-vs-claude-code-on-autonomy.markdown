@@ -9,6 +9,9 @@ layout: post
 I spent some time studying the system prompts of coding agent harnesses like [Codex CLI](https://github.com/openai/codex/blob/main/codex-rs/core/gpt_5_2_prompt.md) and [Claude Code](https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code-2025-11-1.md). These prompts reveal the priorities, values, and scars of their products. They’re both only a few pages long and are worth reading in full, especially if you use them every day. This is a more grounded approach to understanding these products than the vibe-based analysis you might see on your timeline.
 
 While there are many similarities and differences between them, one of the most well-perceived differences between Claude Code and Codex CLI is **autonomy**, and in this post I’ll share what I observed. We tend to perceive autonomous behaviour as long-running, independent, or requiring less supervision and guidance. Reading the system prompts, it becomes apparent that _the products make very different, and very intentional choices_.
+
+---
+
 ### You are a…
 
 Here’s how the system prompts begin:
@@ -18,6 +21,8 @@ Here’s how the system prompts begin:
 - Codex / GPT-5.2-Codex: `You are Codex, based on GPT-5. You are running as a coding agent in the Codex CLI on a user's computer.`
 
 Codex 5.2 describes itself as an `assistant`, while 5.2-codex calls itself a `coding agent`. Claude Code, by contrast, describes itself as `an interactive CLI tool that helps users`. Right from the start, they diverge in how they define their identity.
+
+---
 
 ### Should it stop and ask questions, or keep going?
 
@@ -30,8 +35,6 @@ Notice the language of `do not stop`, and `unless the user explicitly pauses`. A
 > You **must keep going** until the query or task is completely resolved, before ending your turn and yielding back to the user. Persist until the task is fully handled end-to-end within the current turn whenever feasible and **persevere even when function calls fail**. Only terminate your turn when you are sure that the problem is solved. **Autonomously resolve the query to the best of your ability**, using the tools available to you, before coming back to the user.
 
 If I were the model reading these instructions, I would take this to mean: “I should try my best to solve the problem myself and not yield to the user.”
-
----
 
 Claude, on the other hand, has a “Asking questions as you work” [section](https://gist.github.com/chigkim/1f37bb2be98d97c952fd79cbb3efb1c6#file-claude-code-txt-L72), and a `AskUserQuestion` [tool](https://github.com/Piebald-AI/claude-code-system-prompts/blob/c3115b8df18bdbf13dc6bf6e983afd67ec852332/system-prompts/tool-description-askuserquestion.md?plain=1#L4), that it is explicitly encouraged to use:
 
@@ -47,6 +50,8 @@ Treat feedback from hooks, including <user-prompt-submit-hook>, as coming from t
 
 If I were the model, I would interpret this as “I need to be cautious; I’ll check with the user before going ahead.”
 
+---
+
 ### Should it proactively take action, or propose a solution first?
 
 When there’s ambiguity about whether to write code or take action, it can look, at a surface level, like they make the same choice: when the user is asking questions or planning, don’t write code. But the manner in which they make the choice is quite different.
@@ -61,6 +66,8 @@ Claude’s prompt had a “Proactiveness” [section](https://github.com/asgeirt
 > - Doing the right thing **when asked**, including taking actions and follow-up actions
 > - **Not surprising the user** with actions you take without asking For example, if the user asks you how to approach something, you should do your best to answer their question first, and **not immediately jump into taking actions**.
 > - Do not add additional code explanation summary unless requested by the user. **After working on a file, just stop**, rather than providing an explanation of what you did.
+
+---
 
 ### Should it be ambitious and creative with its solutions?
 
@@ -85,6 +92,8 @@ The caveat for codex is that all the creativity is taken away when there’s an 
 
 > If you're operating in an existing codebase, you should make sure you do exactly what the user asks with surgical precision. Treat the surrounding codebase with respect, and don't overstep (i.e. changing filenames or variables unnecessarily)
 
+---
+
 ### A quick note on Gemini CLI and Cursor CLI
 
 Gemini CLI has an interactive mode and a non-interactive mode, which puts control over autonomy firmly in the user’s hands rather than letting the model decide.
@@ -96,6 +105,8 @@ And Cursor CLI seems to take a similar route to Codex, giving the agent full aut
 
 - `You are an agent - please keep going until the user's query is completely resolved, before ending your turn and yielding back to the user. Only terminate your turn when you are sure that the problem is solved. Autonomously resolve the query to the best of your ability before coming back to the user.`
 - `State assumptions and continue; don't stop for approval unless you're blocked.`
+
+---
 
 ### It is very likely that Codex models are RL’d on this behaviour
 
@@ -114,6 +125,8 @@ From the analysis in this post, Codex CLI optimizes for task completion, and Cla
 1. System prompts are used to steer models into different behaviours. It *is* difficult to pull apart the model’s behaviour into prompt-based and training-based, so the extent of steer-ability is somewhat unknown. However, for example, I’ve seen observable differences when using Claude Code with Codex’s system prompt. I will look to prove this empirically.
 2. While the models, harnesses, and tools might evolve, it appears to me as though the products themselves are differently positioned, and possibly headed in different directions. At the very least, they operate with different philosophies of what a coding agent should do.
 3. If you want to understand and wield your AI tools better, read their system prompts.
+
+---
 
 ### Footnote:
 
