@@ -1,3 +1,12 @@
+- title: "Codex CLI vs Claude Code on autonomy"
+  description: "Are these differences in the model, harness engineering, or products?"
+  
+- title: "How System Prompts Reveal Model Biases"
+  description: "A deep dive into the cases of tool parallelism and comment verbosity."
+  
+- title: "Weird system prompt artefacts"
+  description: "An exercise in making educated guesses around why a quirky prompt exists"
+
 - title: "How the Lobsters front page works"
   description: "An explorable analysis."
 
