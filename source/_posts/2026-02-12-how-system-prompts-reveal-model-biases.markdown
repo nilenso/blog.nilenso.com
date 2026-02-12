@@ -110,6 +110,6 @@ Conjecture time. Why is this prompting necessary? Good code doesn't have comment
 
 ---
 
-In [another article](link to quirks), I wrote about a variety of weird system prompt artefacts. Look up the system prompts of your favourite products, and see what model bias they're fighting. It would leave you with a better understanding of its limitations.
+In [another article](https://blog.nilenso.com/blog/2026/02/12/weird-system-prompt-artefacts/), I wrote about a variety of weird system prompt artefacts. Look up the system prompts of your favourite products, and see what model bias they're fighting. It would leave you with a better understanding of its limitations.
 
 One parting conjecture: RL is a great way to learn / unlearn some of these biases, but that requires the harnesses to be a part of the RL environment. If the inference-time harnesses get more sophisticated over time, that model+harness combo is likely to be the most reliable and efficient one, and it's development is likely to be as opaque as RL is today.
