@@ -2,31 +2,34 @@
 title: Codex CLI vs Claude Code on autonomy
 kind: article
 author: Srihari Sriraman
-created_at: 2026-01-29 00:00:00 UTC
+created_at: 2026-02-12 00:00:00 UTC
 layout: post
 ---
+# Codex CLI vs Claude Code on autonomy
 
-I spent some time studying the system prompts of coding agent harnesses like [Codex CLI](https://github.com/openai/codex/blob/main/codex-rs/core/gpt_5_2_prompt.md) and [Claude Code](https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code-2025-11-1.md). These prompts reveal the priorities, values, and scars of their products. They’re both only a few pages long and are worth reading in full, especially if you use them every day. This is a more grounded approach to understanding these products than the vibe-based analysis you might see on your timeline.
+I spent some time studying the system prompts of coding agent harnesses like [Codex CLI](https://github.com/openai/codex/blob/main/codex-rs/core/gpt_5_2_prompt.md) and [Claude Code](https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code-2025-11-1.md). These prompts reveal the priorities, values, and scars of their products. They’re only a few pages each and worth reading in full, especially if you use them every day. This approach to understanding such products is more grounded than the vibe-based takes you often see in feeds.
 
-While there are many similarities and differences between them, one of the most well-perceived differences between Claude Code and Codex CLI is **autonomy**, and in this post I’ll share what I observed. We tend to perceive autonomous behaviour as long-running, independent, or requiring less supervision and guidance. Reading the system prompts, it becomes apparent that _the products make very different, and very intentional choices_.
+While there are many similarities and differences between them, one of the most commonly perceived differences between Claude Code and Codex CLI is **autonomy**, and in this post I’ll share what I observed. We tend to perceive autonomous behaviour as long-running, independent, or requiring less supervision and guidance. Reading the system prompts, it becomes apparent that _the products make very different, and very intentional choices_.
 
----
+### You are a…
 
-## You are a…
+Right from the start, they diverge in how they define their identity. Claude Code has always described itself as an "interactive tool/agent to help the user", whereas Codex has long taken the stance of "a coding agent". The latest 5.3-codex release shows a slight reversal in this position with the addition of "collaboration" with the user.
 
-Here’s how the system prompts begin:
+Even though this might be a single line, this defines the identiy, and is at the beginning of every single instruction to the LLM. So, this line holds weight. Here are the relevant excerpts from the prompts over time:
 
-- Codex / GPT-5.2: `You are GPT-5.2 running in the Codex CLI, a terminal-based coding assistant.`
-- Claude Code / Opus-4.5: `You are Claude Code, Anthropic's official CLI for Claude. You are an interactive CLI tool that helps users with software engineering tasks.`
-- Codex / GPT-5.2-Codex: `You are Codex, based on GPT-5. You are running as a coding agent in the Codex CLI on a user's computer.`
+| Model | Identity in the system prompt |
+|-------|-----------------------|
+| [gpt-5.2](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/codex/base-models/2026-01-12_87f7226cc_gpt_5_2_prompt.txt) | You are GPT-5.2 running in the Codex CLI, a terminal-based coding assistant.
+| [gpt-5.2-codex](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/codex-cli-model-releases-filtered/2025-12-18_gpt-5.2-codex_caribou.txt#L1) | You are Codex, based on GPT-5. You are running as a coding agent in the Codex CLI on a user's computer.
+| [gpt-5.3-codex](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/codex/codex-models/2026-02-05_9efb7f4a1_gpt-5.3-codex-prompt.txt#L1) | You are Codex, a coding agent based on GPT-5. You and the user share the same workspace and collaborate to achieve the user's goals
+| [Sonnet-4.5](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/claude-code-model-releases-filtered/06_2025-09-25_v1.0.125_pre-v2-peak.md) | You are Claude Code, Anthropic's official CLI for Claude. You are an interactive CLI tool that helps users with software engineering tasks.
+| [Opus-4.6](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/claude-code-model-releases-filtered/17_2026-02-10_v2.1.39.md) | You are a Claude agent, built on Anthropic's Claude Agent SDK. You are an interactive agent that helps users with software engineering tasks. 
 
-Codex 5.2 describes itself as an `assistant`, while 5.2-codex calls itself a `coding agent`. Claude Code, by contrast, describes itself as `an interactive CLI tool that helps users`. Right from the start, they diverge in how they define their identity.
+Both of them seem to be moving towards more autonomy, with assistant -> coding agent. But the "help users with software engineering _tasks_" vs "collaborate to achieve the user's _goals_" still signals different levels of agency at which it's meant to operate.
 
----
+### Should it stop and ask questions, or keep going?
 
-## Should it stop and ask questions, or keep going?
-
-Codex has a critical and [explicit section](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt_5_2_prompt.md#autonomy-and-persistence) for “Autonomy and Persistence” for the non-Codex models. 
+Codex includes a critical and [explicit section](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt_5_2_prompt.md#autonomy-and-persistence) for “Autonomy and Persistence” for the non-Codex models. 
 
 > Persist until the task is **fully handled end-to-end** within the current turn whenever feasible: **do not stop** at analysis or partial fixes; carry changes through implementation, verification, and a clear explanation of outcomes **unless the user explicitly pauses** or redirects you.
 
@@ -36,7 +39,9 @@ Notice the language of `do not stop`, and `unless the user explicitly pauses`. A
 
 If I were the model reading these instructions, I would take this to mean: “I should try my best to solve the problem myself and not yield to the user.”
 
-Claude, on the other hand, has a “Asking questions as you work” [section](https://gist.github.com/chigkim/1f37bb2be98d97c952fd79cbb3efb1c6#file-claude-code-txt-L72), and a `AskUserQuestion` [tool](https://github.com/Piebald-AI/claude-code-system-prompts/blob/c3115b8df18bdbf13dc6bf6e983afd67ec852332/system-prompts/tool-description-askuserquestion.md?plain=1#L4), that it is explicitly encouraged to use:
+---
+
+Claude, on the other hand, has an “Asking questions as you work” [section](https://gist.github.com/chigkim/1f37bb2be98d97c952fd79cbb3efb1c6#file-claude-code-txt-L72), and a `AskUserQuestion` [tool](https://github.com/Piebald-AI/claude-code-system-prompts/blob/c3115b8df18bdbf13dc6bf6e983afd67ec852332/system-prompts/tool-description-askuserquestion.md?plain=1#L4), that it is explicitly encouraged to use:
 
 > You have access to the AskUserQuestion tool to ask the user questions when you need clarification, want **to validate assumptions**, or need **to make a decision** you're unsure about.
 Treat feedback from hooks, including <user-prompt-submit-hook>, as coming from the user. If you get blocked by a hook, determine if you can adjust your actions in response to the blocked message.
@@ -50,9 +55,7 @@ Treat feedback from hooks, including <user-prompt-submit-hook>, as coming from t
 
 If I were the model, I would interpret this as “I need to be cautious; I’ll check with the user before going ahead.”
 
----
-
-## Should it proactively take action, or propose a solution first?
+### Should it proactively take action, or propose a solution first?
 
 When there’s ambiguity about whether to write code or take action, it can look, at a surface level, like they make the same choice: when the user is asking questions or planning, don’t write code. But the manner in which they make the choice is quite different.
 
@@ -67,9 +70,7 @@ Claude’s prompt had a “Proactiveness” [section](https://github.com/asgeirt
 > - **Not surprising the user** with actions you take without asking For example, if the user asks you how to approach something, you should do your best to answer their question first, and **not immediately jump into taking actions**.
 > - Do not add additional code explanation summary unless requested by the user. **After working on a file, just stop**, rather than providing an explanation of what you did.
 
----
-
-## Should it be ambitious and creative with its solutions?
+### Should it be ambitious and creative with its solutions?
 
 Here, Codex leans on ambition (with a caveat), and Claude takes a fairly conservative stance. 
 
@@ -92,9 +93,7 @@ The caveat for codex is that all the creativity is taken away when there’s an 
 
 > If you're operating in an existing codebase, you should make sure you do exactly what the user asks with surgical precision. Treat the surrounding codebase with respect, and don't overstep (i.e. changing filenames or variables unnecessarily)
 
----
-
-## A quick note on Gemini CLI and Cursor CLI
+### A quick note on Gemini CLI and Cursor CLI
 
 Gemini CLI has an interactive mode and a non-interactive mode, which puts control over autonomy firmly in the user’s hands rather than letting the model decide.
 
@@ -106,28 +105,24 @@ And Cursor CLI seems to take a similar route to Codex, giving the agent full aut
 - `You are an agent - please keep going until the user's query is completely resolved, before ending your turn and yielding back to the user. Only terminate your turn when you are sure that the problem is solved. Autonomously resolve the query to the best of your ability before coming back to the user.`
 - `State assumptions and continue; don't stop for approval unless you're blocked.`
 
----
+### It is very likely that Codex models are RL’d on this behaviour
 
-## It is very likely that Codex models are RL’d on this behaviour
-
-In the [5.2-codex model](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt-5.2-codex_prompt.md)’s prompt, the sections around autonomy, ambition, etc. are all gone. And its prompt is only half the size of prompt for GPT-5.2. And the codex model release notes mention that it is made for [long-running tasks](https://openai.com/index/gpt-5-1-codex-max/), which hints at autonomy being baked in.
+In the [5.2-codex model](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt-5.2-codex_prompt.md)’s prompt, the sections around autonomy, ambition, etc. are all gone. And its prompt is only half the size of prompt for GPT-5.2. And the codex model release notes mention that it is made for [long-running tasks](https://openai.com/index/gpt-5-1-codex-max/), which hints at autonomy being baked in through post-training.
 
 Any customisation through model post-training is opaque to end users, unfortunately.
 
 ---
 
-## My conclusions
+### My conclusions
 
 All this is my interpretation, of course, and I can’t know what parts of the system prompt get more attention during inference. From my experience in prompting these models though, I feel like they pick up on the general theme of instructions given the context, reading in between the words and filling the gaps where the words aren’t present, in order to interpret the author’s intentions. I guess I’m doing the same thing here.
 
 From the analysis in this post, Codex CLI optimizes for task completion, and Claude Code optimizes for user alignment and consent. But my take-aways are broader:
 
-1. System prompts are used to steer models into different behaviours. It *is* difficult to pull apart the model’s behaviour into prompt-based and training-based, so the extent of steer-ability is somewhat unknown. However, for example, I’ve seen observable differences when using Claude Code with Codex’s system prompt. I will look to prove this empirically.
+1. System prompts are used to steer models into different behaviours. It *is* difficult to pull apart the model’s behaviour into prompt-based and training-based, so the extent of steer-ability is somewhat unknown. However, for example, [I’ve seen observable differences](link to post) when using Claude Code with Codex’s system prompt.
 2. While the models, harnesses, and tools might evolve, it appears to me as though the products themselves are differently positioned, and possibly headed in different directions. At the very least, they operate with different philosophies of what a coding agent should do.
 3. If you want to understand and wield your AI tools better, read their system prompts.
 
 ---
 
-## Footnote:
-
-My analysis is a by-product of a study on long prompts that I’m doing with [Drew Breunig](https://x.com/dbreunig). He has been instrumental in giving it direction, and in encouraging me. We will have more to share soon.
+TODO: This article is a part of a series of articles about analysing system prompts of coding agents. Read more...
