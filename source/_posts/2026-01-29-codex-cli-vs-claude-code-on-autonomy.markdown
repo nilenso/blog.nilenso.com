@@ -5,6 +5,15 @@ author: Srihari Sriraman
 created_at: 2026-02-12 00:00:00 UTC
 layout: post
 ---
+
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+
+This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](dbreunig.com).
+  
+</div>
+
+
+
 I spent some time studying the system prompts of coding agent harnesses like [Codex CLI](https://github.com/openai/codex/blob/main/codex-rs/core/gpt_5_2_prompt.md) and [Claude Code](https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code-2025-11-1.md). These prompts reveal the priorities, values, and scars of their products. They’re only a few pages each and worth reading in full, especially if you use them every day. This approach to understanding such products is more grounded than the vibe-based takes you often see in feeds.
 
 While there are many similarities and differences between them, one of the most commonly perceived differences between Claude Code and Codex CLI is **autonomy**, and in this post I’ll share what I observed. We tend to perceive autonomous behaviour as long-running, independent, or requiring less supervision and guidance. Reading the system prompts, it becomes apparent that _the products make very different, and very intentional choices_.
@@ -120,7 +129,3 @@ From the analysis in this post, Codex CLI optimizes for task completion, and Cla
 1. System prompts are used to steer models into different behaviours. It *is* difficult to pull apart the model’s behaviour into prompt-based and training-based, so the extent of steer-ability is somewhat unknown. However, for example, [I’ve seen observable differences](link to post) when using Claude Code with Codex’s system prompt.
 2. While the models, harnesses, and tools might evolve, it appears to me as though the products themselves are differently positioned, and possibly headed in different directions. At the very least, they operate with different philosophies of what a coding agent should do.
 3. If you want to understand and wield your AI tools better, read their system prompts.
-
----
-
-TODO: This article is a part of a series of articles about analysing system prompts of coding agents. Read more...
