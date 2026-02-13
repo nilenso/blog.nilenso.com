@@ -4,7 +4,7 @@
       {% assign blog_author = site.data.members | find: "name", page.author %}
       {% if blog_author %}
       <div
-        class="text-center border-t border-b border-black flex flex-col pb-4"
+        class="text-center border-t {% unless page.co_author_name %}border-b{% endunless %} border-black flex flex-col pb-4"
       >
         <div class="p-4 w-36 h-36 self-center">
           <img
@@ -30,6 +30,21 @@
       {% else %}
       <div class="text-center border-t border-b border-black flex flex-col p-4">
         <span class="text-sm font-medium">{{ page.author }}</span>
+      </div>
+      {% endif %}
+      {% if page.co_author_name %}
+      <div
+        class="text-center border-b border-black flex flex-col pb-4"
+      >
+        <div class="p-4 w-36 h-36 self-center">
+          <img
+            src="{{ page.co_author_image }}"
+            class="rounded-full w-full h-full object-cover"
+          />
+        </div>
+        <a class="text-sm font-medium" href="{{ page.co_author_link }}"
+          >{{ page.co_author_name }}</a
+        >
       </div>
       {% endif %}
     </div>
