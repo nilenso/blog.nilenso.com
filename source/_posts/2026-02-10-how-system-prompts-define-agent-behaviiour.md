@@ -4,10 +4,15 @@ title: How System Prompts Define Agent Behavior
 kind: article
 created_at: 2026-02-10 21:34 -0800
 description: System prompts matter far more than most assume. A given model sets the theoretical ceiling of an agent’s performance, but the system prompt determines whether this peak is reached.
-author: Srihari Sriraman And Drew Breunig
+author: Srihari Sriraman
 ---
 
-_This post was co-authored with [Srihari Sriraman](https://x.com/SrihariSriraman)_
+<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+
+_This post was co-authored with [Drew Breunig](https://x.com/dbreunig)_
+
+</div>
+
 
 Coding agents are fascinating to study. They help us build software in a new way, while themselves exemplifying a novel approach to architecting and implementing software. At their core is an AI model, but wrapped around it is a mix of code, tools, and prompts: the harness.
 
@@ -25,7 +30,7 @@ System prompts matter far more than most assume. A given model sets the theoreti
 
 To understand the range of system prompts, we looked at six CLI coding agents: Claude Code, Cursor, Gemini CLI, Codex CLI, OpenHands, and Kimi CLI. Each performs the same basic function: given a task they gather information, understands the code base, writes code, tracks their progress, and runs commands. But despite these similarities, the system prompts are _quite_ different.
 
-![Waffle chart comparisons of 6 coding agent system prompts](/img/waffle_comparison.jpg)
+![Waffle chart comparisons of 6 coding agent system prompts](/image/waffle_comparison.jpg)
 
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
@@ -50,7 +55,7 @@ System prompts also vary because they specify slightly different _user experienc
 
 We can get a glimpse of these two functions together by looking at how a given system prompt changes over time, especially as new versions of models arrive. For example:
 
-![Claude's system prompt vascilates as new models are released, but trends steadily longer](/img/claude_over_time.jpg)
+![Claude's system prompt vascilates as new models are released, but trends steadily longer](/image/claude_over_time.jpg)
 
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
@@ -103,13 +108,13 @@ We gave SWE-Bench Pro test questions to two applications: two agents running the
 
 Time and time again, the agent workflows diverged immediately. For example:
 
-![Claude's system prompt defines a more iterative agent](/img/prompt_swap.jpg)
+![Claude's system prompt defines a more iterative agent](/image/prompt_swap.jpg)
 
 The Codex prompt produced a methodical, documentation-first approach: understand fully, then implement once. The Claude prompt produced an iterative approach: try something, see what breaks, fix it.
 
 This pattern remains consistent over many SWE Bench problems. If we average the contexts for each model and system prompt pair, we get the following:
 
-![Swapping system prompts yielded different behavior for each model](/img/swe_bench_prompts.jpg)
+![Swapping system prompts yielded different behavior for each model](/image/swe_bench_prompts.jpg)
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
