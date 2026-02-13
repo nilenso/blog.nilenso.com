@@ -3,8 +3,11 @@ layout: post
 title: How System Prompts Define Agent Behavior
 kind: article
 created_at: 2026-02-10 21:34 -0800
-description: System prompts matter far more than most assume. A given model sets the theoretical ceiling of an agent’s performance, but the system prompt determines whether this peak is reached.
+description: System prompts matter far more than most assume. A given model sets the theoretical ceiling of an agent's performance, but the system prompt determines whether this peak is reached.
 author: Srihari Sriraman
+co_author_name: Drew Breunig
+co_author_image: https://pbs.twimg.com/profile_images/1247992288552214528/dExsBwMe_400x400.jpg
+co_author_link: https://x.com/dbreunig
 ---
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
