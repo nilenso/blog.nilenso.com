@@ -8,7 +8,7 @@ layout: post
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](dbreunig.com).
+This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
   
 </div>
 
@@ -48,7 +48,7 @@ Given this is for a GPT model, I'd bet this is to fight the context-distraction 
 > *[Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/e79b149/packages/core/src/core/prompts.ts?plain=1#L147)*
 >
 
-Anti-comment instructions are [pretty universal](link to other blog post). However, _talking to the user through comments_ is weird. That implies they saw a failure mode where the model treats the codebase as a secondary chat window—leaving explanations, status updates, or “notes to you” inline.
+Anti-comment instructions are [pretty universal](https://blog.nilenso.com/blog/2026/02/12/how-system-prompts-reveal-model-biases/). However, _talking to the user through comments_ is weird. That implies they saw a failure mode where the model treats the codebase as a secondary chat window—leaving explanations, status updates, or “notes to you” inline.
 
 This behaviour is similar to Claude [reasoning in comments](https://x.com/aidenybai/status/1993901129210712129), I suppose, where the model is trained to spend tokens for thinking. Did the developers mis-interpret this as talking to the user (vs talking to itself)? Perhaps the training indexed more on the explanatory / tutorial code where there's a mentor talking to the user through comments. Could be both, I suppose.
 
