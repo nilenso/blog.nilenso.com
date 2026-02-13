@@ -34,11 +34,20 @@ layout: default
             <div class="flex flex-row">
                 {% assign blog_author = site.data.members | find: "name", post.author %}
                 {% if blog_author %}
-                  <div class="p-2">
+                  <div class="p-2 flex flex-row items-center">
                     <img src="{{ blog_author.image_url }}" class="w-12 h-12 rounded-full object-cover">
+                    {% if post.co_author_image %}
+                      <img src="{{ post.co_author_image }}" class="w-12 h-12 rounded-full object-cover -ml-3">
+                    {% endif %}
                   </div>
                   <div class="p-2 flex flex-col place-content-evenly">
-                    <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
+                    {% if post.co_author_name %}
+                      <span class="text-sm">
+                        <a href="{{ blog_author.twitter }}">{{ blog_author.name }}</a> and <a href="{{ post.co_author_link }}">{{ post.co_author_name }}</a>
+                      </span>
+                    {% else %}
+                      <a class="text-sm" href="{{ blog_author.twitter }}">{{ blog_author.name }}</a>
+                    {% endif %}
                     {% if blog_author.medium %}
                       <p class="text-xs text-black font-light" style="font-family: Poppins">Read more by {{ blog_author.short_name }} on <a class="text-pink-500" href="{{ blog_author.medium }}">Medium</a></p>
                     {% elsif blog_author.website %}
