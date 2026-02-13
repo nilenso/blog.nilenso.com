@@ -4,7 +4,7 @@
       {% assign blog_author = site.data.members | find: "name", page.author %}
       {% if blog_author %}
       <div
-        class="text-center border-t border-b border-black flex flex-col pb-4"
+        class="text-center border-t {% unless page.co_author_name %}border-b{% endunless %} border-black flex flex-col pb-4"
       >
         <div class="p-4 w-36 h-36 self-center">
           <img
@@ -34,7 +34,7 @@
       {% endif %}
       {% if page.co_author_name %}
       <div
-        class="text-center border-b border-black flex flex-col pb-4 mt-4"
+        class="text-center border-b border-black flex flex-col pb-4"
       >
         <div class="p-4 w-36 h-36 self-center">
           <img
