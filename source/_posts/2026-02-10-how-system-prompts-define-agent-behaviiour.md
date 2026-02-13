@@ -32,8 +32,7 @@ To understand the range of system prompts, we looked at six CLI coding agents: C
 
 ![Waffle chart comparisons of 6 coding agent system prompts](/images/waffle_comparison.jpg)
 
-
-<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+<div markdown="1" style="margin: 0 0 2em; text-align: center; color: gray; border-bottom: 1px dashed gray;">
 
 Explore the above figures interactively [in **context viewer**](https://nilenso.github.io/context-viewer/g/960d42ad-314c-44cf-8594-4b009ef528a1/comparison?sidebar=0&panel=0&sortBy=category&sortDir=asc&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/system-prompts-simpler.json).
 
@@ -58,7 +57,7 @@ We can get a glimpse of these two functions together by looking at how a given s
 ![Claude's system prompt vascilates as new models are released, but trends steadily longer](/images/claude_over_time.jpg)
 
 
-<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+<div markdown="1" style="margin: 0 0 2em; text-align: center; color: gray; border-bottom: 1px dashed gray;">
 
 Explore the above figures interactively [in **context viewer**](https://nilenso.github.io/context-viewer/g/b179a05f-2bd4-4012-83ab-42a0cb1e79fd/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/claude-prompt-evolution-export-simpler.json). Or, check out [Codex's system prompt evolution](https://nilenso.github.io/context-viewer/g/56b68fb5-7221-4c04-807e-b590f138c1fe/comparison?sidebar=0&panel=0&view=tokens-absolute&legend=compact&sortBy=category&sortDir=asc&cols=10&spr=4&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/codex-prompt-evolution-export-only-codex.json) in similar detail.
 
@@ -70,7 +69,7 @@ If you want to dive further into Claude Code's prompt history, Mario Zechner has
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-Sometimes instructions are just..._weird_. I [cataloged some of the odder instructions he found while exploring coding agent system prompts](https://blog.nilenso.com/blog/2026/02/12/weird-system-prompt-artefacts/).
+Sometimes instructions are just..._weird_. I [cataloged](https://blog.nilenso.com/blog/2026/02/12/weird-system-prompt-artefacts/) some of the odder instructions I found while exploring coding agent system prompts.
 
 </div>
 
@@ -116,7 +115,7 @@ This pattern remains consistent over many SWE Bench problems. If we average the 
 
 ![Swapping system prompts yielded different behavior for each model](/images/swe_bench_prompts.jpg)
 
-<div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
+<div markdown="1" style="margin: 0 0 2em; text-align: center; color: gray; border-bottom: 1px dashed gray;">
 
 [Explore the above figures interactively in **context viewer**](https://nilenso.github.io/context-viewer/g/67175678-6244-45bc-b022-238b72f8e646/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/swapping-prompts-swe-tasks.json).
 
