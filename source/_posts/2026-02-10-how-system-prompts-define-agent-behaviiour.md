@@ -9,7 +9,7 @@ author: Srihari Sriraman
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-_This post was co-authored with [Drew Breunig](https://x.com/dbreunig)_
+_This post was co-authored with [Drew Breunig](https://x.com/dbreunig)_, and you can also read it on [his blog](https://www.dbreunig.com/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html).
 
 </div>
 
