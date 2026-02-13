@@ -8,8 +8,8 @@ layout: post
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
-  
+This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://www.dbreunig.com/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
+
 </div>
 
 Much like the small hacks that accumulate in a codebase to handle edge cases, bugs, or behavioral quirks, a model’s undesirable behaviors are frequently addressed with simple, corrective instructions in the system prompt. Over time, those fixes pile up, leaving a legacy prompt dotted with idiosyncratic patches. When someone new encounters it, and there isn't an documented rationale for the patch, they form conjectures around what underlying behaviour patch was trying to fix.

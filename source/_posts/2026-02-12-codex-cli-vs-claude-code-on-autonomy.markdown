@@ -8,8 +8,8 @@ layout: post
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
-  
+This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://www.dbreunig.com/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
+
 </div>
 
 
@@ -30,13 +30,13 @@ Even though this might be a single line, this defines the identiy, and is at the
 | [gpt-5.2-codex](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/codex-cli-model-releases-filtered/2025-12-18_gpt-5.2-codex_caribou.txt#L1) | You are Codex, based on GPT-5. You are running as a coding agent in the Codex CLI on a user's computer.
 | [gpt-5.3-codex](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/codex/codex-models/2026-02-05_9efb7f4a1_gpt-5.3-codex-prompt.txt#L1) | You are Codex, a coding agent based on GPT-5. You and the user share the same workspace and collaborate to achieve the user's goals
 | [Sonnet-4.5](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/claude-code-model-releases-filtered/06_2025-09-25_v1.0.125_pre-v2-peak.md) | You are Claude Code, Anthropic's official CLI for Claude. You are an interactive CLI tool that helps users with software engineering tasks.
-| [Opus-4.6](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/claude-code-model-releases-filtered/17_2026-02-10_v2.1.39.md) | You are a Claude agent, built on Anthropic's Claude Agent SDK. You are an interactive agent that helps users with software engineering tasks. 
+| [Opus-4.6](https://github.com/nilenso/long-prompts-analysis/blob/main/codex-and-claude-system-prompts/data/claude-code-model-releases-filtered/17_2026-02-10_v2.1.39.md) | You are a Claude agent, built on Anthropic's Claude Agent SDK. You are an interactive agent that helps users with software engineering tasks.
 
 Both of them seem to be moving towards more autonomy, with assistant -> coding agent. But the "help users with software engineering _tasks_" vs "collaborate to achieve the user's _goals_" still signals different levels of agency at which it's meant to operate.
 
 ### Should it stop and ask questions, or keep going?
 
-Codex includes a critical and [explicit section](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt_5_2_prompt.md#autonomy-and-persistence) for “Autonomy and Persistence” for the non-Codex models. 
+Codex includes a critical and [explicit section](https://github.com/openai/codex/blob/932a5a446f42e566c0dbd3004ae2cee50cdcc0ce/codex-rs/core/gpt_5_2_prompt.md#autonomy-and-persistence) for “Autonomy and Persistence” for the non-Codex models.
 
 > Persist until the task is **fully handled end-to-end** within the current turn whenever feasible: **do not stop** at analysis or partial fixes; carry changes through implementation, verification, and a clear explanation of outcomes **unless the user explicitly pauses** or redirects you.
 
@@ -79,7 +79,7 @@ Claude’s prompt had a “Proactiveness” [section](https://github.com/asgeirt
 
 ### Should it be ambitious and creative with its solutions?
 
-Here, Codex leans on ambition (with a caveat), and Claude takes a fairly conservative stance. 
+Here, Codex leans on ambition (with a caveat), and Claude takes a fairly conservative stance.
 
 Codex says:
 
