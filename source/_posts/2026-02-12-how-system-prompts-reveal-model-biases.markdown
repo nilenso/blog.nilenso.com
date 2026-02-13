@@ -8,7 +8,7 @@ layout: post
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](dbreunig.com).
+This article is a deep-dive into one aspect of [How System Prompts Define Agent Behavior](https://drewbot-embn-m4otwurrj-drew-breunigs-projects.vercel.app/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html), an article co-authored with [Drew Breunig](https://dbreunig.com).
   
 </div>
 
@@ -45,7 +45,7 @@ Models need to be told multiple times, and forcefully to batch tool calls, or to
     - `Use 'grep' and 'glob' search tools extensively (in parallel if independent) to understand file structures`
     - `Execute multiple independent tool calls in parallel when feasible (i.e. searching the codebase)`
     - `If you need to read multiple files, you should make multiple parallel calls to 'read_file'.`
-    - **`Parallelism:** Execute multiple independent tool calls in parallel when feasible (i.e. searching the codebase).`
+    - `**Parallelism:** Execute multiple independent tool calls in parallel when feasible (i.e. searching the codebase).`
 
 4. Kimi CLI
     - This has just one emphatic line. But this is the smallest system prompt of the lot too.
