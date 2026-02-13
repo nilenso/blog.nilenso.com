@@ -117,7 +117,7 @@ This pattern remains consistent over many SWE Bench problems. If we average the 
 
 <div markdown="1" style="margin: 0 0 2em; text-align: center; color: gray; border-bottom: 1px dashed gray;">
 
-[Explore the above figures interactively in **context viewer**](https://nilenso.github.io/context-viewer/g/67175678-6244-45bc-b022-238b72f8e646/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/swapping-prompts-swe-tasks.json).
+Explore the above figures interactively [in **context viewer**](https://nilenso.github.io/context-viewer/g/67175678-6244-45bc-b022-238b72f8e646/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/swapping-prompts-swe-tasks.json).
 
 </div>
 
