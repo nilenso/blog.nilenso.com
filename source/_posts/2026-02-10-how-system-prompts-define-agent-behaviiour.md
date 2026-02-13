@@ -1,14 +1,10 @@
 ---
 layout: post
 title: How System Prompts Define Agent Behavior
-date: 2026-02-10 21:34 -0800
+kind: article
+created_at: 2026-02-10 21:34 -0800
 description: System prompts matter far more than most assume. A given model sets the theoretical ceiling of an agent’s performance, but the system prompt determines whether this peak is reached.
-post-type: regular
-last_modified_at:
-sitemap: true
-featured: true
-image: /img/waffle_comparison.jpg
-tags: ['RLMs', 'AI', 'Context', 'DSPy', 'Collaboration', 'Context Engineering']
+author: Srihari Sriraman And Drew Breunig
 ---
 
 _This post was co-authored with [Srihari Sriraman](https://x.com/SrihariSriraman)_
@@ -78,7 +74,7 @@ For example, there are _many_ notes about how these agents should use comments i
 
 These consistent, repeated instructions are warranted. They fight against examples of conversation in code comments, present in countless codebases and Github repo. This behavior goes deep: we've even seen that Opus 4.5 will [reason in code comments if you turn off thinking](https://x.com/aidenybai/status/1993901129210712129).
 
-System prompts also repeatedly specify that tool calls should be parallel whenever possible. Claude should, "maximize use of parallel tool calls where possible." Cursor is sternly told, "CRITICAL INSTRUCTION: involve all relevant tools concurrently... DEFAULT TO PARALLEL." Kimi adopts all-caps as well, stating, "you are HIGHLY RECOMMENDED to make [tool calls] in parallel." 
+System prompts also repeatedly specify that tool calls should be parallel whenever possible. Claude should, "maximize use of parallel tool calls where possible." Cursor is sternly told, "CRITICAL INSTRUCTION: involve all relevant tools concurrently... DEFAULT TO PARALLEL." Kimi adopts all-caps as well, stating, "you are HIGHLY RECOMMENDED to make [tool calls] in parallel."
 
 This likley reflects the face that most post-training reasoning and agentic examples are _serial_ in nature. This is perhaps easier to debug and a bit of delay when synthesizing these datasets isn't a hinderence. However, in real world situations, users certainly appreciate the speed, so system prompts need to override this training.
 
