@@ -35,11 +35,11 @@ To understand the range of system prompts, we looked at six CLI coding agents: C
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-[Explore the above figures interactively in **context viewer**](https://nilenso.github.io/context-viewer/g/960d42ad-314c-44cf-8594-4b009ef528a1/comparison?sidebar=0&panel=0&sortBy=category&sortDir=asc&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/system-prompts-simpler.json).
+Explore the above figures interactively [in **context viewer**](https://nilenso.github.io/context-viewer/g/960d42ad-314c-44cf-8594-4b009ef528a1/comparison?sidebar=0&panel=0&sortBy=category&sortDir=asc&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/system-prompts-simpler.json).
 
 </div>
 
-We're analyzing [exfiltrated system prompts](https://github.com/asgeirtj/system_prompts_leaks), which we clean up and [host here](https://github.com/nilenso/long-prompts-analysis/tree/main/data/prompts/filtered)[^exfiltrated]. Each of these is fed into [context-viewer](https://github.com/nilenso/context-viewer), a tool Srihari developed that chunks contexts in semantic components for exploration and analysis.
+We're analyzing [exfiltrated system prompts](https://github.com/asgeirtj/system_prompts_leaks), which we clean up and [host here](https://github.com/nilenso/long-prompts-analysis/tree/main/data/prompts/filtered)[^exfiltrated]. Each of these is fed into [context-viewer](https://github.com/nilenso/context-viewer), a tool I developed that chunks contexts in semantic components for exploration and analysis.
 
 Looking at the above visualizations, there is plenty of variety. Claude, Codex, Gemini, and OpenHands roughly prioritize the same instructions, but vary their distributions. Further, prompts for Claude Code and OpenHands both are less than half the length of prompts in Codex and Gemini.
 
@@ -60,7 +60,7 @@ We can get a glimpse of these two functions together by looking at how a given s
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-[Explore the above figures interactively in **context viewer**](https://nilenso.github.io/context-viewer/g/b179a05f-2bd4-4012-83ab-42a0cb1e79fd/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/claude-prompt-evolution-export-simpler.json). Or, [check out Codex's system prompt evolution in similar detail](https://nilenso.github.io/context-viewer/g/56b68fb5-7221-4c04-807e-b590f138c1fe/comparison?sidebar=0&panel=0&view=tokens-absolute&legend=compact&sortBy=category&sortDir=asc&cols=10&spr=4&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/codex-prompt-evolution-export-only-codex.json).
+Explore the above figures interactively [in **context viewer**](https://nilenso.github.io/context-viewer/g/b179a05f-2bd4-4012-83ab-42a0cb1e79fd/comparison?sidebar=0&panel=0&legend=compact&sortBy=category&sortDir=asc&cols=5&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/claude-prompt-evolution-export-simpler.json). Or, check out [Codex's system prompt evolution](https://nilenso.github.io/context-viewer/g/56b68fb5-7221-4c04-807e-b590f138c1fe/comparison?sidebar=0&panel=0&view=tokens-absolute&legend=compact&sortBy=category&sortDir=asc&cols=10&spr=4&import=https://raw.githubusercontent.com/nilenso/long-prompts-analysis/refs/heads/main/context-viewer-exports/codex-prompt-evolution-export-only-codex.json) in similar detail.
 
 </div>
 
@@ -70,7 +70,7 @@ If you want to dive further into Claude Code's prompt history, Mario Zechner has
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-Sometimes instructions are just..._weird_. Srihari [cataloged some of the odder instructions he found while exploring coding agent system prompts](https://blog.nilenso.com/blog/2026/02/12/weird-system-prompt-artefacts/).
+Sometimes instructions are just..._weird_. I [cataloged some of the odder instructions he found while exploring coding agent system prompts](https://blog.nilenso.com/blog/2026/02/12/weird-system-prompt-artefacts/).
 
 </div>
 
@@ -94,7 +94,7 @@ Much of what these prompts specify is shared; common adjustments, common desired
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-Srihari looked at more examples of fighting the weights to understand [how system prompts reveal model biases](https://blog.nilenso.com/blog/2026/02/12/how-system-prompts-reveal-model-biases/).
+I looked at more examples of fighting the weights to understand [how system prompts reveal model biases](https://blog.nilenso.com/blog/2026/02/12/how-system-prompts-reveal-model-biases/).
 
 </div>
 
@@ -127,7 +127,7 @@ All prompt-model combinations correctly answered this subset of SWE Bench Pro qu
 
 <div markdown="1" style="border-left:4px solid #FF3D84; background:#fafafa; padding:0.75em 1em; border-radius:4px; margin:1em 0;">
 
-Srihari explored [Codex CLI and Claude Code autonomy](https://blog.nilenso.com/blog/2026/02/12/codex-cli-vs-claude-code-on-autonomy/), and how the system prompt may shape their behavior.
+I explored [Codex CLI and Claude Code autonomy](https://blog.nilenso.com/blog/2026/02/12/codex-cli-vs-claude-code-on-autonomy/), and how the system prompt may shape their behavior.
 
 </div>
 
