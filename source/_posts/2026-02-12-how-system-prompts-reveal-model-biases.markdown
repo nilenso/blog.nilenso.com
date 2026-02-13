@@ -38,7 +38,7 @@ Models need to be told multiple times, and forcefully to batch tool calls, or to
     - `Searching for different patterns (imports, usage, definitions) should happen in parallel`
     - `And you should use parallel tool calls in many more cases beyond those listed above`
     - `DEFAULT TO PARALLEL: Unless you have a specific reason why operations MUST be sequential`
-    - Parallelize tool calls per <maximize_parallel_tool_calls>: batch read-only context reads and independent edits instead of serial drip calls.
+    - `Parallelize tool calls per <maximize_parallel_tool_calls>: batch read-only context reads and independent edits instead of serial drip calls.`
 
 3. Gemini CLI
     - This seems to be the mildest of the lot, although we only know about this from Gemini 3 onwards.
@@ -56,7 +56,7 @@ Models need to be told multiple times, and forcefully to batch tool calls, or to
     -`Only make sequential calls if you truly cannot know the next file without seeing a result first.`
     - `Always maximize parallelism.`, `Batch everything.`, `Never read files one-by-one unless logically unavoidable.`.
     - However, with the 5.2 model release, all this instruction vanished, and was replaced with a single line instruction.
-    - Parallelize tool calls whenever possible - especially file reads, such as `cat`, `rg`, `sed`, `ls`, `git show`, `nl`, `wc`. Use `multi_tool_use.parallel` to parallelize tool calls and only this.
+    - `Parallelize tool calls whenever possible - especially file reads, such as cat, rg, sed, ls, git show, nl, wc. Use multi_tool_use.parallel to parallelize tool calls and only this.`
 
 I haven't measured the resultant level of parallelism in these harnesses yet. Perhaps the model _does_ parallelise some tool calls by itself, just not enough. And perhaps some of these products don't care about how quickly the work gets done, so they haven't paid attention to it yet. The benchmarks like SWE Bench Pro don't measure execution time, so they haven't had the incentive to, perhaps.
 
@@ -89,8 +89,7 @@ Every system-prompt seems to instruct the model NOT to add comments in code.
 
 3. Codex CLI
     - Older versions of the system prompt had this instruction to _remove_ inline comments:
-        -  `Remove all inline comments you added as much as possible, even if they look normal. Check using \`git diff\`. Inline comments must be generally avoided, unless active maintainers of the repo, a
-fter long careful study of the code and the issue, will still misinterpret the code without the comments.`
+        -  `Remove all inline comments you added as much as possible, even if they look normal. Check using git diff. Inline comments must be generally avoided, unless active maintainers of the repo, after long careful study of the code and the issue, will still misinterpret the code without the comments.`
         - `Do not add inline comments within code unless explicitly requested.`
     - Newer version of the system prompt has this instruction to _add_ comments sparingly:
         - `Add succinct code comments that explain what is going on if code is not self-explanatory. You should not add comments like "Assigns the value to the variable", but a brief comment might be useful ahead of a complex code block that the user would otherwise have to spend time parsing out. Usage of these comments should be rare.`
