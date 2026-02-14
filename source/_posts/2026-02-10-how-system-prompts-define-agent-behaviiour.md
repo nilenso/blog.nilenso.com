@@ -104,7 +104,7 @@ I looked at more examples of fighting the weights to understand [how system prom
 
 ### Do the Prompts Change the Agent?
 
-Helpfully, [OpenCode](https://opencode.ai) [allows users to specify custom system prompts](https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts#method-4-custom-system-prompts). With this feature, we can drop in prompts from Kimi, Gemini, Codex and more, removing and swapping instructions to measure their contribution.
+Helpfully, [OpenCode](https://opencode.ai) [allows users to specify custom system prompts](https://opencode.ai/docs/agents/#prompt). With this feature, we can drop in prompts from Kimi, Gemini, Codex and more, removing and swapping instructions to measure their contribution.
 
 We gave SWE-Bench Pro test questions to two applications: two agents running the Claude Code harness, calling Opus 4.5, but with one one using the original Claude Code system prompt and the other armed with Codex's instructions.
 
