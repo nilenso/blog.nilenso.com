@@ -5,6 +5,8 @@ author: Govind Krishna Joshi
 created_at: 2026-02-16 00:00:00 UTC
 layout: post
 ---
+![](/images/blog/screenshot-2026-02-02-at-3.37.53 pm.png)
+
 **8:PM in the evening: it's demo day tomorrow.**
 
 You've been fighting prompt the prompt for hours. 
@@ -31,20 +33,20 @@ Some shortcuts were taken to get here quickly, but that's fine, you'll fix it on
 
 The agent is released to a 1000 users. There wasn't time to setup observability, so you are tailing the logs on the server, and looking at conversations in the database.
 
-Some users are having an decent experience.  
-Some that too repeat and clarify themselves, sometimes multiple times.  
+Some users are having an decent experience.\
+Some that too repeat and clarify themselves, sometimes multiple times.\
 Some are clearly frustrated. 
 
 There are logs, but no observability.
 
-You don't know why.  
-You don't know how often.  
-You don't know the contents of the context, or what tool calls were made preceding the failure.  
+You don't know why.\
+You don't know how often.\
+You don't know the contents of the context, or what tool calls were made preceding the failure.\
 You have complaints, but no reproduction steps. 
 
 *Heavy Sigh, restart the loop*
 
-----------------------------
+- - -
 
 Language models are amazing. Today, we can build (semi-)autonomous agents that can reason on their own and perform side-effects in their environments. Building an application that leverages AI, can feel like magic when they work. 
 
@@ -54,8 +56,8 @@ The probabilistic nature of the models bring unique challenges when using them t
 
 I'd like to make a specific claim: **engineering maturity is the most important factor in building reliable AI applications.**  
 
-Not model selection.  
-Not prompt engineering tricks.  
+Not model selection.\
+Not prompt engineering tricks.\
 Not the latest framework.
 
 Traditional software practices like documentation, tests, observability, evals is what separates teams that ship from teams that demo.
@@ -68,3 +70,32 @@ Reliably means two things: The feature works as intended, and it is shipped with
 
 For AI applications specifically, engineering maturity means building the infrastructure that lets you **discover** what works because you cannot design your way to a working AI system.
 
+### Discovery, not invention
+
+This is the mental shift that matters most.
+
+Traditional software engineering is largely deductive post product discovery. You gather requirements, design a system that meets them, implement the design, and verify it works. The gap between design and implementation is mostly determinable. If your design is sound and your implementation is correct, the system works.
+
+AI engineering is empirical. You cannot deduce the right prompt from first principles. You cannot design the optimal tool schema on a whiteboard. You cannot predict how users will phrase requests or where the model will fail. You have to discover these things through structured experimentation.
+
+This changes what "engineering maturity" means in practice:
+
+* **Observability** isn't a production concern you'll add later. It's your instrument panel for discovery. Without it, you're experimenting in the dark.
+* **Evals** aren't quality gates before release. They're the only way to know whether a change moved you forward, backward, or sideways.
+* **Datasets** aren't training artifacts. They're the accumulated knowledge of what works and what doesn't. They are a core asset your team builds over time.
+
+The teams that struggle in production are usually the ones who treated these as overhead during development. They optimized for speed to demo, not speed to reliable system. By the time they hit the wall, they've accumulated weeks of prompt changes with no systematic way to evaluate them.
+
+### The maturity ladder
+
+I'd like to use the following ladder as a framework to define what I mean by engineering maturity:
+
+* **Level 0**: Prototype
+* **Level 1**: Documented, repeatable processes
+* **Level 2**: Specified, Tested, Validated
+* **Level 3**: Measured
+* **Level 4**: Optimized
+
+#### Level 0
+
+Level 0 is chaotic.
