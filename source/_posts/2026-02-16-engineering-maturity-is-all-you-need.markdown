@@ -149,8 +149,81 @@ Level 2 is about defining the characteristics of the application.
 
 AI applications are still software applications.
 
-AI applications are still software applications. Unit tests, integration tests, end-to-end tests, all still important to know our applications are functioning as intended. While we await AGI, current day agents still have plenty of deterministic code that needs to work correctly. 
+Unit tests, integration tests, end-to-end tests, all still important to know our applications are functioning as intended. While we await AGI, current day agents still have plenty of deterministic code that needs to work correctly. 
 
-Test the deterministic parts: your tool implementations, your parsing logic, your state management, your API integrations. These should have conventional test coverage. This ensures that at least the deterministic parts of your AI application are error-free and safe from regression.
+Test the deterministic parts: tool implementations, parsing logic, state management, API integrations. These should have conventional test coverage. This ensures that at least the deterministic parts of your AI application are error-free and safe from regression.
 
 The fuzzy parts - model behavior, response quality - that's what evals are for. But a surprising number of production failures trace back to plain old software bugs in the scaffolding. Don't let the magic of LLMs distract you from the mundane discipline of testing the code around them.
+
+**Evals**
+
+Even though every component in motorsports vehicles is rigorously tested, teams spend countless hours doing track tests. Riders push to understand how the machine feels like when utilizing it to its limit.
+
+Have you seen motogp riders give feedback?
+
+*(Ref:* <https://www.youtube.com/watch?v=jsWv7K_V2Ss>)
+
+That feedback is real, but it's useless on its own. Does "loose" mean the tire is overheating? Suspension too soft? Electronics cutting power too aggressively? The mechanic needs telemetry - tire temperature, suspension travel, lean angle, throttle position - to translate that vague feeling into actionable changes.
+
+Evals are the telemetry for AI applications. 
+
+A basic eval runs a suite of test inputs through your system and scores the outputs. Scores might be binary (pass/fail), numeric (0-100), or categorical (correct, partially correct, incorrect, harmful). Good evals check multiple dimensions and are defined along with the product team.
+
+Start simple. A spreadsheet of test cases with expected behaviors, accumulating cases as you dog food the application. As you learn what "good" looks like, add automated scoring where possible and human review where necessary.
+
+Evals serve two purposes:
+
+* **They document discoveries the team makes.** Each eval case encodes something you learned—a failure mode you discovered, an edge case a user hit, a behavior you want to preserve. The eval suite is institutional memory.
+* **Defining the product behavior.** A good eval suite is designed along with the product team and should measure aspects of how the users interact with the agent. Did the agent surface the correct information, is the agent too verbose, does the user interrupt often, etc. You want to improve [what matters to the users](https://blog.nilenso.com/blog/2024/12/24/good-enough-data/). 
+
+#### Level 3 - Measured
+
+You can't improve what you don't measure. At level 3, you are measuring what matters. 
+
+**Observability**
+
+Knowing what our application is doing in production is the most important piece when it comes to understanding our applications. But "add logging" isn't enough. For AI applications, you need:
+
+* **Structured logging of every LLM interaction.** The full input (including system prompt), the full output, latency, token counts, model version, temperature, and any other parameters, you need to be able to reproduce the interaction.
+* **User-level distributed session tracing.** AI applications are asynchronous, distributed, and sometimes streaming in nature. You should have a trace of what happened, when, during a users session across all the distributed parts of the system.  
+* **Alerts on regression.** Define metrics (latency p95, error rate, tool call success rate) and alert when they degrade. You don’t want your users telling you that the system is not working, or worse discovering it weeks later by going through logs or listening to recordings. 
+* **Context Management.** Most critically, you need to see [what goes into the context window](https://github.com/nilenso/context-viewer). The context is everything - it's the only thing the model sees. When an agent misbehaves, the answer is almost always in the context: a previous tool call returned garbage, the conversation history accumulated contradictory instructions, or the system prompt got truncated. Without visibility into the actual context at each turn, you're debugging blind.
+
+You cannot discover what works if you cannot see what's happening. This isn't optional infrastructure you'll add later. It's the foundation that makes everything else possible.
+
+**Level 4 - Optimized**
+
+Level 4 unlocks our ability to systematically optimize and improve our AI applications
+
+**Building a flywheel**
+
+Production drift is the gap between your eval dataset and production reality. Real users often want to use agents in ways that are outside the evaluation distribution. Which makes the every interaction of the user with your application a valuable source of data. The mature AI team treats production as a continuous source of training and evaluation data.
+
+This is the flywheel:
+
+1. Deploy the system
+2. Observe user interactions
+3. Identify failures and successes
+4. Add failures to eval suite (so you don't regress)
+5. Add successes to example bank (so you can replicate)
+6. Improve the system using this data
+7. Repeat
+
+The flywheel is the product—not in a business sense, but in an engineering sense. The mechanism that captures data, learns from it, and improves the system \*is\* the core technical asset. The prompt and the model are interchangeable. The flywheel is what compounds.
+
+To build the flywheel, you need:
+
+* Structured data capture (observability)
+* Outcome tagging (success, failure, why)
+* A growing eval suite
+* A process for reviewing failures and improving the system
+
+This is where the "engineering maturity is cheap" claim becomes concrete. The investment in observability and evals pays compound returns. Each production failure makes the system stronger - but only if you have the infrastructure to capture, categorize, and learn from it.
+
+-----------------------
+
+Engineering maturity is about building the harness that lets you tinker, experiment, and discover what works - at speed. Because in AI applications, iteration speed is everything. The techniques that work today will be obsolete next quarter. The model that was state-of-the-art last month is already surpassed.
+
+You can't predict what will work. But you can build the system that lets you find out faster than anyone else.
+
+Engineering maturity is all you need.
