@@ -62,7 +62,7 @@ Not the latest framework.
 
 Traditional software practices like documentation, tests, observability, evals is what separates teams that ship from teams that demo.
 
-### What is engineering maturity?
+## What is engineering maturity?
 
 Engineering maturity is the practice of making decisions in the short term that enable a team to reliably deliver features in the long term.
 
@@ -70,7 +70,7 @@ Reliably means two things: The feature works as intended, and it is shipped with
 
 For AI applications specifically, engineering maturity means building the infrastructure that lets you **discover** what works because you cannot design your way to a working AI system.
 
-### Discovery, not invention
+## Discovery, not invention
 
 This is the mental shift that matters most.
 
@@ -86,7 +86,7 @@ This changes what "engineering maturity" means in practice:
 
 The teams that struggle in production are usually the ones who treated these as overhead during development. They optimized for speed to demo, not speed to reliable system. By the time they hit the wall, they've accumulated weeks of prompt changes with no systematic way to evaluate them.
 
-### The maturity ladder
+## The maturity ladder
 
 I'd like to use the following ladder as a framework to define what I mean by engineering maturity:
 
@@ -96,7 +96,7 @@ I'd like to use the following ladder as a framework to define what I mean by eng
 * **Level 3**: Measured
 * **Level 4**: Optimized
 
-#### Level 0 - Prototype
+### Level 0 - Prototype
 
 Level 0 is chaotic, ad-hoc, relies on individuals and tribal knowledge. This is where the protagonists in our initial story are at. There is no documentation, testing is mostly manual, deployments are run manually, and often a source of anxiety and errors, there is little explainability in the behavior of the application. Projects at this level are prototypes, even if they have production users. During prototyping you accumulate implicit knowledge and quality relies on your muscle memory of testing.
 
@@ -106,7 +106,7 @@ You can't A/B test based on vibes.\
 You can't debug a regression using intuition.\
 You can't onboard a new team member by transferring your gut feel.
 
-#### Level 1 - Documented, repeatable process
+### Level 1 - Documented, repeatable process
 
 At Level 1 you have good documentation, and your process are scripted and repeatable.
 
@@ -139,7 +139,7 @@ If you can't isolate changes, you can't learn from failures.
 
 The whole discovery loop breaks down. It's impossible to iterate at the speed required for tinkering and experimenting without this foundation. 
 
-#### Level 2 - Specified, Tested, and Validated
+### Level 2 - Specified, Tested, and Validated
 
 Level 2 is about defining the characteristics of the application.
 
@@ -174,7 +174,7 @@ Evals serve two purposes:
 * **They document discoveries the team makes.** Each eval case encodes something you learned—a failure mode you discovered, an edge case a user hit, a behavior you want to preserve. The eval suite is institutional memory.
 * **Defining the product behavior.** A good eval suite is designed along with the product team and should measure aspects of how the users interact with the agent. Did the agent surface the correct information, is the agent too verbose, does the user interrupt often, etc. You want to improve [what matters to the users](https://blog.nilenso.com/blog/2024/12/24/good-enough-data/). 
 
-#### Level 3 - Measured
+### Level 3 - Measured
 
 You can't improve what you don't measure. At level 3, you are measuring what matters. 
 
@@ -189,7 +189,7 @@ Knowing what our application is doing in production is the most important piece 
 
 You cannot discover what works if you cannot see what's happening. This isn't optional infrastructure you'll add later. It's the foundation that makes everything else possible.
 
-**Level 4 - Optimized**
+###Level 4 - Optimized
 
 Level 4 unlocks our ability to systematically optimize and improve our AI applications
 
