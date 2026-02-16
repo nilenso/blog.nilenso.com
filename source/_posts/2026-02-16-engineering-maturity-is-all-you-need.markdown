@@ -102,8 +102,8 @@ Level 0 is chaotic, ad-hoc, relies on individuals and tribal knowledge. This is 
 
 None of it transfers to production.
 
-You can't A/B test based on vibes.  
-You can't debug a regression using intuition.  
+You can't A/B test based on vibes.\
+You can't debug a regression using intuition.\
 You can't onboard a new team member by transferring your gut feel.
 
 #### Level 1 - Documented, repeatable process
@@ -118,4 +118,25 @@ A well-written PRD clarifies what you're building and why. A technical design do
 
 This documentation always been invaluable resources for teams of people. And now they have a new audience, coding agents. When you ask an AI to help implement a feature, good documentation is both the context and memory of the project it needs to generate good outputs. 
 
+**CI/CD**
 
+A clean bike is a fast bike. 
+
+Motorsports is messy. Garages are loud, there is oil, grease, and hundreds of small rubber and metal bits all around. Yet, each time you see a vehicle leave the pit-lane at the start, it is clean. Being clean means, being reliable, being fast. It means that the process worked.
+
+Production releases need the same rigor. 
+
+You should deploy on every commit to trunk, automatically. You should never be afraid to deploy to production. You should have automated gates that prevent bad code from merging.
+
+
+
+![A typical CI/CD pipeline](/images/blog/typical-ci-cd-pipeline.png "A typical CI/CD pipeline")
+
+The goal is to make deployment boring.  
+
+If deployment is a big event that requires coordination and courage, you'll deploy less often.\
+If you deploy less often, you'll batch more changes together.\
+If you batch changes, you can't isolate which change caused a regression.\
+If you can't isolate changes, you can't learn from failures.
+
+The whole discovery loop breaks down. It's impossible to iterate at the speed required for tinkering and experimenting without this foundation.
