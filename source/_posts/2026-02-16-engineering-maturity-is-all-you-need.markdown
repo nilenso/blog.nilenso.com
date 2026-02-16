@@ -5,7 +5,7 @@ author: Govind Krishna Joshi
 created_at: 2026-02-16 00:00:00 UTC
 layout: post
 ---
-![]()
+![](/images/blog/screenshot-2026-02-02-at-3.37.53 pm.png)
 
 **8:PM in the evening: it's demo day tomorrow.**
 
@@ -128,8 +128,6 @@ Production releases need the same rigor.
 
 You should deploy on every commit to trunk, automatically. You should never be afraid to deploy to production. You should have automated gates that prevent bad code from merging.
 
-
-
 ![A typical CI/CD pipeline](/images/blog/typical-ci-cd-pipeline.png "A typical CI/CD pipeline")
 
 The goal is to make deployment boring.  
@@ -220,7 +218,7 @@ To build the flywheel, you need:
 
 This is where the "engineering maturity is cheap" claim becomes concrete. The investment in observability and evals pays compound returns. Each production failure makes the system stronger - but only if you have the infrastructure to capture, categorize, and learn from it.
 
------------------------
+- - -
 
 Engineering maturity is about building the harness that lets you tinker, experiment, and discover what works - at speed. Because in AI applications, iteration speed is everything. The techniques that work today will be obsolete next quarter. The model that was state-of-the-art last month is already surpassed.
 
