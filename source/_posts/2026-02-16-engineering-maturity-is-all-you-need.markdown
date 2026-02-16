@@ -90,13 +90,13 @@ The teams that struggle in production are usually the ones who treated these as 
 
 I'd like to use the following ladder as a framework to define what I mean by engineering maturity:
 
-* **Level 0**: Prototypes
+* **Level 0**: Prototype
 * **Level 1**: Documented, repeatable processes
 * **Level 2**: Specified, Tested, and Validated
 * **Level 3**: Measured
 * **Level 4**: Optimized
 
-#### Level 0 - Prototypes
+#### Level 0 - Prototype
 
 Level 0 is chaotic, ad-hoc, relies on individuals and tribal knowledge. This is where the protagonists in our initial story are at. There is no documentation, testing is mostly manual, deployments are run manually, and often a source of anxiety and errors, there is little explainability in the behavior of the application. Projects at this level are prototypes, even if they have production users. During prototyping you accumulate implicit knowledge and quality relies on your muscle memory of testing.
 
