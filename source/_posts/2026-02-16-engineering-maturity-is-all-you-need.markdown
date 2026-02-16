@@ -92,7 +92,7 @@ I'd like to use the following ladder as a framework to define what I mean by eng
 
 * **Level 0**: Prototypes
 * **Level 1**: Documented, repeatable processes
-* **Level 2**: Specified, Tested, Validated
+* **Level 2**: Specified, Tested, and Validated
 * **Level 3**: Measured
 * **Level 4**: Optimized
 
@@ -139,4 +139,18 @@ If you deploy less often, you'll batch more changes together.\
 If you batch changes, you can't isolate which change caused a regression.\
 If you can't isolate changes, you can't learn from failures.
 
-The whole discovery loop breaks down. It's impossible to iterate at the speed required for tinkering and experimenting without this foundation.
+The whole discovery loop breaks down. It's impossible to iterate at the speed required for tinkering and experimenting without this foundation. 
+
+#### Level 2 - Specified, Tested, and Validated
+
+Level 2 is about defining the characteristics of the application.
+
+**Testing**
+
+AI applications are still software applications.
+
+AI applications are still software applications. Unit tests, integration tests, end-to-end tests, all still important to know our applications are functioning as intended. While we await AGI, current day agents still have plenty of deterministic code that needs to work correctly. 
+
+Test the deterministic parts: your tool implementations, your parsing logic, your state management, your API integrations. These should have conventional test coverage. This ensures that at least the deterministic parts of your AI application are error-free and safe from regression.
+
+The fuzzy parts - model behavior, response quality - that's what evals are for. But a surprising number of production failures trace back to plain old software bugs in the scaffolding. Don't let the magic of LLMs distract you from the mundane discipline of testing the code around them.
