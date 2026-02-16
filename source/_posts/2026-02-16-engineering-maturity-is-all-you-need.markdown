@@ -110,3 +110,12 @@ You can't onboard a new team member by transferring your gut feel.
 
 At Level 1 you have good documentation, and your process are scripted and repeatable.
 
+**Documentation**
+
+In my opinion, good documentation is the second most important artifact that a software team produces, right after code.
+
+A well-written PRD clarifies what you're building and why. A technical design doc captures architectural decisions and trade-offs. An ADR (Architecture Decision Record) explains why you chose approach A over B, so you don't re-litigate the decision in six months.
+
+This documentation always been invaluable resources for teams of people. And now they have a new audience, coding agents. When you ask an AI to help implement a feature, good documentation is both the context and memory of the project it needs to generate good outputs. 
+
+
