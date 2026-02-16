@@ -220,6 +220,6 @@ This is where the "engineering maturity is cheap" claim becomes concrete. The in
 
 Engineering maturity is about building the harness that lets you tinker, experiment, and discover what works - at speed. Because in AI applications, iteration speed is everything. The techniques that work today will be obsolete next quarter. The model that was state-of-the-art last month is already surpassed.
 
-You can't predict what will work. But you can build the system that lets you find out faster than anyone else.
+You can't predict what will work. But you can build the system that lets you find that out faster.
 
 Engineering maturity is all you need.
