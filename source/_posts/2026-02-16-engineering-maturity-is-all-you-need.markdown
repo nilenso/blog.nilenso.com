@@ -108,5 +108,5 @@ You can't onboard a new team member by transferring your gut feel.
 
 #### Level 1 - Documented, repeatable process
 
-Level 1 you have good documentation, and your process are scripted and repeatable.
+At Level 1 you have good documentation, and your process are scripted and repeatable.
 
