@@ -13,7 +13,7 @@ You've been fighting prompt the prompt for hours.
 
 You make the prompt more specific, but the bot fails where user gives an unexpected input. 
 
-You loosen the constraints, and suddenly it starts hallucinating. 
+You loosen the constraints, and it starts hallucinating. 
 
 Tool aren't being called reliably, users keep interrupting because they are unhappy with the response, and the interruptions exacerbate the bad responses. You make a change, and start testing manually. First use case - works; Second one - works, kind of; Third one - agent has regressed. 
 
