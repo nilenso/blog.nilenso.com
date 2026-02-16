@@ -187,7 +187,7 @@ Knowing what our application is doing in production is the most important piece 
 
 You cannot discover what works if you cannot see what's happening. This isn't optional infrastructure you'll add later. It's the foundation that makes everything else possible.
 
-\###Level 4 - Optimized
+###Level 4 - Optimized
 
 Level 4 unlocks our ability to systematically optimize and improve our AI applications
 
