@@ -62,5 +62,9 @@ Traditional software practices like documentation, tests, observability, evals i
 
 ### What is engineering maturity?
 
-Engineering maturity is the practice of making decisions in the short term that enable a team to reliably deliver features in the long term
+Engineering maturity is the practice of making decisions in the short term that enable a team to reliably deliver features in the long term.
+
+Reliably means two things: The feature works as intended, and it is shipped within the estimated timelines. Teams that lack engineering maturity spend most of their time debugging, regressing, and re-doing work. They feel busy but don't make progress.
+
+For AI applications specifically, engineering maturity means building the infrastructure that lets you **discover** what works because you cannot design your way to a working AI system.
 
