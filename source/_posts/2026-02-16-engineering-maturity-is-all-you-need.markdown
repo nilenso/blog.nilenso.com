@@ -169,7 +169,7 @@ Start simple. A spreadsheet of test cases with expected behaviors, accumulating 
 
 Evals serve two purposes:
 
-* **They document discoveries the team makes.** Each eval case encodes something you learned—a failure mode you discovered, an edge case a user hit, a behavior you want to preserve. The eval suite is institutional memory.
+* **They document discoveries the team makes.** Each eval case encodes something you learned - a failure mode you discovered, an edge case a user hit, a behavior you want to preserve. The eval suite is institutional memory.
 * **Defining the product behavior.** A good eval suite is designed along with the product team and should measure aspects of how the users interact with the agent. Did the agent surface the correct information, is the agent too verbose, does the user interrupt often, etc. You want to improve [what matters to the users](https://blog.nilenso.com/blog/2024/12/24/good-enough-data/). 
 
 ### Level 3 - Measured
