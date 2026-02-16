@@ -5,8 +5,6 @@ author: Govind Krishna Joshi
 created_at: 2026-02-16 00:00:00 UTC
 layout: post
 ---
-![](/images/blog/screenshot-2026-02-02-at-3.37.53 pm.png)
-
 **8:PM in the evening: it's demo day tomorrow.**
 
 You've been fighting prompt the prompt for hours. 
