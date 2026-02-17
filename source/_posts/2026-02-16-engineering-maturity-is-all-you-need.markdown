@@ -5,8 +5,6 @@ author: Govind Krishna Joshi
 created_at: 2026-02-16 00:00:00 UTC
 layout: post
 ---
-![](/images/blog/maturity_ladder.png)
-
 **8:PM in the evening: it's demo day tomorrow.** 
 
 You've been fighting the prompt for hours. 
@@ -95,6 +93,8 @@ I'd like to use the following ladder as a framework to define what I mean by eng
 * **Level 2**: Specified, Tested, and Validated
 * **Level 3**: Measured
 * **Level 4**: Optimized
+
+![Engineering maturity ladder](/images/blog/maturity_ladder.png "Engineering maturity ladder")
 
 ### Level 0 - Prototype
 
