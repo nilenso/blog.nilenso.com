@@ -7,8 +7,6 @@ layout: post
 ---
 ![](/images/blog/maturity_ladder.png)
 
-
-
 **8:PM in the evening: it's demo day tomorrow.** 
 
 You've been fighting the prompt for hours. 
@@ -54,7 +52,7 @@ Language models are amazing. Today, we can build (semi-)autonomous agents that c
 
 But, it's confusing when they don't.
 
-The probabilistic nature of the models bring unique challenges when using them to build applications. We are dealing with fuzzy inputs, fuzzy outputs, and even fuzzier set if steps to get there. Bitter lessons are learned, as techniques change quickly, some mastered over many iterations are surpassed by many magnitudes in performance by the release of a new model. 
+The probabilistic nature of the models bring unique challenges when using them to build applications. We are dealing with fuzzy inputs, fuzzy outputs, and even fuzzier set of steps to get there. Bitter lessons are learned, as techniques change quickly, some mastered over many iterations are surpassed by many magnitudes in performance by the release of a new model. 
 
 I'd like to make a specific claim: **engineering maturity is the most important factor in building reliable AI applications.**  
 
@@ -62,7 +60,7 @@ Not model selection.\
 Not prompt engineering tricks.\
 Not the latest framework.
 
-Traditional software practices like documentation, tests, observability, evals is what separates teams that ship from teams that demo.
+Traditional software practices like documentation, tests, observability, evals are what separates teams that ship from teams that demo.
 
 ## What is engineering maturity?
 
@@ -118,7 +116,7 @@ In my opinion, good documentation is the second most important artifact that a s
 
 A well-written PRD clarifies what you're building and why. A technical design doc captures architectural decisions and trade-offs. An ADR (Architecture Decision Record) explains why you chose approach A over B, so you don't re-litigate the decision in six months.
 
-This documentation always been invaluable resources for teams of people. And now they have a new audience, coding agents. When you ask an AI to help implement a feature, good documentation is both the context and memory of the project it needs to generate good outputs. 
+This documentation has always been invaluable resources for teams of people. And now they have a new audience, coding agents. Good documentation is both the context and project memory needed generate good outputs. 
 
 **CI/CD**
 
@@ -157,9 +155,9 @@ The fuzzy parts - model behavior, response quality - that's what evals are for. 
 
 **Evals**
 
-Even though every component in motorsports vehicles is rigorously tested, teams spend countless hours doing track tests. Riders push to understand how the machine feels like when utilizing it to its limit.
+Even though every component in motorsports vehicles is rigorously tested, teams spend countless hours doing track tests. Riders push to understand what the machine feels like when utilizing it to the limit.
 
-Have you seen motogp riders give feedback?
+Have you seen MotoGP riders give feedback?
 
 *(Ref:* <https://www.youtube.com/watch?v=jsWv7K_V2Ss>)
 
@@ -191,7 +189,7 @@ Knowing what our application is doing in production is the most important piece 
 
 You cannot discover what works if you cannot see what's happening. This isn't optional infrastructure you'll add later. It's the foundation that makes everything else possible.
 
-\###Level 4 - Optimized
+### Level 4 - Optimized
 
 Level 4 unlocks our ability to systematically optimize and improve our AI applications
 
@@ -209,7 +207,7 @@ This is the flywheel:
 6. Improve the system using this data
 7. Repeat
 
-The flywheel is the product—not in a business sense, but in an engineering sense. The mechanism that captures data, learns from it, and improves the system \*is\* the core technical asset. The prompt and the model are interchangeable. The flywheel is what compounds.
+The flywheel is the product—not in a business sense, but in an engineering sense. The mechanism that captures data, learns from it, and improves the system is the core technical asset. The prompt and the model are interchangeable. The flywheel is what compounds.
 
 To build the flywheel, you need:
 
