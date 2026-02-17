@@ -163,7 +163,7 @@ How does research happen?
 
 *(Ref:* <https://www.youtube.com/watch?v=jsWv7K_V2Ss>)
 
-<iframe width="2755" height="1441" src="https://www.youtube.com/embed/jsWv7K_V2Ss" title="Hand Jive: A Discussion in the Box" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="2755" height="720" src="https://www.youtube.com/embed/jsWv7K_V2Ss" title="Hand Jive: A Discussion in the Box" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 That feedback is real, but it's useless on its own. Does "loose" mean the tire is overheating? Suspension too soft? Electronics cutting power too aggressively? The mechanic needs telemetry - tire temperature, suspension travel, lean angle, throttle position - to translate that vague feeling into actionable changes.
 
