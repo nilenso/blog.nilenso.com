@@ -5,9 +5,13 @@ author: Govind Krishna Joshi
 created_at: 2026-02-16 00:00:00 UTC
 layout: post
 ---
+![](/images/blog/maturity_ladder.png)
+
+
+
 **8:PM in the evening: it's demo day tomorrow.** 
 
-You've been fighting prompt the prompt for hours. 
+You've been fighting the prompt for hours. 
 
 You make the prompt more specific, but the bot fails where user gives an unexpected input. 
 
@@ -187,7 +191,7 @@ Knowing what our application is doing in production is the most important piece 
 
 You cannot discover what works if you cannot see what's happening. This isn't optional infrastructure you'll add later. It's the foundation that makes everything else possible.
 
-###Level 4 - Optimized
+\###Level 4 - Optimized
 
 Level 4 unlocks our ability to systematically optimize and improve our AI applications
 
