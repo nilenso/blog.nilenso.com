@@ -23,9 +23,9 @@ Tool aren't being called reliably, users keep interrupting because they are unha
 
 **11:00 AM next day: Time for the demo**
 
-After many *you must*s and *you must not*s you've assembled a prompt that handles all the test cases. You've manually validated a them a few times. The prompt works, except once in a while. 
+After many *you must*s and *you must not*s you've assembled a prompt that handles all the test cases. You've manually validated them a few times. The prompt works, except once in a while. 
 
-The demo goes well! The both handles all the use cases, makes most of the tools calls and manages interruptions reasonably well. 
+The demo goes well! The bot handles all the use cases, makes most of the tools calls and manages interruptions reasonably well. 
 
 Greenlit. Ship it to production! 🚀
 
@@ -35,7 +35,7 @@ Some shortcuts were taken to get here quickly, but that's fine, you'll fix it on
 
 The agent is released to a 1000 users. There wasn't time to setup observability, so you are tailing the logs on the server, and looking at conversations in the database.
 
-Some users are having an decent experience.\
+Some users are having a decent experience.\
 Some that too repeat and clarify themselves, sometimes multiple times.\
 Some are clearly frustrated. 
 
