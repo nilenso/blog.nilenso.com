@@ -19,3 +19,5 @@ Now we have massive fragmentation.
 
 So now, if you're building an LLM application, you have to make a choice about how you're calling the LLMs. One option is to stick to the native providers. So if you're using Anthropic models, you use the Anthropic API. If you're using OpenAI models, you use the OpenAI API, and so on. This works fine. Unfortunately, the issue is that there's always a new "best" model or new releases coming from different labs, and they're all pretty competitive—constantly overtaking each other. That means you have to change providers frequently, and if you're tied to a native provider, you're kind of stuck.
 
+Another option is to use a gateway. The most popular one is LiteLLM, and it has become a kind of load-bearing backbone. A lot of big frameworks and AI applications actually depend on LiteLLM. Unfortunately, to put it politely—or not so politely—LiteLLM is a sloppy codebase. It's extremely buggy, it's terrible, it's just awful, and it breaks a lot of behaviors. There’s always a lag in a race to support every new feature that’s specific to each model, and this might or might not materialize—which is quite bad for your own use cases.
+
