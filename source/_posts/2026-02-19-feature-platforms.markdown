@@ -5,8 +5,6 @@ author: Siri P R
 created_at: 2026-02-19 00:00:00 UTC
 layout: post
 ---
-# Feature Platforms: Accelerating Feature Engineering for ML at Scale
-
 A feature platform is the infrastructure layer that manages how raw attributes from your domain get transformed into features that power your ML models — both to train and serve production inference. Think of it as a single-point solution to compute, store, and serve the derived data your models depend on: things like "how many orders has this user placed in the last 7 days" or "what is the driver's acceptance rate over the last one hour."
 
 ## The Problem
