@@ -7,6 +7,8 @@ layout: post
 ---
 A feature platform is the infrastructure layer that manages how raw attributes from your domain get transformed into features that power your ML models — both to train and serve production inference. Think of it as a single-point solution to compute, store, and serve the derived data your models depend on: things like "how many orders has this user placed in the last 7 days" or "what is the driver's acceptance rate over the last one hour."
 
+<img src="/images/blog/feature-platforms.png" alt="Feature Platforms" style='width: 100%'>
+
 ## The Problem
 
 With traditional approaches to computing and storing features, data scientists and ML engineers typically face some combination of the following challenges:
