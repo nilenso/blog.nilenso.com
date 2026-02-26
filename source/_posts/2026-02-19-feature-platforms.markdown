@@ -1,5 +1,5 @@
 ---
-title: "Feature Platforms: Accelerating Feature Engineering for ML at Scale"
+title: "Feature Platforms: The Underrated Infrastructure Layer behind fast ML Teams"
 kind: article
 author: Siri P R
 created_at: 2026-02-19 00:00:00 UTC
