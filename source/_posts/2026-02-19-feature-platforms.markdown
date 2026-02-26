@@ -19,7 +19,7 @@ Think of it as a single-point solution to compute, store, and serve the derived 
 
 <img src="/images/blog/feature-platforms.png" alt="Feature Platforms" style='width: 100%'>
 
-The examples in this post are from a hypothetical e-commerce platform. But the concepts are applicable to any domain that needs to compute and serve features for ML models.
+The examples in this post are from a hypothetical e-commerce and logistics applications. But the concepts are applicable to any domain that needs to compute and serve features for ML models.
 
 ### What a Traditional Data Pipeline Looks Like (Without a Feature Platform)
 
