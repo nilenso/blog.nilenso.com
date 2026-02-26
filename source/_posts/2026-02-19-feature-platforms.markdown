@@ -5,20 +5,42 @@ author: Siri P R
 created_at: 2026-02-19 00:00:00 UTC
 layout: post
 ---
-A feature platform is the infrastructure layer that manages how raw attributes from your domain get transformed into features that power your ML models — both to train and serve production inference. Think of it as a single-point solution to compute, store, and serve the derived data your models depend on: things like "how many orders has this user placed in the last 7 days" or "what is the driver's acceptance rate over the last one hour."
+A feature platform is the infrastructure layer that manages how raw attributes from your domain; such as:
+
+- "how many orders has this user placed"
+- "what was the timestamp of the user's last completed order"
+
+are transformed into features that power your ML models, like:
+
+- "orders_last_7d"
+- "minutes_since_last_completed_order"
+
+Think of it as a single-point solution to compute, store, and serve the derived data your models depend on - both for training and for production inference.
 
 <img src="/images/blog/feature-platforms.png" alt="Feature Platforms" style='width: 100%'>
 
+The examples in this post are from a hypothetical e-commerce platform. But the concepts are applicable to any domain that needs to compute and serve features for ML models.
+
+### What a Traditional Data Pipeline Looks Like (Without a Feature Platform)
+
+Without a feature platform, teams typically stitch together a pipeline from separate components: a compute engine (Spark or dbt) to transform raw data, an orchestrator (Airflow, Prefect) to schedule runs, a key-value store (Redis, DynamoDB) to serve features at prediction time, and — if real-time signals are needed — a Kafka stream feeding a Flink or custom consumer into that same store.
+
+Say you want a feature: "number of orders a user placed in the last 7 days." In the traditional setup, a data scientist writes that aggregation in a Spark job — this is what generates training data. A data engineer wraps it in Airflow to keep the output refreshed in the online store, so models don't have to recompute it on every prediction request. A backend engineer might write a third implementation in the serving layer to handle request-time edge cases: a brand new user with no history, or a slightly different time window depending on request context. Three separate implementations of the same logic, maintained by three different people.
+
+Now the product team changes the definition to a rolling 14-day window. Who updates all three? How do you know the Spark output and the serving implementation are still computing the same thing? How do you catch the case where the Airflow job silently failed and the model is reading a value that is three days stale? How do you write a test for the feature logic that runs against real historical data without spinning up the entire pipeline?
+
+In practice, most teams don't have clean processes, and the indication that something is wrong is usually a degraded model metric weeks later.
+
 ## The Problem
 
-With traditional approaches to computing and storing features, data scientists and ML engineers typically face some combination of the following challenges:
+On top of this ad-hoc change management, traditional approaches to computing and storing features leave data scientists and ML engineers dealing with a familiar set of challenges:
 
 - **Training-serving skew**: Data scientists implement feature logic in Python/Pandas; engineers re-implement it in the language of the business-logic serving stack (e.g. Java, Go, or SQL). They drift apart and it is hard to catch until model performance degrades in production.
 - **Slow iteration cycles**: Getting a new feature from idea to production takes weeks because every feature requires a custom pipeline, validation, deployment, and sign-off.
-- **No shared vocabulary**: Features computed by one team get re-computed by three others because there's no discoverability layer.
-- **Freshness gaps**: Models rely on yesterday's data because there's no streaming infrastructure, even for signals that change by the minute.
+- **No shared vocabulary**: Features computed by one team get re-computed by possibly many others because there's no discoverability layer.
+- **Freshness gaps**: Models rely on older than necessary data because there's no streaming infrastructure, even for signals that change by the minute.
 
-A feature platform addresses all of these.
+A feature platform addresses all of these as we will see in the subsequent sections.
 
 ## Batch vs. Streaming
 
@@ -31,7 +53,7 @@ Think of feature freshness in three tiers:
 
 **Near-real-time (NRT) features** are computed by a stream processor — typically a Kafka consumer or similar — and reflect the last few minutes of activity. The number of orders a driver accepted in the last hour is NRT. Latency is seconds to a minute. These require stream infrastructure but are the sweet spot for most use cases that need freshness without extreme complexity.
 
-**Real-time features** are computed at prediction time, inline with the request. They reflect what's happening *right now* — the exact state of a request in-flight. Latency is sub-second. These are powerful but expensive, hard to backfill, and complex to test.
+**Real-time features** are computed at prediction time, inline with the request. They reflect what's happening *right now* — the exact state of a request in-flight. Latency is sub-second. These are powerful but expensive, hard to backfill, and complex to test. And a lot of the times, it is recommended to pass these features from the request context itself, rather than from a feature platform.
 
 For each feature you're considering, ask two questions:
 
@@ -49,21 +71,28 @@ A feature platform compresses this by letting the feature author own the full li
 
 The result is that experimentation becomes cheap enough to actually do it. You can try a feature, run an offline eval, and discard it in a day rather than a sprint. That speed compounds — teams that can run significantly more experiments tend to ship better models.
 
-### What a Traditional Pipeline Looks Like (Without a Feature Platform)
-
-Without a feature platform, teams typically stitch together a pipeline from separate components: a compute engine (Spark or dbt) to transform raw data, an orchestrator (Airflow, Prefect) to schedule runs, a key-value store (Redis, DynamoDB) to serve features at prediction time, and — if real-time signals are needed — a Kafka stream feeding a Flink or custom consumer into that same store.
-
-Say you want a feature: "number of orders a user placed in the last 7 days." In the traditional setup, a data scientist writes that aggregation in a Spark job — this is what generates training data. A data engineer wraps it in Airflow to keep the output refreshed in the online store, so models don't have to recompute it on every prediction request. A backend engineer might write a third implementation in the serving layer to handle request-time edge cases: a brand new user with no history, or a slightly different time window depending on request context. Three separate implementations of the same logic, maintained by three different people.
-
-Now the product team changes the definition to a rolling 14-day window. Who updates all three? How do you know the Spark output and the serving implementation are still computing the same thing? How do you catch the case where the Airflow job silently failed and the model is reading a value that is three days stale? How do you write a test for the feature logic that runs against real historical data without spinning up the entire pipeline?
-
-In practice, most teams don't have clean processes, and the indication that something is wrong is usually a degraded model metric weeks later.
-
 ## How Feature Platforms Work
 
 A feature platform is composed of a few components that together allow you to define feature logic once and have it work correctly across training, refresh, and serving.
 
-**Feature authoring DSL**: Where you express what a feature computes, which entity it belongs to (user, driver, restaurant), and how fresh it needs to be. The critical capability here is time-windowed aggregations with point-in-time correctness — meaning the platform knows to compute "orders in the last 7 days *as of the timestamp of each training example*", not as of today. Naive implementations get often get this wrong due to complexity of the implementation.
+**Feature authoring DSL**: Where you express what a feature computes, which entity it belongs to (user, driver, restaurant), and how fresh it needs to be. The critical capability here is time-windowed aggregations with point-in-time correctness — meaning the platform knows to compute "orders in the last 7 days *as of the timestamp of each training example*", not as of today. Naive implementations often get this wrong by leaking future information — for example, joining every training row to a feature table computed as of "now" instead of as of the event timestamp, which silently introduces label leakage and overly optimistic offline metrics.
+
+In a Python-native DSL, a feature like "orders in the last 7 days" for a `user` entity that is updated every hour might look like this:
+
+```python
+@feature(
+    name="orders_last_7d",
+    entity="user",
+    freshness="1h",
+)
+def orders_last_7d(orders):
+    return (
+        orders
+        .groupby("user_id")
+        .window("7d", on="event_timestamp")
+        .order_id.count()
+    )
+```
 
 **Ingestion layer**: Connects to your data sources — databases, event streams, data warehouses — and normalizes how raw data flows into the platform. This abstraction is what lets the same feature definition run against historical data for training and against live data for serving, without any changes to the feature logic itself.
 
@@ -86,7 +115,9 @@ A feature platform involves building and maintaining:
 
 Each of these is a solvable problem, but together they represent months of engineering work — and ongoing maintenance.
 
-### The Case for Managed Platforms
+### Build vs. Buy
+
+#### The Case for Managed Platforms
 
 Managed platforms like Chalk.ai, Tecton, and Feast (self-hosted but with managed cloud options) provide most of the above out of the box. The value proposition is:
 
@@ -98,7 +129,7 @@ Managed platforms like Chalk.ai, Tecton, and Feast (self-hosted but with managed
 
 Some managed platforms have a Python-native DSL and local testing mechanisms that enable ML engineers and data scientists to author, test, and deploy features largely independently of data engineering teams.
 
-### When to Build Your Own
+#### When to Build Your Own
 
 **Cost at scale**: Managed platforms charge based on feature computation volume. At very high throughput (millions of predictions per day), the cost can exceed what it would cost to run equivalent infrastructure yourself on cloud primitives.
 
