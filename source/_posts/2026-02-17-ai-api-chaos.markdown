@@ -7,7 +7,7 @@ layout: post
 ---
 LLM provider standards are in a very bad place. It's a mess, actually.
 
-Initially, we had the completions API back when most chat assistants weren't the dominant paradigm—like with GPT-2 and G GPT-3. Then we had something called the chat completionns API, which took off around the time ChatGPT-3 launched. This is what people are using with GPT-3.5, GPT-4, the Turbo variants, and so on. This somewhat stuck as a standard for some time—the stateless way of passing messages.
+Initially, we had the completions API back when most chat assistants weren't the dominant paradigm—like with GPT-2 and GPT-3. Then we had something called the chat completionns API, which took off around the time ChatGPT-3 launched. This is what people are using with GPT-3.5, GPT-4, the Turbo variants, and so on. This somewhat stuck as a standard for some time—the stateless way of passing messages.
 
 But it was clearly made in a rush. In fact, there's a tweet from OpenAI that shows how they basically built it over a weekend hackathon—and it shows. Anthropic, Google and the others made different APIs with very different designs.
 
