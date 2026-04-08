@@ -29,6 +29,62 @@ layout: post
 }
 .ratio-svg { display: block; width: 100%; height: auto; }
 .ratio-muted { color: #777; font-size: 0.95rem; }
+
+.annex-wrap { margin: 1rem 0 2rem; }
+.annex-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-monospace);
+  font-size: 0.9rem;
+}
+.annex-table th, .annex-table td {
+  text-align: right;
+  padding: 6px 10px;
+  border-bottom: 1px solid #ececec;
+  white-space: nowrap;
+}
+.annex-table th {
+  color: #888;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+.annex-table td:first-child,
+.annex-table th:first-child {
+  text-align: left;
+}
+.annex-table td:first-child {
+  white-space: normal;
+  max-width: 380px;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+}
+.annex-desc {
+  display: block;
+  color: #888;
+  font-size: 0.8rem;
+  font-family: var(--font-serif);
+}
+.annex-note {
+  color: #666;
+  font-size: 0.92rem;
+  margin: 0.45rem 0 0;
+}
+.annex-scroll {
+  max-height: 560px;
+  overflow: auto;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+}
+.annex-scroll .annex-table th {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+  z-index: 1;
+}
 </style>
 
 If you choose coding models for production work, resolve rate is only part of the decision. Cost, tokens, and runtime decide whether a model is workable day to day. My intuition was: GPT models felt slow and token hungry, Claude models felt faster on similar tasks, so Claude should be cheaper. Similar claims appear in public writeups, for example in the [OpenHands Index](https://openhands.dev/blog/openhands-index), where Opus 4.5 is noted as finishing tasks quickly despite its size.
@@ -68,11 +124,7 @@ Caveats:
 
 <div id="ratio-tokens-total" class="ratio-wrap"><p class="ratio-muted">Loading chart...</p></div>
 
-Total token usage is mixed and much less extreme than cost. Sonnet 4.5 uses more total tokens in 58.0% of tasks, with a broad spread around 1x.
-
-Takeaway notes:
-- The largest token difference is in output, not input. In the deeper breakdown, Sonnet 4.5 emits much more output per task.
-- A lot of that output is tool-call content and temporary file creation that gets discarded and never appears in the final submitted patch.
+Total token usage is mixed and much less extreme than cost. Sonnet 4.5 uses more total tokens in 58.0% of tasks, with a broad spread around 1x. The largest token difference is in output, not input, and in the deeper breakdown Sonnet 4.5 emits much more output per task; a lot of that output is tool-call content and temporary file creation that gets discarded and never appears in the final submitted patch.
 
 Caveats:
 - This chart uses total tokens from run stats: `tokens_sent + tokens_received`.
@@ -95,6 +147,93 @@ Caveats:
 ## Conclusion
 
 This post is a field report from publicly available trajectories. My vibes were off, I had been avoiding GPT models because they felt slow and token hungry. This SWE-Bench Pro slice shows a different operating profile, so I am now going to use GPT and Codex models more often.
+
+## Annex: methodology and additional data
+
+This annex lists implementation details, additional ratio charts, and full comparative tables for the same paired set used above.
+
+Analysis code and data: [github.com/nilenso/swe-bench-pro-cost-token-time-analysis](https://github.com/nilenso/swe-bench-pro-cost-token-time-analysis).
+
+### A.1 Data and pairing protocol
+
+- Source: public SWE-Bench Pro trajectories from Scale AI.
+- Pairing unit: same `instance_id`, requiring both GPT-5 and Sonnet 4.5 to have `submitted=true`.
+- Paired sample size: **616** instances.
+- Unit of comparison: per-instance ratio, Sonnet 4.5 / GPT-5.
+- Aggregation: medians and IQR over per-instance ratios, not pooled cross-task means.
+- Scope: October 2025 model runs in one harness configuration.
+- Environment note: costs are benchmark-environment proxy costs, not current list pricing.
+
+### A.1.1 Inclusion and denominator audit
+
+All annex charts and tables use the same paired set unless stated otherwise.
+
+<div class="annex-wrap">
+  <table class="annex-table">
+    <tr><th>Metric</th><th>Included (n)</th><th>Excluded</th><th>Inclusion rule</th></tr>
+    <tr><td>Cost ratio</td><td>616</td><td>0</td><td>both costs &gt; 0</td></tr>
+    <tr><td>Total token ratio (`tokens_sent + tokens_received`)</td><td>616</td><td>0</td><td>both totals &gt; 0</td></tr>
+    <tr><td>Tool-time ratio</td><td>616</td><td>0</td><td>both tool times &gt; 0</td></tr>
+    <tr><td>Input token ratio</td><td>616</td><td>0</td><td>both `tokens_sent` &gt; 0</td></tr>
+    <tr><td>Output token ratio (`output_tokens.total`)</td><td>616</td><td>0</td><td>both totals &gt; 0</td></tr>
+    <tr><td>Step-count ratio</td><td>616</td><td>0</td><td>both step counts &gt; 0</td></tr>
+  </table>
+</div>
+
+Note: denominator stays constant across ratio charts, so cross-metric comparisons are on the same paired sample.
+
+### A.1.2 Paired outcome decomposition
+
+- Both solved: **206**
+- GPT-5 only solved: **56**
+- Sonnet 4.5 only solved: **68**
+- Neither solved: **286**
+
+Note: this decomposition separates overlap from directional wins on the same instances.
+
+### A.1.3 Uncertainty checks
+
+- Resolve rate, Wilson 95% CI:
+  - GPT-5: **42.5%** (262/616), CI **38.7%-46.5%**
+  - Sonnet 4.5: **44.5%** (274/616), CI **40.6%-48.4%**
+- Paired discordant outcomes: GPT-only **56**, Sonnet-only **68**; McNemar exact p-value **0.323**.
+- Median ratio 95% bootstrap CI (4,000 resamples):
+  - Cost: **6.33x**, CI **5.91x-6.68x**
+  - Total tokens: **1.15x**, CI **1.06x-1.26x**
+  - Tool time: **1.35x**, CI **1.18x-1.55x**
+
+Note: in this paired slice, cost, total-token, and tool-time ratio signals are stable; resolve-rate differences are less decisive.
+
+### A.2 Additional ratio charts (not shown above)
+
+Input token ratio per paired task.
+<div id="annex-ratio-input" class="ratio-wrap"><p class="ratio-muted">Loading chart...</p></div>
+
+Output token ratio per paired task.
+<div id="annex-ratio-output" class="ratio-wrap"><p class="ratio-muted">Loading chart...</p></div>
+
+Step-count ratio per paired task.
+<div id="annex-ratio-steps" class="ratio-wrap"><p class="ratio-muted">Loading chart...</p></div>
+
+### A.3 Comparative tables
+
+Cost summary across all paired tasks.
+<div id="annex-table-cost" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
+
+Token and patch summary.
+<div id="annex-table-tokens" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
+
+Action breakdown summary.
+<div id="annex-table-actions" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
+
+Execution summary.
+<div id="annex-table-exec" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
+
+Repo-level resolve counts.
+<div id="annex-table-repos" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
+
+Per-instance comparison table.
+<div id="annex-table-instances" class="annex-wrap"><p class="ratio-muted">Loading table...</p></div>
 
 <script>
 (function () {
@@ -121,6 +260,56 @@ This post is a field report from publicly available trajectories. My vibes were 
     if (m <= 2) return 2 * p;
     if (m <= 5) return 5 * p;
     return 10 * p;
+  }
+
+  function mean(arr) {
+    return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
+  }
+
+  function sum(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+  }
+
+  function median(arr) {
+    return quantile(arr, 0.5);
+  }
+
+  function fmt(n, dec = 0) {
+    if (!isFinite(n)) return '—';
+    return n.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  }
+
+  function fmtD(n) {
+    return '$' + fmt(n, 2);
+  }
+
+  function ratioSG(g, s) {
+    if (!g || !isFinite(g) || !isFinite(s)) return '—';
+    return (s / g).toFixed(1) + 'x';
+  }
+
+  function outcomeOf(p) {
+    const gr = p.gpt5.resolved === true;
+    const sr = p.claude.resolved === true;
+    if (gr && sr) return 'both';
+    if (gr) return 'gpt5-only';
+    if (sr) return 'sonnet-only';
+    return 'neither';
+  }
+
+  function aggRow(label, gVals, sVals, opts) {
+    const fn = (opts && opts.fn) || mean;
+    const dollar = opts && opts.dollar;
+    const dec = opts && opts.dec !== undefined ? opts.dec : (dollar ? 2 : 0);
+    const desc = opts && opts.desc ? `<span class="annex-desc">${opts.desc}</span>` : '';
+    const g = fn(gVals), s = fn(sVals);
+    const gStr = dollar ? fmtD(g) : fmt(g, dec);
+    const sStr = dollar ? fmtD(s) : fmt(s, dec);
+    return `<tr><td>${label}${desc}</td><td>${gStr}</td><td>${sStr}</td><td>${ratioSG(g, s)}</td></tr>`;
+  }
+
+  function renderAnnexTable(el, caption, htmlTable, note) {
+    el.innerHTML = `${htmlTable}<p class="annex-note">${note}</p>`;
   }
 
   function renderHistogram(el, metric) {
@@ -259,6 +448,9 @@ This post is a field report from publicly available trajectories. My vibes were 
     .then(r => r.json())
     .then(data => {
       const pairs = data.filter(p => p.gpt5 && p.claude && p.gpt5.submitted && p.claude.submitted);
+      const g = pairs.map(p => p.gpt5);
+      const s = pairs.map(p => p.claude);
+      const n = pairs.length;
 
       const metricDefs = {
         cost: {
@@ -267,8 +459,8 @@ This post is a field report from publicly available trajectories. My vibes were 
           leftLabel: 'Sonnet cheaper',
           rightLabel: 'Sonnet more expensive',
           takeawayPhrase: 'Sonnet was more expensive on',
-          g: (s) => s.model_stats.instance_cost,
-          c: (s) => s.model_stats.instance_cost,
+          g: (m) => m.model_stats.instance_cost,
+          c: (m) => m.model_stats.instance_cost,
         },
         tokensTotal: {
           title: 'Per-task total token ratio',
@@ -276,8 +468,8 @@ This post is a field report from publicly available trajectories. My vibes were 
           leftLabel: 'Sonnet fewer total tokens',
           rightLabel: 'Sonnet more total tokens',
           takeawayPhrase: 'Sonnet used more total tokens on',
-          g: (s) => s.model_stats.tokens_sent + s.model_stats.tokens_received,
-          c: (s) => s.model_stats.tokens_sent + s.model_stats.tokens_received,
+          g: (m) => m.model_stats.tokens_sent + m.model_stats.tokens_received,
+          c: (m) => m.model_stats.tokens_sent + m.model_stats.tokens_received,
         },
         time: {
           title: 'Per-task time ratio',
@@ -285,8 +477,35 @@ This post is a field report from publicly available trajectories. My vibes were 
           leftLabel: 'Sonnet faster',
           rightLabel: 'Sonnet slower',
           takeawayPhrase: 'Sonnet was slower on',
-          g: (s) => s.tool_time.total_seconds,
-          c: (s) => s.tool_time.total_seconds,
+          g: (m) => m.tool_time.total_seconds,
+          c: (m) => m.tool_time.total_seconds,
+        },
+        tokensInput: {
+          title: 'Per-task input token ratio',
+          xLabel: 'Input token ratio',
+          leftLabel: 'Sonnet fewer input tokens',
+          rightLabel: 'Sonnet more input tokens',
+          takeawayPhrase: 'Sonnet used more input tokens on',
+          g: (m) => m.model_stats.tokens_sent,
+          c: (m) => m.model_stats.tokens_sent,
+        },
+        tokensOutput: {
+          title: 'Per-task output token ratio',
+          xLabel: 'Output token ratio',
+          leftLabel: 'Sonnet fewer output tokens',
+          rightLabel: 'Sonnet more output tokens',
+          takeawayPhrase: 'Sonnet used more output tokens on',
+          g: (m) => m.output_tokens.total,
+          c: (m) => m.output_tokens.total,
+        },
+        steps: {
+          title: 'Per-task steps ratio',
+          xLabel: 'Steps ratio',
+          leftLabel: 'Sonnet fewer steps',
+          rightLabel: 'Sonnet more steps',
+          takeawayPhrase: 'Sonnet took more steps on',
+          g: (m) => m.steps,
+          c: (m) => m.steps,
         },
       };
 
@@ -298,36 +517,206 @@ This post is a field report from publicly available trajectories. My vibes were 
           if (!gv || !cv || gv <= 0 || cv <= 0) continue;
           ratios.push(cv / gv);
         }
-        const n = ratios.length;
+        const included = ratios.length;
         const higherCount = ratios.filter(v => v > 1).length;
         return {
           ...def,
           ratios,
-          n,
+          n: included,
           median: quantile(ratios, 0.5),
           q1: quantile(ratios, 0.25),
           q3: quantile(ratios, 0.75),
           higherCount,
-          higherPct: n ? (higherCount * 100 / n) : 0,
+          higherPct: included ? (higherCount * 100 / included) : 0,
         };
       }
 
       const mCost = makeMetric(metricDefs.cost);
       const mTokTotal = makeMetric(metricDefs.tokensTotal);
       const mTime = makeMetric(metricDefs.time);
+      const mTokInput = makeMetric(metricDefs.tokensInput);
+      const mTokOutput = makeMetric(metricDefs.tokensOutput);
+      const mSteps = makeMetric(metricDefs.steps);
 
       renderSummary(document.getElementById('ratio-summary'), [
         { name: 'Cost', median: mCost.median, q1: mCost.q1, q3: mCost.q3 },
-        { name: 'Total tokens', median: mTokTotal.median, q1: mTokTotal.q1, q3: mTokTotal.q3 },
+        { name: 'Tokens', median: mTokTotal.median, q1: mTokTotal.q1, q3: mTokTotal.q3 },
         { name: 'Time', median: mTime.median, q1: mTime.q1, q3: mTime.q3 },
       ]);
 
       renderHistogram(document.getElementById('ratio-cost'), mCost);
       renderHistogram(document.getElementById('ratio-tokens-total'), mTokTotal);
       renderHistogram(document.getElementById('ratio-time'), mTime);
+
+      // Annex ratio charts
+      renderHistogram(document.getElementById('annex-ratio-input'), mTokInput);
+      renderHistogram(document.getElementById('annex-ratio-output'), mTokOutput);
+      renderHistogram(document.getElementById('annex-ratio-steps'), mSteps);
+
+      // Shared arrays for tables
+      const gCost = g.map(x => x.model_stats.instance_cost);
+      const sCost = s.map(x => x.model_stats.instance_cost);
+      const gIn = g.map(x => x.model_stats.tokens_sent);
+      const sIn = s.map(x => x.model_stats.tokens_sent);
+      const gOut = g.map(x => x.output_tokens.total);
+      const sOut = s.map(x => x.output_tokens.total);
+      const gOutC = g.map(x => x.output_tokens.content);
+      const sOutC = s.map(x => x.output_tokens.content);
+      const gOutT = g.map(x => x.output_tokens.tool_call_args);
+      const sOutT = s.map(x => x.output_tokens.tool_call_args);
+      const gPatTok = g.map(x => x.patch_tokens);
+      const sPatTok = s.map(x => x.patch_tokens);
+      const gCalls = g.map(x => x.model_stats.api_calls);
+      const sCalls = s.map(x => x.model_stats.api_calls);
+      const gTpc = g.map(x => x.tokens_per_call);
+      const sTpc = s.map(x => x.tokens_per_call);
+      const gTT = g.map(x => x.tool_time.total_seconds);
+      const sTT = s.map(x => x.tool_time.total_seconds);
+      const gSt = g.map(x => x.steps);
+      const sSt = s.map(x => x.steps);
+
+      const nBoth = pairs.filter(p => outcomeOf(p) === 'both').length;
+      const nGOnly = pairs.filter(p => outcomeOf(p) === 'gpt5-only').length;
+      const nSOnly = pairs.filter(p => outcomeOf(p) === 'sonnet-only').length;
+      const gResolved = nBoth + nGOnly;
+      const sResolved = nBoth + nSOnly;
+      const gCostPerResolve = gResolved ? sum(gCost) / gResolved : Infinity;
+      const sCostPerResolve = sResolved ? sum(sCost) / sResolved : Infinity;
+      const gMoreExp = pairs.filter((p, i) => gCost[i] > sCost[i]).length;
+
+      const hdr = '<tr><th></th><th>GPT-5</th><th>Sonnet 4.5</th><th>S/G</th></tr>';
+
+      const costTable =
+        '<table class="annex-table">' + hdr +
+        aggRow('Mean', gCost, sCost, { dollar: true, desc: 'Average API cost per task.' }) +
+        aggRow('Median', gCost, sCost, { fn: median, dollar: true, desc: 'Middle value, less sensitive to outliers.' }) +
+        aggRow('Total', gCost, sCost, { fn: sum, dollar: true }) +
+        `<tr><td>Cost per resolve<span class="annex-desc">Total spend divided by tasks fixed.</span></td><td>${fmtD(gCostPerResolve)}</td><td>${fmtD(sCostPerResolve)}</td><td>${ratioSG(gCostPerResolve, sCostPerResolve)}</td></tr>` +
+        `<tr><td>GPT-5 more expensive</td><td colspan="3">${gMoreExp}/${n} instances</td></tr>` +
+        '</table>';
+      renderAnnexTable(
+        document.getElementById('annex-table-cost'),
+        '',
+        costTable,
+        'Note: costs are from benchmark logs and reflect the benchmark pricing context.'
+      );
+
+      const tokenTable =
+        '<table class="annex-table">' + hdr +
+        aggRow('Input tokens (mean)', gIn, sIn, { desc: 'Total tokens sent across API calls.' }) +
+        aggRow('Output tokens (mean)', gOut, sOut, { desc: 'Visible output tokens via tiktoken recount.' }) +
+        aggRow('  content', gOutC, sOutC, { desc: 'Text portion of model response.' }) +
+        aggRow('  tool_call args', gOutT, sOutT, { desc: 'Tool arguments: edits, shell commands, queries.' }) +
+        aggRow('Patch size (tokens)', gPatTok, sPatTok, { desc: 'Tiktoken count of submitted diff.' }) +
+        '</table>';
+      renderAnnexTable(
+        document.getElementById('annex-table-tokens'),
+        '',
+        tokenTable,
+        'Takeaway: output-token differences are much larger than input-token differences.'
+      );
+
+      const actionKeys = ['bash', 'view', 'edit', 'create', 'search_find', 'submit', 'other'];
+      const actionDesc = {
+        bash: 'Shell commands: tests, install, command checks.',
+        view: 'File reads.',
+        edit: 'Edits to existing files.',
+        create: 'New files created.',
+        search_find: 'Search via find/grep style actions.',
+        submit: 'Final patch submission.',
+        other: 'Unclassified actions.',
+      };
+      let actionRows = '';
+      actionKeys.forEach(k => {
+        actionRows += aggRow(k, g.map(x => x.actions[k]), s.map(x => x.actions[k]), { dec: 1, desc: actionDesc[k] });
+      });
+      const actionTable = '<table class="annex-table">' + hdr + actionRows + '</table>';
+      renderAnnexTable(
+        document.getElementById('annex-table-actions'),
+        '',
+        actionTable,
+        'Note: action frequencies summarize strategy differences, not correctness.'
+      );
+
+      const execTable =
+        '<table class="annex-table">' + hdr +
+        aggRow('Steps (mean)', gSt, sSt, { desc: 'Model turns per task.' }) +
+        aggRow('API calls (mean)', gCalls, sCalls, { desc: 'Model round-trips per task.' }) +
+        aggRow('Tokens/call (mean)', gTpc, sTpc, { desc: 'Average context per model call.' }) +
+        aggRow('Tool time, mean (s)', gTT, sTT, { dec: 1, desc: 'Seconds spent waiting for tools.' }) +
+        aggRow('Tool time, median (s)', gTT, sTT, { fn: median, dec: 1, desc: 'Median tool wait time.' }) +
+        '</table>';
+      renderAnnexTable(
+        document.getElementById('annex-table-exec'),
+        '',
+        execTable,
+        'Caveat: tool time excludes full wall-clock and does not fully include inference latency.'
+      );
+
+      const repoCounts = {};
+      pairs.forEach(p => { repoCounts[p.repo] = (repoCounts[p.repo] || 0) + 1; });
+      let repoRows = '<tr><th style="text-align:left">Repo</th><th>Instances</th><th>GPT-5 resolved</th><th>Sonnet 4.5 resolved</th></tr>';
+      Object.keys(repoCounts).sort().forEach(repo => {
+        const rp = pairs.filter(p => p.repo === repo);
+        const rg = rp.filter(p => p.gpt5.resolved === true).length;
+        const rsr = rp.filter(p => p.claude.resolved === true).length;
+        repoRows += `<tr><td>${repo}</td><td>${repoCounts[repo]}</td><td>${rg}</td><td>${rsr}</td></tr>`;
+      });
+      const repoTable = '<table class="annex-table">' + repoRows + '</table>';
+      renderAnnexTable(
+        document.getElementById('annex-table-repos'),
+        '',
+        repoTable,
+        'Note: repository mix is fixed by SWE-Bench Pro public split composition.'
+      );
+
+      const perRowsHeader =
+        '<tr>' +
+        '<th>Instance</th><th>Repo</th><th>Outcome</th>' +
+        '<th>$ GPT-5</th><th>$ S4.5</th>' +
+        '<th>Steps GPT-5</th><th>Steps S4.5</th>' +
+        '<th>Input GPT-5</th><th>Input S4.5</th>' +
+        '<th>Out GPT-5</th><th>Out S4.5</th>' +
+        '<th>Patch GPT-5</th><th>Patch S4.5</th>' +
+        '</tr>';
+
+      const sorted = [...pairs].sort((a, b) => a.instance_id.localeCompare(b.instance_id));
+      let perRows = perRowsHeader;
+      sorted.forEach(p => {
+        const oc = outcomeOf(p);
+        const ocLabel = oc === 'both' ? '✓✓' : oc === 'gpt5-only' ? '✓✗' : oc === 'sonnet-only' ? '✗✓' : '✗✗';
+        const shortId = p.instance_id.replace('instance_', '');
+        perRows += '<tr>' +
+          `<td title="${shortId}">${shortId}</td>` +
+          `<td>${p.repo}</td>` +
+          `<td>${ocLabel}</td>` +
+          `<td>${fmtD(p.gpt5.model_stats.instance_cost)}</td>` +
+          `<td>${fmtD(p.claude.model_stats.instance_cost)}</td>` +
+          `<td>${p.gpt5.steps}</td>` +
+          `<td>${p.claude.steps}</td>` +
+          `<td>${fmt(p.gpt5.model_stats.tokens_sent)}</td>` +
+          `<td>${fmt(p.claude.model_stats.tokens_sent)}</td>` +
+          `<td>${fmt(p.gpt5.output_tokens.total)}</td>` +
+          `<td>${fmt(p.claude.output_tokens.total)}</td>` +
+          `<td>${fmt(p.gpt5.patch_chars)}</td>` +
+          `<td>${fmt(p.claude.patch_chars)}</td>` +
+        '</tr>';
+      });
+      const perTable = `<div class="annex-scroll"><table class="annex-table">${perRows}</table></div>`;
+      renderAnnexTable(
+        document.getElementById('annex-table-instances'),
+        '',
+        perTable,
+        'Note: this includes all paired submitted instances with raw per-instance comparison values.'
+      );
     })
     .catch(() => {
-      ['ratio-summary', 'ratio-cost', 'ratio-tokens-total', 'ratio-time'].forEach(id => {
+      [
+        'ratio-summary', 'ratio-cost', 'ratio-tokens-total', 'ratio-time',
+        'annex-ratio-input', 'annex-ratio-output', 'annex-ratio-steps',
+        'annex-table-cost', 'annex-table-tokens', 'annex-table-actions',
+        'annex-table-exec', 'annex-table-repos', 'annex-table-instances'
+      ].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.innerHTML = '<p class="ratio-muted">Failed to load chart data.</p>';
       });
