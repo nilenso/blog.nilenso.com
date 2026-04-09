@@ -1,3 +1,6 @@
+- title: "Checking my model vibes against SWE-Bench Pro"
+  description: "I thought GPT models felt slow and token hungry, and Claude models were faster. I was wrong."
+
 - title: "Feature Platforms: The Underrated Infrastructure Layer Behind Fast ML Teams"
   description: "How we enabled data scientists to author and deploy features in days instead of weeks."
 
