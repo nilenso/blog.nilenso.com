@@ -93,7 +93,7 @@ Some benchmark operators already publish this view. [SWE-rebench](https://swe-re
 
 So I built one from the public data. One important choice is in **pairing**: I compare each task only when both models submitted on that same instance, then compute Sonnet 4.5 / GPT-5 ratios per task and summarize those ratios. This keeps the comparison grounded because every ratio comes from the same task under the same harness setup. I analyzed October 2025 paired runs in SWE-Bench Pro, and I would like to run the same analysis on current leaderboard pairs like GPT-4 vs Opus-4.6 once comparable paired data is available.
 
-My vibes were off.
+My intuitions were wrong.
 
 ## High-level results
 
@@ -146,7 +146,7 @@ Caveats:
 
 ## Conclusion
 
-This post is a field report from publicly available trajectories. My vibes were off, I had been avoiding GPT models because they felt slow and token hungry. This SWE-Bench Pro slice shows a different operating profile, so I am now going to use GPT and Codex models more often.
+This SWE-Bench Pro slice is a signal, not a universal ranking. I do not expect October 2025 GPT-5 and Sonnet 4.5 behavior to generalize cleanly to newer model releases, but it is enough to challenge my default, so I will be trying GPT models more often now. The broader takeaway is to measure on your own use case with cost, token, and time data, and avoid decisions driven by timeline takes or out-of-context benchmark reporting.
 
 ## Annex: methodology and additional data
 
