@@ -507,17 +507,21 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 
 ### What changes when a maintainer enters the loop
 
+<p>Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>. A lot of those sessions are him working through GitHub issues one by one. Each session is one issue. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <em>go ahead</em>, and then there is a varied amount of steering before <em>wrap up</em>, which can mean shipping a fix, closing the issue, leaving a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
+
+<p>The simplest thing that changes is the length. On the benchmark, Sonnet 4.5 runs longer than GPT-5 (mean 77.5 steps vs 59.5). With Mario steering newer models, the ordering reverses: Opus 4.5/4.6 finishes in roughly half the steps of GPT-5.4 (30.9 vs 40.6). Same family fingerprint of "Claude moves faster," but in a much shorter overall run, and with the relative ordering against GPT inverted.</p>
+
 <div class="ts-lencmp">
-  <p class="ts-lencmp-kicker">A simpler view of the same contrast. Each row plots mean steps as the dot, p25&ndash;p75 as the bar, on a fixed 0&ndash;100 scale.</p>
+  <p class="ts-lencmp-kicker">Mean steps as the dot, p25&ndash;p75 as the bar, on a fixed 0&ndash;100 scale.</p>
 
   <div class="ts-lencmp-axis">
     <div></div>
     <div class="ts-lencmp-axis-track">
       <span class="ts-lencmp-axis-label start">0</span>
       <span class="ts-lencmp-axis-label" style="left:50%">50</span>
-      <span class="ts-lencmp-axis-label end">100 steps</span>
+      <span class="ts-lencmp-axis-label end">100</span>
     </div>
-    <div></div>
+    <div class="ts-lencmp-axis-unit">steps</div>
   </div>
 
   <div class="ts-lencmp-row">
@@ -592,28 +596,61 @@ Now I can say the same thing with data, and with a better sense of the nuances.
   align-items: center;
 }
 .ts-lencmp-axis {
-  margin: 0 0 2px 0;
+  margin: 0 0 8px 0;
 }
 .ts-lencmp-axis-track {
   position: relative;
-  height: 16px;
+  height: 24px;
+}
+.ts-lencmp-axis-track::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #c8c8c8;
 }
 .ts-lencmp-axis-label {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
   font-size: 11px;
+  line-height: 1;
   color: #9a9a9a;
   white-space: nowrap;
+}
+.ts-lencmp-axis-label::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 1px;
+  height: 7px;
+  background: #c8c8c8;
 }
 .ts-lencmp-axis-label.start {
   left: 0;
   transform: none;
 }
+.ts-lencmp-axis-label.start::after {
+  left: 0;
+}
 .ts-lencmp-axis-label.end {
   left: auto;
   right: 0;
   transform: none;
+}
+.ts-lencmp-axis-label.end::after {
+  left: auto;
+  right: 0;
+}
+.ts-lencmp-axis-unit {
+  align-self: end;
+  padding-bottom: 1px;
+  font-size: 11px;
+  color: #9a9a9a;
+  font-style: italic;
 }
 .ts-lencmp-row {
   margin: 10px 0;
@@ -677,9 +714,7 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 }
 </style>
 
-<p>Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>. A lot of those sessions are him working through GitHub issues one by one. Each session is one issue. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <u>go ahead</u>, and then there is a varied amount of steering before <u>wrap up</u>, which can mean shipping a fix, closing the issue, leaving a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
-
-<p>I ran a similar tool-call classification on these sessions and paired each model with its closest benchmark baseline from above. Two things change at once between the benchmark and the Pi panels, so any shape difference is a mix of the two: I am looking at <strong>newer models</strong> (Opus 4.5/4.6 from February instead of Sonnet 4.5 from October; GPT-5.4 instead of GPT-5) <strong>with a maintainer in the loop</strong> instead of an agent on its own. The bars below each Pi panel show where Mario sends his messages during the run; the labels mark his <em>go ahead</em> and <em>wrap up</em> moments.</p>
+<p>The trajectory shape shifts too. Two things change at once between the benchmark and the Pi panels below, so any difference is a mix of the two: <strong>newer models</strong> (Opus 4.5/4.6 from February instead of Sonnet 4.5 from October; GPT-5.4 instead of GPT-5) <strong>with a maintainer in the loop</strong> instead of an agent on its own. The bars below each Pi panel show where Mario sends his messages during the run; the labels mark his <em>go ahead</em> and <em>wrap up</em> moments.</p>
 
 <div class="ts-pi-chart">
   <div id="ts-pi-panels"></div>
@@ -1017,20 +1052,7 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 
 Analysis code and data: [github.com/nilenso/swe-bench-pro-cost-token-time-analysis](https://github.com/nilenso/swe-bench-pro-cost-token-time-analysis).
 
-### 1. Trajectory lengths
-
-<p style="font-style:italic;color:#555;margin:0 0 14px 0">Median trajectory length varies from 53 to 78 steps (GPT-5 vs. Sonnet 4.5). The longest trajectories take ~1.5x more steps per task.</p>
-<div style="margin:0 0 18px 0;padding-top:8px">
-  <div style="display:flex;align-items:center;margin:5px 0"><span style="width:110px;font-size:12px;color:#555;text-align:right;padding-right:10px">Sonnet 4.5</span><div style="position:relative;flex:1;height:28px;max-width:500px;overflow:visible"><div style="position:absolute;left:52.3%;width:39.4%;top:11px;height:6px;background:#b8785e;opacity:0.3;border-radius:2px"></div><div style="position:absolute;left:75.0%;top:8px;width:12px;height:12px;background:#b8785e;border-radius:50%;margin-left:-6px"></div><span style="position:absolute;left:75.0%;top:-16px;font-size:12px;font-weight:600;color:#b8785e;transform:translateX(-50%)">78</span></div><span style="font-size:10px;color:#aaa;padding-left:8px">63&ndash;89</span></div>
-  <div style="display:flex;align-items:center;margin:5px 0"><span style="width:110px;font-size:12px;color:#555;text-align:right;padding-right:10px">GPT-5</span><div style="position:relative;flex:1;height:28px;max-width:500px;overflow:visible"><div style="position:absolute;left:8.3%;width:63.6%;top:11px;height:6px;background:#6a8da8;opacity:0.3;border-radius:2px"></div><div style="position:absolute;left:37.1%;top:8px;width:12px;height:12px;background:#6a8da8;border-radius:50%;margin-left:-6px"></div><span style="position:absolute;left:37.1%;top:-16px;font-size:12px;font-weight:600;color:#6a8da8;transform:translateX(-50%)">53</span></div><span style="font-size:10px;color:#aaa;padding-left:8px">34&ndash;76</span></div>
-  <div style="display:flex;align-items:center;margin:6px 0 0 110px;font-size:11px;color:#888;gap:14px"><span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#999;vertical-align:middle"></span> median</span><span><span style="display:inline-block;width:16px;height:5px;background:#999;opacity:0.3;border-radius:1px;vertical-align:middle"></span> p25&ndash;p75</span></div>
-</div>
-
-<div style="display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px"><table style="border-collapse:collapse;width:100%;min-width:700px;font-size:0.9rem;margin-bottom:0"><thead><tr><th style="text-align:left">model</th><th style="text-align:left">n</th><th style="text-align:left">total_steps</th><th style="text-align:left">avg</th><th style="text-align:left">median</th><th style="text-align:left">p25</th><th style="text-align:left">p75</th><th style="text-align:left">min</th><th style="text-align:left">max</th><th style="text-align:left">resolved</th><th style="text-align:left">resolve_rate</th></tr></thead><tbody><tr><td>claude45</td><td>730</td><td>56548</td><td>77.5</td><td>78.0</td><td>63</td><td>89</td><td>2</td><td>215</td><td>319</td><td>43.7%</td></tr><tr><td>gpt5</td><td>730</td><td>43404</td><td>59.5</td><td>53.0</td><td>34</td><td>76</td><td>2</td><td>251</td><td>265</td><td>36.3%</td></tr></tbody></table></div>
-
-<div class="notes"><p>Summary statistics for trajectory length (number of action-observation steps per task).</p><p><strong>n</strong>: trajectories (one per task instance).</p><p><strong>total_steps</strong>: sum of all steps across all trajectories for this model.</p><p><strong>avg / median / p25 / p75 / min / max</strong>: distribution of steps per trajectory.</p><p><strong>resolved</strong>: trajectories where the submitted patch fixes the failing tests (from <code>agent_runs_data.csv</code>).</p><p><strong>resolve_rate</strong>: resolved / n.</p></div>
-
-### 2. High-level action frequencies
+### 1. High-level action frequencies
 
 Even if we ignore _when_ actions happen and just count _what_ the models spend their steps on, the same signature shows up. GPT-5 spends much more of its trajectory reading, while Sonnet 4.5 spends much more of it verifying. That makes the difference in the trajectory-shape chart feel less like a visual artefact and more like a stable workflow habit.
 
@@ -1205,7 +1227,7 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 
 <div class="ts-ref" markdown="1">
 
-### 3. Intent Classification Taxonomy
+### 2. Intent Classification Taxonomy
 
 <p style="margin:0 0 8px 0">The benchmark charts above and the Pi / Mario charts later in the post use the same high-level taxonomy, but not always the same raw labels. So this annex merges both into one deterministic reference table. Raw labels stay in monospace under each intent class so chart clicks can still land on the exact label.</p>
 <div style="font-size:12px;color:#444;background:#f5f1e4;border-left:3px solid #c8b88a;padding:10px 14px;margin:10px 0 16px 0;line-height:1.55;max-width:980px"><p style="margin:0 0 4px 0"><strong>How to read this table</strong>:</p><ul style="margin:4px 0 0 18px;padding:0"><li><strong>Both sides are deterministic.</strong> No model inference is used in either taxonomy.</li><li><strong>Rows are merged by intent class.</strong> If SWE-Agent and Pi use the same raw label, it appears once. If they use different labels for the same kind of action, both labels appear under the same row with <code>SWE</code> / <code>Pi</code> badges.</li><li><strong>Blank counts mean no separate label on that side.</strong> For example, Pi has no distinct <code>insert-source</code> bucket, while Pi adds git workflow labels like <code>git-github-context</code> and <code>git-publish</code>.</li><li><strong>Counts are per dataset.</strong> The left pair is the SWE-Agent benchmark set (Sonnet&nbsp;4.5, GPT-5). The right pair is the Pi reference set (Opus&nbsp;4.5/4.6, GPT-5.4).</li></ul></div>
@@ -1653,7 +1675,7 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 
 </div>
 
-### 4. Mario's analysis prompt {#mario-analysis-prompt}
+### 3. Mario's analysis prompt {#mario-analysis-prompt}
 
 Every Pi session in the analyzed set kicks off with this prompt. The `<issue-number>` is filled in per session; Mario steers from there.
 
