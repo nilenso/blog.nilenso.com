@@ -513,7 +513,7 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 
 <p>Luckily, he works through GitHub issues methodically. Each session is one issue, and one model. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <em>go ahead</em>, there is a varied amount of steering to address it, and then he wraps up explicitly to ship a fix, close the issue, leave a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
 
-<p>While the issue fixes make for similar trajectories to SWE Bench Pro, I&rsquo;m still changing the models, harness, and adding a maintainer, so this is <em>not</em> exactly an apples-to-apples comparison. That said, the observations from the previous section still hold. The bars below each Pi panel show steering messages during the run; the labels mark Mario&rsquo;s <em>go ahead</em> and <em>wrap up</em> moments (<button type="button" class="ts-pi-git-toggle" aria-pressed="true">hide git</button>).</p>
+<p>While the issue fixes make for similar trajectories to SWE Bench Pro, I&rsquo;m still changing the models, harness, and adding a maintainer, so this is <em>not</em> exactly an apples-to-apples comparison. To keep the trajectory-shape comparison closer to the benchmark, the Pi panels below use only the strict single-model sessions whose final title starts with <code>Issue:</code>. That said, the observations from the previous section still hold. The bars below each Pi panel show steering messages during the run; the labels mark Mario&rsquo;s <em>go ahead</em> and <em>wrap up</em> moments (<button type="button" class="ts-pi-git-toggle" aria-pressed="true">hide git</button>).</p>
 
 <div class="ts-pi-chart" data-model="claude-opus-4-5-6">
   <div class="ts-pi-panels"></div>
@@ -1305,7 +1305,8 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 ### 2. Intent Classification Taxonomy
 
 <p style="margin:0 0 8px 0">The benchmark charts above and the Pi / Mario charts later in the post use the same high-level taxonomy, but not always the same raw labels. So this annex merges both into one deterministic reference table. Raw labels stay in monospace under each intent class so chart clicks can still land on the exact label.</p>
-<div style="font-size:12px;color:#444;background:#f5f1e4;border-left:3px solid #c8b88a;padding:10px 14px;margin:10px 0 16px 0;line-height:1.55;max-width:980px"><p style="margin:0 0 4px 0"><strong>How to read this table</strong>:</p><ul style="margin:4px 0 0 18px;padding:0"><li><strong>Both sides are deterministic.</strong> No model inference is used in either taxonomy.</li><li><strong>Rows are merged by intent class.</strong> If SWE-Agent and Pi use the same raw label, it appears once. If they use different labels for the same kind of action, both labels appear under the same row with <code>SWE</code> / <code>Pi</code> badges.</li><li><strong>Blank counts mean no separate label on that side.</strong> For example, Pi has no distinct <code>insert-source</code> bucket, while Pi adds git workflow labels like <code>git-github-context</code> and <code>git-publish</code>.</li><li><strong>Counts are per dataset.</strong> The left pair is the SWE-Agent benchmark set (Sonnet&nbsp;4.5, GPT-5). The right pair is the Pi reference set (Opus&nbsp;4.5/4.6, GPT-5.4).</li></ul></div>
+<p style="margin:0 0 8px 0">Unlike the trajectory-shape panels, which use the stricter issue-only Pi subset, the Pi counts in this annex use the broader <strong>all strict single-model sessions</strong> cut: <strong>171</strong> analysed Opus 4.5/4.6 trajectories and <strong>133</strong> analysed GPT-5.4 trajectories. The benchmark side remains the full SWE-Bench Pro pair with <strong>730 trajectories per model</strong>.</p>
+<div style="font-size:12px;color:#444;background:#f5f1e4;border-left:3px solid #c8b88a;padding:10px 14px;margin:10px 0 16px 0;line-height:1.55;max-width:980px"><p style="margin:0 0 4px 0"><strong>How to read this table</strong>:</p><ul style="margin:4px 0 0 18px;padding:0"><li><strong>Both sides are deterministic.</strong> No model inference is used in either taxonomy.</li><li><strong>Rows are merged by intent class.</strong> If SWE-Agent and Pi use the same raw label, it appears once. If they use different labels for the same kind of action, both labels appear under the same row with <code>SWE</code> / <code>Pi</code> badges.</li><li><strong>Blank counts mean no separate label on that side.</strong> For example, Pi has no distinct <code>insert-source</code> bucket, while Pi adds git workflow labels like <code>git-github-context</code> and <code>git-publish</code>.</li><li><strong>Counts are per dataset.</strong> The left pair is the SWE-Agent benchmark set (730 Sonnet&nbsp;4.5 trajectories, 730 GPT-5 trajectories). The right pair is the all-single-model Pi set (171 Opus&nbsp;4.5/4.6 trajectories, 133 GPT-5.4 trajectories).</li><li><strong>The trajectory-shape panels are narrower.</strong> Earlier Pi charts stay on the issue-only subset because that keeps the comparison closer to the benchmark&rsquo;s issue-fix workflow.</li></ul></div>
 <div class="scroll"><table>
 <colgroup>
 <col style="width:20%" />
@@ -1320,13 +1321,13 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 <th rowspan="2" style="text-align:left">intent class</th>
 <th rowspan="2" style="text-align:left">description</th>
 <th colspan="2">SWE-Agent</th>
-<th colspan="2">Pi</th>
+<th colspan="2">Pi (all single-model)</th>
 </tr>
 <tr class="bottom">
-<th class="num claude-head">Sonnet 4.5</th>
-<th class="num gpt-head">GPT-5</th>
-<th class="num claude-head">Opus 4.5/4.6</th>
-<th class="num gpt-head">GPT-5.4</th>
+<th class="num claude-head">Sonnet 4.5<br><span style="font-weight:400;color:#888">730 trajs</span></th>
+<th class="num gpt-head">GPT-5<br><span style="font-weight:400;color:#888">730 trajs</span></th>
+<th class="num claude-head">Opus 4.5/4.6<br><span style="font-weight:400;color:#888">171 trajs</span></th>
+<th class="num gpt-head">GPT-5.4<br><span style="font-weight:400;color:#888">133 trajs</span></th>
 </tr>
 </thead>
 <tbody>
@@ -1335,414 +1336,355 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 <td class="desc">SWE: <code>str_replace_editor view &lt;file&gt;</code> after test/config/range/truncation cases are ruled out. Pi: whole-file <code>read(path)</code>.</td>
 <td class="num claude">3,125</td>
 <td class="num gpt">5,020</td>
-<td class="num claude">126</td>
-<td class="num gpt">635</td>
+<td class="num claude">455</td><td class="num gpt">803</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-file-range"></span><div class="slot-title">View a specific range</div><div class="slot-labels"><div><code>read-file-range</code></div></div></td>
 <td class="desc">SWE uses <code>--view_range</code>; Pi uses <code>read(path, offset, limit)</code>.</td>
 <td class="num claude">5,974</td>
 <td class="num gpt">5,997</td>
-<td class="num claude">155</td>
-<td class="num gpt">413</td>
+<td class="num claude">524</td><td class="num gpt">546</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-file-full(truncated)"></span><div class="slot-title">Whole-file read, but truncated</div><div class="slot-labels"><div><code>read-file-full(truncated)</code></div></div></td>
 <td class="desc">File was too large to show in full; the read/view output was abbreviated.</td>
 <td class="num claude">198</td>
 <td class="num gpt">245</td>
-<td class="num claude">30</td>
-<td class="num gpt">79</td>
+<td class="num claude">119</td><td class="num gpt">109</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-config-file"></span><div class="slot-title">Read a config / manifest file</div><div class="slot-labels"><div><code>read-config-file</code></div></div></td>
 <td class="desc">Filename match such as <code>package.json</code>, <code>pytest.ini</code>, <code>setup.cfg</code>, <code>setup.py</code>, <code>go.mod</code>, <code>Makefile</code>, or <code>config.json</code>.</td>
 <td class="num claude">26</td>
 <td class="num gpt">206</td>
-<td class="num claude">4</td>
-<td class="num gpt">21</td>
+<td class="num claude">19</td><td class="num gpt">28</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-test-file"></span><div class="slot-title">Read a test file as a distinct class</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>read-test-file</code></div></div></td>
 <td class="desc">SWE-only filename match for <code>test_*</code>, <code>*_test.*</code>, or <code>conftest*</code>.</td>
 <td class="num claude">644</td>
 <td class="num gpt">635</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-via-bash"></span><div class="slot-title">Read via shell command</div><div class="slot-labels"><div><code>read-via-bash</code></div></div></td>
 <td class="desc">Shell read commands like <code>cat</code>, <code>head</code>, <code>tail</code>, <code>sed -n</code>, <code>nl</code>, or <code>awk</code>.</td>
 <td class="num claude">2,345</td>
 <td class="num gpt">2,974</td>
-<td class="num claude">19</td>
-<td class="num gpt">9</td>
+<td class="num claude">76</td><td class="num gpt">14</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-via-inline-script"></span><div class="slot-title">Read via inline snippet</div><div class="slot-labels"><div><code>read-via-inline-script</code></div></div></td>
 <td class="desc">Inline code does a pure read-and-print, e.g. <code>.read()</code>, <code>open(...,'r')</code>, or <code>readFileSync</code>, with no write.</td>
 <td class="num claude">76</td>
 <td class="num gpt">373</td>
-<td class="num claude">0</td>
-<td class="num gpt">8</td>
+<td class="num claude">0</td><td class="num gpt">10</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-view-directory"></span><div class="slot-title">Browse a directory through the editor interface</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>view-directory</code></div></div></td>
 <td class="desc">SWE-only: <code>str_replace_editor view</code> where the path has no extension, or the observation says “files and directories”.</td>
 <td class="num claude">1,137</td>
 <td class="num gpt">2,133</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#6f8da6"></span>search</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-list-directory"></span><div class="slot-title">List a directory from the shell</div><div class="slot-labels"><div><code>list-directory</code></div></div></td>
 <td class="desc">Directory / cwd inspection via <code>ls</code>, <code>tree</code>, or <code>pwd</code>.</td>
 <td class="num claude">843</td>
 <td class="num gpt">708</td>
-<td class="num claude">22</td>
-<td class="num gpt">4</td>
+<td class="num claude">85</td><td class="num gpt">11</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-search-keyword"></span><div class="slot-title">Search for a keyword / pattern</div><div class="slot-labels"><div><code>search-keyword</code></div></div></td>
 <td class="desc">Pattern search via <code>grep</code>, <code>rg</code>, or <code>ag</code>.</td>
 <td class="num claude">7,002</td>
 <td class="num gpt">6,499</td>
-<td class="num claude">165</td>
-<td class="num gpt">484</td>
+<td class="num claude">699</td><td class="num gpt">584</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-search-files-by-name"></span><div class="slot-title">Find files by name</div><div class="slot-labels"><div><code>search-files-by-name</code></div></div></td>
 <td class="desc"><code>find ... -name</code> without a grep / xargs content-search pipeline.</td>
 <td class="num claude">1,792</td>
 <td class="num gpt">49</td>
-<td class="num claude">13</td>
-<td class="num gpt">24</td>
+<td class="num claude">47</td><td class="num gpt">34</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-search-files-by-content"></span><div class="slot-title">Find files by content via find/grep pipelines</div><div class="slot-labels"><div><code>search-files-by-content</code></div></div></td>
 <td class="desc"><code>find ... -exec grep</code> or <code>find ... | xargs grep</code>.</td>
 <td class="num claude">3,254</td>
 <td class="num gpt">10</td>
-<td class="num claude">14</td>
-<td class="num gpt">2</td>
+<td class="num claude">25</td><td class="num gpt">2</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-inspect-file-metadata"></span><div class="slot-title">Inspect file metadata</div><div class="slot-labels"><div><code>inspect-file-metadata</code></div></div></td>
 <td class="desc">Metadata checks like <code>wc</code>, <code>file</code>, or <code>stat</code>.</td>
 <td class="num claude">246</td>
 <td class="num gpt">22</td>
-<td class="num claude">0</td>
-<td class="num gpt">54</td>
+<td class="num claude">4</td><td class="num gpt">58</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-check-version"></span><div class="slot-title">Check runtime / tool version</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>check-version</code></div></div></td>
 <td class="desc">Tiny version probes such as <code>--version</code>, <code>-V</code>, <code>sys.version</code>, or <code>node -v</code>.</td>
 <td class="num claude">6</td>
 <td class="num gpt">2</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-web-search"></span><div class="slot-title">Search the web</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>web-search</code></div></div></td>
 <td class="desc">Pi-only external lookup via the <code>brave-search</code> skill / <code>search.js</code>-style web search call.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">0</td>
-<td class="num gpt">5</td>
+<td class="num claude">2</td><td class="num gpt">5</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#b0956a"></span>reproduce</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-create-repro-script"></span><div class="slot-title">Create a repro artifact</div><div class="slot-labels"><div><code>create-repro-script</code></div></div></td>
 <td class="desc">Create a file whose name matches <code>repro*</code>, <code>reproduce*</code>, or <code>demo*</code>.</td>
 <td class="num claude">157</td>
 <td class="num gpt">463</td>
-<td class="num claude">0</td>
-<td class="num gpt">4</td>
+<td class="num claude">0</td><td class="num gpt">7</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-repro-script"></span><div class="slot-title">Run a repro artifact</div><div class="slot-labels"><div><code>run-repro-script</code></div></div></td>
 <td class="desc">Run a named <code>python</code>/<code>node</code>/<code>sh</code>/<code>bash</code>/<code>go run</code> script whose basename matches <code>repro*</code> / <code>reproduce*</code> / <code>demo*</code>.</td>
 <td class="num claude">375</td>
 <td class="num gpt">1,067</td>
-<td class="num claude">0</td>
-<td class="num gpt">3</td>
+<td class="num claude">0</td><td class="num gpt">7</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-inline-snippet"></span><div class="slot-title">Run a residual inline snippet</div><div class="slot-labels"><div><code>run-inline-snippet</code></div></div></td>
 <td class="desc">Inline <code>python -c</code>, <code>python - &lt;&lt;</code>, or <code>node -e</code> that did not match a more specific inline read/edit/verify pattern.</td>
 <td class="num claude">472</td>
 <td class="num gpt">193</td>
-<td class="num claude">1</td>
-<td class="num gpt">16</td>
+<td class="num claude">2</td><td class="num gpt">18</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#4a8a5a"></span>edit</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-edit-source"></span><div class="slot-title">Edit existing source</div><div class="slot-labels"><div><code>edit-source</code></div></div></td>
 <td class="desc">Source-file edit on a path that does <em>not</em> match test / repro / verify / check heuristics.</td>
 <td class="num claude">5,217</td>
 <td class="num gpt">4,983</td>
-<td class="num claude">190</td>
-<td class="num gpt">275</td>
+<td class="num claude">528</td><td class="num gpt">337</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-insert-source"></span><div class="slot-title">Insert into source</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>insert-source</code></div></div></td>
 <td class="desc">SWE-only <code>str_replace_editor insert</code> action.</td>
 <td class="num claude">12</td>
 <td class="num gpt">803</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-apply-patch"></span><div class="slot-title">Apply a patch blob</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>apply-patch</code></div></div></td>
 <td class="desc">SWE-only <code>applypatch</code> command path, mostly GPT-specific.</td>
 <td class="num claude">0</td>
 <td class="num gpt">94</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-create-file"></span><div class="slot-title">Create a new non-test file</div><div class="slot-labels"><div><code>create-file</code></div></div></td>
 <td class="desc">Create/write a file that does not match repro / test / verify / documentation filename heuristics.</td>
 <td class="num claude">595</td>
 <td class="num gpt">326</td>
-<td class="num claude">17</td>
-<td class="num gpt">39</td>
+<td class="num claude">38</td><td class="num gpt">52</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-edit-via-inline-script"></span><div class="slot-title">Edit via inline script</div><div class="slot-labels"><div><code>edit-via-inline-script</code></div></div></td>
 <td class="desc">Inline script reads a file, changes text via things like <code>.replace()</code> or <code>re.sub()</code>, then writes it back.</td>
 <td class="num claude">5</td>
 <td class="num gpt">245</td>
-<td class="num claude">0</td>
-<td class="num gpt">2</td>
+<td class="num claude">0</td><td class="num gpt">3</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-create-file-via-inline-script"></span><div class="slot-title">Create a file via inline script</div><div class="slot-labels"><div><code>create-file-via-inline-script</code></div></div></td>
 <td class="desc">Inline script writes a file with no prior read.</td>
 <td class="num claude">21</td>
 <td class="num gpt">41</td>
-<td class="num claude">0</td>
-<td class="num gpt">18</td>
+<td class="num claude">3</td><td class="num gpt">19</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#b56a50"></span>verify</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-test-suite"></span><div class="slot-title">Run a broad test suite</div><div class="slot-labels"><div><code>run-test-suite</code></div></div></td>
 <td class="desc">Broad runner commands such as <code>pytest</code>, <code>go test</code>, <code>npm test</code>, <code>jest</code>, <code>mocha</code>, <code>yarn test</code>, or <code>python -m unittest</code>.</td>
 <td class="num claude">5,942</td>
 <td class="num gpt">585</td>
-<td class="num claude">19</td>
-<td class="num gpt">2</td>
+<td class="num claude">45</td><td class="num gpt">2</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-test-specific"></span><div class="slot-title">Run targeted tests</div><div class="slot-labels"><div><code>run-test-specific</code></div></div></td>
 <td class="desc">Test command narrowed by <code>::</code>, <code>-k</code>, or an explicit file/filter target.</td>
 <td class="num claude">1,105</td>
 <td class="num gpt">370</td>
-<td class="num claude">1</td>
-<td class="num gpt">40</td>
+<td class="num claude">23</td><td class="num gpt">51</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-create-test-script"></span><div class="slot-title">Create a regression / test file</div><div class="slot-labels"><div><code>create-test-script</code></div></div></td>
 <td class="desc">Create a file such as <code>test_*</code>, <code>*test.py</code>, <code>*test.js</code>, or <code>*test.go</code>.</td>
 <td class="num claude">2,633</td>
 <td class="num gpt">18</td>
-<td class="num claude">1</td>
-<td class="num gpt">10</td>
+<td class="num claude">9</td><td class="num gpt">13</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-verify-script"></span><div class="slot-title">Run a named verify / check script</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>run-verify-script</code></div></div></td>
 <td class="desc">Run a named script whose basename contains <code>test_</code>, <code>verify</code>, <code>check</code>, <code>validate</code>, or <code>edge_case</code>.</td>
 <td class="num claude">3,420</td>
 <td class="num gpt">113</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-create-verify-script"></span><div class="slot-title">Create a named verify / check script</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>create-verify-script</code></div></div></td>
 <td class="desc">Create a file matching <code>verify*</code>, <code>check*</code>, or <code>validate*</code>.</td>
 <td class="num claude">321</td>
 <td class="num gpt">47</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-edit-test-or-repro"></span><div class="slot-title">Edit a test or repro file</div><div class="slot-labels"><div><code>edit-test-or-repro</code></div></div></td>
 <td class="desc">Edit a file whose path/name matches test / repro / verify / check heuristics.</td>
 <td class="num claude">712</td>
 <td class="num gpt">243</td>
-<td class="num claude">19</td>
-<td class="num gpt">48</td>
+<td class="num claude">47</td><td class="num gpt">60</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-custom-script"></span><div class="slot-title">Run a custom named script</div><div class="slot-labels"><div><code>run-custom-script</code></div></div></td>
 <td class="desc">Run a named <code>python</code>/<code>node</code>/<code>sh</code>/<code>bash</code>/<code>go</code> script that does not match repro/test/verify patterns.</td>
 <td class="num claude">476</td>
 <td class="num gpt">111</td>
-<td class="num claude">10</td>
-<td class="num gpt">17</td>
+<td class="num claude">31</td><td class="num gpt">28</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-syntax-check"></span><div class="slot-title">Syntax-only check</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>syntax-check</code></div></div></td>
 <td class="desc">Syntax / compile probes such as <code>py_compile</code>, <code>compileall</code>, or <code>node -c</code>.</td>
 <td class="num claude">183</td>
 <td class="num gpt">18</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-compile-build"></span><div class="slot-title">Build / compile / typecheck</div><div class="slot-labels"><div><code>compile-build</code></div></div></td>
 <td class="desc">Build-ish commands like <code>go build</code>, <code>go vet</code>, <code>make</code>, <code>tsc</code>, <code>npx tsc</code>, <code>npm run build</code>, <code>yarn build</code>; Pi also captures repo-native checks like <code>npm run check</code>, <code>biome</code>, <code>eslint</code>, or <code>tsgo</code>.</td>
 <td class="num claude">1,088</td>
 <td class="num gpt">41</td>
-<td class="num claude">84</td>
-<td class="num gpt">70</td>
+<td class="num claude">224</td><td class="num gpt">86</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-inline-verify"></span><div class="slot-title">Inline verify / assertion probe</div><div class="slot-labels"><div><code>run-inline-verify</code></div></div></td>
 <td class="desc">Inline <code>tsx</code>/<code>node</code>/<code>python</code> snippet that imports project code or runs ad hoc assertions / prints as a behavior check.</td>
 <td class="num claude">999</td>
 <td class="num gpt">696</td>
-<td class="num claude">5</td>
-<td class="num gpt">98</td>
+<td class="num claude">12</td><td class="num gpt">129</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#3a8a8a"></span>git</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-diff"></span><span class="anchor-target" id="intent-git-diff-review"></span><div class="slot-title">Review the current diff</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>git-diff</code></div><div><span class="label-tag tag-pi">Pi</span><code>git-diff-review</code></div></div></td>
 <td class="desc"><code>git diff</code> review of the current changes.</td>
 <td class="num claude">538</td>
 <td class="num gpt">23</td>
-<td class="num claude">10</td>
-<td class="num gpt">18</td>
+<td class="num claude">45</td><td class="num gpt">31</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-status-log"></span><span class="anchor-target" id="intent-git-repo-inspect"></span><div class="slot-title">Inspect repo state</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>git-status-log</code></div><div><span class="label-tag tag-pi">Pi</span><code>git-repo-inspect</code></div></div></td>
 <td class="desc">Local repo inspection such as <code>git status</code>, <code>git show</code>, <code>git log</code>; Pi also folds in things like <code>git branch</code> and <code>git worktree</code>.</td>
 <td class="num claude">652</td>
 <td class="num gpt">23</td>
-<td class="num claude">44</td>
-<td class="num gpt">186</td>
+<td class="num claude">281</td><td class="num gpt">274</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-stash"></span><span class="anchor-target" id="intent-git-local-state-change"></span><div class="slot-title">Change local repo state</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>git-stash</code></div><div><span class="label-tag tag-pi">Pi</span><code>git-local-state-change</code></div></div></td>
 <td class="desc">Mutating local git state. SWE only breaks out <code>git stash</code>; Pi groups a broader set like <code>git add</code>, <code>commit</code>, <code>stash</code>, <code>reset</code>, <code>checkout</code>, and <code>switch</code>.</td>
 <td class="num claude">28</td>
 <td class="num gpt">0</td>
-<td class="num claude">47</td>
-<td class="num gpt">63</td>
+<td class="num claude">201</td><td class="num gpt">80</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-github-context"></span><div class="slot-title">Read or update GitHub task context</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>git-github-context</code></div></div></td>
 <td class="desc">Pi-only GitHub workflow via <code>gh issue</code>, <code>gh pr</code>, or <code>gh api</code>.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">70</td>
-<td class="num gpt">325</td>
+<td class="num claude">382</td><td class="num gpt">389</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-sync-integrate"></span><div class="slot-title">Sync or integrate upstream changes</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>git-sync-integrate</code></div></div></td>
 <td class="desc">Pi-only integration work like <code>git fetch</code>, <code>pull</code>, <code>rebase</code>, <code>merge</code>, or <code>cherry-pick</code>.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">6</td>
-<td class="num gpt">18</td>
+<td class="num claude">63</td><td class="num gpt">26</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-publish"></span><div class="slot-title">Publish finished work</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>git-publish</code></div></div></td>
 <td class="desc">Pi-only publish step: <code>git push</code>.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">27</td>
-<td class="num gpt">30</td>
+<td class="num claude">71</td><td class="num gpt">33</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#7b8460"></span>housekeeping</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-file-cleanup"></span><div class="slot-title">General file cleanup</div><div class="slot-labels"><div><code>file-cleanup</code></div></div></td>
 <td class="desc">Filesystem cleanup / movement such as <code>rm</code>, <code>mv</code>, <code>cp</code>, or <code>chmod</code>.</td>
 <td class="num claude">1,554</td>
 <td class="num gpt">17</td>
-<td class="num claude">13</td>
-<td class="num gpt">8</td>
+<td class="num claude">25</td><td class="num gpt">17</td>
 </tr><tr>
-<td class="slot"><span class="anchor-target" id="intent-create-documentation"></span><div class="slot-title">Create documentation / summary artifact</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>create-documentation</code></div></div></td>
-<td class="desc">Create documentation-like files whose names match <code>*summary*</code>, <code>*readme*</code>, <code>*changes*</code>, or <code>*implementation*</code>.</td>
+<td class="slot"><span class="anchor-target" id="intent-create-documentation"></span><div class="slot-title">Create documentation / summary artifact</div><div class="slot-labels"><div><code>create-documentation</code></div></div></td>
+<td class="desc">Create documentation-like files whose names match <code>*summary*</code>, <code>*readme*</code>, <code>*changes*</code>, or <code>*implementation*</code>. In Pi this comes from the <code>write</code> tool using those doc-like filenames.</td>
 <td class="num claude">661</td>
 <td class="num gpt">2</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude">0</td><td class="num gpt">1</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-start-service"></span><div class="slot-title">Start a service or wait process</div><div class="slot-labels"><div><code>start-service</code></div></div></td>
 <td class="desc">Environment setup commands such as <code>redis-server</code>, <code>redis-cli</code>, <code>mongod</code>, or <code>sleep</code>.</td>
 <td class="num claude">26</td>
 <td class="num gpt">4</td>
-<td class="num claude">1</td>
-<td class="num gpt">2</td>
+<td class="num claude">1</td><td class="num gpt">3</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-install-deps"></span><div class="slot-title">Install dependencies</div><div class="slot-labels"><div><code>install-deps</code></div></div></td>
 <td class="desc">Package install / env setup such as <code>pip install</code>, <code>pip list</code>, <code>npm install</code>, <code>go get</code>, or <code>apt</code>.</td>
 <td class="num claude">20</td>
 <td class="num gpt">0</td>
-<td class="num claude">3</td>
-<td class="num gpt">0</td>
+<td class="num claude">18</td><td class="num gpt">0</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-check-tool-exists"></span><div class="slot-title">Check whether a tool exists</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>check-tool-exists</code></div></div></td>
 <td class="desc">Capability probe via <code>which</code> or <code>type</code>.</td>
 <td class="num claude">16</td>
 <td class="num gpt">2</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-tmux-session"></span><div class="slot-title">Manage a tmux / background session</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>tmux-session</code></div></div></td>
 <td class="desc">Pi-only <code>tmux</code> usage for long-running / detached processes.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">1</td>
-<td class="num gpt">11</td>
+<td class="num claude">1</td><td class="num gpt">11</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#a05050"></span>failed</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-search-keyword(failed)"></span><div class="slot-title">Search command failed at the shell level</div><div class="slot-labels"><div><code>search-keyword(failed)</code></div></div></td>
 <td class="desc">A <code>grep</code>/<code>find</code>-style search whose observation shows a shell-level error.</td>
 <td class="num claude">46</td>
 <td class="num gpt">2,748</td>
-<td class="num claude">0</td>
-<td class="num gpt">2</td>
+<td class="num claude">1</td><td class="num gpt">2</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-via-bash(failed)"></span><span class="anchor-target" id="intent-read-file-failed"></span><div class="slot-title">Read attempt failed</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>read-via-bash(failed)</code></div><div><span class="label-tag tag-pi">Pi</span><code>read-file-failed</code></div></div></td>
 <td class="desc">The attempted read failed: SWE on shell readers like <code>cat</code>/<code>head</code>/<code>sed</code>/<code>tail</code>/<code>ls</code>; Pi on the <code>read</code> tool itself (missing path, permission, etc.).</td>
 <td class="num claude">23</td>
 <td class="num gpt">994</td>
-<td class="num claude">1</td>
-<td class="num gpt">10</td>
+<td class="num claude">12</td><td class="num gpt">10</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-script(failed)"></span><div class="slot-title">Script run failed</div><div class="slot-labels"><div><code>run-script(failed)</code></div></div></td>
 <td class="desc"><code>python</code>/<code>node</code> execution whose observation shows a shell-level error.</td>
 <td class="num claude">47</td>
 <td class="num gpt">759</td>
-<td class="num claude">0</td>
-<td class="num gpt">6</td>
+<td class="num claude">0</td><td class="num gpt">8</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-run-test-suite(failed)"></span><div class="slot-title">Test-runner command failed</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>run-test-suite(failed)</code></div></div></td>
 <td class="desc">A test runner command whose observation shows a shell-level error.</td>
 <td class="num claude">6</td>
 <td class="num gpt">155</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-edit-source(failed)"></span><div class="slot-title">Source edit failed</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>edit-source(failed)</code></div></div></td>
 <td class="desc">Pi-only <code>edit</code> tool failure on a source file.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">1</td>
-<td class="num gpt">12</td>
+<td class="num claude">5</td><td class="num gpt">17</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-edit-test-or-repro(failed)"></span><div class="slot-title">Test / repro edit failed</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>edit-test-or-repro(failed)</code></div></div></td>
 <td class="desc">Pi-only <code>edit</code> tool failure on a test / repro / verification-support file.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">1</td>
-<td class="num gpt">8</td>
+<td class="num claude">2</td><td class="num gpt">8</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-bash-command(failed)"></span><div class="slot-title">Generic bash command failed</div><div class="slot-labels"><div><code>bash-command(failed)</code></div></div></td>
 <td class="desc">Residual failed shell command after the more specific failure buckets are ruled out.</td>
 <td class="num claude">32</td>
 <td class="num gpt">1,217</td>
-<td class="num claude">4</td>
-<td class="num gpt">9</td>
+<td class="num claude">11</td><td class="num gpt">14</td>
 </tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#888888"></span>other</td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-echo"></span><div class="slot-title">Echo / printf</div><div class="slot-labels"><div><code>echo</code></div></div></td>
 <td class="desc">Output-only commands like <code>echo</code> or <code>printf</code>.</td>
 <td class="num claude">140</td>
 <td class="num gpt">69</td>
-<td class="num claude">0</td>
-<td class="num gpt">1</td>
+<td class="num claude">8</td><td class="num gpt">10</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-bash-other"></span><div class="slot-title">Other unclassified bash</div><div class="slot-labels"><div><code>bash-other</code></div></div></td>
 <td class="desc">Final fallback for bash commands that matched no more specific rule.</td>
 <td class="num claude">928</td>
 <td class="num gpt">631</td>
-<td class="num claude">18</td>
-<td class="num gpt">36</td>
+<td class="num claude">79</td><td class="num gpt">66</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-fetch-url"></span><div class="slot-title">Fetch a URL / call an HTTP endpoint</div><div class="slot-labels"><div><span class="label-tag tag-pi">Pi</span><code>fetch-url</code></div></div></td>
 <td class="desc">Pi-only <code>curl</code> / HTTP request step.</td>
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
-<td class="num claude">15</td>
-<td class="num gpt">0</td>
+<td class="num claude">21</td><td class="num gpt">1</td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-submit"></span><div class="slot-title">Submit the patch</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>submit</code></div></div></td>
 <td class="desc">SWE-only terminal action whose first line starts with <code>submit</code>.</td>
 <td class="num claude">656</td>
 <td class="num gpt">537</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-empty"></span><div class="slot-title">Empty action / context-window exit</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>empty</code></div></div></td>
 <td class="desc">SWE-only blank action string, typically rate-limit or context-window exit.</td>
 <td class="num claude">770</td>
 <td class="num gpt">854</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-undo-edit"></span><div class="slot-title">Undo an editor change</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>undo-edit</code></div></div></td>
 <td class="desc">SWE-only <code>str_replace_editor undo_edit</code> action.</td>
 <td class="num claude">4</td>
 <td class="num gpt">39</td>
-<td class="num claude"><span class="na">—</span></td>
-<td class="num gpt"><span class="na">—</span></td>
+<td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
 </tr>
 </tbody>
 </table></div>
