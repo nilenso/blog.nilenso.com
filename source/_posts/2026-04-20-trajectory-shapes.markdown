@@ -260,253 +260,6 @@ If I were to condense the above to "vibes", I might say _"Claude starts editing 
 
 Now I can say the same thing with data, and with a better sense of the nuances.
 
-{% comment %}
-### Models have tool preferences
-
-<div class="ts-ic-chart">
-  <p class="ts-ic-desc">The tools provided in RLVR environments likely shape the tool preferences of models. Here are the various tools used per category, compared across <span class="ts-ic-model-sonnet">Sonnet 4.5</span> / <span class="ts-ic-model-gpt">GPT-5</span>.</p>
-  <div id="ts-intent-comparison-chart"></div>
-</div>
-
-<style>
-.ts-ic-chart { margin: 0.4rem 0 1.5rem; }
-.ts-ic-desc {
-  color: inherit;
-  font-size: 1em;
-  margin: 0 0 1.1rem;
-}
-.ts-ic-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-  max-width: 920px;
-  border: none !important;
-}
-.ts-ic-table thead,
-.ts-ic-table tbody,
-.ts-ic-table tr,
-.ts-ic-table th {
-  border: none !important;
-  box-shadow: none !important;
-}
-.ts-ic-table td {
-  box-shadow: none !important;
-}
-.ts-ic-table th {
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 400;
-  font-style: italic;
-  color: #777;
-}
-.ts-ic-table td {
-  padding: 0;
-}
-.ts-ic-row { border-bottom: 4px solid transparent; }
-.ts-ic-cat td {
-  padding: 20px 0 6px 0 !important;
-  font-size: 0.88rem;
-  font-style: italic;
-  color: #333;
-  text-align: left !important;
-}
-.ts-ic-name {
-  text-align: right !important;
-  padding-right: 12px !important;
-  color: #333;
-  white-space: nowrap;
-  width: 1%;
-  vertical-align: middle;
-  font-size: 0.88rem;
-}
-.ts-ic-link {
-  color: inherit;
-  text-decoration: none;
-}
-.ts-ic-link:hover,
-.ts-ic-link:focus-visible {
-  color: #5a7d9a;
-  text-decoration: underline;
-}
-.ts-ic-bars { padding: 2px 4px !important; max-width: 500px; }
-.ts-ic-bar-row {
-  display: flex;
-  align-items: center;
-  height: 12px;
-  gap: 3px;
-}
-.ts-ic-bar {
-  height: 12px;
-  border-radius: 0;
-  opacity: 0.88;
-  min-width: 2px;
-}
-.ts-ic-bar-val {
-  font-size: 0.72rem;
-  min-width: 26px;
-  line-height: 1;
-}
-.ts-ic-annotation {
-  width: 240px;
-  padding: 0 0 0 18px !important;
-  font-size: 0.82rem;
-  color: #666;
-  line-height: 1.45;
-  vertical-align: middle;
-  font-style: italic;
-  text-align: left !important;
-}
-.ts-ic-annotation-mobile {
-  font-size: 0.76rem;
-  color: #666;
-  line-height: 1.45;
-  font-style: italic;
-  text-align: left !important;
-  padding: 0 0 8px 0 !important;
-}
-.ts-ic-annotation code,
-.ts-ic-annotation-mobile code {
-  font-size: inherit;
-  background: transparent;
-  padding: 0;
-}
-.ts-ic-model-sonnet { color: #b8785e; }
-.ts-ic-model-gpt { color: #6a8da8; }
-@media (max-width: 640px) {
-  .ts-ic-title { font-size: 1.3rem; }
-  .ts-ic-desc { font-size: 1em; }
-  .ts-ic-table { max-width: 100%; }
-  .ts-ic-name { font-size: 0.8rem; white-space: nowrap; }
-  .ts-ic-cat td { font-size: 0.8rem; }
-  .ts-ic-bars { max-width: none; }
-  .ts-ic-bar-row { height: 11px; gap: 3px; }
-  .ts-ic-bar { height: 11px; }
-  .ts-ic-bar-val { font-size: 0.68rem; min-width: 22px; }
-}
-</style>
-
-<script>
-(function() {
-  var root = document.getElementById('ts-intent-comparison-chart');
-  if (!root) return;
-
-  var models = [
-    { key: 'sonnet', name: 'Sonnet 4.5', color: '#b8785e' },
-    { key: 'gpt', name: 'GPT-5', color: '#6a8da8' }
-  ];
-
-  var groups = [
-    {
-      name: 'read',
-      annotation: 'GPT-5 reads more across the board; the biggest gap is <code>view file</code> at 2.1×.',
-      rows: [
-        { intent: 'read-file-range', name: 'view lines (range)', values: { sonnet: 10.6, gpt: 13.8 } },
-        { intent: 'read-file-full', name: 'view file', values: { sonnet: 5.5, gpt: 11.6 } },
-        { intent: 'read-via-bash', name: 'cat / head / tail', values: { sonnet: 4.1, gpt: 6.9 } }
-      ]
-    },
-    {
-      name: 'search',
-      annotation: 'GPT-5 never uses <code>find</code>. It substitutes directory browsing (2.4× more) and leans harder on <code>grep</code>.',
-      rows: [
-        { intent: 'search-keyword', name: 'grep / ripgrep', values: { sonnet: 12.4, gpt: 15.0 } },
-        { intent: 'search-files-by-content', name: 'find | grep', values: { sonnet: 5.8, gpt: 0.0 } },
-        { intent: 'view-directory', name: 'view directory', values: { sonnet: 2.0, gpt: 4.9 } },
-        { intent: 'search-files-by-name', name: 'find by filename', values: { sonnet: 3.2, gpt: 0.1 } },
-        { intent: 'list-directory', name: 'ls / tree', values: { sonnet: 1.5, gpt: 1.6 } }
-      ]
-    },
-    {
-      name: 'edit',
-      annotation: 'Edit rates are close. Sonnet 4.5 does not do any <code>insert_at_line</code>; it prefers only <code>str_replace</code>.',
-      rows: [
-        { intent: 'edit-source', name: 'str_replace', values: { sonnet: 9.2, gpt: 11.5 } },
-        { intent: 'insert-source', name: 'insert_at_line', values: { sonnet: 0.0, gpt: 1.9 } }
-      ]
-    },
-    {
-      name: 'verify',
-      annotation: 'Sonnet 4.5 likes to write tests; GPT-5 does not. Sonnet also tries <code>go build</code> / <code>make</code> on Python codebases.',
-      rows: [
-        { intent: 'run-test-suite', name: 'pytest / go test (broad)', values: { sonnet: 10.5, gpt: 1.3 } },
-        { intent: 'run-verify-script', name: 'run verify script', values: { sonnet: 6.0, gpt: 0.3 } },
-        { intent: 'create-test-script', name: 'write test file', values: { sonnet: 4.7, gpt: 0.0 } },
-        { intent: 'run-test-specific', name: 'pytest -k / :: (targeted)', values: { sonnet: 2.0, gpt: 0.9 } },
-        { intent: 'compile-build', name: 'go build / make / tsc', values: { sonnet: 1.9, gpt: 0.1 } },
-        { intent: 'run-inline-verify', name: 'inline verify snippet', values: { sonnet: 1.8, gpt: 1.6 } }
-      ]
-    },
-    {
-      name: 'housekeeping',
-      annotation: 'Sonnet 4.5 creates <code>.md</code> files and throwaway scripts that it later needs to clean up.',
-      rows: [
-        { intent: 'file-cleanup', name: 'rm / mv / cp', values: { sonnet: 2.7, gpt: 0.0 } }
-      ]
-    }
-  ];
-
-  var maxVal = 0;
-  groups.forEach(function(group) {
-    group.rows.forEach(function(row) {
-      models.forEach(function(model) {
-        maxVal = Math.max(maxVal, row.values[model.key]);
-      });
-    });
-  });
-
-  function widthPct(value) {
-    return ((value / maxVal) * 100).toFixed(1) + '%';
-  }
-
-  function render() {
-    var isMobile = window.matchMedia('(max-width: 640px)').matches;
-    var html = '<table class="ts-ic-table"><tbody>';
-
-    var rowIdx = 0;
-    groups.forEach(function(group) {
-      html += '<tr class="ts-ic-cat"><td colspan="' + (isMobile ? '2' : '2') + '" style="text-align:left;font-style:italic">' + group.name + '</td></tr>';
-      if (isMobile) {
-        html += '<tr><td colspan="2" class="ts-ic-annotation-mobile">' + group.annotation + '</td></tr>';
-      }
-      group.rows.forEach(function(row, groupRowIdx) {
-        var rowHref = '#intent-' + row.intent;
-        html += '<tr class="ts-ic-row">' +
-          '<td class="ts-ic-name" style="text-align:right;padding-right:18px"><a class="ts-ic-link" href="' + rowHref + '" title="' + row.intent + '">' + row.name + '</a></td>' +
-          '<td class="ts-ic-bars">';
-
-        var best = Math.max.apply(null, models.map(function(model) { return row.values[model.key]; }));
-        models.forEach(function(model) {
-          var value = row.values[model.key];
-          var bold = value === best && best >= 0.3 ? 'font-weight:700;' : '';
-          html += '<div class="ts-ic-bar-row">' +
-            '<div class="ts-ic-bar" style="width:' + widthPct(value) + ';background:' + model.color + '"></div>' +
-            '<span class="ts-ic-bar-val" style="color:' + model.color + ';' + bold + '">' + value.toFixed(1) + '</span>' +
-          '</div>';
-        });
-
-        html += '</td>';
-        if (!isMobile && groupRowIdx === 0) {
-          html += '<td class="ts-ic-annotation" rowspan="' + group.rows.length + '">' + group.annotation + '</td>';
-        }
-        html += '</tr>';
-        rowIdx += 1;
-      });
-    });
-
-    html += '</tbody></table>';
-    root.innerHTML = html;
-  }
-
-  render();
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 120);
-  });
-})();
-</script>
-{% endcomment %}
-
 ### With newer models and a maintainer
 
 <p>I wanted to replicate this chart for Opus 4.6 and GPT-5.4, but the SWE Bench Pro trajectories (or any other SWE-agent trajectories) for them are unavailable. I then remembered that Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>, and downloaded them.</p>
@@ -916,9 +669,9 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 })();
 </script>
 
-### Why this method works?
+### Why compare trajectory shapes?
 
-<p>The simplest thing that changes is the length. On the benchmark, Sonnet 4.5 runs longer than GPT-5 (mean 77.5 steps vs 59.5). With Mario steering newer models, the ordering reverses: Opus 4.5/4.6 finishes in roughly half the steps of GPT-5.4 (30.9 vs 40.6). Same family fingerprint of &ldquo;Claude moves faster,&rdquo; but in a much shorter overall run, and with the relative ordering against GPT inverted.</p>
+<p>The normalization of trajectory lengths to 100% matches how these models are trained. An RL rollout has a defined start (the prompt) and a defined end (a submit, a push, a green suite). That bounded envelope is the unit the policy is rewarded inside. Fitting every trajectory to the same envelope is how you see what was trained into it. Notice the difference in trajectory lengths of these tasks:</p>
 
 <div class="ts-lencmp">
   <p class="ts-lencmp-kicker">Mean steps as the dot, p25&ndash;p75 as the bar, on a fixed 0&ndash;100 scale.</p>
@@ -1123,13 +876,113 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 }
 </style>
 
+<p>So, if you recognize these patterns in your agents, and they don't fit your task at hand, you could steer them accordingly.</p>
+
+<div class="ts-steer-wrap">
+  <table class="ts-steer-table">
+    <thead>
+      <tr>
+        <th>Behavior</th>
+        <th>Steering suggestion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Claude starts editing early</td>
+        <td>Ask for explicit analysis first.</td>
+      </tr>
+      <tr>
+        <td>Claude finishes implementation early</td>
+        <td>Ask it to verify before concluding.</td>
+      </tr>
+      <tr>
+        <td>Claude over-verifies after the last edit</td>
+        <td>Specify exact success criteria.</td>
+      </tr>
+      <tr>
+        <td>Claude leaves cleanup behind</td>
+        <td>Tell it not to create temporary docs or scripts.</td>
+      </tr>
+      <tr>
+        <td>GPT front-loads context gathering</td>
+        <td>Usually fine. Or narrow what context it should gather.</td>
+      </tr>
+      <tr>
+        <td>GPT is not verifying enough</td>
+        <td>Ask for red-green TDD.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+.ts-steer-wrap {
+  margin: 0.55rem 0 1.1rem;
+}
+.ts-steer-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.95rem;
+}
+.ts-steer-wrap .ts-steer-table th,
+.ts-steer-wrap .ts-steer-table td {
+  text-align: left !important;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e7e2db;
+}
+.ts-steer-table th {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: 600;
+}
+.ts-steer-table td:first-child,
+.ts-steer-table th:first-child {
+  width: 38%;
+}
+.ts-steer-table td:last-child,
+.ts-steer-table th:last-child {
+  width: 62%;
+}
+@media (max-width: 720px) {
+  .ts-steer-table,
+  .ts-steer-table thead,
+  .ts-steer-table tbody,
+  .ts-steer-table tr,
+  .ts-steer-table th,
+  .ts-steer-table td {
+    display: block;
+    width: 100%;
+  }
+  .ts-steer-table thead {
+    display: none;
+  }
+  .ts-steer-table tr {
+    border-bottom: 1px solid #e7e2db;
+    padding: 6px 0;
+  }
+  .ts-steer-table td {
+    text-align: left !important;
+    border-bottom: none;
+    padding: 4px 0;
+  }
+  .ts-steer-table td:first-child {
+    font-weight: 600;
+    color: #333;
+  }
+}
+</style>
+
 ## References
 
 Analysis code and data: [github.com/nilenso/swe-bench-pro-cost-token-time-analysis](https://github.com/nilenso/swe-bench-pro-cost-token-time-analysis).
 
 ### 1. High-level action frequencies
 
-Even if we ignore _when_ actions happen and just count _what_ the models spend their steps on, the same signature shows up. GPT-5 spends much more of its trajectory reading, while Sonnet 4.5 spends much more of it verifying. That makes the difference in the trajectory-shape chart feel less like a visual artefact and more like a stable workflow habit.
+On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ the models spend their steps on, the same signature shows up. GPT-5 spends much more of its trajectory reading, while Sonnet 4.5 spends much more of it verifying. That makes the difference in the trajectory-shape chart feel less like a visual artefact and more like a stable workflow habit.
 
 <div class="ts-hf-chart">
   <div id="ts-highfreq-chart"></div>
@@ -1302,7 +1155,253 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 
 <div class="ts-ref" markdown="1">
 
-### 2. Intent Classification Taxonomy
+### 2. Models have tool preferences
+
+<div class="ts-ic-chart">
+  <p class="ts-ic-desc">On SWE-bench Pro, the tools provided in the RLVR environment likely shape the tool preferences of models. Here are the various tools used per category, compared across <span class="ts-ic-model-sonnet">Sonnet 4.5</span> / <span class="ts-ic-model-gpt">GPT-5</span>. I wish I had SWE-bench Pro trajectories for Opus 4.6 and GPT-5.4. With the same tasks and harness, I could compare tool-call preferences, costs, latencies, and more.</p>
+  <div id="ts-intent-comparison-chart"></div>
+</div>
+
+<style>
+.ts-ic-chart { margin: 0.4rem 0 1.5rem; }
+.ts-ic-desc {
+  color: inherit;
+  font-size: 1em;
+  margin: 0 0 1.1rem;
+}
+.ts-ic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  max-width: 920px;
+  border: none !important;
+}
+.ts-ic-table thead,
+.ts-ic-table tbody,
+.ts-ic-table tr,
+.ts-ic-table th {
+  border: none !important;
+  box-shadow: none !important;
+}
+.ts-ic-table td {
+  box-shadow: none !important;
+}
+.ts-ic-table th {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: italic;
+  color: #777;
+}
+.ts-ic-table td {
+  padding: 0;
+}
+.ts-ic-row { border-bottom: 4px solid transparent; }
+.ts-ic-cat td {
+  padding: 20px 0 6px 0 !important;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: #333;
+  text-align: left !important;
+}
+.ts-ic-name {
+  text-align: right !important;
+  padding-right: 12px !important;
+  color: #333;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  font-size: 0.88rem;
+}
+.ts-ic-link {
+  color: inherit;
+  text-decoration: none;
+}
+.ts-ic-link:hover,
+.ts-ic-link:focus-visible {
+  color: #5a7d9a;
+  text-decoration: underline;
+}
+.ts-ic-bars { padding: 2px 4px !important; max-width: 500px; }
+.ts-ic-bar-row {
+  display: flex;
+  align-items: center;
+  height: 12px;
+  gap: 3px;
+}
+.ts-ic-bar {
+  height: 12px;
+  border-radius: 0;
+  opacity: 0.88;
+  min-width: 2px;
+}
+.ts-ic-bar-val {
+  font-size: 0.72rem;
+  min-width: 26px;
+  line-height: 1;
+}
+.ts-ic-annotation {
+  width: 240px;
+  padding: 0 0 0 18px !important;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.45;
+  vertical-align: middle;
+  font-style: italic;
+  text-align: left !important;
+}
+.ts-ic-annotation-mobile {
+  font-size: 0.76rem;
+  color: #666;
+  line-height: 1.45;
+  font-style: italic;
+  text-align: left !important;
+  padding: 0 0 8px 0 !important;
+}
+.ts-ic-annotation code,
+.ts-ic-annotation-mobile code {
+  font-size: inherit;
+  background: transparent;
+  padding: 0;
+}
+.ts-ic-model-sonnet { color: #b8785e; }
+.ts-ic-model-gpt { color: #6a8da8; }
+@media (max-width: 640px) {
+  .ts-ic-title { font-size: 1.3rem; }
+  .ts-ic-desc { font-size: 1em; }
+  .ts-ic-table { max-width: 100%; }
+  .ts-ic-name { font-size: 0.8rem; white-space: nowrap; }
+  .ts-ic-cat td { font-size: 0.8rem; }
+  .ts-ic-bars { max-width: none; }
+  .ts-ic-bar-row { height: 11px; gap: 3px; }
+  .ts-ic-bar { height: 11px; }
+  .ts-ic-bar-val { font-size: 0.68rem; min-width: 22px; }
+}
+</style>
+
+<script>
+(function() {
+  var root = document.getElementById('ts-intent-comparison-chart');
+  if (!root) return;
+
+  var models = [
+    { key: 'sonnet', name: 'Sonnet 4.5', color: '#b8785e' },
+    { key: 'gpt', name: 'GPT-5', color: '#6a8da8' }
+  ];
+
+  var groups = [
+    {
+      name: 'read',
+      annotation: 'GPT-5 reads more across the board; the biggest gap is <code>view file</code> at 2.1×.',
+      rows: [
+        { intent: 'read-file-range', name: 'view lines (range)', values: { sonnet: 10.6, gpt: 13.8 } },
+        { intent: 'read-file-full', name: 'view file', values: { sonnet: 5.5, gpt: 11.6 } },
+        { intent: 'read-via-bash', name: 'cat / head / tail', values: { sonnet: 4.1, gpt: 6.9 } }
+      ]
+    },
+    {
+      name: 'search',
+      annotation: 'GPT-5 never uses <code>find</code>. It substitutes directory browsing (2.4× more) and leans harder on <code>grep</code>.',
+      rows: [
+        { intent: 'search-keyword', name: 'grep / ripgrep', values: { sonnet: 12.4, gpt: 15.0 } },
+        { intent: 'search-files-by-content', name: 'find | grep', values: { sonnet: 5.8, gpt: 0.0 } },
+        { intent: 'view-directory', name: 'view directory', values: { sonnet: 2.0, gpt: 4.9 } },
+        { intent: 'search-files-by-name', name: 'find by filename', values: { sonnet: 3.2, gpt: 0.1 } },
+        { intent: 'list-directory', name: 'ls / tree', values: { sonnet: 1.5, gpt: 1.6 } }
+      ]
+    },
+    {
+      name: 'edit',
+      annotation: 'Edit rates are close. Sonnet 4.5 does not do any <code>insert_at_line</code>; it prefers only <code>str_replace</code>.',
+      rows: [
+        { intent: 'edit-source', name: 'str_replace', values: { sonnet: 9.2, gpt: 11.5 } },
+        { intent: 'insert-source', name: 'insert_at_line', values: { sonnet: 0.0, gpt: 1.9 } }
+      ]
+    },
+    {
+      name: 'verify',
+      annotation: 'Sonnet 4.5 likes to write tests; GPT-5 does not. Sonnet also tries <code>go build</code> / <code>make</code> on Python codebases.',
+      rows: [
+        { intent: 'run-test-suite', name: 'pytest / go test (broad)', values: { sonnet: 10.5, gpt: 1.3 } },
+        { intent: 'run-verify-script', name: 'run verify script', values: { sonnet: 6.0, gpt: 0.3 } },
+        { intent: 'create-test-script', name: 'write test file', values: { sonnet: 4.7, gpt: 0.0 } },
+        { intent: 'run-test-specific', name: 'pytest -k / :: (targeted)', values: { sonnet: 2.0, gpt: 0.9 } },
+        { intent: 'compile-build', name: 'go build / make / tsc', values: { sonnet: 1.9, gpt: 0.1 } },
+        { intent: 'run-inline-verify', name: 'inline verify snippet', values: { sonnet: 1.8, gpt: 1.6 } }
+      ]
+    },
+    {
+      name: 'housekeeping',
+      annotation: 'Sonnet 4.5 creates <code>.md</code> files and throwaway scripts that it later needs to clean up.',
+      rows: [
+        { intent: 'file-cleanup', name: 'rm / mv / cp', values: { sonnet: 2.7, gpt: 0.0 } }
+      ]
+    }
+  ];
+
+  var maxVal = 0;
+  groups.forEach(function(group) {
+    group.rows.forEach(function(row) {
+      models.forEach(function(model) {
+        maxVal = Math.max(maxVal, row.values[model.key]);
+      });
+    });
+  });
+
+  function widthPct(value) {
+    return ((value / maxVal) * 100).toFixed(1) + '%';
+  }
+
+  function render() {
+    var isMobile = window.matchMedia('(max-width: 640px)').matches;
+    var html = '<table class="ts-ic-table"><tbody>';
+
+    var rowIdx = 0;
+    groups.forEach(function(group) {
+      html += '<tr class="ts-ic-cat"><td colspan="' + (isMobile ? '2' : '2') + '" style="text-align:left;font-style:italic">' + group.name + '</td></tr>';
+      if (isMobile) {
+        html += '<tr><td colspan="2" class="ts-ic-annotation-mobile">' + group.annotation + '</td></tr>';
+      }
+      group.rows.forEach(function(row, groupRowIdx) {
+        var rowHref = '#intent-' + row.intent;
+        html += '<tr class="ts-ic-row">' +
+          '<td class="ts-ic-name" style="text-align:right;padding-right:18px"><a class="ts-ic-link" href="' + rowHref + '" title="' + row.intent + '">' + row.name + '</a></td>' +
+          '<td class="ts-ic-bars">';
+
+        var best = Math.max.apply(null, models.map(function(model) { return row.values[model.key]; }));
+        models.forEach(function(model) {
+          var value = row.values[model.key];
+          var bold = value === best && best >= 0.3 ? 'font-weight:700;' : '';
+          html += '<div class="ts-ic-bar-row">' +
+            '<div class="ts-ic-bar" style="width:' + widthPct(value) + ';background:' + model.color + '"></div>' +
+            '<span class="ts-ic-bar-val" style="color:' + model.color + ';' + bold + '">' + value.toFixed(1) + '</span>' +
+          '</div>';
+        });
+
+        html += '</td>';
+        if (!isMobile && groupRowIdx === 0) {
+          html += '<td class="ts-ic-annotation" rowspan="' + group.rows.length + '">' + group.annotation + '</td>';
+        }
+        html += '</tr>';
+        rowIdx += 1;
+      });
+    });
+
+    html += '</tbody></table>';
+    root.innerHTML = html;
+  }
+
+  render();
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 120);
+  });
+})();
+</script>
+
+
+### 3. Intent Classification Taxonomy {#intent-classification-taxonomy}
 
 <p style="margin:0 0 8px 0">The benchmark charts above and the Pi / Mario charts later in the post use the same high-level taxonomy, but not always the same raw labels. So this annex merges both into one deterministic reference table. Raw labels stay in monospace under each intent class so chart clicks can still land on the exact label.</p>
 <p style="margin:0 0 8px 0">Unlike the trajectory-shape panels, which use the stricter issue-only Pi subset, the Pi counts in this annex use the broader <strong>all strict single-model sessions</strong> cut: <strong>171</strong> analysed Opus 4.5/4.6 trajectories and <strong>133</strong> analysed GPT-5.4 trajectories. The benchmark side remains the full SWE-Bench Pro pair with <strong>730 trajectories per model</strong>.</p>
@@ -1692,7 +1791,7 @@ Even if we ignore _when_ actions happen and just count _what_ the models spend t
 
 </div>
 
-### 3. Mario's analysis prompt {#mario-analysis-prompt}
+### 4. Mario's analysis prompt {#mario-analysis-prompt}
 
 Every Pi session in the analyzed set kicks off with this prompt. The `<issue-number>` is filled in per session; Mario steers from there.
 
@@ -1717,7 +1816,7 @@ For each issue:
 Do NOT implement unless explicitly asked. Analyze and propose only.
 ```
 
-### 4. SWE-Agent issue-resolution prompt {#swe-agent-issue-resolution-prompt}
+### 5. SWE-Agent issue-resolution prompt {#swe-agent-issue-resolution-prompt}
 
 For comparison, the SWE-Agent setup used in SWE-bench Pro includes the following issue-resolution scaffold in its default prompt (<a href="https://github.com/SWE-agent/SWE-agent/blob/0f4f3bba990e01ca8460b9963abdcd89e38042f2/config/default.yaml#L21">source</a>):
 
