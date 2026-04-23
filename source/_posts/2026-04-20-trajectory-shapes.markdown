@@ -260,6 +260,7 @@ If I were to condense the above to "vibes", I might say _"Claude starts editing 
 
 Now I can say the same thing with data, and with a better sense of the nuances.
 
+{% comment %}
 ### Models have tool preferences
 
 <div class="ts-ic-chart">
@@ -504,12 +505,420 @@ Now I can say the same thing with data, and with a better sense of the nuances.
   });
 })();
 </script>
+{% endcomment %}
 
-### What changes when a maintainer enters the loop
+### With newer models and a maintainer
 
-<p>Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>. A lot of those sessions are him working through GitHub issues one by one. Each session is one issue. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <em>go ahead</em>, and then there is a varied amount of steering before <em>wrap up</em>, which can mean shipping a fix, closing the issue, leaving a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
+<p>I wanted to replicate this chart for Opus 4.6 and GPT-5.4, but the SWE Bench Pro trajectories (or any other SWE-agent trajectories) for them are unavailable. I then remembered that Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>, and downloaded them.</p>
 
-<p>The simplest thing that changes is the length. On the benchmark, Sonnet 4.5 runs longer than GPT-5 (mean 77.5 steps vs 59.5). With Mario steering newer models, the ordering reverses: Opus 4.5/4.6 finishes in roughly half the steps of GPT-5.4 (30.9 vs 40.6). Same family fingerprint of "Claude moves faster," but in a much shorter overall run, and with the relative ordering against GPT inverted.</p>
+<p>Luckily, he works through GitHub issues methodically. Each session is one issue, and one model. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <em>go ahead</em>, there is a varied amount of steering to address it, and then he wraps up explicitly to ship a fix, close the issue, leave a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
+
+<p>While the issue fixes make for similar trajectories to SWE Bench Pro, I&rsquo;m still changing the models, harness, and adding a maintainer, so this is <em>not</em> exactly an apples-to-apples comparison. That said, the observations from the previous section still hold. The bars below each Pi panel show steering messages during the run; the labels mark Mario&rsquo;s <em>go ahead</em> and <em>wrap up</em> moments (<button type="button" class="ts-pi-git-toggle" aria-pressed="true">hide git</button>).</p>
+
+<div class="ts-pi-chart" data-model="claude-opus-4-5-6">
+  <div class="ts-pi-panels"></div>
+</div>
+
+<p>My interpretation here is that the explicit analysis prompt is pushing the understand phase to be longer. The first edit is pushed from 35% to 47%. After that, there&rsquo;s a fair amount of steering, QA, critique, and validation, with verify + edit cycles, after which it wraps up. The push to verify in the <a href="#swe-agent-issue-resolution-prompt">SWE-agent prompt</a> causes the benchmark trajectory to go on longer, and is a fair bit redundant.</p>
+
+<div class="ts-pi-chart" data-model="gpt-5.4">
+  <div class="ts-pi-panels"></div>
+</div>
+
+<p>As with Claude, the analysis prompt makes GPT go on even longer, pushing the first edit from 50% to 63%. However, the edit duration has reduced significantly from 40% to 23%. I suspect this is a combination of the model upgrade and Mario&rsquo;s steering towards &ldquo;minimal&rdquo; and &ldquo;concise&rdquo; solutions.</p>
+
+<style>
+.ts-pi-chart { margin: 1rem 0 1.5rem; font-family: var(--font-serif); color: #333; }
+.ts-pi-git-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  vertical-align: baseline;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: #b5b5b5;
+}
+.ts-pi-git-toggle:hover,
+.ts-pi-git-toggle:focus-visible {
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+  outline: none;
+}
+.ts-pi-chart .ts-pi-panel { padding: 0; margin-bottom: 8px; }
+.ts-pi-chart .ts-pi-panel-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 2px; }
+.ts-pi-chart .ts-pi-model-tag { font-size: 13px; }
+.ts-pi-chart .ts-pi-model-tag.ts-pi-claude { color: #b8785e; }
+.ts-pi-chart .ts-pi-model-tag.ts-pi-gpt { color: #6a8da8; }
+.ts-pi-chart .ts-pi-side-label { font-size: 0.92rem; font-style: italic; margin: 0 0 4px; color: #222; }
+.ts-pi-chart .ts-pi-panel canvas + .ts-pi-side-label { margin-top: 14px; }
+.ts-pi-chart .ts-pi-panel-subhead { font-size: 0.82rem; color: #666; padding-left: 8px; }
+.ts-pi-chart canvas { display: block; width: 100%; }
+</style>
+
+<script>
+(function() {
+  var D = {"models":["gpt-5.4","claude-opus-4-5-6"],"model_display_names":{"gpt-5.4":"gpt-5.4","claude-opus-4-5-6":"Opus 4.5/4.6"},"resolve_rate":{"gpt-5.4":96.1,"claude-opus-4-5-6":98.0},"raw_single_model_counts":{"gpt-5.4":79,"claude-opus-4-5-6":49},"analyzed_counts":{"gpt-5.4":77,"claude-opus-4-5-6":49},"avg_phase":{"gpt-5.4":{"R":[0.0,0.07039473684210526,0.37521929824561406,0.5339912280701753,0.6486842105263159,0.5611842105263157,0.5839912280701754,0.5675438596491228,0.5063596491228071,0.5125,0.41600877192982455,0.37543859649122807,0.3651315789473685,0.3153508771929824,0.3497807017543859,0.3864035087719298,0.3267543859649123,0.21293859649122812,0.20548245614035093,0.12434210526315788],"S":[0.05372807017543859,0.3364035087719298,0.30855263157894736,0.3197368421052631,0.24057017543859646,0.3039473684210526,0.22412280701754383,0.20438596491228067,0.2236842105263158,0.18969298245614036,0.21206140350877192,0.15504385964912282,0.13486842105263158,0.1118421052631579,0.12214912280701756,0.11228070175438597,0.17149122807017544,0.11842105263157894,0.03837719298245614,0.10307017543859649],"P":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.013157894736842105,0.017543859649122806,0.013157894736842105,0.013157894736842105,0.006578947368421052],"E":[0.0,0.0,0.0,0.0,0.01293859649122807,0.009868421052631578,0.019736842105263157,0.023026315789473683,0.023903508771929826,0.06710526315789474,0.11710526315789474,0.19671052631578947,0.17324561403508773,0.23618421052631577,0.1475877192982456,0.10394736842105262,0.15460526315789477,0.2530701754385965,0.14846491228070177,0.07171052631578946],"V":[0.013157894736842105,0.0,0.0,0.010307017543859648,0.007017543859649123,0.029605263157894735,0.02850877192982456,0.07236842105263158,0.09692982456140352,0.11622807017543861,0.10087719298245615,0.14342105263157895,0.13706140350877194,0.1524122807017544,0.24013157894736842,0.23728070175438598,0.14100877192982456,0.12171052631578948,0.12061403508771931,0.03399122807017543],"G":[0.8410087719298246,0.5800438596491229,0.2978070175438597,0.09868421052631579,0.06578947368421052,0.0625,0.10416666666666667,0.08771929824561403,0.07236842105263158,0.0756578947368421,0.049342105263157895,0.07017543859649122,0.10416666666666667,0.11074561403508773,0.10855263157894737,0.09429824561403508,0.11293859649122806,0.2017543859649123,0.42894736842105263,0.6328947368421053],"H":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.010964912280701754,0.006578947368421052,0.0,0.013157894736842105,0.013157894736842105,0.006578947368421052,0.0043859649122807015,0.008771929824561403,0.021929824561403508,0.013157894736842105,0.007675438596491227,0.003289473684210526]},"claude-opus-4-5-6":{"R":[0.05927579365079364,0.13864087301587302,0.33878968253968256,0.4059523809523809,0.40190972222222215,0.3533730158730159,0.2631448412698413,0.3670634920634921,0.21205357142857142,0.3001736111111111,0.33998015873015874,0.24652777777777776,0.4154761904761904,0.22643849206349206,0.16041666666666668,0.1560019841269841,0.13219246031746032,0.11830357142857141,0.07361111111111111,0.15416666666666667],"S":[0.030257936507936508,0.2797619047619047,0.314484126984127,0.3531746031746032,0.3003472222222222,0.3219246031746032,0.3993055555555556,0.3162202380952381,0.2743055555555555,0.2585565476190476,0.1076388888888889,0.22743055555555558,0.03645833333333333,0.10491071428571429,0.0625,0.10267857142857144,0.09970238095238095,0.0974702380952381,0.06101190476190477,0.013020833333333334],"P":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"E":[0.0,0.0,0.020833333333333332,0.02628968253968254,0.049479166666666664,0.039285714285714285,0.06671626984126984,0.09305555555555556,0.1599702380952381,0.21319444444444446,0.1723214285714286,0.24851190476190477,0.2490079365079365,0.251984126984127,0.284375,0.2621527777777778,0.2027777777777778,0.1753472222222222,0.04811507936507936,0.028472222222222218],"V":[0.0,0.027777777777777776,0.0,0.01875,0.02951388888888889,0.021527777777777774,0.020833333333333332,0.014087301587301588,0.053323412698412696,0.11398809523809524,0.08492063492063491,0.09796626984126984,0.12296626984126985,0.20833333333333334,0.25486111111111115,0.20486111111111113,0.19379960317460318,0.1331845238095238,0.12038690476190476,0.040500992063492065],"G":[0.511656746031746,0.4444444444444444,0.1175595238095238,0.10208333333333335,0.052083333333333336,0.0625,0.041666666666666664,0.10416666666666667,0.109375,0.06944444444444445,0.020833333333333332,0.047619047619047616,0.03720238095238095,0.0625,0.10243055555555554,0.10416666666666667,0.2465277777777778,0.3090277777777778,0.578125,0.7270089285714286],"H":[0.0,0.0,0.0,0.020833333333333332,0.0,0.0,0.0,0.003472222222222222,0.003472222222222222,0.002976190476190476,0.010416666666666666,0.003472222222222222,0.024305555555555552,0.0,0.020833333333333332,0.020833333333333332,0.041666666666666664,0.020833333333333332,0.010416666666666666,0.013020833333333334]}},"first_edit_markers":{"gpt-5.4":{"median":62.9},"claude-opus-4-5-6":{"median":47.4}},"last_edit_markers":{"gpt-5.4":{"median":86.4},"claude-opus-4-5-6":{"median":81.0}},"intervention_markers":{"gpt-5.4":{"authorization":{"median":57.1},"closeout":{"median":84.2}},"claude-opus-4-5-6":{"authorization":{"median":36.4},"closeout":{"median":78.4}}},"steering_message_counts":{"gpt-5.4":[8,0,0,0,0,7,7,6,9,5,6,26,31,33,14,24,15,28,25,25],"claude-opus-4-5-6":[1,0,5,4,2,8,3,12,7,3,5,7,13,4,6,4,13,5,4,9]},"benchmark":{"pair_for_pi_model":{"gpt-5.4":"gpt5","claude-opus-4-5-6":"claude45"},"avg_phase":{"claude45":{"R":[0.13965804428767392,0.5430711682769297,0.39351317406872927,0.31465269983788496,0.2553399960807369,0.21945617254259225,0.21181093711957916,0.21168895500171228,0.2110572212424064,0.19806842677213043,0.20051559094768975,0.1793642381090942,0.17712783330067283,0.16911868043555298,0.16396103896103903,0.1530420806140971,0.15820105820105812,0.16958617133514256,0.22328205630674755,0.12071879880521874],"S":[0.8545120517342736,0.4448444369226261,0.5332993366943987,0.5029946238793981,0.4190492520739432,0.34011692468482574,0.2824930670609682,0.20299175371191833,0.1791625841008558,0.18367300280880539,0.18194051033557215,0.18411337557428095,0.18262459990855057,0.149003952913418,0.11701286824743626,0.12530874094660113,0.10201842053693913,0.09098896074204721,0.08937939061395857,0.043740610098634766],"P":[0.0,0.0008818342151675485,0.006287151348879743,0.023071989738656404,0.029877849630936048,0.03250375596054608,0.02614638447971781,0.0219952315631328,0.015262264027696128,0.01702593245803122,0.013694558756287153,0.014449016918152717,0.015928538768044943,0.01790286759422562,0.01697040956300216,0.018521784571167283,0.020257691553987846,0.023059964726631396,0.026399503559997383,0.024880789078319934],"E":[0.0,0.0003919263178522438,0.002573649487229734,0.013931347573322882,0.05153014566594815,0.13101888966086503,0.18962048468221301,0.25110125357038937,0.2435201515448428,0.21639231824417018,0.17680286106212031,0.1390086441526772,0.12761120909269055,0.09861247196638155,0.08757103664511078,0.07418947460099726,0.06837154614932399,0.05585820976767481,0.05525997779084202,0.013838265072832968],"V":[0.0,0.009037167679142987,0.05554753888087221,0.12699897267798513,0.20733718727545888,0.23276177411979873,0.2410787771898883,0.25338471922834066,0.28828630217519113,0.3290646025213925,0.3696681690508851,0.41042088531800486,0.4261561826376643,0.476058201058201,0.5076572604350388,0.489603065734753,0.47171108498268954,0.4319126994024112,0.3889408488173922,0.20793823993412486],"G":[0.0,0.00102880658436214,0.004686785550983082,0.007992030831537005,0.012499183486837807,0.016856097720295254,0.018525050623816056,0.028146841727088635,0.028907831994251752,0.025919393820628384,0.0208472140570906,0.02734398660324586,0.02034424194918022,0.020762296688222614,0.019935985368084132,0.019067215363511657,0.030472271213011954,0.03833365993859819,0.04405162738496069,0.017463138142150482],"H":[0.0,0.0,0.00027434842249657066,0.000533455265965554,0.0059246195048664185,0.006280619243582206,0.008093278463648835,0.009775295577764714,0.010379515317786922,0.01161734927167026,0.013296100333137368,0.01581422692533804,0.025961852505062378,0.04702789208962047,0.05469984976157815,0.0886047423084461,0.11258736690835462,0.16058527663465952,0.13651179638833966,0.08702471511113505]},"gpt5":{"R":[0.19023445775523332,0.5089693547449784,0.5474244822582772,0.5199558674627927,0.47560403200984935,0.424895714473277,0.4294093986961019,0.42423027880091596,0.3791168511390115,0.3559299733814969,0.3243217347441726,0.31330414353267527,0.30391658971991375,0.298754262050661,0.27372598162071854,0.2739288912072846,0.265446610945226,0.24181341511673926,0.24684193538071655,0.11937134502923975],"S":[0.6907071806310039,0.33964419314142313,0.2844133359715078,0.28030602822846595,0.28524930747922456,0.2956316882563421,0.26218296938518537,0.2560958316844745,0.25994866552345786,0.24186355734139658,0.22461188396091458,0.20993272655322512,0.17409972299168977,0.16964570517202088,0.19225585894560965,0.1646941816263147,0.14372785570846508,0.15838115024403113,0.15650301529802918,0.07873356637207055],"P":[0.0,0.0017313019390581717,0.006902123730378578,0.008953304313415116,0.01055269753330695,0.016258948807425264,0.029125445191927186,0.023199445983379502,0.025359451259728265,0.03386426592797783,0.03748845798707294,0.051873103812162,0.06019324627357869,0.07460262498351139,0.05767378973750166,0.09336664028492282,0.0937332366002726,0.10935617552653566,0.11361517829661873,0.0526167392164622],"E":[0.0,0.0012891540592371617,0.007763927362265311,0.018082878955455135,0.03804027612891878,0.06509889771662623,0.08648650134107198,0.11768836734210697,0.13826626974133893,0.15876140249408943,0.17682943403165005,0.2009044741039201,0.21356516290726815,0.20188029883320752,0.22395792111858578,0.20718043114164997,0.1964599497147973,0.18390768588137005,0.16304647184148563,0.08392087675328679],"V":[0.001654355186211142,0.003516466605109264,0.006499802136921249,0.00873730378578024,0.012628061381523985,0.015406388778964959,0.016533658708173946,0.028347183748845796,0.02584641428131733,0.028268038517345995,0.038256826276216856,0.04215692740623487,0.04836707998065338,0.0642945581657493,0.07607615530053208,0.08698510630643595,0.09825500753478589,0.13621388998812825,0.14525873095817698,0.0744168535373522],"G":[0.0,0.0,0.0,0.0004616805170821791,0.0,0.0,0.00017313019390581717,0.0001538935056940597,0.0,0.0,0.0,0.0,0.00047487138899881284,0.0008903838543727739,0.00042870333729059493,0.0025392428439519853,0.002123730378578024,0.0011014378050389132,0.001436705799586686,0.0013174383326737898],"H":[0.0,0.0,0.0,0.0,0.0,0.0012465373961218836,0.00034626038781163435,0.0,0.00019786307874950534,0.0,0.0004616805170821791,0.00034626038781163435,0.0016620498614958448,0.0,0.0,0.0011426592797783932,0.0010156971375807943,0.0008079409048938134,0.0015004616805170822,0.0006232686980609418]}},"first_edit_markers":{"claude45":{"median":34.6},"gpt5":{"median":49.5}},"last_edit_markers":{"claude45":{"median":61.9},"gpt5":{"median":89.4}},"resolve_rate":{"claude45":43.7,"gpt5":36.3},"model_display_names":{"claude45":"Sonnet 4.5","gpt5":"GPT-5"},"num_trajs":{"claude45":730,"gpt5":730}}};
+
+  var ORDER = D.models.slice().sort(function(a, b) {
+    return (D.resolve_rate[b] || -Infinity) - (D.resolve_rate[a] || -Infinity);
+  });
+  var TAG_CLASS = { 'claude-opus-4-5-6': 'ts-pi-claude', 'gpt-5.4': 'ts-pi-gpt' };
+  var FAMILY_LABEL = {
+    'claude-opus-4-5-6': 'Claude family',
+    'gpt-5.4': 'GPT family'
+  };
+  var GUIDED_MODEL_LABEL = {
+    'claude-opus-4-5-6': 'Opus 4.5/6',
+    'gpt-5.4': 'GPT-5.4'
+  };
+  var showGit = true;
+  var ALL_GROUPS = [
+    { name: 'understand', letters: ['R','S'], color: '#5a7d9a' },
+    { name: 'reproduce', letters: ['P'], color: '#b0956a' },
+    { name: 'edit', letters: ['E'], color: '#4a8a5a' },
+    { name: 'verify', letters: ['V'], color: '#b56a50' },
+    { name: 'git', letters: ['G'], color: '#8a7a5a' },
+    { name: 'cleanup', letters: ['H'], color: '#3a8a8a' }
+  ];
+
+  function getGroups() {
+    return ALL_GROUPS.filter(function(group) {
+      return showGit || group.name !== 'git';
+    });
+  }
+
+  function syncGitToggle() {
+    var btns = document.querySelectorAll('.ts-pi-git-toggle');
+    btns.forEach(function(btn) {
+      btn.textContent = showGit ? 'hide git' : 'show git';
+      btn.setAttribute('aria-pressed', showGit ? 'true' : 'false');
+    });
+  }
+
+  function bindGitToggle() {
+    var btns = document.querySelectorAll('.ts-pi-git-toggle');
+    btns.forEach(function(btn) {
+      if (btn.__tsPiBound) return;
+      btn.__tsPiBound = true;
+      btn.addEventListener('click', function() {
+        showGit = !showGit;
+        syncGitToggle();
+        render();
+      });
+    });
+    syncGitToggle();
+  }
+
+  function getCtx(canvas) {
+    var dpr = window.devicePixelRatio || 1;
+    var cssW = canvas.parentElement.clientWidth;
+    var cssH = canvas.height;
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    return { ctx: ctx, w: cssW, h: cssH };
+  }
+
+  function drawPanel(canvas, phaseData, opts) {
+    opts = opts || {};
+    var groups = opts.groups || ALL_GROUPS;
+    var got = getCtx(canvas);
+    var ctx = got.ctx, w = got.w, h = got.h;
+    var topMarkers = (opts.topMarkers || []).filter(Boolean);
+    var bottomMarkers = (opts.bottomMarkers || []).filter(Boolean);
+    var steeringCounts = opts.steeringCounts || null;
+    var hasSteering = steeringCounts && steeringCounts.some(function(v) { return v > 0; });
+    var left = 40, right = 18;
+    var top = topMarkers.length ? 34 : 28;
+    var bottomReserve = hasSteering ? 44 : (bottomMarkers.length ? 18 : 10);
+    var plotW = w - left - right;
+    var plotH = h - top - bottomReserve;
+    var bins = 20;
+    var sparkBaseY = top + plotH + 18;
+    var sparkH = 12;
+    var sparkTopY = sparkBaseY - sparkH;
+    var bottomLabelY = hasSteering ? (top + plotH + 38) : (h - 4);
+
+    function xPct(pct) { return left + (pct / 100) * plotW; }
+    function xAtBin(i) { return left + (i / (bins - 1)) * plotW; }
+    function xBinStart(i) { return left + (i / bins) * plotW; }
+    function xBinEnd(i) { return left + ((i + 1) / bins) * plotW; }
+
+    var groupVals = groups.map(function(g) {
+      var summed = new Array(bins).fill(0);
+      g.letters.forEach(function(l) {
+        var vals = phaseData[l] || [];
+        for (var b = 0; b < bins; b++) summed[b] += vals[b] || 0;
+      });
+      return summed;
+    });
+
+    var stacked = [];
+    var cumulative = new Array(bins).fill(0);
+    for (var gi = 0; gi < groups.length; gi++) {
+      var layer = groupVals[gi].map(function(v, i) { return cumulative[i] + v; });
+      stacked.push({ group: groups[gi], bottom: cumulative.slice(), top: layer });
+      cumulative = layer;
+    }
+    var maxes = cumulative;
+
+    function yAt(v, idx) {
+      var norm = maxes[idx] > 0 ? v / maxes[idx] : 0;
+      return top + plotH - norm * plotH;
+    }
+
+    ctx.fillStyle = '#6b7280';
+    ctx.font = '9px Charter, serif';
+    ctx.textAlign = 'center';
+    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+    ctx.lineWidth = 0.5;
+    [0,25,50,75].forEach(function(p) {
+      var x = xPct(p);
+      ctx.fillText(p + '%', x, top - 8);
+      ctx.beginPath();
+      ctx.moveTo(x, top - 3);
+      ctx.lineTo(x, top + 4);
+      ctx.stroke();
+    });
+
+    for (var s = stacked.length - 1; s >= 0; s--) {
+      var layer = stacked[s];
+      ctx.fillStyle = layer.group.color;
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      for (var i = 0; i < bins; i++) {
+        var x = xAtBin(i), y = yAt(layer.top[i], i);
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      for (var j = bins - 1; j >= 0; j--) ctx.lineTo(xAtBin(j), yAt(layer.bottom[j], j));
+      ctx.closePath();
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    if (topMarkers.length) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(0,0,0,0.28)';
+      ctx.lineWidth = 0.9;
+      ctx.setLineDash([4,4]);
+      topMarkers.forEach(function(mk) {
+        var x = xPct(mk.at);
+        ctx.beginPath();
+        ctx.moveTo(x, top - 12);
+        ctx.lineTo(x, top + plotH);
+        ctx.stroke();
+      });
+      ctx.restore();
+    }
+
+    if (bottomMarkers.length) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(0,0,0,0.28)';
+      ctx.lineWidth = 0.9;
+      ctx.setLineDash([4,4]);
+      bottomMarkers.forEach(function(mk) {
+        var x = xPct(mk.at);
+        ctx.beginPath();
+        ctx.moveTo(x, top);
+        ctx.lineTo(x, bottomLabelY - 12);
+        ctx.stroke();
+      });
+      ctx.restore();
+    }
+
+    var halfX = xPct(50);
+    ctx.strokeStyle = 'rgba(0,0,0,0.07)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3,3]);
+    ctx.beginPath();
+    ctx.moveTo(halfX, top);
+    ctx.lineTo(halfX, top + plotH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.strokeStyle = '#cfcfcf';
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(left, top + plotH);
+    ctx.lineTo(left + plotW, top + plotH);
+    ctx.stroke();
+
+    ctx.font = '10px Charter, serif';
+    ctx.textAlign = 'center';
+    topMarkers.forEach(function(mk) {
+      var x = xPct(mk.at);
+      var labelW = ctx.measureText(mk.name).width + 10;
+      ctx.fillStyle = 'rgba(255,255,255,0.94)';
+      ctx.fillRect(x - labelW / 2, top - 28, labelW, 12);
+      ctx.fillStyle = '#111';
+      ctx.fillText(mk.name, x, top - 19);
+    });
+
+    if (hasSteering) {
+      var maxCount = Math.max.apply(null, steeringCounts.concat([1]));
+      ctx.font = '10px Charter, serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#111';
+      ctx.fillText('Mario steering', left, sparkTopY + 8);
+      ctx.strokeStyle = 'rgba(0,0,0,0.16)';
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      ctx.moveTo(left, sparkBaseY + 0.5);
+      ctx.lineTo(left + plotW, sparkBaseY + 0.5);
+      ctx.stroke();
+      for (var bi = 0; bi < bins; bi++) {
+        var count = steeringCounts[bi] || 0;
+        var barH = maxCount > 0 ? (count / maxCount) * sparkH : 0;
+        var x0 = xBinStart(bi), x1 = xBinEnd(bi);
+        ctx.fillStyle = 'rgba(0,0,0,0.32)';
+        ctx.fillRect(x0, sparkBaseY - barH, Math.max(1, x1 - x0 - 0.6), barH);
+      }
+    }
+
+    ctx.font = '10px Charter, serif';
+    ctx.textAlign = 'center';
+    bottomMarkers.forEach(function(mk) {
+      var x = xPct(mk.at);
+      var labelW = ctx.measureText(mk.name).width + 10;
+      ctx.fillStyle = 'rgba(255,255,255,0.94)';
+      ctx.fillRect(x - labelW / 2, bottomLabelY - 9, labelW, 12);
+      ctx.fillStyle = '#111';
+      ctx.fillText(mk.name, x, bottomLabelY);
+    });
+
+    var placedLabels = [];
+    function rectsOverlap(a, b) {
+      return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
+    }
+
+    var layerLabels = stacked.map(function(L) {
+      var candidates = [];
+      for (var bb = 2; bb <= bins - 3; bb++) {
+        var hh = Math.abs(yAt(L.bottom[bb], bb) - yAt(L.top[bb], bb));
+        candidates.push({
+          bin: bb,
+          h: hh,
+          midY: (yAt(L.top[bb], bb) + yAt(L.bottom[bb], bb)) / 2
+        });
+      }
+      candidates.sort(function(a, b) { return b.h - a.h; });
+      return { layer: L, candidates: candidates, maxH: candidates.length ? candidates[0].h : 0 };
+    }).sort(function(a, b) {
+      return b.maxH - a.maxH;
+    });
+
+    ctx.fillStyle = '#fff';
+    ctx.globalAlpha = 0.85;
+    ctx.font = '10px Charter, serif';
+    ctx.textAlign = 'center';
+
+    layerLabels.forEach(function(item) {
+      if (item.maxH < 16) return;
+      var text = item.layer.group.name;
+      var labelW = ctx.measureText(text).width + 6;
+      for (var ci = 0; ci < Math.min(8, item.candidates.length); ci++) {
+        var cand = item.candidates[ci];
+        if (cand.h < 14) break;
+        var x = xAtBin(cand.bin);
+        var y = cand.midY + 4;
+        var rect = {
+          x: x - labelW / 2,
+          y: y - 8,
+          w: labelW,
+          h: 10
+        };
+        if (rect.x < left || rect.x + rect.w > left + plotW) continue;
+        var collides = placedLabels.some(function(prev) { return rectsOverlap(rect, prev); });
+        if (collides) continue;
+        ctx.fillText(text, x, y);
+        placedLabels.push(rect);
+        break;
+      }
+    });
+
+    ctx.globalAlpha = 1;
+  }
+
+  function render() {
+    syncGitToggle();
+    var activeGroups = getGroups();
+    var charts = document.querySelectorAll('.ts-pi-chart');
+    charts.forEach(function(chart) {
+      var root = chart.querySelector('.ts-pi-panels');
+      if (!root) return;
+      var filter = chart.getAttribute('data-model');
+      var modelsToRender = filter ? [filter] : ORDER;
+      root.innerHTML = '';
+      modelsToRender.forEach(function(model) {
+        var wrap = document.createElement('div');
+        wrap.className = 'ts-pi-panel';
+        var tagCls = TAG_CLASS[model] || '';
+        var title = FAMILY_LABEL[model] || D.model_display_names[model];
+        var benchmarkModel = D.benchmark.pair_for_pi_model[model];
+        var benchmarkName = D.benchmark.model_display_names[benchmarkModel] || benchmarkModel;
+        var benchmarkN = D.benchmark.num_trajs[benchmarkModel];
+        var rawN = D.raw_single_model_counts[model];
+        var guidedName = GUIDED_MODEL_LABEL[model] || D.model_display_names[model];
+
+        wrap.innerHTML =
+          '<div class="ts-pi-panel-header"><span class="ts-pi-model-tag ' + tagCls + '">' + title + '</span></div>' +
+          '<div class="ts-pi-side-label">swe-agent<span class="ts-pi-panel-subhead">' + benchmarkN + ' trajectories · ' + benchmarkName + '</span></div>' +
+          '<canvas height="173"></canvas>' +
+          '<div class="ts-pi-side-label">pi + mario<span class="ts-pi-panel-subhead">' + rawN + ' trajs · ' + guidedName + '</span></div>' +
+          '<canvas height="207"></canvas>';
+        root.appendChild(wrap);
+        var canvases = wrap.querySelectorAll('canvas');
+        drawPanel(canvases[0], D.benchmark.avg_phase[benchmarkModel], {
+          groups: activeGroups,
+          topMarkers: [
+            { name: 'first edit', at: D.benchmark.first_edit_markers[benchmarkModel].median },
+            { name: 'last edit', at: D.benchmark.last_edit_markers[benchmarkModel].median }
+          ]
+        });
+        drawPanel(canvases[1], D.avg_phase[model], {
+          groups: activeGroups,
+          topMarkers: [
+            { name: 'first edit', at: D.first_edit_markers[model].median },
+            { name: 'last edit', at: D.last_edit_markers[model].median }
+          ],
+          bottomMarkers: [
+            { name: 'go ahead', at: D.intervention_markers[model].authorization.median },
+            { name: 'wrap up', at: D.intervention_markers[model].closeout.median }
+          ],
+          steeringCounts: D.steering_message_counts[model]
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      bindGitToggle();
+      render();
+    });
+  } else {
+    bindGitToggle();
+    render();
+  }
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 150);
+  });
+})();
+</script>
+
+### Why this method works?
+
+<p>The simplest thing that changes is the length. On the benchmark, Sonnet 4.5 runs longer than GPT-5 (mean 77.5 steps vs 59.5). With Mario steering newer models, the ordering reverses: Opus 4.5/4.6 finishes in roughly half the steps of GPT-5.4 (30.9 vs 40.6). Same family fingerprint of &ldquo;Claude moves faster,&rdquo; but in a much shorter overall run, and with the relative ordering against GPT inverted.</p>
 
 <div class="ts-lencmp">
   <p class="ts-lencmp-kicker">Mean steps as the dot, p25&ndash;p75 as the bar, on a fixed 0&ndash;100 scale.</p>
@@ -713,340 +1122,6 @@ Now I can say the same thing with data, and with a better sense of the nuances.
   }
 }
 </style>
-
-<p>The trajectory shape shifts too. Two things change at once between the benchmark and the Pi panels below, so any difference is a mix of the two: <strong>newer models</strong> (Opus 4.5/4.6 from February instead of Sonnet 4.5 from October; GPT-5.4 instead of GPT-5) <strong>with a maintainer in the loop</strong> instead of an agent on its own. The bars below each Pi panel show where Mario sends his messages during the run; the labels mark his <em>go ahead</em> and <em>wrap up</em> moments.</p>
-
-<div class="ts-pi-chart">
-  <div id="ts-pi-panels"></div>
-</div>
-
-<style>
-.ts-pi-chart { margin: 1rem 0 1.5rem; font-family: var(--font-serif); color: #333; }
-.ts-pi-chart .ts-pi-panel { padding: 0; margin-bottom: 8px; }
-.ts-pi-chart .ts-pi-panel-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 2px; }
-.ts-pi-chart .ts-pi-model-tag { font-size: 13px; }
-.ts-pi-chart .ts-pi-model-tag.ts-pi-claude { color: #b8785e; }
-.ts-pi-chart .ts-pi-model-tag.ts-pi-gpt { color: #6a8da8; }
-.ts-pi-chart .ts-pi-side-label { font-size: 0.92rem; font-style: italic; margin: 0 0 4px; color: #222; }
-.ts-pi-chart .ts-pi-panel canvas + .ts-pi-side-label { margin-top: 14px; }
-.ts-pi-chart .ts-pi-panel-subhead { font-size: 0.82rem; color: #666; padding-left: 8px; }
-.ts-pi-chart canvas { display: block; width: 100%; }
-</style>
-
-<script>
-(function() {
-  var D = {"models":["gpt-5.4","claude-opus-4-5-6"],"model_display_names":{"gpt-5.4":"gpt-5.4","claude-opus-4-5-6":"Opus 4.5/4.6"},"resolve_rate":{"gpt-5.4":96.1,"claude-opus-4-5-6":98.0},"raw_single_model_counts":{"gpt-5.4":79,"claude-opus-4-5-6":49},"analyzed_counts":{"gpt-5.4":77,"claude-opus-4-5-6":49},"avg_phase":{"gpt-5.4":{"R":[0.0,0.07039473684210526,0.37521929824561406,0.5339912280701753,0.6486842105263159,0.5611842105263157,0.5839912280701754,0.5675438596491228,0.5063596491228071,0.5125,0.41600877192982455,0.37543859649122807,0.3651315789473685,0.3153508771929824,0.3497807017543859,0.3864035087719298,0.3267543859649123,0.21293859649122812,0.20548245614035093,0.12434210526315788],"S":[0.05372807017543859,0.3364035087719298,0.30855263157894736,0.3197368421052631,0.24057017543859646,0.3039473684210526,0.22412280701754383,0.20438596491228067,0.2236842105263158,0.18969298245614036,0.21206140350877192,0.15504385964912282,0.13486842105263158,0.1118421052631579,0.12214912280701756,0.11228070175438597,0.17149122807017544,0.11842105263157894,0.03837719298245614,0.10307017543859649],"P":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.013157894736842105,0.017543859649122806,0.013157894736842105,0.013157894736842105,0.006578947368421052],"E":[0.0,0.0,0.0,0.0,0.01293859649122807,0.009868421052631578,0.019736842105263157,0.023026315789473683,0.023903508771929826,0.06710526315789474,0.11710526315789474,0.19671052631578947,0.17324561403508773,0.23618421052631577,0.1475877192982456,0.10394736842105262,0.15460526315789477,0.2530701754385965,0.14846491228070177,0.07171052631578946],"V":[0.013157894736842105,0.0,0.0,0.010307017543859648,0.007017543859649123,0.029605263157894735,0.02850877192982456,0.07236842105263158,0.09692982456140352,0.11622807017543861,0.10087719298245615,0.14342105263157895,0.13706140350877194,0.1524122807017544,0.24013157894736842,0.23728070175438598,0.14100877192982456,0.12171052631578948,0.12061403508771931,0.03399122807017543],"G":[0.8410087719298246,0.5800438596491229,0.2978070175438597,0.09868421052631579,0.06578947368421052,0.0625,0.10416666666666667,0.08771929824561403,0.07236842105263158,0.0756578947368421,0.049342105263157895,0.07017543859649122,0.10416666666666667,0.11074561403508773,0.10855263157894737,0.09429824561403508,0.11293859649122806,0.2017543859649123,0.42894736842105263,0.6328947368421053],"H":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.010964912280701754,0.006578947368421052,0.0,0.013157894736842105,0.013157894736842105,0.006578947368421052,0.0043859649122807015,0.008771929824561403,0.021929824561403508,0.013157894736842105,0.007675438596491227,0.003289473684210526]},"claude-opus-4-5-6":{"R":[0.05927579365079364,0.13864087301587302,0.33878968253968256,0.4059523809523809,0.40190972222222215,0.3533730158730159,0.2631448412698413,0.3670634920634921,0.21205357142857142,0.3001736111111111,0.33998015873015874,0.24652777777777776,0.4154761904761904,0.22643849206349206,0.16041666666666668,0.1560019841269841,0.13219246031746032,0.11830357142857141,0.07361111111111111,0.15416666666666667],"S":[0.030257936507936508,0.2797619047619047,0.314484126984127,0.3531746031746032,0.3003472222222222,0.3219246031746032,0.3993055555555556,0.3162202380952381,0.2743055555555555,0.2585565476190476,0.1076388888888889,0.22743055555555558,0.03645833333333333,0.10491071428571429,0.0625,0.10267857142857144,0.09970238095238095,0.0974702380952381,0.06101190476190477,0.013020833333333334],"P":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"E":[0.0,0.0,0.020833333333333332,0.02628968253968254,0.049479166666666664,0.039285714285714285,0.06671626984126984,0.09305555555555556,0.1599702380952381,0.21319444444444446,0.1723214285714286,0.24851190476190477,0.2490079365079365,0.251984126984127,0.284375,0.2621527777777778,0.2027777777777778,0.1753472222222222,0.04811507936507936,0.028472222222222218],"V":[0.0,0.027777777777777776,0.0,0.01875,0.02951388888888889,0.021527777777777774,0.020833333333333332,0.014087301587301588,0.053323412698412696,0.11398809523809524,0.08492063492063491,0.09796626984126984,0.12296626984126985,0.20833333333333334,0.25486111111111115,0.20486111111111113,0.19379960317460318,0.1331845238095238,0.12038690476190476,0.040500992063492065],"G":[0.511656746031746,0.4444444444444444,0.1175595238095238,0.10208333333333335,0.052083333333333336,0.0625,0.041666666666666664,0.10416666666666667,0.109375,0.06944444444444445,0.020833333333333332,0.047619047619047616,0.03720238095238095,0.0625,0.10243055555555554,0.10416666666666667,0.2465277777777778,0.3090277777777778,0.578125,0.7270089285714286],"H":[0.0,0.0,0.0,0.020833333333333332,0.0,0.0,0.0,0.003472222222222222,0.003472222222222222,0.002976190476190476,0.010416666666666666,0.003472222222222222,0.024305555555555552,0.0,0.020833333333333332,0.020833333333333332,0.041666666666666664,0.020833333333333332,0.010416666666666666,0.013020833333333334]}},"first_edit_markers":{"gpt-5.4":{"median":62.9},"claude-opus-4-5-6":{"median":47.4}},"last_edit_markers":{"gpt-5.4":{"median":86.4},"claude-opus-4-5-6":{"median":81.0}},"intervention_markers":{"gpt-5.4":{"authorization":{"median":57.1},"closeout":{"median":84.2}},"claude-opus-4-5-6":{"authorization":{"median":36.4},"closeout":{"median":78.4}}},"steering_message_counts":{"gpt-5.4":[8,0,0,0,0,7,7,6,9,5,6,26,31,33,14,24,15,28,25,25],"claude-opus-4-5-6":[1,0,5,4,2,8,3,12,7,3,5,7,13,4,6,4,13,5,4,9]},"benchmark":{"pair_for_pi_model":{"gpt-5.4":"gpt5","claude-opus-4-5-6":"claude45"},"avg_phase":{"claude45":{"R":[0.13965804428767392,0.5430711682769297,0.39351317406872927,0.31465269983788496,0.2553399960807369,0.21945617254259225,0.21181093711957916,0.21168895500171228,0.2110572212424064,0.19806842677213043,0.20051559094768975,0.1793642381090942,0.17712783330067283,0.16911868043555298,0.16396103896103903,0.1530420806140971,0.15820105820105812,0.16958617133514256,0.22328205630674755,0.12071879880521874],"S":[0.8545120517342736,0.4448444369226261,0.5332993366943987,0.5029946238793981,0.4190492520739432,0.34011692468482574,0.2824930670609682,0.20299175371191833,0.1791625841008558,0.18367300280880539,0.18194051033557215,0.18411337557428095,0.18262459990855057,0.149003952913418,0.11701286824743626,0.12530874094660113,0.10201842053693913,0.09098896074204721,0.08937939061395857,0.043740610098634766],"P":[0.0,0.0008818342151675485,0.006287151348879743,0.023071989738656404,0.029877849630936048,0.03250375596054608,0.02614638447971781,0.0219952315631328,0.015262264027696128,0.01702593245803122,0.013694558756287153,0.014449016918152717,0.015928538768044943,0.01790286759422562,0.01697040956300216,0.018521784571167283,0.020257691553987846,0.023059964726631396,0.026399503559997383,0.024880789078319934],"E":[0.0,0.0003919263178522438,0.002573649487229734,0.013931347573322882,0.05153014566594815,0.13101888966086503,0.18962048468221301,0.25110125357038937,0.2435201515448428,0.21639231824417018,0.17680286106212031,0.1390086441526772,0.12761120909269055,0.09861247196638155,0.08757103664511078,0.07418947460099726,0.06837154614932399,0.05585820976767481,0.05525997779084202,0.013838265072832968],"V":[0.0,0.009037167679142987,0.05554753888087221,0.12699897267798513,0.20733718727545888,0.23276177411979873,0.2410787771898883,0.25338471922834066,0.28828630217519113,0.3290646025213925,0.3696681690508851,0.41042088531800486,0.4261561826376643,0.476058201058201,0.5076572604350388,0.489603065734753,0.47171108498268954,0.4319126994024112,0.3889408488173922,0.20793823993412486],"G":[0.0,0.00102880658436214,0.004686785550983082,0.007992030831537005,0.012499183486837807,0.016856097720295254,0.018525050623816056,0.028146841727088635,0.028907831994251752,0.025919393820628384,0.0208472140570906,0.02734398660324586,0.02034424194918022,0.020762296688222614,0.019935985368084132,0.019067215363511657,0.030472271213011954,0.03833365993859819,0.04405162738496069,0.017463138142150482],"H":[0.0,0.0,0.00027434842249657066,0.000533455265965554,0.0059246195048664185,0.006280619243582206,0.008093278463648835,0.009775295577764714,0.010379515317786922,0.01161734927167026,0.013296100333137368,0.01581422692533804,0.025961852505062378,0.04702789208962047,0.05469984976157815,0.0886047423084461,0.11258736690835462,0.16058527663465952,0.13651179638833966,0.08702471511113505]},"gpt5":{"R":[0.19023445775523332,0.5089693547449784,0.5474244822582772,0.5199558674627927,0.47560403200984935,0.424895714473277,0.4294093986961019,0.42423027880091596,0.3791168511390115,0.3559299733814969,0.3243217347441726,0.31330414353267527,0.30391658971991375,0.298754262050661,0.27372598162071854,0.2739288912072846,0.265446610945226,0.24181341511673926,0.24684193538071655,0.11937134502923975],"S":[0.6907071806310039,0.33964419314142313,0.2844133359715078,0.28030602822846595,0.28524930747922456,0.2956316882563421,0.26218296938518537,0.2560958316844745,0.25994866552345786,0.24186355734139658,0.22461188396091458,0.20993272655322512,0.17409972299168977,0.16964570517202088,0.19225585894560965,0.1646941816263147,0.14372785570846508,0.15838115024403113,0.15650301529802918,0.07873356637207055],"P":[0.0,0.0017313019390581717,0.006902123730378578,0.008953304313415116,0.01055269753330695,0.016258948807425264,0.029125445191927186,0.023199445983379502,0.025359451259728265,0.03386426592797783,0.03748845798707294,0.051873103812162,0.06019324627357869,0.07460262498351139,0.05767378973750166,0.09336664028492282,0.0937332366002726,0.10935617552653566,0.11361517829661873,0.0526167392164622],"E":[0.0,0.0012891540592371617,0.007763927362265311,0.018082878955455135,0.03804027612891878,0.06509889771662623,0.08648650134107198,0.11768836734210697,0.13826626974133893,0.15876140249408943,0.17682943403165005,0.2009044741039201,0.21356516290726815,0.20188029883320752,0.22395792111858578,0.20718043114164997,0.1964599497147973,0.18390768588137005,0.16304647184148563,0.08392087675328679],"V":[0.001654355186211142,0.003516466605109264,0.006499802136921249,0.00873730378578024,0.012628061381523985,0.015406388778964959,0.016533658708173946,0.028347183748845796,0.02584641428131733,0.028268038517345995,0.038256826276216856,0.04215692740623487,0.04836707998065338,0.0642945581657493,0.07607615530053208,0.08698510630643595,0.09825500753478589,0.13621388998812825,0.14525873095817698,0.0744168535373522],"G":[0.0,0.0,0.0,0.0004616805170821791,0.0,0.0,0.00017313019390581717,0.0001538935056940597,0.0,0.0,0.0,0.0,0.00047487138899881284,0.0008903838543727739,0.00042870333729059493,0.0025392428439519853,0.002123730378578024,0.0011014378050389132,0.001436705799586686,0.0013174383326737898],"H":[0.0,0.0,0.0,0.0,0.0,0.0012465373961218836,0.00034626038781163435,0.0,0.00019786307874950534,0.0,0.0004616805170821791,0.00034626038781163435,0.0016620498614958448,0.0,0.0,0.0011426592797783932,0.0010156971375807943,0.0008079409048938134,0.0015004616805170822,0.0006232686980609418]}},"first_edit_markers":{"claude45":{"median":34.6},"gpt5":{"median":49.5}},"last_edit_markers":{"claude45":{"median":61.9},"gpt5":{"median":89.4}},"resolve_rate":{"claude45":43.7,"gpt5":36.3},"model_display_names":{"claude45":"Sonnet 4.5","gpt5":"GPT-5"},"num_trajs":{"claude45":730,"gpt5":730}}};
-
-  var ORDER = D.models.slice().sort(function(a, b) {
-    return (D.resolve_rate[b] || -Infinity) - (D.resolve_rate[a] || -Infinity);
-  });
-  var TAG_CLASS = { 'claude-opus-4-5-6': 'ts-pi-claude', 'gpt-5.4': 'ts-pi-gpt' };
-  var FAMILY_LABEL = {
-    'claude-opus-4-5-6': 'Claude family',
-    'gpt-5.4': 'GPT family'
-  };
-  var GUIDED_MODEL_LABEL = {
-    'claude-opus-4-5-6': 'Opus 4.5/6',
-    'gpt-5.4': 'GPT-5.4'
-  };
-  var GROUPS = [
-    { name: 'understand', letters: ['R','S'], color: '#5a7d9a' },
-    { name: 'reproduce', letters: ['P'], color: '#b0956a' },
-    { name: 'edit', letters: ['E'], color: '#4a8a5a' },
-    { name: 'verify', letters: ['V'], color: '#b56a50' },
-    { name: 'git', letters: ['G'], color: '#8a7a5a' },
-    { name: 'cleanup', letters: ['H'], color: '#3a8a8a' }
-  ];
-
-  function getCtx(canvas) {
-    var dpr = window.devicePixelRatio || 1;
-    var cssW = canvas.parentElement.clientWidth;
-    var cssH = canvas.height;
-    canvas.width = cssW * dpr;
-    canvas.height = cssH * dpr;
-    canvas.style.width = cssW + 'px';
-    canvas.style.height = cssH + 'px';
-    var ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-    return { ctx: ctx, w: cssW, h: cssH };
-  }
-
-  function drawPanel(canvas, phaseData, opts) {
-    opts = opts || {};
-    var got = getCtx(canvas);
-    var ctx = got.ctx, w = got.w, h = got.h;
-    var topMarkers = (opts.topMarkers || []).filter(Boolean);
-    var bottomMarkers = (opts.bottomMarkers || []).filter(Boolean);
-    var steeringCounts = opts.steeringCounts || null;
-    var hasSteering = steeringCounts && steeringCounts.some(function(v) { return v > 0; });
-    var left = 40, right = 18;
-    var top = topMarkers.length ? 34 : 28;
-    var bottomReserve = hasSteering ? 44 : (bottomMarkers.length ? 18 : 10);
-    var plotW = w - left - right;
-    var plotH = h - top - bottomReserve;
-    var bins = 20;
-    var sparkBaseY = top + plotH + 18;
-    var sparkH = 12;
-    var sparkTopY = sparkBaseY - sparkH;
-    var bottomLabelY = hasSteering ? (top + plotH + 38) : (h - 4);
-
-    function xPct(pct) { return left + (pct / 100) * plotW; }
-    function xAtBin(i) { return left + (i / (bins - 1)) * plotW; }
-    function xBinStart(i) { return left + (i / bins) * plotW; }
-    function xBinEnd(i) { return left + ((i + 1) / bins) * plotW; }
-
-    var groupVals = GROUPS.map(function(g) {
-      var summed = new Array(bins).fill(0);
-      g.letters.forEach(function(l) {
-        var vals = phaseData[l] || [];
-        for (var b = 0; b < bins; b++) summed[b] += vals[b] || 0;
-      });
-      return summed;
-    });
-
-    var stacked = [];
-    var cumulative = new Array(bins).fill(0);
-    for (var gi = 0; gi < GROUPS.length; gi++) {
-      var layer = groupVals[gi].map(function(v, i) { return cumulative[i] + v; });
-      stacked.push({ group: GROUPS[gi], bottom: cumulative.slice(), top: layer });
-      cumulative = layer;
-    }
-    var maxes = cumulative;
-
-    function yAt(v, idx) {
-      var norm = maxes[idx] > 0 ? v / maxes[idx] : 0;
-      return top + plotH - norm * plotH;
-    }
-
-    ctx.fillStyle = '#6b7280';
-    ctx.font = '9px Charter, serif';
-    ctx.textAlign = 'center';
-    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
-    ctx.lineWidth = 0.5;
-    [0,25,50,75].forEach(function(p) {
-      var x = xPct(p);
-      ctx.fillText(p + '%', x, top - 8);
-      ctx.beginPath();
-      ctx.moveTo(x, top - 3);
-      ctx.lineTo(x, top + 4);
-      ctx.stroke();
-    });
-
-    for (var s = stacked.length - 1; s >= 0; s--) {
-      var layer = stacked[s];
-      ctx.fillStyle = layer.group.color;
-      ctx.globalAlpha = 0.85;
-      ctx.beginPath();
-      for (var i = 0; i < bins; i++) {
-        var x = xAtBin(i), y = yAt(layer.top[i], i);
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-      }
-      for (var j = bins - 1; j >= 0; j--) ctx.lineTo(xAtBin(j), yAt(layer.bottom[j], j));
-      ctx.closePath();
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-
-    if (topMarkers.length) {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0,0,0,0.28)';
-      ctx.lineWidth = 0.9;
-      ctx.setLineDash([4,4]);
-      topMarkers.forEach(function(mk) {
-        var x = xPct(mk.at);
-        ctx.beginPath();
-        ctx.moveTo(x, top - 12);
-        ctx.lineTo(x, top + plotH);
-        ctx.stroke();
-      });
-      ctx.restore();
-    }
-
-    if (bottomMarkers.length) {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0,0,0,0.28)';
-      ctx.lineWidth = 0.9;
-      ctx.setLineDash([4,4]);
-      bottomMarkers.forEach(function(mk) {
-        var x = xPct(mk.at);
-        ctx.beginPath();
-        ctx.moveTo(x, top);
-        ctx.lineTo(x, bottomLabelY - 12);
-        ctx.stroke();
-      });
-      ctx.restore();
-    }
-
-    var halfX = xPct(50);
-    ctx.strokeStyle = 'rgba(0,0,0,0.07)';
-    ctx.lineWidth = 1;
-    ctx.setLineDash([3,3]);
-    ctx.beginPath();
-    ctx.moveTo(halfX, top);
-    ctx.lineTo(halfX, top + plotH);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    ctx.strokeStyle = '#cfcfcf';
-    ctx.lineWidth = 0.5;
-    ctx.beginPath();
-    ctx.moveTo(left, top + plotH);
-    ctx.lineTo(left + plotW, top + plotH);
-    ctx.stroke();
-
-    ctx.font = '10px Charter, serif';
-    ctx.textAlign = 'center';
-    topMarkers.forEach(function(mk) {
-      var x = xPct(mk.at);
-      var labelW = ctx.measureText(mk.name).width + 10;
-      ctx.fillStyle = 'rgba(255,255,255,0.94)';
-      ctx.fillRect(x - labelW / 2, top - 28, labelW, 12);
-      ctx.fillStyle = '#111';
-      ctx.fillText(mk.name, x, top - 19);
-    });
-
-    if (hasSteering) {
-      var maxCount = Math.max.apply(null, steeringCounts.concat([1]));
-      ctx.font = '10px Charter, serif';
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#111';
-      ctx.fillText('Mario steering', left, sparkTopY + 8);
-      ctx.strokeStyle = 'rgba(0,0,0,0.16)';
-      ctx.lineWidth = 0.5;
-      ctx.beginPath();
-      ctx.moveTo(left, sparkBaseY + 0.5);
-      ctx.lineTo(left + plotW, sparkBaseY + 0.5);
-      ctx.stroke();
-      for (var bi = 0; bi < bins; bi++) {
-        var count = steeringCounts[bi] || 0;
-        var barH = maxCount > 0 ? (count / maxCount) * sparkH : 0;
-        var x0 = xBinStart(bi), x1 = xBinEnd(bi);
-        ctx.fillStyle = 'rgba(0,0,0,0.32)';
-        ctx.fillRect(x0, sparkBaseY - barH, Math.max(1, x1 - x0 - 0.6), barH);
-      }
-    }
-
-    ctx.font = '10px Charter, serif';
-    ctx.textAlign = 'center';
-    bottomMarkers.forEach(function(mk) {
-      var x = xPct(mk.at);
-      var labelW = ctx.measureText(mk.name).width + 10;
-      ctx.fillStyle = 'rgba(255,255,255,0.94)';
-      ctx.fillRect(x - labelW / 2, bottomLabelY - 9, labelW, 12);
-      ctx.fillStyle = '#111';
-      ctx.fillText(mk.name, x, bottomLabelY);
-    });
-
-    var placedLabels = [];
-    function rectsOverlap(a, b) {
-      return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
-    }
-
-    var layerLabels = stacked.map(function(L) {
-      var candidates = [];
-      for (var bb = 2; bb <= bins - 3; bb++) {
-        var hh = Math.abs(yAt(L.bottom[bb], bb) - yAt(L.top[bb], bb));
-        candidates.push({
-          bin: bb,
-          h: hh,
-          midY: (yAt(L.top[bb], bb) + yAt(L.bottom[bb], bb)) / 2
-        });
-      }
-      candidates.sort(function(a, b) { return b.h - a.h; });
-      return { layer: L, candidates: candidates, maxH: candidates.length ? candidates[0].h : 0 };
-    }).sort(function(a, b) {
-      return b.maxH - a.maxH;
-    });
-
-    ctx.fillStyle = '#fff';
-    ctx.globalAlpha = 0.85;
-    ctx.font = '10px Charter, serif';
-    ctx.textAlign = 'center';
-
-    layerLabels.forEach(function(item) {
-      if (item.maxH < 16) return;
-      var text = item.layer.group.name;
-      var labelW = ctx.measureText(text).width + 6;
-      for (var ci = 0; ci < Math.min(8, item.candidates.length); ci++) {
-        var cand = item.candidates[ci];
-        if (cand.h < 14) break;
-        var x = xAtBin(cand.bin);
-        var y = cand.midY + 4;
-        var rect = {
-          x: x - labelW / 2,
-          y: y - 8,
-          w: labelW,
-          h: 10
-        };
-        if (rect.x < left || rect.x + rect.w > left + plotW) continue;
-        var collides = placedLabels.some(function(prev) { return rectsOverlap(rect, prev); });
-        if (collides) continue;
-        ctx.fillText(text, x, y);
-        placedLabels.push(rect);
-        break;
-      }
-    });
-
-    ctx.globalAlpha = 1;
-  }
-
-  function render() {
-    var root = document.getElementById('ts-pi-panels');
-    if (!root) return;
-    root.innerHTML = '';
-    ORDER.forEach(function(model) {
-      var wrap = document.createElement('div');
-      wrap.className = 'ts-pi-panel';
-      var tagCls = TAG_CLASS[model] || '';
-      var title = FAMILY_LABEL[model] || D.model_display_names[model];
-      var benchmarkModel = D.benchmark.pair_for_pi_model[model];
-      var benchmarkName = D.benchmark.model_display_names[benchmarkModel] || benchmarkModel;
-      var benchmarkN = D.benchmark.num_trajs[benchmarkModel];
-      var rawN = D.raw_single_model_counts[model];
-      var guidedName = GUIDED_MODEL_LABEL[model] || D.model_display_names[model];
-
-      wrap.innerHTML =
-        '<div class="ts-pi-panel-header"><span class="ts-pi-model-tag ' + tagCls + '">' + title + '</span></div>' +
-        '<div class="ts-pi-side-label">swe-agent<span class="ts-pi-panel-subhead">' + benchmarkN + ' trajectories · ' + benchmarkName + '</span></div>' +
-        '<canvas height="173"></canvas>' +
-        '<div class="ts-pi-side-label">pi + mario<span class="ts-pi-panel-subhead">' + rawN + ' trajs · ' + guidedName + '</span></div>' +
-        '<canvas height="207"></canvas>';
-      root.appendChild(wrap);
-      var canvases = wrap.querySelectorAll('canvas');
-      drawPanel(canvases[0], D.benchmark.avg_phase[benchmarkModel], {
-        topMarkers: [
-          { name: 'first edit', at: D.benchmark.first_edit_markers[benchmarkModel].median },
-          { name: 'last edit', at: D.benchmark.last_edit_markers[benchmarkModel].median }
-        ]
-      });
-      drawPanel(canvases[1], D.avg_phase[model], {
-        topMarkers: [
-          { name: 'first edit', at: D.first_edit_markers[model].median },
-          { name: 'last edit', at: D.last_edit_markers[model].median }
-        ],
-        bottomMarkers: [
-          { name: 'go ahead', at: D.intervention_markers[model].authorization.median },
-          { name: 'wrap up', at: D.intervention_markers[model].closeout.median }
-        ],
-        steeringCounts: D.steering_message_counts[model]
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
-  } else {
-    render();
-  }
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 150);
-  });
-})();
-</script>
-
-<p>The main contrast I want to flesh out in this section is: the <span style="color:#b8785e">Claude family</span> gets the go-ahead earlier and begins editing earlier, while the <span style="color:#6a8da8">GPT family</span> gets more late steering from Mario and keeps more of that coordination pressure into the second half of the run. In both cases, Mario&rsquo;s wrap-up comes after the last source edit, when the remaining tail is mostly repo work.</p>
 
 ## References
 
@@ -1698,4 +1773,17 @@ For each issue:
    - List affected files and changes needed
 
 Do NOT implement unless explicitly asked. Analyze and propose only.
+```
+
+### 4. SWE-Agent issue-resolution prompt {#swe-agent-issue-resolution-prompt}
+
+For comparison, the SWE-Agent setup used in SWE-bench Pro includes the following issue-resolution scaffold in its default prompt (<a href="https://github.com/SWE-agent/SWE-agent/blob/0f4f3bba990e01ca8460b9963abdcd89e38042f2/config/default.yaml#L21">source</a>):
+
+```
+Follow these steps to resolve the issue:
+1. As a first step, it might be a good idea to find and read code relevant to the <pr_description>
+2. Create a script to reproduce the error and execute it with `python <filename.py>` using the bash tool, to confirm the error
+3. Edit the source code of the repo to resolve the issue
+4. Rerun your reproduce script and confirm that the error is fixed!
+5. Think about edgecases and make sure your fix handles them as well
 ```
