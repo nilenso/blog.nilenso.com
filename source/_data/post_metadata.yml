@@ -1,3 +1,6 @@
+- title: "Trajectory shapes"
+  description: "Why are we managing our coding agents based on vibes instead of their actual work habits?"
+
 - title: "Checking my model vibes against SWE-Bench Pro"
   description: "I thought GPT models felt slow and token hungry, and Claude models were faster. I was wrong."
 
