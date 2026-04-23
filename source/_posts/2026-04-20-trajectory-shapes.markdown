@@ -1179,11 +1179,9 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 .ts-ic-table thead,
 .ts-ic-table tbody,
 .ts-ic-table tr,
-.ts-ic-table th {
-  border: none !important;
-  box-shadow: none !important;
-}
+.ts-ic-table th,
 .ts-ic-table td {
+  border: none !important;
   box-shadow: none !important;
 }
 .ts-ic-table th {
@@ -1246,7 +1244,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
   font-size: 0.82rem;
   color: #666;
   line-height: 1.45;
-  vertical-align: middle;
+  vertical-align: middle !important;
   font-style: italic;
   text-align: left !important;
 }
