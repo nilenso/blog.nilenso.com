@@ -7,11 +7,36 @@ description: "Benchmark scores tell you whether a coding agent solved the task. 
 layout: post
 ---
 
-Why are we managing our coding agents based on vibes, instead of their actual work habits?
+<script>
+(function() {
+  function markExternalLinks() {
+    var links = document.querySelectorAll('a[href]');
+    links.forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (!href || href.charAt(0) === '#') return;
+      try {
+        var url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      } catch (e) {}
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', markExternalLinks);
+  } else {
+    markExternalLinks();
+  }
+})();
+</script>
+
+Why are we managing our coding agents based on vibes instead of their actual work habits?
 
 Leaderboards tell us _how many_ tasks a model solved but not _how_. The trajectories that they leave behind tell the story of _how_, but these aren't studied as much. The tools a model prefers, and the overall "shape" of its workflow is visible through an empirical lens.
 
-I analyzed the latest SWE-bench Pro trajectories I could get my hands on: runs from October 2025 for Sonnet 4.5 and GPT-5, 730 task trajectories per model. I [deterministically classified](#intent-classification-taxonomy) each of the steps using only tool calls, and then computed their share over time. This "trajectory shape" chart I got as a result is very interesting!
+I analyzed the latest SWE-Bench Pro trajectories I could find: runs from October 2025 for Sonnet 4.5 and GPT-5, 730 task trajectories per model. I [deterministically classified](#intent-classification-taxonomy) each step into activities like understand, edit, verify, and cleanup using only tool calls, literal command/filename matches, and regex heuristics, and then computed their share over time. This "trajectory shape" chart I got as a result is very interesting!
 
 <div class="ts-shape-chart">
   <div id="ts-stackedPanels"></div>
@@ -249,8 +274,8 @@ Here are the main work habits I see in this chart:
 1. Sonnet starts editing early (at 35%), GPT starts editing much later (at 50%)
 2. Sonnet is done with the implementation early (at 62%)
 3. Sonnet spends a LOT of time verifying after the last source edit
-4. Sonnet has some cleanup to do, which GPT doesn't have to do
-5. GPT-5 reads a LOT to front load context, before it starts to do any work (at 50%)
+4. Sonnet has to cleanup temporary files, GPT doesn't have to
+5. GPT-5 reads a LOT to front-load context, before it starts editing (at 50%)
 6. GPT-5 barely does any verification
 
 If I were to condense the above to "vibes", I might say _"Claude starts editing early and figures it out in the loop. GPT reads first, then goes for the one-shot."_ That is also close to what people on my timeline were saying when these runs were current. For example, Eric Provencher wrote:
@@ -258,21 +283,21 @@ If I were to condense the above to "vibes", I might say _"Claude starts editing 
 <blockquote class="twitter-tweet" data-align="center"><p lang="en" dir="ltr">My take with codex vs claude code<br><br>- Use codex if you have a detailed plan and want to walk away for 30 min. If you try and interrupt and iterate codex, you might as well restart from scratch <br>- Use claude code if youre not 100% sure where you&#39;re going and want to iterate</p>&mdash; eric provencher (@pvncher) <a href="https://twitter.com/pvncher/status/1977806477701333470?ref_src=twsrc%5Etfw">October 13, 2025</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Now I can say the same thing with data, and with a better sense of the nuances.
+Now I can say the same thing with data, and with a better sense of the nuances. And once we see these habits clearly, we can stop managing agents on vibes and start steering them on evidence.
 
 ### With newer models and a maintainer
 
-<p>I wanted to replicate this chart for Opus 4.6 and GPT-5.4, but the SWE Bench Pro trajectories (or any other SWE-agent trajectories) for them are unavailable. I then remembered that Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>, and downloaded them.</p>
+<p>I wanted to replicate this chart for Opus 4.6 and GPT-5.4, but the SWE-Bench Pro trajectories (or any other SWE-agent trajectories) for them are unavailable. I then remembered that Mario Zechner has been <a href="https://huggingface.co/datasets/badlogicgames/pi-mono">publishing his Pi trajectories on Hugging Face</a>, and downloaded them.</p>
 
 <p>Luckily, he works through GitHub issues methodically. Each session is one issue, and one model. It kicks off with the same <a href="#mario-analysis-prompt">analysis prompt</a>, waits for his <em>go ahead</em>, there is a varied amount of steering to address it, and then he wraps up explicitly to ship a fix, close the issue, leave a triage comment, and so on. Each one starts with git work (read the PR, read the comments) and ends with git work (push the change, close the issue, or do the final triage), with the source-editing loop in between.</p>
 
-<p>While the issue fixes make for similar trajectories to SWE Bench Pro, I&rsquo;m still changing the models, harness, and adding a maintainer, so this is <em>not</em> exactly an apples-to-apples comparison. To keep the trajectory-shape comparison closer to the benchmark, the Pi panels below use only the strict single-model sessions whose final title starts with <code>Issue:</code>. That said, the observations from the previous section still hold. The bars below each Pi panel show steering messages during the run; the labels mark Mario&rsquo;s <em>go ahead</em> and <em>wrap up</em> moments (<button type="button" class="ts-pi-git-toggle" aria-pressed="true">hide git</button>).</p>
+<p>While the issue fixes make for similar trajectories to SWE-Bench Pro, I&rsquo;m still changing the models, harness, and adding a maintainer, so this is <u>not exactly an apples-to-apples comparison</u>. To keep the trajectory-shape comparison closer to the benchmark, the Pi panels below use only the strict single-model sessions whose final title starts with <code>Issue:</code>. That said, the observations from the previous section still hold. The bars below each Pi panel give a rough sense of where Mario is steering more during the run; taller bars mean more intervention around that part of the trajectory. The labels mark Mario&rsquo;s <em>go ahead</em> and <em>wrap up</em> moments (<button type="button" class="ts-pi-git-toggle" aria-pressed="true">hide git</button>).</p>
 
 <div class="ts-pi-chart" data-model="claude-opus-4-5-6">
   <div class="ts-pi-panels"></div>
 </div>
 
-<p>My interpretation here is that the explicit analysis prompt is pushing the understand phase to be longer. The first edit is pushed from 35% to 47%. After that, there&rsquo;s a fair amount of steering, QA, critique, and validation, with verify + edit cycles, after which it wraps up. The push to verify in the <a href="#swe-agent-issue-resolution-prompt">SWE-agent prompt</a> causes the benchmark trajectory to go on longer, and is a fair bit redundant.</p>
+<p>I think it&rsquo;s likely that the explicit analysis prompt is pushing the understand phase to be longer. The first edit is pushed from 35% to 47%. After that, there&rsquo;s a fair amount of steering, QA, critique, and validation, with verify + edit cycles, after which it wraps up. The push to verify in the <a href="#swe-agent-issue-resolution-prompt">SWE-agent prompt</a> likely causes the benchmark trajectory to go on longer, and is fairly redundant.</p>
 
 <div class="ts-pi-chart" data-model="gpt-5.4">
   <div class="ts-pi-panels"></div>
@@ -671,7 +696,7 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 
 ### Why compare trajectory shapes?
 
-<p>The normalization of trajectory lengths to 100% matches how these models are trained. An RL rollout has a defined start (the prompt) and a defined end (a submit, a push, a green suite). That bounded envelope is the unit the policy is rewarded inside. Fitting every trajectory to the same envelope is how you see what was trained into it. Notice the difference in trajectory lengths of these tasks:</p>
+<p>Trajectories are traces of learned workflows. RL shapes both <em>micro</em> preferences, like which tools a model uses, and <em>macro</em> preferences, like the overall workflow it follows from problem statement to verified solution. To study those <em>macro</em> patterns, one trajectory is not enough; you need a corpus. And to compare a corpus, you need normalization. So, each trajectory is mapped onto the same 0&ndash;100% start-to-finish frame so that the aggregate shape reflects the learned workflow. For instance, see the difference in trajectory lengths of the SWE-Bench Pro:</p>
 
 <div class="ts-lencmp">
   <p class="ts-lencmp-kicker">Mean steps as the dot, p25&ndash;p75 as the bar, on a fixed 0&ndash;100 scale.</p>
@@ -738,6 +763,8 @@ Now I can say the same thing with data, and with a better sense of the nuances.
     <div class="ts-lencmp-range">27&ndash;52</div>
   </div>
 </div>
+
+<p>Further, tool calls are normalized by structural intent rather than literal tool identity, so that equivalent actions can be compared across harnesses. In this study, I normalised tool calls across SWE-agent and Pi, and the <a href="#intent-classification-taxonomy">table below</a> documents that taxonomy.</p>
 
 <style>
 .ts-lencmp {
@@ -882,34 +909,34 @@ Now I can say the same thing with data, and with a better sense of the nuances.
   <table class="ts-steer-table">
     <thead>
       <tr>
-        <th>Behavior</th>
-        <th>Steering suggestion</th>
+        <th>Observed pattern</th>
+        <th>Possible steering move</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Claude starts editing early</td>
-        <td>Ask for explicit analysis first.</td>
+        <td>Ask for explicit analysis first</td>
       </tr>
       <tr>
         <td>Claude finishes implementation early</td>
-        <td>Ask it to verify before concluding.</td>
+        <td>Ask it to verify before concluding</td>
       </tr>
       <tr>
         <td>Claude over-verifies after the last edit</td>
-        <td>Specify exact success criteria.</td>
+        <td>Specify exact success criteria</td>
       </tr>
       <tr>
         <td>Claude leaves cleanup behind</td>
-        <td>Tell it not to create temporary docs or scripts.</td>
+        <td>Tell it not to create temporary docs or scripts</td>
       </tr>
       <tr>
         <td>GPT front-loads context gathering</td>
-        <td>Usually fine. Or narrow what context it should gather.</td>
+        <td>Usually fine. Or narrow what context it should gather</td>
       </tr>
       <tr>
         <td>GPT is not verifying enough</td>
-        <td>Ask for red-green TDD.</td>
+        <td>Ask for red-green TDD</td>
       </tr>
     </tbody>
   </table>
@@ -976,13 +1003,44 @@ Now I can say the same thing with data, and with a better sense of the nuances.
 }
 </style>
 
-## References
+<div class="ts-appendix-break" aria-hidden="true">⁂</div>
+
+<style>
+.ts-appendix-break {
+  margin: 5.5rem 0 6rem;
+  text-align: center;
+  color: #b7ad99;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+</style>
+
+## Appendix
 
 Analysis code and data: [github.com/nilenso/swe-bench-pro-cost-token-time-analysis](https://github.com/nilenso/swe-bench-pro-cost-token-time-analysis).
 
-### 1. High-level action frequencies
+**SWE-Bench Pro**
+- [Charts and takeaways — all 4 models](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/analytics.html)
+- [Charts and takeaways — Sonnet 4.5 vs GPT-5](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/analytics-sonnet-gpt5.html)
+- [Detailed breakdowns — all 4 models](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/reference.html)
+- [Detailed breakdowns — Sonnet 4.5 vs GPT-5](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/reference-sonnet-gpt5.html)
 
-On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ the models spend their steps on, the same signature shows up. GPT-5 spends much more of its trajectory reading, while Sonnet 4.5 spends much more of it verifying. That makes the difference in the trajectory-shape chart feel less like a visual artefact and more like a stable workflow habit.
+**Pi transcripts**
+- [Charts and takeaways — all available Pi models](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/pi-analytics.html)
+- [Charts and takeaways — Opus 4.5/4.6 vs GPT-5.4](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/pi-analytics-opus-gpt54.html)
+- [Detailed breakdowns — all available Pi models](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/pi-references.html)
+- [Detailed breakdowns — Opus 4.5/4.6 vs GPT-5.4](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/pi-references-opus-gpt54.html)
+
+### 1. GPT-5's tool failures
+
+I have ignored these failures for the purpose of the charts, but they are significant enough to mention here. <u>GPT-5's tool calls fail in about 20% of the steps throughout the SWE-agent trajectory.</u> Most notably, it expects the `apply_patch` tool to be present, and keeps calling that. `apply_patch` is the main editing tool within Codex, and GPT-5's own system prompts inside Codex had counterweights for this behavior. GPT-5 manages to work through the failures and still achieve a decent resolution rate on the task. However, we do not know what effect those failing tool calls have on the outcome.
+
+Example failures and data: [failure modes in the reference appendix](https://nilenso.github.io/swe-bench-pro-cost-token-time-analysis/reference-sonnet-gpt5.html#8b-failure-modes).
+
+### 2. High-level action frequencies
+
+On SWE-Bench Pro, even if we ignore _when_ actions happen and just count _what_ the models spend their steps on, the same signature shows up. GPT-5 spends much more of its trajectory reading, while Sonnet 4.5 spends much more of it verifying. That makes the difference in the trajectory-shape chart feel less like a visual artefact and more like a stable workflow habit.
 
 <div class="ts-hf-chart">
   <div id="ts-highfreq-chart"></div>
@@ -1155,10 +1213,10 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 
 <div class="ts-ref" markdown="1">
 
-### 2. Models have tool preferences
+### 3. Models have tool preferences
 
 <div class="ts-ic-chart">
-  <p class="ts-ic-desc">On SWE-bench Pro, the tools provided in the RLVR environment likely shape the tool preferences of models. Here are the various tools used per category, compared across <span class="ts-ic-model-sonnet">Sonnet 4.5</span> / <span class="ts-ic-model-gpt">GPT-5</span>. I wish I had SWE-bench Pro trajectories for Opus 4.6 and GPT-5.4. With the same tasks and harness, I could compare tool-call preferences, costs, latencies, and more.</p>
+  <p class="ts-ic-desc">On SWE-Bench Pro, the tools provided in the RLVR environment likely shape the tool preferences of models. Here are the various tools used per category, compared across <span class="ts-ic-model-sonnet">Sonnet 4.5</span> / <span class="ts-ic-model-gpt">GPT-5</span>. I wish I had SWE-Bench Pro trajectories for Opus 4.6 and GPT-5.4. With the same tasks and harness, I could compare tool-call preferences, costs, latencies, and more.</p>
   <div id="ts-intent-comparison-chart"></div>
 </div>
 
@@ -1399,11 +1457,11 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 </script>
 
 
-### 3. Intent Classification Taxonomy {#intent-classification-taxonomy}
+### 4. Intent Classification Taxonomy {#intent-classification-taxonomy}
 
-<p style="margin:0 0 8px 0">The benchmark charts above and the Pi / Mario charts later in the post use the same high-level taxonomy, but not always the same raw labels. So this annex merges both into one deterministic reference table. Raw labels stay in monospace under each intent class so chart clicks can still land on the exact label.</p>
-<p style="margin:0 0 8px 0">Unlike the trajectory-shape panels, which use the stricter issue-only Pi subset, the Pi counts in this annex use the broader <strong>all strict single-model sessions</strong> cut: <strong>171</strong> analysed Opus 4.5/4.6 trajectories and <strong>133</strong> analysed GPT-5.4 trajectories. The benchmark side remains the full SWE-Bench Pro pair with <strong>730 trajectories per model</strong>.</p>
-<div style="font-size:12px;color:#444;background:#f5f1e4;border-left:3px solid #c8b88a;padding:10px 14px;margin:10px 0 16px 0;line-height:1.55;max-width:980px"><p style="margin:0 0 4px 0"><strong>How to read this table</strong>:</p><ul style="margin:4px 0 0 18px;padding:0"><li><strong>Both sides are deterministic.</strong> No model inference is used in either taxonomy.</li><li><strong>Rows are merged by intent class.</strong> If SWE-Agent and Pi use the same raw label, it appears once. If they use different labels for the same kind of action, both labels appear under the same row with <code>SWE</code> / <code>Pi</code> badges.</li><li><strong>Blank counts mean no separate label on that side.</strong> For example, Pi has no distinct <code>insert-source</code> bucket, while Pi adds git workflow labels like <code>git-github-context</code> and <code>git-publish</code>.</li><li><strong>Counts are per dataset.</strong> The left pair is the SWE-Agent benchmark set (730 Sonnet&nbsp;4.5 trajectories, 730 GPT-5 trajectories). The right pair is the all-single-model Pi set (171 Opus&nbsp;4.5/4.6 trajectories, 133 GPT-5.4 trajectories).</li><li><strong>The trajectory-shape panels are narrower.</strong> Earlier Pi charts stay on the issue-only subset because that keeps the comparison closer to the benchmark&rsquo;s issue-fix workflow.</li></ul></div>
+<p style="margin:0 0 8px 0">The benchmark charts above and the Pi / Mario charts later in the post use the same high-level taxonomy, but not always the same raw labels. So this appendix merges both into one deterministic reference table. Raw labels stay in monospace under each intent class so chart clicks can still land on the exact label.</p>
+<p style="margin:0 0 8px 0">Unlike the trajectory-shape panels, which use the stricter issue-only Pi subset, the Pi counts in this appendix use the broader <strong>all strict single-model sessions</strong> cut: <strong>171</strong> analysed Opus 4.5/4.6 trajectories and <strong>133</strong> analysed GPT-5.4 trajectories. The benchmark side remains the full SWE-Bench Pro pair with <strong>730 trajectories per model</strong>.</p>
+<div style="font-size:12px;color:#444;background:#f5f1e4;border-left:3px solid #c8b88a;padding:10px 14px;margin:10px 0 16px 0;line-height:1.55;max-width:980px"><p style="margin:0 0 4px 0"><strong>How to read this table</strong>:</p><ul style="margin:4px 0 0 18px;padding:0"><li><strong>Both sides are deterministic.</strong> No model inference is used in either taxonomy.</li><li><strong>Rows are merged by intent class.</strong> If SWE-agent and Pi use the same raw label, it appears once. If they use different labels for the same kind of action, both labels appear under the same row with <code>SWE</code> / <code>Pi</code> badges.</li><li><strong>Blank counts mean no separate label on that side.</strong> For example, Pi has no distinct <code>insert-source</code> bucket, while Pi adds git workflow labels like <code>git-github-context</code> and <code>git-publish</code>.</li><li><strong>Counts are per dataset.</strong> The left pair is the SWE-agent benchmark set (730 Sonnet&nbsp;4.5 trajectories, 730 GPT-5 trajectories). The right pair is the all-single-model Pi set (171 Opus&nbsp;4.5/4.6 trajectories, 133 GPT-5.4 trajectories).</li><li><strong>The trajectory-shape panels are narrower.</strong> Earlier Pi charts stay on the issue-only subset because that keeps the comparison closer to the benchmark&rsquo;s issue-fix workflow.</li></ul></div>
 <div class="scroll"><table>
 <colgroup>
 <col style="width:20%" />
@@ -1417,7 +1475,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <tr class="top">
 <th rowspan="2" style="text-align:left">intent class</th>
 <th rowspan="2" style="text-align:left">description</th>
-<th colspan="2">SWE-Agent</th>
+<th colspan="2">SWE-agent</th>
 <th colspan="2">Pi (all single-model)</th>
 </tr>
 <tr class="bottom">
@@ -1428,7 +1486,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 </tr>
 </thead>
 <tbody>
-<tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#5a7d9a"></span>read</td></tr><tr>
+<tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#5a7d9a"></span>read <span style="color:#5a7d9a">(understand)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-read-file-full"></span><div class="slot-title">View an entire file</div><div class="slot-labels"><div><code>read-file-full</code></div></div></td>
 <td class="desc">SWE: <code>str_replace_editor view &lt;file&gt;</code> after test/config/range/truncation cases are ruled out. Pi: whole-file <code>read(path)</code>.</td>
 <td class="num claude">3,125</td>
@@ -1476,7 +1534,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <td class="num claude">1,137</td>
 <td class="num gpt">2,133</td>
 <td class="num claude"><span class="na">—</span></td><td class="num gpt"><span class="na">—</span></td>
-</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#6f8da6"></span>search</td></tr><tr>
+</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#6f8da6"></span>search <span style="color:#5a7d9a">(understand)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-list-directory"></span><div class="slot-title">List a directory from the shell</div><div class="slot-labels"><div><code>list-directory</code></div></div></td>
 <td class="desc">Directory / cwd inspection via <code>ls</code>, <code>tree</code>, or <code>pwd</code>.</td>
 <td class="num claude">843</td>
@@ -1632,7 +1690,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <td class="num claude">999</td>
 <td class="num gpt">696</td>
 <td class="num claude">12</td><td class="num gpt">129</td>
-</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#3a8a8a"></span>git</td></tr><tr>
+</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#3a8a8a"></span>git <span style="color:#3a8a8a">(cleanup)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-git-diff"></span><span class="anchor-target" id="intent-git-diff-review"></span><div class="slot-title">Review the current diff</div><div class="slot-labels"><div><span class="label-tag tag-swe">SWE</span><code>git-diff</code></div><div><span class="label-tag tag-pi">Pi</span><code>git-diff-review</code></div></div></td>
 <td class="desc"><code>git diff</code> review of the current changes.</td>
 <td class="num claude">538</td>
@@ -1668,7 +1726,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
 <td class="num claude">71</td><td class="num gpt">33</td>
-</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#7b8460"></span>housekeeping</td></tr><tr>
+</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#7b8460"></span>housekeeping <span style="color:#3a8a8a">(cleanup)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-file-cleanup"></span><div class="slot-title">General file cleanup</div><div class="slot-labels"><div><code>file-cleanup</code></div></div></td>
 <td class="desc">Filesystem cleanup / movement such as <code>rm</code>, <code>mv</code>, <code>cp</code>, or <code>chmod</code>.</td>
 <td class="num claude">1,554</td>
@@ -1704,7 +1762,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <td class="num claude"><span class="na">—</span></td>
 <td class="num gpt"><span class="na">—</span></td>
 <td class="num claude">1</td><td class="num gpt">11</td>
-</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#a05050"></span>failed</td></tr><tr>
+</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#a05050"></span>failed <span style="color:#888888">(ignored)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-search-keyword(failed)"></span><div class="slot-title">Search command failed at the shell level</div><div class="slot-labels"><div><code>search-keyword(failed)</code></div></div></td>
 <td class="desc">A <code>grep</code>/<code>find</code>-style search whose observation shows a shell-level error.</td>
 <td class="num claude">46</td>
@@ -1746,7 +1804,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 <td class="num claude">32</td>
 <td class="num gpt">1,217</td>
 <td class="num claude">11</td><td class="num gpt">14</td>
-</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#888888"></span>other</td></tr><tr>
+</tr><tr class="category-row"><td colspan="6"><span class="cat-dot" style="background:#888888"></span>other <span style="color:#888888">(ignored)</span></td></tr><tr>
 <td class="slot"><span class="anchor-target" id="intent-echo"></span><div class="slot-title">Echo / printf</div><div class="slot-labels"><div><code>echo</code></div></div></td>
 <td class="desc">Output-only commands like <code>echo</code> or <code>printf</code>.</td>
 <td class="num claude">140</td>
@@ -1789,7 +1847,7 @@ On SWE-bench Pro, even if we ignore _when_ actions happen and just count _what_ 
 
 </div>
 
-### 4. Mario's analysis prompt {#mario-analysis-prompt}
+### 5. Mario's analysis prompt {#mario-analysis-prompt}
 
 Every Pi session in the analyzed set kicks off with this prompt. The `<issue-number>` is filled in per session; Mario steers from there.
 
@@ -1814,9 +1872,9 @@ For each issue:
 Do NOT implement unless explicitly asked. Analyze and propose only.
 ```
 
-### 5. SWE-Agent issue-resolution prompt {#swe-agent-issue-resolution-prompt}
+### 6. SWE-agent issue-resolution prompt {#swe-agent-issue-resolution-prompt}
 
-For comparison, the SWE-Agent setup used in SWE-bench Pro includes the following issue-resolution scaffold in its default prompt (<a href="https://github.com/SWE-agent/SWE-agent/blob/0f4f3bba990e01ca8460b9963abdcd89e38042f2/config/default.yaml#L21">source</a>):
+For comparison, the SWE-agent setup used in SWE-Bench Pro includes the following issue-resolution scaffold in its default prompt (<a href="https://github.com/SWE-agent/SWE-agent/blob/0f4f3bba990e01ca8460b9963abdcd89e38042f2/config/default.yaml#L21">source</a>):
 
 ```
 Follow these steps to resolve the issue:
