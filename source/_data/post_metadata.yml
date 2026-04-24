@@ -1,3 +1,6 @@
+- title: "Business Errors Are Outcomes, Not Exceptions"
+  description: "Keep workflow failures for workflow problems. Keep business outcomes in your business logic."
+
 - title: "Trajectory shapes"
   description: "Why are we managing our coding agents based on vibes instead of their actual work habits?"
 
