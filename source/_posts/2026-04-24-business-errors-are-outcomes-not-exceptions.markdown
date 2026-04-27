@@ -1,111 +1,96 @@
 ---
 layout: post
-title: Business Errors Are Outcomes, Not Exceptions
+title: Business Failures Are Logical Outcomes, Not Exceptions
 kind: article
 created_at: 2026-04-24
-description: Not all failures are equal. Some indicate that the system couldn't complete its work. Others indicate that it did, and the answer just happens to be "no". In Temporal, this distinction becomes critical.
+description: Using exceptions for control flow is a well-known code smell. This applies in Temporal as much as anywhere else. Here's how we modelled business outcomes as data instead of exceptions in a document verification workflow.
 author: Priyanga P Kini
 ---
 
-A document rejected during verification is not a system failure. But it's easy to treat it like one.
+## The Anti-Pattern: Control Flow by Exception
 
-The moment a validation fails, it is tempting to throw an exception and route it through an error path. This mixes two different concerns: **system failures** and **business outcomes**.
+Using exceptions for control flow is a well-known code smell. When a function validates an input, a validation failure is an expected outcome. Modelling it as an exception conflates a logical branch with a system failure.
 
-When building workflows for processes like user onboarding, you learn that not all failures are equal. Some indicate the system could not complete its work. Others indicate that it did, and the answer was simply "no."
+This applies in [Temporal](https://temporal.io/) as much as anywhere else. Temporal's failure model is exception-based by design, for good reasons: retries, recovery, and durability. But that doesn't mean every outcome should be an exception.
 
-In systems built with [Temporal](https://temporal.io/), this distinction is critical.
+We recently worked on a user onboarding workflow for a logistics platform. The process involves users uploading identity documents, such as Government IDs. The system runs OCR on each document, validates the extracted fields, and marks the document as verified or rejected. We built this using Temporal.
 
-## The Problem: Modelling rejection as an exception
+In the Temporal framework, the individual tasks are modelled as [**Activities**](https://docs.temporal.io/activities), and the orchestration logic as the [**Workflow**](https://docs.temporal.io/workflows).
 
-When an [Activity](https://docs.temporal.io/activities) throws an exception, it triggers Temporal's retry and failure machinery. Activities are retried automatically. If retries are exhausted, the Workflow can be marked as failed. This is the correct behaviour for a broken system.
+## The problem: Modelling logic errors as an exception
 
-However, consider a document verification Activity:
+Temporal uses exceptions as its primary mechanism for handling failures, so we initially modelled our validation Activity the same way:
 
 ```kotlin
-fun validateDocument(ocrResult: OcrResult): Boolean {
-    if (ocrResult.panNumber == null) {
-        throw DocumentValidationException("PAN number not found")
+fun validateDocument(extractedData: ExtractedData): Boolean {
+    if (extractedData.documentNumber == null) {
+        throw ValidationException("Document number not found")
     }
-    if (!isValidPan(ocrResult.panNumber)) {
-        throw DocumentValidationException("Invalid PAN number")
+    if (!isValidFormat(extractedData.documentNumber)) {
+        throw ValidationException("Invalid document number format")
     }
+    ...
     return true
 }
 ```
 
-In the Workflow, you might catch this to handle the rejection:
+The Workflow caught the exception to route the rejection:
 
 ```kotlin
 override fun processDocument(document: Document) {
     try {
-        val ocrResult = activities.extractText(document)
-        activities.validateDocument(ocrResult)
-        markDocumentVerified(document.id)
+        val extractedData = activities.runOcr(document)
+        activities.validateDocument(extractedData)
+        markVerified(document.id)
     } catch (e: ActivityFailure) {
-        // This was our "rejection" path
-        markDocumentRejected(document.id, e.cause?.message)
+        markRejected(document.id, e.cause?.message)
     }
 }
 ```
 
-Using exceptions for control flow is a smell in any codebase, but Temporal makes the cost impossible to ignore. Before the catch block runs, Temporal intercepts that exception. Depending on the retry policy, the Activity is retried. A missing PAN number will not appear on the third attempt. The document and the OCR output remain the same. The system burns through retries for nothing.
+When an Activity throws an exception, Temporal treats it as a failure. The exception travels through Temporal's infrastructure and arrives at the Workflow wrapped in an `ActivityFailure`.
 
-Furthermore, you cannot `catch` the exception before Temporal sees it. The Activity runs on a worker, the exception travels through Temporal's infrastructure, and arrives at the Workflow as an `ActivityFailure` only after retries have occurred.
+Temporal's [official guidance on failure handling](https://temporal.io/blog/failure-handling-in-practice) distinguishes between platform-level errors and application-level errors. You can mark an application-level error as [non-retryable](https://docs.temporal.io/references/failures#non-retryable) `ApplicationFailure` to skip retries, or flag it as [benign](https://docs.temporal.io/develop/java/activities/benign-exceptions) to suppress metrics and log noise. These tools solve the operational problems. But the Workflow still receives a business outcome as an `ActivityFailure` in a catch block. A rejected document is modelled the same way as a crashed worker.
 
-If retries are exhausted, the whole workflow is marked as failed. This creates a "wall of red" in the Temporal dashboard. You cannot distinguish between a real infrastructure problem and a user uploading the wrong document without clicking into each individual failure.
+When you use exceptions for business logic, you tell the state machine that it has failed to reach any valid next state. This forces the orchestrator to handle the result as an interruption of the process rather than a continuation.
 
-## The two buckets
+By modelling outcomes as data, you keep the happy path and alternative paths within the domain of state transitions. The try/catch block is then correctly relegated to handling actual malfunctions in the machine itself, such as a worker crashing or an API timing out.
 
-Once you see it, it's obvious. There are two distinct categories of failure:
+## The solution: Returning outcomes
 
-1. **"Something broke"**: A worker crashed, an API timed out, the network blipped. The workflow did not get a chance to do its job. This is what Temporal's retry machinery is for.
-2. **"The answer is no"**: A document failed validation, a field is missing, or KYC was rejected. Nothing is broken. The system did its job, and the result was a rejection. This is a business outcome.
+Instead of throwing an exception for a rejected document, we return the outcome as data. The result flows through Temporal's normal return path. No failure machinery is triggered. The `when` block on a sealed class is exhaustive, so adding a new outcome forces you to handle it everywhere.
 
-When you throw exceptions for both, you're telling Temporal they're the same thing. They're not.
-
-## The Solution: Returning outcomes
-
-Instead of throwing exceptions for business logic, return a result object.
+A sealed class represents both success and rejection as explicit outcomes:
 
 ```kotlin
-sealed class ValidationOutcome {
-    data class Verified(val extractedInfo: ExtractedInfo) : ValidationOutcome()
-    data class Rejected(val reason: String) : ValidationOutcome()
+sealed class ValidationResult {
+    data class Verified(val data: VerifiedData) : ValidationResult()
+    data class Rejected(val reason: String) : ValidationResult()
 }
 
-fun validateDocument(ocrResult: OcrResult): ValidationOutcome {
-    if (ocrResult.panNumber == null) {
-        return ValidationOutcome.Rejected("PAN number not found")
+fun validateDocument(extractedData: ExtractedData): ValidationResult {
+    if (extractedData.documentNumber == null) {
+        return ValidationResult.Rejected("Document number not found")
     }
-    if (!isValidPan(ocrResult.panNumber)) {
-        return ValidationOutcome.Rejected("Invalid PAN number")
+    if (!isValidFormat(extractedData.documentNumber)) {
+        return ValidationResult.Rejected("Invalid document number format")
     }
     ...
-    return ValidationOutcome.Verified(ocrResult)
+    return ValidationResult.Verified(extractedData.toVerified())
 }
 ```
 
-The Workflow then uses a `when` block instead of a `try/catch`:
+The Workflow uses a `when` block instead of `try/catch`:
 
 ```kotlin
 override fun processDocument(document: Document) {
-    val ocrResult = activities.extractText(document)
-    val outcome = activities.validateDocument(ocrResult)
-    when (outcome) {
-        is ValidationOutcome.Verified -> markDocumentVerified(document.id)
-        is ValidationOutcome.Rejected -> handleRejection(document.id, outcome.reason)
+    val extractedData = activities.runOcr(document)
+    val result = activities.validateDocument(extractedData)
+    when (result) {
+        is ValidationResult.Verified -> markVerified(document.id)
+        is ValidationResult.Rejected -> handleRejection(document.id, result.reason)
     }
 }
 ```
 
-## What changed
-
-After making this change, a few things improved:
-
-**The dashboard became useful.** A failed workflow now meant something was actually broken. No more sifting through noise to find real problems.
-
-**Retries made sense.** Temporal only retried things that were worth retrying. Infrastructure hiccups got retried. Business rejections flowed through the domain logic.
-
-**Debugging got easier.** The event history in Temporal's UI told a clean story: "Activity ran, returned a rejection". This is much easier to follow than a sequence of failures and retries.
-
-*Exceptions should be reserved for when things genuinely break. Business outcomes, even negative ones, should be handled as data.*
+The Workflow code reads as what it is: a logical branch, not error handling.
