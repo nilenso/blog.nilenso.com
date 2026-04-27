@@ -17,6 +17,8 @@ We recently worked on a user onboarding workflow for a logistics platform. The p
 
 In the Temporal framework, the individual tasks are modelled as [**Activities**](https://docs.temporal.io/activities), and the orchestration logic as the [**Workflow**](https://docs.temporal.io/workflows).
 
+![Document verification workflow](/images/blog/document-verification-workflow.png)
+
 ## The problem: Modelling logic errors as an exception
 
 Temporal uses exceptions as its primary mechanism for handling failures, so we initially modelled our validation Activity the same way:
