@@ -58,7 +58,7 @@ By modelling outcomes as data, you keep the happy path and alternative paths wit
 
 ## The fix
 
-Instead of throwing an exception for a rejected document, we return the outcome as data. The result flows through Temporal's normal return path. No failure machinery is triggered.
+Instead of throwing an exception for a rejected document, *we return the outcome as data*. The result flows through Temporal's normal return path. No failure machinery is triggered.
 
 We represent both success and rejection as explicit variants of a single return type:
 
