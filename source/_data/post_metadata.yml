@@ -1,5 +1,5 @@
-- title: "Business Errors Are Outcomes, Not Exceptions"
-  description: "Keep workflow failures for workflow problems. Keep business outcomes in your business logic."
+- title: "Business Failures Are Logical Outcomes, Not Exceptions"
+  description: "When business outcomes are modelled as exceptions, workflows lose their shape. A better approach in Temporal is to treat them as data."
 
 - title: "Trajectory shapes"
   description: "Why are we managing our coding agents based on vibes instead of their actual work habits?"
