@@ -3,7 +3,7 @@ layout: post
 title: Business Failures Are Logical Outcomes, Not Exceptions
 kind: article
 created_at: 2026-04-24
-description: When business outcomes are modelled as exceptions, workflows lose their shape. A better approach in Temporal is to treat them as data.
+description: Business failures are not exceptions. They are part of the domain, and they deserve to be modelled as first-class outcomes.
 author: Priyanga P Kini
 ---
 
