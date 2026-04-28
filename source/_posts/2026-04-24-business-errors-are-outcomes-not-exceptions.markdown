@@ -9,7 +9,7 @@ author: Priyanga P Kini
 
 We recently worked on a document verification workflow for a logistics platform. The process involves users uploading identity documents. The system runs OCR on each document, validates the extracted fields, and marks the document as verified or rejected. We built this using [Temporal](https://temporal.io/), a workflow orchestration platform.
 
-In the Temporal framework, the individual tasks are modelled as [**Activities**](https://docs.temporal.io/activities), and the orchestration logic as the [**Workflow**](https://docs.temporal.io/workflows).
+In the Temporal framework, the individual tasks are modelled as [Activities](https://docs.temporal.io/activities), and the orchestration logic as the [Workflow](https://docs.temporal.io/workflows).
 
 ![Document verification workflow](/images/blog/document-verification-workflow.png)
 
