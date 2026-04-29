@@ -89,4 +89,4 @@ override fun processDocument(document: Document) {
 }
 ```
 
-The rejected document is no longer an interruption. It's a state the workflow transitions to. Business failures are part of the domain, and they deserve to be modelled as first-class outcomes because code that models outcomes explicitly grows with the business instead of fighting against it.
+The rejected document is no longer an interruption. It's a state the workflow transitions to. Business failures are part of the domain. They deserve to be modelled as first-class outcomes because code that models outcomes explicitly grows with the business instead of fighting against it.
