@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Business Failures Are Logical Outcomes, Not Exceptions
+title: "Temporal anti-pattern: Don't treat expected failures as exceptions"
 kind: article
 created_at: 2026-04-24
-description: Business failures are not exceptions. They are part of the domain, and they deserve to be modelled as first-class outcomes.
+description: A simple way to distinguish business logic failures from system exceptions.
 author: Priyanga P Kini
 ---
 
-We recently worked on a document verification workflow for a logistics platform. The process involves users uploading identity documents. The system runs OCR on each document, validates the extracted fields, and marks the document as verified or rejected. We built this using [Temporal](https://temporal.io/), a workflow orchestration platform.
+We recently worked on partner onboarding for a logistics platform. When a new delivery partner signs up, they upload identity documents. The system runs OCR on each document, validates the extracted fields, and marks the document as verified or rejected. A partner can't start taking deliveries until this is completed.
+
+The previous flow took 3-4 days. The goal was same-day onboarding. The verification pipeline is inherently failure-prone: OCR can time out, validation services can stall, external APIs can rate-limit, and some cases need human review. We needed durable execution, automatic retries, and the ability to pause a workflow for hours and resume safely. That's what led us to [Temporal](https://temporal.io/).
 
 In the Temporal framework, the individual tasks are modelled as [Activities](https://docs.temporal.io/activities), and the orchestration logic as the [Workflow](https://docs.temporal.io/workflows).
 
@@ -48,17 +50,11 @@ When an Activity throws an exception, Temporal treats it as a failure. The excep
 
 Temporal's [failure handling guidance](https://temporal.io/blog/failure-handling-in-practice) distinguishes between platform-level and application-level errors. You can mark an application-level error as [non-retryable](https://docs.temporal.io/references/failures#non-retryable) `ApplicationFailure` to skip retries, or flag it as [Benign](https://docs.temporal.io/develop/java/activities/benign-exceptions) to suppress metrics and log noise.
 
-But the Workflow still receives a valid state transition as an `ActivityFailure` in a catch block. You can inspect the cause to distinguish a rejection from a crash, but both arrive as exceptions. The control flow treats them the same way: as interruptions.
-
-## Why does this matter?
-
-When you use exceptions for business logic, you tell the state machine that it has failed to reach any valid next state. This forces the orchestrator to handle the result as an interruption of the process rather than a continuation.
-
-By modelling outcomes as data, you keep the happy path and alternative paths within the domain of state transitions. The `try/catch` block is then correctly relegated to handling actual infrastructure failures, such as a worker crashing or an API timing out.
+But the Workflow still receives a rejected document the same way it receives a crashed worker: as an `ActivityFailure` in a catch block. A partner uploading a blurry photo looks the same as a network timeout. And when you need to add new rejection reasons or route them differently, you're working inside catch blocks that also handle genuine crashes, making the code fragile to change.
 
 ## The fix
 
-Instead of throwing an exception for a rejected document, *we return the outcome as data*. The result flows through Temporal's normal return path. No failure machinery is triggered.
+Instead of throwing an exception for a rejected document, *we **return the outcome as data***. The result flows through Temporal's normal return path. No failure machinery is triggered. Both verification and rejection become explicit branches in your workflow logic. The `try/catch` block is then correctly relegated to handling actual infrastructure failures.
 
 We represent both success and rejection as explicit variants of a single return type:
 
@@ -93,4 +89,4 @@ override fun processDocument(document: Document) {
 }
 ```
 
-The rejected document is no longer an interruption. It's a state the workflow transitions to. Business failures are part of the domain, and they deserve to be modelled as first-class outcomes.
+The rejected document is no longer an interruption. It's a state the workflow transitions to. Business failures are part of the domain, and they deserve to be modelled as first-class outcomes because code that models outcomes explicitly grows with the business instead of fighting against it.
