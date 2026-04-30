@@ -1,3 +1,6 @@
+- title: "Temporal anti-pattern: Don't treat expected failures as exceptions"
+  description: "A simple way to distinguish business logic failures from system exceptions."
+
 - title: "Trajectory shapes"
   description: "Why are we managing our coding agents based on vibes instead of their actual work habits?"
 
