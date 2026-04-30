@@ -2,7 +2,7 @@
 layout: post
 title: "Temporal anti-pattern: Don't treat expected failures as exceptions"
 kind: article
-created_at: 2026-04-24
+created_at: 2026-04-30
 description: A simple way to distinguish business logic failures from system exceptions.
 author: Priyanga P Kini
 ---
