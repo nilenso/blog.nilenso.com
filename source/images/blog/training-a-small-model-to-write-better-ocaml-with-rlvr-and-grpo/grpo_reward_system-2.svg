@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1080" width="1000" height="1080" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="1000" height="1080" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="44" y="48" font-size="23" font-weight="700" fill="#111">GRPO reward pipeline</text>
+
+
+  <!-- Shared reward axis -->
+  <text x="560" y="122" font-size="10.5" letter-spacing="1.2" fill="#888">SHARED REWARD AXIS</text>
+  <line x1="560" y1="138" x2="920" y2="138" stroke="#777" stroke-width="0.75"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <line x1="560" y1="134" x2="560" y2="142" stroke="#777"/>
+    <text x="560" y="158">0</text>
+    <line x1="650" y1="134" x2="650" y2="142" stroke="#aaa"/>
+    <text x="650" y="158">0.25</text>
+    <line x1="686" y1="134" x2="686" y2="142" stroke="#aaa"/>
+    <text x="686" y="158">0.35</text>
+    <line x1="920" y1="134" x2="920" y2="142" stroke="#777"/>
+    <text x="920" y="158">1.00</text>
+  </g>
+
+  <!-- Pipeline spine -->
+  <line x1="70" y1="130" x2="70" y2="680" stroke="#d7d7d7" stroke-width="1"/>
+
+  <!-- Section labels -->
+  <text x="44" y="120" font-size="10.5" letter-spacing="1.2" fill="#888">PIPELINE</text>
+
+
+  <!-- ===================== 1. Extract code ===================== -->
+  <circle cx="70" cy="156" r="5" fill="#111"/>
+  <text x="92" y="152" font-size="14" font-weight="700" fill="#111">1. Extract runnable code</text>
+  <text x="92" y="171" font-size="12" fill="#444">Extract the first usable OCaml block, or use the whole completion.</text>
+  <text x="92" y="189" font-size="12" fill="#444">Empty / too-short code exits with <tspan font-weight="700">reward = 0.00</tspan>.</text>
+  <rect x="560" y="172" width="66" height="18" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+
+
+  <!-- ===================== 2. Prepare tests ===================== -->
+  <circle cx="70" cy="240" r="5" fill="#111"/>
+  <text x="92" y="236" font-size="14" font-weight="700" fill="#111">2. Append transformed tests</text>
+  <text x="92" y="255" font-size="12" fill="#444">Instrument tests to count passed / total assertions.</text>
+  <text x="92" y="273" font-size="12" fill="#777">This enables partial test credit instead of all-or-nothing scoring.</text>
+
+  <!-- ===================== 3. Type check ===================== -->
+  <circle cx="70" cy="324" r="5" fill="#111"/>
+  <text x="92" y="320" font-size="14" font-weight="700" fill="#111">3. Type check</text>
+  <text x="92" y="339" font-size="12" fill="#444">Success gives 0.25; type errors receive graduated partial credit.</text>
+  <text x="92" y="357" font-size="11" fill="#666">More errors move the reward down a spectrum from 0.20 to 0.01. Syntax / timeout = 0.</text>
+  <!-- right bar: 0.25 = 90 px on 360 px scale -->
+  <rect x="560" y="317" width="90" height="14" fill="#111"/>
+  <text x="662" y="328" font-size="12" fill="#111" font-weight="700">0.25</text>
+
+
+  <!-- ===================== 4. Compile ===================== -->
+  <circle cx="70" cy="418" r="5" fill="#111"/>
+  <text x="92" y="414" font-size="14" font-weight="700" fill="#111">4. Compile</text>
+  <text x="92" y="433" font-size="12" fill="#444">Success gives 0.10.</text>
+  <text x="92" y="451" font-size="12" fill="#444">Failures get small fallback credit only when earlier stages made progress.</text>
+  <!-- right bar: 0.10 = 36 px -->
+  <rect x="560" y="411" width="36" height="14" fill="#6e6e6e"/>
+  <text x="608" y="422" font-size="12" fill="#111" font-weight="700">0.10</text>
+
+
+  <!-- ===================== 5. Tests ===================== -->
+  <circle cx="70" cy="512" r="5" fill="#111"/>
+  <text x="92" y="508" font-size="14" font-weight="700" fill="#111">5. Tests</text>
+  <text x="92" y="527" font-size="12" fill="#444">Only runs after successful compilation.</text>
+  <text x="92" y="545" font-size="12" fill="#444">Reward scales linearly with passed / total tests.</text>
+  <!-- right bar: 0.65 = 234 px -->
+  <rect x="560" y="505" width="234" height="14" fill="#cfcfcf"/>
+  <text x="806" y="516" font-size="12" fill="#111" font-weight="700">0.65</text>
+
+
+  <!-- ===================== Base reward ===================== -->
+  <line x1="44" y1="580" x2="956" y2="580" stroke="#e5e5e5" stroke-width="1"/>
+  <circle cx="70" cy="610" r="5" fill="#111"/>
+  <text x="92" y="606" font-size="14" font-weight="700" fill="#111">6. Base reward</text>
+  <text x="92" y="625" font-size="12" fill="#444">Add type, compile, and test signals.</text>
+  <text x="92" y="643" font-size="12" fill="#666">Maximum base reward: 0.25 + 0.10 + 0.65 = <tspan font-weight="700" fill="#111">1.00</tspan>.</text>
+  <rect x="560" y="602" width="90" height="14" fill="#111"/>
+  <rect x="650" y="602" width="36" height="14" fill="#6e6e6e"/>
+  <rect x="686" y="602" width="234" height="14" fill="#cfcfcf"/>
+  <line x1="920" y1="598" x2="920" y2="620" stroke="#111" stroke-width="1"/>
+  <text x="930" y="616" font-size="12" fill="#111" font-weight="700">1.00</text>
+
+
+  <!-- ===================== Post-score modifiers ===================== -->
+  <line x1="44" y1="668" x2="956" y2="668" stroke="#e5e5e5" stroke-width="1"/>
+  <text x="44" y="698" font-size="10.5" letter-spacing="1.2" fill="#888">POST-SCORE MODIFIERS</text>
+
+  <!-- Degenerate -->
+  <text x="44" y="726" font-size="14" font-weight="700" fill="#111">Degenerate output</text>
+  <text x="44" y="745" font-size="12" fill="#444">Low-quality completions keep only <tspan font-weight="700">30%</tspan></text>
+  <text x="44" y="762" font-size="12" fill="#444">of the base reward.</text>
+  <text x="44" y="779" font-size="11" fill="#666">Triggers: repetition · prose-heavy output</text>
+  <text x="44" y="794" font-size="11" fill="#666">code-block spam · stubs/placeholders</text>
+  <!-- multiplier visual: base ghost then 30% retained -->
+  <rect x="560" y="726" width="234" height="14" fill="#e6e6e6"/>
+  <rect x="560" y="726" width="70.2" height="14" fill="#111"/>
+  <text x="806" y="738" font-size="12" fill="#111" font-weight="700">× 0.3</text>
+
+
+  <!-- Style -->
+  <text x="44" y="826" font-size="14" font-weight="700" fill="#111">Style penalty</text>
+  <text x="44" y="845" font-size="12" fill="#444">Only perfect, non-degenerate completions</text>
+  <text x="44" y="862" font-size="12" fill="#444">can receive this penalty.</text>
+  <text x="44" y="879" font-size="12" fill="#444">Verbose formatting subtracts up to 0.10.</text>
+  <!-- penalty visual: 0.10 = 36 px, outlined/hatch -->
+  <rect x="560" y="838" width="36" height="14" fill="#fff" stroke="#444" stroke-width="1"/>
+  <line x1="560" y1="838" x2="596" y2="852" stroke="#888" stroke-width="0.6"/>
+  <text x="608" y="850" font-size="12" fill="#111" font-weight="700">−0.10</text>
+
+
+  <!-- Reward formula -->
+  <line x1="44" y1="910" x2="956" y2="910" stroke="#e5e5e5" stroke-width="1"/>
+  <text x="44" y="940" font-size="10.5" letter-spacing="1.2" fill="#888">REWARD FORMULA</text>
+  <text x="76" y="966" font-size="13" fill="#222" font-weight="700" text-anchor="end">base</text>
+  <text x="92" y="966" font-size="13" fill="#222" text-anchor="middle">=</text>
+  <text x="112" y="966" font-size="13" fill="#222">type + compile + tests</text>
+
+  <text x="76" y="990" font-size="13" fill="#222" font-weight="700" text-anchor="end">final</text>
+  <text x="92" y="990" font-size="13" fill="#222" text-anchor="middle">=</text>
+  <text x="112" y="990" font-size="13" fill="#222"><tspan font-weight="700">0.00</tspan> if no code</text>
+  <text x="112" y="1012" font-size="13" fill="#222"><tspan font-weight="700">0.3 × base</tspan> if degenerate</text>
+  <text x="430" y="990" font-size="13" fill="#222"><tspan font-weight="700">base − style</tspan> if base = 1.00</text>
+  <text x="430" y="1012" font-size="13" fill="#222"><tspan font-weight="700">base</tspan> otherwise</text>
+
+  <!-- Legend / provenance -->
+  <line x1="44" y1="1040" x2="956" y2="1040" stroke="#e5e5e5" stroke-width="1"/>
+  <g font-size="10.5" fill="#444">
+    <rect x="44" y="1050" width="11" height="11" fill="#111"/><text x="60" y="1060">Type check / retained reward</text>
+    <rect x="198" y="1050" width="11" height="11" fill="#6e6e6e"/><text x="214" y="1060">Compile</text>
+    <rect x="275" y="1050" width="11" height="11" fill="#cfcfcf"/><text x="291" y="1060">Tests</text>
+    <rect x="340" y="1050" width="11" height="11" fill="#fff" stroke="#444" stroke-width="0.8"/><text x="356" y="1060">Style penalty</text>
+  </g>
+  <text x="956" y="1060" font-size="10" fill="#999" text-anchor="end">rlvr/reward.py + rlvr/environment.py · github.com/nilenso/grpo-trainer</text>
+</svg>
