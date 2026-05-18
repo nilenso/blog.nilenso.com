@@ -1,3 +1,6 @@
+- title: "Evals before prompts: building an LLM OCR for KYC"
+  description: "Building an evaluation framework for production-grade document extraction."
+
 - title: "Temporal anti-pattern: Don't treat expected failures as exceptions"
   description: "A simple way to distinguish business logic failures from system exceptions."
 
