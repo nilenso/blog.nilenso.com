@@ -3,7 +3,7 @@ layout: post
 title: "Evals before prompts: building an LLM OCR for KYC"
 kind: article
 created_at: 2026-05-18 10:00 -0800
-description: A year ago, I built an LLM-based pipeline to extract fields from PAN, Aadhaar, DL, and RC documents. The work that mattered most wasn't the prompts. It was the golden dataset, the rubric, and the loop I built around them. Here's how I set up evals for the project, and what I'd do differently today.
+description: Building an evaluation framework for production-grade document extraction.
 author: Priyanga P Kini
 ---
 
