@@ -1,0 +1,20 @@
+<svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .th { font-family: Charter, Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; }
+      .ts { font-family: Charter, Georgia, 'Times New Roman', serif; font-size: 12px; }
+    </style>
+  </defs>
+
+  <text class="th" x="340" y="32" text-anchor="middle" fill="#000000" font-size="15">Monthly cost</text>
+
+  <line x1="120" y1="290" x2="560" y2="290" stroke="#dddddd" stroke-width="1"/>
+
+  <rect x="160" y="70" width="140" height="220" rx="2" fill="#eeeeee" stroke="#828282" stroke-width="1"/>
+  <text class="th" x="230" y="58" text-anchor="middle" fill="#000000" font-size="18" font-weight="700">100%</text>
+  <text class="ts" x="230" y="318" text-anchor="middle" fill="#555555" font-size="13" font-weight="600">Third-party service</text>
+
+  <rect x="380" y="268" width="140" height="22" rx="2" fill="#ff3d84" stroke="#ff3d84" stroke-width="1"/>
+  <text class="th" x="450" y="258" text-anchor="middle" fill="#000000" font-size="18" font-weight="700">10%</text>
+  <text class="ts" x="450" y="318" text-anchor="middle" fill="#555555" font-size="13" font-weight="600">LLM powered OCR system</text>
+</svg>
