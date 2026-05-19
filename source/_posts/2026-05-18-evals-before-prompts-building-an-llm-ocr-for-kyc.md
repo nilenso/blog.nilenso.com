@@ -52,9 +52,13 @@ My first prompt was a one-liner. Something close to "Extract the following field
 
 **Phase 3: Decomposition**. The change that mattered most was in how the work was split up. Instead of having one prompt return all fields for a document type at once, I split the extraction into multiple focused calls, one per field. The single-call version was juggling too much: layout, language, format, and field semantics, with errors in one field bleeding into others. Per-field calls were slower and more expensive, but each call was simple enough that the model stopped tripping over itself.
 
-By the end of these iterations, the system achieved 92% accuracy on the golden set at 10% of the third-party service's cost.
+By the end of these iterations, the system achieved **92% accuracy** on the golden set at **10% of the third-party service's cost**.
 
-![Monthly cost comparison: the third-party service runs roughly ten times more expensive than the LLM-powered OCR system.](/images/blog/evals-before-prompts-building-an-llm-ocr-for-kyc/cost_comparison.svg)
+| Metric                  | Third-party  | LLM pipeline |
+|-------------------------|--------------|--------------|
+| Accuracy (golden set)   | baseline     | 92%          |
+| Latency p99             | ~10s         | 7.9s         |
+| Cost (per 1M docs)      | $10,000      | $1,000       |
 
 When we shipped, the model itself had improved enough that I could drop the decomposition and go back to a single call per document. The workaround had quietly outlived its usefulness.
 
