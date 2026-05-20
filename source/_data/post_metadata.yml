@@ -1,3 +1,7 @@
+- title: "Training a small model to write better OCaml with RLVR and GRPO"
+  description: "Exploring whether RLVR and GRPO can turn a weak OCaml coder into a more useful local model."
+  image: /images/blog/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/cover.png
+
 - title: "Evals before prompts: building an LLM OCR for KYC"
   description: "Building an evaluation framework for production-grade document extraction."
 
