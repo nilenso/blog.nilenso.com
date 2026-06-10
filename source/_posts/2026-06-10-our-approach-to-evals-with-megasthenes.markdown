@@ -5,7 +5,7 @@ author: Siri P R
 created_at: 2026-06-10 00:00:00 UTC
 layout: post
 ---
-We built megasthenes, an SDK that lets you connect to a GitHub/GitLab repository and ask questions in natural language.
+We built [megasthenes](https://github.com/nilenso/megasthenes), an SDK that lets you connect to a GitHub/GitLab repository and ask questions in natural language.
 
 Under the hood, it’s an agentic loop — a model reads the repo with a small set of tools and returns an answer.
 
@@ -142,8 +142,7 @@ Storing sessions in our own SQLite database was fine for prototyping, but hand-i
 
 ### Resources
 
-- https://hamel.dev/blog/posts/evals-faq/
-- https://hamel.dev/blog/posts/llm-judge/
-- https://hamel.dev/blog/posts/evals/
-- https://arize.com/blog/testing-binary-vs-score-llm-evals-on-the-latest-models/
-- Arize Phoenix
+- [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/)
+- [Using LLM-as-a-Judge For Evaluation: A Complete Guide](https://hamel.dev/blog/posts/llm-judge/)
+- [Testing Binary vs Score Evals on the Latest Models](https://arize.com/blog/testing-binary-vs-score-llm-evals-on-the-latest-models/)
+- [Arize Phoenix](https://github.com/Arize-ai/phoenix)
