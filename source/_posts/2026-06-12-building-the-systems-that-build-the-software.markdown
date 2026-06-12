@@ -488,14 +488,3 @@ The transcript is edited for readability: filler words, repeated fragments, and 
   <p>I have found these three skills useful as life skills too, and I hope they are useful for you. Thank you.</p>
   </div>
 </div>
-
-<div class="annotated-talk-slide" id="q-and-a">
-  <img loading="lazy" src="/images/blog/building-systems-that-build-the-software/q_and_a_00-29-00.jpg" alt="Q&A after the talk" style="max-width: 100%">
-  <div><a class="permalink" href="#q-and-a">#</a>
-  <p class="timestamp">29:00-30:28.</p>
-  <p>Question: A lot of what you said sounded philosophical. Do you think some of this belongs in those branches of study? For example, Anthropic has talked about a model having a conscience, or a soul. Who do you think is going to draft these ideas? Philosophers are already drafting some of that. Any thoughts?</p>
-  <p>Answer: Do you mean my thoughts on these models potentially having a soul or consciousness?</p>
-  <p>Question: I mean your talk, and also a lot of what is going on around this idea of the soul and conscience of a model. These are philosophical sorts of thoughts. Any thoughts on that?</p>
-  <p>Answer: I have a lot of thoughts on that, but I think I can talk about it on the hallway track. I do not know if there is anything I can add here that ties directly to what I just spoke about, but I am happy to talk about it.</p>
-  </div>
-</div>
