@@ -1,3 +1,6 @@
+- title: "Our approach to evals with megasthenes"
+  description: "How we built evals and guardrails to make a codebase Q&A SDK's answers trustworthy."
+
 - title: "Training a small model to write better OCaml with RLVR and GRPO"
   description: "Exploring whether RLVR and GRPO can turn a weak OCaml coder into a more useful local model."
   image: /images/blog/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/cover.png
