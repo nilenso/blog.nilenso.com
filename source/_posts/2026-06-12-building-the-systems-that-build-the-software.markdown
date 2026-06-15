@@ -13,9 +13,9 @@ layout: post
 .annotated-talk-slide .permalink { float: right; text-decoration: none; border-bottom: none; padding-left: 1em; color: #777; }
 </style>
 
-I gave this talk at The Fifth Elephant 2026 in Pune. This is an annotated version of the talk: each slide or screen is followed by a lightly edited transcript of what I said around that point.
+I gave this talk at \[The Fifth Elephant 2026](hasgeek.com/fifthelephant/2026-pune/) in Pune. This was a result of me grappling with the question of: "What do software engineers do when AI is writing all the code? What are the new skills required of them?"
 
-The transcript is edited for readability: filler words, repeated fragments, and obvious captioning mistakes have been removed, while preserving the original wording and flow as closely as possible.
+This was an early glimpse into what the zeitgeist is now calling "\[loop engineering](https://x.com/latentspacepod/status/2065307204836905461)". I draw from Donella Meadows work on systems dynamics to ground what this skill looks like concretely, along with examples of how to apply "the bitter lesson" to AI product building and also make a case of empirical rigour being an underrated skill to navigate the turbulent waters of AI hype cycles.
 
 <div class="annotated-talk-slide" id="slide-01">
   <img loading="lazy" src="/images/blog/building-systems-that-build-the-software/slide-01.jpg" alt="building the systems that build the software" style="max-width: 100%">
