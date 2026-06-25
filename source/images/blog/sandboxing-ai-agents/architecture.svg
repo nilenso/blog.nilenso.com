@@ -1,0 +1,119 @@
+<svg viewBox="0 70 920 830" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Megasthenes sandbox architecture</title>
+  <desc id="desc">The client on the host calls a small HTTP API on the worker. The worker runs inside a sandbox that lives on the host. The worker only sees the cloned repo. Host filesystem, secrets, and the network stay outside the sandbox.</desc>
+
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
+    </filter>
+    <marker id="head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 6 3, 0 6" fill="var(--fg)"/>
+    </marker>
+    <marker id="redhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 6 3, 0 6" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #555555;
+      --accent: #c0392b;
+    }
+
+
+    .hand   { font-family: Charter, Georgia, 'Times New Roman', serif; }
+    .stroke { fill: none; stroke: var(--fg); stroke-linecap: round; stroke-linejoin: round; }
+    .red    { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <rect x="0" y="70" width="920" height="830" rx="18" fill="var(--bg)"/>
+
+  <!-- LLM API band -->
+  <g filter="url(#rough)">
+    <rect x="390" y="92" width="240" height="56" class="stroke" stroke-width="2.4" rx="6"/>
+  </g>
+  <text x="510" y="118" class="hand" font-size="22" font-weight="bold" text-anchor="middle" fill="var(--fg)">LLM API</text>
+  <text x="510" y="138" class="hand" font-size="15" text-anchor="middle" fill="var(--muted)">prompts in, tool calls out</text>
+
+  <!-- HOST box (wraps everything below) -->
+  <g filter="url(#rough)">
+    <rect x="30" y="180" width="859" height="690" class="stroke" stroke-width="2.8" rx="10"/>
+  </g>
+  <text x="459.5" y="832" class="hand" font-size="22" font-weight="bold" text-anchor="middle" fill="var(--fg)">HOST</text>
+
+  <!-- Client box (inside host) -->
+  <g filter="url(#rough)">
+    <rect x="60" y="232" width="320" height="130" class="stroke" stroke-width="2.2" rx="6"/>
+  </g>
+  <text x="90" y="260" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">Megasthenes Client</text>
+  <text x="90" y="284" class="hand" font-size="15" fill="var(--muted)">runs the LLM loop, picks tools</text>
+  <text x="90" y="308" class="hand" font-size="15" fill="var(--muted)">holds your code, env, creds</text>
+  <text x="90" y="332" class="hand" font-size="15" fill="var(--muted)">talks to worker only over HTTP</text>
+
+  <!-- "Outside the sandbox" region inside host, below client -->
+  <g filter="url(#rough)">
+    <rect x="60" y="392" width="320" height="380" class="stroke" stroke-width="2.2" stroke-dasharray="8,6" rx="6"/>
+  </g>
+  <text x="90" y="416" class="hand" font-size="16" font-weight="bold" fill="var(--accent)">Other host resources</text>
+  <text x="90" y="438" class="hand" font-size="16" font-weight="bold" fill="var(--accent)">blocked from the worker</text>
+  <text x="78" y="480" class="hand" font-size="15" fill="var(--fg)">·  host files  (/home, /etc, /var)</text>
+  <text x="78" y="510" class="hand" font-size="15" fill="var(--fg)">·  secrets  (~/.ssh, ~/.aws, .env)</text>
+  <text x="78" y="540" class="hand" font-size="15" fill="var(--fg)">·  other host processes</text>
+  <text x="78" y="570" class="hand" font-size="15" fill="var(--fg)">·  network access after clone</text>
+  <text x="78" y="600" class="hand" font-size="15" fill="var(--fg)">·  the host kernel  (gVisor in front)</text>
+  <text x="78" y="630" class="hand" font-size="15" fill="var(--fg)">·  any repo except the active one</text>
+
+  <!-- SANDBOX box (nested inside host) -->
+  <g filter="url(#rough)">
+    <rect x="526" y="232" width="344" height="540" class="red" stroke-width="3.2" rx="10"/>
+  </g>
+  <text x="556" y="260" class="hand" font-size="18" font-weight="bold" fill="var(--accent)">SANDBOX  ·  container + gVisor</text>
+
+  <!-- Worker box -->
+  <g filter="url(#rough)">
+    <rect x="556" y="278" width="295" height="130" class="stroke" stroke-width="2.2" rx="6"/>
+  </g>
+  <text x="586" y="306" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">Megasthenes Worker</text>
+  <text x="586" y="330" class="hand" font-size="15" fill="var(--muted)">HTTP server, executes tools</text>
+  <text x="586" y="354" class="hand" font-size="15" fill="var(--muted)">no host FS, env, or creds</text>
+  <text x="586" y="378" class="hand" font-size="15" fill="var(--muted)">no outbound network after clone</text>
+
+  <!-- API contract -->
+  <g filter="url(#rough)">
+    <rect x="556" y="430" width="295" height="186" class="stroke" stroke-width="2.2" rx="6"/>
+  </g>
+  <text x="586" y="455" class="hand" font-size="18" font-weight="bold" fill="var(--fg)">Client → worker API</text>
+  <text x="586" y="473" class="hand" font-size="13" fill="var(--muted)">small HTTP surface, repo-scoped</text>
+  <text x="574" y="505" class="hand" font-size="16" fill="var(--fg)">·  clone a repo</text>
+  <text x="574" y="535" class="hand" font-size="16" fill="var(--fg)">·  run a small set of tools</text>
+  <text x="574" y="565" class="hand" font-size="16" fill="var(--fg)">·  check status / health / reset</text>
+
+  <!-- Worker's view -->
+  <g filter="url(#rough)">
+    <rect x="556" y="628" width="295" height="130" class="stroke" stroke-width="2.2" rx="6"/>
+  </g>
+  <text x="586" y="652" class="hand" font-size="18" font-weight="bold" fill="var(--fg)">What the worker sees</text>
+  <text x="574" y="680" class="hand" font-size="16" fill="var(--fg)">·  the cloned repo at /work/&lt;repo&gt;</text>
+  <text x="574" y="710" class="hand" font-size="16" fill="var(--fg)">·  that repo’s git history only</text>
+  <text x="574" y="740" class="hand" font-size="16" fill="var(--fg)">·  no host env, home, or other repos</text>
+
+  <!-- LLM <-> client arrows -->
+  <line x1="495" y1="148" x2="305" y2="232" class="stroke" stroke-width="2.2" marker-end="url(#head)"/>
+  <line x1="335" y1="232" x2="535" y2="148" class="stroke" stroke-width="2.2" marker-end="url(#head)"/>
+
+  <!-- Client -> Worker (request) -->
+  <text x="440" y="288" class="hand" font-size="11" font-weight="bold" text-anchor="middle" fill="var(--fg)">HTTP +</text>
+  <text x="440" y="301" class="hand" font-size="11" font-weight="bold" text-anchor="middle" fill="var(--fg)">auth token</text>
+  <line x1="380" y1="312" x2="556" y2="312" class="stroke" stroke-width="2.4" marker-end="url(#head)"/>
+
+  <!-- Worker -> Client (response) -->
+  <line x1="556" y1="344" x2="380" y2="344" class="stroke" stroke-width="2.4" marker-end="url(#head)"/>
+  <text x="440" y="364" class="hand" font-size="13" text-anchor="middle" fill="var(--muted)">results</text>
+
+  <!-- Blocked arrow: worker -> outside-sandbox (host resources) -->
+  <line x1="526" y1="510" x2="380" y2="510" class="red" stroke-width="3" stroke-dasharray="8,6" marker-end="url(#redhead)"/>
+  <text x="440" y="500" class="hand" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">blocked</text>
+</svg>

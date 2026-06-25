@@ -5,6 +5,9 @@
   description: "Exploring whether RLVR and GRPO can turn a weak OCaml coder into a more useful local model."
   image: /images/blog/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/cover.png
 
+- title: "Sandboxing Megasthenes"
+  description: "How we sandbox Megasthenes, our code-research agent SDK for analysing untrusted repositories."
+
 - title: "Evals before prompts: building an LLM OCR for KYC"
   description: "Building an evaluation framework for production-grade document extraction."
 
