@@ -6,7 +6,7 @@
   image: /images/blog/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/cover.png
 
 - title: "Sandboxing Megasthenes"
-  description: "How we sandbox Megasthenes, our code-research agent SDK for analysing untrusted repositories."
+  description: "How we sandbox a code-research agent that analyses untrusted repositories"
 
 - title: "Evals before prompts: building an LLM OCR for KYC"
   description: "Building an evaluation framework for production-grade document extraction."

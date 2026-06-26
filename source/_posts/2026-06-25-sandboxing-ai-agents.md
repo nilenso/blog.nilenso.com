@@ -3,7 +3,7 @@ layout: post
 title: "Sandboxing Megasthenes"
 kind: article
 created_at: 2026-06-25 10:00 -0800
-description: How we sandbox Megasthenes, our code-research agent SDK for analysing untrusted repositories.
+description: How we sandbox a code-research agent that analyses untrusted repositories
 author: Priyanga P Kini
 ---
 
@@ -61,12 +61,13 @@ We considered a few alternatives.
 
 This design is the middle ground we chose: stronger than a stock container, lighter than full VM orchestration.
 
-That choice comes with tradeoffs. **It is Linux-only.** The worker depends on Linux container isolation and gVisor, so the isolated execution path runs there.
+## The Tradeoffs
 
-**Every tool call goes through the worker.** That adds overhead, though it is small compared to LLM latency.
+**Linux-only.** The worker depends on Linux container isolation and gVisor, so the isolated execution path runs there.
+
+**Worker Overhead.** Every tool call goes through the worker. That adds overhead, though it is small compared to LLM latency.
 
 **Full isolation still needs operational guardrails.** Timeouts and storage limits help, but if you run this in production against truly untrusted inputs, you should still add CPU and memory limits at the container or orchestration layer.
-
 
 ## Why this matters
 
