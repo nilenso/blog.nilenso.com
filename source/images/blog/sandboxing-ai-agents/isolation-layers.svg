@@ -1,0 +1,108 @@
+<svg viewBox="0 0 940 620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
+    </filter>
+    <marker id="redhead" markerWidth="14" markerHeight="14" refX="6" refY="5" orient="auto">
+      <polygon points="0 0, 12 5, 0 10" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #555555;
+      --accent: #c0392b;
+    }
+
+
+    .hand   { font-family: Charter, Georgia, 'Times New Roman', serif; }
+    .stroke { fill: none; stroke: var(--fg); stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <rect x="0" y="0" width="940" height="620" rx="18" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="380" y="38" class="hand" font-size="30" font-weight="bold" text-anchor="middle" fill="var(--fg)">
+    Defence in Depth: Four Isolation Layers
+  </text>
+  <text x="380" y="64" class="hand" font-size="18" text-anchor="middle" fill="var(--muted)">
+    An attack must breach every layer to reach the host.
+  </text>
+
+  <!-- UNTRUSTED REPO band (top) -->
+  <g filter="url(#rough)">
+    <rect x="80" y="86" width="600" height="42" class="stroke" stroke-width="2.6" rx="4"/>
+  </g>
+  <text x="380" y="114" class="hand" font-size="22" font-weight="bold" text-anchor="middle" fill="var(--accent)">
+    UNTRUSTED REPO · arbitrary code, hooks, scripts
+  </text>
+
+  <!-- Layer 1 -->
+  <g filter="url(#rough)">
+    <rect x="80" y="148" width="600" height="76" class="stroke" stroke-width="2.4" rx="6"/>
+    <circle cx="110" cy="186" r="18" class="stroke" stroke-width="2.2"/>
+  </g>
+  <text x="110" y="194" class="hand" font-size="24" font-weight="bold" text-anchor="middle" fill="var(--fg)">1</text>
+  <text x="146" y="184" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">Application hardening</text>
+  <text x="146" y="210" class="hand" font-size="16" fill="var(--muted)">validated args, paths, and git flags</text>
+
+  <text x="710" y="180" class="hand" font-size="18" font-weight="bold" fill="var(--accent)">Blocks:</text>
+  <text x="710" y="200" class="hand" font-size="16" fill="var(--muted)">bad paths, malformed</text>
+  <text x="710" y="218" class="hand" font-size="16" fill="var(--muted)">args, git hooks</text>
+
+  <!-- Layer 2 -->
+  <g filter="url(#rough)">
+    <rect x="80" y="240" width="600" height="76" class="stroke" stroke-width="2.4" rx="6"/>
+    <circle cx="110" cy="278" r="18" class="stroke" stroke-width="2.2"/>
+  </g>
+  <text x="110" y="286" class="hand" font-size="24" font-weight="bold" text-anchor="middle" fill="var(--fg)">2</text>
+  <text x="146" y="276" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">seccomp</text>
+  <text x="146" y="302" class="hand" font-size="16" fill="var(--muted)">no network syscalls after clone</text>
+
+  <text x="710" y="272" class="hand" font-size="18" font-weight="bold" fill="var(--accent)">Blocks:</text>
+  <text x="710" y="292" class="hand" font-size="16" fill="var(--muted)">outbound network,</text>
+  <text x="710" y="310" class="hand" font-size="16" fill="var(--muted)">data exfiltration</text>
+
+  <!-- Layer 3 -->
+  <g filter="url(#rough)">
+    <rect x="80" y="332" width="600" height="76" class="stroke" stroke-width="2.4" rx="6"/>
+    <circle cx="110" cy="370" r="18" class="stroke" stroke-width="2.2"/>
+  </g>
+  <text x="110" y="378" class="hand" font-size="24" font-weight="bold" text-anchor="middle" fill="var(--fg)">3</text>
+  <text x="146" y="368" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">bubblewrap</text>
+  <text x="146" y="394" class="hand" font-size="16" fill="var(--muted)">read-only root; only the current worktree visible</text>
+
+  <text x="710" y="364" class="hand" font-size="18" font-weight="bold" fill="var(--accent)">Blocks:</text>
+  <text x="710" y="384" class="hand" font-size="16" fill="var(--muted)">path traversal,</text>
+  <text x="710" y="402" class="hand" font-size="16" fill="var(--muted)">/etc/passwd, ptrace</text>
+
+  <!-- Layer 4 -->
+  <g filter="url(#rough)">
+    <rect x="80" y="424" width="600" height="76" class="stroke" stroke-width="2.4" rx="6"/>
+    <circle cx="110" cy="462" r="18" class="stroke" stroke-width="2.2"/>
+  </g>
+  <text x="110" y="470" class="hand" font-size="24" font-weight="bold" text-anchor="middle" fill="var(--fg)">4</text>
+  <text x="146" y="460" class="hand" font-size="22" font-weight="bold" fill="var(--fg)">Container + gVisor</text>
+  <text x="146" y="486" class="hand" font-size="16" fill="var(--muted)">syscalls hit a user-space kernel first</text>
+
+  <text x="710" y="456" class="hand" font-size="18" font-weight="bold" fill="var(--accent)">Blocks:</text>
+  <text x="710" y="476" class="hand" font-size="16" fill="var(--muted)">kernel exploits,</text>
+  <text x="710" y="494" class="hand" font-size="16" fill="var(--muted)">host syscalls</text>
+
+  <!-- HOST band (bottom) -->
+  <g filter="url(#rough)">
+    <rect x="80" y="516" width="600" height="42" class="stroke" stroke-width="2.4" rx="4"/>
+  </g>
+  <text x="380" y="544" class="hand" font-size="22" font-weight="bold" text-anchor="middle" fill="var(--fg)">
+    HOST · your machine, the kernel
+  </text>
+
+  <!-- Attack-path arrow (now points downward toward host) -->
+  <line x1="890" y1="135" x2="890" y2="510" stroke="var(--accent)" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#redhead)"/>
+  <text x="910" y="322" class="hand" font-size="16" font-weight="bold" fill="var(--accent)" text-anchor="middle" transform="rotate(-90 910 322)">
+    attack path
+  </text>
+</svg>
