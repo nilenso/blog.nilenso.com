@@ -5,6 +5,7 @@ kind: article
 created_at: 2026-05-18 10:00 -0800
 description: Building an evaluation framework for production-grade document extraction.
 author: Priyanga P Kini
+table_of_contents: true
 ---
 
 KYC, or Know Your Customer, is how banks, fintechs, and a growing number of businesses verify that a person is who they claim to be. At the heart of it sits a deeply unglamorous task: typing the fields off a scanned PAN card or Aadhaar into a form. Humans are bad at this. It's boring, error-prone, and, at scale, expensive. Can an LLM do it instead?
