@@ -5,6 +5,7 @@ kind: article
 created_at: 2026-06-25 10:00 -0800
 description: How we sandbox a code-research agent that analyses untrusted repositories
 author: Priyanga P Kini
+table_of_contents: true
 ---
 
 Everyone is racing to add LLMs to their systems. At the same time, nobody wants an agent running loose with access to the filesystem or the network. You definitely do not want an agent sending your data back home.

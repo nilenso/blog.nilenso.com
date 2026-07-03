@@ -724,3 +724,144 @@ details pre.highlight,
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/* Post table of contents — Notion-style minimal sticky rail on the right */
+.post-toc {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .post-toc {
+    display: block;
+    position: fixed;
+    top: 35%;
+    right: 1rem;
+    transform: translateY(-50%);
+    max-height: 70vh;
+    z-index: 10;
+    font-family: var(--font-sans);
+  }
+}
+
+.post-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-end;
+}
+
+.post-toc-item {
+  margin: 0;
+  line-height: 1;
+}
+
+.post-toc-item a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: transparent;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  padding: 0.05rem 0;
+  transition: color 0.15s ease;
+}
+
+.post-toc-h1 a {
+  font-weight: 600;
+}
+
+/* Default state: each item is a small horizontal bar */
+.post-toc-item a::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #bdbdbd;
+  width: 18px;
+  margin-left: auto;
+  transition: background 0.15s ease, width 0.15s ease;
+}
+
+.post-toc-h1 a::before {
+  width: 28px;
+  height: 2px;
+  background: #8f8f8f;
+}
+
+.post-toc-h3 a::before {
+  width: 12px;
+}
+
+.post-toc-item a.is-active::before {
+  background: var(--nilenso-pink);
+  width: 22px;
+}
+
+.post-toc-h1 a.is-active::before {
+  width: 28px;
+}
+
+.post-toc-h3 a.is-active::before {
+  width: 16px;
+}
+
+/* On hover of the whole TOC, reveal text labels and hide the bars */
+.post-toc:hover {
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
+  width: max-content;
+  max-width: min(16rem, calc(100vw - 3rem));
+}
+
+.post-toc:hover .post-toc-item a {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: #555;
+}
+
+.post-toc:hover .post-toc-list {
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.post-toc:hover .post-toc-item a::before {
+  display: none;
+}
+
+.post-toc:hover .post-toc-h1 a {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.15rem;
+}
+
+.post-toc:hover .post-toc-h2 a {
+  padding-left: 0.75rem;
+}
+
+.post-toc:hover .post-toc-h3 a {
+  padding-left: 1.25rem;
+  font-size: 0.74rem;
+}
+
+.post-toc:hover .post-toc-item a:hover,
+.post-toc:hover .post-toc-item a:focus-visible {
+  color: #000;
+  font-weight: 500;
+}
+
+.post-toc:hover .post-toc-item a:focus-visible {
+  outline: none;
+}
+
+.post-toc:hover .post-toc-item a.is-active {
+  color: var(--nilenso-pink);
+  font-weight: 500;
+}
+

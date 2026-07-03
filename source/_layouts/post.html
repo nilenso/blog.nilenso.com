@@ -4,6 +4,9 @@ single: true
 ---
 
 <div>
+{% if page.table_of_contents == true %}
+  {% include post/toc.html %}
+{% endif %}
 <article class="hentry" role="article">
   {% if page.cover_image %}
     <div class="cover-image-container">
@@ -38,6 +41,10 @@ single: true
   </section>
 {% endif %}
 </div>
+
+{% if page.table_of_contents == true %}
+<script src="{{ root_url }}/javascripts/post-toc.js"></script>
+{% endif %}
 <!-- {% unless page.sidebar == false %}
 <aside class="sidebar">
   {% if site.post_asides.size %}
