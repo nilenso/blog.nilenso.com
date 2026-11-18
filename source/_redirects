@@ -1,10 +1,12 @@
 # Alternate domains. Each must also be a domain alias on the Netlify site;
 # http and https need separate rules.
-http://blog.nilenso.ai/*    https://blog.nilenso.com/:splat  301!
-https://blog.nilenso.ai/*   https://blog.nilenso.com/:splat  301!
-http://blog.nilenso.ca/*    https://blog.nilenso.com/:splat  301!
-https://blog.nilenso.ca/*   https://blog.nilenso.com/:splat  301!
-http://blog.nilenso.in/*    https://blog.nilenso.com/:splat  301!
-https://blog.nilenso.in/*   https://blog.nilenso.com/:splat  301!
-http://blog.nilenzo.com/*   https://blog.nilenso.com/:splat  301!
-https://blog.nilenzo.com/*  https://blog.nilenso.com/:splat  301!
+http://blog.nilenso.ai/*         https://blog.nilenso.com/:splat  301!
+https://blog.nilenso.ai/*        https://blog.nilenso.com/:splat  301!
+http://blog.nilenso.ca/*         https://blog.nilenso.com/:splat  301!
+https://blog.nilenso.ca/*        https://blog.nilenso.com/:splat  301!
+http://blog.nilenso.in/*         https://blog.nilenso.com/:splat  301!
+https://blog.nilenso.in/*        https://blog.nilenso.com/:splat  301!
+http://blog.nilenso.software/*   https://blog.nilenso.com/:splat  301!
+https://blog.nilenso.software/*  https://blog.nilenso.com/:splat  301!
+http://blog.nilenzo.com/*        https://blog.nilenso.com/:splat  301!
+https://blog.nilenzo.com/*       https://blog.nilenso.com/:splat  301!
