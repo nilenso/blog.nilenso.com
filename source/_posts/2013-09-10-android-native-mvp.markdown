@@ -14,7 +14,7 @@ As we set out to develop the native android app for [Ashoka Survey](https://thes
 - [Mockito](https://code.google.com/p/mockito)
 - [FEST](https://fest.easytesting.org/)
 
-Maven dictated the basic skeleton to work out from. If you are not aware of dependency injection, do check out an [earlier post by us on RoboGuice](https://planet.nilenso.com/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/). We used [Android Async Http library](https://github.com/loopj/android-async-http) to deal with servicing network requests.
+Maven dictated the basic skeleton to work out from. If you are not aware of dependency injection, do check out an [earlier post by us on RoboGuice](https://blog.nilenso.com/blog/2013/07/10/using-roboguice-to-inject-views-into-a-pojo/). We used [Android Async Http library](https://github.com/loopj/android-async-http) to deal with servicing network requests.
 
 Once we had the project setup sorted out, we ventured into getting out a basic login screen.
 
