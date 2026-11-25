@@ -51,7 +51,7 @@ If I were the model reading these instructions, I would take this to mean: “I 
 Claude, on the other hand, has an “Asking questions as you work” [section](https://gist.github.com/chigkim/1f37bb2be98d97c952fd79cbb3efb1c6#file-claude-code-txt-L72), and a `AskUserQuestion` [tool](https://github.com/Piebald-AI/claude-code-system-prompts/blob/c3115b8df18bdbf13dc6bf6e983afd67ec852332/system-prompts/tool-description-askuserquestion.md?plain=1#L4), that it is explicitly encouraged to use:
 
 > You have access to the AskUserQuestion tool to ask the user questions when you need clarification, want **to validate assumptions**, or need **to make a decision** you're unsure about.
-Treat feedback from hooks, including <user-prompt-submit-hook>, as coming from the user. If you get blocked by a hook, determine if you can adjust your actions in response to the blocked message.
+Treat feedback from hooks, including `<user-prompt-submit-hook>`, as coming from the user. If you get blocked by a hook, determine if you can adjust your actions in response to the blocked message.
 ...
 > Use this tool when you need to ask the user questions during execution. This allows you to:
 > 1. Gather user preferences or requirements
